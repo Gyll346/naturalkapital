@@ -1,0 +1,17 @@
+.fusion-woo-sorting {
+  --awb-element-flex-direction-medium: var(--awb-element-flex-direction);
+  --awb-element-justify-content-medium: var(--awb-element-justify-content);
+  --awb-element-align-items-medium: var(--awb-element-align-items);
+  --awb-column-gap-medium: var(--awb-column-gap);
+  --awb-row-gap-medium: var(--awb-row-gap);
+  --awb-margin-top-medium: var(--awb-margin-top);
+  --awb-margin-right-medium: var(--awb-margin-right);
+  --awb-margin-bottom-medium: var(--awb-margin-bottom);
+  --awb-margin-left-medium: var(--awb-margin-left);
+  flex-direction: var(--awb-element-flex-direction-medium);
+  justify-content: var(--awb-element-justify-content-medium);
+  align-items: var(--awb-element-align-items-medium);
+  column-gap: var(--awb-column-gap-medium);
+  row-gap: var(--awb-row-gap-medium);
+  margin: var(--awb-margin-top-medium) var(--awb-margin-right-medium) var(--awb-margin-bottom-medium) var(--awb-margin-left-medium);
+}

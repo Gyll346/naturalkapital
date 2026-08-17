@@ -1,0 +1,16 @@
+{
+  "name": "ynki-website",
+  "version": "1.0.0",
+  "description": "Website Yayasan Natural Kapital Indonesia (YNKI) - Static Export",
+  "main": "server.js",
+  "scripts": {
+    "start": "serve . -p 3000",
+    "dev": "serve . -p 3000",
+    "serve": "serve . -p 3000",
+    "serve:node": "node server.js",
+    "optimize": "node optimize-static.js"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

@@ -1,0 +1,180 @@
+@font-face {
+  font-family: 'avada-classic';
+  src:  url('/wp-content/uploads/fusion-icons/avada-classic-v1.2-1/fonts/avada-classic.eot?23bq8d');
+  src:  url('/wp-content/uploads/fusion-icons/avada-classic-v1.2-1/fonts/avada-classic.eot?23bq8d#iefix') format('embedded-opentype'),
+    url('/wp-content/uploads/fusion-icons/avada-classic-v1.2-1/fonts/avada-classic.ttf?23bq8d') format('truetype'),
+    url('/wp-content/uploads/fusion-icons/avada-classic-v1.2-1/fonts/avada-classic.woff?23bq8d') format('woff'),
+    url('/wp-content/uploads/fusion-icons/avada-classic-v1.2-1/fonts/avada-classic.svg?23bq8d#avada-classic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="classic-"], [class*=" classic-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'avada-classic' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.classic-paint-brush:before {
+  content: "\e92c";
+}
+.classic-globe:before {
+  content: "\e92d";
+}
+.classic-server:before {
+  content: "\e92e";
+}
+.classic-heart:before {
+  content: "\e92f";
+}
+.classic-mobile:before {
+  content: "\e930";
+}
+.classic-mobile-phone:before {
+  content: "\e930";
+}
+.classic-file-text:before {
+  content: "\e931";
+}
+.classic-shopping-cart:before {
+  content: "\e92b";
+}
+.classic-angle-right-solid:before {
+  content: "\e900";
+}
+.classic-arrow-alt-circle-up-regular:before {
+  content: "\e901";
+}
+.classic-bars-solid:before {
+  content: "\e902";
+}
+.classic-book-solid:before {
+  content: "\e903";
+}
+.classic-calendar-alt-regular:before {
+  content: "\e904";
+}
+.classic-calendar-solid:before {
+  content: "\e905";
+}
+.classic-capsules-solid:before {
+  content: "\e906";
+}
+.classic-check-circle-regular:before {
+  content: "\e907";
+}
+.classic-check-solid:before {
+  content: "\e908";
+}
+.classic-child-solid:before {
+  content: "\e909";
+}
+.classic-code-solid:before {
+  content: "\e90a";
+}
+.classic-cog-solid:before {
+  content: "\e90b";
+}
+.classic-cubes-solid:before {
+  content: "\e90c";
+}
+.classic-dollar-sign-solid:before {
+  content: "\e90d";
+}
+.classic-envelope-solid:before {
+  content: "\e90e";
+}
+.classic-eye-regular:before {
+  content: "\e90f";
+}
+.classic-file-invoice-dollar-solid:before {
+  content: "\e910";
+}
+.classic-flag-checkered-solid:before {
+  content: "\e911";
+}
+.classic-flag-solid:before {
+  content: "\e912";
+}
+.classic-globe-solid:before {
+  content: "\e913";
+}
+.classic-hdd-solid:before {
+  content: "\e914";
+}
+.classic-home-solid:before {
+  content: "\e915";
+}
+.classic-image-regular:before {
+  content: "\e916";
+}
+.classic-leaf-solid:before {
+  content: "\e917";
+}
+.classic-lightbulb-regular:before {
+  content: "\e918";
+}
+.classic-mail-bulk-solid:before {
+  content: "\e919";
+}
+.classic-male-solid:before {
+  content: "\e91a";
+}
+.classic-mobile-alt-solid:before {
+  content: "\e91b";
+}
+.classic-mobile-solid:before {
+  content: "\e91c";
+}
+.classic-money-bill-wave-solid:before {
+  content: "\e91d";
+}
+.classic-newspaper-solid:before {
+  content: "\e91e";
+}
+.classic-power-off-solid:before {
+  content: "\e91f";
+}
+.classic-question-circle-solid:before {
+  content: "\e920";
+}
+.classic-question-solid:before {
+  content: "\e921";
+}
+.classic-shield-alt-solid:before {
+  content: "\e922";
+}
+.classic-shopping-cart-solid:before {
+  content: "\e923";
+}
+.classic-th-large-solid:before {
+  content: "\e924";
+}
+.classic-thumbs-up-regular:before {
+  content: "\e925";
+}
+.classic-times-solid:before {
+  content: "\e926";
+}
+.classic-tint-solid:before {
+  content: "\e927";
+}
+.classic-toggle-on-solid:before {
+  content: "\e928";
+}
+.classic-user-solid:before {
+  content: "\e929";
+}
+.classic-users-solid:before {
+  content: "\e92a";
+}
