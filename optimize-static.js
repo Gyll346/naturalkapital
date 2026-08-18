@@ -251,6 +251,13 @@ function processHtmlContent(html) {
   output = output.replace(/(<a\s+[^>]*?)href=(["'])[^"']*?\2([^>]*>\s*<span>\s*LGOS:\s*Sistem\s*Operasi\s*Organisasi\s*<\/span>\s*<\/a>)/gi, '$1href="/lgos/"$3');
   output = output.replace(/(<a\s+[^>]*?)href=(["'])[^"']*?\2([^>]*>\s*<span>\s*Portfolio\s*<\/span>\s*<\/a>)/gi, '$1href="/portofolio/"$3');
   output = output.replace(/(<a\s+[^>]*?)href=(["'])[^"']*?\2([^>]*>\s*<span>\s*Transparansi\s*&amp;\s*Laporan\s*Mitra\s*<\/span>\s*<\/a>)/gi, '$1href="/transparansi/"$3');
+  // Program Kami submenu links  
+  output = output.replace(/<a[\s\S]*?href=(["'])[^"']*?\1[\s\S]*?>\s*<span>Landscape Governance<\/span>\s*<\/a/gi, (m) => m.replace(/href=(["'])[^"']*?\1/, 'href="/landscape-governance/"'));
+  output = output.replace(/<a[\s\S]*?href=(["'])[^"']*?\1[\s\S]*?>\s*<span>Natural Capital &amp; Restoration<\/span>\s*<\/a/gi, (m) => m.replace(/href=(["'])[^"']*?\1/, 'href="/natural-capital/"'));
+  output = output.replace(/<a[\s\S]*?href=(["'])[^"']*?\1[\s\S]*?>\s*<span>Sustainable Commodity System<\/span>\s*<\/a/gi, (m) => m.replace(/href=(["'])[^"']*?\1/, 'href="/sustainable-commodity/"'));
+  output = output.replace(/(<a\s+[^>]*?)href=(["'])[^"']*?\\2([^>]*>\s*<span>\s*Landscape\s*Governance\s*<\/span>\s*<\/a>)/gi, '$1href="/landscape-governance/"$3');
+  output = output.replace(/(<a\s+[^>]*?)href=(["'])[^"']*?\\2([^>]*>\s*<span>\s*Natural\s*Capital\s*&amp;\s*Restoration\s*<\/span>\s*<\/a>)/gi, '$1href="/natural-capital/"$3');
+  output = output.replace(/(<a\s+[^>]*?)href=(["'])[^"']*?\\2([^>]*>\s*<span>\s*Sustainable\s*Commodity\s*System\s*<\/span>\s*<\/a>)/gi, '$1href="/sustainable-commodity/"$3');
 
   // 5. Inject Avada global styles and static display fix
   output = output.replace(/<!-- Global Avada Stylesheet Fallback -->[\s\S]*?<\/style>/gi, '');
