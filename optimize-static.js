@@ -183,24 +183,11 @@ function processHtmlContent(html) {
 
   // 2. Process all <script> tags
   output = output.replace(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi, (fullMatch, attrStr, innerContent) => {
-    // Drop guest.vary.php
-    if (innerContent.includes('guest.vary.php') || attrStr.includes('guest.vary.php')) {
-      return '';
-    }
-    // Drop litespeed_docref
-    if (innerContent.includes('litespeed_docref')) {
-      return '';
-    }
-    // Drop litespeed_load_delayed_js / litespeed_ui_events
-    if (innerContent.includes('litespeed_load_delayed_js') || innerContent.includes('litespeed_ui_events')) {
-      return '';
-    }
-    // Drop litespeed lazyload inline helper
-    if (innerContent.includes('litespeed_lazyloaded') || innerContent.includes('window.lazyLoadOptions')) {
-      return '';
-    }
+    if (innerContent.includes('guest.vary.php') || attrStr.includes('guest.vary.php')) return '';
+    if (innerContent.includes('litespeed_docref')) return '';
+    if (innerContent.includes('litespeed_load_delayed_js') || innerContent.includes('litespeed_ui_events')) return '';
+    if (innerContent.includes('litespeed_lazyloaded') || innerContent.includes('window.lazyLoadOptions')) return '';
 
-    // Convert litespeed/javascript to standard javascript
     if (/type=["']litespeed\/javascript["']/i.test(attrStr)) {
       let newAttrs = attrStr
         .replace(/type=["']litespeed\/javascript["']/gi, '')
@@ -258,7 +245,14 @@ function processHtmlContent(html) {
     return `<img ${newAttrs}>`;
   });
 
-  // 4. Inject Avada global styles and static display fix
+  // 4. Update Navigation Links across all pages precisely
+  output = output.replace(/(<a\s+[^>]*?)href=(["'])[^"']*?\2([^>]*>\s*<span>\s*Sejarah,\s*Visi\s*&amp;\s*Misi\s*<\/span>\s*<\/a>)/gi, '$1href="/sejarah-visi-misi/"$3');
+  output = output.replace(/(<a\s+[^>]*?)href=(["'])[^"']*?\2([^>]*>\s*<span>\s*Tim\s*&amp;\s*Pengurus\s*YNKI\s*<\/span>\s*<\/a>)/gi, '$1href="/tim/"$3');
+  output = output.replace(/(<a\s+[^>]*?)href=(["'])[^"']*?\2([^>]*>\s*<span>\s*LGOS:\s*Sistem\s*Operasi\s*Organisasi\s*<\/span>\s*<\/a>)/gi, '$1href="/lgos/"$3');
+  output = output.replace(/(<a\s+[^>]*?)href=(["'])[^"']*?\2([^>]*>\s*<span>\s*Portfolio\s*<\/span>\s*<\/a>)/gi, '$1href="/portofolio/"$3');
+  output = output.replace(/(<a\s+[^>]*?)href=(["'])[^"']*?\2([^>]*>\s*<span>\s*Transparansi\s*&amp;\s*Laporan\s*Mitra\s*<\/span>\s*<\/a>)/gi, '$1href="/transparansi/"$3');
+
+  // 5. Inject Avada global styles and static display fix
   output = output.replace(/<!-- Global Avada Stylesheet Fallback -->[\s\S]*?<\/style>/gi, '');
   output = output.replace(/<style id="avada-static-display-fix">[\s\S]*?<\/style>/gi, '');
   if (output.includes('</head>')) {
