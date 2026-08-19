@@ -2363,6 +2363,129 @@
   }
 </style>
 
+<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
+<style id="ynki-universal-polish">
+/* ===== YNKI GLOBAL POLISH & NAVBAR FIX ===== */
+.fusion-tb-header > .fusion-fullwidth:first-child,
+.fusion-tb-header,
+.fusion-header,
+.fusion-header-wrapper,
+#fusion-header {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+  box-shadow: none !important;
+}
+
+/* Nav Links - clear dark green */
+.awb-menu__main-li > a,
+.awb-menu__main-a {
+  color: #12291e !important;
+  font-weight: 700 !important;
+}
+.awb-menu__main-li > a:hover,
+.awb-menu__main-li.current-menu-item > a {
+  color: #117710 !important;
+}
+
+/* Ensure no green backgrounds on header containers */
+.fusion-fullwidth.fusion-builder-row-1 {
+  background-color: transparent !important;
+}
+
+/* Universal Button Overrides according to Color Specs */
+.btn-cta-main,
+a.btn-cta-main,
+.fusion-button.button-primary:not(.btn-cta-second) {
+  background: #B22231 !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(178,34,49,0.28) !important;
+}
+.btn-cta-main:hover,
+a.btn-cta-main:hover {
+  background: #941724 !important;
+  color: #ffffff !important;
+}
+
+.btn-cta-second,
+a.btn-cta-second {
+  background: #A0D2F5 !important;
+  color: #0e241b !important;
+  border: 1px solid rgba(14,36,27,0.12) !important;
+  box-shadow: 0 4px 14px rgba(160,210,245,0.3) !important;
+}
+.btn-cta-second:hover,
+a.btn-cta-second:hover {
+  background: #82c4f1 !important;
+  color: #05140d !important;
+}
+
+/* Universal Badge Accent: Oranye #FF8000 */
+.badge-highlight,
+.badge-orange,
+.section-badge,
+.tag-highlight {
+  color: #FF8000 !important;
+  background: #fff3e6 !important;
+  border-color: rgba(255,128,0,0.35) !important;
+}
+
+/* Universal Accent Sekunder: Ungu #8000FF */
+.badge-purple,
+.category-tag-purple,
+.tag-category,
+.category-badge {
+  color: #8000FF !important;
+  background: #f3e8ff !important;
+  border-color: rgba(128,0,255,0.3) !important;
+}
+
+/* Responsive clean image wrappers */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+</style>
+<style id="ynki-universal-clean-header">
+/* ===== YNKI GLOBAL NAVBAR CLEANUP - 100% TRANSPARENT / NO GREEN BACKGROUND ===== */
+header,
+.fusion-tb-header,
+.fusion-tb-header > .fusion-fullwidth,
+.fusion-tb-header > .fusion-fullwidth:first-child,
+.fusion-header,
+.fusion-header-wrapper,
+#fusion-header,
+.fusion-fullwidth.fusion-builder-row-1,
+div[class*="fusion-builder-row-1"],
+.fusion-top-header {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Nav Menu typography and colors */
+.awb-menu__main-li > a,
+.awb-menu__main-a {
+  color: #12291e !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+  text-decoration: none !important;
+}
+.awb-menu__main-li > a:hover,
+.awb-menu__main-li.current-menu-item > a,
+.awb-menu__main-li.current-menu-parent > a {
+  color: #117710 !important;
+}
+
+/* Mobile Navbar clean transparent */
+.fusion-mobile-menu-design-modern .fusion-header,
+.fusion-mobile-menu-design-classic .fusion-header {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+</style>
 </head>
   <body
     class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr fusion-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
@@ -2897,646 +3020,233 @@
           </div>
         </div>
         <div id="sliders-container" class="fusion-slider-visibility"></div>
-        <main id="main" class="clearfix width-100" style="font-family: 'Inter', Arial, Helvetica, sans-serif;">
+        <main id="main" class="clearfix width-100" style="font-family:'Inter',Arial,Helvetica,sans-serif;">
+<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+.ynki-section { width: 100%; }
+.ynki-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #FF8000; background: #fff3e6; border: 1px solid rgba(255,128,0,0.35); padding: 5px 16px; border-radius: 50px; margin-bottom: 14px; }
+.section-badge.white { background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.3); }
+.section-badge.green { background: #e8f5e8; color: #117710; border-color: #117710; }
+.divider-line { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 14px; }
+.divider-line .line { flex: 1; height: 1px; background: #d2e8d1; }
+.hero-section { position: relative; min-height: 82vh; display: flex; align-items: center; background-image: linear-gradient(155deg, rgba(5,42,5,0.93) 0%, rgba(12,80,11,0.72) 55%, rgba(0,0,0,0.40) 100%), url('/assets/images/homepage/hero-bg.png'); background-size: cover; background-position: center; padding: 110px 24px 90px; }
+.hero-section::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, #ffffff); pointer-events: none; }
+.hero-inner { position: relative; z-index: 2; max-width: 920px; margin: 0 auto; text-align: center; }
+.hero-crumb { font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #a3e0a2; margin-bottom: 20px; }
+.hero-crumb a { color: #d2f0d1; text-decoration: none; }
+.hero-h1 { font-size: clamp(28px, 4.5vw, 48px); font-weight: 900; line-height: 1.2; color: #ffffff; margin: 0 0 20px; letter-spacing: -0.02em; }
+.hero-h1 .hl { color: #a3e0a2; }
+.hero-sub { font-size: clamp(14px, 1.6vw, 17px); line-height: 1.85; color: #d2f0d1; max-width: 820px; margin: 0 auto 32px; }
+.hero-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.cta-section { background: #117710; padding: 90px 24px; text-align: center; }
+.cta-section h2 { font-size: clamp(24px,3.5vw,36px); font-weight: 800; color: #fff; margin: 0 0 16px; }
+.cta-section p { font-size: 15.5px; color: #d2f0d1; max-width: 700px; margin: 0 auto 32px; line-height: 1.7; }
+</style>
+<style>
+.metodologi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+.met-card { background: #fff; border: 1.5px solid #d2e8d1; border-radius: 16px; padding: 28px 24px; text-align: center; }
+.met-icon { width: 56px; height: 56px; background: #e8f5e8; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.met-icon svg { stroke: #117710; }
+.met-card h4 { font-size: 16px; font-weight: 800; color: #0e241b; margin: 0 0 10px; }
+.met-card p { font-size: 13.5px; color: #536b5f; line-height: 1.65; margin: 0; }
 
-  <style>
-    #post-kisah {
-      font-family: 'Inter', Arial, Helvetica, sans-serif !important;
-    }
-    #post-kisah h1, #post-kisah h2, #post-kisah h3, #post-kisah h4, #post-kisah h5, #post-kisah h6 {
-      font-family: 'Inter', Arial, Helvetica, sans-serif !important;
-      letter-spacing: -0.015em;
-    }
-    .method-card {
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      background: #ffffff;
-      border: 1px solid #dce8e1;
-      border-radius: 14px;
-      padding: 30px 24px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-    }
-    .method-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 36px rgba(18, 56, 38, 0.12) !important;
-      border-color: #48a876 !important;
-    }
-    .icon-badge {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: #eaf5ef;
-      color: #1e6b42;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      flex-shrink: 0;
-      transition: all 0.3s ease;
-    }
-    .method-card:hover .icon-badge {
-      background: #1e6b42;
-      color: #ffffff;
-    }
-    .kisah-item-card {
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      background: #ffffff;
-      border: 1px solid #dce8e1;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 3px 14px rgba(0,0,0,0.04);
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 30px;
-    }
-    .kisah-item-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 40px rgba(18, 56, 38, 0.13);
-      border-color: #48a876;
-    }
-    .kisah-img-col {
-      width: 320px;
-      min-width: 320px;
-      position: relative;
-      overflow: hidden;
-    }
-    .kisah-img-col img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .kisah-item-card:hover .kisah-img-col img {
-      transform: scale(1.06);
-    }
-    .kisah-content-col {
-      padding: 30px 32px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    @media (max-width: 860px) {
-      .kisah-item-card {
-        flex-direction: column;
-      }
-      .kisah-img-col {
-        width: 100%;
-        min-width: 100%;
-        height: 220px;
-      }
-      .kisah-content-col {
-        padding: 24px 20px;
-      }
-    }
-    .quote-box {
-      background: #f4f9f6;
-      border-left: 4px solid #1e6b42;
-      border-radius: 8px;
-      padding: 16px 18px;
-      margin: 16px 0;
-      font-style: italic;
-      font-size: 14.5px;
-      line-height: 1.65;
-      color: #2d503d;
-    }
-    .meta-badge-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 14px;
-      font-size: 12.5px;
-    }
-    .meta-item {
-      background: #f0f7f3;
-      color: #2d503d;
-      padding: 4px 12px;
-      border-radius: 6px;
-      font-weight: 500;
-    }
-    .meta-item strong {
-      color: #1e6b42;
-    }
-    .tag-category {
-      font-size: 11.5px;
-      font-weight: 700;
-      color: #1e6b42;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      display: inline-block;
-    }
-    .theme-pill {
-      display: inline-block;
-      background: #eaf5ef;
-      color: #1e6b42;
-      font-size: 13.5px;
-      font-weight: 600;
-      padding: 8px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 1px solid #d5e8dc;
-      cursor: pointer;
-    }
-    .theme-pill:hover, .theme-pill.active {
-      background: #1e6b42;
-      color: #ffffff;
-      border-color: #1e6b42;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(30,107,66,0.2);
-    }
-    .btn-hero-primary {
-      transition: all 0.3s ease;
-      background: #1e6b42;
-      color: #ffffff !important;
-      border-radius: 6px;
-      padding: 13px 28px;
-      font-weight: 700;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-hero-primary:hover {
-      background: #155232 !important;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-      transform: translateY(-2px);
-    }
-    .btn-hero-secondary {
-      transition: all 0.3s ease;
-      background: rgba(14, 36, 27, 0.75);
-      color: #ffffff !important;
-      border-radius: 6px;
-      padding: 13px 28px;
-      font-weight: 700;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.35);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      backdrop-filter: blur(6px);
-    }
-    .btn-hero-secondary:hover {
-      background: rgba(255,255,255,0.15) !important;
-      border-color: #ffffff !important;
-      transform: translateY(-2px);
-    }
-    .divider-heading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      width: 100%;
-      margin-bottom: 12px;
-    }
-    .divider-heading .line { flex:1; height:1px; background:#d5e5db; }
-    .hero-anim {
-      animation: heroBounce 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    @keyframes heroBounce {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .action-box {
-      border-radius: 16px;
-      padding: 36px 32px;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    }
-  </style>
+.kisah-full-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 44px; }
+.kisah-full-card { background: #fff; border: 1.5px solid #d2e8d1; border-radius: 16px; overflow: hidden; transition: all 0.3s; }
+.kisah-full-card:hover { box-shadow: 0 16px 40px rgba(17,119,16,0.12); transform: translateY(-4px); }
+.kisah-header { padding: 14px 20px; background: #117710; display: flex; justify-content: space-between; align-items: center; }
+.kisah-cat { font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #a3e0a2; }
+.kisah-prog { font-size: 11px; color: #d2f0d1; }
+.kisah-content { padding: 28px; }
+.kisah-content h3 { font-size: 18px; font-weight: 800; color: #0e241b; margin: 0 0 12px; line-height: 1.35; }
+.kisah-meta { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+.kisah-meta-item { font-size: 12px; color: #536b5f; display: flex; align-items: center; gap: 5px; }
+.kisah-meta-item svg { stroke: #117710; flex-shrink: 0; }
+.kisah-content blockquote { margin: 0 0 14px; padding: 12px 18px; border-left: 3px solid #117710; background: #f8faf8; font-size: 14px; font-style: italic; color: #117710; border-radius: 0 8px 8px 0; line-height: 1.6; }
+.kisah-content p { font-size: 13.5px; color: #536b5f; line-height: 1.7; margin: 0; }
 
-  <div class="fusion-row" style="max-width:100%;">
-    <section id="content" class="full-width">
-      <div id="post-kisah" class="post-kisah page type-page status-publish hentry">
-        <span class="entry-title rich-snippet-hidden">Kisah Perubahan dari Lapangan</span>
-        <span class="updated rich-snippet-hidden">2026-08-18T11:00:00+07:00</span>
+.filter-bar { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 44px; }
+.filter-btn { font-size: 13px; font-weight: 700; padding: 10px 22px; border-radius: 50px; border: 2px solid #d2e8d1; background: #fff; color: #117710; cursor: pointer; transition: all 0.3s; }
+.filter-btn:hover, .filter-btn.active { background: #117710; color: #fff; border-color: #117710; }
 
-        <div class="post-content">
+.share-box { max-width: 760px; margin: 0 auto; background: #fff; border: 2px solid #FF8000; border-radius: 16px; padding: 40px; text-align: center; }
+.share-box h3 { font-size: 20px; font-weight: 800; color: #0e241b; margin: 0 0 12px; }
+.share-box p { font-size: 14.5px; color: #536b5f; line-height: 1.7; margin: 0 0 24px; }
 
-          <!-- ======================================================
-               1. HERO BANNER
-               ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-builder-row-2 fusion-flex-container fusion-parallax-none nonhundred-percent-fullwidth" style="background-image: linear-gradient(155deg, rgba(8, 30, 18, 0.88) 0%, rgba(14, 46, 30, 0.65) 70%), url('/assets/images/kisah-perubahan/image1.png') !important; background-size: cover !important; background-position: center center !important; --awb-padding-top: 7vw; --awb-padding-bottom: 5.5vw; --awb-padding-top-small: 55px; --awb-padding-right-small: 25px; --awb-padding-bottom-small: 55px; --awb-padding-left-small: 25px; --awb-margin-bottom: 50px; --awb-flex-wrap: wrap;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;text-align:center;">
-                <div class="fusion-column-wrapper fusion-content-layout-column hero-anim" style="display:flex!important;flex-direction:column!important;align-items:center!important;">
+@media (max-width: 768px) {
+  .metodologi-grid { grid-template-columns: 1fr; }
+  .kisah-full-grid { grid-template-columns: 1fr; }
+}
+</style>
+<div class="fusion-row" style="max-width:100%;">
+<section id="content" class="full-width">
+<div id="post-kisah" class="page type-page status-publish hentry">
+<div class="post-content">
 
-                  <!-- Breadcrumb -->
-                  <div style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#52c98a;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
-                    <a href="/" style="color:#a3dbc0;text-decoration:none;">BERANDA</a>
-                    <span style="opacity:0.5;color:#fff;">/</span>
-                    <span style="color:#a3dbc0;">DAMPAK &amp; PEMBELAJARAN</span>
-                    <span style="opacity:0.5;color:#fff;">/</span>
-                    <span style="color:#fff;">KISAH PERUBAHAN</span>
-                  </div>
+<!-- HERO -->
+<section class="hero-section ynki-section">
+  <div class="hero-inner">
+    <div class="hero-crumb"><a href="/">Beranda</a> &nbsp;/&nbsp; <a href="/dampak/">Dampak &amp; Pembelajaran</a> &nbsp;/&nbsp; <span>Kisah Perubahan</span></div>
+    <h1 class="hero-h1">Kisah Perubahan Nyata<br><span class="hl">dari Lapangan</span></h1>
+    <p class="hero-sub">Di balik setiap program dan intervensi YNKI, terdapat cerita perubahan nyata. Melalui Outcome Harvesting dan Most Significant Change, kami mendokumentasikan kisah-kisah menuju Healthy Landscapes, Thriving Communities.</p>
+    <div class="hero-btns">
+      <a href="#kisah-stories" class="btn-cta-main">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Baca Kisah Perubahan
+      </a>
+      <a href="#kisah-share" class="btn-cta-second">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+        Bagikan Kisah Anda
+      </a>
+    </div>
+  </div>
+</section>
 
-                  <!-- Hero Title -->
-                  <h1 style="margin:0 0 18px;font-size:clamp(26px,3.6vw,46px);line-height:1.2;color:#ffffff;font-family:'Inter',Arial,Helvetica,sans-serif;font-weight:800;max-width:980px;">
-                    Kisah Perubahan Nyata dari Lapangan
-                  </h1>
+<!-- METODOLOGI MEL -->
+<section id="kisah-mel" class="ynki-section" style="background:#fff;padding:90px 24px;">
+  <div class="ynki-container">
+    <div style="text-align:center;">
+      <div class="divider-line"><span class="line"></span><span class="section-badge">METODOLOGI MEL</span><span class="line"></span></div>
+      <h2 style="font-size:clamp(22px,3vw,34px);font-weight:800;color:#0e241b;margin:0 0 12px;">Bagaimana Kami Mendokumentasikan Perubahan</h2>
+      <p style="font-size:15px;color:#536b5f;max-width:760px;margin:0 auto;">YNKI menggunakan metode Outcome Harvesting dan Most Significant Change untuk mengidentifikasi, mendokumentasikan, dan menganalisis perubahan. Setiap kisah telah melalui proses verifikasi dan refleksi bersama pemangku kepentingan.</p>
+    </div>
+    <div class="metodologi-grid">
+      <div class="met-card">
+        <div class="met-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h4>Outcome Harvesting</h4>
+        <p>Mengidentifikasi perubahan perilaku, tindakan, atau kebijakan yang telah terjadi pada pemangku kepentingan dan sistem sebagai hasil dari intervensi program.</p>
+      </div>
+      <div class="met-card">
+        <div class="met-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h4>Most Significant Change</h4>
+        <p>Mengumpulkan kisah perubahan paling bermakna langsung dari perspektif masyarakat dan mitra, lalu merefleksikan bersama untuk memahami dampak terdalam.</p>
+      </div>
+      <div class="met-card">
+        <div class="met-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h4>Verifikasi &amp; Refleksi</h4>
+        <p>Setiap kisah divalidasi bersama pemangku kepentingan untuk memastikan akurasi, kejujuran, dan keterwakilan suara komunitas dalam setiap dokumentasi.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                  <p style="font-size:clamp(14.5px,1.5vw,17.5px);line-height:1.75;color:#d4ecdf;font-weight:400;margin:0 auto 30px;max-width:880px;">
-                    Di balik setiap program dan intervensi YNKI, terdapat cerita perubahan yang dialami oleh masyarakat, kelembagaan, dan lanskap. Melalui metode <strong>Outcome Harvesting</strong> dan <strong>Most Significant Change</strong>, kami mendokumentasikan kisah-kisah ini sebagai bukti bahwa perubahan yang berkelanjutan benar-benar terjadi menuju <em>Healthy Landscapes, Thriving Communities</em>.
-                  </p>
-
-                  <!-- Action Buttons -->
-                  <div style="display:flex;justify-content:center;gap:15px;flex-wrap:wrap;">
-                    <a class="btn-hero-primary" href="#daftar-kisah">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                      Kisah Perubahan
-                    </a>
-                    <a class="btn-hero-secondary" href="#metodologi-mel">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                      Metodologi MEL
-                    </a>
-                  </div>
-
-                </div>
-              </div>
-            </div>
+<!-- KISAH-KISAH -->
+<section id="kisah-stories" class="ynki-section" style="background:#f5f8f5;padding:90px 24px;">
+  <div class="ynki-container">
+    <div style="text-align:center;">
+      <span class="section-badge green">KISAH PERUBAHAN</span>
+      <h2 style="font-size:clamp(22px,3vw,34px);font-weight:800;color:#0e241b;margin:12px 0;">Kisah dari Berbagai Lanskap</h2>
+    </div>
+    <div class="kisah-full-grid">
+      <div class="kisah-full-card">
+        <div class="kisah-header">
+          <span class="kisah-cat">Restorasi Gambut &middot; Kalimantan Barat</span>
+          <span class="kisah-prog">Natural Capital Program</span>
+        </div>
+        <div class="kisah-content">
+          <h3>Restorasi Gambut Berbasis Masyarakat di Desa Permata Jaya</h3>
+          <div class="kisah-meta">
+            <span class="kisah-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Desa Permata Jaya, Kubu Raya</span>
+            <span class="kisah-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>PM Haze, LDPH Permata Jaya</span>
           </div>
-
-
-          <!-- ======================================================
-               2. METODOLOGI MEL: BAGAIMANA KAMI MENDOKUMENTASIKAN PERUBAHAN
-               ====================================================== -->
-          <div id="metodologi-mel" class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#ffffff;--awb-padding-top:20px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <!-- Section Header -->
-                <div style="text-align:center;margin-bottom:38px;">
-                  <div class="divider-heading">
-                    <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
-                      METODOLOGI MEL
-                    </span>
-                    <span class="line"></span>
-                  </div>
-                  <h2 style="font-size:32px;font-weight:800;color:#0e241b;margin:0 0 10px;">Bagaimana Kami Mendokumentasikan Perubahan</h2>
-                  <p style="font-size:16px;color:#536b5f;max-width:820px;margin:0 auto;line-height:1.7;">
-                    YNKI menggunakan metode <strong>Outcome Harvesting</strong> dan <strong>Most Significant Change (MSC)</strong> untuk mengidentifikasi, mendokumentasikan, dan menganalisis perubahan yang tidak selalu terukur secara kuantitatif.
-                  </p>
-                </div>
-
-                <!-- Highlight Box -->
-                <div style="background:#f9fbf9;border:1px solid #dce8e1;border-radius:14px;padding:24px 28px;margin-bottom:32px;text-align:center;">
-                  <p style="font-size:15px;line-height:1.75;color:#2d503d;margin:0;">
-                    Setiap kisah yang kami publikasikan telah melalui proses verifikasi dan refleksi bersama dengan para pemangku kepentingan yang terlibat — <strong>memastikan bahwa suara masyarakat menjadi pusat dari setiap narasi perubahan</strong>.
-                  </p>
-                </div>
-
-                <!-- 3 Methodology Pillars Grid -->
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:24px;">
-
-                  <div class="method-card">
-                    <div class="icon-badge">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 12 12 16 16 12 12 8"></polygon></svg>
-                    </div>
-                    <h3 style="font-size:19px;font-weight:700;color:#0e241b;margin:0 0 10px;">Outcome Harvesting</h3>
-                    <p style="font-size:14.5px;line-height:1.75;color:#435c50;margin:0;">
-                      Mengidentifikasi perubahan perilaku, tindakan, hubungan, atau kebijakan yang telah terjadi pada pemangku kepentingan dan sistem sosial-ekologis sebagai hasil dari intervensi program.
-                    </p>
-                  </div>
-
-                  <div class="method-card">
-                    <div class="icon-badge">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                    </div>
-                    <h3 style="font-size:19px;font-weight:700;color:#0e241b;margin:0 0 10px;">Most Significant Change</h3>
-                    <p style="font-size:14.5px;line-height:1.75;color:#435c50;margin:0;">
-                      Mengumpulkan kisah-kisah perubahan paling bermakna langsung dari perspektif masyarakat dan mitra di tapak, lalu merefleksikannya bersama untuk memahami dampak terdalam.
-                    </p>
-                  </div>
-
-                  <div class="method-card">
-                    <div class="icon-badge">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    </div>
-                    <h3 style="font-size:19px;font-weight:700;color:#0e241b;margin:0 0 10px;">Verifikasi &amp; Refleksi</h3>
-                    <p style="font-size:14.5px;line-height:1.75;color:#435c50;margin:0;">
-                      Setiap kisah divalidasi bersama pemangku kepentingan untuk memastikan akurasi, kejujuran kontekstual, dan keterwakilan suara komunitas dalam setiap publikasi.
-                    </p>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               3. KISAH PERUBAHAN DARI BERBAGAI LANSKAP (5 FULL STORIES)
-               ====================================================== -->
-          <div id="daftar-kisah" class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:50px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e5eeea;border-bottom:1px solid #e5eeea;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <!-- Section Header -->
-                <div style="text-align:center;margin-bottom:38px;">
-                  <div class="divider-heading">
-                    <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
-                      DOKUMENTASI DAMPAK
-                    </span>
-                    <span class="line"></span>
-                  </div>
-                  <h2 style="font-size:32px;font-weight:800;color:#0e241b;margin:0 0 10px;">Kisah Perubahan dari Berbagai Lanskap</h2>
-                  <p style="font-size:16px;color:#536b5f;max-width:820px;margin:0 auto;line-height:1.7;">
-                    Berikut adalah kisah-kisah perubahan yang telah didokumentasikan dari berbagai program dan lanskap tempat YNKI bekerja:
-                  </p>
-                </div>
-
-                <!-- Story 1: Restorasi Gambut Permata Jaya -->
-                <div class="kisah-item-card">
-                  <div class="kisah-img-col">
-                    <img src="/assets/images/kisah-perubahan/image4.png" alt="Restorasi Gambut di Desa Permata Jaya" loading="lazy">
-                  </div>
-                  <div class="kisah-content-col">
-                    <div>
-                      <span class="tag-category">RESTORASI GAMBUT · KALIMANTAN BARAT</span>
-                      <h3 style="font-size:21px;font-weight:800;color:#0e241b;margin:0 0 12px;line-height:1.3;">
-                        Restorasi Gambut Berbasis Masyarakat di Desa Permata Jaya
-                      </h3>
-                      
-                      <div class="meta-badge-wrap">
-                        <div class="meta-item"><strong>Lokasi:</strong> Desa Permata Jaya, Kubu Raya, Kalbar</div>
-                        <div class="meta-item"><strong>Program:</strong> Natural Capital &amp; Restoration</div>
-                        <div class="meta-item"><strong>Mitra:</strong> PM Haze, LDPH Permata Jaya</div>
-                      </div>
-
-                      <div class="quote-box">
-                        "Restorasi gambut bukan hanya tentang memulihkan lanskap yang rusak, tetapi juga membangun kembali hubungan harmonis antara manusia dan alam."
-                      </div>
-
-                      <p style="font-size:14.5px;line-height:1.75;color:#435c50;margin:0;">
-                        Desa Permata Jaya, dengan 70% wilayahnya berupa lahan gambut, telah lama menghadapi risiko kebakaran hutan. Sejak Agustus 2023, YNKI bersama PM Haze dan LDPH Permata Jaya membangun tiga sekat kanal — meningkatkan tinggi muka air dari 20 cm menjadi lebih dari 50 cm — dan mendirikan rumah pembibitan untuk tanaman khas gambut serta komoditas bernilai ekonomi.
-                      </p>
-                    </div>
-
-                    <div style="margin-top:20px;padding-top:16px;border-top:1px solid #eef4f0;display:flex;align-items:center;justify-content:space-between;">
-                      <a href="/natural-capital/" style="display:inline-flex;align-items:center;gap:8px;color:#1e6b42;font-weight:700;font-size:14px;text-decoration:none;">
-                        Pelajari Program Terkait
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Story 2: Youth Camp Muara Pawan -->
-                <div class="kisah-item-card">
-                  <div class="kisah-img-col">
-                    <img src="/assets/images/kisah-perubahan/image6.png" alt="Youth Camp Desa Berkelanjutan" loading="lazy">
-                  </div>
-                  <div class="kisah-content-col">
-                    <div>
-                      <span class="tag-category">PEMUDA &amp; PENDIDIKAN · KALIMANTAN BARAT</span>
-                      <h3 style="font-size:21px;font-weight:800;color:#0e241b;margin:0 0 12px;line-height:1.3;">
-                        Youth Camp — Membangun Generasi Muda untuk Desa Berkelanjutan
-                      </h3>
-                      
-                      <div class="meta-badge-wrap">
-                        <div class="meta-item"><strong>Lokasi:</strong> Desa Tanjung Pura, Mayak, &amp; Ulak Medang, Ketapang</div>
-                        <div class="meta-item"><strong>Program:</strong> Institutional Sustainability &amp; Sustainable Commodity</div>
-                        <div class="meta-item"><strong>Mitra:</strong> UNDP KalFor, Pemkab Ketapang</div>
-                      </div>
-
-                      <div class="quote-box">
-                        "Bagaimana kita dapat menggali potensi desa yang kemudian dapat dimanfaatkan secara optimal." — Nur Fadly, Focal Point KalFor Ketapang
-                      </div>
-
-                      <p style="font-size:14.5px;line-height:1.75;color:#435c50;margin:0;">
-                        Pada 19 Juli 2024, YNKI menggelar "Youth Camp: Community Action to Protect Forest" yang melibatkan 30 anak muda dari tiga desa di Kecamatan Muara Pawan. Kegiatan tiga hari ini dirancang untuk meningkatkan pengetahuan, keterampilan, dan peran masyarakat desa dalam mendukung pengelolaan hutan berkelanjutan — dengan peserta yang belajar menjadi konten kreator desa dan agen perubahan lokal.
-                      </p>
-                    </div>
-
-                    <div style="margin-top:20px;padding-top:16px;border-top:1px solid #eef4f0;display:flex;align-items:center;justify-content:space-between;">
-                      <a href="/institutional-partnership/" style="display:inline-flex;align-items:center;gap:8px;color:#1e6b42;font-weight:700;font-size:14px;text-decoration:none;">
-                        Pelajari Program Terkait
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Story 3: Usaha Madu Hutan Ulak Medang -->
-                <div class="kisah-item-card">
-                  <div class="kisah-img-col">
-                    <img src="/assets/images/kisah-perubahan/image8.png" alt="Pengembangan Usaha Madu Hutan" loading="lazy">
-                  </div>
-                  <div class="kisah-content-col">
-                    <div>
-                      <span class="tag-category">PENGEMBANGAN EKONOMI · KALIMANTAN BARAT</span>
-                      <h3 style="font-size:21px;font-weight:800;color:#0e241b;margin:0 0 12px;line-height:1.3;">
-                        Pengembangan Usaha Madu Hutan untuk Pemberdayaan Ekonomi Masyarakat
-                      </h3>
-                      
-                      <div class="meta-badge-wrap">
-                        <div class="meta-item"><strong>Lokasi:</strong> Desa Ulak Medang, Muara Pawan, Ketapang</div>
-                        <div class="meta-item"><strong>Program:</strong> Sustainable Commodity Systems Program</div>
-                        <div class="meta-item"><strong>Mitra:</strong> UNDP KalFor</div>
-                      </div>
-
-                      <div class="quote-box">
-                        "Dengan peralatan yang memadai dan standar yang ketat, kelompok petani madu kini berada dalam posisi yang lebih baik untuk menghadapi tantangan pasar dan memanfaatkan peluang bisnis."
-                      </div>
-
-                      <p style="font-size:14.5px;line-height:1.75;color:#435c50;margin:0;">
-                        Pada 16 Juli 2024, YNKI bersama UNDP KalFor menyerahkan peralatan canggih kepada kelompok petani madu hutan Desa Ulak Medang — termasuk dehumidifier sesuai standar SNI, refraktometer, perlengkapan pemrosesan, dan APD. Dengan dukungan ini, kelompok petani kini dapat memproduksi madu berkualitas tinggi sekaligus memperkuat komitmen terhadap kelestarian hutan sebagai habitat lebah.
-                      </p>
-                    </div>
-
-                    <div style="margin-top:20px;padding-top:16px;border-top:1px solid #eef4f0;display:flex;align-items:center;justify-content:space-between;">
-                      <a href="/sustainable-commodity/" style="display:inline-flex;align-items:center;gap:8px;color:#1e6b42;font-weight:700;font-size:14px;text-decoration:none;">
-                        Pelajari Program Terkait
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Story 4: Berbagi Pengetahuan Pulau Tebing Tinggi Riau -->
-                <div class="kisah-item-card">
-                  <div class="kisah-img-col">
-                    <img src="/assets/images/kisah-perubahan/image9.png" alt="Studi Banding Restorasi Gambut ke Riau" loading="lazy">
-                  </div>
-                  <div class="kisah-content-col">
-                    <div>
-                      <span class="tag-category">PENGETAHUAN &amp; INOVASI · RIAU</span>
-                      <h3 style="font-size:21px;font-weight:800;color:#0e241b;margin:0 0 12px;line-height:1.3;">
-                        Berbagi Pengetahuan Restorasi Gambut Lintas Wilayah — YNKI ke Pulau Tebing Tinggi
-                      </h3>
-                      
-                      <div class="meta-badge-wrap">
-                        <div class="meta-item"><strong>Lokasi:</strong> Pulau Tebing Tinggi, Sungai Tohor, Kepulauan Meranti, Riau</div>
-                        <div class="meta-item"><strong>Program:</strong> Landscape Intelligence &amp; Natural Capital</div>
-                        <div class="meta-item"><strong>Mitra:</strong> LSM EKA, GEMAST, PM Haze</div>
-                      </div>
-
-                      <div class="quote-box">
-                        "Skema restorasi gambut 3R — rewetting, revegetation, dan revitalization — telah diterapkan melalui dukungan para pihak."
-                      </div>
-
-                      <p style="font-size:14.5px;line-height:1.75;color:#435c50;margin:0;">
-                        Pada Mei 2022, YNKI melakukan studi banding ke Pulau Tebing Tinggi untuk berbagi pengalaman restorasi gambut. Pulau ini pernah mengalami kebakaran dahsyat pada 2014 yang berdampak hingga Malaysia dan Singapura. Sejak saat itu, kelompok sadar lingkungan yang dipelopori Abdul Manan telah menerapkan skema 3R. Kunjungan ini memperkuat jaringan pembelajaran lintas lanskap YNKI.
-                      </p>
-                    </div>
-
-                    <div style="margin-top:20px;padding-top:16px;border-top:1px solid #eef4f0;display:flex;align-items:center;justify-content:space-between;">
-                      <a href="/landscape-intelligence/" style="display:inline-flex;align-items:center;gap:8px;color:#1e6b42;font-weight:700;font-size:14px;text-decoration:none;">
-                        Pelajari Program Terkait
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Story 5: Kolaborasi Penanaman Pohon Permata Jaya -->
-                <div class="kisah-item-card">
-                  <div class="kisah-img-col">
-                    <img src="/assets/images/kisah-perubahan/image10.png" alt="Penanaman Pohon Bersama di Permata Jaya" loading="lazy">
-                  </div>
-                  <div class="kisah-content-col">
-                    <div>
-                      <span class="tag-category">KEMITRAAN &amp; KOLABORASI · KALIMANTAN BARAT</span>
-                      <h3 style="font-size:21px;font-weight:800;color:#0e241b;margin:0 0 12px;line-height:1.3;">
-                        Kolaborasi Restorasi Gambut — Penanaman Pohon Bersama di Desa Permata Jaya
-                      </h3>
-                      
-                      <div class="meta-badge-wrap">
-                        <div class="meta-item"><strong>Lokasi:</strong> Desa Permata Jaya, Kubu Raya, Kalbar</div>
-                        <div class="meta-item"><strong>Program:</strong> Natural Capital &amp; Restoration Program</div>
-                        <div class="meta-item"><strong>Mitra:</strong> PM Haze, LDPH, BKSDA Kalbar, DLH</div>
-                      </div>
-
-                      <div class="quote-box">
-                        "Restorasi ini adalah upaya untuk menyelamatkan bumi dan mencegah kebakaran hutan." — Kepala Desa Permata Jaya
-                      </div>
-
-                      <p style="font-size:14.5px;line-height:1.75;color:#435c50;margin:0;">
-                        Dalam rangka memperingati Hari Lingkungan Hidup Sedunia, YNKI bersama PM Haze dan LDPH Permata Jaya menanam 50 bibit pohon lokal sebagai bagian dari rehabilitasi lahan gambut. Kegiatan ini melibatkan berbagai pemangku kepentingan — dari BKSDA KalBar dan Dinas Lingkungan Hidup hingga masyarakat dan pelajar — sebagai wujud komitmen kolektif memulihkan ekosistem gambut yang rusak.
-                      </p>
-                    </div>
-
-                    <div style="margin-top:20px;padding-top:16px;border-top:1px solid #eef4f0;display:flex;align-items:center;justify-content:space-between;">
-                      <a href="/natural-capital/" style="display:inline-flex;align-items:center;gap:8px;color:#1e6b42;font-weight:700;font-size:14px;text-decoration:none;">
-                        Pelajari Program Terkait
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               4. JELAJAHI KISAH BERDASARKAN TEMA
-               ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#ffffff;--awb-padding-top:40px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;text-align:center;">
-
-                <h3 style="font-size:26px;font-weight:800;color:#0e241b;margin:0 0 10px;">
-                  Jelajahi Kisah Berdasarkan Tema
-                </h3>
-                <p style="font-size:15.5px;color:#536b5f;max-width:760px;margin:0 auto 24px;line-height:1.65;">
-                  Gunakan kategori tema berikut untuk menemukan kisah-kisah perubahan yang paling relevan dengan minat Anda:
-                </p>
-
-                <!-- Filter Pills -->
-                <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:960px;margin:0 auto;">
-                  <span class="theme-pill active">Semua Kisah</span>
-                  <span class="theme-pill">Restorasi Gambut</span>
-                  <span class="theme-pill">Pemberdayaan Pemuda</span>
-                  <span class="theme-pill">Komoditas &amp; Usaha Madu</span>
-                  <span class="theme-pill">Pembelajaran Lintas Wilayah</span>
-                  <span class="theme-pill">Kemitraan Multipihak</span>
-                  <span class="theme-pill">Aksi Iklim &amp; Hutan</span>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               5. DUA KOTAK AKSI & KOLABORASI (SIDE-BY-SIDE)
-               ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:40px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e5eeea;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));gap:28px;">
-
-                  <!-- Box 1: Punya Kisah Perubahan? -->
-                  <div class="action-box" style="background:#ffffff;border:1px solid #dce8e1;">
-                    <div>
-                      <div style="width:48px;height:48px;border-radius:12px;background:#eaf5ef;color:#1e6b42;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                      </div>
-                      <h3 style="font-size:21px;font-weight:800;color:#0e241b;margin:0 0 12px;line-height:1.3;">
-                        Punya Kisah Perubahan? Bagikan dengan Kami!
-                      </h3>
-                      <p style="font-size:14.5px;line-height:1.75;color:#435c50;margin:0 0 24px;">
-                        YNKI percaya bahwa setiap kisah perubahan adalah bagian dari perjalanan bersama menuju lanskap yang sehat dan masyarakat yang sejahtera. Jika Anda memiliki kisah tentang perubahan yang terjadi di desa atau lanskap Anda, kami ingin mendengarnya.
-                      </p>
-                    </div>
-                    <div style="display:flex;gap:12px;flex-wrap:wrap;">
-                      <a href="/kontak-kami/" class="btn-hero-primary" style="font-size:13px;padding:11px 22px;">
-                        Bagikan Kisah Anda
-                      </a>
-                      <a href="/kontak-kami/" style="display:inline-flex;align-items:center;gap:6px;color:#1e6b42;font-size:13.5px;font-weight:700;text-decoration:none;padding:11px 16px;">
-                        Hubungi Tim MEL
-                      </a>
-                    </div>
-                  </div>
-
-                  <!-- Box 2: Dukung Perubahan Berkelanjutan -->
-                  <div class="action-box" style="background:linear-gradient(135deg, #123824 0%, #091d12 100%);color:#ffffff;">
-                    <div>
-                      <div style="width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,0.15);color:#52c98a;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                      </div>
-                      <h3 style="font-size:21px;font-weight:800;color:#ffffff;margin:0 0 12px;line-height:1.3;">
-                        Dukung Perubahan Berkelanjutan
-                      </h3>
-                      <p style="font-size:14.5px;line-height:1.75;color:#c9e8d5;margin:0 0 24px;">
-                        Kisah-kisah perubahan ini terwujud berkat dukungan berbagai pihak — masyarakat, mitra, donor, dan pemerintah. Anda juga dapat menjadi bagian dari perubahan menuju lanskap yang sehat dan masyarakat yang sejahtera di Indonesia.
-                      </p>
-                    </div>
-                    <div style="display:flex;gap:12px;flex-wrap:wrap;">
-                      <a href="/kontak-kami/" class="btn-hero-primary" style="background:#52c98a;color:#0d271a !important;font-size:13px;padding:11px 22px;">
-                        Donasi Sekarang
-                      </a>
-                      <a href="/landscape-governance/" class="btn-hero-secondary" style="font-size:13px;padding:11px 22px;">
-                        Jelajahi Program
-                      </a>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-
+          <blockquote>"Restorasi gambut bukan hanya tentang memulihkan lanskap yang rusak, tetapi juga membangun kembali hubungan harmonis antara manusia dan alam."</blockquote>
+          <p>Sejak Agustus 2023, YNKI bersama PM Haze dan LDPH Permata Jaya membangun tiga sekat kanal—meningkatkan tinggi muka air dari 20 cm menjadi lebih dari 50 cm—dan mendirikan rumah pembibitan tanaman khas gambut serta komoditas bernilai ekonomi. Frekuensi kebakaran lahan gambut menurun dan masyarakat merasakan manfaat langsung dari berkurangnya dampak kabut asap.</p>
         </div>
       </div>
-    </section>
+      <div class="kisah-full-card">
+        <div class="kisah-header">
+          <span class="kisah-cat">Pemuda &amp; Pendidikan &middot; Kalimantan Barat</span>
+          <span class="kisah-prog">Institutional &amp; Commodity Program</span>
+        </div>
+        <div class="kisah-content">
+          <h3>Youth Camp — Membangun Generasi Muda untuk Desa Berkelanjutan</h3>
+          <div class="kisah-meta">
+            <span class="kisah-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Muara Pawan, Ketapang</span>
+            <span class="kisah-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>UNDP KalFor, Pemkab Ketapang</span>
+          </div>
+          <blockquote>"Bagaimana kita dapat menggali potensi desa yang kemudian dapat dimanfaatkan secara optimal." — Nur Fadly, Focal Point KalFor</blockquote>
+          <p>Pada 19 Juli 2024, YNKI menggelar Youth Camp yang melibatkan 30 anak muda dari tiga desa di Kecamatan Muara Pawan. Kegiatan tiga hari ini meningkatkan pengetahuan, keterampilan, dan peran masyarakat desa dalam mendukung pengelolaan hutan berkelanjutan — peserta belajar menjadi konten kreator desa dan agen perubahan lokal.</p>
+        </div>
+      </div>
+      <div class="kisah-full-card">
+        <div class="kisah-header">
+          <span class="kisah-cat">Pengembangan Ekonomi &middot; Kalimantan Barat</span>
+          <span class="kisah-prog">Sustainable Commodity Program</span>
+        </div>
+        <div class="kisah-content">
+          <h3>Pengembangan Usaha Madu Hutan untuk Pemberdayaan Ekonomi</h3>
+          <div class="kisah-meta">
+            <span class="kisah-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Desa Ulak Medang, Ketapang</span>
+            <span class="kisah-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>UNDP KalFor</span>
+          </div>
+          <blockquote>"Dengan peralatan yang memadai dan standar yang ketat, kelompok petani madu kini berada dalam posisi yang lebih baik untuk menghadapi tantangan pasar."</blockquote>
+          <p>Pada 16 Juli 2024, YNKI bersama UNDP KalFor menyerahkan peralatan (dehumidifier SNI, refraktometer, APD) kepada kelompok petani madu hutan. Dengan dukungan ini, kelompok kini memproduksi madu berkualitas tinggi sambil memperkuat komitmen terhadap kelestarian hutan sebagai habitat lebah.</p>
+        </div>
+      </div>
+      <div class="kisah-full-card">
+        <div class="kisah-header">
+          <span class="kisah-cat">Pengetahuan &amp; Inovasi &middot; Riau</span>
+          <span class="kisah-prog">Landscape Intelligence Program</span>
+        </div>
+        <div class="kisah-content">
+          <h3>Berbagi Pengetahuan Restorasi Gambut Lintas Wilayah</h3>
+          <div class="kisah-meta">
+            <span class="kisah-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Desa Sungai Tohor, Kep. Meranti, Riau</span>
+            <span class="kisah-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>LSM EKA, GEMAST, PM Haze</span>
+          </div>
+          <blockquote>"Skema restorasi gambut 3R—rewetting, revegetation, dan revitalization—telah diterapkan melalui dukungan para pihak."</blockquote>
+          <p>Pada Mei 2022, YNKI melakukan studi banding ke Pulau Tebing Tinggi yang pernah mengalami kebakaran dahsyat pada 2014. Kelompok sadar lingkungan yang dipelopori Abdul Manan telah menerapkan skema 3R. Kunjungan ini memperkuat jaringan pembelajaran lintas lanskap YNKI di seluruh Indonesia.</p>
+        </div>
+      </div>
+      <div class="kisah-full-card" style="grid-column: 1 / -1;">
+        <div class="kisah-header">
+          <span class="kisah-cat">Kemitraan &amp; Kolaborasi &middot; Kalimantan Barat</span>
+          <span class="kisah-prog">Natural Capital Program</span>
+        </div>
+        <div class="kisah-content">
+          <h3>Kolaborasi Restorasi Gambut — Penanaman Pohon Bersama di Desa Permata Jaya</h3>
+          <div class="kisah-meta">
+            <span class="kisah-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Desa Permata Jaya, Kubu Raya</span>
+            <span class="kisah-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>PM Haze, LDPH, BKSDA KalBar, Dinas LH</span>
+          </div>
+          <blockquote>"Restorasi ini adalah upaya untuk menyelamatkan bumi dan mencegah kebakaran hutan." — Kepala Desa Permata Jaya</blockquote>
+          <p>Dalam rangka memperingati Hari Lingkungan Hidup Sedunia, YNKI bersama PM Haze dan LDPH Permata Jaya menanam 50 bibit pohon lokal sebagai bagian dari rehabilitasi lahan gambut. Kegiatan ini melibatkan berbagai pemangku kepentingan — dari BKSDA KalBar dan Dinas Lingkungan Hidup hingga masyarakat dan pelajar — sebagai wujud komitmen kolektif memulihkan ekosistem gambut yang rusak.</p>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
+
+<!-- BAGIKAN KISAH -->
+<section id="kisah-share" class="ynki-section" style="background:#fff;padding:90px 24px;">
+  <div class="ynki-container">
+    <div class="share-box">
+      <div class="section-badge" style="margin-bottom:20px;">PUNYA KISAH?</div>
+      <h3>Bagikan Kisah Perubahan Anda dengan Kami!</h3>
+      <p>YNKI percaya bahwa setiap kisah perubahan adalah bagian dari perjalanan bersama menuju lanskap yang sehat dan masyarakat yang sejahtera. Jika Anda memiliki kisah tentang perubahan yang terjadi di desa atau lanskap Anda, kami ingin mendengarnya.</p>
+      <a href="/kontak/" class="btn-cta-main">Kirim Kisah Anda</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section ynki-section">
+  <div class="ynki-container">
+    <span class="section-badge white">DUKUNG PERUBAHAN</span>
+    <h2>Dukung Perubahan Berkelanjutan</h2>
+    <p>Kisah-kisah perubahan ini terwujud berkat dukungan dari berbagai pihak. Anda juga dapat menjadi bagian dari perubahan menuju lanskap yang sehat dan masyarakat yang sejahtera.</p>
+    <div class="cta-btns">
+      <a href="/kontak/" class="btn-cta-main" style="background:#fff;color:#117710;">Hubungi Kami</a>
+      <a href="/dampak/" class="btn-cta-second">Lihat Data Dampak</a>
+    </div>
+  </div>
+</section>
+
+</div></div></section></div>
 </main>
         <div class="fusion-tb-footer fusion-footer">
           <div class="fusion-footer-widget-area fusion-widget-area">

@@ -2363,6 +2363,129 @@
   }
 </style>
 
+<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
+<style id="ynki-universal-polish">
+/* ===== YNKI GLOBAL POLISH & NAVBAR FIX ===== */
+.fusion-tb-header > .fusion-fullwidth:first-child,
+.fusion-tb-header,
+.fusion-header,
+.fusion-header-wrapper,
+#fusion-header {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+  box-shadow: none !important;
+}
+
+/* Nav Links - clear dark green */
+.awb-menu__main-li > a,
+.awb-menu__main-a {
+  color: #12291e !important;
+  font-weight: 700 !important;
+}
+.awb-menu__main-li > a:hover,
+.awb-menu__main-li.current-menu-item > a {
+  color: #117710 !important;
+}
+
+/* Ensure no green backgrounds on header containers */
+.fusion-fullwidth.fusion-builder-row-1 {
+  background-color: transparent !important;
+}
+
+/* Universal Button Overrides according to Color Specs */
+.btn-cta-main,
+a.btn-cta-main,
+.fusion-button.button-primary:not(.btn-cta-second) {
+  background: #B22231 !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(178,34,49,0.28) !important;
+}
+.btn-cta-main:hover,
+a.btn-cta-main:hover {
+  background: #941724 !important;
+  color: #ffffff !important;
+}
+
+.btn-cta-second,
+a.btn-cta-second {
+  background: #A0D2F5 !important;
+  color: #0e241b !important;
+  border: 1px solid rgba(14,36,27,0.12) !important;
+  box-shadow: 0 4px 14px rgba(160,210,245,0.3) !important;
+}
+.btn-cta-second:hover,
+a.btn-cta-second:hover {
+  background: #82c4f1 !important;
+  color: #05140d !important;
+}
+
+/* Universal Badge Accent: Oranye #FF8000 */
+.badge-highlight,
+.badge-orange,
+.section-badge,
+.tag-highlight {
+  color: #FF8000 !important;
+  background: #fff3e6 !important;
+  border-color: rgba(255,128,0,0.35) !important;
+}
+
+/* Universal Accent Sekunder: Ungu #8000FF */
+.badge-purple,
+.category-tag-purple,
+.tag-category,
+.category-badge {
+  color: #8000FF !important;
+  background: #f3e8ff !important;
+  border-color: rgba(128,0,255,0.3) !important;
+}
+
+/* Responsive clean image wrappers */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+</style>
+<style id="ynki-universal-clean-header">
+/* ===== YNKI GLOBAL NAVBAR CLEANUP - 100% TRANSPARENT / NO GREEN BACKGROUND ===== */
+header,
+.fusion-tb-header,
+.fusion-tb-header > .fusion-fullwidth,
+.fusion-tb-header > .fusion-fullwidth:first-child,
+.fusion-header,
+.fusion-header-wrapper,
+#fusion-header,
+.fusion-fullwidth.fusion-builder-row-1,
+div[class*="fusion-builder-row-1"],
+.fusion-top-header {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Nav Menu typography and colors */
+.awb-menu__main-li > a,
+.awb-menu__main-a {
+  color: #12291e !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+  text-decoration: none !important;
+}
+.awb-menu__main-li > a:hover,
+.awb-menu__main-li.current-menu-item > a,
+.awb-menu__main-li.current-menu-parent > a {
+  color: #117710 !important;
+}
+
+/* Mobile Navbar clean transparent */
+.fusion-mobile-menu-design-modern .fusion-header,
+.fusion-mobile-menu-design-classic .fusion-header {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+</style>
 </head>
   <body
     class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr fusion-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
@@ -2898,8 +3021,221 @@
         </div>
         <div id="sliders-container" class="fusion-slider-visibility"></div>
         <main id="main" class="clearfix width-100" style="font-family: 'Inter', Arial, Helvetica, sans-serif;">
+<style>
+/* ===== YNKI HEADER FIX: Logo Visibility + Mobile Nav Colors ===== */
+/* Prevent logo from being clipped */
+.fusion-tb-header .fusion-image-element {
+  overflow: visible !important;
+}
+.fusion-tb-header .fusion-image-element img {
+  max-width: 180px !important;
+  height: auto !important;
+  display: block !important;
+}
+/* Mobile nav brand colors */
+.awb-menu__mobile-ul .awb-menu__mobile-a,
+.awb-menu__mobile-ul .awb-menu__sub-a,
+li.awb-menu__mobile-li > a {
+  color: #12291e !important;
+  font-weight: 700 !important;
+}
+li.awb-menu__mobile-li > a:hover {
+  color: #117710 !important;
+  background: #eaf6ea !important;
+}
+/* Mobile menu toggle (hamburger) color */
+.awb-menu__open-nav-submenu_mobile-toggle,
+.awb-menu__mobile-toggle,
+.awb-menu__hamburger {
+  color: #117710 !important;
+}
+/* Program link cards hover */
+.program-link-card {
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  padding: 18px !important;
+  background: #ffffff !important;
+  border: 1px solid #d2e8d1 !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  margin-bottom: 12px !important;
+}
+.program-link-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: #117710 !important;
+  box-shadow: 0 8px 24px rgba(17,119,16,0.12) !important;
+  background: #fafffa !important;
+}
+.program-link-card .icon-badge {
+  width: 42px !important;
+  height: 42px !important;
+  background: #eaf6ea !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #117710 !important;
+  flex-shrink: 0 !important;
+}
+/* Divider heading section badge styling  */
+.divider-heading > span:not(.line) {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  text-transform: uppercase !important;
+  color: #FF8000 !important;
+  background: #fff3e6 !important;
+  border: 1px solid rgba(255,128,0,0.3) !important;
+  padding: 5px 16px !important;
+  border-radius: 50px !important;
+}
+
+/* ===== Mobile Responsive Grid Overrides ===== */
+@media (max-width: 800px) {
+  /* Force AWB columns to 100% on mobile */
+  .fusion_builder_column,
+  .fusion-layout-column,
+  [class*="fusion_builder_column_"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    --awb-width-small: 100% !important;
+    --awb-spacing-right-small: 0% !important;
+    --awb-spacing-left-small: 0% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 18px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .fusion-builder-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  /* Also fix inner row with gap styles */
+  .fusion-builder-row[style*="gap"] {
+    gap: 18px !important;
+  }
+  /* Handle fusion-column-wrapper */
+  .fusion-column-wrapper {
+    padding: 0 !important;
+  }
+  /* Avada fullwidth containers */
+  .fusion-fullwidth, .fullwidth-box {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  /* Grid elements from custom pages */
+  div[style*="display:grid"],
+  div[style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  /* Program link cards - stack nicely on mobile */
+  .program-link-card {
+    margin-bottom: 10px !important;
+  }
+  /* CTA buttons - full width on mobile */
+  a.btn-hero-primary,
+  a.btn-hero-secondary,
+  a.btn-cta-main,
+  a.btn-cta-second,
+  .btn-hero-primary,
+  .btn-hero-secondary,
+  .btn-cta-main,
+  .btn-cta-second {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+  }
+  /* Flex containers with centered buttons */
+  div[style*="display:flex"][style*="justify-content:center"]:not(.divider-heading):not(.tag-location) {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding: 0 !important;
+  }
+  /* Footer */
+  .fusion-tb-footer .fusion-builder-row,
+  .fusion-footer .fusion-builder-row {
+    flex-direction: column !important;
+  }
+  .fusion-tb-footer .fusion-layout-column,
+  .fusion-footer .fusion-layout-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 28px !important;
+  }
+  /* Images in content */
+  .fusion-fullwidth img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+/* Extra small phones */
+@media (max-width: 480px) {
+  .fusion-fullwidth, .fullwidth-box {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+</style>
+
 
   <style>
+  /* Responsive Mobile Layout Overrides */
+  @media (max-width: 768px) {
+    div[style*="grid-template-columns"],
+    div[style*="grid-template-columns: 1.2fr 0.8fr"],
+    div[style*="grid-template-columns: 1fr 1fr"],
+    div[style*="grid-template-columns: 0.9fr 1.1fr"],
+    div[style*="grid-template-columns: 1.1fr 0.9fr"],
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"],
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"],
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))"],
+    div[style*="grid-template-columns: repeat(3, 1fr)"],
+    div[style*="grid-template-columns: repeat(4, 1fr)"] {
+      grid-template-columns: 1fr !important;
+      gap: 18px !important;
+    }
+    .hero-buttons-container,
+    div[style*="display:flex"][style*="justify-content:center"]:not(.divider-heading):not(.tag-location) {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 12px !important;
+      width: 100% !important;
+    }
+    .btn-hero-primary,
+    .btn-hero-secondary,
+    .btn-cta-main,
+    .btn-cta-second,
+    .btn-brand-primary {
+      width: 100% !important;
+      text-align: center !important;
+      justify-content: center !important;
+      display: flex !important;
+    }
+    .fusion-fullwidth {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+    .photo-story-card .card-img-wrap,
+    .video-thumb-wrap {
+      height: 200px !important;
+    }
+  }
+
     #post-news {
       font-family: 'Inter', Arial, Helvetica, sans-serif !important;
     }
@@ -2909,7 +3245,7 @@
     }
     .featured-hero-article {
       background: #ffffff;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       border-radius: 18px;
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.04);
@@ -2920,8 +3256,8 @@
     }
     .featured-hero-article:hover {
       transform: translateY(-5px);
-      box-shadow: 0 18px 42px rgba(18, 56, 38, 0.12);
-      border-color: #48a876;
+      box-shadow: 0 18px 42px rgba(17, 119, 16, 0.12);
+      border-color: #117710;
     }
     .featured-img-wrap {
       overflow: hidden;
@@ -2957,7 +3293,7 @@
     .news-grid-card {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       background: #ffffff;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 3px 12px rgba(0,0,0,0.03);
@@ -2967,8 +3303,8 @@
     }
     .news-grid-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 16px 36px rgba(18, 56, 38, 0.12);
-      border-color: #48a876;
+      box-shadow: 0 16px 36px rgba(17, 119, 16, 0.12);
+      border-color: #117710;
     }
     .news-card-img {
       overflow: hidden;
@@ -3001,7 +3337,7 @@
       transition: color 0.2s ease;
     }
     .news-card-title a:hover {
-      color: #1e6b42 !important;
+      color: #117710 !important;
     }
     .news-card-excerpt {
       font-size: 14px;
@@ -3018,7 +3354,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      color: #1e6b42;
+      color: #117710;
       font-size: 13.5px;
       font-weight: 700;
       text-decoration: none;
@@ -3034,7 +3370,7 @@
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
-      background: #eaf5ef;
+      background: #eaf6ea;
       padding: 4px 12px;
       border-radius: 50px;
     }
@@ -3050,7 +3386,7 @@
     .news-stat-card {
       transition: all 0.3s ease;
       background: #ffffff;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       border-radius: 14px;
       padding: 26px 20px;
       text-align: center;
@@ -3059,12 +3395,12 @@
     .news-stat-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 28px rgba(18, 56, 38, 0.10);
-      border-color: #48a876;
+      border-color: #117710;
     }
     .stat-number {
       font-size: clamp(34px, 3.2vw, 42px);
       font-weight: 800;
-      color: #1e6b42;
+      color: #117710;
       line-height: 1.1;
       margin-bottom: 6px;
       font-family: 'Inter', Arial, Helvetica, sans-serif;
@@ -3084,7 +3420,7 @@
     .why-card {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       background: #ffffff;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       border-radius: 14px;
       padding: 28px 24px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.03);
@@ -3092,14 +3428,14 @@
     .why-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 14px 32px rgba(18, 56, 38, 0.11);
-      border-color: #208752;
+      border-color: #117710;
     }
     .icon-badge {
       width: 48px;
       height: 48px;
       border-radius: 12px;
-      background: #eaf5ef;
-      color: #1e6b42;
+      background: #eaf6ea;
+      color: #117710;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -3108,7 +3444,7 @@
       transition: all 0.3s ease;
     }
     .why-card:hover .icon-badge {
-      background: #1e6b42;
+      background: #117710;
       color: #ffffff;
     }
     .category-filter-pill {
@@ -3125,15 +3461,15 @@
       cursor: pointer;
     }
     .category-filter-pill:hover, .category-filter-pill.active {
-      background: #1e6b42;
+      background: #117710;
       color: #ffffff;
-      border-color: #1e6b42;
+      border-color: #117710;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(30,107,66,0.2);
     }
     .btn-hero-primary {
       transition: all 0.3s ease;
-      background: #1e6b42;
+      background: #117710; color: #ffffff !important;
       color: #ffffff !important;
       border-radius: 6px;
       padding: 13px 28px;
@@ -3147,13 +3483,13 @@
       gap: 8px;
     }
     .btn-hero-primary:hover {
-      background: #155232 !important;
+      background: #0d5c0c !important;
       box-shadow: 0 6px 18px rgba(0,0,0,0.25);
       transform: translateY(-2px);
     }
     .btn-hero-secondary {
       transition: all 0.3s ease;
-      background: rgba(14, 36, 27, 0.75);
+      background: #A0D2F5; color: #0e241b !important; border: 1px solid rgba(14, 36, 27, 0.15);
       color: #ffffff !important;
       border-radius: 6px;
       padding: 13px 28px;
@@ -3181,7 +3517,7 @@
       width: 100%;
       margin-bottom: 12px;
     }
-    .divider-heading .line { flex:1; height:1px; background:#d5e5db; }
+    .divider-heading .line { flex:1; height:1px; background:#d2e8d1; }
     .hero-anim {
       animation: heroBounce 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
@@ -3205,7 +3541,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       background: #ffffff;
       color: #0e241b;
       font-size: 14px;
@@ -3214,17 +3550,17 @@
       transition: all 0.25s ease;
     }
     .page-btn:hover, .page-btn.active {
-      background: #1e6b42;
+      background: #117710;
       color: #ffffff;
-      border-color: #1e6b42;
+      border-color: #117710;
     }
     .newsletter-box {
-      background: linear-gradient(135deg, #123824 0%, #091d12 100%);
+      background: linear-gradient(135deg, #0c500b 0%, #082e07 100%);
       border-radius: 18px;
       padding: 46px 40px;
       color: #ffffff;
       text-align: center;
-      box-shadow: 0 6px 28px rgba(18,56,38,0.18);
+      box-shadow: 0 6px 28px rgba(12, 80, 11, 0.18);
     }
   </style>
 
@@ -3239,16 +3575,16 @@
           <!-- ======================================================
                1. HERO BANNER
                ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-builder-row-2 fusion-flex-container fusion-parallax-none nonhundred-percent-fullwidth" style="background-image: linear-gradient(155deg, rgba(8, 30, 18, 0.88) 0%, rgba(14, 46, 30, 0.65) 70%), url('/assets/images/news/image1.png') !important; background-size: cover !important; background-position: center center !important; --awb-padding-top: 7vw; --awb-padding-bottom: 5.5vw; --awb-padding-top-small: 55px; --awb-padding-right-small: 25px; --awb-padding-bottom-small: 55px; --awb-padding-left-small: 25px; --awb-margin-bottom: 50px; --awb-flex-wrap: wrap;">
+          <div class="fusion-fullwidth fullwidth-box fusion-builder-row-2 fusion-flex-container fusion-parallax-none nonhundred-percent-fullwidth" style="background-image: linear-gradient(155deg, rgba(7, 53, 6, 0.90) 0%, rgba(12, 80, 11, 0.70) 70%), url('/assets/images/news/image1.png') !important; background-size: cover !important; background-position: center center !important; --awb-padding-top: 7vw; --awb-padding-bottom: 5.5vw; --awb-padding-top-small: 55px; --awb-padding-right-small: 25px; --awb-padding-bottom-small: 55px; --awb-padding-left-small: 25px; --awb-margin-bottom: 50px; --awb-flex-wrap: wrap;">
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;text-align:center;">
                 <div class="fusion-column-wrapper fusion-content-layout-column hero-anim" style="display:flex!important;flex-direction:column!important;align-items:center!important;">
 
                   <!-- Breadcrumb -->
                   <div style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#52c98a;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
-                    <a href="/" style="color:#a3dbc0;text-decoration:none;">BERANDA</a>
+                    <a href="/" style="color:#d2f0d1;text-decoration:none;">BERANDA</a>
                     <span style="opacity:0.5;color:#fff;">/</span>
-                    <span style="color:#a3dbc0;">PUSTAKA &amp; PENGETAHUAN</span>
+                    <span style="color:#d2f0d1;">PUSTAKA &amp; PENGETAHUAN</span>
                     <span style="opacity:0.5;color:#fff;">/</span>
                     <span style="color:#fff;">NEWS &amp; FEATURES</span>
                   </div>
@@ -3258,7 +3594,7 @@
                     Cerita Terkini dari Lanskap Kalimantan
                   </h1>
 
-                  <p style="font-size:clamp(14.5px,1.5vw,17.5px);line-height:1.75;color:#d4ecdf;font-weight:400;margin:0 auto 30px;max-width:880px;">
+                  <p style="font-size:clamp(14.5px,1.5vw,17.5px);line-height:1.75;color:#eaf6ea;font-weight:400;margin:0 auto 30px;max-width:880px;">
                     Liputan kegiatan, artikel mendalam, dan berita seputar upaya YNKI dalam memperkuat tata kelola lanskap yang inklusif dan kolaboratif. Dari restorasi gambut hingga pemberdayaan masyarakat, temukan cerita inspiratif dari lapangan menuju <em>Healthy Landscapes, Thriving Communities</em>.
                   </p>
 
@@ -3288,9 +3624,9 @@
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
 
                 <!-- Highlight Box Tentang YNKI -->
-                <div style="background:linear-gradient(135deg, #f0f9f4 0%, #e6f5ec 100%);border-left:5px solid #1e6b42;border-radius:14px;padding:32px 36px;margin-bottom:36px;box-shadow:0 3px 12px rgba(30,107,66,0.06);">
+                <div style="background:linear-gradient(135deg, #f0f9f4 0%, #e6f5ec 100%);border-left:5px solid #117710;border-radius:14px;padding:32px 36px;margin-bottom:36px;box-shadow:0 3px 12px rgba(30,107,66,0.06);">
                   <div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;">
-                    <div style="width:50px;height:50px;border-radius:12px;background:#1e6b42;color:#ffffff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <div style="width:50px;height:50px;border-radius:12px;background:#117710;color:#ffffff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
                     <div style="flex:1;min-width:280px;">
@@ -3331,7 +3667,7 @@
           <!-- ======================================================
                3. FEATURED STORY (SOROTAN UTAMA)
                ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:40px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;border-top:1px solid #e5eeea;border-bottom:1px solid #e5eeea;">
+          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:40px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;border-bottom:1px solid #e2efe2;">
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
 
@@ -3339,7 +3675,7 @@
                 <div style="text-align:center;margin-bottom:34px;">
                   <div class="divider-heading">
                     <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                       SOROTAN UTAMA
                     </span>
                     <span class="line"></span>
@@ -3354,7 +3690,7 @@
                   </div>
                   <div class="featured-content-wrap">
                     <div>
-                      <span class="category-badge" style="color:#1e6b42;">EKOLOGI LANSKAP</span>
+                      <span class="category-badge" style="color:#117710;">EKOLOGI LANSKAP</span>
                       <div class="date-meta">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                         Rabu, 17 Juni 2026 · 6 Menit Baca
@@ -3391,7 +3727,7 @@
                 <div style="text-align:center;margin-bottom:38px;">
                   <div class="divider-heading">
                     <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                       ARTIKEL TERBARU
                     </span>
                     <span class="line"></span>
@@ -3413,7 +3749,7 @@
                     <div class="news-card-body">
                       <div>
                         <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="category-badge" style="color:#1e6b42;">EKOLOGI LANSKAP</span>
+                          <span class="category-badge" style="color:#117710;">EKOLOGI LANSKAP</span>
                           <span style="font-size:12px;color:#7c9489;font-weight:600;">6 Menit baca</span>
                         </div>
                         <div class="date-meta">
@@ -3533,7 +3869,7 @@
                     <div class="news-card-body">
                       <div>
                         <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="category-badge" style="color:#1e6b42;">TATA KELOLA LANSKAP</span>
+                          <span class="category-badge" style="color:#117710;">TATA KELOLA LANSKAP</span>
                           <span style="font-size:12px;color:#7c9489;font-weight:600;">5 Menit baca</span>
                         </div>
                         <div class="date-meta">
@@ -3593,7 +3929,7 @@
                     <div class="news-card-body">
                       <div>
                         <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="category-badge" style="color:#1e6b42;">RESTORASI GAMBUT</span>
+                          <span class="category-badge" style="color:#117710;">RESTORASI GAMBUT</span>
                           <span style="font-size:12px;color:#7c9489;font-weight:600;">5 Menit baca</span>
                         </div>
                         <div class="date-meta">
@@ -3700,7 +4036,7 @@
           <!-- ======================================================
                5. FILTER BERDASARKAN KATEGORI TOPIK
                ====================================================== -->
-          <div id="filter-kategori" class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:40px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;border-top:1px solid #e5eeea;border-bottom:1px solid #e5eeea;">
+          <div id="filter-kategori" class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:40px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;border-bottom:1px solid #e2efe2;">
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;text-align:center;">
 
@@ -3725,20 +4061,20 @@
 
                 <!-- 4 Topic Category Cards -->
                 <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px;text-align:left;">
-                  <div style="background:#ffffff;border:1px solid #dce8e1;border-radius:12px;padding:20px;">
-                    <h4 style="font-size:16px;font-weight:700;color:#1e6b42;margin:0 0 6px;">Restorasi Gambut</h4>
+                  <div style="background:#ffffff;border:1px solid #d2e8d1;border-radius:12px;padding:20px;">
+                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Restorasi Gambut</h4>
                     <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Kisah pemulihan ekosistem gambut, sekat kanal, dan revegetasi bersama masyarakat lokal.</p>
                   </div>
-                  <div style="background:#ffffff;border:1px solid #dce8e1;border-radius:12px;padding:20px;">
-                    <h4 style="font-size:16px;font-weight:700;color:#1e6b42;margin:0 0 6px;">Pemberdayaan Masyarakat</h4>
+                  <div style="background:#ffffff;border:1px solid #d2e8d1;border-radius:12px;padding:20px;">
+                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Pemberdayaan Masyarakat</h4>
                     <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Program penguatan kapasitas, hak kelola desa, dan ekonomi komunitas di lanskap prioritas.</p>
                   </div>
-                  <div style="background:#ffffff;border:1px solid #dce8e1;border-radius:12px;padding:20px;">
-                    <h4 style="font-size:16px;font-weight:700;color:#1e6b42;margin:0 0 6px;">Komoditas Berkelanjutan</h4>
+                  <div style="background:#ffffff;border:1px solid #d2e8d1;border-radius:12px;padding:20px;">
+                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Komoditas Berkelanjutan</h4>
                     <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Inisiatif karet rakyat, madu hutan alam, dan rantai pasok komoditas bertanggung jawab.</p>
                   </div>
-                  <div style="background:#ffffff;border:1px solid #dce8e1;border-radius:12px;padding:20px;">
-                    <h4 style="font-size:16px;font-weight:700;color:#1e6b42;margin:0 0 6px;">Kebijakan &amp; Tata Kelola</h4>
+                  <div style="background:#ffffff;border:1px solid #d2e8d1;border-radius:12px;padding:20px;">
+                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Kebijakan &amp; Tata Kelola</h4>
                     <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Advokasi dan kolaborasi multi-pihak untuk lanskap yang dikelola secara adil dan transparan.</p>
                   </div>
                 </div>
@@ -3759,7 +4095,7 @@
                 <div style="text-align:center;margin-bottom:36px;">
                   <div class="divider-heading">
                     <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                       NILAI JURNALISME LANSKAP
                     </span>
                     <span class="line"></span>
@@ -3813,7 +4149,7 @@
           <!-- ======================================================
                7. NEWSLETTER & CTA
                ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:30px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e5eeea;">
+          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:30px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;">
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
 
@@ -3821,7 +4157,7 @@
                   <h2 style="font-size:28px;font-weight:800;color:#ffffff;margin:0 0 14px;">
                     Ikuti Perkembangan Terkini YNKI
                   </h2>
-                  <p style="font-size:15.5px;line-height:1.75;color:#c9e8d5;margin:0 auto 28px;max-width:800px;">
+                  <p style="font-size:15.5px;line-height:1.75;color:#d2f0d1;margin:0 auto 28px;max-width:800px;">
                     Jangan lewatkan artikel, riset lapangan, dan liputan terbaru dari Yayasan Natural Kapital Indonesia. Dapatkan pembaruan langsung tentang aksi restorasi dan tata kelola lanskap berkelanjutan di Kalimantan Barat.
                   </p>
                   
@@ -3836,7 +4172,7 @@
                     </a>
                   </div>
 
-                  <div style="font-size:13px;color:#a3dbc0;">
+                  <div style="font-size:13px;color:#d2f0d1;">
                     <em>Yayasan Natural Kapital Indonesia · Nature for Life</em>
                   </div>
                 </div>

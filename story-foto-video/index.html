@@ -2363,6 +2363,129 @@
   }
 </style>
 
+<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
+<style id="ynki-universal-polish">
+/* ===== YNKI GLOBAL POLISH & NAVBAR FIX ===== */
+.fusion-tb-header > .fusion-fullwidth:first-child,
+.fusion-tb-header,
+.fusion-header,
+.fusion-header-wrapper,
+#fusion-header {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+  box-shadow: none !important;
+}
+
+/* Nav Links - clear dark green */
+.awb-menu__main-li > a,
+.awb-menu__main-a {
+  color: #12291e !important;
+  font-weight: 700 !important;
+}
+.awb-menu__main-li > a:hover,
+.awb-menu__main-li.current-menu-item > a {
+  color: #117710 !important;
+}
+
+/* Ensure no green backgrounds on header containers */
+.fusion-fullwidth.fusion-builder-row-1 {
+  background-color: transparent !important;
+}
+
+/* Universal Button Overrides according to Color Specs */
+.btn-cta-main,
+a.btn-cta-main,
+.fusion-button.button-primary:not(.btn-cta-second) {
+  background: #B22231 !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(178,34,49,0.28) !important;
+}
+.btn-cta-main:hover,
+a.btn-cta-main:hover {
+  background: #941724 !important;
+  color: #ffffff !important;
+}
+
+.btn-cta-second,
+a.btn-cta-second {
+  background: #A0D2F5 !important;
+  color: #0e241b !important;
+  border: 1px solid rgba(14,36,27,0.12) !important;
+  box-shadow: 0 4px 14px rgba(160,210,245,0.3) !important;
+}
+.btn-cta-second:hover,
+a.btn-cta-second:hover {
+  background: #82c4f1 !important;
+  color: #05140d !important;
+}
+
+/* Universal Badge Accent: Oranye #FF8000 */
+.badge-highlight,
+.badge-orange,
+.section-badge,
+.tag-highlight {
+  color: #FF8000 !important;
+  background: #fff3e6 !important;
+  border-color: rgba(255,128,0,0.35) !important;
+}
+
+/* Universal Accent Sekunder: Ungu #8000FF */
+.badge-purple,
+.category-tag-purple,
+.tag-category,
+.category-badge {
+  color: #8000FF !important;
+  background: #f3e8ff !important;
+  border-color: rgba(128,0,255,0.3) !important;
+}
+
+/* Responsive clean image wrappers */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+</style>
+<style id="ynki-universal-clean-header">
+/* ===== YNKI GLOBAL NAVBAR CLEANUP - 100% TRANSPARENT / NO GREEN BACKGROUND ===== */
+header,
+.fusion-tb-header,
+.fusion-tb-header > .fusion-fullwidth,
+.fusion-tb-header > .fusion-fullwidth:first-child,
+.fusion-header,
+.fusion-header-wrapper,
+#fusion-header,
+.fusion-fullwidth.fusion-builder-row-1,
+div[class*="fusion-builder-row-1"],
+.fusion-top-header {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Nav Menu typography and colors */
+.awb-menu__main-li > a,
+.awb-menu__main-a {
+  color: #12291e !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+  text-decoration: none !important;
+}
+.awb-menu__main-li > a:hover,
+.awb-menu__main-li.current-menu-item > a,
+.awb-menu__main-li.current-menu-parent > a {
+  color: #117710 !important;
+}
+
+/* Mobile Navbar clean transparent */
+.fusion-mobile-menu-design-modern .fusion-header,
+.fusion-mobile-menu-design-classic .fusion-header {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+</style>
 </head>
   <body
     class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr fusion-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
@@ -2898,8 +3021,221 @@
         </div>
         <div id="sliders-container" class="fusion-slider-visibility"></div>
         <main id="main" class="clearfix width-100" style="font-family: 'Inter', Arial, Helvetica, sans-serif;">
+<style>
+/* ===== YNKI HEADER FIX: Logo Visibility + Mobile Nav Colors ===== */
+/* Prevent logo from being clipped */
+.fusion-tb-header .fusion-image-element {
+  overflow: visible !important;
+}
+.fusion-tb-header .fusion-image-element img {
+  max-width: 180px !important;
+  height: auto !important;
+  display: block !important;
+}
+/* Mobile nav brand colors */
+.awb-menu__mobile-ul .awb-menu__mobile-a,
+.awb-menu__mobile-ul .awb-menu__sub-a,
+li.awb-menu__mobile-li > a {
+  color: #12291e !important;
+  font-weight: 700 !important;
+}
+li.awb-menu__mobile-li > a:hover {
+  color: #117710 !important;
+  background: #eaf6ea !important;
+}
+/* Mobile menu toggle (hamburger) color */
+.awb-menu__open-nav-submenu_mobile-toggle,
+.awb-menu__mobile-toggle,
+.awb-menu__hamburger {
+  color: #117710 !important;
+}
+/* Program link cards hover */
+.program-link-card {
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  padding: 18px !important;
+  background: #ffffff !important;
+  border: 1px solid #d2e8d1 !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  margin-bottom: 12px !important;
+}
+.program-link-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: #117710 !important;
+  box-shadow: 0 8px 24px rgba(17,119,16,0.12) !important;
+  background: #fafffa !important;
+}
+.program-link-card .icon-badge {
+  width: 42px !important;
+  height: 42px !important;
+  background: #eaf6ea !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #117710 !important;
+  flex-shrink: 0 !important;
+}
+/* Divider heading section badge styling  */
+.divider-heading > span:not(.line) {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  text-transform: uppercase !important;
+  color: #FF8000 !important;
+  background: #fff3e6 !important;
+  border: 1px solid rgba(255,128,0,0.3) !important;
+  padding: 5px 16px !important;
+  border-radius: 50px !important;
+}
+
+/* ===== Mobile Responsive Grid Overrides ===== */
+@media (max-width: 800px) {
+  /* Force AWB columns to 100% on mobile */
+  .fusion_builder_column,
+  .fusion-layout-column,
+  [class*="fusion_builder_column_"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    --awb-width-small: 100% !important;
+    --awb-spacing-right-small: 0% !important;
+    --awb-spacing-left-small: 0% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 18px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .fusion-builder-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  /* Also fix inner row with gap styles */
+  .fusion-builder-row[style*="gap"] {
+    gap: 18px !important;
+  }
+  /* Handle fusion-column-wrapper */
+  .fusion-column-wrapper {
+    padding: 0 !important;
+  }
+  /* Avada fullwidth containers */
+  .fusion-fullwidth, .fullwidth-box {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  /* Grid elements from custom pages */
+  div[style*="display:grid"],
+  div[style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  /* Program link cards - stack nicely on mobile */
+  .program-link-card {
+    margin-bottom: 10px !important;
+  }
+  /* CTA buttons - full width on mobile */
+  a.btn-hero-primary,
+  a.btn-hero-secondary,
+  a.btn-cta-main,
+  a.btn-cta-second,
+  .btn-hero-primary,
+  .btn-hero-secondary,
+  .btn-cta-main,
+  .btn-cta-second {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+  }
+  /* Flex containers with centered buttons */
+  div[style*="display:flex"][style*="justify-content:center"]:not(.divider-heading):not(.tag-location) {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding: 0 !important;
+  }
+  /* Footer */
+  .fusion-tb-footer .fusion-builder-row,
+  .fusion-footer .fusion-builder-row {
+    flex-direction: column !important;
+  }
+  .fusion-tb-footer .fusion-layout-column,
+  .fusion-footer .fusion-layout-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 28px !important;
+  }
+  /* Images in content */
+  .fusion-fullwidth img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+/* Extra small phones */
+@media (max-width: 480px) {
+  .fusion-fullwidth, .fullwidth-box {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+</style>
+
 
   <style>
+  /* Responsive Mobile Layout Overrides */
+  @media (max-width: 768px) {
+    div[style*="grid-template-columns"],
+    div[style*="grid-template-columns: 1.2fr 0.8fr"],
+    div[style*="grid-template-columns: 1fr 1fr"],
+    div[style*="grid-template-columns: 0.9fr 1.1fr"],
+    div[style*="grid-template-columns: 1.1fr 0.9fr"],
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"],
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"],
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))"],
+    div[style*="grid-template-columns: repeat(3, 1fr)"],
+    div[style*="grid-template-columns: repeat(4, 1fr)"] {
+      grid-template-columns: 1fr !important;
+      gap: 18px !important;
+    }
+    .hero-buttons-container,
+    div[style*="display:flex"][style*="justify-content:center"]:not(.divider-heading):not(.tag-location) {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 12px !important;
+      width: 100% !important;
+    }
+    .btn-hero-primary,
+    .btn-hero-secondary,
+    .btn-cta-main,
+    .btn-cta-second,
+    .btn-brand-primary {
+      width: 100% !important;
+      text-align: center !important;
+      justify-content: center !important;
+      display: flex !important;
+    }
+    .fusion-fullwidth {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+    .photo-story-card .card-img-wrap,
+    .video-thumb-wrap {
+      height: 200px !important;
+    }
+  }
+
     #post-story {
       font-family: 'Inter', Arial, Helvetica, sans-serif !important;
     }
@@ -2910,20 +3246,20 @@
     .story-stat-card {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       background: #ffffff;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       border-radius: 14px;
       padding: 26px 22px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.03);
     }
     .story-stat-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 16px 36px rgba(18, 56, 38, 0.12) !important;
-      border-color: #48a876 !important;
+      box-shadow: 0 16px 36px rgba(17, 119, 16, 0.12) !important;
+      border-color: #117710 !important;
     }
     .stat-number {
       font-size: clamp(34px, 3.2vw, 42px);
       font-weight: 800;
-      color: #1e6b42;
+      color: #117710;
       line-height: 1.1;
       margin-bottom: 6px;
       font-family: 'Inter', Arial, Helvetica, sans-serif;
@@ -2943,7 +3279,7 @@
     .photo-story-card {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       background: #ffffff;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 3px 12px rgba(0,0,0,0.04);
@@ -2953,8 +3289,8 @@
     }
     .photo-story-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(18, 56, 38, 0.13);
-      border-color: #48a876;
+      box-shadow: 0 18px 40px rgba(17, 119, 16, 0.13);
+      border-color: #117710;
     }
     .photo-story-card .card-img-wrap {
       overflow: hidden;
@@ -2973,7 +3309,7 @@
     .video-card {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       background: #ffffff;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 3px 12px rgba(0,0,0,0.04);
@@ -2983,12 +3319,12 @@
     }
     .video-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(18, 56, 38, 0.13);
-      border-color: #48a876;
+      box-shadow: 0 18px 40px rgba(17, 119, 16, 0.13);
+      border-color: #117710;
     }
     .video-thumb-wrap {
       height: 190px;
-      background: #0f2c1e;
+      background: #073506;
       position: relative;
       display: flex;
       align-items: center;
@@ -3014,21 +3350,21 @@
     .category-box {
       transition: all 0.3s ease;
       background: #ffffff;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       border-radius: 14px;
       padding: 22px 18px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
     .category-box:hover {
       transform: translateY(-4px);
-      border-color: #208752;
-      box-shadow: 0 12px 28px rgba(18, 56, 38, 0.09);
+      border-color: #117710;
+      box-shadow: 0 12px 28px rgba(17, 119, 16, 0.09);
       background: #fafffc;
     }
     .social-card {
       transition: all 0.3s ease;
       background: #ffffff;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       border-radius: 14px;
       padding: 24px 20px;
       display: flex;
@@ -3037,8 +3373,8 @@
     }
     .social-card:hover {
       transform: translateY(-4px);
-      border-color: #208752;
-      box-shadow: 0 12px 28px rgba(18, 56, 38, 0.09);
+      border-color: #117710;
+      box-shadow: 0 12px 28px rgba(17, 119, 16, 0.09);
     }
     .tag-location {
       font-size: 12px;
@@ -3051,7 +3387,7 @@
     }
     .btn-hero-primary {
       transition: all 0.3s ease;
-      background: #1e6b42;
+      background: #117710; color: #ffffff !important;
       color: #ffffff !important;
       border-radius: 6px;
       padding: 13px 28px;
@@ -3065,13 +3401,13 @@
       gap: 8px;
     }
     .btn-hero-primary:hover {
-      background: #155232 !important;
+      background: #0d5c0c !important;
       box-shadow: 0 6px 18px rgba(0,0,0,0.25);
       transform: translateY(-2px);
     }
     .btn-hero-secondary {
       transition: all 0.3s ease;
-      background: rgba(14, 36, 27, 0.75);
+      background: #A0D2F5; color: #0e241b !important; border: 1px solid rgba(14, 36, 27, 0.15);
       color: #ffffff !important;
       border-radius: 6px;
       padding: 13px 28px;
@@ -3099,7 +3435,7 @@
       width: 100%;
       margin-bottom: 12px;
     }
-    .divider-heading .line { flex:1; height:1px; background:#d5e5db; }
+    .divider-heading .line { flex:1; height:1px; background:#d2e8d1; }
     .hero-anim {
       animation: heroBounce 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
@@ -3120,16 +3456,16 @@
           <!-- ======================================================
                1. HERO BANNER
                ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-builder-row-2 fusion-flex-container fusion-parallax-none nonhundred-percent-fullwidth" style="background-image: linear-gradient(155deg, rgba(8, 30, 18, 0.88) 0%, rgba(14, 46, 30, 0.65) 70%), url('/assets/images/stori-foto-video/image1.png') !important; background-size: cover !important; background-position: center center !important; --awb-padding-top: 7vw; --awb-padding-bottom: 5.5vw; --awb-padding-top-small: 55px; --awb-padding-right-small: 25px; --awb-padding-bottom-small: 55px; --awb-padding-left-small: 25px; --awb-margin-bottom: 50px; --awb-flex-wrap: wrap;">
+          <div class="fusion-fullwidth fullwidth-box fusion-builder-row-2 fusion-flex-container fusion-parallax-none nonhundred-percent-fullwidth" style="background-image: linear-gradient(155deg, rgba(7, 53, 6, 0.90) 0%, rgba(12, 80, 11, 0.70) 70%), url('/assets/images/stori-foto-video/image1.png') !important; background-size: cover !important; background-position: center center !important; --awb-padding-top: 7vw; --awb-padding-bottom: 5.5vw; --awb-padding-top-small: 55px; --awb-padding-right-small: 25px; --awb-padding-bottom-small: 55px; --awb-padding-left-small: 25px; --awb-margin-bottom: 50px; --awb-flex-wrap: wrap;">
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;text-align:center;">
                 <div class="fusion-column-wrapper fusion-content-layout-column hero-anim" style="display:flex!important;flex-direction:column!important;align-items:center!important;">
 
                   <!-- Breadcrumb -->
                   <div style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#52c98a;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
-                    <a href="/" style="color:#a3dbc0;text-decoration:none;">BERANDA</a>
+                    <a href="/" style="color:#d2f0d1;text-decoration:none;">BERANDA</a>
                     <span style="opacity:0.5;color:#fff;">/</span>
-                    <span style="color:#a3dbc0;">PUSTAKA &amp; PENGETAHUAN</span>
+                    <span style="color:#d2f0d1;">PUSTAKA &amp; PENGETAHUAN</span>
                     <span style="opacity:0.5;color:#fff;">/</span>
                     <span style="color:#fff;">STORY FOTO &amp; VIDEO</span>
                   </div>
@@ -3139,7 +3475,7 @@
                     Story Foto &amp; Video: Momen Perubahan dalam Bingkai Visual
                   </h1>
 
-                  <p style="font-size:clamp(14.5px,1.5vw,17.5px);line-height:1.75;color:#d4ecdf;font-weight:400;margin:0 auto 30px;max-width:880px;">
+                  <p style="font-size:clamp(14.5px,1.5vw,17.5px);line-height:1.75;color:#eaf6ea;font-weight:400;margin:0 auto 30px;max-width:880px;">
                     Setiap gambar dan video adalah cerita tentang perubahan nyata di lapangan. Temukan dokumentasi visual perjalanan YNKI dalam memperkuat tata kelola lanskap yang inklusif — dari restorasi gambut hingga pemberdayaan masyarakat, dari Youth Camp hingga kolaborasi strategis.
                   </p>
 
@@ -3172,7 +3508,7 @@
                 <div style="text-align:center;margin-bottom:38px;">
                   <div class="divider-heading">
                     <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                       ARSIP VISUAL
                     </span>
                     <span class="line"></span>
@@ -3220,7 +3556,7 @@
           <!-- ======================================================
                3. JELAJAHI VISUAL BERDASARKAN KATEGORI
                ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:50px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e5eeea;border-bottom:1px solid #e5eeea;">
+          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:50px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;border-bottom:1px solid #e2efe2;">
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
 
@@ -3228,7 +3564,7 @@
                 <div style="text-align:center;margin-bottom:34px;">
                   <div class="divider-heading">
                     <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                       KATEGORI PROGRAM
                     </span>
                     <span class="line"></span>
@@ -3245,32 +3581,32 @@
                 <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:20px;">
 
                   <div class="category-box">
-                    <h4 style="font-size:16px;font-weight:700;color:#1e6b42;margin:0 0 6px;">Semua Visual</h4>
+                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Semua Visual</h4>
                     <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Seluruh koleksi foto dan video dari seluruh program dan inisiatif YNKI.</p>
                   </div>
 
                   <div class="category-box">
-                    <h4 style="font-size:16px;font-weight:700;color:#1e6b42;margin:0 0 6px;">Restorasi Gambut</h4>
+                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Restorasi Gambut</h4>
                     <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Dokumentasi penanaman, sekat kanal, dan pemulihan ekosistem gambut di Kalbar.</p>
                   </div>
 
                   <div class="category-box">
-                    <h4 style="font-size:16px;font-weight:700;color:#1e6b42;margin:0 0 6px;">Youth Camp &amp; Pemuda</h4>
+                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Youth Camp &amp; Pemuda</h4>
                     <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Pelibatan generasi muda desa menjadi agen perubahan penjaga hutan dan lanskap.</p>
                   </div>
 
                   <div class="category-box">
-                    <h4 style="font-size:16px;font-weight:700;color:#1e6b42;margin:0 0 6px;">Pemberdayaan Masyarakat</h4>
+                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Pemberdayaan Masyarakat</h4>
                     <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Pengembangan madu hutan, diversifikasi kelapa, dan penguatan ekonomi desa.</p>
                   </div>
 
                   <div class="category-box">
-                    <h4 style="font-size:16px;font-weight:700;color:#1e6b42;margin:0 0 6px;">Kolaborasi &amp; Kemitraan</h4>
+                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Kolaborasi &amp; Kemitraan</h4>
                     <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Momen koordinasi multi-pihak bersama pemerintah daerah, UNDP, dan NGO.</p>
                   </div>
 
                   <div class="category-box">
-                    <h4 style="font-size:16px;font-weight:700;color:#1e6b42;margin:0 0 6px;">Video Dokumenter</h4>
+                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Video Dokumenter</h4>
                     <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Film pendek dan liputan mendalam kisah perubahan tapak di desa-desa mitra.</p>
                   </div>
 
@@ -3292,7 +3628,7 @@
                 <div style="text-align:center;margin-bottom:38px;">
                   <div class="divider-heading">
                     <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                       GALERI CERITA
                     </span>
                     <span class="line"></span>
@@ -3391,7 +3727,7 @@
           <!-- ======================================================
                5. HIGHLIGHT KOLABORASI UNDP KALFOR (FEATURE ROW)
                ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:50px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e5eeea;border-bottom:1px solid #e5eeea;">
+          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:50px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;border-bottom:1px solid #e2efe2;">
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
 
@@ -3409,19 +3745,19 @@
                     </p>
 
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
-                      <div style="background:#ffffff;border:1px solid #dce8e1;border-radius:12px;padding:18px;">
-                        <h4 style="font-size:15px;font-weight:700;color:#1e6b42;margin:0 0 6px;">Program KalFor</h4>
+                      <div style="background:#ffffff;border:1px solid #d2e8d1;border-radius:12px;padding:18px;">
+                        <h4 style="font-size:15px;font-weight:700;color:#117710;margin:0 0 6px;">Program KalFor</h4>
                         <p style="font-size:13px;line-height:1.6;color:#536b5f;margin:0;">Inisiatif penguatan kapasitas komunitas lokal dalam pengelolaan hutan berkelanjutan.</p>
                       </div>
-                      <div style="background:#ffffff;border:1px solid #dce8e1;border-radius:12px;padding:18px;">
-                        <h4 style="font-size:15px;font-weight:700;color:#1e6b42;margin:0 0 6px;">Capaian 2024</h4>
+                      <div style="background:#ffffff;border:1px solid #d2e8d1;border-radius:12px;padding:18px;">
+                        <h4 style="font-size:15px;font-weight:700;color:#117710;margin:0 0 6px;">Capaian 2024</h4>
                         <p style="font-size:13px;line-height:1.6;color:#536b5f;margin:0;">12 bulan pendampingan penuh, fasilitasi BAPPEDA, dan penguatan kelembagaan desa.</p>
                       </div>
                     </div>
                   </div>
 
                   <div style="text-align:center;">
-                    <img src="/assets/images/stori-foto-video/image9.png" alt="Rakor YNKI UNDP KalFor Bappeda Ketapang" loading="lazy" style="max-width:100%;border-radius:18px;box-shadow:0 10px 30px rgba(18,56,38,0.12);">
+                    <img src="/assets/images/stori-foto-video/image9.png" alt="Rakor YNKI UNDP KalFor Bappeda Ketapang" loading="lazy" style="max-width:100%;border-radius:18px;box-shadow:0 10px 30px rgba(17, 119, 16, 0.12);">
                   </div>
                 </div>
 
@@ -3441,7 +3777,7 @@
                 <div style="text-align:center;margin-bottom:38px;">
                   <div class="divider-heading">
                     <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                       SINEMA DOKUMENTER
                     </span>
                     <span class="line"></span>
@@ -3463,7 +3799,7 @@
                     </div>
                     <div style="padding:22px 20px;flex:1;display:flex;flex-direction:column;justify-content:space-between;">
                       <div>
-                        <div style="font-size:12.5px;color:#1e6b42;font-weight:700;margin-bottom:6px;">DURASI: 3:45 MENIT</div>
+                        <div style="font-size:12.5px;color:#117710;font-weight:700;margin-bottom:6px;">DURASI: 3:45 MENIT</div>
                         <h3 style="font-size:17px;font-weight:700;color:#0e241b;margin:0 0 8px;line-height:1.38;">
                           Restorasi Gambut Bersama Masyarakat Permata Jaya
                         </h3>
@@ -3472,7 +3808,7 @@
                         </p>
                       </div>
                       <div style="margin-top:16px;padding-top:14px;border-top:1px solid #eef4f0;">
-                        <a href="https://www.youtube.com/@NaturalKapitalIndonesia" target="_blank" rel="noopener noreferrer" class="read-more-btn" style="color:#1e6b42;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+                        <a href="https://www.youtube.com/@NaturalKapitalIndonesia" target="_blank" rel="noopener noreferrer" class="read-more-btn" style="color:#117710;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
                           Tonton di YouTube &rarr;
                         </a>
                       </div>
@@ -3487,7 +3823,7 @@
                     </div>
                     <div style="padding:22px 20px;flex:1;display:flex;flex-direction:column;justify-content:space-between;">
                       <div>
-                        <div style="font-size:12.5px;color:#1e6b42;font-weight:700;margin-bottom:6px;">DURASI: 4:20 MENIT</div>
+                        <div style="font-size:12.5px;color:#117710;font-weight:700;margin-bottom:6px;">DURASI: 4:20 MENIT</div>
                         <h3 style="font-size:17px;font-weight:700;color:#0e241b;margin:0 0 8px;line-height:1.38;">
                           Youth Camp: Anak Muda Menjaga Hutan
                         </h3>
@@ -3496,7 +3832,7 @@
                         </p>
                       </div>
                       <div style="margin-top:16px;padding-top:14px;border-top:1px solid #eef4f0;">
-                        <a href="https://www.youtube.com/@NaturalKapitalIndonesia" target="_blank" rel="noopener noreferrer" class="read-more-btn" style="color:#1e6b42;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+                        <a href="https://www.youtube.com/@NaturalKapitalIndonesia" target="_blank" rel="noopener noreferrer" class="read-more-btn" style="color:#117710;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
                           Tonton di YouTube &rarr;
                         </a>
                       </div>
@@ -3511,7 +3847,7 @@
                     </div>
                     <div style="padding:22px 20px;flex:1;display:flex;flex-direction:column;justify-content:space-between;">
                       <div>
-                        <div style="font-size:12.5px;color:#1e6b42;font-weight:700;margin-bottom:6px;">DURASI: 5:10 MENIT</div>
+                        <div style="font-size:12.5px;color:#117710;font-weight:700;margin-bottom:6px;">DURASI: 5:10 MENIT</div>
                         <h3 style="font-size:17px;font-weight:700;color:#0e241b;margin:0 0 8px;line-height:1.38;">
                           Kolaborasi YNKI-UNDP KalFor untuk Desa Berkelanjutan
                         </h3>
@@ -3520,7 +3856,7 @@
                         </p>
                       </div>
                       <div style="margin-top:16px;padding-top:14px;border-top:1px solid #eef4f0;">
-                        <a href="https://www.youtube.com/@NaturalKapitalIndonesia" target="_blank" rel="noopener noreferrer" class="read-more-btn" style="color:#1e6b42;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+                        <a href="https://www.youtube.com/@NaturalKapitalIndonesia" target="_blank" rel="noopener noreferrer" class="read-more-btn" style="color:#117710;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
                           Tonton di YouTube &rarr;
                         </a>
                       </div>
@@ -3537,7 +3873,7 @@
           <!-- ======================================================
                7. MEDIA SOSIAL RESMI YNKI (4 PLATFORMS)
                ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:50px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e5eeea;border-bottom:1px solid #e5eeea;">
+          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:50px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;border-bottom:1px solid #e2efe2;">
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
 
@@ -3545,7 +3881,7 @@
                 <div style="text-align:center;margin-bottom:34px;">
                   <div class="divider-heading">
                     <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                       SALURAN RESMI
                     </span>
                     <span class="line"></span>
@@ -3619,12 +3955,12 @@
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
 
-                <div style="background:linear-gradient(135deg, #123824 0%, #091d12 100%);border-radius:18px;padding:46px 40px;color:#ffffff;box-shadow:0 6px 28px rgba(18,56,38,0.18);">
+                <div style="background:linear-gradient(135deg, #0c500b 0%, #082e07 100%);border-radius:18px;padding:46px 40px;color:#ffffff;box-shadow:0 6px 28px rgba(12, 80, 11, 0.18);">
                   <div style="text-align:center;margin-bottom:28px;">
                     <h2 style="font-size:30px;font-weight:800;color:#ffffff;margin:0 0 12px;">
                       Bagikan Foto &amp; Cerita Perubahan Anda!
                     </h2>
-                    <p style="font-size:15.5px;line-height:1.75;color:#c9e8d5;margin:0 auto;max-width:850px;">
+                    <p style="font-size:15.5px;line-height:1.75;color:#d2f0d1;margin:0 auto;max-width:850px;">
                       YNKI mengundang masyarakat, mitra, dan pegiat lingkungan untuk berbagi foto dan cerita inspiratif tentang perubahan di desa atau lanskap Anda. Setiap momen berharga untuk diabadikan dan disebarluaskan.
                     </p>
                   </div>

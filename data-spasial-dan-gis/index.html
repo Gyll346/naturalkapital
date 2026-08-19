@@ -2363,6 +2363,129 @@
   }
 </style>
 
+<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
+<style id="ynki-universal-polish">
+/* ===== YNKI GLOBAL POLISH & NAVBAR FIX ===== */
+.fusion-tb-header > .fusion-fullwidth:first-child,
+.fusion-tb-header,
+.fusion-header,
+.fusion-header-wrapper,
+#fusion-header {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+  box-shadow: none !important;
+}
+
+/* Nav Links - clear dark green */
+.awb-menu__main-li > a,
+.awb-menu__main-a {
+  color: #12291e !important;
+  font-weight: 700 !important;
+}
+.awb-menu__main-li > a:hover,
+.awb-menu__main-li.current-menu-item > a {
+  color: #117710 !important;
+}
+
+/* Ensure no green backgrounds on header containers */
+.fusion-fullwidth.fusion-builder-row-1 {
+  background-color: transparent !important;
+}
+
+/* Universal Button Overrides according to Color Specs */
+.btn-cta-main,
+a.btn-cta-main,
+.fusion-button.button-primary:not(.btn-cta-second) {
+  background: #B22231 !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(178,34,49,0.28) !important;
+}
+.btn-cta-main:hover,
+a.btn-cta-main:hover {
+  background: #941724 !important;
+  color: #ffffff !important;
+}
+
+.btn-cta-second,
+a.btn-cta-second {
+  background: #A0D2F5 !important;
+  color: #0e241b !important;
+  border: 1px solid rgba(14,36,27,0.12) !important;
+  box-shadow: 0 4px 14px rgba(160,210,245,0.3) !important;
+}
+.btn-cta-second:hover,
+a.btn-cta-second:hover {
+  background: #82c4f1 !important;
+  color: #05140d !important;
+}
+
+/* Universal Badge Accent: Oranye #FF8000 */
+.badge-highlight,
+.badge-orange,
+.section-badge,
+.tag-highlight {
+  color: #FF8000 !important;
+  background: #fff3e6 !important;
+  border-color: rgba(255,128,0,0.35) !important;
+}
+
+/* Universal Accent Sekunder: Ungu #8000FF */
+.badge-purple,
+.category-tag-purple,
+.tag-category,
+.category-badge {
+  color: #8000FF !important;
+  background: #f3e8ff !important;
+  border-color: rgba(128,0,255,0.3) !important;
+}
+
+/* Responsive clean image wrappers */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+</style>
+<style id="ynki-universal-clean-header">
+/* ===== YNKI GLOBAL NAVBAR CLEANUP - 100% TRANSPARENT / NO GREEN BACKGROUND ===== */
+header,
+.fusion-tb-header,
+.fusion-tb-header > .fusion-fullwidth,
+.fusion-tb-header > .fusion-fullwidth:first-child,
+.fusion-header,
+.fusion-header-wrapper,
+#fusion-header,
+.fusion-fullwidth.fusion-builder-row-1,
+div[class*="fusion-builder-row-1"],
+.fusion-top-header {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Nav Menu typography and colors */
+.awb-menu__main-li > a,
+.awb-menu__main-a {
+  color: #12291e !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+  text-decoration: none !important;
+}
+.awb-menu__main-li > a:hover,
+.awb-menu__main-li.current-menu-item > a,
+.awb-menu__main-li.current-menu-parent > a {
+  color: #117710 !important;
+}
+
+/* Mobile Navbar clean transparent */
+.fusion-mobile-menu-design-modern .fusion-header,
+.fusion-mobile-menu-design-classic .fusion-header {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+</style>
 </head>
   <body
     class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr fusion-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
@@ -2900,6 +3023,48 @@
         <main id="main" class="clearfix width-100" style="font-family: 'Inter', Arial, Helvetica, sans-serif;">
 
   <style>
+  /* Responsive Mobile Layout Overrides */
+  @media (max-width: 768px) {
+    div[style*="grid-template-columns"],
+    div[style*="grid-template-columns: 1.2fr 0.8fr"],
+    div[style*="grid-template-columns: 1fr 1fr"],
+    div[style*="grid-template-columns: 0.9fr 1.1fr"],
+    div[style*="grid-template-columns: 1.1fr 0.9fr"],
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"],
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"],
+    div[style*="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))"],
+    div[style*="grid-template-columns: repeat(3, 1fr)"],
+    div[style*="grid-template-columns: repeat(4, 1fr)"] {
+      grid-template-columns: 1fr !important;
+      gap: 18px !important;
+    }
+    .hero-buttons-container,
+    div[style*="display:flex"][style*="justify-content:center"]:not(.divider-heading):not(.tag-location) {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 12px !important;
+      width: 100% !important;
+    }
+    .btn-hero-primary,
+    .btn-hero-secondary,
+    .btn-cta-main,
+    .btn-cta-second,
+    .btn-brand-primary {
+      width: 100% !important;
+      text-align: center !important;
+      justify-content: center !important;
+      display: flex !important;
+    }
+    .fusion-fullwidth {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+    .photo-story-card .card-img-wrap,
+    .video-thumb-wrap {
+      height: 200px !important;
+    }
+  }
+
     #post-spasial {
       font-family: 'Inter', Arial, Helvetica, sans-serif !important;
     }
@@ -2910,20 +3075,20 @@
     .spasial-stat-card {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       background: #ffffff;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       border-radius: 14px;
       padding: 28px 24px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.03);
     }
     .spasial-stat-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 16px 36px rgba(18, 56, 38, 0.12) !important;
-      border-color: #48a876 !important;
+      box-shadow: 0 16px 36px rgba(17, 119, 16, 0.12) !important;
+      border-color: #117710 !important;
     }
     .stat-number {
       font-size: clamp(34px, 3.2vw, 42px);
       font-weight: 800;
-      color: #1e6b42;
+      color: #117710;
       line-height: 1.1;
       margin-bottom: 6px;
       font-family: 'Inter', Arial, Helvetica, sans-serif;
@@ -2943,7 +3108,7 @@
     .gis-product-card {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       background: #ffffff;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 3px 12px rgba(0,0,0,0.04);
@@ -2953,8 +3118,8 @@
     }
     .gis-product-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(18, 56, 38, 0.13);
-      border-color: #48a876;
+      box-shadow: 0 18px 40px rgba(17, 119, 16, 0.13);
+      border-color: #117710;
     }
     .gis-product-card .card-img-wrap {
       overflow: hidden;
@@ -2973,10 +3138,10 @@
     .tag-category {
       font-size: 11px;
       font-weight: 700;
-      color: #1e6b42;
+      color: #117710;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      background: #eaf5ef;
+      background: #eaf6ea;
       padding: 4px 12px;
       border-radius: 50px;
       display: inline-block;
@@ -2992,7 +3157,7 @@
     .pillar-card {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       background: #ffffff;
-      border: 1px solid #dce8e1;
+      border: 1px solid #d2e8d1;
       border-radius: 14px;
       padding: 26px 22px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.03);
@@ -3000,14 +3165,14 @@
     .pillar-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 14px 32px rgba(18, 56, 38, 0.11);
-      border-color: #208752;
+      border-color: #117710;
     }
     .icon-badge {
       width: 48px;
       height: 48px;
       border-radius: 12px;
-      background: #eaf5ef;
-      color: #1e6b42;
+      background: #eaf6ea;
+      color: #117710;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -3016,7 +3181,7 @@
       transition: all 0.3s ease;
     }
     .pillar-card:hover .icon-badge {
-      background: #1e6b42;
+      background: #117710;
       color: #ffffff;
     }
     .category-filter-pill {
@@ -3033,15 +3198,15 @@
       cursor: pointer;
     }
     .category-filter-pill:hover, .category-filter-pill.active {
-      background: #1e6b42;
+      background: #117710;
       color: #ffffff;
-      border-color: #1e6b42;
+      border-color: #117710;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(30,107,66,0.2);
     }
     .btn-hero-primary {
       transition: all 0.3s ease;
-      background: #1e6b42;
+      background: #117710; color: #ffffff !important;
       color: #ffffff !important;
       border-radius: 6px;
       padding: 13px 28px;
@@ -3055,13 +3220,13 @@
       gap: 8px;
     }
     .btn-hero-primary:hover {
-      background: #155232 !important;
+      background: #0d5c0c !important;
       box-shadow: 0 6px 18px rgba(0,0,0,0.25);
       transform: translateY(-2px);
     }
     .btn-hero-secondary {
       transition: all 0.3s ease;
-      background: rgba(14, 36, 27, 0.75);
+      background: #A0D2F5; color: #0e241b !important; border: 1px solid rgba(14, 36, 27, 0.15);
       color: #ffffff !important;
       border-radius: 6px;
       padding: 13px 28px;
@@ -3089,7 +3254,7 @@
       width: 100%;
       margin-bottom: 12px;
     }
-    .divider-heading .line { flex:1; height:1px; background:#d5e5db; }
+    .divider-heading .line { flex:1; height:1px; background:#d2e8d1; }
     .hero-anim {
       animation: heroBounce 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
@@ -3099,7 +3264,7 @@
     }
     .quote-box {
       background: #f4f9f6;
-      border-left: 4px solid #1e6b42;
+      border-left: 4px solid #117710;
       border-radius: 8px;
       padding: 18px 22px;
       margin-top: 24px;
@@ -3136,16 +3301,16 @@
           <!-- ======================================================
                1. HERO BANNER
                ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-builder-row-2 fusion-flex-container fusion-parallax-none nonhundred-percent-fullwidth" style="background-image: linear-gradient(155deg, rgba(8, 30, 18, 0.88) 0%, rgba(14, 46, 30, 0.65) 70%), url('/assets/images/data-spasial-gis/image3.png') !important; background-size: cover !important; background-position: center center !important; --awb-padding-top: 7vw; --awb-padding-bottom: 5.5vw; --awb-padding-top-small: 55px; --awb-padding-right-small: 25px; --awb-padding-bottom-small: 55px; --awb-padding-left-small: 25px; --awb-margin-bottom: 50px; --awb-flex-wrap: wrap;">
+          <div class="fusion-fullwidth fullwidth-box fusion-builder-row-2 fusion-flex-container fusion-parallax-none nonhundred-percent-fullwidth" style="background-image: linear-gradient(155deg, rgba(7, 53, 6, 0.90) 0%, rgba(12, 80, 11, 0.70) 70%), url('/assets/images/data-spasial-gis/image3.png') !important; background-size: cover !important; background-position: center center !important; --awb-padding-top: 7vw; --awb-padding-bottom: 5.5vw; --awb-padding-top-small: 55px; --awb-padding-right-small: 25px; --awb-padding-bottom-small: 55px; --awb-padding-left-small: 25px; --awb-margin-bottom: 50px; --awb-flex-wrap: wrap;">
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;text-align:center;">
                 <div class="fusion-column-wrapper fusion-content-layout-column hero-anim" style="display:flex!important;flex-direction:column!important;align-items:center!important;">
 
                   <!-- Breadcrumb -->
                   <div style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#52c98a;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
-                    <a href="/" style="color:#a3dbc0;text-decoration:none;">BERANDA</a>
+                    <a href="/" style="color:#d2f0d1;text-decoration:none;">BERANDA</a>
                     <span style="opacity:0.5;color:#fff;">/</span>
-                    <span style="color:#a3dbc0;">PUSTAKA &amp; PENGETAHUAN</span>
+                    <span style="color:#d2f0d1;">PUSTAKA &amp; PENGETAHUAN</span>
                     <span style="opacity:0.5;color:#fff;">/</span>
                     <span style="color:#fff;">DATA SPASIAL &amp; GIS</span>
                   </div>
@@ -3155,7 +3320,7 @@
                     Data Spasial &amp; GIS: Membangun Landscape Intelligence untuk Tata Kelola Berbasis Bukti
                   </h1>
 
-                  <p style="font-size:clamp(14.5px,1.5vw,17.5px);line-height:1.75;color:#d4ecdf;font-weight:400;margin:0 auto 30px;max-width:880px;">
+                  <p style="font-size:clamp(14.5px,1.5vw,17.5px);line-height:1.75;color:#eaf6ea;font-weight:400;margin:0 auto 30px;max-width:880px;">
                     YNKI memanfaatkan teknologi Geographic Information System (GIS) dan penginderaan jauh untuk menghasilkan data spasial yang mendukung perencanaan, pemantauan, dan pengambilan keputusan lanskap berkelanjutan di Kalimantan Barat.
                   </p>
 
@@ -3188,7 +3353,7 @@
                 <div style="text-align:center;margin-bottom:38px;">
                   <div class="divider-heading">
                     <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                       LANDSCAPE INTELLIGENCE
                     </span>
                     <span class="line"></span>
@@ -3262,7 +3427,7 @@
           <!-- ======================================================
                3. KOLEKSI DATA SPASIAL & GIS YNKI (STATISTIK DATA)
                ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:50px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e5eeea;border-bottom:1px solid #e5eeea;">
+          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:50px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;border-bottom:1px solid #e2efe2;">
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
 
@@ -3270,7 +3435,7 @@
                 <div style="text-align:center;margin-bottom:38px;">
                   <div class="divider-heading">
                     <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                       INVENTARIS DATA
                     </span>
                     <span class="line"></span>
@@ -3324,7 +3489,7 @@
 
                 <div class="divider-heading">
                   <span class="line"></span>
-                  <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                  <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                     KLASIFIKASI DATA
                   </span>
                   <span class="line"></span>
@@ -3355,7 +3520,7 @@
           <!-- ======================================================
                5. KATALOG KUMPULAN DATA SPASIAL & ANALISIS GIS (5 CARDS)
                ====================================================== -->
-          <div id="katalog-gis" class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:40px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e5eeea;border-bottom:1px solid #e5eeea;">
+          <div id="katalog-gis" class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:40px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;border-bottom:1px solid #e2efe2;">
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
 
@@ -3363,7 +3528,7 @@
                 <div style="text-align:center;margin-bottom:38px;">
                   <div class="divider-heading">
                     <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                       KATALOG GEOSPASIAL
                     </span>
                     <span class="line"></span>
@@ -3522,28 +3687,28 @@
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
 
                 <div style="text-align:center;color:#ffffff;margin-bottom:40px;">
-                  <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#52c98a;background:rgba(255,255,255,0.12);padding:5px 16px;border-radius:50px;display:inline-block;margin-bottom:12px;">
+                  <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                     PLATFORM INTERAKTIF
                   </span>
                   <h2 style="font-size:32px;font-weight:800;color:#ffffff;margin:0 0 12px;">Jelajahi Peta Interaktif YNKI</h2>
-                  <p style="font-size:16px;line-height:1.75;color:#d4ecdf;max-width:860px;margin:0 auto;">
+                  <p style="font-size:16px;line-height:1.75;color:#eaf6ea;max-width:860px;margin:0 auto;">
                     YNKI mengembangkan platform peta interaktif dan dashboard spasial yang memungkinkan Anda menjelajahi data tutupan lahan, hotspot kebakaran, dan pemulihan gambut secara langsung tanpa keahlian teknis GIS.
                   </p>
                 </div>
 
                 <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:22px;margin-bottom:34px;">
                   <div class="interactive-card">
-                    <h3 style="font-size:18px;font-weight:700;color:#1e6b42;margin:0 0 8px;">Peta Lanskap Prioritas</h3>
+                    <h3 style="font-size:18px;font-weight:700;color:#117710;margin:0 0 8px;">Peta Lanskap Prioritas</h3>
                     <p style="font-size:14px;line-height:1.65;color:#435c50;margin:0;">Visualisasi interaktif lanskap prioritas YNKI di Kalimantan Barat dengan lapisan data tutupan lahan dan area restorasi.</p>
                   </div>
 
                   <div class="interactive-card">
-                    <h3 style="font-size:18px;font-weight:700;color:#1e6b42;margin:0 0 8px;">Pemantauan Kebakaran</h3>
+                    <h3 style="font-size:18px;font-weight:700;color:#117710;margin:0 0 8px;">Pemantauan Kebakaran</h3>
                     <p style="font-size:14px;line-height:1.65;color:#435c50;margin:0;">Data titik api dan area terbakar secara temporal untuk mendukung respons cepat dan perencanaan pencegahan karhutla.</p>
                   </div>
 
                   <div class="interactive-card">
-                    <h3 style="font-size:18px;font-weight:700;color:#1e6b42;margin:0 0 8px;">Dashboard Restorasi</h3>
+                    <h3 style="font-size:18px;font-weight:700;color:#117710;margin:0 0 8px;">Dashboard Restorasi</h3>
                     <p style="font-size:14px;line-height:1.65;color:#435c50;margin:0;">Pantau perkembangan restorasi gambut secara visual dengan indikator pemulihan hidrologi yang diperbarui berkala.</p>
                   </div>
                 </div>
@@ -3569,12 +3734,12 @@
 
                 <div style="display:grid;grid-template-columns:0.8fr 1.2fr;gap:40px;align-items:center;">
                   <div style="text-align:center;">
-                    <img src="/assets/images/data-spasial-gis/image22.png" alt="Pemetaan Partisipatif Desa YNKI" loading="lazy" style="max-width:100%;border-radius:18px;box-shadow:0 10px 30px rgba(18,56,38,0.12);">
+                    <img src="/assets/images/data-spasial-gis/image22.png" alt="Pemetaan Partisipatif Desa YNKI" loading="lazy" style="max-width:100%;border-radius:18px;box-shadow:0 10px 30px rgba(17, 119, 16, 0.12);">
                   </div>
 
                   <div>
                     <div class="divider-heading" style="justify-content:flex-start;">
-                      <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1e6b42;background:#eaf5ef;padding:5px 16px;border-radius:50px;">
+                      <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
                         PEMETAAN PARTISIPATIF
                       </span>
                     </div>
@@ -3605,11 +3770,11 @@
             <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
               <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
 
-                <div style="background:linear-gradient(135deg, #123824 0%, #091d12 100%);border-radius:18px;padding:46px 40px;color:#ffffff;text-align:center;box-shadow:0 6px 28px rgba(18,56,38,0.18);">
+                <div style="background:linear-gradient(135deg, #0c500b 0%, #082e07 100%);border-radius:18px;padding:46px 40px;color:#ffffff;text-align:center;box-shadow:0 6px 28px rgba(12, 80, 11, 0.18);">
                   <h2 style="font-size:30px;font-weight:800;color:#ffffff;margin:0 0 14px;">
                     Kolaborasi dalam Data Spasial &amp; GIS YNKI
                   </h2>
-                  <p style="font-size:15.5px;line-height:1.75;color:#c9e8d5;margin:0 auto 26px;max-width:850px;">
+                  <p style="font-size:15.5px;line-height:1.75;color:#d2f0d1;margin:0 auto 26px;max-width:850px;">
                     YNKI terbuka untuk kolaborasi pertukaran data geospasial, riset penginderaan jauh bersama universitas, pemerintah daerah, dan lembaga swadaya masyarakat guna memperkuat tata kelola lanskap berbasis bukti di Indonesia.
                   </p>
 
