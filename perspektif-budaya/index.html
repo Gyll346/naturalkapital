@@ -3020,1020 +3020,229 @@ div[class*="fusion-builder-row-1"],
           </div>
         </div>
         <div id="sliders-container" class="fusion-slider-visibility"></div>
-        <main id="main" class="clearfix width-100" style="font-family: 'Inter', Arial, Helvetica, sans-serif;">
+        <main id="main" class="clearfix width-100" style="font-family:'Inter',Arial,Helvetica,sans-serif;">
+<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <style>
-/* ===== YNKI HEADER FIX: Logo Visibility + Mobile Nav Colors ===== */
-/* Prevent logo from being clipped */
-.fusion-tb-header .fusion-image-element {
-  overflow: visible !important;
-}
-.fusion-tb-header .fusion-image-element img {
-  max-width: 180px !important;
-  height: auto !important;
-  display: block !important;
-}
-/* Mobile nav brand colors */
-.awb-menu__mobile-ul .awb-menu__mobile-a,
-.awb-menu__mobile-ul .awb-menu__sub-a,
-li.awb-menu__mobile-li > a {
-  color: #12291e !important;
-  font-weight: 700 !important;
-}
-li.awb-menu__mobile-li > a:hover {
-  color: #117710 !important;
-  background: #eaf6ea !important;
-}
-/* Mobile menu toggle (hamburger) color */
-.awb-menu__open-nav-submenu_mobile-toggle,
-.awb-menu__mobile-toggle,
-.awb-menu__hamburger {
-  color: #117710 !important;
-}
-/* Program link cards hover */
-.program-link-card {
-  transition: all 0.3s ease !important;
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 12px !important;
-  padding: 18px !important;
-  background: #ffffff !important;
-  border: 1px solid #d2e8d1 !important;
-  border-radius: 12px !important;
-  text-decoration: none !important;
-  margin-bottom: 12px !important;
-}
-.program-link-card:hover {
-  transform: translateY(-3px) !important;
-  border-color: #117710 !important;
-  box-shadow: 0 8px 24px rgba(17,119,16,0.12) !important;
-  background: #fafffa !important;
-}
-.program-link-card .icon-badge {
-  width: 42px !important;
-  height: 42px !important;
-  background: #eaf6ea !important;
-  border-radius: 10px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: #117710 !important;
-  flex-shrink: 0 !important;
-}
-/* Divider heading section badge styling  */
-.divider-heading > span:not(.line) {
-  font-size: 12px !important;
-  font-weight: 700 !important;
-  letter-spacing: 1.2px !important;
-  text-transform: uppercase !important;
-  color: #FF8000 !important;
-  background: #fff3e6 !important;
-  border: 1px solid rgba(255,128,0,0.3) !important;
-  padding: 5px 16px !important;
-  border-radius: 50px !important;
-}
+*, *::before, *::after { box-sizing: border-box; }
+.ynki-section { width: 100%; }
+.ynki-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #FF8000; background: #fff3e6; border: 1px solid rgba(255,128,0,0.35); padding: 5px 16px; border-radius: 50px; margin-bottom: 14px; }
+.section-badge.white { background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.3); }
+.section-badge.green { background: #e8f5e8; color: #117710; border-color: #117710; }
+.divider-line { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 14px; }
+.divider-line .line { flex: 1; height: 1px; background: #d2e8d1; }
+.hero-section { position: relative; min-height: 82vh; display: flex; align-items: center; background-image: linear-gradient(155deg, rgba(5,42,5,0.93) 0%, rgba(12,80,11,0.72) 55%, rgba(0,0,0,0.40) 100%), url('/assets/images/homepage/hero-bg.png'); background-size: cover; background-position: center; padding: 110px 24px 90px; }
+.hero-section::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, #ffffff); pointer-events: none; }
+.hero-inner { position: relative; z-index: 2; max-width: 920px; margin: 0 auto; text-align: center; }
+.hero-crumb { font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #a3e0a2; margin-bottom: 20px; }
+.hero-crumb a { color: #d2f0d1; text-decoration: none; }
+.hero-h1 { font-size: clamp(28px, 4.5vw, 48px); font-weight: 900; line-height: 1.2; color: #ffffff; margin: 0 0 20px; letter-spacing: -0.02em; }
+.hero-h1 .hl { color: #a3e0a2; }
+.hero-sub { font-size: clamp(14px, 1.6vw, 17px); line-height: 1.85; color: #d2f0d1; max-width: 820px; margin: 0 auto 32px; }
+.hero-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.cta-section { background: #117710; padding: 90px 24px; text-align: center; }
+.cta-section h2 { font-size: clamp(24px,3.5vw,36px); font-weight: 800; color: #fff; margin: 0 0 16px; }
+.cta-section p { font-size: 15.5px; color: #d2f0d1; max-width: 700px; margin: 0 auto 32px; line-height: 1.7; }
+</style>
+<style>
+.pb-intro { background: #f5f8f5; padding: 90px 24px; }
+.intro-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; max-width: 1100px; margin: 0 auto; align-items: center; }
+.intro-text h3 { font-size: 24px; font-weight: 800; color: #0e241b; margin: 0 0 16px; }
+.intro-text p { font-size: 15px; color: #536b5f; line-height: 1.8; margin: 0 0 16px; }
+.intro-stats { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.pstat-box { background: #fff; border: 1.5px solid #d2e8d1; border-radius: 16px; padding: 24px; display: flex; align-items: center; gap: 20px; }
+.pstat-num { font-size: 36px; font-weight: 900; color: #117710; line-height: 1; flex-shrink: 0; min-width: 60px; text-align: center; }
+.pstat-info h4 { font-size: 15px; font-weight: 800; color: #0e241b; margin: 0 0 4px; }
+.pstat-info p { font-size: 13px; color: #536b5f; margin: 0; }
 
-/* ===== Mobile Responsive Grid Overrides ===== */
-@media (max-width: 800px) {
-  /* Force AWB columns to 100% on mobile */
-  .fusion_builder_column,
-  .fusion-layout-column,
-  [class*="fusion_builder_column_"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-    --awb-width-small: 100% !important;
-    --awb-spacing-right-small: 0% !important;
-    --awb-spacing-left-small: 0% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-bottom: 18px !important;
-    padding-left: 8px !important;
-    padding-right: 8px !important;
-  }
-  .fusion-builder-row {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0 !important;
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  /* Also fix inner row with gap styles */
-  .fusion-builder-row[style*="gap"] {
-    gap: 18px !important;
-  }
-  /* Handle fusion-column-wrapper */
-  .fusion-column-wrapper {
-    padding: 0 !important;
-  }
-  /* Avada fullwidth containers */
-  .fusion-fullwidth, .fullwidth-box {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    box-sizing: border-box !important;
-    overflow-x: hidden !important;
-  }
-  /* Grid elements from custom pages */
-  div[style*="display:grid"],
-  div[style*="display: grid"] {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-  /* Program link cards - stack nicely on mobile */
-  .program-link-card {
-    margin-bottom: 10px !important;
-  }
-  /* CTA buttons - full width on mobile */
-  a.btn-hero-primary,
-  a.btn-hero-secondary,
-  a.btn-cta-main,
-  a.btn-cta-second,
-  .btn-hero-primary,
-  .btn-hero-secondary,
-  .btn-cta-main,
-  .btn-cta-second {
-    width: 100% !important;
-    text-align: center !important;
-    justify-content: center !important;
-    display: flex !important;
-    box-sizing: border-box !important;
-  }
-  /* Flex containers with centered buttons */
-  div[style*="display:flex"][style*="justify-content:center"]:not(.divider-heading):not(.tag-location) {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 10px !important;
-    padding: 0 !important;
-  }
-  /* Footer */
-  .fusion-tb-footer .fusion-builder-row,
-  .fusion-footer .fusion-builder-row {
-    flex-direction: column !important;
-  }
-  .fusion-tb-footer .fusion-layout-column,
-  .fusion-footer .fusion-layout-column {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-    margin-bottom: 28px !important;
-  }
-  /* Images in content */
-  .fusion-fullwidth img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
+.filter-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 44px; }
+.filter-tag { font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 50px; border: 2px solid #d2e8d1; color: #117710; cursor: pointer; transition: all 0.3s; background: #fff; display: flex; align-items: center; gap: 8px; }
+.filter-tag:hover, .filter-tag.active { background: #117710; color: #fff; border-color: #117710; }
+
+.articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+.article-card { background: #fff; border: 1px solid #d2e8d1; border-radius: 16px; overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; padding: 28px; }
+.article-card:hover { box-shadow: 0 14px 36px rgba(17,119,16,0.1); transform: translateY(-4px); border-color: #117710; }
+.article-topic { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 12px; display: inline-block; padding: 4px 12px; border-radius: 50px; }
+.t-eko { background: #e6f3ff; color: #0066cc; }
+.t-fil { background: #fff3e6; color: #FF8000; }
+.t-sos { background: #f3e6ff; color: #8000FF; }
+.t-bud { background: #fff5f5; color: #B22231; }
+.t-lin { background: #e8f5e8; color: #117710; }
+.article-card h3 { font-size: 18px; font-weight: 800; color: #0e241b; margin: 0 0 16px; line-height: 1.4; flex-grow: 1; }
+.article-date { font-size: 12.5px; color: #8a9e94; font-weight: 600; display: flex; align-items: center; gap: 6px; margin-bottom: 16px; }
+.article-read { font-size: 13px; font-weight: 700; color: #117710; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: opacity 0.2s; }
+.article-read:hover { opacity: 0.7; }
+
+.pagination { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 40px; }
+.page-btn { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #d2e8d1; background: #fff; color: #117710; font-weight: 700; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; text-decoration: none; }
+.page-btn:hover, .page-btn.active { background: #117710; color: #fff; border-color: #117710; }
+
+@media (max-width: 1024px) {
+  .intro-grid { grid-template-columns: 1fr; }
+  .articles-grid { grid-template-columns: repeat(2, 1fr); }
 }
-/* Extra small phones */
-@media (max-width: 480px) {
-  .fusion-fullwidth, .fullwidth-box {
-    padding-left: 14px !important;
-    padding-right: 14px !important;
-  }
+@media (max-width: 768px) {
+  .articles-grid { grid-template-columns: 1fr; }
 }
 </style>
+<div class="fusion-row" style="max-width:100%;">
+<section id="content" class="full-width">
+<div id="post-perspektif" class="page type-page status-publish hentry">
+<div class="post-content">
 
+<!-- HERO -->
+<section class="hero-section ynki-section">
+  <div class="hero-inner">
+    <div class="hero-crumb"><a href="/">Beranda</a> &nbsp;/&nbsp; <a href="/pustaka/">Pustaka &amp; Pengetahuan</a> &nbsp;/&nbsp; <span>Perspektif Budaya</span></div>
+    <h1 class="hero-h1">Merenungkan Hubungan Manusia,<br><span class="hl">Alam, dan Kebudayaan</span></h1>
+    <p class="hero-sub">YNKI percaya bahwa keberlanjutan tidak hanya tentang ekologi dan ekonomi, tetapi juga tentang budaya dan nilai-nilai yang membentuk cara kita memandang dunia. Kategori ini menghadirkan esai, refleksi, dan tulisan filosofis.</p>
+    <div class="hero-btns">
+      <a href="#tulisan-terbaru" class="btn-cta-main">Mulai Membaca</a>
+      <a href="#tema-tulisan" class="btn-cta-second">Jelajahi Tema</a>
+    </div>
+  </div>
+</section>
 
-  <style>
-  /* Responsive Mobile Layout Overrides */
-  @media (max-width: 768px) {
-    div[style*="grid-template-columns"],
-    div[style*="grid-template-columns: 1.2fr 0.8fr"],
-    div[style*="grid-template-columns: 1fr 1fr"],
-    div[style*="grid-template-columns: 0.9fr 1.1fr"],
-    div[style*="grid-template-columns: 1.1fr 0.9fr"],
-    div[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"],
-    div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"],
-    div[style*="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))"],
-    div[style*="grid-template-columns: repeat(3, 1fr)"],
-    div[style*="grid-template-columns: repeat(4, 1fr)"] {
-      grid-template-columns: 1fr !important;
-      gap: 18px !important;
-    }
-    .hero-buttons-container,
-    div[style*="display:flex"][style*="justify-content:center"]:not(.divider-heading):not(.tag-location) {
-      flex-direction: column !important;
-      align-items: stretch !important;
-      gap: 12px !important;
-      width: 100% !important;
-    }
-    .btn-hero-primary,
-    .btn-hero-secondary,
-    .btn-cta-main,
-    .btn-cta-second,
-    .btn-brand-primary {
-      width: 100% !important;
-      text-align: center !important;
-      justify-content: center !important;
-      display: flex !important;
-    }
-    .fusion-fullwidth {
-      padding-left: 16px !important;
-      padding-right: 16px !important;
-    }
-    .photo-story-card .card-img-wrap,
-    .video-thumb-wrap {
-      height: 200px !important;
-    }
-  }
-
-    #post-budaya {
-      font-family: 'Inter', Arial, Helvetica, sans-serif !important;
-    }
-    #post-budaya h1, #post-budaya h2, #post-budaya h3, #post-budaya h4, #post-budaya h5, #post-budaya h6 {
-      font-family: 'Inter', Arial, Helvetica, sans-serif !important;
-      letter-spacing: -0.015em;
-    }
-    .budaya-stat-card {
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      background: #ffffff;
-      border: 1px solid #d2e8d1;
-      border-radius: 14px;
-      padding: 26px 22px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    }
-    .budaya-stat-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 32px rgba(18, 56, 38, 0.11) !important;
-      border-color: #117710 !important;
-    }
-    .stat-number {
-      font-size: clamp(34px, 3.2vw, 42px);
-      font-weight: 800;
-      color: #117710;
-      line-height: 1.1;
-      margin-bottom: 6px;
-      font-family: 'Inter', Arial, Helvetica, sans-serif;
-    }
-    .stat-label {
-      font-size: 16px;
-      font-weight: 700;
-      color: #0e241b;
-      margin-bottom: 6px;
-    }
-    .stat-desc {
-      font-size: 13.5px;
-      color: #536b5f;
-      line-height: 1.55;
-      margin: 0;
-    }
-    .budaya-grid-card {
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      background: #ffffff;
-      border: 1px solid #d2e8d1;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.03);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-    .budaya-grid-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 36px rgba(17, 119, 16, 0.12);
-      border-color: #117710;
-    }
-    .budaya-card-img {
-      overflow: hidden;
-      height: 200px;
-      position: relative;
-      display: block;
-    }
-    .budaya-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .budaya-grid-card:hover .budaya-card-img img {
-      transform: scale(1.06);
-    }
-    .budaya-card-body {
-      padding: 22px 20px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .budaya-card-title {
-      font-size: 17.5px;
-      font-weight: 700;
-      color: #0e241b;
-      margin: 0 0 10px;
-      line-height: 1.38;
-      transition: color 0.2s ease;
-    }
-    .budaya-card-title a:hover {
-      color: #117710 !important;
-    }
-    .budaya-card-excerpt {
-      font-size: 14px;
-      line-height: 1.68;
-      color: #435c50;
-      margin: 0;
-    }
-    .budaya-card-footer {
-      margin-top: 16px;
-      padding-top: 14px;
-      border-top: 1px solid #eef4f0;
-    }
-    .read-more-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #117710;
-      font-size: 13.5px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .read-more-btn:hover {
-      color: #124429;
-      transform: translateX(3px);
-    }
-    .tag-category {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      background: #eaf6ea;
-      padding: 4px 12px;
-      border-radius: 50px;
-    }
-    .date-meta {
-      font-size: 12.5px;
-      color: #6d8579;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-    .theme-card {
-      transition: all 0.3s ease;
-      background: #ffffff;
-      border: 1px solid #d2e8d1;
-      border-radius: 12px;
-      padding: 20px 18px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-    }
-    .theme-card:hover {
-      transform: translateY(-3px);
-      border-color: #117710;
-      box-shadow: 0 10px 24px rgba(18, 56, 38, 0.08);
-      background: #fafffc;
-    }
-    .btn-hero-primary {
-      transition: all 0.3s ease;
-      background: #117710; color: #ffffff !important;
-      color: #ffffff !important;
-      border-radius: 6px;
-      padding: 13px 28px;
-      font-weight: 700;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-hero-primary:hover {
-      background: #0d5c0c !important;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-      transform: translateY(-2px);
-    }
-    .btn-hero-secondary {
-      transition: all 0.3s ease;
-      background: #A0D2F5; color: #0e241b !important; border: 1px solid rgba(14, 36, 27, 0.15);
-      color: #ffffff !important;
-      border-radius: 6px;
-      padding: 13px 28px;
-      font-weight: 700;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.35);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      backdrop-filter: blur(6px);
-    }
-    .btn-hero-secondary:hover {
-      background: rgba(255,255,255,0.15) !important;
-      border-color: #ffffff !important;
-      transform: translateY(-2px);
-    }
-    .divider-heading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      width: 100%;
-      margin-bottom: 12px;
-    }
-    .divider-heading .line { flex:1; height:1px; background:#d2e8d1; }
-    .hero-anim {
-      animation: heroBounce 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    @keyframes heroBounce {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .quote-box {
-      background: #f4f9f6;
-      border-left: 4px solid #117710;
-      border-radius: 8px;
-      padding: 18px 22px;
-      margin-top: 20px;
-      font-style: italic;
-      font-size: 15px;
-      line-height: 1.7;
-      color: #2d503d;
-    }
-    .pagination-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-    .page-btn {
-      min-width: 40px;
-      height: 40px;
-      padding: 0 12px;
-      border-radius: 8px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #d2e8d1;
-      background: #ffffff;
-      color: #0e241b;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.25s ease;
-    }
-    .page-btn:hover, .page-btn.active {
-      background: #117710;
-      color: #ffffff;
-      border-color: #117710;
-    }
-  </style>
-
-  <div class="fusion-row" style="max-width:100%;">
-    <section id="content" class="full-width">
-      <div id="post-budaya" class="post-budaya page type-page status-publish hentry">
-        <span class="entry-title rich-snippet-hidden">Perspektif Budaya: Merenungkan Hubungan Manusia, Alam, dan Kebudayaan</span>
-        <span class="updated rich-snippet-hidden">2026-08-18T11:00:00+07:00</span>
-
-        <div class="post-content">
-
-          <!-- ======================================================
-               1. HERO BANNER
-               ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-builder-row-2 fusion-flex-container fusion-parallax-none nonhundred-percent-fullwidth" style="background-image: linear-gradient(155deg, rgba(7, 53, 6, 0.90) 0%, rgba(12, 80, 11, 0.70) 70%), url('/assets/images/perspektif-budaya/image1.png') !important; background-size: cover !important; background-position: center center !important; --awb-padding-top: 7vw; --awb-padding-bottom: 5.5vw; --awb-padding-top-small: 55px; --awb-padding-right-small: 25px; --awb-padding-bottom-small: 55px; --awb-padding-left-small: 25px; --awb-margin-bottom: 50px; --awb-flex-wrap: wrap;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;text-align:center;">
-                <div class="fusion-column-wrapper fusion-content-layout-column hero-anim" style="display:flex!important;flex-direction:column!important;align-items:center!important;">
-
-                  <!-- Breadcrumb -->
-                  <div style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#52c98a;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
-                    <a href="/" style="color:#d2f0d1;text-decoration:none;">BERANDA</a>
-                    <span style="opacity:0.5;color:#fff;">/</span>
-                    <span style="color:#d2f0d1;">PUSTAKA &amp; PENGETAHUAN</span>
-                    <span style="opacity:0.5;color:#fff;">/</span>
-                    <span style="color:#fff;">PERSPEKTIF BUDAYA</span>
-                  </div>
-
-                  <!-- Hero Title -->
-                  <h1 style="margin:0 0 18px;font-size:clamp(26px,3.6vw,46px);line-height:1.2;color:#ffffff;font-family:'Inter',Arial,Helvetica,sans-serif;font-weight:800;max-width:980px;">
-                    Perspektif Budaya: Merenungkan Hubungan Manusia, Alam, dan Kebudayaan
-                  </h1>
-
-                  <p style="font-size:clamp(14.5px,1.5vw,17.5px);line-height:1.75;color:#eaf6ea;font-weight:400;margin:0 auto 30px;max-width:880px;">
-                    YNKI percaya bahwa keberlanjutan tidak hanya tentang ekologi dan ekonomi, tetapi juga tentang nilai-nilai dan kebudayaan yang membentuk cara kita memandang dunia. Temukan esai, refleksi filosofis, dan kajian mendalam seputar lanskap, peradaban, dan kearifan masyarakat di sini.
-                  </p>
-
-                  <!-- Action Buttons -->
-                  <div style="display:flex;justify-content:center;gap:15px;flex-wrap:wrap;">
-                    <a class="btn-hero-primary" href="#kumpulan-esai">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                      Jelajahi Esai Budaya
-                    </a>
-                    <a class="btn-hero-secondary" href="#tema-budaya">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 12 12 16 16 12 12 8"></polygon></svg>
-                      Navigasi Tema
-                    </a>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               2. ESENSI TENTANG PERSPEKTIF BUDAYA
-               ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#ffffff;--awb-padding-top:20px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:center;">
-                  <div>
-                    <div class="divider-heading" style="justify-content:flex-start;">
-                      <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
-                        ESENSI PEMIKIRAN
-                      </span>
-                    </div>
-                    <h2 style="font-size:32px;font-weight:800;color:#0e241b;margin:12px 0 16px;line-height:1.25;">
-                      Tentang Perspektif Budaya
-                    </h2>
-                    <p style="font-size:15.5px;line-height:1.8;color:#3d5648;margin:0 0 14px;">
-                      Perspektif budaya adalah jendela untuk memahami bagaimana masyarakat memaknai hubungannya dengan alam, tanah, dan sesama. Tanpa memahami kebudayaan, kita hanya melihat separuh dari kenyataan lanskap.
-                    </p>
-                    <p style="font-size:15.5px;line-height:1.8;color:#3d5648;margin:0;">
-                      Tulisan-tulisan dalam kategori ini mengajak pembaca untuk merenungkan berbagai isu — dari kebijakan ekonomi yang mempengaruhi petani kecil, hingga refleksi filosofis tentang harmoni, peradaban, dan krisis ekologi modern. YNKI menghadirkan ruang ini sebagai wadah berpikir kritis dan membangun kesadaran kolektif demi masa depan lanskap yang seimbang.
-                    </p>
-                    <div class="quote-box">
-                      "Memahami lanskap tanpa kebudayaan adalah seperti membaca buku yang hilang separuh halamannya." — <strong>YNKI Refleksi Budaya</strong>
-                    </div>
-                  </div>
-
-                  <div style="text-align:center;">
-                    <img src="/assets/images/perspektif-budaya/image5.png" alt="Esensi Perspektif Budaya YNKI" loading="lazy" style="max-width:100%;border-radius:18px;box-shadow:0 10px 30px rgba(17, 119, 16, 0.12);">
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               3. KOLEKSI PERSPEKTIF BUDAYA (STATISTIK ARTIKEL)
-               ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:50px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;border-bottom:1px solid #e2efe2;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <!-- Section Header -->
-                <div style="text-align:center;margin-bottom:38px;">
-                  <div class="divider-heading">
-                    <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
-                      ARSIP REFLEKSI
-                    </span>
-                    <span class="line"></span>
-                  </div>
-                  <h2 style="font-size:32px;font-weight:800;color:#0e241b;margin:0 0 10px;">Koleksi Perspektif Budaya YNKI</h2>
-                  <p style="font-size:16px;color:#536b5f;max-width:820px;margin:0 auto;line-height:1.7;">
-                    Hingga saat ini, YNKI telah menerbitkan berbagai esai dan tulisan reflektif yang menggali dimensi kebudayaan dalam tata kelola lanskap dan kehidupan masyarakat:
-                  </p>
-                </div>
-
-                <!-- 3 Stats Cards Grid -->
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:24px;">
-
-                  <div class="budaya-stat-card">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">Total Artikel &amp; Esai</div>
-                    <p class="stat-desc">Esai dan refleksi budaya yang telah diterbitkan dalam kategori Perspektif Budaya.</p>
-                  </div>
-
-                  <div class="budaya-stat-card">
-                    <div class="stat-number">2026</div>
-                    <div class="stat-label">Publikasi Terkini</div>
-                    <p class="stat-desc">Tulisan terbaru dipublikasikan pada Juni 2026 dan terus diperbarui secara berkala.</p>
-                  </div>
-
-                  <div class="budaya-stat-card">
-                    <div class="stat-number">8+</div>
-                    <div class="stat-label">Kontributor Penulis</div>
-                    <p class="stat-desc">Beragam penulis dengan latar belakang akademisi, pegiat kebudayaan, dan praktisi lapangan.</p>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               4. JELAJAHI TULISAN BERDASARKAN TEMA
-               ====================================================== -->
-          <div id="tema-budaya" class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#ffffff;--awb-padding-top:40px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <!-- Section Header -->
-                <div style="text-align:center;margin-bottom:34px;">
-                  <div class="divider-heading">
-                    <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
-                      DIMENSI TEMATIK
-                    </span>
-                    <span class="line"></span>
-                  </div>
-                  <h3 style="font-size:28px;font-weight:800;color:#0e241b;margin:0 0 10px;">
-                    Jelajahi Tulisan Berdasarkan Tema
-                  </h3>
-                  <p style="font-size:15.5px;color:#536b5f;max-width:760px;margin:0 auto;line-height:1.65;">
-                    Setiap tema mencerminkan salah satu dimensi pemikiran budaya yang menjadi fokus YNKI dalam memahami lanskap dan dinamika masyarakat:
-                  </p>
-                </div>
-
-                <!-- 6 Theme Cards Grid -->
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:20px;">
-
-                  <div class="theme-card">
-                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Semua Tulisan</h4>
-                    <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Seluruh koleksi esai dan refleksi budaya dari Yayasan Natural Kapital Indonesia.</p>
-                  </div>
-
-                  <div class="theme-card">
-                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Filosofi &amp; Refleksi</h4>
-                    <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Renungan mendalam tentang makna eksistensi, peradaban manusia, dan etika kehidupan.</p>
-                  </div>
-
-                  <div class="theme-card">
-                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Ekonomi &amp; Kebijakan</h4>
-                    <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Analisis dampak kebijakan struktural terhadap kehidupan petani dan pedesaan.</p>
-                  </div>
-
-                  <div class="theme-card">
-                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Budaya &amp; Tradisi</h4>
-                    <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Eksplorasi warisan budaya, seni, musik, dan kearifan lokal masyarakat Nusantara.</p>
-                  </div>
-
-                  <div class="theme-card">
-                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Lingkungan &amp; Ekologi</h4>
-                    <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Hubungan intrinsik antara nilai ekosistem, kelestarian bumi, dan etika manusia.</p>
-                  </div>
-
-                  <div class="theme-card">
-                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Sosial &amp; Masyarakat</h4>
-                    <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Dinamika ruang publik, relasi antar-komunitas, dan kohesi sosial di tingkat tapak.</p>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               5. KUMPULAN SEMUA 9 ARTIKEL PERSPEKTIF BUDAYA (GRID)
-               ====================================================== -->
-          <div id="kumpulan-esai" class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:50px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;border-bottom:1px solid #e2efe2;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <!-- Section Header -->
-                <div style="text-align:center;margin-bottom:38px;">
-                  <div class="divider-heading">
-                    <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
-                      TULISAN &amp; ESAI
-                    </span>
-                    <span class="line"></span>
-                  </div>
-                  <h2 style="font-size:32px;font-weight:800;color:#0e241b;margin:0 0 10px;">Artikel Perspektif Budaya</h2>
-                  <p style="font-size:16px;color:#536b5f;max-width:820px;margin:0 auto;line-height:1.7;">
-                    Berikut adalah kumpulan esai dan tulisan reflektif dari YNKI, disusun dari yang terbaru ke yang terlama. Setiap tulisan mengajak Anda untuk merenungkan dunia dari sudut pandang yang lebih dalam.
-                  </p>
-                </div>
-
-                <!-- 9 Articles Grid -->
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:26px;">
-                  
-                  <!-- Article 1 -->
-                  <article class="budaya-grid-card">
-                    <a href="/perspektif-budaya/kehidupan-petani-kecil-dipertaruhkan-dari-cultuurstelsel-hingga-dhe-sda-indonesia/" class="budaya-card-img" title="Kehidupan Petani Kecil Dipertaruhkan: Dari Cultuurstelsel hingga DHE SDA Indonesia">
-                      <img src="/wp-content/uploads/2026/06/11-06-2026-kebun-keladi-di-kubu-padi-kuala-mandor-b.webp" alt="Kehidupan Petani Kecil Dipertaruhkan: Dari Cultuurstelsel hingga DHE SDA Indonesia" loading="lazy">
-                    </a>
-                    <div class="budaya-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="tag-category" style="color:#117710;">EKONOMI & KEBIJAKAN</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">6 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Selasa, 16 Juni 2026
-                        </div>
-                        <h3 class="budaya-card-title">
-                          <a href="/perspektif-budaya/kehidupan-petani-kecil-dipertaruhkan-dari-cultuurstelsel-hingga-dhe-sda-indonesia/" style="color:inherit;text-decoration:none;">Kehidupan Petani Kecil Dipertaruhkan: Dari Cultuurstelsel hingga DHE SDA Indonesia</a>
-                        </h3>
-                        <p class="budaya-card-excerpt">
-                          Refleksi kritis atas kesinambungan sejarah penguasaan sumber daya alam dari masa kolonial hingga kebijakan devisa hasil ekspor modern, dan dampaknya terhadap posisi tawar petani kecil di desa-desa Kalimantan.
-                        </p>
-                      </div>
-                      <div class="budaya-card-footer">
-                        <a href="/perspektif-budaya/kehidupan-petani-kecil-dipertaruhkan-dari-cultuurstelsel-hingga-dhe-sda-indonesia/" class="read-more-btn">
-                          Baca Esai Lengkap
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 2 -->
-                  <article class="budaya-grid-card">
-                    <a href="/perspektif-budaya/harmoni-musik-keselarasan-perbedaan-keselarasan-kehidupan/" class="budaya-card-img" title="Harmoni Musik: Keselarasan Perbedaan, Keselarasan Kehidupan">
-                      <img src="/wp-content/uploads/2026/06/12-06-2026-Usai-diskusi-ekologi-landscape-para-pegiat-lingkungan-bermain-musik-di-selasar-kantor-YNKI-di-Pontianak-Jumat-malam.webp" alt="Harmoni Musik: Keselarasan Perbedaan, Keselarasan Kehidupan" loading="lazy">
-                    </a>
-                    <div class="budaya-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="tag-category" style="color:#b8621b;">BUDAYA & TRADISI</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">5 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Sabtu, 13 Juni 2026
-                        </div>
-                        <h3 class="budaya-card-title">
-                          <a href="/perspektif-budaya/harmoni-musik-keselarasan-perbedaan-keselarasan-kehidupan/" style="color:inherit;text-decoration:none;">Harmoni Musik: Keselarasan Perbedaan, Keselarasan Kehidupan</a>
-                        </h3>
-                        <p class="budaya-card-excerpt">
-                          Bagaimana seni musik dan nada menjadi analogi sempurna bagi pengelolaan lanskap kolaboratif: memadukan beragam instrumen, nada, dan suara berbeda menjadi simfoni kehidupan yang selaras dan damai.
-                        </p>
-                      </div>
-                      <div class="budaya-card-footer">
-                        <a href="/perspektif-budaya/harmoni-musik-keselarasan-perbedaan-keselarasan-kehidupan/" class="read-more-btn">
-                          Baca Esai Lengkap
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 3 -->
-                  <article class="budaya-grid-card">
-                    <a href="/perspektif-budaya/pabrik-ijazah-atau-rumah-peradaban/" class="budaya-card-img" title="Pabrik Ijazah atau Rumah Peradaban?">
-                      <img src="/wp-content/uploads/2026/06/04-06-2026-HMI-Komsat-Fahutan-Untan.webp" alt="Pabrik Ijazah atau Rumah Peradaban?" loading="lazy">
-                    </a>
-                    <div class="budaya-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="tag-category" style="color:#674ea7;">FILOSOFI & REFLEKSI</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">5 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Jumat, 5 Juni 2026
-                        </div>
-                        <h3 class="budaya-card-title">
-                          <a href="/perspektif-budaya/pabrik-ijazah-atau-rumah-peradaban/" style="color:inherit;text-decoration:none;">Pabrik Ijazah atau Rumah Peradaban?</a>
-                        </h3>
-                        <p class="budaya-card-excerpt">
-                          Gugatan reflektif terhadap komersialisasi dunia pendidikan tinggi: apakah kampus masih menjadi rumah nurani peradaban dan penyemai cinta bumi, atau sekadar mesin pencetak sertifikasi formalitas?
-                        </p>
-                      </div>
-                      <div class="budaya-card-footer">
-                        <a href="/perspektif-budaya/pabrik-ijazah-atau-rumah-peradaban/" class="read-more-btn">
-                          Baca Esai Lengkap
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 4 -->
-                  <article class="budaya-grid-card">
-                    <a href="/perspektif-budaya/otak-pria-tiga-sistem-cinta-dan-ketegangan-abadi-antara-perasaan-dan-komitmen/" class="budaya-card-img" title="Otak Pria, Tiga Sistem Cinta, dan Ketegangan Abadi Antara Perasaan dan Komitmen">
-                      <img src="/wp-content/uploads/2026/06/17-06-2026-perbedaan-otak-pria-dan-wanita.webp" alt="Otak Pria, Tiga Sistem Cinta, dan Ketegangan Abadi Antara Perasaan dan Komitmen" loading="lazy">
-                    </a>
-                    <div class="budaya-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="tag-category" style="color:#236fa1;">SOSIAL & MASYARAKAT</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">7 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Senin, 1 Juni 2026
-                        </div>
-                        <h3 class="budaya-card-title">
-                          <a href="/perspektif-budaya/otak-pria-tiga-sistem-cinta-dan-ketegangan-abadi-antara-perasaan-dan-komitmen/" style="color:inherit;text-decoration:none;">Otak Pria, Tiga Sistem Cinta, dan Ketegangan Abadi Antara Perasaan dan Komitmen</a>
-                        </h3>
-                        <p class="budaya-card-excerpt">
-                          Tinjauan neurobiologis dan antropologis mengenai dinamika relasi manusia, evolusi sistem pengasuhan, serta makna komitmen dalam membangun keluarga dan tatanan sosial masyarakat yang beradab.
-                        </p>
-                      </div>
-                      <div class="budaya-card-footer">
-                        <a href="/perspektif-budaya/otak-pria-tiga-sistem-cinta-dan-ketegangan-abadi-antara-perasaan-dan-komitmen/" class="read-more-btn">
-                          Baca Esai Lengkap
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 5 -->
-                  <article class="budaya-grid-card">
-                    <a href="/perspektif-budaya/empat-luka-suriah-geopolitik-sektarianisme-divide-et-impera-dan-perang-dingin-timur-barat/" class="budaya-card-img" title="Empat Luka Suriah: Geopolitik, Sektarianisme, Divide et Impera, dan Perang Dingin">
-                      <img src="/wp-content/uploads/2026/05/Putri-Lestari-PM-YNKI-Kehati.webp" alt="Empat Luka Suriah: Geopolitik, Sektarianisme, Divide et Impera, dan Perang Dingin" loading="lazy">
-                    </a>
-                    <div class="budaya-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="tag-category" style="color:#674ea7;">FILOSOFI & REFLEKSI</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">6 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Rabu, 29 April 2026
-                        </div>
-                        <h3 class="budaya-card-title">
-                          <a href="/perspektif-budaya/empat-luka-suriah-geopolitik-sektarianisme-divide-et-impera-dan-perang-dingin-timur-barat/" style="color:inherit;text-decoration:none;">Empat Luka Suriah: Geopolitik, Sektarianisme, Divide et Impera, dan Perang Dingin</a>
-                        </h3>
-                        <p class="budaya-card-excerpt">
-                          Pelajaran kemanusiaan dari konflik Timur Tengah: bagaimana perebutan sumber daya, fragmentasi identitas, dan hegemoni kuasa menghancurkan peradaban ribuan tahun yang kaya akan kearifan.
-                        </p>
-                      </div>
-                      <div class="budaya-card-footer">
-                        <a href="/perspektif-budaya/empat-luka-suriah-geopolitik-sektarianisme-divide-et-impera-dan-perang-dingin-timur-barat/" class="read-more-btn">
-                          Baca Esai Lengkap
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 6 -->
-                  <article class="budaya-grid-card">
-                    <a href="/perspektif-budaya/nilai-intrinsik-ekosistem-vs-praktik-ekonomi-predator/" class="budaya-card-img" title="Nilai Intrinsik Ekosistem vs Praktik Ekonomi Predator">
-                      <img src="/wp-content/uploads/2026/05/Dwi-Anggradini-Putri-Kabid-Keu-TFCA.webp" alt="Nilai Intrinsik Ekosistem vs Praktik Ekonomi Predator" loading="lazy">
-                    </a>
-                    <div class="budaya-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="tag-category" style="color:#117710;">LINGKUNGAN & EKOLOGI</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">5 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Senin, 20 April 2026
-                        </div>
-                        <h3 class="budaya-card-title">
-                          <a href="/perspektif-budaya/nilai-intrinsik-ekosistem-vs-praktik-ekonomi-predator/" style="color:inherit;text-decoration:none;">Nilai Intrinsik Ekosistem vs Praktik Ekonomi Predator</a>
-                        </h3>
-                        <p class="budaya-card-excerpt">
-                          Mengapa alam dan hutan tidak boleh semata-mata dihitung sebagai komoditas angka dan kubikasi kayu: membedah nilai intrinsik ekosistem dari lensa etika lingkungan dan keberlanjutan antar-generasi.
-                        </p>
-                      </div>
-                      <div class="budaya-card-footer">
-                        <a href="/perspektif-budaya/nilai-intrinsik-ekosistem-vs-praktik-ekonomi-predator/" class="read-more-btn">
-                          Baca Esai Lengkap
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 7 -->
-                  <article class="budaya-grid-card">
-                    <a href="/perspektif-budaya/ruang-publik-cermin-peradaban-medan-kuasa-dan-hilangnya-rasa-bersama/" class="budaya-card-img" title="Ruang Publik: Cermin Peradaban, Medan Kuasa, dan Hilangnya "Rasa Bersama"">
-                      <img src="/wp-content/uploads/2026/05/Zulfa-Laylia-Hauro-Staf-Keuangan-YNKI-Kehati.webp" alt="Ruang Publik: Cermin Peradaban, Medan Kuasa, dan Hilangnya "Rasa Bersama"" loading="lazy">
-                    </a>
-                    <div class="budaya-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="tag-category" style="color:#236fa1;">SOSIAL & MASYARAKAT</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">6 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Jumat, 17 April 2026
-                        </div>
-                        <h3 class="budaya-card-title">
-                          <a href="/perspektif-budaya/ruang-publik-cermin-peradaban-medan-kuasa-dan-hilangnya-rasa-bersama/" style="color:inherit;text-decoration:none;">Ruang Publik: Cermin Peradaban, Medan Kuasa, dan Hilangnya "Rasa Bersama"</a>
-                        </h3>
-                        <p class="budaya-card-excerpt">
-                          Refleksi atas privatisasi ruang komunal di perkotaan dan pedesaan: ketika ruang pertemuan warga tersisih oleh sekat-sekat kapital, maka rasa kepemilikan bersama atas bentang alam perlahan memudar.
-                        </p>
-                      </div>
-                      <div class="budaya-card-footer">
-                        <a href="/perspektif-budaya/ruang-publik-cermin-peradaban-medan-kuasa-dan-hilangnya-rasa-bersama/" class="read-more-btn">
-                          Baca Esai Lengkap
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 8 -->
-                  <article class="budaya-grid-card">
-                    <a href="/perspektif-budaya/teori-ekonomi-dan-status-terkini-kehidupan-bumi/" class="budaya-card-img" title="Teori Ekonomi dan Status Terkini Kehidupan Bumi">
-                      <img src="/wp-content/uploads/2026/05/Liln-Dwi-Evelin-Kadiv-Kom-TFCA.webp" alt="Teori Ekonomi dan Status Terkini Kehidupan Bumi" loading="lazy">
-                    </a>
-                    <div class="budaya-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="tag-category" style="color:#117710;">EKONOMI & KEBIJAKAN</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">5 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Kamis, 16 April 2026
-                        </div>
-                        <h3 class="budaya-card-title">
-                          <a href="/perspektif-budaya/teori-ekonomi-dan-status-terkini-kehidupan-bumi/" style="color:inherit;text-decoration:none;">Teori Ekonomi dan Status Terkini Kehidupan Bumi</a>
-                        </h3>
-                        <p class="budaya-card-excerpt">
-                          Tinjauan mendasar atas asumsi pertumbuhan ekonomi tak terbatas di planet bumi yang berbatas: mendekonstruksi paradigma ekonomi neoklasik menuju ekonomi regeneratif dan modal alam yang lestari.
-                        </p>
-                      </div>
-                      <div class="budaya-card-footer">
-                        <a href="/perspektif-budaya/teori-ekonomi-dan-status-terkini-kehidupan-bumi/" class="read-more-btn">
-                          Baca Esai Lengkap
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 9 -->
-                  <article class="budaya-grid-card">
-                    <a href="/perspektif-budaya/paradoks-renaisans-eksploitasi-dan-dehumanisasi/" class="budaya-card-img" title="Paradoks Renaisans: Eksploitasi dan Dehumanisasi">
-                      <img src="/wp-content/uploads/2026/05/Conquest_of_Constantinople_Zonaro.webp" alt="Paradoks Renaisans: Eksploitasi dan Dehumanisasi" loading="lazy">
-                    </a>
-                    <div class="budaya-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="tag-category" style="color:#674ea7;">FILOSOFI & REFLEKSI</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">7 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Rabu, 15 April 2026
-                        </div>
-                        <h3 class="budaya-card-title">
-                          <a href="/perspektif-budaya/paradoks-renaisans-eksploitasi-dan-dehumanisasi/" style="color:inherit;text-decoration:none;">Paradoks Renaisans: Eksploitasi dan Dehumanisasi</a>
-                        </h3>
-                        <p class="budaya-card-excerpt">
-                          Menelisik sisi gelap kebangkitan modernitas Barat: di balik kemajuan sains dan seni renaisans, tersimpan fondasi eksploitasi alam besar-besaran dan penaklukan kolonial terhadap bangsa-bangsa dunia ketiga.
-                        </p>
-                      </div>
-                      <div class="budaya-card-footer">
-                        <a href="/perspektif-budaya/paradoks-renaisans-eksploitasi-dan-dehumanisasi/" class="read-more-btn">
-                          Baca Esai Lengkap
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-
-                <!-- Functional Pagination -->
-                <div class="pagination-wrap">
-                  <span class="page-btn active">1</span>
-                  <a href="/kategori/perspektif-budaya/page/2/" class="page-btn">2</a>
-                  <a href="/kategori/perspektif-budaya/page/2/" class="page-btn" style="width:auto;padding:0 14px;">Selanjutnya &rarr;</a>
-                </div>
-                <p style="font-size:13px;color:#6d8579;text-align:center;margin-top:12px;">
-                  Menampilkan Halaman 1 (9 dari 12 artikel dalam koleksi Perspektif Budaya YNKI)
-                </p>
-
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               6. IKUTI REFLEKSI DAN PEMIKIRAN YNKI (CTA)
-               ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#ffffff;--awb-padding-top:40px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <div style="background:linear-gradient(135deg, #0c500b 0%, #082e07 100%);border-radius:18px;padding:46px 40px;color:#ffffff;text-align:center;box-shadow:0 6px 28px rgba(12, 80, 11, 0.18);">
-                  <h2 style="font-size:30px;font-weight:800;color:#ffffff;margin:0 0 14px;">
-                    Ikuti Refleksi dan Pemikiran YNKI
-                  </h2>
-                  <p style="font-size:15.5px;line-height:1.75;color:#d2f0d1;margin:0 auto 24px;max-width:850px;">
-                    Perspektif Budaya adalah ruang untuk merenungkan hubungan kita dengan alam, sesama, dan diri sendiri. Setiap esai adalah undangan untuk berpikir lebih mendalam tentang nilai-nilai yang kita warisi dan masa depan lanskap yang ingin kita wujudkan bersama.
-                  </p>
-
-                  <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
-                    <a href="/kontak-kami/" class="btn-hero-primary" style="background:#52c98a;color:#0d271a !important;">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                      Kirim Esai &amp; Tanggapan
-                    </a>
-                    <a href="/kategori/news-features/" class="btn-hero-secondary">
-                      Baca News &amp; Features
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
+<!-- ESENSI & STATS -->
+<section class="pb-intro ynki-section">
+  <div class="ynki-container">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <div class="divider-line" style="margin-bottom:20px;justify-content:flex-start;"><span class="section-badge">ESENSI TULISAN</span><span class="line" style="flex:0.5;"></span></div>
+        <h3>Tentang Perspektif Budaya</h3>
+        <p>Perspektif budaya adalah jendela untuk memahami bagaimana masyarakat memaknai hubungannya dengan alam, tanah, dan sesama. Tanpa memahami kebudayaan, kita hanya melihat separuh dari kenyataan.</p>
+        <p>Tulisan-tulisan dalam kategori ini mengajak pembaca untuk merenungkan berbagai isu—dari kebijakan ekonomi yang mempengaruhi petani kecil, hingga refleksi filosofis tentang harmoni, peradaban, dan krisis ekologi. YNKI menghadirkan ruang ini sebagai wadah untuk berpikir kritis dan membangun kesadaran kolektif tentang masa depan lanskap dan masyarakat.</p>
+      </div>
+      <div class="intro-stats">
+        <div class="pstat-box">
+          <div class="pstat-num">12</div>
+          <div class="pstat-info"><h4>Total Artikel</h4><p>Esai dan refleksi budaya yang telah diterbitkan</p></div>
+        </div>
+        <div class="pstat-box">
+          <div class="pstat-num">2026</div>
+          <div class="pstat-info"><h4>Tahun Publikasi Terbaru</h4><p>Tulisan diperbarui secara berkala setiap tahunnya</p></div>
+        </div>
+        <div class="pstat-box">
+          <div class="pstat-num">8<span style="color:#FF8000;">+</span></div>
+          <div class="pstat-info"><h4>Kontributor Penulis</h4><p>Beragam penulis dari akademisi, aktivis, dan praktisi</p></div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
+</section>
+
+<!-- ARTIKEL -->
+<section id="tulisan-terbaru" class="ynki-section" style="background:#fff;padding:90px 24px;">
+  <div class="ynki-container">
+    <div style="text-align:center;" id="tema-tulisan">
+      <div class="divider-line"><span class="line"></span><span class="section-badge green">TULISAN TERBARU</span><span class="line"></span></div>
+      <h2 style="font-size:clamp(22px,3vw,34px);font-weight:800;color:#0e241b;margin:0 0 12px;">Artikel Perspektif Budaya</h2>
+      <p style="font-size:15px;color:#536b5f;max-width:700px;margin:0 auto;">Berikut adalah kumpulan esai dan tulisan reflektif dari YNKI, disusun dari yang terbaru. Setiap tulisan mengajak Anda melihat dunia dari sudut pandang yang lebih dalam.</p>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter-row">
+      <span class="filter-tag active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Semua Tulisan</span>
+      <span class="filter-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2z"></path><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2z"></path></svg> Filosofi &amp; Refleksi</span>
+      <span class="filter-tag"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> Ekonomi &amp; Kebijakan</span>
+      <span class="filter-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14c-2.21 0-4-1.79-4-4h8c0 2.21-1.79 4-4 4z"></path><circle cx="9" cy="10" r="1.5"></circle><circle cx="15" cy="10" r="1.5"></circle></svg> Budaya &amp; Tradisi</span>
+      <span class="filter-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Lingkungan &amp; Ekologi</span>
+      <span class="filter-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg> Sosial &amp; Masyarakat</span>
+    </div>
+
+    <div class="articles-grid">
+      <!-- 1 -->
+      <div class="article-card">
+        <span class="article-topic t-eko">Ekonomi &amp; Kebijakan</span>
+        <h3>Kehidupan Petani Kecil Dipertaruhkan: Dari Cultuurstelsel hingga DHE SDA Indonesia</h3>
+        <span class="article-date">📅 Selasa, 16 Juni 2026</span>
+        <a href="#" class="article-read">Baca Esai <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 2 -->
+      <div class="article-card">
+        <span class="article-topic t-bud">Budaya &amp; Tradisi</span>
+        <h3>Harmoni Musik: Keselarasan Perbedaan, Keselarasan Kehidupan</h3>
+        <span class="article-date">📅 Sabtu, 13 Juni 2026</span>
+        <a href="#" class="article-read">Baca Esai <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 3 -->
+      <div class="article-card">
+        <span class="article-topic t-fil">Filosofi &amp; Refleksi</span>
+        <h3>Pabrik Ijazah atau Rumah Peradaban?</h3>
+        <span class="article-date">📅 Jumat, 5 Juni 2026</span>
+        <a href="#" class="article-read">Baca Esai <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 4 -->
+      <div class="article-card">
+        <span class="article-topic t-sos">Sosial &amp; Masyarakat</span>
+        <h3>Otak Pria, Tiga Sistem Cinta, dan Ketegangan Abadi Antara Perasaan dan Komitmen</h3>
+        <span class="article-date">📅 Senin, 1 Juni 2026</span>
+        <a href="#" class="article-read">Baca Esai <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 5 -->
+      <div class="article-card">
+        <span class="article-topic t-fil">Filosofi &amp; Refleksi</span>
+        <h3>Empat Luka Suriah</h3>
+        <span class="article-date">📅 Rabu, 29 April 2026</span>
+        <a href="#" class="article-read">Baca Esai <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 6 -->
+      <div class="article-card">
+        <span class="article-topic t-lin">Lingkungan &amp; Ekologi</span>
+        <h3>Nilai Intrinsik Ekosistem vs Praktik Ekonomi Predator</h3>
+        <span class="article-date">📅 Senin, 20 April 2026</span>
+        <a href="#" class="article-read">Baca Esai <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 7 -->
+      <div class="article-card">
+        <span class="article-topic t-sos">Sosial &amp; Masyarakat</span>
+        <h3>Ruang Publik: Cermin Peradaban, Medan Kuasa, dan Hilangnya "Rasa Bersama"</h3>
+        <span class="article-date">📅 Jumat, 17 April 2026</span>
+        <a href="#" class="article-read">Baca Esai <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 8 -->
+      <div class="article-card">
+        <span class="article-topic t-eko">Ekonomi &amp; Kebijakan</span>
+        <h3>Teori Ekonomi dan Status Terkini Kehidupan Bumi</h3>
+        <span class="article-date">📅 Kamis, 16 April 2026</span>
+        <a href="#" class="article-read">Baca Esai <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 9 -->
+      <div class="article-card">
+        <span class="article-topic t-fil">Filosofi &amp; Refleksi</span>
+        <h3>Paradoks Renaisans: Eksploitasi dan Dehumanisasi</h3>
+        <span class="article-date">📅 Rabu, 15 April 2026</span>
+        <a href="#" class="article-read">Baca Esai <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div style="text-align:center;margin-top:40px;font-size:13px;color:#536b5f;">
+      Menampilkan 9 dari 12 artikel (Halaman 1 dari 2)
+    </div>
+    <div class="pagination">
+      <a href="#" class="page-btn active">1</a>
+      <a href="#" class="page-btn">2</a>
+      <a href="#" class="page-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section ynki-section">
+  <div class="ynki-container">
+    <h2>Ikuti Refleksi dan Pemikiran YNKI</h2>
+    <p>Perspektif Budaya adalah ruang untuk merenungkan hubungan kita dengan alam, sesama, dan diri sendiri. Ikuti terus tulisan-tulisan terbaru dari YNKI dan bagikan pemikiran Anda.</p>
+    <div class="cta-btns">
+      <a href="/kontak/" class="btn-cta-main" style="background:#fff;color:#117710;">Berlangganan Pemikiran Kami</a>
+    </div>
+  </div>
+</section>
+
+</div></div></section></div>
 </main>
         <div class="fusion-tb-footer fusion-footer">
           <div class="fusion-footer-widget-area fusion-widget-area">

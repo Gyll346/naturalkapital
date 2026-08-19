@@ -13,7 +13,10 @@
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <title>News &amp; Features: Update Terkini dari Lanskap — Yayasan Natural Kapital Indonesia (YNKI)</title>
+    <title>
+      News &amp; Features: Update Terkini dari Lanskap — Yayasan Natural Kapital
+      Indonesia (YNKI)
+    </title>
     <meta
       name="description"
       content="YNKI memperkuat kolaborasi antara pemerintah, masyarakat, sektor swasta, &amp; donor untuk membangun lanskap yang sehat, produktif, tangguh, &amp; berkelanjutan."
@@ -2191,307 +2194,315 @@
       crossorigin
     />
 
-    
-  
+    <!-- Global Avada Stylesheet Fallback -->
+    <link
+      rel="stylesheet"
+      href="/wp-content/uploads/fusion-styles/47cb6edf07d5b05fc05b3981869760b8.min.css"
+    />
 
+    <style id="avada-static-display-fix">
+      /* Animation and visibility fixes */
+      .fusion-animated {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .awb-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .mega-menu-loading {
+        opacity: 1 !important;
+      }
+      .fusion-slider-visibility {
+        visibility: visible !important;
+      }
 
+      /* Responsive visibility controls */
+      @media (min-width: 801px) {
+        div.fusion-no-large-visibility,
+        .fusion-title.fusion-no-large-visibility,
+        .fusion-layout-column.fusion-no-large-visibility,
+        .fusion-no-medium-visibility.fusion-no-large-visibility {
+          display: none !important;
+        }
+      }
+      @media (max-width: 800px) {
+        div.fusion-no-small-visibility,
+        .fusion-title.fusion-no-small-visibility,
+        .fusion-layout-column.fusion-no-small-visibility {
+          display: none !important;
+        }
+      }
 
+      /* Partner section columns and badges clean grid */
+      .fusion-builder-column-14,
+      .fusion-builder-column-15,
+      .fusion-builder-column-16,
+      .fusion-builder-column-17 {
+        width: 50% !important;
+        max-width: 50% !important;
+        flex: 0 0 50% !important;
+        min-height: auto !important;
+        height: auto !important;
+        margin-top: 0px !important;
+        margin-bottom: 25px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        display: block !important;
+        box-sizing: border-box !important;
+      }
 
+      @media (max-width: 800px) {
+        .fusion-builder-column-14,
+        .fusion-builder-column-15,
+        .fusion-builder-column-16,
+        .fusion-builder-column-17 {
+          width: 100% !important;
+          max-width: 100% !important;
+          flex: 0 0 100% !important;
+          margin-bottom: 15px !important;
+        }
+      }
 
+      .fusion-builder-column-14 .fusion-column-wrapper,
+      .fusion-builder-column-15 .fusion-column-wrapper,
+      .fusion-builder-column-16 .fusion-column-wrapper,
+      .fusion-builder-column-17 .fusion-column-wrapper {
+        min-height: auto !important;
+        height: auto !important;
+        display: block !important;
+        padding: 0 !important;
+      }
 
-<!-- Global Avada Stylesheet Fallback -->
-<link rel="stylesheet" href="/wp-content/uploads/fusion-styles/47cb6edf07d5b05fc05b3981869760b8.min.css">
+      .fusion-image-carousel,
+      .awb-carousel,
+      .awb-swiper {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
 
-<style id="avada-static-display-fix">
-  /* Animation and visibility fixes */
-  .fusion-animated { opacity: 1 !important; visibility: visible !important; }
-  .awb-menu { opacity: 1 !important; visibility: visible !important; }
-  .mega-menu-loading { opacity: 1 !important; }
-  .fusion-slider-visibility { visibility: visible !important; }
-  
-  /* Responsive visibility controls */
-  @media (min-width: 801px) {
-    div.fusion-no-large-visibility,
-    .fusion-title.fusion-no-large-visibility,
-    .fusion-layout-column.fusion-no-large-visibility,
-    .fusion-no-medium-visibility.fusion-no-large-visibility {
-      display: none !important;
-    }
-  }
-  @media (max-width: 800px) {
-    div.fusion-no-small-visibility,
-    .fusion-title.fusion-no-small-visibility,
-    .fusion-layout-column.fusion-no-small-visibility {
-      display: none !important;
-    }
-  }
+      .fusion-image-carousel .swiper-wrapper,
+      .awb-swiper .swiper-wrapper {
+        display: grid !important;
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 8px !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        transform: none !important;
+      }
 
-  /* Partner section columns and badges clean grid */
-  .fusion-builder-column-14,
-  .fusion-builder-column-15,
-  .fusion-builder-column-16,
-  .fusion-builder-column-17 {
-    width: 50% !important;
-    max-width: 50% !important;
-    flex: 0 0 50% !important;
-    min-height: auto !important;
-    height: auto !important;
-    margin-top: 0px !important;
-    margin-bottom: 25px !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    display: block !important;
-    box-sizing: border-box !important;
-  }
+      .awb-swiper.awb-swiper-carousel:not(.swiper-initialized) .swiper-slide,
+      .fusion-image-carousel .swiper-slide,
+      .awb-swiper .swiper-slide {
+        display: flex !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: 55px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 4px 6px !important;
+        margin: 0 !important;
+        background: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        border-radius: 6px !important;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+        box-sizing: border-box !important;
+      }
 
-  @media (max-width: 800px) {
-    .fusion-builder-column-14,
-    .fusion-builder-column-15,
-    .fusion-builder-column-16,
-    .fusion-builder-column-17 {
-      width: 100% !important;
-      max-width: 100% !important;
-      flex: 0 0 100% !important;
-      margin-bottom: 15px !important;
-    }
-  }
+      @media (max-width: 600px) {
+        .fusion-image-carousel .swiper-wrapper,
+        .awb-swiper .swiper-wrapper {
+          grid-template-columns: repeat(3, 1fr) !important;
+        }
+      }
 
-  .fusion-builder-column-14 .fusion-column-wrapper,
-  .fusion-builder-column-15 .fusion-column-wrapper,
-  .fusion-builder-column-16 .fusion-column-wrapper,
-  .fusion-builder-column-17 .fusion-column-wrapper {
-    min-height: auto !important;
-    height: auto !important;
-    display: block !important;
-    padding: 0 !important;
-  }
+      .fusion-image-carousel .fusion-carousel-item-wrapper,
+      .fusion-image-carousel .fusion-image-wrapper,
+      .awb-swiper .fusion-image-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
 
-  .fusion-image-carousel,
-  .awb-carousel,
-  .awb-swiper {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
-    overflow: visible !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
+      .fusion-image-carousel img,
+      .awb-swiper img {
+        max-height: 34px !important;
+        max-width: 90% !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto !important;
+      }
 
-  .fusion-image-carousel .swiper-wrapper,
-  .awb-swiper .swiper-wrapper {
-    display: grid !important;
-    grid-template-columns: repeat(5, 1fr) !important;
-    gap: 8px !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
-    transform: none !important;
-  }
+      /* Team member card grid fix for tim page */
+      .fusion-builder-column-1_3 {
+        flex: 0 0 33.333% !important;
+        max-width: 33.333% !important;
+      }
+      @media (max-width: 800px) {
+        .fusion-builder-column-1_3 {
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+        }
+      }
 
-  .awb-swiper.awb-swiper-carousel:not(.swiper-initialized) .swiper-slide,
-  .fusion-image-carousel .swiper-slide,
-  .awb-swiper .swiper-slide {
-    display: flex !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    height: 55px !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 4px 6px !important;
-    margin: 0 !important;
-    background: #ffffff !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    border-radius: 6px !important;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
-    box-sizing: border-box !important;
-  }
+      /* Map overlay fix */
+      .fusion-google-map .gm-style-moc {
+        display: none !important;
+      }
 
-  @media (max-width: 600px) {
-    .fusion-image-carousel .swiper-wrapper,
-    .awb-swiper .swiper-wrapper {
-      grid-template-columns: repeat(3, 1fr) !important;
-    }
-  }
+      /* Footer styling */
+      .fusion-tb-footer,
+      .fusion-footer {
+        display: block !important;
+        width: 100% !important;
+        position: relative !important;
+        clear: both !important;
+        margin-top: 40px !important;
+      }
+    </style>
 
-  .fusion-image-carousel .fusion-carousel-item-wrapper,
-  .fusion-image-carousel .fusion-image-wrapper,
-  .awb-swiper .fusion-image-wrapper {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
+    <link rel="stylesheet" href="/assets/css/ynki-responsive-system.css" />
+    <style id="ynki-universal-polish">
+      /* ===== YNKI GLOBAL POLISH & NAVBAR FIX ===== */
+      .fusion-tb-header > .fusion-fullwidth:first-child,
+      .fusion-tb-header,
+      .fusion-header,
+      .fusion-header-wrapper,
+      #fusion-header {
+        background: transparent !important;
+        background-color: transparent !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+        box-shadow: none !important;
+      }
 
-  .fusion-image-carousel img,
-  .awb-swiper img {
-    max-height: 34px !important;
-    max-width: 90% !important;
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain !important;
-    display: block !important;
-    margin: 0 auto !important;
-  }
+      /* Nav Links - clear dark green */
+      .awb-menu__main-li > a,
+      .awb-menu__main-a {
+        color: #12291e !important;
+        font-weight: 700 !important;
+      }
+      .awb-menu__main-li > a:hover,
+      .awb-menu__main-li.current-menu-item > a {
+        color: #117710 !important;
+      }
 
-  /* Team member card grid fix for tim page */
-  .fusion-builder-column-1_3 {
-    flex: 0 0 33.333% !important;
-    max-width: 33.333% !important;
-  }
-  @media (max-width: 800px) {
-    .fusion-builder-column-1_3 {
-      flex: 0 0 100% !important;
-      max-width: 100% !important;
-    }
-  }
+      /* Ensure no green backgrounds on header containers */
+      .fusion-fullwidth.fusion-builder-row-1 {
+        background-color: transparent !important;
+      }
 
-  /* Map overlay fix */
-  .fusion-google-map .gm-style-moc {
-    display: none !important;
-  }
+      /* Universal Button Overrides according to Color Specs */
+      .btn-cta-main,
+      a.btn-cta-main,
+      .fusion-button.button-primary:not(.btn-cta-second) {
+        background: #b22231 !important;
+        color: #ffffff !important;
+        border: none !important;
+        box-shadow: 0 4px 14px rgba(178, 34, 49, 0.28) !important;
+      }
+      .btn-cta-main:hover,
+      a.btn-cta-main:hover {
+        background: #941724 !important;
+        color: #ffffff !important;
+      }
 
-  /* Footer styling */
-  .fusion-tb-footer, .fusion-footer {
-    display: block !important;
-    width: 100% !important;
-    position: relative !important;
-    clear: both !important;
-    margin-top: 40px !important;
-  }
-</style>
+      .btn-cta-second,
+      a.btn-cta-second {
+        background: #a0d2f5 !important;
+        color: #0e241b !important;
+        border: 1px solid rgba(14, 36, 27, 0.12) !important;
+        box-shadow: 0 4px 14px rgba(160, 210, 245, 0.3) !important;
+      }
+      .btn-cta-second:hover,
+      a.btn-cta-second:hover {
+        background: #82c4f1 !important;
+        color: #05140d !important;
+      }
 
-<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
-<style id="ynki-universal-polish">
-/* ===== YNKI GLOBAL POLISH & NAVBAR FIX ===== */
-.fusion-tb-header > .fusion-fullwidth:first-child,
-.fusion-tb-header,
-.fusion-header,
-.fusion-header-wrapper,
-#fusion-header {
-  background: transparent !important;
-  background-color: transparent !important;
-  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
-  box-shadow: none !important;
-}
+      /* Universal Badge Accent: Oranye #FF8000 */
+      .badge-highlight,
+      .badge-orange,
+      .section-badge,
+      .tag-highlight {
+        color: #ff8000 !important;
+        background: #fff3e6 !important;
+        border-color: rgba(255, 128, 0, 0.35) !important;
+      }
 
-/* Nav Links - clear dark green */
-.awb-menu__main-li > a,
-.awb-menu__main-a {
-  color: #12291e !important;
-  font-weight: 700 !important;
-}
-.awb-menu__main-li > a:hover,
-.awb-menu__main-li.current-menu-item > a {
-  color: #117710 !important;
-}
+      /* Universal Accent Sekunder: Ungu #8000FF */
+      .badge-purple,
+      .category-tag-purple,
+      .tag-category,
+      .category-badge {
+        color: #8000ff !important;
+        background: #f3e8ff !important;
+        border-color: rgba(128, 0, 255, 0.3) !important;
+      }
 
-/* Ensure no green backgrounds on header containers */
-.fusion-fullwidth.fusion-builder-row-1 {
-  background-color: transparent !important;
-}
+      /* Responsive clean image wrappers */
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+    </style>
+    <style id="ynki-universal-clean-header">
+      /* ===== YNKI GLOBAL NAVBAR CLEANUP - 100% TRANSPARENT / NO GREEN BACKGROUND ===== */
+      header,
+      .fusion-tb-header,
+      .fusion-tb-header > .fusion-fullwidth,
+      .fusion-tb-header > .fusion-fullwidth:first-child,
+      .fusion-header,
+      .fusion-header-wrapper,
+      #fusion-header,
+      .fusion-fullwidth.fusion-builder-row-1,
+      div[class*="fusion-builder-row-1"],
+      .fusion-top-header {
+        background: transparent !important;
+        background-color: transparent !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+      }
 
-/* Universal Button Overrides according to Color Specs */
-.btn-cta-main,
-a.btn-cta-main,
-.fusion-button.button-primary:not(.btn-cta-second) {
-  background: #B22231 !important;
-  color: #ffffff !important;
-  border: none !important;
-  box-shadow: 0 4px 14px rgba(178,34,49,0.28) !important;
-}
-.btn-cta-main:hover,
-a.btn-cta-main:hover {
-  background: #941724 !important;
-  color: #ffffff !important;
-}
+      /* Nav Menu typography and colors */
+      .awb-menu__main-li > a,
+      .awb-menu__main-a {
+        color: #12291e !important;
+        font-weight: 700 !important;
+        font-size: 13.5px !important;
+        text-decoration: none !important;
+      }
+      .awb-menu__main-li > a:hover,
+      .awb-menu__main-li.current-menu-item > a,
+      .awb-menu__main-li.current-menu-parent > a {
+        color: #117710 !important;
+      }
 
-.btn-cta-second,
-a.btn-cta-second {
-  background: #A0D2F5 !important;
-  color: #0e241b !important;
-  border: 1px solid rgba(14,36,27,0.12) !important;
-  box-shadow: 0 4px 14px rgba(160,210,245,0.3) !important;
-}
-.btn-cta-second:hover,
-a.btn-cta-second:hover {
-  background: #82c4f1 !important;
-  color: #05140d !important;
-}
-
-/* Universal Badge Accent: Oranye #FF8000 */
-.badge-highlight,
-.badge-orange,
-.section-badge,
-.tag-highlight {
-  color: #FF8000 !important;
-  background: #fff3e6 !important;
-  border-color: rgba(255,128,0,0.35) !important;
-}
-
-/* Universal Accent Sekunder: Ungu #8000FF */
-.badge-purple,
-.category-tag-purple,
-.tag-category,
-.category-badge {
-  color: #8000FF !important;
-  background: #f3e8ff !important;
-  border-color: rgba(128,0,255,0.3) !important;
-}
-
-/* Responsive clean image wrappers */
-img {
-  max-width: 100% !important;
-  height: auto !important;
-}
-</style>
-<style id="ynki-universal-clean-header">
-/* ===== YNKI GLOBAL NAVBAR CLEANUP - 100% TRANSPARENT / NO GREEN BACKGROUND ===== */
-header,
-.fusion-tb-header,
-.fusion-tb-header > .fusion-fullwidth,
-.fusion-tb-header > .fusion-fullwidth:first-child,
-.fusion-header,
-.fusion-header-wrapper,
-#fusion-header,
-.fusion-fullwidth.fusion-builder-row-1,
-div[class*="fusion-builder-row-1"],
-.fusion-top-header {
-  background: transparent !important;
-  background-color: transparent !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
-}
-
-/* Nav Menu typography and colors */
-.awb-menu__main-li > a,
-.awb-menu__main-a {
-  color: #12291e !important;
-  font-weight: 700 !important;
-  font-size: 13.5px !important;
-  text-decoration: none !important;
-}
-.awb-menu__main-li > a:hover,
-.awb-menu__main-li.current-menu-item > a,
-.awb-menu__main-li.current-menu-parent > a {
-  color: #117710 !important;
-}
-
-/* Mobile Navbar clean transparent */
-.fusion-mobile-menu-design-modern .fusion-header,
-.fusion-mobile-menu-design-classic .fusion-header {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-</style>
-</head>
+      /* Mobile Navbar clean transparent */
+      .fusion-mobile-menu-design-modern .fusion-header,
+      .fusion-mobile-menu-design-classic .fusion-header {
+        background: transparent !important;
+        background-color: transparent !important;
+      }
+    </style>
+  </head>
   <body
     class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr fusion-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
     data-awb-post-id="5283"
   >
-    <a class="skip-link screen-reader-text" href="/sustainable-commodity/">Skip to content</a>
+    <a class="skip-link screen-reader-text" href="/sustainable-commodity/"
+      >Skip to content</a
+    >
     <div id="boxed-wrapper">
       <div id="wrapper" class="fusion-wrapper">
         <div id="home" style="position: relative; top: -1px"></div>
@@ -2579,7 +2590,20 @@ div[class*="fusion-builder-row-1"],
                         href="/"
                         target="_self"
                         aria-label="logo-ynki-80"
-                        ><img decoding="async" width="300" height="60" alt="Natural Kapital Foundation" class="img-responsive wp-image-183 disable-lazyload" data- data- src="/wp-content/uploads/2026/05/logo-ynki-80-300x60.webp" srcset=" /wp-content/uploads/2026/05/logo-ynki-80-200x40.webp 200w, /wp-content/uploads/2026/05/logo-ynki-80.webp 399w " sizes="(max-width: 1024px) 100vw, (max-width: 640px) 100vw, 300px" /></a
+                        ><img
+                          decoding="async"
+                          width="300"
+                          height="60"
+                          alt="Natural Kapital Foundation"
+                          class="img-responsive wp-image-183 disable-lazyload"
+                          data-
+                          data-
+                          src="/wp-content/uploads/2026/05/logo-ynki-80-300x60.webp"
+                          srcset="
+                            /wp-content/uploads/2026/05/logo-ynki-80-200x40.webp 200w,
+                            /wp-content/uploads/2026/05/logo-ynki-80.webp        399w
+                          "
+                          sizes="(max-width: 1024px) 100vw, (max-width: 640px) 100vw, 300px" /></a
                     ></span>
                   </div>
                 </div>
@@ -3020,1172 +3044,924 @@ div[class*="fusion-builder-row-1"],
           </div>
         </div>
         <div id="sliders-container" class="fusion-slider-visibility"></div>
-        <main id="main" class="clearfix width-100" style="font-family: 'Inter', Arial, Helvetica, sans-serif;">
-<style>
-/* ===== YNKI HEADER FIX: Logo Visibility + Mobile Nav Colors ===== */
-/* Prevent logo from being clipped */
-.fusion-tb-header .fusion-image-element {
-  overflow: visible !important;
-}
-.fusion-tb-header .fusion-image-element img {
-  max-width: 180px !important;
-  height: auto !important;
-  display: block !important;
-}
-/* Mobile nav brand colors */
-.awb-menu__mobile-ul .awb-menu__mobile-a,
-.awb-menu__mobile-ul .awb-menu__sub-a,
-li.awb-menu__mobile-li > a {
-  color: #12291e !important;
-  font-weight: 700 !important;
-}
-li.awb-menu__mobile-li > a:hover {
-  color: #117710 !important;
-  background: #eaf6ea !important;
-}
-/* Mobile menu toggle (hamburger) color */
-.awb-menu__open-nav-submenu_mobile-toggle,
-.awb-menu__mobile-toggle,
-.awb-menu__hamburger {
-  color: #117710 !important;
-}
-/* Program link cards hover */
-.program-link-card {
-  transition: all 0.3s ease !important;
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 12px !important;
-  padding: 18px !important;
-  background: #ffffff !important;
-  border: 1px solid #d2e8d1 !important;
-  border-radius: 12px !important;
-  text-decoration: none !important;
-  margin-bottom: 12px !important;
-}
-.program-link-card:hover {
-  transform: translateY(-3px) !important;
-  border-color: #117710 !important;
-  box-shadow: 0 8px 24px rgba(17,119,16,0.12) !important;
-  background: #fafffa !important;
-}
-.program-link-card .icon-badge {
-  width: 42px !important;
-  height: 42px !important;
-  background: #eaf6ea !important;
-  border-radius: 10px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: #117710 !important;
-  flex-shrink: 0 !important;
-}
-/* Divider heading section badge styling  */
-.divider-heading > span:not(.line) {
-  font-size: 12px !important;
-  font-weight: 700 !important;
-  letter-spacing: 1.2px !important;
-  text-transform: uppercase !important;
-  color: #FF8000 !important;
-  background: #fff3e6 !important;
-  border: 1px solid rgba(255,128,0,0.3) !important;
-  padding: 5px 16px !important;
-  border-radius: 50px !important;
-}
+        <main
+          id="main"
+          class="clearfix width-100"
+          style="font-family: &quot;Inter&quot;, Arial, Helvetica, sans-serif"
+        >
+          <link
+            rel="stylesheet"
+            href="/assets/css/ynki-responsive-system.css"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          />
+          <style>
+            *,
+            *::before,
+            *::after {
+              box-sizing: border-box;
+            }
+            .ynki-section {
+              width: 100%;
+            }
+            .ynki-container {
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 24px;
+            }
+            .section-badge {
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 11px;
+              font-weight: 700;
+              letter-spacing: 1.5px;
+              text-transform: uppercase;
+              color: #ff8000;
+              background: #fff3e6;
+              border: 1px solid rgba(255, 128, 0, 0.35);
+              padding: 5px 16px;
+              border-radius: 50px;
+              margin-bottom: 14px;
+            }
+            .section-badge.white {
+              background: rgba(255, 255, 255, 0.15);
+              color: #fff;
+              border-color: rgba(255, 255, 255, 0.3);
+            }
+            .section-badge.green {
+              background: #e8f5e8;
+              color: #117710;
+              border-color: #117710;
+            }
+            .divider-line {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 16px;
+              margin-bottom: 14px;
+            }
+            .divider-line .line {
+              flex: 1;
+              height: 1px;
+              background: #d2e8d1;
+            }
+            .hero-section {
+              position: relative;
+              min-height: 82vh;
+              display: flex;
+              align-items: center;
+              background-image:
+                linear-gradient(
+                  155deg,
+                  rgba(5, 42, 5, 0.93) 0%,
+                  rgba(12, 80, 11, 0.72) 55%,
+                  rgba(0, 0, 0, 0.4) 100%
+                ),
+                url("/assets/images/homepage/hero-bg.png");
+              background-size: cover;
+              background-position: center;
+              padding: 110px 24px 90px;
+            }
+            .hero-section::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 80px;
+              background: linear-gradient(to bottom, transparent, #ffffff);
+              pointer-events: none;
+            }
+            .hero-inner {
+              position: relative;
+              z-index: 2;
+              max-width: 920px;
+              margin: 0 auto;
+              text-align: center;
+            }
+            .hero-crumb {
+              font-size: 11.5px;
+              font-weight: 700;
+              letter-spacing: 1.8px;
+              text-transform: uppercase;
+              color: #a3e0a2;
+              margin-bottom: 20px;
+            }
+            .hero-crumb a {
+              color: #d2f0d1;
+              text-decoration: none;
+            }
+            .hero-h1 {
+              font-size: clamp(28px, 4.5vw, 48px);
+              font-weight: 900;
+              line-height: 1.2;
+              color: #ffffff;
+              margin: 0 0 20px;
+              letter-spacing: -0.02em;
+            }
+            .hero-h1 .hl {
+              color: #a3e0a2;
+            }
+            .hero-sub {
+              font-size: clamp(14px, 1.6vw, 17px);
+              line-height: 1.85;
+              color: #d2f0d1;
+              max-width: 820px;
+              margin: 0 auto 32px;
+            }
+            .hero-btns {
+              display: flex;
+              justify-content: center;
+              gap: 14px;
+              flex-wrap: wrap;
+            }
+            .cta-btns {
+              display: flex;
+              justify-content: center;
+              gap: 14px;
+              flex-wrap: wrap;
+            }
+            .cta-section {
+              background: #117710;
+              padding: 90px 24px;
+              text-align: center;
+            }
+            .cta-section h2 {
+              font-size: clamp(24px, 3.5vw, 36px);
+              font-weight: 800;
+              color: #fff;
+              margin: 0 0 16px;
+            }
+            .cta-section p {
+              font-size: 15.5px;
+              color: #d2f0d1;
+              max-width: 700px;
+              margin: 0 auto 32px;
+              line-height: 1.7;
+            }
+          </style>
+          <style>
+            .news-intro {
+              background: #f5f8f5;
+              padding: 90px 24px;
+            }
+            .intro-grid {
+              display: grid;
+              grid-template-columns: 1.2fr 1fr;
+              gap: 40px;
+              max-width: 1100px;
+              margin: 0 auto;
+              align-items: center;
+            }
+            .intro-text h3 {
+              font-size: 24px;
+              font-weight: 800;
+              color: #0e241b;
+              margin: 0 0 16px;
+            }
+            .intro-text p {
+              font-size: 15px;
+              color: #536b5f;
+              line-height: 1.8;
+              margin: 0 0 16px;
+            }
+            .intro-stats {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 16px;
+            }
+            .nstat-box {
+              background: #fff;
+              border: 1.5px solid #d2e8d1;
+              border-radius: 16px;
+              padding: 24px;
+              display: flex;
+              align-items: center;
+              gap: 20px;
+            }
+            .nstat-num {
+              font-size: 36px;
+              font-weight: 900;
+              color: #117710;
+              line-height: 1;
+              flex-shrink: 0;
+              min-width: 60px;
+              text-align: center;
+            }
+            .nstat-info h4 {
+              font-size: 15px;
+              font-weight: 800;
+              color: #0e241b;
+              margin: 0 0 4px;
+            }
+            .nstat-info p {
+              font-size: 13px;
+              color: #536b5f;
+              margin: 0;
+            }
 
-/* ===== Mobile Responsive Grid Overrides ===== */
-@media (max-width: 800px) {
-  /* Force AWB columns to 100% on mobile */
-  .fusion_builder_column,
-  .fusion-layout-column,
-  [class*="fusion_builder_column_"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-    --awb-width-small: 100% !important;
-    --awb-spacing-right-small: 0% !important;
-    --awb-spacing-left-small: 0% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-bottom: 18px !important;
-    padding-left: 8px !important;
-    padding-right: 8px !important;
-  }
-  .fusion-builder-row {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0 !important;
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  /* Also fix inner row with gap styles */
-  .fusion-builder-row[style*="gap"] {
-    gap: 18px !important;
-  }
-  /* Handle fusion-column-wrapper */
-  .fusion-column-wrapper {
-    padding: 0 !important;
-  }
-  /* Avada fullwidth containers */
-  .fusion-fullwidth, .fullwidth-box {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    box-sizing: border-box !important;
-    overflow-x: hidden !important;
-  }
-  /* Grid elements from custom pages */
-  div[style*="display:grid"],
-  div[style*="display: grid"] {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-  /* Program link cards - stack nicely on mobile */
-  .program-link-card {
-    margin-bottom: 10px !important;
-  }
-  /* CTA buttons - full width on mobile */
-  a.btn-hero-primary,
-  a.btn-hero-secondary,
-  a.btn-cta-main,
-  a.btn-cta-second,
-  .btn-hero-primary,
-  .btn-hero-secondary,
-  .btn-cta-main,
-  .btn-cta-second {
-    width: 100% !important;
-    text-align: center !important;
-    justify-content: center !important;
-    display: flex !important;
-    box-sizing: border-box !important;
-  }
-  /* Flex containers with centered buttons */
-  div[style*="display:flex"][style*="justify-content:center"]:not(.divider-heading):not(.tag-location) {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 10px !important;
-    padding: 0 !important;
-  }
-  /* Footer */
-  .fusion-tb-footer .fusion-builder-row,
-  .fusion-footer .fusion-builder-row {
-    flex-direction: column !important;
-  }
-  .fusion-tb-footer .fusion-layout-column,
-  .fusion-footer .fusion-layout-column {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-    margin-bottom: 28px !important;
-  }
-  /* Images in content */
-  .fusion-fullwidth img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-}
-/* Extra small phones */
-@media (max-width: 480px) {
-  .fusion-fullwidth, .fullwidth-box {
-    padding-left: 14px !important;
-    padding-right: 14px !important;
-  }
-}
-</style>
+            .news-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 24px;
+              margin-top: 44px;
+            }
+            .news-card {
+              background: #fff;
+              border: 1px solid #d2e8d1;
+              border-radius: 16px;
+              overflow: hidden;
+              transition: all 0.3s;
+              display: flex;
+              flex-direction: column;
+            }
+            .news-card:hover {
+              box-shadow: 0 14px 36px rgba(17, 119, 16, 0.1);
+              transform: translateY(-4px);
+              border-color: #117710;
+            }
+            .news-header {
+              padding: 16px 20px 0;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+            .news-topic {
+              font-size: 10px;
+              font-weight: 800;
+              letter-spacing: 1.2px;
+              text-transform: uppercase;
+              padding: 4px 12px;
+              border-radius: 50px;
+            }
+            .t-komoditas {
+              background: #e6f3ff;
+              color: #0066cc;
+            }
+            .t-pemuda {
+              background: #fff3e6;
+              color: #ff8000;
+            }
+            .t-restorasi {
+              background: #e8f5e8;
+              color: #117710;
+            }
+            .t-ekonomi {
+              background: #f3e6ff;
+              color: #8000ff;
+            }
+            .t-analisis {
+              background: #fff5f5;
+              color: #b22231;
+            }
+            .news-date {
+              font-size: 12px;
+              color: #8a9e94;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              gap: 4px;
+            }
+            .news-body {
+              padding: 16px 20px 24px;
+              flex-grow: 1;
+              display: flex;
+              flex-direction: column;
+            }
+            .news-body h3 {
+              font-size: 17px;
+              font-weight: 800;
+              color: #0e241b;
+              margin: 0 0 12px;
+              line-height: 1.4;
+            }
+            .news-body p {
+              font-size: 13.5px;
+              color: #536b5f;
+              line-height: 1.65;
+              margin: 0 0 16px;
+              flex-grow: 1;
+            }
+            .news-read {
+              font-size: 13px;
+              font-weight: 700;
+              color: #117710;
+              text-decoration: none;
+              display: inline-flex;
+              align-items: center;
+              gap: 5px;
+              margin-top: auto;
+              transition: opacity 0.2s;
+            }
+            .news-read:hover {
+              opacity: 0.7;
+            }
 
+            .filter-row {
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              justify-content: center;
+              margin-top: 44px;
+            }
+            .filter-tag {
+              font-size: 13px;
+              font-weight: 700;
+              padding: 9px 20px;
+              border-radius: 50px;
+              border: 2px solid #d2e8d1;
+              color: #117710;
+              cursor: pointer;
+              transition: all 0.3s;
+              background: #fff;
+            }
+            .filter-tag:hover,
+            .filter-tag.active {
+              background: #117710;
+              color: #fff;
+              border-color: #117710;
+            }
 
-  <style>
-  /* Responsive Mobile Layout Overrides */
-  @media (max-width: 768px) {
-    div[style*="grid-template-columns"],
-    div[style*="grid-template-columns: 1.2fr 0.8fr"],
-    div[style*="grid-template-columns: 1fr 1fr"],
-    div[style*="grid-template-columns: 0.9fr 1.1fr"],
-    div[style*="grid-template-columns: 1.1fr 0.9fr"],
-    div[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"],
-    div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"],
-    div[style*="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))"],
-    div[style*="grid-template-columns: repeat(3, 1fr)"],
-    div[style*="grid-template-columns: repeat(4, 1fr)"] {
-      grid-template-columns: 1fr !important;
-      gap: 18px !important;
-    }
-    .hero-buttons-container,
-    div[style*="display:flex"][style*="justify-content:center"]:not(.divider-heading):not(.tag-location) {
-      flex-direction: column !important;
-      align-items: stretch !important;
-      gap: 12px !important;
-      width: 100% !important;
-    }
-    .btn-hero-primary,
-    .btn-hero-secondary,
-    .btn-cta-main,
-    .btn-cta-second,
-    .btn-brand-primary {
-      width: 100% !important;
-      text-align: center !important;
-      justify-content: center !important;
-      display: flex !important;
-    }
-    .fusion-fullwidth {
-      padding-left: 16px !important;
-      padding-right: 16px !important;
-    }
-    .photo-story-card .card-img-wrap,
-    .video-thumb-wrap {
-      height: 200px !important;
-    }
-  }
+            .pagination {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 8px;
+              margin-top: 40px;
+            }
+            .page-btn {
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              border: 1.5px solid #d2e8d1;
+              background: #fff;
+              color: #117710;
+              font-weight: 700;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              transition: all 0.2s;
+              text-decoration: none;
+            }
+            .page-btn:hover,
+            .page-btn.active {
+              background: #117710;
+              color: #fff;
+              border-color: #117710;
+            }
 
-    #post-news {
-      font-family: 'Inter', Arial, Helvetica, sans-serif !important;
-    }
-    #post-news h1, #post-news h2, #post-news h3, #post-news h4, #post-news h5, #post-news h6 {
-      font-family: 'Inter', Arial, Helvetica, sans-serif !important;
-      letter-spacing: -0.015em;
-    }
-    .featured-hero-article {
-      background: #ffffff;
-      border: 1px solid #d2e8d1;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-      display: grid;
-      grid-template-columns: 1.15fr 1fr;
-      margin-bottom: 40px;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .featured-hero-article:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 42px rgba(17, 119, 16, 0.12);
-      border-color: #117710;
-    }
-    .featured-img-wrap {
-      overflow: hidden;
-      position: relative;
-      min-height: 360px;
-    }
-    .featured-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-    .featured-hero-article:hover .featured-img-wrap img {
-      transform: scale(1.05);
-    }
-    .featured-content-wrap {
-      padding: 38px 36px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    @media (max-width: 900px) {
-      .featured-hero-article {
-        grid-template-columns: 1fr;
-      }
-      .featured-img-wrap {
-        min-height: 240px;
-      }
-      .featured-content-wrap {
-        padding: 24px 20px;
-      }
-    }
-    .news-grid-card {
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      background: #ffffff;
-      border: 1px solid #d2e8d1;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.03);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-    .news-grid-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 36px rgba(17, 119, 16, 0.12);
-      border-color: #117710;
-    }
-    .news-card-img {
-      overflow: hidden;
-      height: 200px;
-      position: relative;
-      display: block;
-    }
-    .news-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .news-grid-card:hover .news-card-img img {
-      transform: scale(1.06);
-    }
-    .news-card-body {
-      padding: 22px 20px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .news-card-title {
-      font-size: 17.5px;
-      font-weight: 700;
-      color: #0e241b;
-      margin: 0 0 10px;
-      line-height: 1.38;
-      transition: color 0.2s ease;
-    }
-    .news-card-title a:hover {
-      color: #117710 !important;
-    }
-    .news-card-excerpt {
-      font-size: 14px;
-      line-height: 1.68;
-      color: #435c50;
-      margin: 0;
-    }
-    .news-card-footer {
-      margin-top: 16px;
-      padding-top: 14px;
-      border-top: 1px solid #eef4f0;
-    }
-    .read-more-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #117710;
-      font-size: 13.5px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .read-more-btn:hover {
-      color: #124429;
-      transform: translateX(3px);
-    }
-    .category-badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      background: #eaf6ea;
-      padding: 4px 12px;
-      border-radius: 50px;
-    }
-    .date-meta {
-      font-size: 12.5px;
-      color: #6d8579;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-    .news-stat-card {
-      transition: all 0.3s ease;
-      background: #ffffff;
-      border: 1px solid #d2e8d1;
-      border-radius: 14px;
-      padding: 26px 20px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    }
-    .news-stat-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(18, 56, 38, 0.10);
-      border-color: #117710;
-    }
-    .stat-number {
-      font-size: clamp(34px, 3.2vw, 42px);
-      font-weight: 800;
-      color: #117710;
-      line-height: 1.1;
-      margin-bottom: 6px;
-      font-family: 'Inter', Arial, Helvetica, sans-serif;
-    }
-    .stat-label {
-      font-size: 16px;
-      font-weight: 700;
-      color: #0e241b;
-      margin-bottom: 6px;
-    }
-    .stat-desc {
-      font-size: 13.5px;
-      color: #536b5f;
-      line-height: 1.5;
-      margin: 0;
-    }
-    .why-card {
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      background: #ffffff;
-      border: 1px solid #d2e8d1;
-      border-radius: 14px;
-      padding: 28px 24px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-    }
-    .why-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 32px rgba(18, 56, 38, 0.11);
-      border-color: #117710;
-    }
-    .icon-badge {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: #eaf6ea;
-      color: #117710;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      flex-shrink: 0;
-      transition: all 0.3s ease;
-    }
-    .why-card:hover .icon-badge {
-      background: #117710;
-      color: #ffffff;
-    }
-    .category-filter-pill {
-      display: inline-block;
-      background: #ffffff;
-      color: #2d503d;
-      font-size: 13.5px;
-      font-weight: 600;
-      padding: 8px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 1px solid #d5e8dc;
-      cursor: pointer;
-    }
-    .category-filter-pill:hover, .category-filter-pill.active {
-      background: #117710;
-      color: #ffffff;
-      border-color: #117710;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(30,107,66,0.2);
-    }
-    .btn-hero-primary {
-      transition: all 0.3s ease;
-      background: #117710; color: #ffffff !important;
-      color: #ffffff !important;
-      border-radius: 6px;
-      padding: 13px 28px;
-      font-weight: 700;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-hero-primary:hover {
-      background: #0d5c0c !important;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-      transform: translateY(-2px);
-    }
-    .btn-hero-secondary {
-      transition: all 0.3s ease;
-      background: #A0D2F5; color: #0e241b !important; border: 1px solid rgba(14, 36, 27, 0.15);
-      color: #ffffff !important;
-      border-radius: 6px;
-      padding: 13px 28px;
-      font-weight: 700;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.35);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      backdrop-filter: blur(6px);
-    }
-    .btn-hero-secondary:hover {
-      background: rgba(255,255,255,0.15) !important;
-      border-color: #ffffff !important;
-      transform: translateY(-2px);
-    }
-    .divider-heading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      width: 100%;
-      margin-bottom: 12px;
-    }
-    .divider-heading .line { flex:1; height:1px; background:#d2e8d1; }
-    .hero-anim {
-      animation: heroBounce 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    @keyframes heroBounce {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .pagination-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-    .page-btn {
-      min-width: 40px;
-      height: 40px;
-      padding: 0 12px;
-      border-radius: 8px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #d2e8d1;
-      background: #ffffff;
-      color: #0e241b;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.25s ease;
-    }
-    .page-btn:hover, .page-btn.active {
-      background: #117710;
-      color: #ffffff;
-      border-color: #117710;
-    }
-    .newsletter-box {
-      background: linear-gradient(135deg, #0c500b 0%, #082e07 100%);
-      border-radius: 18px;
-      padding: 46px 40px;
-      color: #ffffff;
-      text-align: center;
-      box-shadow: 0 6px 28px rgba(12, 80, 11, 0.18);
-    }
-  </style>
+            .why-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 24px;
+              margin-top: 44px;
+            }
+            .why-card {
+              background: rgba(255, 255, 255, 0.08);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              border-radius: 16px;
+              padding: 28px 24px;
+              text-align: center;
+              transition: all 0.3s;
+            }
+            .why-card:hover {
+              background: rgba(255, 255, 255, 0.12);
+              transform: translateY(-4px);
+            }
+            .why-icon {
+              width: 52px;
+              height: 52px;
+              background: rgba(255, 255, 255, 0.1);
+              border-radius: 50%;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 16px;
+            }
+            .why-icon svg {
+              stroke: #a3e0a2;
+            }
+            .why-card h4 {
+              font-size: 16px;
+              font-weight: 800;
+              color: #fff;
+              margin: 0 0 10px;
+            }
+            .why-card p {
+              font-size: 13.5px;
+              color: #d2f0d1;
+              line-height: 1.6;
+              margin: 0;
+            }
 
-  <div class="fusion-row" style="max-width:100%;">
-    <section id="content" class="full-width">
-      <div id="post-news" class="post-news page type-page status-publish hentry">
-        <span class="entry-title rich-snippet-hidden">News &amp; Features: Update Terkini dari YNKI</span>
-        <span class="updated rich-snippet-hidden">2026-08-18T11:00:00+07:00</span>
-
-        <div class="post-content">
-
-          <!-- ======================================================
-               1. HERO BANNER
-               ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-builder-row-2 fusion-flex-container fusion-parallax-none nonhundred-percent-fullwidth" style="background-image: linear-gradient(155deg, rgba(7, 53, 6, 0.90) 0%, rgba(12, 80, 11, 0.70) 70%), url('/assets/images/news/image1.png') !important; background-size: cover !important; background-position: center center !important; --awb-padding-top: 7vw; --awb-padding-bottom: 5.5vw; --awb-padding-top-small: 55px; --awb-padding-right-small: 25px; --awb-padding-bottom-small: 55px; --awb-padding-left-small: 25px; --awb-margin-bottom: 50px; --awb-flex-wrap: wrap;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;text-align:center;">
-                <div class="fusion-column-wrapper fusion-content-layout-column hero-anim" style="display:flex!important;flex-direction:column!important;align-items:center!important;">
-
-                  <!-- Breadcrumb -->
-                  <div style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#52c98a;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
-                    <a href="/" style="color:#d2f0d1;text-decoration:none;">BERANDA</a>
-                    <span style="opacity:0.5;color:#fff;">/</span>
-                    <span style="color:#d2f0d1;">PUSTAKA &amp; PENGETAHUAN</span>
-                    <span style="opacity:0.5;color:#fff;">/</span>
-                    <span style="color:#fff;">NEWS &amp; FEATURES</span>
-                  </div>
-
-                  <!-- Hero Title -->
-                  <h1 style="margin:0 0 18px;font-size:clamp(26px,3.6vw,46px);line-height:1.2;color:#ffffff;font-family:'Inter',Arial,Helvetica,sans-serif;font-weight:800;max-width:980px;">
-                    Cerita Terkini dari Lanskap Kalimantan
-                  </h1>
-
-                  <p style="font-size:clamp(14.5px,1.5vw,17.5px);line-height:1.75;color:#eaf6ea;font-weight:400;margin:0 auto 30px;max-width:880px;">
-                    Liputan kegiatan, artikel mendalam, dan berita seputar upaya YNKI dalam memperkuat tata kelola lanskap yang inklusif dan kolaboratif. Dari restorasi gambut hingga pemberdayaan masyarakat, temukan cerita inspiratif dari lapangan menuju <em>Healthy Landscapes, Thriving Communities</em>.
-                  </p>
-
-                  <!-- Action Buttons -->
-                  <div style="display:flex;justify-content:center;gap:15px;flex-wrap:wrap;">
-                    <a class="btn-hero-primary" href="#artikel-terbaru">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
-                      Berita Terbaru
-                    </a>
-                    <a class="btn-hero-secondary" href="#filter-kategori">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 12 12 16 16 12 12 8"></polygon></svg>
-                      Filter Topik
-                    </a>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               2. TENTANG YNKI & STATISTIK PUBLIKASI
-               ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#ffffff;--awb-padding-top:20px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <!-- Highlight Box Tentang YNKI -->
-                <div style="background:linear-gradient(135deg, #f0f9f4 0%, #e6f5ec 100%);border-left:5px solid #117710;border-radius:14px;padding:32px 36px;margin-bottom:36px;box-shadow:0 3px 12px rgba(30,107,66,0.06);">
-                  <div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;">
-                    <div style="width:50px;height:50px;border-radius:12px;background:#117710;color:#ffffff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    </div>
-                    <div style="flex:1;min-width:280px;">
-                      <h3 style="font-size:20px;font-weight:800;color:#0e241b;margin:0 0 10px;">
-                        Jendela Transparansi &amp; Pembelajaran Lanskap
-                      </h3>
-                      <p style="font-size:15.5px;line-height:1.8;color:#2d503d;margin:0;">
-                        <strong>Yayasan Natural Kapital Indonesia (YNKI)</strong> adalah organisasi tata kelola lanskap yang berperan sebagai <em>Landscape Governance Backbone Organization</em> di Kalimantan Barat. Dengan tagline <strong>Nature for Life</strong>, halaman News &amp; Features ini hadir sebagai jendela transparansi dan akuntabilitas — mendokumentasikan setiap langkah program, penemuan lapangan, dan kolaborasi multipihak di tingkat desa, lanskap, dan kebijakan nasional.
+            @media (max-width: 1024px) {
+              .intro-grid {
+                grid-template-columns: 1fr;
+              }
+              .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+              }
+            }
+            @media (max-width: 768px) {
+              .news-grid {
+                grid-template-columns: 1fr;
+              }
+              .why-grid {
+                grid-template-columns: 1fr;
+              }
+            }
+          </style>
+          <div class="fusion-row" style="max-width: 100%">
+            <section id="content" class="full-width">
+              <div id="post-news" class="page type-page status-publish hentry">
+                <div class="post-content">
+                  <!-- HERO -->
+                  <section class="hero-section ynki-section">
+                    <div class="hero-inner">
+                      <div class="hero-crumb">
+                        <a href="/">Beranda</a> &nbsp;/&nbsp;
+                        <a href="/pustaka/">Pustaka &amp; Pengetahuan</a>
+                        &nbsp;/&nbsp; <span>News &amp; Features</span>
+                      </div>
+                      <h1 class="hero-h1">
+                        Cerita Terkini dari<br /><span class="hl"
+                          >Lanskap Kalimantan</span
+                        >
+                      </h1>
+                      <p class="hero-sub">
+                        Liputan kegiatan, dan artikel menarik seputar upaya YNKI
+                        dalam memperkuat tata kelola lanskap yang inklusif dan
+                        kolaboratif. Setiap cerita adalah bagian dari perjalanan
+                        menuju Healthy Landscapes, Thriving Communities.
                       </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 3 Stats Counter Grid -->
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:22px;">
-                  <div class="news-stat-card">
-                    <div class="stat-number">56</div>
-                    <div class="stat-label">Total Artikel &amp; Fitur</div>
-                    <p class="stat-desc">Dokumentasi kegiatan dan analisis lapangan yang telah diterbitkan.</p>
-                  </div>
-                  <div class="news-stat-card">
-                    <div class="stat-number">7</div>
-                    <div class="stat-label">Kategori Topik</div>
-                    <p class="stat-desc">Mencakup restorasi gambut, komunitas, komoditas, dan kebijakan.</p>
-                  </div>
-                  <div class="news-stat-card">
-                    <div class="stat-number">2020</div>
-                    <div class="stat-label">Tahun Pertama Publikasi</div>
-                    <p class="stat-desc">Publikasi perdana dokumentasi dan riset spasial YNKI di Kalimantan.</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               3. FEATURED STORY (SOROTAN UTAMA)
-               ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:40px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;border-bottom:1px solid #e2efe2;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <!-- Section Heading -->
-                <div style="text-align:center;margin-bottom:34px;">
-                  <div class="divider-heading">
-                    <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
-                      SOROTAN UTAMA
-                    </span>
-                    <span class="line"></span>
-                  </div>
-                  <h2 style="font-size:32px;font-weight:800;color:#0e241b;margin:0 0 8px;">Liputan Khusus Lapangan</h2>
-                </div>
-
-                <!-- Big Featured Card -->
-                <div class="featured-hero-article">
-                  <div class="featured-img-wrap">
-                    <img src="/wp-content/uploads/2026/06/17-06-2026-Beruang-Madu_Maulina-Siregar_.webp" alt="Kasus Konflik Satwa di Desa Limbung: Perspektif Ekologi Lanskap" loading="lazy">
-                  </div>
-                  <div class="featured-content-wrap">
-                    <div>
-                      <span class="category-badge" style="color:#117710;">EKOLOGI LANSKAP</span>
-                      <div class="date-meta">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        Rabu, 17 Juni 2026 · 6 Menit Baca
+                      <div class="hero-btns">
+                        <a href="#news-latest" class="btn-cta-main"
+                          >Baca Artikel Terbaru</a
+                        >
+                        <a href="#news-why" class="btn-cta-second"
+                          >Mengapa Kami Mendokumentasikan</a
+                        >
                       </div>
-                      <h3 style="font-size:clamp(20px, 2vw, 24px);font-weight:800;color:#0e241b;margin:0 0 14px;line-height:1.35;">
-                        <a href="/news-features/kasus-konflik-satwa-di-desa-limbung-perspektif-ekologi-lanskap/" style="color:inherit;text-decoration:none;">Kasus Konflik Satwa di Desa Limbung: Perspektif Ekologi Lanskap</a>
-                      </h3>
-                      <p style="font-size:15px;line-height:1.75;color:#435c50;margin:0 0 16px;">
-                        Analisis mendalam mengenai konflik berulang antara Beruang Madu (Helarctos malayanus) dengan warga di Desa Limbung, Kubu Raya dari sudut pandang degradasi tutupan lahan dan fragmentasi lanskap gambut pesisir.
+                    </div>
+                  </section>
+
+                  <!-- INTRO -->
+                  <section class="news-intro ynki-section">
+                    <div class="ynki-container">
+                      <div class="intro-grid">
+                        <div class="intro-text">
+                          <div
+                            class="divider-line"
+                            style="
+                              margin-bottom: 20px;
+                              justify-content: flex-start;
+                            "
+                          >
+                            <span class="section-badge"
+                              >TENTANG NEWS &amp; FEATURES</span
+                            ><span class="line" style="flex: 0.5"></span>
+                          </div>
+                          <h3>Jendela Transparansi dan Akuntabilitas</h3>
+                          <p>
+                            Yayasan Natural Kapital Indonesia (YNKI) adalah
+                            organisasi tata kelola lanskap yang berperan sebagai
+                            Landscape Governance Backbone Organization di
+                            Kalimantan Barat. Dengan tagline Nature for Life,
+                            YNKI bekerja untuk memperkuat tata kelola lanskap
+                            yang inklusif dan kolaboratif.
+                          </p>
+                          <p>
+                            Halaman News &amp; Features ini hadir sebagai
+                            jendela transparansi—mendokumentasikan setiap
+                            langkah program, penemuan lapangan, dan kolaborasi
+                            multipihak yang menjadi tulang punggung kerja YNKI
+                            di tingkat desa, lanskap, dan kebijakan nasional.
+                          </p>
+                        </div>
+                        <div class="intro-stats">
+                          <div class="nstat-box">
+                            <div class="nstat-num">56</div>
+                            <div class="nstat-info">
+                              <h4>Total Artikel</h4>
+                              <p>News &amp; Features yang telah diterbitkan</p>
+                            </div>
+                          </div>
+                          <div class="nstat-box">
+                            <div class="nstat-num">7</div>
+                            <div class="nstat-info">
+                              <h4>Kategori Topik</h4>
+                              <p>
+                                Mencakup lingkungan, sosial, kebijakan, ekologi
+                              </p>
+                            </div>
+                          </div>
+                          <div class="nstat-box">
+                            <div class="nstat-num">2020</div>
+                            <div class="nstat-info">
+                              <h4>Tahun Pertama</h4>
+                              <p>Publikasi perdana dokumentasi YNKI</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- ARTIKEL TERBARU -->
+                  <section
+                    id="news-latest"
+                    class="ynki-section"
+                    style="background: #fff; padding: 90px 24px"
+                  >
+                    <div class="ynki-container">
+                      <div style="text-align: center">
+                        <div class="divider-line">
+                          <span class="line"></span
+                          ><span class="section-badge green"
+                            >ARTIKEL TERBARU</span
+                          ><span class="line"></span>
+                        </div>
+                        <h2
+                          style="
+                            font-size: clamp(22px, 3vw, 34px);
+                            font-weight: 800;
+                            color: #0e241b;
+                            margin: 0 0 12px;
+                          "
+                        >
+                          Liputan &amp; Berita Terkini
+                        </h2>
+                        <p
+                          style="
+                            font-size: 15px;
+                            color: #536b5f;
+                            max-width: 700px;
+                            margin: 0 auto;
+                          "
+                        >
+                          Kumpulan artikel dan liputan terbaru dari YNKI. Setiap
+                          artikel merupakan dokumentasi nyata kerja-kerja
+                          kolaboratif di lapangan.
+                        </p>
+                      </div>
+
+                      <!-- Filter -->
+                      <div class="filter-row">
+                        <span class="filter-tag active">Semua Topik</span>
+                        <span class="filter-tag">Restorasi Gambut</span>
+                        <span class="filter-tag">Pemberdayaan Masyarakat</span>
+                        <span class="filter-tag">Komoditas Berkelanjutan</span>
+                        <span class="filter-tag"
+                          >Kebijakan &amp; Tata Kelola</span
+                        >
+                      </div>
+
+                      <div class="news-grid">
+                        <!-- 1 -->
+                        <div class="news-card">
+                          <div class="news-header">
+                            <span class="news-topic t-komoditas"
+                              >Komoditas</span
+                            >
+                            <span class="news-date">📅 12 Agu 2024</span>
+                          </div>
+                          <div class="news-body">
+                            <h3>
+                              YNKI Beri Dukungan Penuh Pengembangan Kebijakan
+                              Ketertelusuran Karet
+                            </h3>
+                            <p>
+                              YNKI memberikan dukungan penuh kepada Dinas
+                              Perkebunan Kalbar dalam pengembangan kebijakan
+                              ketertelusuran industri karet rakyat untuk
+                              menjawab regulasi EUDR.
+                            </p>
+                            <a href="#" class="news-read"
+                              >Baca Artikel
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" /></svg
+                            ></a>
+                          </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="news-card">
+                          <div class="news-header">
+                            <span class="news-topic t-pemuda">Pemuda</span>
+                            <span class="news-date">📅 19 Jul 2024</span>
+                          </div>
+                          <div class="news-body">
+                            <h3>
+                              YNKI Gelar Youth Camp untuk Tiga Desa di Ketapang
+                            </h3>
+                            <p>
+                              YNKI menggelar Youth Camp melibatkan 30 anak muda
+                              dari Desa Mayak, Ulak Medang, dan Tanjungpura
+                              untuk meningkatkan kapasitas mereka sebagai agen
+                              perubahan.
+                            </p>
+                            <a href="#" class="news-read"
+                              >Baca Artikel
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" /></svg
+                            ></a>
+                          </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="news-card">
+                          <div class="news-header">
+                            <span class="news-topic t-restorasi"
+                              >Restorasi</span
+                            >
+                            <span class="news-date">📅 10 Jun 2024</span>
+                          </div>
+                          <div class="news-body">
+                            <h3>
+                              Kolaboratif Restorasi Gambut, Upaya Bersama
+                              Lestarikan Masa Depan
+                            </h3>
+                            <p>
+                              YNKI bersama PM Haze dan LDPH Permata Jaya menanam
+                              50 bibit pohon lokal dalam peringatan Hari
+                              Lingkungan Hidup Sedunia untuk rehabilitasi lahan
+                              gambut.
+                            </p>
+                            <a href="#" class="news-read"
+                              >Baca Artikel
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" /></svg
+                            ></a>
+                          </div>
+                        </div>
+                        <!-- 4 -->
+                        <div class="news-card">
+                          <div class="news-header">
+                            <span class="news-topic t-ekonomi">Ekonomi</span>
+                            <span class="news-date">📅 Agu 2024</span>
+                          </div>
+                          <div class="news-body">
+                            <h3>
+                              UMKM Madu Hutan di Ulak Medang Dapat Dukungan Alat
+                              Baru
+                            </h3>
+                            <p>
+                              YNKI bersama UNDP KalFor menyerahkan peralatan
+                              canggih kepada kelompok petani madu hutan untuk
+                              meningkatkan kualitas madu sesuai standar SNI.
+                            </p>
+                            <a href="#" class="news-read"
+                              >Baca Artikel
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" /></svg
+                            ></a>
+                          </div>
+                        </div>
+                        <!-- 5 -->
+                        <div class="news-card">
+                          <div class="news-header">
+                            <span class="news-topic t-analisis">Analisis</span>
+                            <span class="news-date">📅 12 Des 2020</span>
+                          </div>
+                          <div class="news-body">
+                            <h3>
+                              Analisis Spasial Kebakaran Hutan dan Lahan Pesisir
+                              Delta Kapuas
+                            </h3>
+                            <p>
+                              Analisis spasial YNKI mengungkap rata-rata
+                              kebakaran seluas 51.130 hektar per tahun di
+                              Lanskap Gambut Pesisir Delta Kapuas sejak
+                              2015–2019.
+                            </p>
+                            <a href="#" class="news-read"
+                              >Baca Artikel
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" /></svg
+                            ></a>
+                          </div>
+                        </div>
+                        <!-- 6 -->
+                        <div class="news-card">
+                          <div class="news-header">
+                            <span class="news-topic t-komoditas"
+                              >Komoditas</span
+                            >
+                            <span class="news-date">📅 12 Agu 2024</span>
+                          </div>
+                          <div class="news-body">
+                            <h3>
+                              YNKI-Dinas Perkebunan Kalbar Kerjasama Industri
+                              Karet Rakyat
+                            </h3>
+                            <p>
+                              YNKI berkolaborasi dengan Dinas Perkebunan Kalbar
+                              mengatasi tantangan produktivitas karet rakyat dan
+                              pengembangan platform keterlacakan Mokkalita.
+                            </p>
+                            <a href="#" class="news-read"
+                              >Baca Artikel
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" /></svg
+                            ></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Pagination -->
+                      <div class="pagination">
+                        <a href="#" class="page-btn active">1</a>
+                        <a href="#" class="page-btn">2</a>
+                        <a href="#" class="page-btn">3</a>
+                        <a href="#" class="page-btn">...</a>
+                        <a href="#" class="page-btn">7</a>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- WHY IMPORTANT -->
+                  <section
+                    id="news-why"
+                    class="ynki-section"
+                    style="background: #117710; padding: 90px 24px"
+                  >
+                    <div class="ynki-container">
+                      <div style="text-align: center">
+                        <span class="section-badge white"
+                          >NILAI DOKUMENTASI</span
+                        >
+                        <h2
+                          style="
+                            font-size: clamp(22px, 3vw, 34px);
+                            font-weight: 800;
+                            color: #fff;
+                            margin: 12px 0;
+                          "
+                        >
+                          Mengapa Cerita Ini Penting?
+                        </h2>
+                        <p
+                          style="
+                            font-size: 15px;
+                            color: #d2f0d1;
+                            max-width: 760px;
+                            margin: 0 auto;
+                          "
+                        >
+                          Di balik setiap artikel YNKI terdapat realitas
+                          lapangan yang kompleks. Dokumentasi ini bukan sekadar
+                          pelaporan: ini adalah arsip hidup dari gerakan tata
+                          kelola lanskap kolaboratif.
+                        </p>
+                      </div>
+                      <div class="why-grid">
+                        <div class="why-card">
+                          <div class="why-icon">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke-width="2.5"
+                            >
+                              <circle cx="12" cy="12" r="3" />
+                              <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                              />
+                            </svg>
+                          </div>
+                          <h4>Transparansi &amp; Akuntabilitas</h4>
+                          <p>
+                            Mendokumentasikan proses, temuan, dan dampak nyata
+                            program YNKI kepada publik dan mitra pendukung.
+                          </p>
+                        </div>
+                        <div class="why-card">
+                          <div class="why-icon">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke-width="2.5"
+                            >
+                              <path
+                                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                              />
+                            </svg>
+                          </div>
+                          <h4>Pengetahuan Lokal</h4>
+                          <p>
+                            Merekam kearifan lokal, nama-nama tanaman yang belum
+                            terdaftar, dan praktik pengelolaan alam dari
+                            komunitas Kalbar.
+                          </p>
+                        </div>
+                        <div class="why-card">
+                          <div class="why-icon">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke-width="2.5"
+                            >
+                              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                              <polyline points="2 17 12 22 22 17" />
+                              <polyline points="2 12 12 17 22 12" />
+                            </svg>
+                          </div>
+                          <h4>Advokasi Berbasis Bukti</h4>
+                          <p>
+                            Liputan mendalam menjadi dasar advokasi kebijakan
+                            yang lebih kuat di level desa, kabupaten, dan
+                            nasional.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- CTA -->
+                  <section class="cta-section ynki-section">
+                    <div class="ynki-container">
+                      <span class="section-badge white">IKUTI KAMI</span>
+                      <h2>Ikuti Perkembangan Terkini YNKI</h2>
+                      <p>
+                        Jangan lewatkan artikel dan liputan terbaru dari YNKI.
+                        Berlangganan newsletter atau ikuti media sosial kami
+                        untuk mendapatkan update langsung tentang upaya
+                        penguatan tata kelola lanskap.
                       </p>
+                      <div class="cta-btns">
+                        <a
+                          href="/kontak/"
+                          class="btn-cta-main"
+                          style="background: #fff; color: #117710"
+                          >Hubungi Kami</a
+                        >
+                        <a href="/penelitian-laporan/" class="btn-cta-second"
+                          >Lihat Penelitian &amp; Laporan</a
+                        >
+                      </div>
                     </div>
-
-                    <div style="margin-top:16px;padding-top:16px;border-top:1px solid #eef4f0;display:flex;align-items:center;justify-content:space-between;">
-                      <a href="/news-features/kasus-konflik-satwa-di-desa-limbung-perspektif-ekologi-lanskap/" class="btn-hero-primary" style="font-size:13px;padding:11px 22px;">
-                        Baca Artikel Lengkap &rarr;
-                      </a>
-                    </div>
-                  </div>
+                  </section>
                 </div>
-
               </div>
-            </div>
+            </section>
           </div>
-
-
-          <!-- ======================================================
-               4. KUMPULAN SEMUA 9 ARTIKEL BERITA (RESPONSIVE GRID)
-               ====================================================== -->
-          <div id="artikel-terbaru" class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#ffffff;--awb-padding-top:30px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <!-- Section Header -->
-                <div style="text-align:center;margin-bottom:38px;">
-                  <div class="divider-heading">
-                    <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
-                      ARTIKEL TERBARU
-                    </span>
-                    <span class="line"></span>
-                  </div>
-                  <h2 style="font-size:32px;font-weight:800;color:#0e241b;margin:0 0 10px;">Liputan &amp; Berita Terkini</h2>
-                  <p style="font-size:16px;color:#536b5f;max-width:820px;margin:0 auto;line-height:1.7;">
-                    Daftar lengkap artikel, liputan lapangan, dan kabar terkini program YNKI di Kalimantan Barat.
-                  </p>
-                </div>
-
-                <!-- 9 Articles Responsive Grid -->
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:26px;">
-                  
-                  <!-- Article 1 -->
-                  <article class="news-grid-card">
-                    <a href="/news-features/kasus-konflik-satwa-di-desa-limbung-perspektif-ekologi-lanskap/" class="news-card-img" title="Kasus Konflik Satwa di Desa Limbung: Perspektif Ekologi Lanskap">
-                      <img src="/wp-content/uploads/2026/06/17-06-2026-Beruang-Madu_Maulina-Siregar_.webp" alt="Kasus Konflik Satwa di Desa Limbung: Perspektif Ekologi Lanskap" loading="lazy">
-                    </a>
-                    <div class="news-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="category-badge" style="color:#117710;">EKOLOGI LANSKAP</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">6 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Rabu, 17 Juni 2026
-                        </div>
-                        <h3 class="news-card-title">
-                          <a href="/news-features/kasus-konflik-satwa-di-desa-limbung-perspektif-ekologi-lanskap/" style="color:inherit;text-decoration:none;">Kasus Konflik Satwa di Desa Limbung: Perspektif Ekologi Lanskap</a>
-                        </h3>
-                        <p class="news-card-excerpt">
-                          Analisis mendalam mengenai konflik berulang antara Beruang Madu (Helarctos malayanus) dengan warga di Desa Limbung, Kubu Raya dari sudut pandang degradasi tutupan lahan dan fragmentasi lanskap gambut pesisir.
-                        </p>
-                      </div>
-                      <div class="news-card-footer">
-                        <a href="/news-features/kasus-konflik-satwa-di-desa-limbung-perspektif-ekologi-lanskap/" class="read-more-btn">
-                          Baca Selengkapnya
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 2 -->
-                  <article class="news-grid-card">
-                    <a href="/news-features/beruang-madu-vs-peternak-kelulut-di-limbung-bukan-salah-beruang-tapi-lanskap-yang-rusak/" class="news-card-img" title="Beruang Madu vs Peternak Kelulut di Limbung: Bukan Salah Beruang tapi Lanskap yang Rusak">
-                      <img src="/wp-content/uploads/2026/06/17-06-2026-beruang-madu.webp" alt="Beruang Madu vs Peternak Kelulut di Limbung: Bukan Salah Beruang tapi Lanskap yang Rusak" loading="lazy">
-                    </a>
-                    <div class="news-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="category-badge" style="color:#b8621b;">KONFLIK SATWA & MASYARAKAT</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">5 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Rabu, 17 Juni 2026
-                        </div>
-                        <h3 class="news-card-title">
-                          <a href="/news-features/beruang-madu-vs-peternak-kelulut-di-limbung-bukan-salah-beruang-tapi-lanskap-yang-rusak/" style="color:inherit;text-decoration:none;">Beruang Madu vs Peternak Kelulut di Limbung: Bukan Salah Beruang tapi Lanskap yang Rusak</a>
-                        </h3>
-                        <p class="news-card-excerpt">
-                          Terdesaknya satwa liar akibat rusaknya koridor hutan memicu interaksi negatif dengan usaha budidaya kelulut masyarakat lokal. YNKI mendorong solusi koeksistensi dan pemulihan koridor habitat alami.
-                        </p>
-                      </div>
-                      <div class="news-card-footer">
-                        <a href="/news-features/beruang-madu-vs-peternak-kelulut-di-limbung-bukan-salah-beruang-tapi-lanskap-yang-rusak/" class="read-more-btn">
-                          Baca Selengkapnya
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 3 -->
-                  <article class="news-grid-card">
-                    <a href="/news-features/eco-creative-lingkungan-bem-untan-bertandang-ke-ynki/" class="news-card-img" title="BEM Untan dan YNKI Bersatu untuk Bumi: Lomba Eco Creative Sambut Hari Lingkungan Hidup 2026">
-                      <img src="/wp-content/uploads/2026/05/19-04-2026-Kunjungan-BEM-Untan-ke-YNKI.webp" alt="BEM Untan dan YNKI Bersatu untuk Bumi: Lomba Eco Creative Sambut Hari Lingkungan Hidup 2026" loading="lazy">
-                    </a>
-                    <div class="news-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="category-badge" style="color:#236fa1;">PEMUDA & PENDIDIKAN</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">4 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Rabu, 20 Mei 2026
-                        </div>
-                        <h3 class="news-card-title">
-                          <a href="/news-features/eco-creative-lingkungan-bem-untan-bertandang-ke-ynki/" style="color:inherit;text-decoration:none;">BEM Untan dan YNKI Bersatu untuk Bumi: Lomba Eco Creative Sambut Hari Lingkungan Hidup 2026</a>
-                        </h3>
-                        <p class="news-card-excerpt">
-                          Kolaborasi BEM Universitas Tanjungpura bersama YNKI menggelar inisiatif Eco Creative dalam rangka menyambut Hari Lingkungan Hidup 2026 guna membangkitkan aksi nyata generasi muda menjaga kelestarian alam.
-                        </p>
-                      </div>
-                      <div class="news-card-footer">
-                        <a href="/news-features/eco-creative-lingkungan-bem-untan-bertandang-ke-ynki/" class="read-more-btn">
-                          Baca Selengkapnya
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 4 -->
-                  <article class="news-grid-card">
-                    <a href="/news-features/katenis-ligni-belum-tercatat-spesies-resmi-botani-internasional/" class="news-card-img" title="Cakar Elang, Tanaman Liar Gambut Kubu Raya: Kaya Nama Lokal tapi Belum Tercatat dalam Botani Dunia">
-                      <img src="/wp-content/uploads/2026/05/05-05-2026-katalis-ligni-lilin-dwi-evelin.webp" alt="Cakar Elang, Tanaman Liar Gambut Kubu Raya: Kaya Nama Lokal tapi Belum Tercatat dalam Botani Dunia" loading="lazy">
-                    </a>
-                    <div class="news-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="category-badge" style="color:#7c4a1e;">PERSPEKTIF BUDAYA & ETNOBOTANI</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">5 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Selasa, 5 Mei 2026
-                        </div>
-                        <h3 class="news-card-title">
-                          <a href="/news-features/katenis-ligni-belum-tercatat-spesies-resmi-botani-internasional/" style="color:inherit;text-decoration:none;">Cakar Elang, Tanaman Liar Gambut Kubu Raya: Kaya Nama Lokal tapi Belum Tercatat dalam Botani Dunia</a>
-                        </h3>
-                        <p class="news-card-excerpt">
-                          Kekayaan flora hutan gambut Kubu Raya menyimpan tumbuhan Cakar Elang yang kaya manfaat obat dan nama lokal, namun belum teridentifikasi secara resmi dalam taksonomi botani internasional.
-                        </p>
-                      </div>
-                      <div class="news-card-footer">
-                        <a href="/news-features/katenis-ligni-belum-tercatat-spesies-resmi-botani-internasional/" class="read-more-btn">
-                          Baca Selengkapnya
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 5 -->
-                  <article class="news-grid-card">
-                    <a href="/news-features/lphd-kubu-padi-belum-ada-rkps/" class="news-card-img" title="7 Tahun Terbentuk, LPHD Kubu Padi Bersatu: "Kami Butuh Dokumen untuk Menghidupkan Hutan Desa"">
-                      <img src="/wp-content/uploads/2026/05/05-05-2026-Awal-di-Kubu-Padi.webp" alt="7 Tahun Terbentuk, LPHD Kubu Padi Bersatu: "Kami Butuh Dokumen untuk Menghidupkan Hutan Desa"" loading="lazy">
-                    </a>
-                    <div class="news-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="category-badge" style="color:#117710;">TATA KELOLA LANSKAP</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">5 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Selasa, 5 Mei 2026
-                        </div>
-                        <h3 class="news-card-title">
-                          <a href="/news-features/lphd-kubu-padi-belum-ada-rkps/" style="color:inherit;text-decoration:none;">7 Tahun Terbentuk, LPHD Kubu Padi Bersatu: "Kami Butuh Dokumen untuk Menghidupkan Hutan Desa"</a>
-                        </h3>
-                        <p class="news-card-excerpt">
-                          Perjuangan panjang Lembaga Pengelola Hutan Desa (LPHD) Kubu Padi Bersatu menyusun Rencana Kerja Pengelolaan Hutan Desa (RKPHD) untuk mengaktifkan perlindungan dan pemanfaatan lestari hutan desa.
-                        </p>
-                      </div>
-                      <div class="news-card-footer">
-                        <a href="/news-features/lphd-kubu-padi-belum-ada-rkps/" class="read-more-btn">
-                          Baca Selengkapnya
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 6 -->
-                  <article class="news-grid-card">
-                    <a href="/news-features/cakar-elang-tambah-pendapatan-warga-pasak-piang/" class="news-card-img" title="Dari Teh Herbal hingga Suplemen Kicau Mania: Cakar Elang Pasak Piang Punya Segudang Manfaat">
-                      <img src="/wp-content/uploads/2026/05/04-05-2026-cakar-elang-gambut-pasak-piang.webp" alt="Dari Teh Herbal hingga Suplemen Kicau Mania: Cakar Elang Pasak Piang Punya Segudang Manfaat" loading="lazy">
-                    </a>
-                    <div class="news-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="category-badge" style="color:#38761d;">PEMBERDAYAAN EKONOMI</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">4 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Senin, 4 Mei 2026
-                        </div>
-                        <h3 class="news-card-title">
-                          <a href="/news-features/cakar-elang-tambah-pendapatan-warga-pasak-piang/" style="color:inherit;text-decoration:none;">Dari Teh Herbal hingga Suplemen Kicau Mania: Cakar Elang Pasak Piang Punya Segudang Manfaat</a>
-                        </h3>
-                        <p class="news-card-excerpt">
-                          Warga desa Pasak Piang mengolah tanaman gambut Cakar Elang menjadi komoditas teh herbal dan suplemen burung kicau bernilai ekonomi untuk menambah pendapatan keluarga tanpa merusak alam.
-                        </p>
-                      </div>
-                      <div class="news-card-footer">
-                        <a href="/news-features/cakar-elang-tambah-pendapatan-warga-pasak-piang/" class="read-more-btn">
-                          Baca Selengkapnya
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 7 -->
-                  <article class="news-grid-card">
-                    <a href="/news-features/cakar-elang-tambah-pendapatan-warga-pasak-piang/" class="news-card-img" title="Pasak Piang, Desa Gambut dengan Sisa Hutan, Menyambut Program TFCA Kalimantan: "Kami Siap Berkolaborasi"">
-                      <img src="/wp-content/uploads/2026/05/29-04-2026-YNKI-Kunker-ke-Pasak-Piang_.webp" alt="Pasak Piang, Desa Gambut dengan Sisa Hutan, Menyambut Program TFCA Kalimantan: "Kami Siap Berkolaborasi"" loading="lazy">
-                    </a>
-                    <div class="news-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="category-badge" style="color:#117710;">RESTORASI GAMBUT</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">5 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Kamis, 30 April 2026
-                        </div>
-                        <h3 class="news-card-title">
-                          <a href="/news-features/cakar-elang-tambah-pendapatan-warga-pasak-piang/" style="color:inherit;text-decoration:none;">Pasak Piang, Desa Gambut dengan Sisa Hutan, Menyambut Program TFCA Kalimantan: "Kami Siap Berkolaborasi"</a>
-                        </h3>
-                        <p class="news-card-excerpt">
-                          Kunjungan kerja tim YNKI bersama warga Desa Pasak Piang menyusun peta jalan perlindungan sisa tutupan hutan gambut dan peningkatan ekonomi masyarakat melalui skema TFCA Kalimantan.
-                        </p>
-                      </div>
-                      <div class="news-card-footer">
-                        <a href="/news-features/cakar-elang-tambah-pendapatan-warga-pasak-piang/" class="read-more-btn">
-                          Baca Selengkapnya
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 8 -->
-                  <article class="news-grid-card">
-                    <a href="/news-features/enggan-disebut-kawasan-hutan-di-desa-limbung-sudah-habis/" class="news-card-img" title="Mempertahankan 0,8 Hektar Hutan Terakhir: Kades Limbung Tolak Data 0% Tutupan Hutan">
-                      <img src="/wp-content/uploads/2026/05/29_04_2026_Kades-Wiyono-menunjukkan-peta-kawasan-hutan-desa-limbung-ke-tim-YNKI-Yuliantini.webp" alt="Mempertahankan 0,8 Hektar Hutan Terakhir: Kades Limbung Tolak Data 0% Tutupan Hutan" loading="lazy">
-                    </a>
-                    <div class="news-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="category-badge" style="color:#674ea7;">ADVOKASI KEBIJAKAN</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">5 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Rabu, 29 April 2026
-                        </div>
-                        <h3 class="news-card-title">
-                          <a href="/news-features/enggan-disebut-kawasan-hutan-di-desa-limbung-sudah-habis/" style="color:inherit;text-decoration:none;">Mempertahankan 0,8 Hektar Hutan Terakhir: Kades Limbung Tolak Data 0% Tutupan Hutan</a>
-                        </h3>
-                        <p class="news-card-excerpt">
-                          Kepala Desa Limbung bersama warga mempertahankan sisa kawasan hutan gambut 0,8 hektar di tengah pesatnya alih fungsi lahan dan mengadvokasikan pemulihan tutupan hijau desa.
-                        </p>
-                      </div>
-                      <div class="news-card-footer">
-                        <a href="/news-features/enggan-disebut-kawasan-hutan-di-desa-limbung-sudah-habis/" class="read-more-btn">
-                          Baca Selengkapnya
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Article 9 -->
-                  <article class="news-grid-card">
-                    <a href="/news-features/desa-limbung-tuan-rumah-bandara-internasional-supadio-tapi-rawan-karhutla/" class="news-card-img" title="Menjaga Bandara, Membiarkan Desa: Ironi Karhutla di Desa Limbung, Tuan Rumah Bandara Supadio">
-                      <img src="/wp-content/uploads/2026/05/29_04_2026_Kunjungan-ke-kantor-desa-Limbung.webp" alt="Menjaga Bandara, Membiarkan Desa: Ironi Karhutla di Desa Limbung, Tuan Rumah Bandara Supadio" loading="lazy">
-                    </a>
-                    <div class="news-card-body">
-                      <div>
-                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-                          <span class="category-badge" style="color:#b8621b;">ANALISIS LANSKAP</span>
-                          <span style="font-size:12px;color:#7c9489;font-weight:600;">6 Menit baca</span>
-                        </div>
-                        <div class="date-meta">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                          Rabu, 29 April 2026
-                        </div>
-                        <h3 class="news-card-title">
-                          <a href="/news-features/desa-limbung-tuan-rumah-bandara-internasional-supadio-tapi-rawan-karhutla/" style="color:inherit;text-decoration:none;">Menjaga Bandara, Membiarkan Desa: Ironi Karhutla di Desa Limbung, Tuan Rumah Bandara Supadio</a>
-                        </h3>
-                        <p class="news-card-excerpt">
-                          Liputan mendalam tentang ketimpangan prioritas mitigasi kebakaran hutan dan lahan antara area Bandara Internasional Supadio dan lahan gambut pemukiman warga desa sekitar.
-                        </p>
-                      </div>
-                      <div class="news-card-footer">
-                        <a href="/news-features/desa-limbung-tuan-rumah-bandara-internasional-supadio-tapi-rawan-karhutla/" class="read-more-btn">
-                          Baca Selengkapnya
-                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-
-                <!-- Functional Pagination -->
-                <div class="pagination-wrap">
-                  <span class="page-btn active">1</span>
-                  <a href="/kategori/news-features/page/2/" class="page-btn">2</a>
-                  <a href="/kategori/news-features/page/3/" class="page-btn">3</a>
-                  <a href="/kategori/news-features/page/4/" class="page-btn">4</a>
-                  <a href="/kategori/news-features/page/5/" class="page-btn">5</a>
-                  <a href="/kategori/news-features/page/6/" class="page-btn">6</a>
-                  <a href="/kategori/news-features/page/7/" class="page-btn">7</a>
-                  <a href="/kategori/news-features/page/2/" class="page-btn" style="width:auto;padding:0 14px;">Selanjutnya &rarr;</a>
-                </div>
-                <p style="font-size:13px;color:#6d8579;text-align:center;margin-top:12px;">
-                  Menampilkan Halaman 1 (9 dari 56 artikel dalam koleksi Pustaka &amp; Pengetahuan YNKI)
-                </p>
-
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               5. FILTER BERDASARKAN KATEGORI TOPIK
-               ====================================================== -->
-          <div id="filter-kategori" class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:40px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;border-bottom:1px solid #e2efe2;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;text-align:center;">
-
-                <h3 style="font-size:26px;font-weight:800;color:#0e241b;margin:0 0 10px;">
-                  Temukan Artikel Berdasarkan Topik
-                </h3>
-                <p style="font-size:15.5px;color:#536b5f;max-width:760px;margin:0 auto 24px;line-height:1.65;">
-                  Gunakan filter kategori di bawah ini untuk menemukan artikel dan berita yang paling relevan dengan minat Anda:
-                </p>
-
-                <!-- Category Filter Pills -->
-                <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:960px;margin:0 auto 30px;">
-                  <span class="category-filter-pill active">Semua Kategori</span>
-                  <span class="category-filter-pill">Restorasi Gambut</span>
-                  <span class="category-filter-pill">Pemberdayaan Masyarakat</span>
-                  <span class="category-filter-pill">Komoditas Berkelanjutan</span>
-                  <span class="category-filter-pill">Kebijakan &amp; Tata Kelola</span>
-                  <span class="category-filter-pill">Analisis &amp; Penelitian</span>
-                  <span class="category-filter-pill">Pemuda &amp; Pendidikan</span>
-                  <span class="category-filter-pill">Perspektif Budaya</span>
-                </div>
-
-                <!-- 4 Topic Category Cards -->
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px;text-align:left;">
-                  <div style="background:#ffffff;border:1px solid #d2e8d1;border-radius:12px;padding:20px;">
-                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Restorasi Gambut</h4>
-                    <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Kisah pemulihan ekosistem gambut, sekat kanal, dan revegetasi bersama masyarakat lokal.</p>
-                  </div>
-                  <div style="background:#ffffff;border:1px solid #d2e8d1;border-radius:12px;padding:20px;">
-                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Pemberdayaan Masyarakat</h4>
-                    <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Program penguatan kapasitas, hak kelola desa, dan ekonomi komunitas di lanskap prioritas.</p>
-                  </div>
-                  <div style="background:#ffffff;border:1px solid #d2e8d1;border-radius:12px;padding:20px;">
-                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Komoditas Berkelanjutan</h4>
-                    <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Inisiatif karet rakyat, madu hutan alam, dan rantai pasok komoditas bertanggung jawab.</p>
-                  </div>
-                  <div style="background:#ffffff;border:1px solid #d2e8d1;border-radius:12px;padding:20px;">
-                    <h4 style="font-size:16px;font-weight:700;color:#117710;margin:0 0 6px;">Kebijakan &amp; Tata Kelola</h4>
-                    <p style="font-size:13.5px;line-height:1.6;color:#536b5f;margin:0;">Advokasi dan kolaborasi multi-pihak untuk lanskap yang dikelola secara adil dan transparan.</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               6. MENGAPA CERITA INI PENTING?
-               ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#ffffff;--awb-padding-top:40px;--awb-padding-bottom:50px;--awb-margin-bottom:40px;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <!-- Section Header -->
-                <div style="text-align:center;margin-bottom:36px;">
-                  <div class="divider-heading">
-                    <span class="line"></span>
-                    <span style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF8000;background:#fff3e6;padding:5px 16px;border-radius:50px;border:1px solid rgba(255,128,0,0.35);font-size:12px;font-weight:700;">
-                      NILAI JURNALISME LANSKAP
-                    </span>
-                    <span class="line"></span>
-                  </div>
-                  <h2 style="font-size:32px;font-weight:800;color:#0e241b;margin:0 0 10px;">Mengapa Cerita Ini Penting?</h2>
-                  <p style="font-size:16px;color:#536b5f;max-width:820px;margin:0 auto;line-height:1.7;">
-                    Di balik setiap artikel YNKI terdapat realitas lapangan yang kompleks — ekosistem gambut yang rentan, komunitas yang berjuang mempertahankan haknya, dan generasi muda yang mulai peduli pada masa depan lanskapnya. Dokumentasi ini bukan sekadar pelaporan: ini adalah arsip hidup dari gerakan tata kelola lanskap kolaboratif.
-                  </p>
-                </div>
-
-                <!-- 3 Pillars Grid -->
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:24px;">
-
-                  <div class="why-card">
-                    <div class="icon-badge">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                    </div>
-                    <h3 style="font-size:19px;font-weight:700;color:#0e241b;margin:0 0 10px;">Transparansi &amp; Akuntabilitas</h3>
-                    <p style="font-size:14.5px;line-height:1.75;color:#435c50;margin:0;">
-                      Setiap artikel mendokumentasikan proses, temuan, dan dampak nyata program YNKI kepada publik, masyarakat mitra, dan para pendukung.
-                    </p>
-                  </div>
-
-                  <div class="why-card">
-                    <div class="icon-badge">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    </div>
-                    <h3 style="font-size:19px;font-weight:700;color:#0e241b;margin:0 0 10px;">Pengetahuan &amp; Kearifan Lokal</h3>
-                    <p style="font-size:14.5px;line-height:1.75;color:#435c50;margin:0;">
-                      Merekam kearifan lokal, nama-nama tanaman tradisional yang belum terdaftar di dunia botani, dan praktik pengelolaan alam berkelanjutan dari komunitas.
-                    </p>
-                  </div>
-
-                  <div class="why-card">
-                    <div class="icon-badge">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 12 12 16 16 12 12 8"></polygon></svg>
-                    </div>
-                    <h3 style="font-size:19px;font-weight:700;color:#0e241b;margin:0 0 10px;">Advokasi Berbasis Bukti</h3>
-                    <p style="font-size:14.5px;line-height:1.75;color:#435c50;margin:0;">
-                      Liputan mendalam menjadi landasan advokasi kebijakan yang kokoh di level desa, kabupaten, provinsi, hingga pemangku kebijakan nasional.
-                    </p>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-
-          <!-- ======================================================
-               7. NEWSLETTER & CTA
-               ====================================================== -->
-          <div class="fusion-fullwidth fullwidth-box fusion-flex-container nonhundred-percent-fullwidth" style="--awb-background-color:#f9fbf9;--awb-padding-top:30px;--awb-padding-bottom:60px;--awb-margin-bottom:40px;border-top:1px solid #e2efe2;">
-            <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1216.8px;margin-left:calc(-4%/2);margin-right:calc(-4%/2);">
-              <div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-width-large:100%;--awb-spacing-right-large:1.92%;--awb-spacing-left-large:1.92%;">
-
-                <div class="newsletter-box">
-                  <h2 style="font-size:28px;font-weight:800;color:#ffffff;margin:0 0 14px;">
-                    Ikuti Perkembangan Terkini YNKI
-                  </h2>
-                  <p style="font-size:15.5px;line-height:1.75;color:#d2f0d1;margin:0 auto 28px;max-width:800px;">
-                    Jangan lewatkan artikel, riset lapangan, dan liputan terbaru dari Yayasan Natural Kapital Indonesia. Dapatkan pembaruan langsung tentang aksi restorasi dan tata kelola lanskap berkelanjutan di Kalimantan Barat.
-                  </p>
-                  
-                  <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:24px;">
-                    <a href="/kontak-kami/" class="btn-hero-primary" style="background:#52c98a;color:#0d271a !important;">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                      Berlangganan Kabar YNKI
-                    </a>
-                    <a href="/portofolio/" class="btn-hero-secondary">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                      Arsip Publikasi
-                    </a>
-                  </div>
-
-                  <div style="font-size:13px;color:#d2f0d1;">
-                    <em>Yayasan Natural Kapital Indonesia · Nature for Life</em>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </div>
-</main>
+        </main>
         <div class="fusion-tb-footer fusion-footer">
           <div class="fusion-footer-widget-area fusion-widget-area">
             <div
