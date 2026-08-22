@@ -10,7 +10,7 @@
    CTA Kedua (Informasi/Pilihan)| #A0D2F5    | Tombol Rincian Dana, Pilih Nominal, Simpan (Teks Gelap)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800&display=swap');
 
 :root {
   /* 1. Pondasi Brand: Hijau #117710 */
@@ -64,24 +64,72 @@ html {
 }
 
 body, #main, .fusion-body,
-.post-content, .entry-content {
-  font-family: 'Inter', Arial, Helvetica, sans-serif !important;
+.post-content, .entry-content,
+p, small, .small,
+span.date, span.author, span.time, span.loc,
+.post-meta, .post-meta *,
+.date-badge, .category-badge,
+.badge, .section-badge,
+.tag-highlight, .badge-highlight, .badge-orange, .badge-purple,
+.tag, .tag-purple, .tag-category, .badge-sorotan,
+.hero-crumb, .hero-crumb *,
+.hero-breadcrumb, .hero-breadcrumb *,
+.hero-eyebrow, .hero-eyebrow *,
+.hero-sub, .hero-desc, .hero-desc-sejarah, .hero-desc-trans,
+.pptx-hero-desc, .pptx-hero-crumb,
+.mengapa-desc, .stat-desc, .stat-label,
+.pilar-card p, .pilar-card .pilar-num, .pilar-link,
+.gerakan-item-text,
+.g-body p, .g-loc,
+.v-body p, .v-dur,
+.cta-section p,
+.fusion-tb-footer p, .fusion-tb-footer ul li, .fusion-tb-footer ul li a,
+.ynki-email-text,
+figcaption, .caption, label,
+input, textarea, select,
+ul li, ol li, table td, table th,
+.team-role, .team-bio,
+.domain-card p, .value-card p,
+.story-card p, .news-card p,
+.card-desc, .card-meta, .card-excerpt,
+.btn-cta-main, .btn-cta-second,
+.btn-cta-main-home, .btn-cta-second-home, .btn-ghost-home {
+  font-family: 'Candara', 'Segoe UI', Calibri, 'Inter', Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Judul (H1 - H4) Menggunakan Pondasi Brand atau Dark Neutral */
-h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3 {
-  font-family: 'Inter', Arial, Helvetica, sans-serif !important;
+/* Judul (H1 - H4) Menggunakan Montserrat / Inter Bold */
+h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3,
+.section-title, .mengapa-label, .mitra-logos strong {
+  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
   font-weight: 800 !important;
   letter-spacing: -0.02em;
 }
 
 /* ==========================================================================
-   HERO SECTION TYPOGRAPHY (SERAGAM SEPERTI SEJARAH, VISI & MISI)
+   HERO SECTION TYPOGRAPHY (MONTSERRAT FONT UNTUK HERO HEADINGS)
    ========================================================================== */
+.hero-section h1,
+.hero-h1,
+#hero-sejarah h1,
+#hero-home h1,
+#hero-tim h1,
+#hero-lgos h1,
+#hero-port h1,
+#hero-trans h1,
+#hero-budaya h1,
+#hero-int h1,
+.hero-content h1,
+.hero-content-sejarah h1,
+.hero-content-trans h1,
+.pptx-hero h1 {
+  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
+}
+
 .hero-section,
 #hero-sejarah,
 .hero-content-sejarah,
+.hero-content-trans,
 .hero-inner {
   text-align: center;
 }
@@ -116,7 +164,15 @@ h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3 {
 .hero-section h1,
 .hero-h1,
 #hero-sejarah h1,
-.hero-content-sejarah h1 {
+#hero-home h1,
+#hero-tim h1,
+#hero-lgos h1,
+#hero-port h1,
+#hero-trans h1,
+.hero-content-sejarah h1,
+.hero-content-trans h1,
+.pptx-hero h1 {
+  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
   font-size: clamp(30px, 4.5vw, 50px) !important;
   font-weight: 900 !important;
   line-height: 1.2 !important;
@@ -129,14 +185,39 @@ h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3 {
 .hero-section h1 span.highlight,
 .hero-h1 .hl,
 .hero-h1 .highlight,
-#hero-sejarah h1 span.highlight {
+.hero-h1 span.hl,
+.hero-h1 span.highlight,
+.hero-content h1 span.highlight,
+.hero-content h1 span.hl,
+.hero-content-sejarah h1 span.highlight,
+.hero-content-sejarah h1 span.hl,
+.hero-content-trans h1 span.hl,
+.pptx-hero h1 span.highlight,
+.pptx-hero h1 span.hl,
+#hero-home h1 span.highlight,
+#hero-home h1 span.hl,
+#hero-sejarah h1 span.highlight,
+#hero-tim h1 span.highlight,
+#hero-lgos h1 span.hl,
+#hero-port h1 span.hl,
+#hero-trans h1 span.hl,
+h1 span.highlight,
+h1 span.hl {
+  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
   color: #a3e0a2 !important;
+  font-size: 0.85em !important;
+  display: inline-block;
+  font-weight: 800 !important;
 }
 
 .hero-sub,
 .hero-desc-sejarah,
+.hero-desc-trans,
+.hero-desc,
+.pptx-hero-desc,
 .hero-section p.hero-sub,
 #hero-sejarah p.hero-desc-sejarah {
+  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
   font-size: clamp(15px, 1.6vw, 18px) !important;
   line-height: 1.8 !important;
   color: #d2f0d1 !important;
@@ -506,6 +587,14 @@ select:focus {
   color: #ffffff !important;
   transform: translateY(-4px) scale(1.08) !important;
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3) !important;
+}
+.ynki-social-linkedin:hover,
+.ynki-footer-social a[title*="LinkedIn"]:hover {
+  background: #0A66C2 !important;
+  border-color: #0A66C2 !important;
+  color: #ffffff !important;
+  transform: translateY(-4px) scale(1.08) !important;
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.45) !important;
 }
 
 
