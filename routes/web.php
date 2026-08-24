@@ -30,7 +30,8 @@ Route::get('/artikel-cms', [PublicArticleController::class, 'index'])->name('pub
 Route::get('/artikel-cms/{slug}', [PublicArticleController::class, 'show'])->name('public.article.show');
 
 // Subhalaman Dinamis Database (Tentang Kami)
-Route::get('/tim', [PageContentController::class, 'team'])->name('public.tim');
+Route::get('/tim', [PageContentController::class, 'team'])->name('public.team');
+Route::get('/tim-ynki', [PageContentController::class, 'team'])->name('public.tim');
 Route::get('/lgos', [PageContentController::class, 'lgos'])->name('public.lgos');
 Route::get('/portofolio', [PageContentController::class, 'portfolio'])->name('public.portfolio');
 Route::get('/transparansi', [PageContentController::class, 'transparansi'])->name('public.transparansi');
