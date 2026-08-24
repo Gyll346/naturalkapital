@@ -64,3 +64,25 @@
 | 📸🎥 **Story Foto & Video** | CRUD Galeri foto & pemutar video YouTube | ✅ Terhubung Database Dinamis |
 | 💳 **Rekening & Donasi** | CRUD Rekening bank, QRIS & verifikasi bukti transfer | ✅ Selesai & Berjalan |
 | 📊 **Dashboard & Ekspor** | Statistik donasi, audit log, ekspor Excel/PDF | ✅ Selesai & Berjalan |
+
+---
+
+### [Pembaruan Dashboard Admin, Footer LinkedIn & Penyelarasan Halaman Baca Artikel] - 2026-08-24
+#### Ditambahkan & Disempurnakan:
+1. **Pusat Pengelolaan Konten & Dokumen File Website (Dashboard Admin)**:
+   - **Metrik Total Dokumen & Publikasi**: Menambahkan penghitung otomatis seluruh file PDF dokumen resmi, factsheet, policy brief, naskah riset, dan laporan audit WTP pada `DashboardController`.
+   - **Widget 10 Kartu Modul Cepat**: Menambahkan grid hub pengelolaan file 10 subhalaman langsung di halaman utama admin (`/admin/dashboard`) lengkap dengan tombol `+ Upload / Tambah` dan `Kelola File`.
+   - **Sub-Navigasi Sidebar Admin**: Menambahkan submenu navigasi langsung per kategori (*News & Features*, *Penelitian & Laporan (PDF)*, *Analisis & Kebijakan (PDF)*, *Perspektif Budaya*, *Data Spasial & GIS (PDF)*).
+   - **Tab Filter Kategori Cepat**: Menambahkan filter tab pill pada halaman kelola artikel admin (`/admin/articles`) beserta badge unduh file PDF langsung.
+
+2. **Perbaikan Route Exception `public.team`**:
+   - Memperbaiki `RouteNotFoundException: Route [public.team] not defined` pada `routes/web.php` dengan menambahkan nama rute `name('public.team')` dan alias kompatibilitas `name('public.tim')`.
+
+3. **Integrasi Ikon & Tautan LinkedIn pada Footer Seluruh Halaman Website**:
+   - Menambahkan tautan resmi LinkedIn YNKI (`https://id.linkedin.com/company/natural-kapital-foundation`) lengkap dengan SVG ikon vektor resmi pada footer halaman Beranda (`index.html`) dan seluruh 91 template subhalaman website.
+   - Menyelaraskan tampilan tombol sosial media footer (YouTube, Facebook, Instagram, X/Twitter, dan LinkedIn) dengan desain kartu kotak hijau transparan (*rounded translucent square card*) yang identik dengan tema asli website.
+
+4. **Penyelarasan Total Navbar & Footer Halaman Baca Artikel/Ringkasan**:
+   - Menyelaraskan halaman baca artikel (`/artikel-cms/{slug}`) agar menggunakan template header, navbar (`awb-menu`), mega-menu dropdown, dan footer asli persis seperti yang digunakan pada bagian *Pustaka & Pengetahuan*.
+   - Menyajikan banner judul hero, sidebar metadata dokumen, box ringkasan/abstrak, isi artikel lengkap, banner unduh PDF resmi, serta grid artikel terkait secara responsif.
+
