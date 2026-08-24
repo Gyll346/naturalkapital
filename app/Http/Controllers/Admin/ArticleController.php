@@ -12,10 +12,23 @@ use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::with(['category', 'author'])->latest()->paginate(15);
-        return view('admin.articles.index', compact('articles'));
+        $categories = ArticleCategory::all();
+        $selectedCategorySlug = $request->query('category');
+        
+        $query = Article::with(['category', 'author'])->latest();
+
+        if ($selectedCategorySlug) {
+            $query->whereHas('category', function ($q) use ($selectedCategorySlug) {
+                $q->where('slug', $selectedCategorySlug);
+            });
+        }
+
+        $articles = $query->paginate(15)->withQueryString();
+        $selectedCategory = $selectedCategorySlug ? ArticleCategory::where('slug', $selectedCategorySlug)->first() : null;
+
+        return view('admin.articles.index', compact('articles', 'categories', 'selectedCategory', 'selectedCategorySlug'));
     }
 
     public function create()
