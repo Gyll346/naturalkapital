@@ -1,0 +1,62 @@
+# 📝 CATATAN PENGEMBANGAN SISTEM INFORMASI & CMS YNKI
+### Yayasan Natural Kapital Indonesia
+*Dokumen ini mencatat seluruh riwayat perubahan, penambahan fitur, pembaruan skema database, perbaikan bug, dan progres pengembangan sistem berbasis Laravel 11 MVC & Docker.*
+
+---
+
+## 📌 Informasi Proyek
+- **Nama Sistem**: Sistem Informasi & CMS Admin Yayasan Natural Kapital Indonesia (YNKI)
+- **Arsitektur**: Model-View-Controller (MVC)
+- **Framework & Bahasa**: Laravel 11.x (PHP 8.2+)
+- **Database**: MySQL / MariaDB 10.11 (Kompatibel 100% dengan MySQL 8.0)
+- **Web Server & Container**: Nginx Alpine + PHP-FPM + Docker Compose
+- **Dokumen Acuan**: [`PRD_Sistem_Informasi_Admin_YNKI.md`](./PRD_Sistem_Informasi_Admin_YNKI.md)
+
+---
+
+## 🗂️ Log Riwayat Pengembangan (Changelog)
+
+### [Fase 2: Integrasi Dinamis Database 10 Subhalaman & Panel CMS Admin] - 2026-08-24
+#### Ditambahkan & Diselesaikan:
+1. **Integrasi Dinamis Database 10 Subhalaman**:
+   - **Tentang Kami**:
+     - `Tim & Pengurus YNKI` (`/tim/`): Dewan Pengurus & Kepemimpinan dinamis dari tabel `team_members`.
+     - `LGOS: Sistem Operasi Organisasi` (`/lgos/`): 5 Komponen Pendukung LGOS dinamis dari tabel `lgos_components`, admin bisa CRUD & upload SOP/Pedoman PDF, guest bisa mengunduh PDF.
+     - `Portfolio` (`/portofolio/`): Program & Proyek YNKI dinamis dari tabel `portfolio_projects`, admin bisa CRUD & upload foto sampul/PDF.
+     - `Transparansi & Laporan Mitra` (`/transparansi/`): Laporan Tahunan, Audit Keuangan WTP, dan Dokumen Kebijakan dinamis dari tabel `transparency_reports`, guest dapat langsung mengunduh PDF.
+   - **Pustaka & Pengetahuan**:
+     - `News & Features` (`/news-features/`): Kabar Terkini dinamis dari tabel `articles` kategori `news-features`, guest membaca langsung.
+     - `Penelitian & Laporan` (`/penelitian-laporan/`): Publikasi riset & studi dinamis dari tabel `articles` kategori `penelitian-laporan` + unduh PDF.
+     - `Analisis & Kebijakan` (`/analisis-kebijakan/`): Policy brief & naskah kebijakan dinamis dari tabel `articles` kategori `analisis-kebijakan` + unduh PDF.
+     - `Perspektif Budaya` (`/perspektif-budaya/`): Esai dan kajian budaya dinamis dari tabel `articles` kategori `perspektif-budaya`, guest membaca langsung.
+     - `Data Spasial dan GIS` (`/data-spasial-dan-gis/`): Peta analisis GIS & hotspot dinamis dari tabel `articles` kategori `data-spasial-dan-gis` + unduh file.
+     - `Story Foto & Video` (`/story-foto-video/`): Galeri foto dokumentasi lapangan dan video aksi YouTube embed dinamis dari tabel `media_stories`.
+2. **Panel Admin CMS Baru**:
+   - Menu `Komponen LGOS`: CRUD komponen & upload pedoman PDF.
+   - Menu `Portfolio Proyek`: CRUD proyek, pilar lanskap, lokasi, mitra, dan upload factsheet PDF.
+   - Menu `Transparansi Laporan`: CRUD laporan tahunan, audit WTP, dan upload file laporan PDF.
+   - Menu `Story Foto & Video`: Upload dokumentasi foto beresolusi tinggi dan input tautan YouTube video lapangan.
+   - Menu `Tim & Pengurus`: CRUD dewan pengurus, jabatan, foto WebP, LinkedIn, dan urutan tampilan.
+   - Menu `Artikel, Riset & Peta`: CRUD artikel berita, laporan riset PDF, policy brief, esai budaya, dan peta GIS.
+3. **Database Migrations & Seeder**:
+   - Menambahkan migrasi `2026_08_24_000008_create_subpage_cms_tables.php`.
+   - Mengisi data awal (seeder) untuk seluruh 10 modul agar langsung tampil indah dan siap dikelola admin.
+
+---
+
+## 🎯 Status Progres Modul Sistem
+
+| Modul | Deskripsi | Status |
+| :--- | :--- | :---: |
+| 👥 **Tim & Pengurus** | CRUD Dewan Pengurus, upload foto & bio | ✅ Terhubung Database Dinamis |
+| ⚙️ **Komponen LGOS** | CRUD 5 Komponen, upload & unduh PDF SOP | ✅ Terhubung Database Dinamis |
+| 📁 **Portfolio Proyek** | CRUD Proyek, upload factsheet & foto | ✅ Terhubung Database Dinamis |
+| 📑 **Transparansi & Laporan** | CRUD Laporan Tahunan/Audit WTP & unduh PDF | ✅ Terhubung Database Dinamis |
+| 📰 **News & Features** | CRUD Kabar Berita & baca langsung | ✅ Terhubung Database Dinamis |
+| 🔬 **Penelitian & Laporan** | CRUD Riset, abstrak & unduh PDF riset | ✅ Terhubung Database Dinamis |
+| 📜 **Analisis & Kebijakan** | CRUD Policy brief & unduh PDF kebijakan | ✅ Terhubung Database Dinamis |
+| 🌿 **Perspektif Budaya** | CRUD Esai budaya & baca langsung | ✅ Terhubung Database Dinamis |
+| 🗺️ **Data Spasial & GIS** | CRUD Peta GIS & unduh file spasial | ✅ Terhubung Database Dinamis |
+| 📸🎥 **Story Foto & Video** | CRUD Galeri foto & pemutar video YouTube | ✅ Terhubung Database Dinamis |
+| 💳 **Rekening & Donasi** | CRUD Rekening bank, QRIS & verifikasi bukti transfer | ✅ Selesai & Berjalan |
+| 📊 **Dashboard & Ekspor** | Statistik donasi, audit log, ekspor Excel/PDF | ✅ Selesai & Berjalan |

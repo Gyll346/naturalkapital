@@ -1,0 +1,63 @@
+services:
+  # 1. PHP-FPM Service (Laravel Core App)
+  ynki-app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: ynki_laravel_app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: ynki-db
+      DB_PORT: 3306
+      DB_DATABASE: ynki_db
+      DB_USERNAME: ynki_user
+      DB_PASSWORD: secure_ynki_password_2026
+    networks:
+      - ynki-network
+    depends_on:
+      - ynki-db
+
+  # 2. Nginx Web Server Service
+  ynki-nginx:
+    image: nginx:alpine
+    container_name: ynki_nginx_web
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx/conf.d/app.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - ynki-network
+    depends_on:
+      - ynki-app
+
+  # 3. Database Service (MariaDB 10.11 / MySQL Compatible)
+  ynki-db:
+    image: mariadb:10.11
+    container_name: ynki_mysql_db
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: ynki_db
+      MARIADB_USER: ynki_user
+      MARIADB_PASSWORD: secure_ynki_password_2026
+      MARIADB_ROOT_PASSWORD: root_ynki_password_2026
+    ports:
+      - "3306:3306"
+    volumes:
+      - ynki_db_data:/var/lib/mysql
+    networks:
+      - ynki-network
+
+volumes:
+  ynki_db_data:
+    driver: local
+
+networks:
+  ynki-network:
+    driver: bridge

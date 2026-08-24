@@ -1,0 +1,124 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Public\HomeController;
+use App\Http\Controllers\Public\PublicDonationController;
+use App\Http\Controllers\Public\PublicArticleController;
+use App\Http\Controllers\Public\PublicTeamController;
+use App\Http\Controllers\Public\PageContentController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DonationAccountController;
+use App\Http\Controllers\Admin\DonationController;
+use App\Http\Controllers\Admin\TeamMemberController;
+use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\Admin\LgosController;
+use App\Http\Controllers\Admin\PortfolioController;
+use App\Http\Controllers\Admin\TransparencyController;
+use App\Http\Controllers\Admin\MediaStoryController;
+
+/*
+|--------------------------------------------------------------------------
+| 1. Rute Publik Utama & 10 Subhalaman Dinamis Database YNKI
+|--------------------------------------------------------------------------
+*/
+Route::get('/', [HomeController::class, 'index'])->name('public.home');
+Route::get('/donasi', [PublicDonationController::class, 'index'])->name('public.donation');
+Route::post('/donasi', [PublicDonationController::class, 'store'])->name('public.donation.store');
+Route::get('/artikel-cms', [PublicArticleController::class, 'index'])->name('public.article.index');
+Route::get('/artikel-cms/{slug}', [PublicArticleController::class, 'show'])->name('public.article.show');
+
+// Subhalaman Dinamis Database (Tentang Kami)
+Route::get('/tim', [PageContentController::class, 'team'])->name('public.tim');
+Route::get('/lgos', [PageContentController::class, 'lgos'])->name('public.lgos');
+Route::get('/portofolio', [PageContentController::class, 'portfolio'])->name('public.portfolio');
+Route::get('/transparansi', [PageContentController::class, 'transparansi'])->name('public.transparansi');
+
+// Subhalaman Dinamis Database (Pustaka & Pengetahuan)
+Route::get('/news-features', [PageContentController::class, 'newsFeatures'])->name('public.news_features');
+Route::get('/penelitian-laporan', [PageContentController::class, 'researchReports'])->name('public.research_reports');
+Route::get('/analisis-kebijakan', [PageContentController::class, 'policyAnalysis'])->name('public.policy_analysis');
+Route::get('/perspektif-budaya', [PageContentController::class, 'culturalPerspective'])->name('public.cultural_perspective');
+Route::get('/data-spasial-dan-gis', [PageContentController::class, 'spatialGis'])->name('public.spatial_gis');
+Route::get('/data-spasial-gis', [PageContentController::class, 'spatialGis']);
+Route::get('/story-foto-video', [PageContentController::class, 'mediaStories'])->name('public.media_stories');
+Route::get('/stori-foto-video', [PageContentController::class, 'mediaStories']);
+
+/*
+|--------------------------------------------------------------------------
+| 2. Hidden Login Route (Tanpa tombol login di navbar/footer publik)
+|--------------------------------------------------------------------------
+*/
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login'])->middleware('throttle:5,1');
+});
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth')->name('logout');
+
+/*
+|--------------------------------------------------------------------------
+| 3. Panel Admin CMS (Dilindungi Auth Middleware)
+|--------------------------------------------------------------------------
+*/
+Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    
+    // CRUD Rekening Bank / QRIS Donasi
+    Route::resource('accounts', DonationAccountController::class);
+    
+    // Verifikasi Transaksi Donasi
+    Route::get('donations', [DonationController::class, 'index'])->name('donations.index');
+    Route::get('donations/{id}', [DonationController::class, 'show'])->name('donations.show');
+    Route::patch('donations/{id}/verify', [DonationController::class, 'verify'])->name('donations.verify');
+    Route::patch('donations/{id}/reject', [DonationController::class, 'reject'])->name('donations.reject');
+    
+    // CRUD Tim & Pengurus YNKI
+    Route::resource('teams', TeamMemberController::class);
+    
+    // CRUD Komponen Pendukung LGOS
+    Route::resource('lgos', LgosController::class);
+    
+    // CRUD Portfolio Program & Proyek
+    Route::resource('portfolios', PortfolioController::class);
+    
+    // CRUD Dokumen Transparansi & Kebijakan
+    Route::resource('transparency', TransparencyController::class);
+    
+    // CRUD Story Foto & Video Lapangan
+    Route::resource('media-stories', MediaStoryController::class);
+    
+    // CRUD Artikel Berita & Dokumen Riset
+    Route::resource('articles', ArticleController::class);
+    
+    // Pelaporan & Ekspor
+    Route::get('reports/donations/excel', [ReportController::class, 'exportDonationsExcel'])->name('reports.donations.excel');
+    Route::get('reports/donations/pdf', [ReportController::class, 'exportDonationsPdf'])->name('reports.donations.pdf');
+});
+
+/*
+|--------------------------------------------------------------------------
+| 4. Universal Handler untuk Seluruh Halaman Menu Asli YNKI
+|--------------------------------------------------------------------------
+| Melayani seluruh subpage menu asli: Sejarah, Tim, LGOS, Program, Portfolio,
+| Transparansi, Kisah Perubahan, Riset, Publikasi, dsb. secara otomatis.
+*/
+Route::fallback(function (\Illuminate\Http\Request $request) {
+    $path = trim($request->path(), '/');
+
+    // Daftar prioritas pengecekan file HTML asli
+    $candidates = [
+        base_path($path . '/index.html'),
+        base_path($path . '.html'),
+        base_path($path),
+    ];
+
+    foreach ($candidates as $file) {
+        if (file_exists($file) && !is_dir($file)) {
+            $content = file_get_contents($file);
+            return response($content, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+        }
+    }
+
+    abort(404);
+});

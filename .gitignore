@@ -1,5 +1,20 @@
-# Zip archives
+# Laravel & Environment
+.env
+.env.backup
+.env.production
+vendor/
+bootstrap/cache/
+storage/*.key
+
+# Symlinks in public (Docker container links)
+public/storage
+public/assets
+public/wp-content
+public/wp-includes
+
+# Zip archives & Logs
 *.zip
+*.log
 
 # Node
 node_modules/
