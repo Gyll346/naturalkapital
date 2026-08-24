@@ -155,6 +155,37 @@
             color: var(--ynki-accent);
         }
 
+        .ynki-footer-social {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ynki-social-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff !important;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .ynki-social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        .ynki-social-youtube:hover { background: #FF0000; border-color: #FF0000; }
+        .ynki-social-facebook:hover { background: #1877F2; border-color: #1877F2; }
+        .ynki-social-instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); border-color: transparent; }
+        .ynki-social-xtwitter:hover { background: #000000; border-color: #333333; }
+        .ynki-social-linkedin:hover { background: #0A66C2; border-color: #0A66C2; }
+
         .footer-bottom {
             max-width: 1200px;
             margin: 0 auto;
