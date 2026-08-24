@@ -5,6 +5,11 @@
 vendor/
 bootstrap/cache/
 storage/*.key
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/testing/
+storage/framework/views/
+storage/app/public/
 
 # Symlinks in public (Docker container links)
 public/storage

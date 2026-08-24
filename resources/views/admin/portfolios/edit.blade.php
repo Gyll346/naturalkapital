@@ -73,6 +73,11 @@
                     <textarea class="form-control" id="summary" name="summary" rows="3" required>{{ old('summary', $project->summary) }}</textarea>
                 </div>
 
+                <div class="form-group">
+                    <label class="form-label" for="description">Deskripsi Lengkap Proyek (Opsional)</label>
+                    <textarea class="form-control" id="description" name="description" rows="4">{{ old('description', $project->description) }}</textarea>
+                </div>
+
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                     <div class="form-group">
                         <label class="form-label" for="image_cover">Ganti Foto Sampul (JPG/PNG/WebP)</label>

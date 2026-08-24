@@ -40,7 +40,7 @@ class TransparencyController extends Controller
             'title' => $validated['title'],
             'report_year' => $validated['report_year'],
             'category' => $validated['category'],
-            'summary' => $validated['summary'],
+            'summary' => $validated['summary'] ?? null,
             'file_pdf_path' => $pdfPath,
             'file_size' => $fileSize,
             'is_active' => $request->has('is_active'),
@@ -89,7 +89,7 @@ class TransparencyController extends Controller
             'title' => $validated['title'],
             'report_year' => $validated['report_year'],
             'category' => $validated['category'],
-            'summary' => $validated['summary'],
+            'summary' => $validated['summary'] ?? null,
             'is_active' => $request->has('is_active'),
         ]);
 

@@ -39,7 +39,7 @@ class LgosController extends Controller
 
         $component = LgosComponent::create([
             'component_name' => $validated['component_name'],
-            'code' => $validated['code'],
+            'code' => $validated['code'] ?? null,
             'description' => $validated['description'],
             'document_pdf_path' => $pdfPath,
             'sort_order' => $validated['sort_order'] ?? 0,
@@ -85,7 +85,7 @@ class LgosController extends Controller
 
         $component->update([
             'component_name' => $validated['component_name'],
-            'code' => $validated['code'],
+            'code' => $validated['code'] ?? null,
             'description' => $validated['description'],
             'sort_order' => $validated['sort_order'] ?? 0,
             'is_active' => $request->has('is_active'),

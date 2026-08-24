@@ -72,6 +72,11 @@
                     <textarea class="form-control" id="summary" name="summary" rows="3" required placeholder="Jelaskan ringkasan kegiatan dan capaian utama proyek...">{{ old('summary') }}</textarea>
                 </div>
 
+                <div class="form-group">
+                    <label class="form-label" for="description">Deskripsi Lengkap Proyek (Opsional)</label>
+                    <textarea class="form-control" id="description" name="description" rows="4" placeholder="Detail narasi proyek, metodologi, dan output lanjutan...">{{ old('description') }}</textarea>
+                </div>
+
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                     <div class="form-group">
                         <label class="form-label" for="image_cover">Foto Sampul Proyek (JPG/PNG/WebP)</label>

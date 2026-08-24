@@ -16,6 +16,13 @@
 
 ## 🗂️ Log Riwayat Pengembangan (Changelog)
 
+### [Perbaikan Bug: Undefined Array Key pada Portfolio Update] - 2026-08-24
+#### Diperbaiki:
+1. **Pencegahan Error Undefined Array Key pada Controller**:
+   - Menambahkan *null coalescing operator* (`$validated['description'] ?? null`, `$validated['location'] ?? null`, dsb.) pada seluruh controller CRUD (`PortfolioController`, `LgosController`, `TransparencyController`, `MediaStoryController`) agar field opsional yang dikirim kosong atau tidak dicentang tidak lagi memicu error `Undefined array key`.
+2. **Form Portfolio Input Lengkap**:
+   - Menambahkan field input `description` (Deskripsi Lengkap Proyek) pada form tambah (`create.blade.php`) dan edit (`edit.blade.php`) modul Portfolio.
+
 ### [Fase 2: Integrasi Dinamis Database 10 Subhalaman & Panel CMS Admin] - 2026-08-24
 #### Ditambahkan & Diselesaikan:
 1. **Integrasi Dinamis Database 10 Subhalaman**:
@@ -38,9 +45,6 @@
    - Menu `Story Foto & Video`: Upload dokumentasi foto beresolusi tinggi dan input tautan YouTube video lapangan.
    - Menu `Tim & Pengurus`: CRUD dewan pengurus, jabatan, foto WebP, LinkedIn, dan urutan tampilan.
    - Menu `Artikel, Riset & Peta`: CRUD artikel berita, laporan riset PDF, policy brief, esai budaya, dan peta GIS.
-3. **Database Migrations & Seeder**:
-   - Menambahkan migrasi `2026_08_24_000008_create_subpage_cms_tables.php`.
-   - Mengisi data awal (seeder) untuk seluruh 10 modul agar langsung tampil indah dan siap dikelola admin.
 
 ---
 
