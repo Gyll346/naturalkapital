@@ -86,3 +86,23 @@
    - Menyelaraskan halaman baca artikel (`/artikel-cms/{slug}`) agar menggunakan template header, navbar (`awb-menu`), mega-menu dropdown, dan footer asli persis seperti yang digunakan pada bagian *Pustaka & Pengetahuan*.
    - Menyajikan banner judul hero, sidebar metadata dokumen, box ringkasan/abstrak, isi artikel lengkap, banner unduh PDF resmi, serta grid artikel terkait secara responsif.
 
+---
+
+### [Pembaruan Halaman Khusus Donasi, Ikut Serta/Terlibat & Kontak Kami] - 2026-08-26
+#### Ditambahkan & Disempurnakan:
+1. **Halaman Khusus Donasi & Dukungan Program (`/donasi`)**:
+   - Menyelaraskan tampilan `resources/views/public/donation.blade.php` dengan tema, navbar, dan footer otentik website YNKI.
+   - Menampilkan rekening bank resmi YNKI dan QRIS dinamis dari database (`donation_accounts`) dengan kartu interaktif.
+   - Menambahkan form konfirmasi transfer donasi, pilihan program, unggah bukti transfer (maks 5MB), opsi anonim, dan penjelasan transparansi audit keuangan WTP serta dampak nyata di lapangan.
+
+2. **Halaman Khusus Ikut Serta & Kolaborasi (`/ikut-terlibat`, `/ikut-serta`)**:
+   - Membuat halaman khusus kolaborasi multipihak dengan template dan tema visual konsisten.
+   - Menyajikan 4 pilar keterlibatan: Relawan Aksi Lapangan, Program Magang & Riset Akademik, Kemitraan Komunitas & CSO, serta Donasi & Filantropi.
+   - Menyediakan formulir kirim minat keterlibatan interaktif.
+
+3. **Pembaruan Total Halaman Kontak Kami (`/kontak-kami`, `/hubungi-kami`)**:
+   - Memperbarui tampilan `kontak-kami/index.html` dengan desain hero banner lanskap hijau dan navbar/footer otentik.
+   - Menyajikan informasi sekretariat lengkap (Alamat Kantor Pontianak, Email resmi, WhatsApp/Telepon, Jam Operasional, Media Sosial Resmi).
+   - Menyematkan formulir kirim pesan langsung interaktif dan embed peta lokasi Google Maps YNKI Pontianak yang responsif.
+
+
