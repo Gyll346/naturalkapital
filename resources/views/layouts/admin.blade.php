@@ -405,6 +405,92 @@
         .form-group {
             margin-bottom: 18px;
         }
+
+        /* Mobile Hamburger & Overlay */
+        .btn-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-dark);
+            cursor: pointer;
+            padding: 6px;
+            margin-right: 12px;
+            border-radius: 6px;
+        }
+        .btn-hamburger:hover {
+            background: #eaf5ee;
+        }
+        .sidebar-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1040;
+            backdrop-filter: blur(2px);
+        }
+
+        /* =======================================================
+           RESPONSIVE MOBILE BREAKPOINTS (<= 992px & <= 640px)
+           ======================================================= */
+        @media (max-width: 992px) {
+            .btn-hamburger {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .admin-sidebar {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: -290px;
+                z-index: 1050;
+                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 4px 0 24px rgba(0,0,0,0.25);
+            }
+            .admin-sidebar.show {
+                left: 0;
+            }
+            .sidebar-backdrop.show {
+                display: block;
+            }
+            .admin-topbar {
+                padding: 12px 16px;
+            }
+            .topbar-title {
+                font-size: 16px;
+            }
+            .admin-content {
+                padding: 18px 14px;
+            }
+            .grid-stats {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 14px;
+                margin-bottom: 20px;
+            }
+            .stat-card {
+                padding: 16px;
+            }
+            .stat-value {
+                font-size: 20px;
+            }
+            .card-table {
+                padding: 16px 14px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .topbar-actions .btn-action span {
+                display: none;
+            }
+            .grid-stats {
+                grid-template-columns: 1fr;
+            }
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
     </style>
     @stack('styles')
 </head>
@@ -536,14 +622,24 @@
         </div>
     </aside>
 
+    <!-- Mobile Overlay Backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
     <!-- Main Section -->
     <div class="admin-main">
         <header class="admin-topbar">
-            <h1 class="topbar-title">@yield('title', 'Dashboard')</h1>
-            <a href="{{ route('public.home') }}" target="_blank" class="btn-action btn-outline">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                Lihat Website Publik
-            </a>
+            <div style="display: flex; align-items: center;">
+                <button class="btn-hamburger" id="sidebarToggle" aria-label="Toggle Sidebar" title="Buka Menu">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                <h1 class="topbar-title">@yield('title', 'Dashboard')</h1>
+            </div>
+            <div class="topbar-actions">
+                <a href="{{ route('public.home') }}" target="_blank" class="btn-action btn-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span>Lihat Website</span>
+                </a>
+            </div>
         </header>
 
         <main class="admin-content">
@@ -551,6 +647,38 @@
         </main>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggleBtn = document.getElementById('sidebarToggle');
+            var sidebar = document.querySelector('.admin-sidebar');
+            var backdrop = document.getElementById('sidebarBackdrop');
+
+            if (toggleBtn && sidebar && backdrop) {
+                toggleBtn.addEventListener('click', function() {
+                    sidebar.classList.toggle('show');
+                    backdrop.classList.toggle('show');
+                });
+
+                backdrop.addEventListener('click', function() {
+                    sidebar.classList.remove('show');
+                    backdrop.classList.remove('show');
+                });
+
+                // Tutup sidebar saat link di mobile diklik
+                var menuLinks = sidebar.querySelectorAll('.menu-link');
+                menuLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 992) {
+                            sidebar.classList.remove('show');
+                            backdrop.classList.remove('show');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
     @stack('scripts')
 </body>
 </html>
+
