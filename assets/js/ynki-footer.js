@@ -54,6 +54,11 @@
         name: 'X (Twitter)',
         url: 'https://x.com/kapital_natural',
         svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>'
+      },
+      {
+        name: 'LinkedIn',
+        url: 'https://id.linkedin.com/company/natural-kapital-foundation',
+        svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>'
       }
     ];
 
@@ -75,7 +80,7 @@
   // 3. Tautan cepat sesuai konteks halaman
   var sections = [
     {
-      match: ['/sejarah-visi-misi/', '/tim/', '/lgos/', '/portofolio/', '/transparansi/'],
+      match: ['/sejarah-visi-misi/', '/tim/', '/lgos/', '/portofolio/', '/transparansi/', '/annual-report/'],
       links: [
         ['/sejarah-visi-misi/', 'Sejarah, Visi & Misi'],
         ['/tim/', 'Tim & Pengurus YNKI'],
@@ -91,7 +96,7 @@
         ['/natural-capital/', 'Natural Capital & Restoration'],
         ['/sustainable-commodity/', 'Sustainable Commodity System'],
         ['/landscape-intelligence/', 'Landscape Intelligence & Innovation'],
-        ['/institutional-partnership/', 'Institutional Sustainability & Partnership']
+        ['/annual-report/', 'Annual Report']
       ]
     },
     {
@@ -99,7 +104,8 @@
       links: [
         ['/dampak/', 'Dampak'],
         ['/kisah-perubahan/', 'Kisah Perubahan'],
-        ['/liputan-media/', 'Liputan Media']
+        ['/liputan-media/', 'Liputan Media'],
+        ['/annual-report/', 'Annual Report']
       ]
     },
     {
@@ -110,7 +116,7 @@
         ['/analisis-kebijakan/', 'Analisis & Kebijakan'],
         ['/kategori/perspektif-budaya/', 'Perspektif Budaya'],
         ['/data-spasial-gis/', 'Data Spasial dan GIS'],
-        ['/stori-foto-video/', 'Story Foto & Video']
+        ['/annual-report/', 'Annual Report']
       ]
     }
   ];
@@ -120,8 +126,10 @@
     ['/sejarah-visi-misi/', 'Sejarah, Visi & Misi'],
     ['/landscape-governance/', 'Landscape Governance'],
     ['/dampak/', 'Dampak'],
-    ['/news-features/', 'News & Features']
+    ['/news-features/', 'News & Features'],
+    ['/annual-report/', 'Annual Report']
   ];
+
 
   var quickLinks = berandaLinks;
   for (var s = 0; s < sections.length; s++) {
