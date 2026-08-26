@@ -640,6 +640,169 @@ img {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
   }
+
+  /* =======================================================
+     YNKI DEDICATED MOBILE DRAWER NAVIGATION & ACCORDION
+     ======================================================= */
+  .ynki-mobile-nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 999998;
+  }
+  .ynki-mobile-nav-backdrop.active {
+    display: block;
+  }
+
+  .ynki-mobile-nav-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 380px;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 999999;
+    box-shadow: -4px 0 25px rgba(0, 0, 0, 0.25);
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    font-family: 'Inter', Arial, sans-serif;
+  }
+  .ynki-mobile-nav-drawer.active {
+    right: 0;
+  }
+
+  .ynki-mobile-nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1.5px solid #eef3ef;
+    background: #fbfdfb;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .ynki-mobile-nav-logo img {
+    max-height: 36px;
+    width: auto;
+  }
+  .ynki-mobile-nav-close {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: #fff3e6;
+    border: 1px solid rgba(255, 128, 0, 0.35);
+    border-radius: 6px;
+    color: #FF8000;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .ynki-mobile-nav-close:hover {
+    background: #ffe6cc;
+  }
+
+  .ynki-mobile-nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+  }
+  .ynki-mobile-nav-item {
+    border-bottom: 1px solid #f0f4f1;
+  }
+  .ynki-mobile-nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ynki-mobile-nav-link {
+    display: block;
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0e241b;
+    text-decoration: none;
+    flex-grow: 1;
+    transition: background 0.15s;
+  }
+  .ynki-mobile-nav-link:hover,
+  .ynki-mobile-nav-link.active {
+    color: #117710;
+    background: #f5f9f5;
+  }
+  .ynki-mobile-nav-toggle-btn {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #536b5f;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    transition: all 0.2s;
+  }
+  .ynki-mobile-nav-toggle-btn:hover {
+    color: #117710;
+  }
+  .ynki-mobile-nav-toggle-btn.open {
+    color: #FF8000;
+    transform: rotate(45deg);
+  }
+
+  .ynki-mobile-submenu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #f8faf8;
+    border-top: 1px solid #eef3ef;
+  }
+  .ynki-mobile-submenu.open {
+    display: block;
+  }
+  .ynki-mobile-submenu li a {
+    display: block;
+    padding: 12px 20px 12px 34px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #334d3f;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f4f1;
+  }
+  .ynki-mobile-submenu li a:hover {
+    color: #117710;
+    background: #edf5ed;
+  }
+
+  .ynki-mobile-nav-footer {
+    padding: 20px;
+    background: #f8faf8;
+    border-top: 1px solid #eef3ef;
+  }
+  .btn-mobile-nav-donate {
+    display: block;
+    width: 100%;
+    background: #FF8000;
+    color: #ffffff !important;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(255, 128, 0, 0.25);
+  }
+
   .fusion-tb-header .fusion-builder-row {
     display: flex !important;
     flex-direction: row !important;

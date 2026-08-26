@@ -211,3 +211,179 @@
     }
   });
 })();
+
+/* ==========================================================================
+   YNKI MOBILE ACCORDION & DRAWER NAVIGATION (PERSISTENT ON ALL PAGES)
+   ========================================================================== */
+(function () {
+  function initMobileDrawer() {
+    if (document.getElementById('ynki-mobile-drawer')) return;
+
+    var currentPath = window.location.pathname;
+
+    // 1. Create Drawer Elements
+    var backdrop = document.createElement('div');
+    backdrop.id = 'ynki-mobile-backdrop';
+    backdrop.className = 'ynki-mobile-nav-backdrop';
+
+    var drawer = document.createElement('div');
+    drawer.id = 'ynki-mobile-drawer';
+    drawer.className = 'ynki-mobile-nav-drawer';
+
+    drawer.innerHTML = `
+      <div class="ynki-mobile-nav-header">
+        <div class="ynki-mobile-nav-logo">
+          <a href="/"><img src="/wp-content/uploads/2026/05/logo-ynki-80.webp" alt="YNKI"></a>
+        </div>
+        <button type="button" class="ynki-mobile-nav-close" id="ynki-mobile-close-btn" aria-label="Tutup Menu">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          Close
+        </button>
+      </div>
+
+      <ul class="ynki-mobile-nav-menu">
+        <!-- 1. Beranda -->
+        <li class="ynki-mobile-nav-item">
+          <div class="ynki-mobile-nav-row">
+            <a href="/" class="ynki-mobile-nav-link ${currentPath === '/' ? 'active' : ''}">Beranda</a>
+          </div>
+        </li>
+
+        <!-- 2. Tentang Kami -->
+        <li class="ynki-mobile-nav-item">
+          <div class="ynki-mobile-nav-row">
+            <a href="/sejarah-visi-misi/" class="ynki-mobile-nav-link">Tentang Kami</a>
+            <button type="button" class="ynki-mobile-nav-toggle-btn" aria-label="Buka Submenu Tentang Kami">+</button>
+          </div>
+          <ul class="ynki-mobile-submenu">
+            <li><a href="/sejarah-visi-misi/">Sejarah, Visi &amp; Misi</a></li>
+            <li><a href="/tim/">Tim &amp; Pengurus YNKI</a></li>
+            <li><a href="/lgos/">LGOS: Sistem Operasi Organisasi</a></li>
+            <li><a href="/portofolio/">Portfolio</a></li>
+            <li><a href="/transparansi/">Transparansi &amp; Laporan Mitra</a></li>
+          </ul>
+        </li>
+
+        <!-- 3. Program Kami -->
+        <li class="ynki-mobile-nav-item">
+          <div class="ynki-mobile-nav-row">
+            <a href="/landscape-governance/" class="ynki-mobile-nav-link">Program Kami</a>
+            <button type="button" class="ynki-mobile-nav-toggle-btn" aria-label="Buka Submenu Program Kami">+</button>
+          </div>
+          <ul class="ynki-mobile-submenu">
+            <li><a href="/landscape-governance/">Landscape Governance</a></li>
+            <li><a href="/natural-capital/">Natural Capital &amp; Restoration</a></li>
+            <li><a href="/sustainable-commodity/">Sustainable Commodity System</a></li>
+            <li><a href="/landscape-intelligence/">Landscape Intelligence &amp; Innovation</a></li>
+            <li><a href="/institutional-partnership/">Institutional Sustainability &amp; Partnership</a></li>
+          </ul>
+        </li>
+
+        <!-- 4. Dampak & Pembelajaran -->
+        <li class="ynki-mobile-nav-item">
+          <div class="ynki-mobile-nav-row">
+            <a href="/dampak/" class="ynki-mobile-nav-link">Dampak &amp; Pembelajaran</a>
+            <button type="button" class="ynki-mobile-nav-toggle-btn" aria-label="Buka Submenu Dampak">+</button>
+          </div>
+          <ul class="ynki-mobile-submenu">
+            <li><a href="/dampak/">Dampak</a></li>
+            <li><a href="/kisah-perubahan/">Kisah Perubahan</a></li>
+            <li><a href="/liputan-media/">Liputan Media</a></li>
+          </ul>
+        </li>
+
+        <!-- 5. Pustaka & Pengetahuan -->
+        <li class="ynki-mobile-nav-item">
+          <div class="ynki-mobile-nav-row">
+            <a href="/news-features/" class="ynki-mobile-nav-link">Pustaka &amp; Pengetahuan</a>
+            <button type="button" class="ynki-mobile-nav-toggle-btn" aria-label="Buka Submenu Pustaka">+</button>
+          </div>
+          <ul class="ynki-mobile-submenu">
+            <li><a href="/news-features/">News &amp; Features</a></li>
+            <li><a href="/penelitian-laporan/">Penelitian &amp; Laporan</a></li>
+            <li><a href="/analisis-kebijakan/">Analisis &amp; Kebijakan</a></li>
+            <li><a href="/perspektif-budaya/">Perspektif Budaya</a></li>
+            <li><a href="/data-spasial-dan-gis/">Data Spasial dan GIS</a></li>
+            <li><a href="/story-foto-video/">Story Foto &amp; Video</a></li>
+          </ul>
+        </li>
+
+        <!-- 6. Ikut Terlibat -->
+        <li class="ynki-mobile-nav-item">
+          <div class="ynki-mobile-nav-row">
+            <a href="/ikut-terlibat" class="ynki-mobile-nav-link ${currentPath.indexOf('/ikut') !== -1 ? 'active' : ''}">Ikut Serta / Terlibat</a>
+          </div>
+        </li>
+
+        <!-- 7. Kontak Kami -->
+        <li class="ynki-mobile-nav-item">
+          <div class="ynki-mobile-nav-row">
+            <a href="/kontak-kami" class="ynki-mobile-nav-link ${currentPath.indexOf('/kontak') !== -1 ? 'active' : ''}">Kontak Kami</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="ynki-mobile-nav-footer">
+        <a href="/donasi" class="btn-mobile-nav-donate">
+          ❤️ Donasi &amp; Dukung Program
+        </a>
+      </div>
+    `;
+
+    document.body.appendChild(backdrop);
+    document.body.appendChild(drawer);
+
+    // 2. Open / Close Functions
+    function openDrawer() {
+      drawer.classList.add('active');
+      backdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('active');
+      backdrop.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('ynki-mobile-close-btn').addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+
+    // 3. Connect to existing header burger buttons
+    var burgerButtons = document.querySelectorAll('.awb-menu__m-toggle, [aria-label="Toggle Navigation"], .collapsed-nav-text, .awb-menu_mobile-toggle');
+    burgerButtons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openDrawer();
+      });
+    });
+
+    // 4. Accordion Toggle (+ / -)
+    var toggleButtons = drawer.querySelectorAll('.ynki-mobile-nav-toggle-btn');
+    toggleButtons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var submenu = this.closest('.ynki-mobile-nav-item').querySelector('.ynki-mobile-submenu');
+        if (!submenu) return;
+
+        var isOpen = submenu.classList.contains('open');
+        if (isOpen) {
+          submenu.classList.remove('open');
+          this.classList.remove('open');
+          this.textContent = '+';
+        } else {
+          submenu.classList.add('open');
+          this.classList.add('open');
+          this.textContent = '✕';
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileDrawer);
+  } else {
+    initMobileDrawer();
+  }
+})();
