@@ -105,4 +105,19 @@
    - Menyajikan informasi sekretariat lengkap (Alamat Kantor Pontianak, Email resmi, WhatsApp/Telepon, Jam Operasional, Media Sosial Resmi).
    - Menyematkan formulir kirim pesan langsung interaktif dan embed peta lokasi Google Maps YNKI Pontianak yang responsif.
 
+---
+
+### [Pembaruan Menu Annual Report di Footer & Sistem Mobile Navigation] - 2026-08-26
+#### Ditambahkan & Disempurnakan:
+1. **Perubahan & Pemindahan Menu "Transparansi & Laporan Mitra" Menjadi "Annual Report"**:
+   - Menghapus item submenu *Transparansi & Laporan Mitra* dari dropdown navbar *Tentang Kami* di 197 file halaman website (desktop & mobile menu).
+   - Menempatkan tautan **Annual Report** (`/annual-report/` / `/transparansi/`) secara permanen pada bagian **Footer (Tautan Cepat)** di seluruh halaman website.
+   - Memperbarui judul dan isi halaman transparansi menjadi **Annual Report & Transparansi Laporan**.
+   - Menambahkan rute alias Laravel `/annual-report` yang mengarah ke pengontrol dokumen laporan tahunan dan transparansi.
+
+2. **Pengembangan Sistem Mobile Navigation Drawer & Accordion**:
+   - Menerapkan sliding drawer menu responsif dengan header tombol `Close [✕]` dan accordion `+` / `✕` untuk membuka submenu interaktif.
+   - Memperbaiki masalah *overflow* horizontal dan *zoomed-out* pada layar smartphone sehingga seluruh halaman beranda tampil 100% *full-width* proporsional.
+
+
 
