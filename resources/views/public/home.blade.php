@@ -5131,6 +5131,9 @@
                         <li>
                           <a href="/news-features/">News &amp; Features</a>
                         </li>
+                        <li>
+                          <a href="/annual-report/">Annual Report</a>
+                        </li>
                       </ul>
                       <p>
                         © 2026 Yayasan Natural Kapital Indonesia
