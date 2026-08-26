@@ -13,7 +13,7 @@
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <title>Donasi & Dukungan Program - Yayasan Natural Kapital Indonesia (YNKI)</title>
+    <title>Donasi & Dukungan Program — Yayasan Natural Kapital Indonesia (YNKI)</title>
     <meta
       name="description"
       content="YNKI memperkuat kolaborasi antara pemerintah, masyarakat, sektor swasta, &amp; donor untuk membangun lanskap yang sehat, produktif, tangguh, &amp; berkelanjutan."
@@ -3029,56 +3029,66 @@ div[class*="fusion-builder-row-1"],
         <main id="main" class="clearfix width-100" style="font-family:'Inter',Arial,Helvetica,sans-serif; padding: 0 !important;">
           <link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
           <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800&display=swap">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap">
 
           <style>
-            .ynki-hero-wrap {
+            .ynki-hero-compact {
               position: relative;
-              background: linear-gradient(155deg, rgba(5,42,5,0.94) 0%, rgba(12,80,11,0.85) 60%, rgba(0,0,0,0.65) 100%), url('/assets/images/homepage/hero-bg.png');
+              background: linear-gradient(155deg, rgba(5,42,5,0.92) 0%, rgba(12,80,11,0.85) 60%, rgba(0,0,0,0.6) 100%), url('/assets/images/homepage/hero-bg.png');
               background-size: cover;
               background-position: center;
-              padding: 95px 24px 85px;
+              padding: 70px 24px 60px;
               color: #ffffff;
               text-align: center;
             }
-            .ynki-badge-tag {
-              font-size: 12px;
+            .section-badge-orange {
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 11px;
               font-weight: 800;
-              letter-spacing: 1.8px;
+              letter-spacing: 1.5px;
               text-transform: uppercase;
-              color: #a3e0a2;
+              color: #FF8000 !important;
+              background: #fff3e6 !important;
+              border: 1px solid rgba(255,128,0,0.4) !important;
+              padding: 5px 16px;
+              border-radius: 50px;
               margin-bottom: 16px;
-              display: inline-block;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             }
-            .ynki-page-title {
+            .ynki-hero-h1 {
               font-family: 'Montserrat', sans-serif;
-              font-size: clamp(28px, 4.5vw, 44px);
-              font-weight: 800;
+              font-size: clamp(26px, 4vw, 40px);
+              font-weight: 900;
               line-height: 1.25;
               color: #ffffff;
-              margin: 0 0 16px;
+              margin: 0 0 14px;
             }
-            .ynki-page-sub {
-              font-size: clamp(14px, 1.6vw, 17px);
-              line-height: 1.8;
+            .ynki-hero-h1 span.hl-orange {
+              color: #FF8000;
+            }
+            .ynki-hero-sub {
+              font-size: clamp(14px, 1.5vw, 16.5px);
+              line-height: 1.75;
               color: #d2f0d1;
-              max-width: 820px;
+              max-width: 800px;
               margin: 0 auto;
             }
 
             .ynki-grid-donation {
               max-width: 1200px;
-              margin: 60px auto 90px;
+              margin: 50px auto 80px;
               padding: 0 24px;
               display: grid;
               grid-template-columns: 1fr 1.25fr;
-              gap: 40px;
+              gap: 36px;
               align-items: flex-start;
             }
 
             .ynki-card-box {
               background: #ffffff;
-              border: 1px solid #d2e8d1;
+              border: 1.5px solid #d2e8d1;
               border-radius: 16px;
               padding: 32px;
               box-shadow: 0 10px 30px rgba(17,119,16,0.06);
@@ -3088,7 +3098,7 @@ div[class*="fusion-builder-row-1"],
               font-size: 20px;
               font-weight: 800;
               color: #0e241b;
-              margin: 0 0 20px;
+              margin: 0 0 18px;
               display: flex;
               align-items: center;
               gap: 10px;
@@ -3104,16 +3114,17 @@ div[class*="fusion-builder-row-1"],
             }
             .bank-card:hover {
               transform: translateY(-3px);
-              border-color: #117710;
-              box-shadow: 0 8px 24px rgba(17,119,16,0.1);
+              border-color: #FF8000;
+              box-shadow: 0 8px 24px rgba(255,128,0,0.12);
             }
             .bank-badge {
               font-size: 11px;
               font-weight: 800;
               letter-spacing: 1.2px;
               text-transform: uppercase;
-              color: #117710;
-              background: #e8f5e8;
+              color: #FF8000;
+              background: #fff3e6;
+              border: 1px solid rgba(255,128,0,0.3);
               padding: 4px 12px;
               border-radius: 50px;
               display: inline-block;
@@ -3134,18 +3145,18 @@ div[class*="fusion-builder-row-1"],
             }
 
             .form-group {
-              margin-bottom: 20px;
+              margin-bottom: 18px;
             }
             .form-group label {
               display: block;
               font-size: 13.5px;
               font-weight: 700;
               color: #0e241b;
-              margin-bottom: 8px;
+              margin-bottom: 7px;
             }
             .form-control {
               width: 100%;
-              padding: 12px 16px;
+              padding: 11px 15px;
               border: 1.5px solid #d2e8d1;
               border-radius: 8px;
               font-size: 14px;
@@ -3156,34 +3167,34 @@ div[class*="fusion-builder-row-1"],
               transition: border-color 0.2s;
             }
             .form-control:focus {
-              border-color: #117710;
+              border-color: #FF8000;
               outline: none;
-              box-shadow: 0 0 0 3px rgba(17,119,16,0.12);
+              box-shadow: 0 0 0 3px rgba(255,128,0,0.15);
             }
 
             .btn-submit-donation {
               width: 100%;
-              background: #117710;
+              background: #FF8000;
               color: #ffffff;
               font-family: 'Montserrat', sans-serif;
               font-size: 15px;
-              font-weight: 700;
+              font-weight: 800;
               padding: 14px 24px;
               border: none;
               border-radius: 8px;
               cursor: pointer;
               transition: all 0.2s;
-              box-shadow: 0 4px 14px rgba(17,119,16,0.25);
+              box-shadow: 0 4px 14px rgba(255,128,0,0.28);
             }
             .btn-submit-donation:hover {
-              background: #0c500b;
+              background: #e67300;
               transform: translateY(-2px);
-              box-shadow: 0 6px 18px rgba(17,119,16,0.35);
+              box-shadow: 0 6px 18px rgba(255,128,0,0.38);
             }
 
             .impact-banner {
               background: #f5f8f5;
-              padding: 70px 24px;
+              padding: 65px 24px;
               border-top: 1px solid #d2e8d1;
             }
             .impact-grid {
@@ -3199,6 +3210,11 @@ div[class*="fusion-builder-row-1"],
               border-radius: 14px;
               padding: 26px;
               text-align: center;
+              transition: transform 0.2s;
+            }
+            .impact-card:hover {
+              transform: translateY(-3px);
+              border-color: #FF8000;
             }
             .impact-card h4 {
               font-family: 'Montserrat', sans-serif;
@@ -3220,12 +3236,12 @@ div[class*="fusion-builder-row-1"],
             }
           </style>
 
-          <!-- Hero Section -->
-          <section class="ynki-hero-wrap">
-            <div style="max-width: 960px; margin: 0 auto; position: relative; z-index: 2;">
-              <span class="ynki-badge-tag">Dukungan &amp; Filantropi Konservasi</span>
-              <h1 class="ynki-page-title">Dukung Pelestarian Lanskap Berkelanjutan</h1>
-              <p class="ynki-page-sub">
+          <!-- Hero Section Compact -->
+          <section class="ynki-hero-compact">
+            <div style="max-width: 920px; margin: 0 auto; position: relative; z-index: 2;">
+              <span class="section-badge-orange">Dukungan &amp; Filantropi Konservasi</span>
+              <h1 class="ynki-hero-h1">Dukung Pelestarian <span class="hl-orange">Lanskap Berkelanjutan</span></h1>
+              <p class="ynki-hero-sub">
                 Setiap kontribusi Anda disalurkan secara langsung untuk program restorasi ekosistem gambut, kemandirian masyarakat adat di sekitar lanskap, dan perlindungan keanekaragaman hayati Kalimantan.
               </p>
             </div>
@@ -3237,7 +3253,7 @@ div[class*="fusion-builder-row-1"],
             <div>
               <div class="ynki-card-box" style="margin-bottom: 24px;">
                 <h2 class="ynki-card-title">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF8000" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
                   Rekening Resmi YNKI
                 </h2>
                 <p style="font-size: 13.5px; color: #536b5f; margin-bottom: 20px; line-height: 1.6;">
@@ -3269,7 +3285,7 @@ div[class*="fusion-builder-row-1"],
                   </div>
                 @endforelse
 
-                <div style="background: #e8f5e8; border-radius: 10px; padding: 14px 18px; font-size: 12.5px; color: #0c500b; line-height: 1.6; margin-top: 20px;">
+                <div style="background: #fff3e6; border: 1px solid rgba(255,128,0,0.3); border-radius: 10px; padding: 14px 18px; font-size: 12.5px; color: #8a4500; line-height: 1.6; margin-top: 20px;">
                   🔒 <strong>Prinsip Transparansi &amp; Akuntabilitas:</strong><br>
                   Seluruh laporan keuangan YNKI diaudit secara berkala oleh Akuntan Publik Independen dengan opini Wajar Tanpa Pengecualian (WTP).
                 </div>
@@ -3280,7 +3296,7 @@ div[class*="fusion-builder-row-1"],
             <div>
               <div class="ynki-card-box">
                 <h2 class="ynki-card-title">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF8000" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                   Konfirmasi &amp; Bukti Donasi
                 </h2>
 
@@ -3375,29 +3391,29 @@ div[class*="fusion-builder-row-1"],
 
           <!-- Impact Section -->
           <section class="impact-banner">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
-              <span style="font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #117710; background: #e8f5e8; padding: 4px 14px; border-radius: 50px;">Amanah &amp; Berdampak</span>
-              <h3 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: #0e241b; margin: 12px 0 8px;">Penyaluran Kontribusi Nyata</h3>
+            <div style="text-align: center; max-width: 700px; margin: 0 auto 35px;">
+              <span class="section-badge-orange">Amanah &amp; Berdampak</span>
+              <h3 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: #0e241b; margin: 10px 0 8px;">Penyaluran Kontribusi Nyata</h3>
               <p style="font-size: 14.5px; color: #536b5f; margin: 0;">Setiap rupiah donasi Anda dikelola dengan tata kelola berbasis sistem LGOS (*Landscape Governance Operating System*).</p>
             </div>
             <div class="impact-grid">
               <div class="impact-card">
-                <div style="width: 50px; height: 50px; background: #e8f5e8; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                <div style="width: 50px; height: 50px; background: #fff3e6; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8000" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
                 </div>
                 <h4>Restorasi Gambut &amp; Hutan</h4>
                 <p>Mendukung rewetting sekat kanal, revegetasi pohon lokal, dan mitigasi kebakaran hutan lahan.</p>
               </div>
               <div class="impact-card">
-                <div style="width: 50px; height: 50px; background: #e8f5e8; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <div style="width: 50px; height: 50px; background: #fff3e6; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8000" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
                 <h4>Pemberdayaan Masyarakat</h4>
                 <p>Pendampingan komoditas berkelanjutan (agroforestri kopi, madu kelulut, dan kelapa terintegrasi).</p>
               </div>
               <div class="impact-card">
-                <div style="width: 50px; height: 50px; background: #e8f5e8; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div style="width: 50px; height: 50px; background: #fff3e6; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8000" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 </div>
                 <h4>Advokasi &amp; Data Spasial</h4>
                 <p>Penyusunan peta tematik spasial dan policy brief untuk tata kelola kebijakan berkelanjutan.</p>
