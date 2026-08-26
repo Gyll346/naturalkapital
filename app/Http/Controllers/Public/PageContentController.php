@@ -499,4 +499,21 @@ class PageContentController extends Controller
 
         return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
+
+    // 11. Ikut Terlibat / Ikut Serta (/ikut-terlibat/, /ikut-serta/)
+    public function ikutTerlibat()
+    {
+        $filePath = base_path('ikut-terlibat/index.html');
+        $html = file_exists($filePath) ? file_get_contents($filePath) : '';
+        return response($html, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    }
+
+    // 12. Kontak Kami / Hubungi Kami (/kontak-kami/, /hubungi-kami/)
+    public function kontakKami()
+    {
+        $filePath = base_path('kontak-kami/index.html');
+        $html = file_exists($filePath) ? file_get_contents($filePath) : '';
+        return response($html, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    }
 }
+

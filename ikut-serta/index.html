@@ -13,7 +13,7 @@
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <title>Donasi & Dukungan Program - Yayasan Natural Kapital Indonesia (YNKI)</title>
+    <title>Ikut Terlibat: Kolaborasi & Aksi Nyata Lanskap — Yayasan Natural Kapital Indonesia (YNKI)</title>
     <meta
       name="description"
       content="YNKI memperkuat kolaborasi antara pemerintah, masyarakat, sektor swasta, &amp; donor untuk membangun lanskap yang sehat, produktif, tangguh, &amp; berkelanjutan."
@@ -3066,342 +3066,193 @@ div[class*="fusion-builder-row-1"],
               margin: 0 auto;
             }
 
-            .ynki-grid-donation {
-              max-width: 1200px;
-              margin: 60px auto 90px;
+            .programs-grid {
+              max-width: 1150px;
+              margin: 60px auto;
               padding: 0 24px;
               display: grid;
-              grid-template-columns: 1fr 1.25fr;
-              gap: 40px;
-              align-items: flex-start;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 30px;
             }
-
-            .ynki-card-box {
+            .program-card {
               background: #ffffff;
-              border: 1px solid #d2e8d1;
+              border: 1.5px solid #d2e8d1;
               border-radius: 16px;
-              padding: 32px;
-              box-shadow: 0 10px 30px rgba(17,119,16,0.06);
+              padding: 36px 32px;
+              display: flex;
+              flex-direction: column;
+              transition: all 0.3s ease;
             }
-            .ynki-card-title {
+            .program-card:hover {
+              transform: translateY(-4px);
+              border-color: #117710;
+              box-shadow: 0 14px 36px rgba(17,119,16,0.1);
+            }
+            .program-icon-wrap {
+              width: 56px;
+              height: 56px;
+              background: #e8f5e8;
+              border-radius: 14px;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 20px;
+            }
+            .program-card h3 {
               font-family: 'Montserrat', sans-serif;
               font-size: 20px;
               font-weight: 800;
               color: #0e241b;
-              margin: 0 0 20px;
-              display: flex;
-              align-items: center;
-              gap: 10px;
+              margin: 0 0 12px;
             }
-
-            .bank-card {
-              background: #f8faf9;
-              border: 1.5px solid #d2e8d1;
-              border-radius: 14px;
-              padding: 22px;
-              margin-bottom: 20px;
-              transition: all 0.25s ease;
-            }
-            .bank-card:hover {
-              transform: translateY(-3px);
-              border-color: #117710;
-              box-shadow: 0 8px 24px rgba(17,119,16,0.1);
-            }
-            .bank-badge {
-              font-size: 11px;
-              font-weight: 800;
-              letter-spacing: 1.2px;
-              text-transform: uppercase;
-              color: #117710;
-              background: #e8f5e8;
-              padding: 4px 12px;
-              border-radius: 50px;
-              display: inline-block;
-              margin-bottom: 8px;
-            }
-            .bank-acc-num {
-              font-family: 'Montserrat', sans-serif;
-              font-size: 24px;
-              font-weight: 800;
-              color: #0e241b;
-              letter-spacing: 1px;
-              margin: 4px 0;
-            }
-            .bank-holder {
-              font-size: 14px;
-              font-weight: 600;
+            .program-card p {
+              font-size: 14.5px;
               color: #536b5f;
+              line-height: 1.7;
+              margin: 0 0 24px;
+              flex-grow: 1;
             }
-
-            .form-group {
-              margin-bottom: 20px;
-            }
-            .form-group label {
-              display: block;
-              font-size: 13.5px;
-              font-weight: 700;
-              color: #0e241b;
-              margin-bottom: 8px;
-            }
-            .form-control {
-              width: 100%;
-              padding: 12px 16px;
-              border: 1.5px solid #d2e8d1;
-              border-radius: 8px;
-              font-size: 14px;
-              font-family: inherit;
-              color: #0e241b;
-              background: #ffffff;
-              box-sizing: border-box;
-              transition: border-color 0.2s;
-            }
-            .form-control:focus {
-              border-color: #117710;
-              outline: none;
-              box-shadow: 0 0 0 3px rgba(17,119,16,0.12);
-            }
-
-            .btn-submit-donation {
-              width: 100%;
+            .btn-program-action {
+              align-self: flex-start;
               background: #117710;
               color: #ffffff;
-              font-family: 'Montserrat', sans-serif;
-              font-size: 15px;
               font-weight: 700;
-              padding: 14px 24px;
-              border: none;
+              font-size: 13.5px;
+              padding: 10px 22px;
               border-radius: 8px;
-              cursor: pointer;
+              text-decoration: none;
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
               transition: all 0.2s;
-              box-shadow: 0 4px 14px rgba(17,119,16,0.25);
             }
-            .btn-submit-donation:hover {
+            .btn-program-action:hover {
               background: #0c500b;
               transform: translateY(-2px);
-              box-shadow: 0 6px 18px rgba(17,119,16,0.35);
             }
 
-            .impact-banner {
+            .form-involvement-section {
               background: #f5f8f5;
-              padding: 70px 24px;
+              padding: 80px 24px;
               border-top: 1px solid #d2e8d1;
             }
-            .impact-grid {
-              max-width: 1100px;
+            .form-involvement-box {
+              max-width: 780px;
               margin: 0 auto;
-              display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              gap: 24px;
-            }
-            .impact-card {
               background: #ffffff;
               border: 1px solid #d2e8d1;
-              border-radius: 14px;
-              padding: 26px;
-              text-align: center;
-            }
-            .impact-card h4 {
-              font-family: 'Montserrat', sans-serif;
-              font-size: 16px;
-              font-weight: 800;
-              color: #0e241b;
-              margin: 12px 0 8px;
-            }
-            .impact-card p {
-              font-size: 13.5px;
-              color: #536b5f;
-              line-height: 1.6;
-              margin: 0;
+              border-radius: 18px;
+              padding: 40px;
+              box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             }
 
-            @media (max-width: 900px) {
-              .ynki-grid-donation { grid-template-columns: 1fr; }
-              .impact-grid { grid-template-columns: 1fr; }
+            @media (max-width: 800px) {
+              .programs-grid { grid-template-columns: 1fr; }
+              .form-involvement-box { padding: 26px; }
             }
           </style>
 
           <!-- Hero Section -->
           <section class="ynki-hero-wrap">
             <div style="max-width: 960px; margin: 0 auto; position: relative; z-index: 2;">
-              <span class="ynki-badge-tag">Dukungan &amp; Filantropi Konservasi</span>
-              <h1 class="ynki-page-title">Dukung Pelestarian Lanskap Berkelanjutan</h1>
+              <span class="ynki-badge-tag">Kolaborasi &amp; Kemitraan Lanskap</span>
+              <h1 class="ynki-page-title">Ikut Serta &amp; Berkolaborasi Bersama YNKI</h1>
               <p class="ynki-page-sub">
-                Setiap kontribusi Anda disalurkan secara langsung untuk program restorasi ekosistem gambut, kemandirian masyarakat adat di sekitar lanskap, dan perlindungan keanekaragaman hayati Kalimantan.
+                Membangun lanskap yang lestari, tangguh, dan inklusif membutuhkan kerja sama multipihak. Bergabunglah bersama kami sebagai relawan, peneliti, mitra lembaga, atau pendukung program.
               </p>
             </div>
           </section>
 
-          <!-- Grid Konten Donasi -->
-          <div class="ynki-grid-donation">
-            <!-- Kiri: Rekening Resmi & QRIS -->
-            <div>
-              <div class="ynki-card-box" style="margin-bottom: 24px;">
-                <h2 class="ynki-card-title">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                  Rekening Resmi YNKI
-                </h2>
-                <p style="font-size: 13.5px; color: #536b5f; margin-bottom: 20px; line-height: 1.6;">
-                  Silakan salurkan donasi dan dana kemitraan Anda melalui rekening resmi Yayasan Natural Kapital Indonesia berikut:
-                </p>
-
-                @forelse ($accounts as $acc)
-                  <div class="bank-card">
-                    <span class="bank-badge">{{ $acc->bank_name }}</span>
-                    <div class="bank-acc-num">{{ $acc->account_number }}</div>
-                    <div class="bank-holder">a.n. {{ $acc->account_holder }}</div>
-                    @if ($acc->branch_name)
-                      <div style="font-size: 12px; color: #7a9485; margin-top: 4px;">Kantor Cabang: {{ $acc->branch_name }}</div>
-                    @endif
-
-                    @if ($acc->qris_image_path)
-                      <div style="margin-top: 16px; padding-top: 14px; border-top: 1px dashed #d2e8d1; text-align: center;">
-                        <img src="/storage/{{ $acc->qris_image_path }}" alt="QRIS {{ $acc->bank_name }}" style="max-width: 170px; border-radius: 8px; border: 1px solid #d2e8d1;">
-                        <div style="font-size: 11.5px; color: #536b5f; margin-top: 6px; font-weight: 600;">Scan QRIS di atas melalui Mobile Banking / E-Wallet</div>
-                      </div>
-                    @endif
-                  </div>
-                @empty
-                  <div style="background: #f8faf9; border: 1.5px solid #d2e8d1; border-radius: 14px; padding: 22px; margin-bottom: 20px;">
-                    <span class="bank-badge">BANK MANDIRI</span>
-                    <div class="bank-acc-num">146-00-1589234-1</div>
-                    <div class="bank-holder">a.n. Yayasan Natural Kapital Indonesia</div>
-                    <div style="font-size: 12px; color: #7a9485; margin-top: 4px;">Kantor Cabang: Pontianak Diponegoro</div>
-                  </div>
-                @endforelse
-
-                <div style="background: #e8f5e8; border-radius: 10px; padding: 14px 18px; font-size: 12.5px; color: #0c500b; line-height: 1.6; margin-top: 20px;">
-                  🔒 <strong>Prinsip Transparansi &amp; Akuntabilitas:</strong><br>
-                  Seluruh laporan keuangan YNKI diaudit secara berkala oleh Akuntan Publik Independen dengan opini Wajar Tanpa Pengecualian (WTP).
-                </div>
+          <!-- Grid 4 Pilar Keterlibatan -->
+          <div class="programs-grid">
+            <!-- 1. Relawan Aksi Lapangan -->
+            <div class="program-card">
+              <div class="program-icon-wrap">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               </div>
+              <h3>1. Relawan Aksi Lapangan &amp; Komunitas</h3>
+              <p>Terlibat langsung dalam pendampingan restorasi gambut, edukasi konservasi lingkungan di desa, penanaman vegetasi lokal, dan kampanye penyelamatan ekosistem.</p>
+              <a href="#form-daftar" class="btn-program-action">Daftar Relawan &rarr;</a>
             </div>
 
-            <!-- Kanan: Form Konfirmasi & Bukti Transfer -->
-            <div>
-              <div class="ynki-card-box">
-                <h2 class="ynki-card-title">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                  Konfirmasi &amp; Bukti Donasi
-                </h2>
-
-                @if (session('success'))
-                  <div style="background: #dafbe1; border: 1px solid #a2e8b6; color: #1a7f37; padding: 16px 20px; border-radius: 10px; font-weight: 600; margin-bottom: 24px; font-size: 14px;">
-                    ✅ {{ session('success') }}
-                  </div>
-                @endif
-
-                @if ($errors->any())
-                  <div style="background: #ffebe9; border: 1px solid #ffc1ba; color: #cf222e; padding: 14px 18px; border-radius: 10px; font-size: 13.5px; margin-bottom: 20px;">
-                    <ul style="margin: 0; padding-left: 18px;">
-                      @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                      @endforeach
-                    </ul>
-                  </div>
-                @endif
-
-                <form action="{{ route('public.donation.store') }}" method="POST" enctype="multipart/form-data">
-                  @csrf
-
-                  <div class="form-group">
-                    <label>Nama Lengkap / Lembaga *</label>
-                    <input type="text" name="donor_name" value="{{ old('donor_name') }}" required placeholder="Contoh: Rahmat Hidayat / PT Lestari Hijau" class="form-control">
-                  </div>
-
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                    <div class="form-group">
-                      <label>Alamat Email *</label>
-                      <input type="email" name="donor_email" value="{{ old('donor_email') }}" required placeholder="nama@email.com" class="form-control">
-                    </div>
-                    <div class="form-group">
-                      <label>Nomor WhatsApp</label>
-                      <input type="text" name="donor_phone" value="{{ old('donor_phone') }}" placeholder="081234567890" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Pilihan Program Penyaluran *</label>
-                    <select name="program_id" class="form-control">
-                      <option value="">-- Donasi Umum Aksi Lanskap YNKI --</option>
-                      @foreach ($programs as $prog)
-                        <option value="{{ $prog->id }}" {{ old('program_id') == $prog->id ? 'selected' : '' }}>
-                          {{ $prog->program_name }}
-                        </option>
-                      @endforeach
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Rekening Tujuan Transfer *</label>
-                    <select name="donation_account_id" required class="form-control">
-                      @foreach ($accounts as $acc)
-                        <option value="{{ $acc->id }}" {{ old('donation_account_id') == $acc->id ? 'selected' : '' }}>
-                          {{ $acc->bank_name }} - {{ $acc->account_number }} (a.n. {{ $acc->account_holder }})
-                        </option>
-                      @endforeach
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Jumlah Donasi (Rp) *</label>
-                    <input type="number" name="amount" value="{{ old('amount') }}" required min="10000" step="1000" placeholder="Minimal Rp 10.000" class="form-control">
-                  </div>
-
-                  <div class="form-group">
-                    <label>Unggah Bukti Transfer (Foto / Screenshot / Struk) *</label>
-                    <input type="file" name="transfer_proof" required accept="image/jpeg,image/png,image/jpg,image/webp" class="form-control" style="padding: 9px 12px;">
-                    <small style="display:block; color: #7a9485; font-size: 11.5px; margin-top: 4px;">Format didukung: JPG, PNG, WEBP (Maksimal 5MB)</small>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Catatan / Doa untuk Alam &amp; Masyarakat (Opsional)</label>
-                    <textarea name="donor_notes" rows="3" placeholder="Tuliskan pesan atau doa Anda..." class="form-control">{{ old('donor_notes') }}</textarea>
-                  </div>
-
-                  <div style="margin-bottom: 24px;">
-                    <label style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; cursor: pointer;">
-                      <input type="checkbox" name="is_anonymous" value="1" {{ old('is_anonymous') ? 'checked' : '' }}>
-                      Sembunyikan nama saya dari daftar publik (Donatur Anonim)
-                    </label>
-                  </div>
-
-                  <button type="submit" class="btn-submit-donation">
-                    Kirim Konfirmasi Donasi Sekarang &rarr;
-                  </button>
-                </form>
+            <!-- 2. Magang & Riset Akademik -->
+            <div class="program-card">
+              <div class="program-icon-wrap">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
               </div>
+              <h3>2. Program Magang &amp; Riset Lanskap</h3>
+              <p>Peluang riset ilmiah, pemetaan GIS, analisis kebijakan, dan magang profesional bagi akademisi, mahasiswa tingkat akhir, serta peneliti lingkungan independen.</p>
+              <a href="#form-daftar" class="btn-program-action">Ajukan Riset / Magang &rarr;</a>
+            </div>
+
+            <!-- 3. Kemitraan Komunitas & CSO -->
+            <div class="program-card">
+              <div class="program-icon-wrap">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <h3>3. Kemitraan Multipihak &amp; CSO</h3>
+              <p>Kolaborasi strategis antara pemerintah daerah, organisasi masyarakat sipil (CSO), sektor swasta, dan kelompok tani hutan untuk penguatan tata kelola yurisdiksi.</p>
+              <a href="/kontak-kami/" class="btn-program-action">Hubungi Kemitraan &rarr;</a>
+            </div>
+
+            <!-- 4. Donasi & Dukungan Finansial -->
+            <div class="program-card" style="background: #fdfefe; border-color: #117710;">
+              <div class="program-icon-wrap" style="background: #117710;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <h3>4. Donasi &amp; Dukungan Program</h3>
+              <p>Salurkan kontribusi dana untuk keberlanjutan aksi restorasi, pengadaan bibit pohon lokal, sarana sekat kanal, dan pemberdayaan ekonomi masyarakat adat.</p>
+              <a href="/donasi" class="btn-program-action" style="background: #0e241b;">Donasi Sekarang &rarr;</a>
             </div>
           </div>
 
-          <!-- Impact Section -->
-          <section class="impact-banner">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
-              <span style="font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #117710; background: #e8f5e8; padding: 4px 14px; border-radius: 50px;">Amanah &amp; Berdampak</span>
-              <h3 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: #0e241b; margin: 12px 0 8px;">Penyaluran Kontribusi Nyata</h3>
-              <p style="font-size: 14.5px; color: #536b5f; margin: 0;">Setiap rupiah donasi Anda dikelola dengan tata kelola berbasis sistem LGOS (*Landscape Governance Operating System*).</p>
-            </div>
-            <div class="impact-grid">
-              <div class="impact-card">
-                <div style="width: 50px; height: 50px; background: #e8f5e8; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-                </div>
-                <h4>Restorasi Gambut &amp; Hutan</h4>
-                <p>Mendukung rewetting sekat kanal, revegetasi pohon lokal, dan mitigasi kebakaran hutan lahan.</p>
+          <!-- Formulir Pendaftaran / Minat Keterlibatan -->
+          <section id="form-daftar" class="form-involvement-section">
+            <div class="form-involvement-box">
+              <div style="text-align: center; margin-bottom: 30px;">
+                <span style="font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #117710; background: #e8f5e8; padding: 4px 14px; border-radius: 50px;">Formulir Partisipasi</span>
+                <h2 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: #0e241b; margin: 12px 0 8px;">Kirim Minat Keterlibatan Anda</h2>
+                <p style="font-size: 14px; color: #536b5f; margin: 0;">Isi formulir di bawah ini dan tim sekretariat YNKI akan segera menghubungi Anda.</p>
               </div>
-              <div class="impact-card">
-                <div style="width: 50px; height: 50px; background: #e8f5e8; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+
+              <form onsubmit="event.preventDefault(); alert('Terima kasih! Formulir minat keterlibatan Anda telah berhasil terkirim. Tim Sekretariat YNKI akan menghubungi Anda melalui Email/WhatsApp.'); this.reset();">
+                <div style="margin-bottom: 18px;">
+                  <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Nama Lengkap *</label>
+                  <input type="text" required placeholder="Nama Anda" style="width: 100%; padding: 12px 16px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
                 </div>
-                <h4>Pemberdayaan Masyarakat</h4>
-                <p>Pendampingan komoditas berkelanjutan (agroforestri kopi, madu kelulut, dan kelapa terintegrasi).</p>
-              </div>
-              <div class="impact-card">
-                <div style="width: 50px; height: 50px; background: #e8f5e8; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px;">
+                  <div>
+                    <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Email Aktif *</label>
+                    <input type="email" required placeholder="email@domain.com" style="width: 100%; padding: 12px 16px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+                  </div>
+                  <div>
+                    <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Nomor WhatsApp *</label>
+                    <input type="text" required placeholder="08xxxxxxxxxx" style="width: 100%; padding: 12px 16px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+                  </div>
                 </div>
-                <h4>Advokasi &amp; Data Spasial</h4>
-                <p>Penyusunan peta tematik spasial dan policy brief untuk tata kelola kebijakan berkelanjutan.</p>
-              </div>
+
+                <div style="margin-bottom: 18px;">
+                  <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Peminatan Keterlibatan *</label>
+                  <select required style="width: 100%; padding: 12px 16px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box; background: #ffffff;">
+                    <option value="">-- Pilih Bentuk Keterlibatan --</option>
+                    <option value="relawan">Relawan Aksi Lapangan &amp; Kampanye Lingkungan</option>
+                    <option value="riset_magang">Magang Mahasiswa &amp; Peneliti Akademik</option>
+                    <option value="kemitraan_cso">Kemitraan Komunitas / Lembaga CSO</option>
+                    <option value="kolaborasi_media">Kolaborasi Liputan &amp; Publikasi Media</option>
+                    <option value="lainnya">Lainnya</option>
+                  </select>
+                </div>
+
+                <div style="margin-bottom: 24px;">
+                  <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Pesan / Latar Belakang Singkat</label>
+                  <textarea rows="4" placeholder="Ceritakan ketertarikan, keahlian, atau usulan kolaborasi Anda..." style="width: 100%; padding: 12px 16px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;"></textarea>
+                </div>
+
+                <button type="submit" style="width: 100%; background: #117710; color: #ffffff; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; padding: 14px; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 14px rgba(17,119,16,0.25);">
+                  Kirim Formulir Partisipasi &rarr;
+                </button>
+              </form>
             </div>
           </section>
         </main>

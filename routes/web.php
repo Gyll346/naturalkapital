@@ -46,6 +46,13 @@ Route::get('/data-spasial-gis', [PageContentController::class, 'spatialGis']);
 Route::get('/story-foto-video', [PageContentController::class, 'mediaStories'])->name('public.media_stories');
 Route::get('/stori-foto-video', [PageContentController::class, 'mediaStories']);
 
+// Halaman Khusus Ikut Serta & Kontak Kami
+Route::get('/ikut-terlibat', [PageContentController::class, 'ikutTerlibat'])->name('public.ikut_terlibat');
+Route::get('/ikut-serta', [PageContentController::class, 'ikutTerlibat'])->name('public.ikut_serta');
+Route::get('/kontak-kami', [PageContentController::class, 'kontakKami'])->name('public.kontak_kami');
+Route::get('/hubungi-kami', [PageContentController::class, 'kontakKami'])->name('public.hubungi_kami');
+
+
 /*
 |--------------------------------------------------------------------------
 | 2. Hidden Login Route (Tanpa tombol login di navbar/footer publik)
