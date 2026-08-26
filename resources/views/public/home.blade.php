@@ -2782,19 +2782,9 @@
                               ><span>Portfolio</span></a
                             >
                           </li>
-                          <li
-                            id="menu-item-6765"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6765 awb-menu__li awb-menu__sub-li"
-                          >
-                            <a
-                              href="/transparansi/"
-                              class="awb-menu__sub-a"
-                              aria-current="page"
-                              ><span>Transparansi &amp; Laporan Mitra</span></a
-                            >
-                          </li>
                         </ul>
                       </li>
+
                       <li
                         id="menu-item-6757"
                         class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-6757 awb-menu__li awb-menu__main-li awb-menu__main-li_regular"
