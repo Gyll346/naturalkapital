@@ -35,6 +35,8 @@ Route::get('/tim-ynki', [PageContentController::class, 'team'])->name('public.ti
 Route::get('/lgos', [PageContentController::class, 'lgos'])->name('public.lgos');
 Route::get('/portofolio', [PageContentController::class, 'portfolio'])->name('public.portfolio');
 Route::get('/transparansi', [PageContentController::class, 'transparansi'])->name('public.transparansi');
+Route::get('/annual-report', [PageContentController::class, 'transparansi'])->name('public.annual_report');
+
 
 // Subhalaman Dinamis Database (Pustaka & Pengetahuan)
 Route::get('/news-features', [PageContentController::class, 'newsFeatures'])->name('public.news_features');

@@ -81,7 +81,7 @@
         ['/tim/', 'Tim & Pengurus YNKI'],
         ['/lgos/', 'LGOS: Sistem Operasi Organisasi'],
         ['/portofolio/', 'Portfolio'],
-        ['/transparansi/', 'Transparansi & Laporan Mitra']
+        ['/annual-report/', 'Annual Report']
       ]
     },
     {
@@ -260,7 +260,6 @@
             <li><a href="/tim/">Tim &amp; Pengurus YNKI</a></li>
             <li><a href="/lgos/">LGOS: Sistem Operasi Organisasi</a></li>
             <li><a href="/portofolio/">Portfolio</a></li>
-            <li><a href="/transparansi/">Transparansi &amp; Laporan Mitra</a></li>
           </ul>
         </li>
 
@@ -319,6 +318,13 @@
         <li class="ynki-mobile-nav-item">
           <div class="ynki-mobile-nav-row">
             <a href="/kontak-kami" class="ynki-mobile-nav-link ${currentPath.indexOf('/kontak') !== -1 ? 'active' : ''}">Kontak Kami</a>
+          </div>
+        </li>
+
+        <!-- 8. Annual Report -->
+        <li class="ynki-mobile-nav-item">
+          <div class="ynki-mobile-nav-row">
+            <a href="/annual-report/" class="ynki-mobile-nav-link">Annual Report</a>
           </div>
         </li>
       </ul>
