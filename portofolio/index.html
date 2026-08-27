@@ -2456,7 +2456,7 @@
       }
     </style>
     <style id="ynki-universal-clean-header">
-      /* ===== YNKI GLOBAL NAVBAR CLEANUP & DESKTOP DROPDOWN ENGINE ===== */
+      /* ===== YNKI GLOBAL NAVBAR: ZERO SCROLL DEPENDENCY & PURE INSTANT HOVER ===== */
       #boxed-wrapper,
       #wrapper,
       .fusion-wrapper {
@@ -2464,17 +2464,30 @@
         position: relative !important;
       }
 
+      /* HEADER IS STRICTLY STATIC / RELATIVE (NO STICKY / NO SCROLL EFFECTS) */
       header,
       #fusion-header,
       .fusion-header,
       .fusion-tb-header,
       .fusion-header-wrapper,
       .fusion-fullwidth.fusion-builder-row-1,
-      .fusion-builder-row-1 {
+      .fusion-builder-row-1,
+      .fusion-is-sticky,
+      .fusion-sticky-header,
+      .fusion-sticky-menu,
+      .fusion-header-sticky,
+      .awb-sticky,
+      .element-is-sticky {
         position: relative !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
         z-index: 999999999 !important;
         overflow: visible !important;
         transform: none !important;
+        transition: none !important;
+        animation: none !important;
         filter: none !important;
         background: transparent !important;
         background-color: transparent !important;
@@ -2601,7 +2614,8 @@
 
         .awb-menu__main-li:hover > a,
         .awb-menu__main-li.current-menu-item > a,
-        .awb-menu__main-li.current-menu-ancestor > a {
+        .awb-menu__main-li.current-menu-ancestor > a,
+        .awb-menu__main-li.is-open > a {
           color: #117710 !important;
         }
 
@@ -2612,7 +2626,7 @@
           top: 100% !important;
           left: 0 !important;
           width: 100% !important;
-          height: 12px !important;
+          height: 15px !important;
           display: block !important;
           z-index: 999999998 !important;
           pointer-events: auto !important;
@@ -2622,6 +2636,7 @@
         .awb-menu__sub-ul {
           clip: auto !important;
           clip-path: none !important;
+          -webkit-clip-path: none !important;
           height: auto !important;
           max-height: none !important;
           transform: none !important;
@@ -2637,10 +2652,12 @@
           pointer-events: none !important;
         }
 
-        /* DROPDOWN SUBMENU BOX - MATCHING IMAGE 1 DESIGN (INSTANT AT SCROLL 0) */
+        /* DROPDOWN SUBMENU BOX - MATCHING IMAGE 1 DESIGN (PURE HOVER, ZERO SCROLL NEEDED) */
         .awb-menu__main-li:hover > .awb-menu__sub-ul,
         .awb-menu__main-li.is-open > .awb-menu__sub-ul,
-        .awb-menu__main-li:focus-within > .awb-menu__sub-ul {
+        .awb-menu__main-li:focus-within > .awb-menu__sub-ul,
+        .menu-item-has-children:hover > .sub-menu,
+        .menu-item-has-children:hover > .awb-menu__sub-ul {
           display: block !important;
           opacity: 1 !important;
           visibility: visible !important;
@@ -2653,6 +2670,7 @@
           height: auto !important;
           clip: auto !important;
           clip-path: none !important;
+          -webkit-clip-path: none !important;
           transform: none !important;
           overflow: visible !important;
           background: #ffffff !important;
@@ -2756,7 +2774,7 @@
 </style>
 </head>
   <body
-    class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr fusion-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
+    class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr no-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
     data-awb-post-id="5283"
   >
     <a class="skip-link screen-reader-text" href="/sustainable-commodity/"
@@ -2767,7 +2785,7 @@
         <div id="home" style="position: relative; top: -1px"></div>
         <div class="fusion-tb-header">
           <div
-            class="fusion-fullwidth fullwidth-box fusion-builder-row-1 fusion-flex-container nonhundred-percent-fullwidth non-hundred-percent-height-scrolling fusion-animated fusion-custom-z-index"
+            class="fusion-fullwidth fullwidth-box fusion-builder-row-1 fusion-flex-container nonhundred-percent-fullwidth  fusion-animated fusion-custom-z-index"
             style="
               --awb-border-radius-top-left: 0px;
               --awb-border-radius-top-right: 0px;
@@ -6235,7 +6253,7 @@
         <div class="fusion-tb-footer fusion-footer">
           <div class="fusion-footer-widget-area fusion-widget-area">
             <div
-              class="fusion-fullwidth fullwidth-box fusion-builder-row-5 fusion-flex-container has-pattern-background has-mask-background nonhundred-percent-fullwidth non-hundred-percent-height-scrolling"
+              class="fusion-fullwidth fullwidth-box fusion-builder-row-5 fusion-flex-container has-pattern-background has-mask-background nonhundred-percent-fullwidth "
               style="
                 --awb-border-radius-top-left: 0px;
                 --awb-border-radius-top-right: 0px;

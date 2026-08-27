@@ -267,7 +267,7 @@
       }
     </style>
     <style id="ynki-universal-clean-header">
-      /* ===== YNKI GLOBAL NAVBAR CLEANUP & DESKTOP DROPDOWN ENGINE ===== */
+      /* ===== YNKI GLOBAL NAVBAR: ZERO SCROLL DEPENDENCY & PURE INSTANT HOVER ===== */
       #boxed-wrapper,
       #wrapper,
       .fusion-wrapper {
@@ -275,17 +275,30 @@
         position: relative !important;
       }
 
+      /* HEADER IS STRICTLY STATIC / RELATIVE (NO STICKY / NO SCROLL EFFECTS) */
       header,
       #fusion-header,
       .fusion-header,
       .fusion-tb-header,
       .fusion-header-wrapper,
       .fusion-fullwidth.fusion-builder-row-1,
-      .fusion-builder-row-1 {
+      .fusion-builder-row-1,
+      .fusion-is-sticky,
+      .fusion-sticky-header,
+      .fusion-sticky-menu,
+      .fusion-header-sticky,
+      .awb-sticky,
+      .element-is-sticky {
         position: relative !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
         z-index: 999999999 !important;
         overflow: visible !important;
         transform: none !important;
+        transition: none !important;
+        animation: none !important;
         filter: none !important;
         background: transparent !important;
         background-color: transparent !important;
@@ -412,7 +425,8 @@
 
         .awb-menu__main-li:hover > a,
         .awb-menu__main-li.current-menu-item > a,
-        .awb-menu__main-li.current-menu-ancestor > a {
+        .awb-menu__main-li.current-menu-ancestor > a,
+        .awb-menu__main-li.is-open > a {
           color: #117710 !important;
         }
 
@@ -423,7 +437,7 @@
           top: 100% !important;
           left: 0 !important;
           width: 100% !important;
-          height: 12px !important;
+          height: 15px !important;
           display: block !important;
           z-index: 999999998 !important;
           pointer-events: auto !important;
@@ -433,6 +447,7 @@
         .awb-menu__sub-ul {
           clip: auto !important;
           clip-path: none !important;
+          -webkit-clip-path: none !important;
           height: auto !important;
           max-height: none !important;
           transform: none !important;
@@ -448,10 +463,12 @@
           pointer-events: none !important;
         }
 
-        /* DROPDOWN SUBMENU BOX - MATCHING IMAGE 1 DESIGN (INSTANT AT SCROLL 0) */
+        /* DROPDOWN SUBMENU BOX - MATCHING IMAGE 1 DESIGN (PURE HOVER, ZERO SCROLL NEEDED) */
         .awb-menu__main-li:hover > .awb-menu__sub-ul,
         .awb-menu__main-li.is-open > .awb-menu__sub-ul,
-        .awb-menu__main-li:focus-within > .awb-menu__sub-ul {
+        .awb-menu__main-li:focus-within > .awb-menu__sub-ul,
+        .menu-item-has-children:hover > .sub-menu,
+        .menu-item-has-children:hover > .awb-menu__sub-ul {
           display: block !important;
           opacity: 1 !important;
           visibility: visible !important;
@@ -464,6 +481,7 @@
           height: auto !important;
           clip: auto !important;
           clip-path: none !important;
+          -webkit-clip-path: none !important;
           transform: none !important;
           overflow: visible !important;
           background: #ffffff !important;

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
-      /* ===== YNKI GLOBAL NAVBAR CLEANUP & DESKTOP DROPDOWN ENGINE ===== */
+      /* ===== YNKI GLOBAL NAVBAR: ZERO SCROLL DEPENDENCY & PURE INSTANT HOVER ===== */
       #boxed-wrapper,
       #wrapper,
       .fusion-wrapper {
@@ -10,17 +10,30 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
         position: relative !important;
       }
 
+      /* HEADER IS STRICTLY STATIC / RELATIVE (NO STICKY / NO SCROLL EFFECTS) */
       header,
       #fusion-header,
       .fusion-header,
       .fusion-tb-header,
       .fusion-header-wrapper,
       .fusion-fullwidth.fusion-builder-row-1,
-      .fusion-builder-row-1 {
+      .fusion-builder-row-1,
+      .fusion-is-sticky,
+      .fusion-sticky-header,
+      .fusion-sticky-menu,
+      .fusion-header-sticky,
+      .awb-sticky,
+      .element-is-sticky {
         position: relative !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
         z-index: 999999999 !important;
         overflow: visible !important;
         transform: none !important;
+        transition: none !important;
+        animation: none !important;
         filter: none !important;
         background: transparent !important;
         background-color: transparent !important;
@@ -147,7 +160,8 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
 
         .awb-menu__main-li:hover > a,
         .awb-menu__main-li.current-menu-item > a,
-        .awb-menu__main-li.current-menu-ancestor > a {
+        .awb-menu__main-li.current-menu-ancestor > a,
+        .awb-menu__main-li.is-open > a {
           color: #117710 !important;
         }
 
@@ -158,7 +172,7 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
           top: 100% !important;
           left: 0 !important;
           width: 100% !important;
-          height: 12px !important;
+          height: 15px !important;
           display: block !important;
           z-index: 999999998 !important;
           pointer-events: auto !important;
@@ -168,6 +182,7 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
         .awb-menu__sub-ul {
           clip: auto !important;
           clip-path: none !important;
+          -webkit-clip-path: none !important;
           height: auto !important;
           max-height: none !important;
           transform: none !important;
@@ -183,10 +198,12 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
           pointer-events: none !important;
         }
 
-        /* DROPDOWN SUBMENU BOX - MATCHING IMAGE 1 DESIGN (INSTANT AT SCROLL 0) */
+        /* DROPDOWN SUBMENU BOX - MATCHING IMAGE 1 DESIGN (PURE HOVER, ZERO SCROLL NEEDED) */
         .awb-menu__main-li:hover > .awb-menu__sub-ul,
         .awb-menu__main-li.is-open > .awb-menu__sub-ul,
-        .awb-menu__main-li:focus-within > .awb-menu__sub-ul {
+        .awb-menu__main-li:focus-within > .awb-menu__sub-ul,
+        .menu-item-has-children:hover > .sub-menu,
+        .menu-item-has-children:hover > .awb-menu__sub-ul {
           display: block !important;
           opacity: 1 !important;
           visibility: visible !important;
@@ -199,6 +216,7 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
           height: auto !important;
           clip: auto !important;
           clip-path: none !important;
+          -webkit-clip-path: none !important;
           transform: none !important;
           overflow: visible !important;
           background: #ffffff !important;
@@ -297,7 +315,7 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
 
 // Find all HTML files recursively
 const targetDirs = [
-  '.', // include root folder for index.html!
+  '.',
   'sejarah-visi-misi', 'tim', 'lgos', 'portofolio',
   'landscape-governance', 'natural-capital', 'sustainable-commodity', 'landscape-intelligence', 'institutional-partnership',
   'dampak', 'kisah-perubahan', 'liputan-media',
@@ -315,7 +333,19 @@ function processHtmlFile(filePath) {
 
   let modified = false;
 
-  // 1. Replace or insert ynki-universal-clean-header
+  // 1. Clean body sticky classes
+  if (content.includes('fusion-sticky-header')) {
+    content = content.replace(/fusion-sticky-header/g, 'no-sticky-header');
+    modified = true;
+  }
+
+  // 2. Clean animation attributes from header row
+  if (content.includes('non-hundred-percent-height-scrolling')) {
+    content = content.replace(/non-hundred-percent-height-scrolling/g, '');
+    modified = true;
+  }
+
+  // 3. Replace or insert ynki-universal-clean-header
   if (content.includes('id="ynki-universal-clean-header"')) {
     content = content.replace(/<style id="ynki-universal-clean-header">[\s\S]*?<\/style>/, cleanHeaderStyle);
     modified = true;
@@ -324,13 +354,13 @@ function processHtmlFile(filePath) {
     modified = true;
   }
 
-  // 2. Ensure ynki-responsive-system.css is included in head
+  // 4. Ensure ynki-responsive-system.css is included in head
   if (!content.includes('ynki-responsive-system.css') && content.includes('</head>')) {
     content = content.replace('</head>', `<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css" />\n</head>`);
     modified = true;
   }
 
-  // 3. Ensure ynki-footer.js is included before </body>
+  // 5. Ensure ynki-footer.js is included before </body>
   if (!content.includes('/assets/js/ynki-footer.js') && content.includes('</body>')) {
     content = content.replace('</body>', `<script src="/assets/js/ynki-footer.js"></script>\n</body>`);
     modified = true;
@@ -359,9 +389,10 @@ function traverseDirectory(dir) {
   }
 }
 
-// Specifically process root index.html
+// Process root index.html
 processHtmlFile(path.join(process.cwd(), 'index.html'));
 
+// Process all subdirectories
 targetDirs.forEach(d => {
   if (d === '.') return;
   const p = path.join(process.cwd(), d);
