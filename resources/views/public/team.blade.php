@@ -3476,10 +3476,32 @@
             .join-banner-box {
               background: linear-gradient(135deg, #0c500b 0%, #082e07 100%);
               border-radius: 24px;
-              padding: 55px 44px;
+              padding: 60px 48px;
               color: #ffffff;
               margin-bottom: 40px;
-              box-shadow: 0 20px 55px rgba(8, 46, 7, 0.25);
+              position: relative;
+              overflow: hidden;
+              box-shadow: 0 20px 60px rgba(8, 46, 7, 0.28);
+            }
+            .join-banner-box::before {
+              content: "NATURE FOR LIVINGS";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: clamp(38px, 6vw, 86px);
+              font-weight: 900;
+              color: rgba(255, 255, 255, 0.05);
+              white-space: nowrap;
+              letter-spacing: 7px;
+              pointer-events: none;
+              z-index: 0;
+              font-family: inherit;
+              user-select: none;
+            }
+            .join-banner-box > * {
+              position: relative;
+              z-index: 1;
             }
             .join-banner-box h2 {
               font-size: clamp(24px, 3.2vw, 36px);
@@ -3489,7 +3511,7 @@
               line-height: 1.25;
             }
             .join-banner-box p {
-              font-size: 15.5px;
+              font-size: 16px;
               line-height: 1.8;
               color: #c9e8d3;
               margin: 0;

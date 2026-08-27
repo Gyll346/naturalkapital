@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3717,18 +3717,35 @@
             .unduh-card {
               max-width: 900px;
               margin: 0 auto;
-              background: linear-gradient(
-                135deg,
-                #0a4f09 0%,
-                #117710 50%,
-                #1d9c1c 100%
-              );
+              background: linear-gradient(135deg, #0c500b 0%, #082e07 100%);
               border-radius: 24px;
-              padding: 52px 48px;
+              padding: 56px 48px;
               display: flex;
               gap: 48px;
               align-items: flex-start;
-              box-shadow: 0 24px 60px rgba(17, 119, 16, 0.2);
+              position: relative;
+              overflow: hidden;
+              box-shadow: 0 20px 60px rgba(8, 46, 7, 0.28);
+            }
+            .unduh-card::before {
+              content: "NATURE FOR LIVINGS";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: clamp(38px, 6vw, 86px);
+              font-weight: 900;
+              color: rgba(255, 255, 255, 0.05);
+              white-space: nowrap;
+              letter-spacing: 7px;
+              pointer-events: none;
+              z-index: 0;
+              font-family: inherit;
+              user-select: none;
+            }
+            .unduh-card > * {
+              position: relative;
+              z-index: 1;
             }
             .unduh-icon-wrap {
               flex-shrink: 0;
@@ -3750,14 +3767,14 @@
               margin: 0 0 12px;
             }
             .unduh-info p {
-              font-size: 14.5px;
+              font-size: 15px;
               color: #d2f0d1;
               line-height: 1.75;
               margin: 0 0 24px;
             }
             .unduh-features {
               display: flex;
-              flex-direction: column;
+              flex-direction: column; flex-direction: column;
               gap: 10px;
               margin-bottom: 28px;
             }

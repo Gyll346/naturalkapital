@@ -1816,5 +1816,57 @@ img {
   background: #941724 !important;
 }
 
+/* =====================================================
+   UNIVERSAL CTA BANNER & WATERMARK SYSTEM (NATURE FOR LIVINGS)
+   Matching Gambar 1 (Home), Gambar 2 (Sejarah), Gambar 3 (Tim), Gambar 4 (LGOS)
+   ===================================================== */
+.gerakan-box,
+.positioning-cta-box,
+.join-banner-box,
+.unduh-card,
+.ynki-watermark-banner {
+  background: linear-gradient(135deg, #0c500b 0%, #082e07 100%) !important;
+  border-radius: 24px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 60px rgba(8, 46, 7, 0.28) !important;
+  z-index: 1 !important;
+}
+
+/* Background Watermark Text "NATURE FOR LIVINGS" */
+.gerakan-box::before,
+.positioning-cta-box::before,
+.join-banner-box::before,
+.unduh-card::before,
+.ynki-watermark-banner::before {
+  content: "NATURE FOR LIVINGS" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  font-size: clamp(38px, 6.5vw, 88px) !important;
+  font-weight: 900 !important;
+  color: rgba(255, 255, 255, 0.055) !important;
+  white-space: nowrap !important;
+  letter-spacing: 8px !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  font-family: 'Outfit', 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  text-transform: uppercase !important;
+  user-select: none !important;
+  line-height: 1 !important;
+}
+
+/* Ensure all content inside floats cleanly above the watermark */
+.gerakan-box > *,
+.positioning-cta-box > *,
+.join-banner-box > *,
+.unduh-card > *,
+.ynki-watermark-banner > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+
 
 

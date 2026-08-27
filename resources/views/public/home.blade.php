@@ -3982,7 +3982,7 @@
                           </svg>
                           Jelajahi Aktivitas Kami
                         </a>
-                        <a href="/tentang-kami/" class="btn-ghost-home">
+                        <a href="/sejarah-visi-misi/" class="btn-ghost-home">
                           Tentang Kami
                         </a>
                       </div>
