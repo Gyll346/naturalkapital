@@ -666,6 +666,24 @@
       nav.classList.remove('mega-menu-loading');
     });
 
+    // Strict runtime protection: ensure burger toggle is completely hidden on desktop
+    function enforceDesktopNavState() {
+      var isDesktop = window.innerWidth > 992;
+      var burgerBtns = document.querySelectorAll('button.awb-menu__m-toggle, .awb-menu__m-toggle, .fusion-mobile-menu-icons, .fusion-mobile-nav-holder');
+      burgerBtns.forEach(function (btn) {
+        if (isDesktop) {
+          btn.style.setProperty('display', 'none', 'important');
+          btn.style.setProperty('visibility', 'hidden', 'important');
+        } else {
+          btn.style.removeProperty('display');
+          btn.style.removeProperty('visibility');
+        }
+      });
+    }
+
+    enforceDesktopNavState();
+    window.addEventListener('resize', enforceDesktopNavState);
+
     var menuItems = document.querySelectorAll('.awb-menu__main-li, .menu-item-has-children');
     menuItems.forEach(function (item) {
       var sub = item.querySelector('.awb-menu__sub-ul, .sub-menu');
