@@ -313,7 +313,17 @@
         .fusion-builder-column-0 {
           flex: 0 0 auto !important;
           width: auto !important;
-          max-width: 280px !important;
+          max-width: 420px !important;
+        }
+
+        .fusion-builder-column-0 img,
+        .fusion-tb-header .fusion-imageframe img,
+        .fusion-tb-header img.wp-image-183 {
+          max-width: 360px !important;
+          width: auto !important;
+          height: 64px !important;
+          max-height: 72px !important;
+          object-fit: contain !important;
         }
 
         .fusion-builder-column-1 {
@@ -844,7 +854,7 @@
     drawer.innerHTML = `
       <div class="ynki-mobile-nav-header">
         <div class="ynki-mobile-nav-logo">
-          <a href="/"><img src="/wp-content/uploads/2026/05/logo-ynki-80.webp" alt="YNKI" style="height:32px; max-height:32px; width:auto; max-width:170px; object-fit:contain;"></a>
+          <a href="/"><img src="/wp-content/uploads/2026/05/logo-ynki-500.webp" alt="YNKI" style="height:32px; max-height:32px; width:auto; max-width:170px; object-fit:contain;"></a>
         </div>
         <button type="button" class="ynki-mobile-nav-close" id="ynki-mobile-close-btn" aria-label="Tutup Menu" onclick="(function(){var d=document.getElementById('ynki-mobile-drawer');var b=document.getElementById('ynki-mobile-backdrop');if(d)d.classList.remove('active');if(b)b.classList.remove('active');document.body.classList.remove('ynki-mobile-nav-open');document.body.style.overflow='';})()">
           <span style="font-size:15px; font-weight:800; line-height:1; pointer-events:none;">✕</span>

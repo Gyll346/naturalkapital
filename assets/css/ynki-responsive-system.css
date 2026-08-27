@@ -1075,8 +1075,7 @@ img {
   }
   .btn-mobile-nav-donate:hover {
     background: #941724;
-  }
-    box-shadow: 0 4px 12px rgba(255, 128, 0, 0.25);
+    box-shadow: 0 4px 12px rgba(178, 34, 49, 0.4);
   }
 
   .fusion-tb-header .fusion-builder-row {
@@ -1090,7 +1089,7 @@ img {
   .fusion-tb-header .fusion_builder_column_1_3,
   .fusion-tb-header .fusion-builder-column-0 {
     width: auto !important;
-    max-width: 70% !important;
+    max-width: 75% !important;
     flex: 0 1 auto !important;
     margin: 0 !important;
   }
@@ -1100,9 +1099,13 @@ img {
     flex: 0 0 auto !important;
     margin: 0 !important;
   }
-  .fusion-tb-header .fusion-imageframe img {
-    max-width: 180px !important;
-    height: auto !important;
+  .fusion-tb-header .fusion-imageframe img,
+  .fusion-tb-header img.wp-image-183 {
+    max-width: 240px !important;
+    height: 48px !important;
+    max-height: 52px !important;
+    width: auto !important;
+    object-fit: contain !important;
   }
 
   /* Mobile Navigation Button */
@@ -1118,7 +1121,7 @@ img {
     color: #117710 !important;
   }
 
-  /* Hero Section (Homepage & All Subpages) */
+  /* Hero Section Mobile/Tablet */
   #hero-home,
   .hero-section,
   .ynki-hero-wrap,
@@ -1150,30 +1153,196 @@ img {
     line-height: 1.65 !important;
     margin-bottom: 24px !important;
   }
-  .hero-actions,
-  .hero-btns {
-    flex-direction: column !important;
-    gap: 12px !important;
-    width: 100% !important;
-  }
-  .hero-actions a,
-  .hero-btns a {
-    width: 100% !important;
-    text-align: center !important;
-    justify-content: center !important;
-  }
 
-  /* Grid Columns stacking */
-  .fusion-builder-row {
-    flex-direction: column !important;
+  /* Footer on Mobile/Tablet */
+  .fusion-tb-footer {
+    padding: 40px 0 30px !important;
   }
-  .fusion_builder_column,
-  .fusion-layout-column {
+  .fusion-tb-footer .fusion-builder-row,
+  .fusion-tb-footer .fusion-row,
+  .fusion-tb-footer .fusion-builder-row-3,
+  .fusion-tb-footer [class*="fusion-builder-row"] {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    gap: 24px !important;
     width: 100% !important;
     max-width: 100% !important;
-    flex: 0 0 100% !important;
-    margin-bottom: 20px !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
   }
+  .fusion-tb-footer .fusion-builder-column-18,
+  .fusion-tb-footer .fusion-builder-column-19,
+  .fusion-tb-footer .fusion_builder_column,
+  .fusion-tb-footer .fusion-layout-column,
+  .fusion-tb-footer .footer-mockup,
+  .fusion-tb-footer [class*="fusion_builder_column"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    flex: 1 1 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 20px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* =======================================================
+   DESKTOP & GLOBAL OVERRIDES (>= 993px)
+   ======================================================= */
+@media (min-width: 993px) {
+  /* Enlarge YNKI Logo in Header */
+  .fusion-builder-column-0,
+  .fusion_builder_column_1_3 {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: 420px !important;
+  }
+  .fusion-tb-header .fusion-image-element,
+  .fusion-tb-header .fusion-imageframe,
+  .fusion-tb-header a[aria-label="logo-ynki-80"],
+  .fusion-tb-header .fusion-imageframe img,
+  .fusion-tb-header img.wp-image-183 {
+    max-width: 380px !important;
+    width: auto !important;
+    height: 64px !important;
+    max-height: 72px !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  /* Hero CTA Buttons on Desktop: Horizontal Inline Row */
+  .hero-actions,
+  .hero-btns {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 14px !important;
+    width: auto !important;
+    flex-wrap: wrap !important;
+  }
+  .hero-actions a,
+  .hero-btns a,
+  .btn-cta-main-home,
+  .btn-cta-second-home,
+  .btn-ghost-home {
+    display: inline-flex !important;
+    width: auto !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 14px 28px !important;
+  }
+
+  /* Footer on Desktop: Spacious 2-Column Row */
+  .fusion-tb-footer {
+    background: #117710 !important;
+    color: #ffffff !important;
+    padding: 55px 0 45px !important;
+    width: 100% !important;
+  }
+  .fusion-tb-footer .fusion-builder-row {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 48px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+  }
+  .fusion-tb-footer .fusion-builder-column-18,
+  .fusion-tb-footer .fusion_builder_column_1_2:first-child {
+    flex: 1 1 55% !important;
+    width: auto !important;
+    max-width: 600px !important;
+    margin: 0 !important;
+  }
+  .fusion-tb-footer .fusion-builder-column-19,
+  .fusion-tb-footer .fusion_builder_column_1_2:last-child {
+    flex: 1 1 45% !important;
+    width: auto !important;
+    max-width: 480px !important;
+    margin: 0 !important;
+  }
+}
+
+/* Footer Universal Global Typography & Colors */
+.fusion-tb-footer p,
+.fusion-tb-footer span,
+.fusion-tb-footer strong,
+.fusion-tb-footer div,
+.fusion-tb-footer ul,
+.fusion-tb-footer li,
+.fusion-tb-footer a {
+  color: #ffffff !important;
+}
+.fusion-tb-footer ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 12px 0 0 !important;
+}
+.fusion-tb-footer ul li {
+  list-style: none !important;
+  position: relative !important;
+  padding: 5px 0 !important;
+  margin: 0 !important;
+}
+/* Strip default pseudo-elements */
+.fusion-tb-footer ul li::before,
+.fusion-tb-footer ul li::after,
+.fusion-tb-footer .fusion-text ul li::before,
+.fusion-tb-footer .fusion-text ul li::after {
+  display: none !important;
+  content: "" !important;
+}
+.fusion-tb-footer ul li a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  transition: all 0.2s ease !important;
+}
+.fusion-tb-footer ul li a::before {
+  content: "›" !important;
+  color: #ff8000 !important;
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+  transition: transform 0.2s ease !important;
+}
+.fusion-tb-footer ul li a:hover {
+  color: #ff8000 !important;
+  text-decoration: none !important;
+  transform: translateX(4px) !important;
+}
+.ynki-footer-social {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-top: 18px !important;
+  flex-wrap: wrap !important;
+}
+.ynki-footer-social .ynki-social-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease !important;
+}
+.ynki-footer-social .ynki-social-btn:hover {
+  background: #ff8000 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
 }
 
 /* 3. Smartphone Specific (<= 640px) */

@@ -99,7 +99,17 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
         .fusion-builder-column-0 {
           flex: 0 0 auto !important;
           width: auto !important;
-          max-width: 280px !important;
+          max-width: 420px !important;
+        }
+
+        .fusion-builder-column-0 img,
+        .fusion-tb-header .fusion-imageframe img,
+        .fusion-tb-header img.wp-image-183 {
+          max-width: 360px !important;
+          width: auto !important;
+          height: 64px !important;
+          max-height: 72px !important;
+          object-fit: contain !important;
         }
 
         .fusion-builder-column-1 {
@@ -378,6 +388,14 @@ function processHtmlFile(filePath) {
   // 5. Ensure ynki-footer.js is included before </body>
   if (!content.includes('/assets/js/ynki-footer.js') && content.includes('</body>')) {
     content = content.replace('</body>', `<script src="/assets/js/ynki-footer.js"></script>\n</body>`);
+    modified = true;
+  }
+
+  // 6. Ensure uncropped full-resolution pristine logo-ynki-500.webp is used (100% complete text)
+  if (content.includes('logo-ynki-80') || content.includes('logo-ynki-40') || content.includes('header-logo-01') || content.includes('logo-ynki-500')) {
+    content = content.replace(/\/wp-content\/uploads\/2026\/05\/(logo-ynki-(80|40|500)[^"'\s]*|header-logo-01[^"'\s]*)\.(webp|png)(\?v=\d+)?/g, '/wp-content/uploads/2026/05/logo-ynki-500.webp?v=2');
+    content = content.replace(/\s*srcset="[^"]*logo-ynki[^"]*"/g, '');
+    content = content.replace(/\s*sizes="[^"]*300px[^"]*"/g, '');
     modified = true;
   }
 
