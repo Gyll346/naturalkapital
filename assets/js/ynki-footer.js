@@ -224,7 +224,7 @@
    YNKI UNIVERSAL NAVIGATION ENGINE (DESKTOP DROPDOWN & MOBILE ACCORDION DRAWER)
    ========================================================================== */
 (function () {
-  // 1. Inject Styles Directly to Document Head to Guarantee Styling on ALL Pages
+  // 1. Inject Styles Directly to Document Head
   function injectNavStyles() {
     var existing = document.getElementById('ynki-navigation-core-styles');
     if (existing) existing.remove();
@@ -233,10 +233,10 @@
     style.id = 'ynki-navigation-core-styles';
     style.textContent = `
       /* =======================================================
-         DESKTOP NAVBAR FIX (>= 993px)
+         DESKTOP VIEW (>= 993px)
          ======================================================= */
       @media (min-width: 993px) {
-        /* HIDE ONLY THE BURGER BUTTON & MOBILE DRAWER ON DESKTOP */
+        /* HIDE ONLY BURGER BUTTON & MOBILE DRAWER ON DESKTOP */
         button.awb-menu__m-toggle,
         .awb-menu__m-toggle,
         .awb-menu__m-toggle-inner,
@@ -296,7 +296,7 @@
           z-index: 1 !important;
         }
 
-        /* Header single row layout */
+        /* Header Single Row Alignment */
         .fusion-builder-row-1 {
           display: flex !important;
           align-items: center !important;
@@ -316,7 +316,7 @@
           max-width: none !important;
         }
 
-        /* SHOW DESKTOP NAV CONTAINER */
+        /* Desktop Nav Container */
         nav.awb-menu,
         .awb-menu {
           display: flex !important;
@@ -325,6 +325,9 @@
           visibility: visible !important;
           opacity: 1 !important;
           width: 100% !important;
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
         }
 
         /* Desktop Main Navigation Bar */
@@ -337,7 +340,7 @@
           list-style: none !important;
           margin: 0 !important;
           padding: 0 !important;
-          gap: 16px !important;
+          gap: 14px !important;
           visibility: visible !important;
           opacity: 1 !important;
         }
@@ -360,6 +363,7 @@
           color: #12291e !important;
           text-decoration: none !important;
           transition: color 0.15s ease !important;
+          cursor: pointer !important;
         }
 
         .awb-menu__main-li:hover > .awb-menu__main-a,
@@ -368,9 +372,9 @@
           color: #117710 !important;
         }
 
-        /* DROPDOWN SUBMENU BOX (APPEARS IMMEDIATELY ON HOVER) */
+        /* DROPDOWN SUBMENU BOX - PURE ROBUST CSS */
         .awb-menu__main-li .awb-menu__sub-ul {
-          display: block !important;
+          display: none !important;
           position: absolute !important;
           top: 100% !important;
           left: 0 !important;
@@ -383,23 +387,17 @@
           padding: 8px 0 !important;
           margin: 0 !important;
           list-style: none !important;
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-          transform: translateY(4px);
-          transition: opacity 0.12s ease, transform 0.12s ease, visibility 0.12s !important;
           z-index: 999999999 !important;
         }
 
-        /* Instant Dropdown Trigger on CSS Hover / Focus */
+        /* Instant Dropdown Trigger on Hover */
         .awb-menu__main-li:hover > .awb-menu__sub-ul,
-        .awb-menu__main-li.hover > .awb-menu__sub-ul,
         .awb-menu__main-li:focus-within > .awb-menu__sub-ul,
         .awb-menu__main-li.is-open > .awb-menu__sub-ul {
+          display: block !important;
           opacity: 1 !important;
           visibility: visible !important;
           pointer-events: auto !important;
-          transform: translateY(0) !important;
         }
 
         .awb-menu__sub-li {
@@ -411,7 +409,7 @@
 
         .awb-menu__sub-a {
           display: block !important;
-          padding: 9px 18px !important;
+          padding: 10px 20px !important;
           font-size: 13px !important;
           font-weight: 600 !important;
           color: #1e2d24 !important;
@@ -420,6 +418,7 @@
           border-left: 3px solid transparent !important;
           background: transparent !important;
           line-height: 1.4 !important;
+          cursor: pointer !important;
         }
 
         .awb-menu__sub-a:hover,
@@ -427,7 +426,7 @@
           background: #eaf6ea !important;
           color: #117710 !important;
           border-left: 3px solid #117710 !important;
-          padding-left: 22px !important;
+          padding-left: 24px !important;
         }
       }
 
@@ -435,20 +434,46 @@
          MOBILE VIEW (<= 992px)
          ======================================================= */
       @media (max-width: 992px) {
+        /* Clean nav wrapper */
+        nav.awb-menu,
+        .awb-menu {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: flex-end !important;
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+
         /* Show Burger Toggle Button */
-        .awb-menu__m-toggle,
-        .awb-menu_mobile-toggle,
-        button.awb-menu__m-toggle {
+        button.awb-menu__m-toggle,
+        .awb-menu__m-toggle {
           display: inline-flex !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          pointer-events: auto !important;
-          cursor: pointer !important;
+          align-items: center !important;
+          justify-content: center !important;
+          width: 44px !important;
+          height: 44px !important;
           background: #f0fdf4 !important;
           border: 1.5px solid #117710 !important;
-          border-radius: 8px !important;
-          padding: 8px 12px !important;
+          border-radius: 10px !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          cursor: pointer !important;
+          box-shadow: 0 2px 8px rgba(17, 119, 16, 0.15) !important;
+        }
+
+        .awb-menu__m-toggle .awb-menu__m-collapse-icon {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+
+        .awb-menu__m-toggle .classic-bars-solid,
+        .awb-menu__m-toggle .fa-bars {
           color: #117710 !important;
+          font-size: 20px !important;
         }
 
         /* Hide Desktop Main Menu List */
@@ -467,13 +492,15 @@
           backdrop-filter: blur(4px) !important;
           -webkit-backdrop-filter: blur(4px) !important;
           z-index: 999998 !important;
+          display: none !important;
+          pointer-events: none !important;
           opacity: 0 !important;
-          visibility: hidden !important;
-          transition: opacity 0.3s ease, visibility 0.3s ease !important;
+          transition: opacity 0.3s ease !important;
         }
         .ynki-mobile-nav-backdrop.active {
+          display: block !important;
           opacity: 1 !important;
-          visibility: visible !important;
+          pointer-events: auto !important;
         }
 
         .ynki-mobile-nav-drawer {
@@ -620,9 +647,8 @@
     }
   }
 
-  // 2. Desktop Dropdown Handlers (Instant Hover & Focus with Direct State Override)
+  // 2. Desktop Dropdown Handlers (Clean, non-destructive class toggle)
   function initDesktopDropdowns() {
-    // Remove blocking loading classes from Avada nav
     var navs = document.querySelectorAll('nav.awb-menu');
     navs.forEach(function (nav) {
       nav.classList.remove('loading');
@@ -634,29 +660,18 @@
       var sub = item.querySelector('.awb-menu__sub-ul, .sub-menu');
       if (!sub) return;
 
-      function showSubmenu() {
+      item.addEventListener('mouseenter', function () {
         item.classList.add('is-open');
-        sub.style.setProperty('opacity', '1', 'important');
-        sub.style.setProperty('visibility', 'visible', 'important');
-        sub.style.setProperty('pointer-events', 'auto', 'important');
-        sub.style.setProperty('transform', 'translateY(0)', 'important');
-      }
-
-      function hideSubmenu() {
+      });
+      item.addEventListener('mouseleave', function () {
         item.classList.remove('is-open');
-        sub.style.setProperty('opacity', '0', 'important');
-        sub.style.setProperty('visibility', 'hidden', 'important');
-        sub.style.setProperty('pointer-events', 'none', 'important');
-        sub.style.setProperty('transform', 'translateY(4px)', 'important');
-      }
-
-      item.addEventListener('mouseenter', showSubmenu);
-      item.addEventListener('mouseover', showSubmenu);
-      item.addEventListener('mouseleave', hideSubmenu);
-      item.addEventListener('focusin', showSubmenu);
+      });
+      item.addEventListener('focusin', function () {
+        item.classList.add('is-open');
+      });
       item.addEventListener('focusout', function (e) {
         if (!item.contains(e.relatedTarget)) {
-          hideSubmenu();
+          item.classList.remove('is-open');
         }
       });
     });
@@ -802,8 +817,8 @@
     document.getElementById('ynki-mobile-close-btn').addEventListener('click', closeDrawer);
     backdrop.addEventListener('click', closeDrawer);
 
-    // Connect to burger buttons
-    var burgerButtons = document.querySelectorAll('.awb-menu__m-toggle, [aria-label="Toggle Navigation"], .collapsed-nav-text, .awb-menu_mobile-toggle');
+    // Connect to burger buttons (explicit button selector)
+    var burgerButtons = document.querySelectorAll('button.awb-menu__m-toggle, .awb-menu__m-toggle, .fusion-mobile-menu-icons');
     burgerButtons.forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
