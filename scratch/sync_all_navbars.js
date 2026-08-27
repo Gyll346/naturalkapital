@@ -15,7 +15,8 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
       .fusion-header,
       .fusion-tb-header,
       .fusion-header-wrapper,
-      .fusion-fullwidth.fusion-builder-row-1 {
+      .fusion-fullwidth.fusion-builder-row-1,
+      .fusion-builder-row-1 {
         position: relative !important;
         z-index: 999999999 !important;
         overflow: visible !important;
@@ -28,7 +29,6 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
       }
 
       .fusion-builder-row,
-      .fusion-builder-row-1,
       .fusion-layout-column,
       .fusion-column-wrapper,
       nav.awb-menu,
@@ -36,6 +36,7 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
       .awb-menu__main-ul,
       .awb-menu__main-li {
         overflow: visible !important;
+        pointer-events: auto !important;
       }
 
       /* Hero & content sections placed below header */
@@ -44,6 +45,7 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
       main,
       #main,
       #hero-home,
+      .fusion-page-title-bar,
       .fusion-fullwidth:not(.fusion-builder-row-1) {
         position: relative !important;
         z-index: 1 !important;
@@ -136,7 +138,7 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
           font-weight: 700 !important;
           font-size: 13.5px !important;
           text-decoration: none !important;
-          padding: 10px 12px !important;
+          padding: 12px 14px !important;
           display: inline-flex !important;
           align-items: center !important;
           transition: color 0.15s ease !important;
@@ -149,13 +151,56 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
           color: #117710 !important;
         }
 
-        /* DROPDOWN SUBMENU BOX - MATCHING IMAGE 1 DESIGN */
-        .awb-menu__main-li .awb-menu__sub-ul {
+        /* Invisible hover bridge to prevent losing hover when moving mouse down */
+        .awb-menu__main-li::after {
+          content: '' !important;
+          position: absolute !important;
+          top: 100% !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 12px !important;
+          display: block !important;
+          z-index: 999999998 !important;
+          pointer-events: auto !important;
+        }
+
+        /* RESET AVADA HIDDEN CLIPPING ON SUBMENU */
+        .awb-menu__sub-ul {
+          clip: auto !important;
+          clip-path: none !important;
+          height: auto !important;
+          max-height: none !important;
+          transform: none !important;
+          transition: none !important;
+          overflow: visible !important;
+        }
+
+        /* DEFAULT HIDDEN STATE WHEN NOT HOVERED */
+        .awb-menu__main-li:not(:hover):not(.is-open):not(:focus-within) > .awb-menu__sub-ul {
           display: none !important;
+          opacity: 0 !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
+        }
+
+        /* DROPDOWN SUBMENU BOX - MATCHING IMAGE 1 DESIGN (INSTANT AT SCROLL 0) */
+        .awb-menu__main-li:hover > .awb-menu__sub-ul,
+        .awb-menu__main-li.is-open > .awb-menu__sub-ul,
+        .awb-menu__main-li:focus-within > .awb-menu__sub-ul {
+          display: block !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          pointer-events: auto !important;
           position: absolute !important;
           top: 100% !important;
           left: 0 !important;
           min-width: 260px !important;
+          width: max-content !important;
+          height: auto !important;
+          clip: auto !important;
+          clip-path: none !important;
+          transform: none !important;
+          overflow: visible !important;
           background: #ffffff !important;
           border: 1px solid #d2e8d1 !important;
           border-top: 3px solid #117710 !important;
@@ -167,21 +212,17 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
           z-index: 999999999 !important;
         }
 
-        .awb-menu__main-li:hover > .awb-menu__sub-ul,
-        .awb-menu__main-li:focus-within > .awb-menu__sub-ul,
-        .awb-menu__main-li.is-open > .awb-menu__sub-ul {
-          display: block !important;
-          opacity: 1 !important;
-          visibility: visible !important;
-          pointer-events: auto !important;
-        }
-
         .awb-menu__sub-li {
           list-style: none !important;
           padding: 0 !important;
           margin: 0 !important;
           display: block !important;
+          width: 100% !important;
           border-bottom: 1px solid #edf2ed !important;
+          overflow: visible !important;
+          clip: auto !important;
+          clip-path: none !important;
+          transform: none !important;
         }
 
         .awb-menu__sub-li:last-child {
@@ -200,6 +241,7 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
           background: #ffffff !important;
           line-height: 1.4 !important;
           cursor: pointer !important;
+          box-sizing: border-box !important;
         }
 
         .awb-menu__sub-a:hover,
@@ -253,15 +295,16 @@ const cleanHeaderStyle = `<style id="ynki-universal-clean-header">
       }
     </style>`;
 
-// Find all HTML files recursively in specific directories
+// Find all HTML files recursively
 const targetDirs = [
+  '.', // include root folder for index.html!
   'sejarah-visi-misi', 'tim', 'lgos', 'portofolio',
   'landscape-governance', 'natural-capital', 'sustainable-commodity', 'landscape-intelligence', 'institutional-partnership',
   'dampak', 'kisah-perubahan', 'liputan-media',
   'news-features', 'penelitian-laporan', 'analisis-kebijakan', 'perspektif-budaya',
   'data-spasial-gis', 'data-spasial-dan-gis', 'stori-foto-video', 'story-foto-video',
   'kontak-kami', 'ikut-terlibat', 'ikut-serta', 'transparansi',
-  'kategori', 'tag', 'author', 'page'
+  'kategori', 'tag', 'author', 'page', 'video'
 ];
 
 let updatedCount = 0;
@@ -307,14 +350,20 @@ function traverseDirectory(dir) {
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
     if (stat.isDirectory()) {
-      traverseDirectory(fullPath);
-    } else if (item === 'index.html' || item.endsWith('.html')) {
+      if (item !== 'node_modules' && item !== '.git' && item !== 'vendor' && item !== 'storage' && item !== 'resources') {
+        traverseDirectory(fullPath);
+      }
+    } else if (item === 'index.html' || (item.endsWith('.html') && dir !== '.')) {
       processHtmlFile(fullPath);
     }
   }
 }
 
+// Specifically process root index.html
+processHtmlFile(path.join(process.cwd(), 'index.html'));
+
 targetDirs.forEach(d => {
+  if (d === '.') return;
   const p = path.join(process.cwd(), d);
   traverseDirectory(p);
 });

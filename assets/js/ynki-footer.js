@@ -378,6 +378,38 @@
           color: #117710 !important;
         }
 
+        /* Invisible hover bridge to prevent losing hover when moving mouse down */
+        .awb-menu__main-li::after {
+          content: '' !important;
+          position: absolute !important;
+          top: 100% !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 12px !important;
+          display: block !important;
+          z-index: 999999998 !important;
+          pointer-events: auto !important;
+        }
+
+        /* RESET AVADA HIDDEN CLIPPING ON SUBMENU */
+        .awb-menu__sub-ul {
+          clip: auto !important;
+          clip-path: none !important;
+          height: auto !important;
+          max-height: none !important;
+          transform: none !important;
+          transition: none !important;
+          overflow: visible !important;
+        }
+
+        /* DEFAULT HIDDEN STATE WHEN NOT HOVERED */
+        .awb-menu__main-li:not(:hover):not(.is-open):not(:focus-within) > .awb-menu__sub-ul {
+          display: none !important;
+          opacity: 0 !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
+        }
+
         /* DROPDOWN SUBMENU BOX - MATCHING IMAGE 1 DESIGN */
         .awb-menu__main-li .awb-menu__sub-ul {
           display: none !important;
@@ -385,6 +417,7 @@
           top: 100% !important;
           left: 0 !important;
           min-width: 260px !important;
+          width: max-content !important;
           background: #ffffff !important;
           border: 1px solid #d2e8d1 !important;
           border-top: 3px solid #117710 !important;
@@ -394,9 +427,12 @@
           margin: 0 !important;
           list-style: none !important;
           z-index: 999999999 !important;
+          clip: auto !important;
+          clip-path: none !important;
+          overflow: visible !important;
         }
 
-        /* Instant Dropdown Trigger on Hover */
+        /* Instant Dropdown Trigger on Hover (Works at scrollY = 0 without needing to scroll) */
         .awb-menu__main-li:hover > .awb-menu__sub-ul,
         .awb-menu__main-li:focus-within > .awb-menu__sub-ul,
         .awb-menu__main-li.is-open > .awb-menu__sub-ul {
@@ -404,6 +440,8 @@
           opacity: 1 !important;
           visibility: visible !important;
           pointer-events: auto !important;
+          clip: auto !important;
+          clip-path: none !important;
         }
 
         .awb-menu__sub-li {
@@ -411,7 +449,11 @@
           padding: 0 !important;
           margin: 0 !important;
           display: block !important;
+          width: 100% !important;
           border-bottom: 1px solid #edf2ed !important;
+          overflow: visible !important;
+          clip: auto !important;
+          clip-path: none !important;
         }
 
         .awb-menu__sub-li:last-child {
@@ -672,6 +714,14 @@
       el.style.setProperty('pointer-events', 'auto', 'important');
     });
 
+    var allSubmenus = document.querySelectorAll('.awb-menu__sub-ul, .sub-menu');
+    allSubmenus.forEach(function (sub) {
+      sub.style.setProperty('clip', 'auto', 'important');
+      sub.style.setProperty('clip-path', 'none', 'important');
+      sub.style.setProperty('transform', 'none', 'important');
+      sub.style.setProperty('overflow', 'visible', 'important');
+    });
+
     // Strict runtime protection: ensure burger toggle is completely hidden on desktop
     function enforceDesktopNavState() {
       var isDesktop = window.innerWidth > 992;
@@ -702,11 +752,17 @@
         sub.style.setProperty('opacity', '1', 'important');
         sub.style.setProperty('visibility', 'visible', 'important');
         sub.style.setProperty('pointer-events', 'auto', 'important');
+        sub.style.setProperty('clip', 'auto', 'important');
+        sub.style.setProperty('clip-path', 'none', 'important');
+        sub.style.setProperty('transform', 'none', 'important');
       }
 
       function closeMenu() {
         item.classList.remove('is-open');
         sub.style.removeProperty('display');
+        sub.style.removeProperty('opacity');
+        sub.style.removeProperty('visibility');
+        sub.style.removeProperty('pointer-events');
       }
 
       item.addEventListener('mouseenter', openMenu);
