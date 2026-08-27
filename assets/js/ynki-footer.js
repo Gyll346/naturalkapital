@@ -221,10 +221,253 @@
 })();
 
 /* ==========================================================================
-   YNKI DESKTOP NAVBAR DROPDOWN & MOBILE ACCORDION DRAWER
+   YNKI UNIVERSAL NAVIGATION ENGINE (DESKTOP DROPDOWN & MOBILE ACCORDION DRAWER)
    ========================================================================== */
 (function () {
-  // 1. Desktop Dropdowns (Smooth Hover & Click)
+  // 1. Inject Styles Directly to Document Head to Guarantee Styling on ALL Pages
+  function injectNavStyles() {
+    if (document.getElementById('ynki-navigation-core-styles')) return;
+    var style = document.createElement('style');
+    style.id = 'ynki-navigation-core-styles';
+    style.textContent = `
+      /* HIDE MOBILE DRAWER & BACKDROP ON DESKTOP */
+      @media (min-width: 993px) {
+        .ynki-mobile-nav-drawer,
+        .ynki-mobile-nav-backdrop,
+        #ynki-mobile-drawer,
+        #ynki-mobile-backdrop {
+          display: none !important;
+          visibility: hidden !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
+        }
+
+        /* Desktop Dropdown Submenus */
+        .awb-menu__main-ul {
+          display: flex !important;
+          align-items: center !important;
+        }
+        .awb-menu__main-li {
+          position: relative !important;
+        }
+        .awb-menu__main-li .awb-menu__sub-ul {
+          display: block !important;
+          position: absolute !important;
+          top: 100% !important;
+          left: 0 !important;
+          min-width: 260px !important;
+          background: #ffffff !important;
+          border: 1px solid #d2e8d1 !important;
+          border-top: 3px solid #117710 !important;
+          border-radius: 0 0 12px 12px !important;
+          box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15) !important;
+          padding: 8px 0 !important;
+          margin: 0 !important;
+          list-style: none !important;
+          opacity: 0 !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
+          transform: translateY(10px) !important;
+          transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s !important;
+          z-index: 999999 !important;
+        }
+        .awb-menu__main-li:hover > .awb-menu__sub-ul,
+        .awb-menu__main-li:focus-within > .awb-menu__sub-ul,
+        .awb-menu__main-li.is-open > .awb-menu__sub-ul {
+          opacity: 1 !important;
+          visibility: visible !important;
+          pointer-events: auto !important;
+          transform: translateY(0) !important;
+        }
+        .awb-menu__sub-li {
+          list-style: none !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          display: block !important;
+        }
+        .awb-menu__sub-a {
+          display: block !important;
+          padding: 10px 22px !important;
+          font-size: 13.5px !important;
+          font-weight: 600 !important;
+          color: #1e2d24 !important;
+          text-decoration: none !important;
+          transition: all 0.2s ease !important;
+          border-left: 3px solid transparent !important;
+          background: transparent !important;
+          line-height: 1.4 !important;
+        }
+        .awb-menu__sub-a:hover {
+          background: #eaf6ea !important;
+          color: #117710 !important;
+          border-left: 3px solid #117710 !important;
+          padding-left: 26px !important;
+        }
+      }
+
+      /* MOBILE DRAWER & ACCORDION (<= 992px) */
+      @media (max-width: 992px) {
+        .ynki-mobile-nav-backdrop {
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100vw !important;
+          height: 100vh !important;
+          background: rgba(0, 0, 0, 0.55) !important;
+          backdrop-filter: blur(4px) !important;
+          -webkit-backdrop-filter: blur(4px) !important;
+          z-index: 999998 !important;
+          opacity: 0 !important;
+          visibility: hidden !important;
+          transition: opacity 0.3s ease, visibility 0.3s ease !important;
+        }
+        .ynki-mobile-nav-backdrop.active {
+          opacity: 1 !important;
+          visibility: visible !important;
+        }
+        .ynki-mobile-nav-drawer {
+          position: fixed !important;
+          top: 0 !important;
+          right: -100% !important;
+          width: 320px !important;
+          max-width: 88vw !important;
+          height: 100vh !important;
+          background: #ffffff !important;
+          box-shadow: -6px 0 28px rgba(0, 0, 0, 0.2) !important;
+          z-index: 999999 !important;
+          display: flex !important;
+          flex-direction: column !important;
+          transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+          overflow-y: auto !important;
+          box-sizing: border-box !important;
+        }
+        .ynki-mobile-nav-drawer.active {
+          right: 0 !important;
+        }
+        .ynki-mobile-nav-header {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          padding: 16px 20px !important;
+          border-bottom: 1px solid #eef4f0 !important;
+          background: #fdfdfd !important;
+        }
+        .ynki-mobile-nav-logo img {
+          height: 38px !important;
+          width: auto !important;
+          display: block !important;
+        }
+        .ynki-mobile-nav-close {
+          display: inline-flex !important;
+          align-items: center !important;
+          gap: 6px !important;
+          background: #fff3e6 !important;
+          border: 1px solid rgba(255, 128, 0, 0.4) !important;
+          color: #ff8000 !important;
+          font-size: 12.5px !important;
+          font-weight: 700 !important;
+          padding: 6px 14px !important;
+          border-radius: 8px !important;
+          cursor: pointer !important;
+        }
+        .ynki-mobile-nav-menu {
+          list-style: none !important;
+          margin: 0 !important;
+          padding: 12px 0 !important;
+          flex: 1 !important;
+        }
+        .ynki-mobile-nav-item {
+          list-style: none !important;
+          border-bottom: 1px solid #f2f6f3 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .ynki-mobile-nav-row {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          padding: 0 16px !important;
+        }
+        .ynki-mobile-nav-link {
+          display: block !important;
+          flex: 1 !important;
+          padding: 13px 4px !important;
+          font-size: 14.5px !important;
+          font-weight: 700 !important;
+          color: #12291e !important;
+          text-decoration: none !important;
+        }
+        .ynki-mobile-nav-toggle-btn {
+          background: #eaf6ea !important;
+          border: 1px solid #c8e6c7 !important;
+          color: #117710 !important;
+          width: 32px !important;
+          height: 32px !important;
+          border-radius: 8px !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          font-size: 16px !important;
+          font-weight: 800 !important;
+          cursor: pointer !important;
+        }
+        .ynki-mobile-nav-toggle-btn.open {
+          background: #ff8000 !important;
+          border-color: #ff8000 !important;
+          color: #ffffff !important;
+        }
+        .ynki-mobile-submenu {
+          list-style: none !important;
+          margin: 0 !important;
+          padding: 0 0 8px 0 !important;
+          background: #f8faf8 !important;
+          display: none !important;
+        }
+        .ynki-mobile-submenu.open {
+          display: block !important;
+        }
+        .ynki-mobile-submenu li {
+          list-style: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .ynki-mobile-submenu li a {
+          display: block !important;
+          padding: 10px 24px 10px 32px !important;
+          font-size: 13.5px !important;
+          font-weight: 600 !important;
+          color: #3b5045 !important;
+          text-decoration: none !important;
+        }
+        .ynki-mobile-nav-footer {
+          padding: 18px 20px 24px !important;
+          border-top: 1px solid #eef4f0 !important;
+          background: #fafcfa !important;
+        }
+        .btn-mobile-nav-donate {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          background: #B22231 !important;
+          color: #ffffff !important;
+          padding: 12px 18px !important;
+          border-radius: 10px !important;
+          font-size: 14px !important;
+          font-weight: 700 !important;
+          text-decoration: none !important;
+        }
+      }
+    `;
+    if (document.head) {
+      document.head.appendChild(style);
+    } else {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.head.appendChild(style);
+      });
+    }
+  }
+
+  // 2. Desktop Dropdowns (Smooth Hover & Click)
   function initDesktopDropdowns() {
     var menuItems = document.querySelectorAll('.awb-menu__main-li, .menu-item-has-children');
     menuItems.forEach(function (item) {
@@ -248,7 +491,7 @@
     });
   }
 
-  // 2. Mobile Drawer Navigation
+  // 3. Mobile Drawer Navigation
   function initMobileDrawer() {
     if (document.getElementById('ynki-mobile-drawer')) return;
 
@@ -421,9 +664,12 @@
   }
 
   function initAllNavigation() {
+    injectNavStyles();
     initDesktopDropdowns();
     initMobileDrawer();
   }
+
+  injectNavStyles();
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAllNavigation);
