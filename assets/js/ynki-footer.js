@@ -658,12 +658,18 @@
     }
   }
 
-  // 2. Desktop Dropdown Handlers (Clean, non-destructive class toggle)
+  // 2. Desktop Dropdown Handlers (Clean, non-destructive class toggle & Instant Navigation)
   function initDesktopDropdowns() {
-    var navs = document.querySelectorAll('nav.awb-menu');
-    navs.forEach(function (nav) {
-      nav.classList.remove('loading');
-      nav.classList.remove('mega-menu-loading');
+    // Unblock any Avada loading or animation locks
+    var headers = document.querySelectorAll('nav.awb-menu, .fusion-tb-header, .fusion-fullwidth.fusion-builder-row-1');
+    headers.forEach(function (el) {
+      el.classList.remove('loading');
+      el.classList.remove('mega-menu-loading');
+      el.classList.remove('fusion-animated');
+      el.removeAttribute('data-animationtype');
+      el.style.setProperty('opacity', '1', 'important');
+      el.style.setProperty('visibility', 'visible', 'important');
+      el.style.setProperty('pointer-events', 'auto', 'important');
     });
 
     // Strict runtime protection: ensure burger toggle is completely hidden on desktop
@@ -684,26 +690,46 @@
     enforceDesktopNavState();
     window.addEventListener('resize', enforceDesktopNavState);
 
+    // Instant hover dropdown trigger (Works at scrollY = 0 without needing to scroll)
     var menuItems = document.querySelectorAll('.awb-menu__main-li, .menu-item-has-children');
     menuItems.forEach(function (item) {
       var sub = item.querySelector('.awb-menu__sub-ul, .sub-menu');
       if (!sub) return;
 
-      item.addEventListener('mouseenter', function () {
+      function openMenu() {
         item.classList.add('is-open');
-      });
-      item.addEventListener('mouseleave', function () {
+        sub.style.setProperty('display', 'block', 'important');
+        sub.style.setProperty('opacity', '1', 'important');
+        sub.style.setProperty('visibility', 'visible', 'important');
+        sub.style.setProperty('pointer-events', 'auto', 'important');
+      }
+
+      function closeMenu() {
         item.classList.remove('is-open');
-      });
-      item.addEventListener('focusin', function () {
-        item.classList.add('is-open');
-      });
+        sub.style.removeProperty('display');
+      }
+
+      item.addEventListener('mouseenter', openMenu);
+      item.addEventListener('mouseover', openMenu);
+      item.addEventListener('mouseleave', closeMenu);
+      item.addEventListener('focusin', openMenu);
       item.addEventListener('focusout', function (e) {
         if (!item.contains(e.relatedTarget)) {
-          item.classList.remove('is-open');
+          closeMenu();
         }
       });
     });
+
+    // Instant Direct Click Navigation (Runs in CAPTURE phase to bypass all Avada preventDefault blocks)
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('.awb-menu__sub-a, .awb-menu__main-a, nav.awb-menu a');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      if (href && href !== '#' && !href.startsWith('javascript:')) {
+        e.stopPropagation();
+        window.location.href = href;
+      }
+    }, true);
   }
 
   // 3. Mobile Drawer Navigation
