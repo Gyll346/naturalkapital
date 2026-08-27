@@ -978,4 +978,314 @@ img {
   }
 }
 
+/* ==========================================================================
+   DESKTOP NAVBAR DROPDOWN STYLING & HOVER FIX (>= 993px)
+   ========================================================================== */
+@media (min-width: 993px) {
+  /* Hide mobile drawer completely on desktop */
+  .ynki-mobile-nav-drawer,
+  .ynki-mobile-nav-backdrop {
+    display: none !important;
+  }
+
+  /* Desktop Menu container */
+  .awb-menu__main-ul {
+    display: flex !important;
+    align-items: center !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 8px !important;
+  }
+
+  .awb-menu__main-li {
+    position: relative !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .awb-menu__main-a {
+    display: flex !important;
+    align-items: center !important;
+    padding: 12px 16px !important;
+    font-family: 'Inter', 'Candara', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #12291e !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+    position: relative !important;
+  }
+
+  .awb-menu__main-li:hover > .awb-menu__main-a,
+  .awb-menu__main-li.current-menu-item > .awb-menu__main-a,
+  .awb-menu__main-li.current-menu-ancestor > .awb-menu__main-a {
+    color: #117710 !important;
+  }
+
+  /* Submenu Dropdown Box */
+  .awb-menu__main-li .awb-menu__sub-ul {
+    display: block !important;
+    position: absolute !important;
+    top: calc(100% - 2px) !important;
+    left: 0 !important;
+    min-width: 260px !important;
+    background: #ffffff !important;
+    border: 1px solid #d2e8d1 !important;
+    border-top: 3px solid #117710 !important;
+    border-radius: 0 0 12px 12px !important;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12) !important;
+    padding: 8px 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(12px) !important;
+    transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s !important;
+    z-index: 99999 !important;
+  }
+
+  /* Trigger hover and active states */
+  .awb-menu__main-li:hover > .awb-menu__sub-ul,
+  .awb-menu__main-li:focus-within > .awb-menu__sub-ul,
+  .awb-menu__main-li.is-open > .awb-menu__sub-ul {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  .awb-menu__sub-li {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  .awb-menu__sub-a {
+    display: block !important;
+    padding: 10px 22px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    color: #1e2d24 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    border-left: 3px solid transparent !important;
+    background: transparent !important;
+    line-height: 1.4 !important;
+  }
+
+  .awb-menu__sub-a:hover,
+  .awb-menu__sub-li.current-menu-item > .awb-menu__sub-a {
+    background: #eaf6ea !important;
+    color: #117710 !important;
+    border-left: 3px solid #117710 !important;
+    padding-left: 26px !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE DRAWER & ACCORDION NAVIGATION STYLES
+   ========================================================================== */
+.ynki-mobile-nav-backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.55) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  z-index: 999998 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+.ynki-mobile-nav-backdrop.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.ynki-mobile-nav-drawer {
+  position: fixed !important;
+  top: 0 !important;
+  right: -100% !important;
+  width: 320px !important;
+  max-width: 88vw !important;
+  height: 100vh !important;
+  background: #ffffff !important;
+  box-shadow: -6px 0 28px rgba(0, 0, 0, 0.2) !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+}
+
+.ynki-mobile-nav-drawer.active {
+  right: 0 !important;
+}
+
+/* Drawer Header */
+.ynki-mobile-nav-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 16px 20px !important;
+  border-bottom: 1px solid #eef4f0 !important;
+  background: #fdfdfd !important;
+}
+
+.ynki-mobile-nav-logo img {
+  height: 38px !important;
+  width: auto !important;
+  display: block !important;
+}
+
+.ynki-mobile-nav-close {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: #fff3e6 !important;
+  border: 1px solid rgba(255, 128, 0, 0.4) !important;
+  color: #ff8000 !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  padding: 6px 14px !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.ynki-mobile-nav-close:hover {
+  background: #ff8000 !important;
+  color: #ffffff !important;
+}
+
+/* Drawer Menu List */
+.ynki-mobile-nav-menu {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 12px 0 !important;
+  flex: 1 !important;
+}
+
+.ynki-mobile-nav-item {
+  list-style: none !important;
+  border-bottom: 1px solid #f2f6f3 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ynki-mobile-nav-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 16px !important;
+}
+
+.ynki-mobile-nav-link {
+  display: block !important;
+  flex: 1 !important;
+  padding: 13px 4px !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  color: #12291e !important;
+  text-decoration: none !important;
+}
+
+.ynki-mobile-nav-link:hover,
+.ynki-mobile-nav-link.active {
+  color: #117710 !important;
+}
+
+.ynki-mobile-nav-toggle-btn {
+  background: #eaf6ea !important;
+  border: 1px solid #c8e6c7 !important;
+  color: #117710 !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.ynki-mobile-nav-toggle-btn.open {
+  background: #ff8000 !important;
+  border-color: #ff8000 !important;
+  color: #ffffff !important;
+}
+
+/* Accordion Submenu */
+.ynki-mobile-submenu {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 0 8px 0 !important;
+  background: #f8faf8 !important;
+  display: none !important;
+}
+
+.ynki-mobile-submenu.open {
+  display: block !important;
+}
+
+.ynki-mobile-submenu li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ynki-mobile-submenu li a {
+  display: block !important;
+  padding: 10px 24px 10px 32px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #3b5045 !important;
+  text-decoration: none !important;
+  border-left: 3px solid transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+.ynki-mobile-submenu li a:hover {
+  background: #eef6ee !important;
+  color: #117710 !important;
+  border-left-color: #117710 !important;
+  padding-left: 36px !important;
+}
+
+/* Drawer Footer */
+.ynki-mobile-nav-footer {
+  padding: 18px 20px 24px !important;
+  border-top: 1px solid #eef4f0 !important;
+  background: #fafcfa !important;
+}
+
+.btn-mobile-nav-donate {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #B22231 !important;
+  color: #ffffff !important;
+  padding: 12px 18px !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(178, 34, 49, 0.25) !important;
+}
+
+.btn-mobile-nav-donate:hover {
+  background: #941724 !important;
+}
+
+
 

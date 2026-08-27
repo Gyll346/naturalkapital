@@ -221,15 +221,40 @@
 })();
 
 /* ==========================================================================
-   YNKI MOBILE ACCORDION & DRAWER NAVIGATION (PERSISTENT ON ALL PAGES)
+   YNKI DESKTOP NAVBAR DROPDOWN & MOBILE ACCORDION DRAWER
    ========================================================================== */
 (function () {
+  // 1. Desktop Dropdowns (Smooth Hover & Click)
+  function initDesktopDropdowns() {
+    var menuItems = document.querySelectorAll('.awb-menu__main-li, .menu-item-has-children');
+    menuItems.forEach(function (item) {
+      var sub = item.querySelector('.awb-menu__sub-ul, .sub-menu');
+      if (!sub) return;
+
+      item.addEventListener('mouseenter', function () {
+        item.classList.add('is-open');
+      });
+      item.addEventListener('mouseleave', function () {
+        item.classList.remove('is-open');
+      });
+      item.addEventListener('focusin', function () {
+        item.classList.add('is-open');
+      });
+      item.addEventListener('focusout', function (e) {
+        if (!item.contains(e.relatedTarget)) {
+          item.classList.remove('is-open');
+        }
+      });
+    });
+  }
+
+  // 2. Mobile Drawer Navigation
   function initMobileDrawer() {
     if (document.getElementById('ynki-mobile-drawer')) return;
 
     var currentPath = window.location.pathname;
 
-    // 1. Create Drawer Elements
+    // Create Backdrop & Drawer
     var backdrop = document.createElement('div');
     backdrop.id = 'ynki-mobile-backdrop';
     backdrop.className = 'ynki-mobile-nav-backdrop';
@@ -347,7 +372,7 @@
     document.body.appendChild(backdrop);
     document.body.appendChild(drawer);
 
-    // 2. Open / Close Functions
+    // Open / Close Handlers
     function openDrawer() {
       drawer.classList.add('active');
       backdrop.classList.add('active');
@@ -363,7 +388,7 @@
     document.getElementById('ynki-mobile-close-btn').addEventListener('click', closeDrawer);
     backdrop.addEventListener('click', closeDrawer);
 
-    // 3. Connect to existing header burger buttons
+    // Connect to burger buttons
     var burgerButtons = document.querySelectorAll('.awb-menu__m-toggle, [aria-label="Toggle Navigation"], .collapsed-nav-text, .awb-menu_mobile-toggle');
     burgerButtons.forEach(function (btn) {
       btn.addEventListener('click', function (e) {
@@ -373,7 +398,7 @@
       });
     });
 
-    // 4. Accordion Toggle (+ / -)
+    // Accordion Toggle (+ / -)
     var toggleButtons = drawer.querySelectorAll('.ynki-mobile-nav-toggle-btn');
     toggleButtons.forEach(function (btn) {
       btn.addEventListener('click', function (e) {
@@ -395,9 +420,14 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMobileDrawer);
-  } else {
+  function initAllNavigation() {
+    initDesktopDropdowns();
     initMobileDrawer();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAllNavigation);
+  } else {
+    initAllNavigation();
   }
 })();
