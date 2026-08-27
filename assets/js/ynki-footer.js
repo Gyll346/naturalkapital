@@ -226,12 +226,25 @@
 (function () {
   // 1. Inject Styles Directly to Document Head to Guarantee Styling on ALL Pages
   function injectNavStyles() {
-    if (document.getElementById('ynki-navigation-core-styles')) return;
+    var existing = document.getElementById('ynki-navigation-core-styles');
+    if (existing) existing.remove();
+
     var style = document.createElement('style');
     style.id = 'ynki-navigation-core-styles';
     style.textContent = `
-      /* HIDE MOBILE DRAWER & BACKDROP ON DESKTOP */
+      /* =======================================================
+         DESKTOP NAVBAR FIX (>= 993px)
+         ======================================================= */
       @media (min-width: 993px) {
+        /* HIDE ALL BURGER BUTTONS & MOBILE DRAWER ON DESKTOP */
+        .awb-menu__m-toggle,
+        .awb-menu_mobile-toggle,
+        button.awb-menu__m-toggle,
+        button[class*="awb-menu__m-toggle"],
+        .fusion-mobile-menu-icons,
+        .fusion-mobile-nav-holder,
+        .collapsed-nav-text,
+        .awb-menu__open-nav-submenu_mobile,
         .ynki-mobile-nav-drawer,
         .ynki-mobile-nav-backdrop,
         #ynki-mobile-drawer,
@@ -239,17 +252,78 @@
           display: none !important;
           visibility: hidden !important;
           opacity: 0 !important;
+          width: 0 !important;
+          height: 0 !important;
           pointer-events: none !important;
+          position: absolute !important;
+          left: -9999px !important;
         }
 
-        /* Desktop Dropdown Submenus */
+        /* ENSURE HEADER & ALL PARENT CONTAINERS DO NOT CLIP DROPDOWNS */
+        header,
+        #fusion-header,
+        .fusion-header,
+        .fusion-tb-header,
+        .fusion-header-wrapper,
+        .fusion-fullwidth,
+        .fusion-fullwidth.fusion-builder-row-1,
+        .fusion-builder-row,
+        .fusion-builder-row-1,
+        .fusion-layout-column,
+        .fusion-column-wrapper,
+        nav.awb-menu,
+        .awb-menu,
+        .awb-menu__main-ul,
+        .awb-menu__main-li {
+          overflow: visible !important;
+        }
+
+        .fusion-tb-header,
+        .fusion-header,
+        .fusion-header-wrapper,
+        .fusion-fullwidth.fusion-builder-row-1 {
+          position: relative !important;
+          z-index: 999999 !important;
+        }
+
+        /* Desktop Main Navigation Bar */
         .awb-menu__main-ul {
           display: flex !important;
           align-items: center !important;
+          justify-content: flex-end !important;
+          list-style: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          gap: 6px !important;
+          visibility: visible !important;
+          opacity: 1 !important;
         }
+
         .awb-menu__main-li {
           position: relative !important;
+          list-style: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
         }
+
+        .awb-menu__main-a {
+          display: inline-flex !important;
+          align-items: center !important;
+          padding: 10px 14px !important;
+          font-size: 13.5px !important;
+          font-weight: 700 !important;
+          color: #12291e !important;
+          text-decoration: none !important;
+          transition: color 0.18s ease !important;
+        }
+
+        .awb-menu__main-li:hover > .awb-menu__main-a,
+        .awb-menu__main-li.current-menu-item > .awb-menu__main-a,
+        .awb-menu__main-li.current-menu-ancestor > .awb-menu__main-a {
+          color: #117710 !important;
+        }
+
+        /* DROPDOWN SUBMENU BOX (APPEARS IMMEDIATELY ON HOVER) */
         .awb-menu__main-li .awb-menu__sub-ul {
           display: block !important;
           position: absolute !important;
@@ -259,7 +333,7 @@
           background: #ffffff !important;
           border: 1px solid #d2e8d1 !important;
           border-top: 3px solid #117710 !important;
-          border-radius: 0 0 12px 12px !important;
+          border-radius: 0 0 10px 10px !important;
           box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15) !important;
           padding: 8px 0 !important;
           margin: 0 !important;
@@ -267,11 +341,14 @@
           opacity: 0 !important;
           visibility: hidden !important;
           pointer-events: none !important;
-          transform: translateY(10px) !important;
-          transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s !important;
-          z-index: 999999 !important;
+          transform: translateY(6px) !important;
+          transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s !important;
+          z-index: 9999999 !important;
         }
+
+        /* Instant Dropdown Trigger on Hover / Focus / Class */
         .awb-menu__main-li:hover > .awb-menu__sub-ul,
+        .awb-menu__main-li.hover > .awb-menu__sub-ul,
         .awb-menu__main-li:focus-within > .awb-menu__sub-ul,
         .awb-menu__main-li.is-open > .awb-menu__sub-ul {
           opacity: 1 !important;
@@ -279,34 +356,62 @@
           pointer-events: auto !important;
           transform: translateY(0) !important;
         }
+
         .awb-menu__sub-li {
           list-style: none !important;
           padding: 0 !important;
           margin: 0 !important;
           display: block !important;
         }
+
         .awb-menu__sub-a {
           display: block !important;
-          padding: 10px 22px !important;
-          font-size: 13.5px !important;
+          padding: 9px 20px !important;
+          font-size: 13px !important;
           font-weight: 600 !important;
           color: #1e2d24 !important;
           text-decoration: none !important;
-          transition: all 0.2s ease !important;
+          transition: all 0.18s ease !important;
           border-left: 3px solid transparent !important;
           background: transparent !important;
           line-height: 1.4 !important;
         }
-        .awb-menu__sub-a:hover {
+
+        .awb-menu__sub-a:hover,
+        .awb-menu__sub-li.current-menu-item > .awb-menu__sub-a {
           background: #eaf6ea !important;
           color: #117710 !important;
           border-left: 3px solid #117710 !important;
-          padding-left: 26px !important;
+          padding-left: 24px !important;
         }
       }
 
-      /* MOBILE DRAWER & ACCORDION (<= 992px) */
+      /* =======================================================
+         MOBILE VIEW (<= 992px)
+         ======================================================= */
       @media (max-width: 992px) {
+        /* Show Burger Toggle Button */
+        .awb-menu__m-toggle,
+        .awb-menu_mobile-toggle,
+        button.awb-menu__m-toggle {
+          display: inline-flex !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          pointer-events: auto !important;
+          cursor: pointer !important;
+          background: #f0fdf4 !important;
+          border: 1.5px solid #117710 !important;
+          border-radius: 8px !important;
+          padding: 8px 12px !important;
+          color: #117710 !important;
+        }
+
+        /* Hide Desktop Main Menu List */
+        .awb-menu__main-ul {
+          display: none !important;
+        }
+
+        /* Backdrop & Sliding Drawer */
         .ynki-mobile-nav-backdrop {
           position: fixed !important;
           top: 0 !important;
@@ -325,6 +430,7 @@
           opacity: 1 !important;
           visibility: visible !important;
         }
+
         .ynki-mobile-nav-drawer {
           position: fixed !important;
           top: 0 !important;
@@ -344,6 +450,7 @@
         .ynki-mobile-nav-drawer.active {
           right: 0 !important;
         }
+
         .ynki-mobile-nav-header {
           display: flex !important;
           align-items: center !important;
@@ -458,6 +565,7 @@
         }
       }
     `;
+
     if (document.head) {
       document.head.appendChild(style);
     } else {
@@ -467,7 +575,7 @@
     }
   }
 
-  // 2. Desktop Dropdowns (Smooth Hover & Click)
+  // 2. Desktop Dropdown Handlers (Instant Hover & Focus)
   function initDesktopDropdowns() {
     var menuItems = document.querySelectorAll('.awb-menu__main-li, .menu-item-has-children');
     menuItems.forEach(function (item) {
