@@ -869,35 +869,57 @@ img {
     padding-bottom: 10px !important;
   }
 
+  /* Hide burger toggle button when mobile drawer is open so it NEVER bleeds through or overlaps */
+  body.ynki-mobile-nav-open button.awb-menu__m-toggle,
+  body.ynki-mobile-nav-open .awb-menu__m-toggle,
+  body.ynki-mobile-nav-open .fusion-mobile-menu-icons {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
   /* =======================================================
      YNKI DEDICATED MOBILE DRAWER NAVIGATION & ACCORDION
      ======================================================= */
   .ynki-mobile-nav-backdrop {
     display: none;
     position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(3px);
-    z-index: 999998;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(14, 36, 27, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 2147483640;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
   .ynki-mobile-nav-backdrop.active {
     display: block;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .ynki-mobile-nav-drawer {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 100%;
-    max-width: 380px;
+    width: 330px;
+    max-width: 86vw;
     height: 100vh;
+    height: 100dvh;
     background: #ffffff;
-    z-index: 999999;
-    box-shadow: -4px 0 25px rgba(0, 0, 0, 0.25);
-    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2147483647;
+    box-shadow: -8px 0 35px rgba(0, 0, 0, 0.28);
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    box-sizing: border-box;
     font-family: 'Inter', Arial, sans-serif;
   }
   .ynki-mobile-nav-drawer.active {
@@ -908,126 +930,152 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 20px;
-    border-bottom: 1.5px solid #eef3ef;
-    background: #fbfdfb;
+    padding: 16px 18px;
+    border-bottom: 1.5px solid #edf4ee;
+    background: #ffffff;
     position: sticky;
     top: 0;
     z-index: 10;
   }
   .ynki-mobile-nav-logo img {
+    height: 36px;
     max-height: 36px;
     width: auto;
+    display: block;
   }
   .ynki-mobile-nav-close {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 14px;
+    padding: 6px 12px;
     background: #fff3e6;
-    border: 1px solid rgba(255, 128, 0, 0.35);
-    border-radius: 6px;
-    color: #FF8000;
+    border: 1.5px solid #ff8000;
+    border-radius: 8px;
+    color: #ff8000;
     font-size: 13px;
     font-weight: 700;
     cursor: pointer;
+    transition: all 0.2s ease;
   }
-  .ynki-mobile-nav-close:hover {
+  .ynki-mobile-nav-close:hover,
+  .ynki-mobile-nav-close:active {
     background: #ffe6cc;
   }
 
   .ynki-mobile-nav-menu {
     list-style: none;
-    padding: 0;
+    padding: 8px 0;
     margin: 0;
-    flex-grow: 1;
+    flex: 1 1 auto;
+    overflow-y: auto;
   }
   .ynki-mobile-nav-item {
     border-bottom: 1px solid #f0f4f1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
   .ynki-mobile-nav-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 4px 16px;
   }
   .ynki-mobile-nav-link {
     display: block;
-    padding: 15px 20px;
+    padding: 12px 4px;
     font-size: 15px;
-    font-weight: 600;
-    color: #0e241b;
+    font-weight: 700;
+    color: #12291e;
     text-decoration: none;
     flex-grow: 1;
-    transition: background 0.15s;
+    transition: color 0.15s ease;
   }
   .ynki-mobile-nav-link:hover,
   .ynki-mobile-nav-link.active {
     color: #117710;
-    background: #f5f9f5;
   }
   .ynki-mobile-nav-toggle-btn {
-    background: none;
-    border: none;
-    padding: 15px 20px;
-    font-size: 20px;
-    font-weight: 400;
-    color: #536b5f;
-    cursor: pointer;
-    display: flex;
+    background: #eaf6ea;
+    border: 1px solid #cce8cd;
+    color: #117710;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 55px;
-    transition: all 0.2s;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
   .ynki-mobile-nav-toggle-btn:hover {
-    color: #117710;
+    background: #d5ecd6;
   }
   .ynki-mobile-nav-toggle-btn.open {
-    color: #FF8000;
-    transform: rotate(45deg);
+    background: #ff8000;
+    border-color: #ff8000;
+    color: #ffffff;
   }
 
   .ynki-mobile-submenu {
     display: none;
     list-style: none;
-    padding: 0;
+    padding: 4px 0 8px 0;
     margin: 0;
-    background: #f8faf8;
-    border-top: 1px solid #eef3ef;
+    background: #f7faf8;
+    border-left: 3px solid #117710;
   }
   .ynki-mobile-submenu.open {
     display: block;
   }
+  .ynki-mobile-submenu li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
   .ynki-mobile-submenu li a {
     display: block;
-    padding: 12px 20px 12px 34px;
+    padding: 10px 18px 10px 24px;
     font-size: 13.5px;
-    font-weight: 500;
-    color: #334d3f;
+    font-weight: 600;
+    color: #284134;
     text-decoration: none;
-    border-bottom: 1px solid #f0f4f1;
+    transition: all 0.15s ease;
   }
-  .ynki-mobile-submenu li a:hover {
+  .ynki-mobile-submenu li a:hover,
+  .ynki-mobile-submenu li a:active {
     color: #117710;
-    background: #edf5ed;
+    background: #edf7ee;
+    padding-left: 28px;
   }
 
   .ynki-mobile-nav-footer {
-    padding: 20px;
-    background: #f8faf8;
-    border-top: 1px solid #eef3ef;
+    padding: 16px 18px 24px;
+    background: #fbfdfb;
+    border-top: 1.5px solid #edf4ee;
   }
   .btn-mobile-nav-donate {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     width: 100%;
-    background: #FF8000;
+    background: #B22231;
     color: #ffffff !important;
     text-align: center;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 13px 18px;
+    border-radius: 10px;
     font-weight: 700;
     font-size: 14px;
     text-decoration: none;
+    box-shadow: 0 4px 14px rgba(178, 34, 49, 0.28);
+    transition: all 0.2s ease;
+  }
+  .btn-mobile-nav-donate:hover {
+    background: #941724;
+  }
     box-shadow: 0 4px 12px rgba(255, 128, 0, 0.25);
   }
 

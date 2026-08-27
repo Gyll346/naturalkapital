@@ -572,8 +572,23 @@
           font-size: 20px !important;
         }
 
-        .awb-menu__main-ul {
+        /* Hide burger toggle button when mobile drawer is open so it NEVER bleeds through or overlaps */
+        body.ynki-mobile-nav-open button.awb-menu__m-toggle,
+        body.ynki-mobile-nav-open .awb-menu__m-toggle,
+        body.ynki-mobile-nav-open .fusion-mobile-menu-icons {
           display: none !important;
+          visibility: hidden !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
+        }
+
+        /* Mobile Drawer & Backdrop (Maximum Z-Index to prevent page bleed-through) */
+        .ynki-mobile-nav-backdrop {
+          z-index: 2147483640 !important;
+        }
+        .ynki-mobile-nav-drawer {
+          z-index: 2147483647 !important;
+          background: #ffffff !important;
         }
       }
     </style>

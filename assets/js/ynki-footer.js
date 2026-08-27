@@ -534,17 +534,28 @@
           display: none !important;
         }
 
-        /* Backdrop & Sliding Drawer */
+        /* Hide burger toggle button when mobile drawer is open so it NEVER bleeds through or overlaps */
+        body.ynki-mobile-nav-open button.awb-menu__m-toggle,
+        body.ynki-mobile-nav-open .awb-menu__m-toggle,
+        body.ynki-mobile-nav-open .fusion-mobile-menu-icons {
+          display: none !important;
+          visibility: hidden !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
+        }
+
+        /* Backdrop & Sliding Drawer (z-index highest to prevent bleed-through) */
         .ynki-mobile-nav-backdrop {
           position: fixed !important;
           top: 0 !important;
           left: 0 !important;
           width: 100vw !important;
           height: 100vh !important;
-          background: rgba(0, 0, 0, 0.55) !important;
+          height: 100dvh !important;
+          background: rgba(14, 36, 27, 0.6) !important;
           backdrop-filter: blur(4px) !important;
           -webkit-backdrop-filter: blur(4px) !important;
-          z-index: 999998 !important;
+          z-index: 2147483640 !important;
           display: none !important;
           pointer-events: none !important;
           opacity: 0 !important;
@@ -560,12 +571,13 @@
           position: fixed !important;
           top: 0 !important;
           right: -100% !important;
-          width: 320px !important;
-          max-width: 88vw !important;
+          width: 330px !important;
+          max-width: 86vw !important;
           height: 100vh !important;
+          height: 100dvh !important;
           background: #ffffff !important;
-          box-shadow: -6px 0 28px rgba(0, 0, 0, 0.2) !important;
-          z-index: 999999 !important;
+          box-shadow: -8px 0 35px rgba(0, 0, 0, 0.28) !important;
+          z-index: 2147483647 !important;
           display: flex !important;
           flex-direction: column !important;
           transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -580,12 +592,15 @@
           display: flex !important;
           align-items: center !important;
           justify-content: space-between !important;
-          padding: 16px 20px !important;
-          border-bottom: 1px solid #eef4f0 !important;
-          background: #fdfdfd !important;
+          padding: 16px 18px !important;
+          border-bottom: 1.5px solid #edf4ee !important;
+          background: #ffffff !important;
+          position: sticky !important;
+          top: 0 !important;
+          z-index: 10 !important;
         }
         .ynki-mobile-nav-logo img {
-          height: 38px !important;
+          height: 36px !important;
           width: auto !important;
           display: block !important;
         }
@@ -594,23 +609,29 @@
           align-items: center !important;
           gap: 6px !important;
           background: #fff3e6 !important;
-          border: 1px solid rgba(255, 128, 0, 0.4) !important;
+          border: 1.5px solid #ff8000 !important;
           color: #ff8000 !important;
-          font-size: 12.5px !important;
+          font-size: 13px !important;
           font-weight: 700 !important;
-          padding: 6px 14px !important;
+          padding: 6px 12px !important;
           border-radius: 8px !important;
           cursor: pointer !important;
+          transition: all 0.2s ease !important;
+        }
+        .ynki-mobile-nav-close:hover,
+        .ynki-mobile-nav-close:active {
+          background: #ffe6cc !important;
         }
         .ynki-mobile-nav-menu {
           list-style: none !important;
           margin: 0 !important;
-          padding: 12px 0 !important;
-          flex: 1 !important;
+          padding: 8px 0 !important;
+          flex: 1 1 auto !important;
+          overflow-y: auto !important;
         }
         .ynki-mobile-nav-item {
           list-style: none !important;
-          border-bottom: 1px solid #f2f6f3 !important;
+          border-bottom: 1px solid #f0f4f1 !important;
           margin: 0 !important;
           padding: 0 !important;
         }
@@ -618,30 +639,36 @@
           display: flex !important;
           align-items: center !important;
           justify-content: space-between !important;
-          padding: 0 16px !important;
+          padding: 4px 16px !important;
         }
         .ynki-mobile-nav-link {
           display: block !important;
           flex: 1 !important;
-          padding: 13px 4px !important;
-          font-size: 14.5px !important;
+          padding: 12px 4px !important;
+          font-size: 15px !important;
           font-weight: 700 !important;
           color: #12291e !important;
           text-decoration: none !important;
+          transition: color 0.15s ease !important;
+        }
+        .ynki-mobile-nav-link.active,
+        .ynki-mobile-nav-link:hover {
+          color: #117710 !important;
         }
         .ynki-mobile-nav-toggle-btn {
           background: #eaf6ea !important;
-          border: 1px solid #c8e6c7 !important;
+          border: 1px solid #cce8cd !important;
           color: #117710 !important;
-          width: 32px !important;
-          height: 32px !important;
+          width: 34px !important;
+          height: 34px !important;
           border-radius: 8px !important;
           display: inline-flex !important;
           align-items: center !important;
           justify-content: center !important;
-          font-size: 16px !important;
-          font-weight: 800 !important;
+          font-size: 18px !important;
+          font-weight: 700 !important;
           cursor: pointer !important;
+          transition: all 0.2s ease !important;
         }
         .ynki-mobile-nav-toggle-btn.open {
           background: #ff8000 !important;
@@ -651,8 +678,9 @@
         .ynki-mobile-submenu {
           list-style: none !important;
           margin: 0 !important;
-          padding: 0 0 8px 0 !important;
-          background: #f8faf8 !important;
+          padding: 4px 0 8px 0 !important;
+          background: #f7faf8 !important;
+          border-left: 3px solid #117710 !important;
           display: none !important;
         }
         .ynki-mobile-submenu.open {
@@ -665,28 +693,37 @@
         }
         .ynki-mobile-submenu li a {
           display: block !important;
-          padding: 10px 24px 10px 32px !important;
+          padding: 10px 18px 10px 24px !important;
           font-size: 13.5px !important;
           font-weight: 600 !important;
-          color: #3b5045 !important;
+          color: #284134 !important;
           text-decoration: none !important;
+          transition: all 0.15s ease !important;
+        }
+        .ynki-mobile-submenu li a:hover,
+        .ynki-mobile-submenu li a:active {
+          background: #edf7ee !important;
+          color: #117710 !important;
+          padding-left: 28px !important;
         }
         .ynki-mobile-nav-footer {
-          padding: 18px 20px 24px !important;
-          border-top: 1px solid #eef4f0 !important;
-          background: #fafcfa !important;
+          padding: 16px 18px 24px !important;
+          border-top: 1.5px solid #edf4ee !important;
+          background: #fbfdfb !important;
         }
         .btn-mobile-nav-donate {
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
+          gap: 8px !important;
           background: #B22231 !important;
           color: #ffffff !important;
-          padding: 12px 18px !important;
+          padding: 13px 18px !important;
           border-radius: 10px !important;
           font-size: 14px !important;
           font-weight: 700 !important;
           text-decoration: none !important;
+          box-shadow: 0 4px 14px rgba(178, 34, 49, 0.28) !important;
         }
       }
     `;
@@ -798,6 +835,7 @@
     var backdrop = document.createElement('div');
     backdrop.id = 'ynki-mobile-backdrop';
     backdrop.className = 'ynki-mobile-nav-backdrop';
+    backdrop.setAttribute('onclick', "(function(){var d=document.getElementById('ynki-mobile-drawer');var b=document.getElementById('ynki-mobile-backdrop');if(d)d.classList.remove('active');if(b)b.classList.remove('active');document.body.classList.remove('ynki-mobile-nav-open');document.body.style.overflow='';})()");
 
     var drawer = document.createElement('div');
     drawer.id = 'ynki-mobile-drawer';
@@ -806,11 +844,11 @@
     drawer.innerHTML = `
       <div class="ynki-mobile-nav-header">
         <div class="ynki-mobile-nav-logo">
-          <a href="/"><img src="/wp-content/uploads/2026/05/logo-ynki-80.webp" alt="YNKI"></a>
+          <a href="/"><img src="/wp-content/uploads/2026/05/logo-ynki-80.webp" alt="YNKI" style="height:32px; max-height:32px; width:auto; max-width:170px; object-fit:contain;"></a>
         </div>
-        <button type="button" class="ynki-mobile-nav-close" id="ynki-mobile-close-btn" aria-label="Tutup Menu">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-          Close
+        <button type="button" class="ynki-mobile-nav-close" id="ynki-mobile-close-btn" aria-label="Tutup Menu" onclick="(function(){var d=document.getElementById('ynki-mobile-drawer');var b=document.getElementById('ynki-mobile-backdrop');if(d)d.classList.remove('active');if(b)b.classList.remove('active');document.body.classList.remove('ynki-mobile-nav-open');document.body.style.overflow='';})()">
+          <span style="font-size:15px; font-weight:800; line-height:1; pointer-events:none;">✕</span>
+          <span style="pointer-events:none;">Tutup</span>
         </button>
       </div>
 
@@ -916,17 +954,38 @@
     function openDrawer() {
       drawer.classList.add('active');
       backdrop.classList.add('active');
+      document.body.classList.add('ynki-mobile-nav-open');
       document.body.style.overflow = 'hidden';
     }
 
     function closeDrawer() {
       drawer.classList.remove('active');
       backdrop.classList.remove('active');
+      document.body.classList.remove('ynki-mobile-nav-open');
       document.body.style.overflow = '';
     }
 
-    document.getElementById('ynki-mobile-close-btn').addEventListener('click', closeDrawer);
-    backdrop.addEventListener('click', closeDrawer);
+    var closeBtn = document.getElementById('ynki-mobile-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeDrawer();
+      });
+    }
+    backdrop.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeDrawer();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('#ynki-mobile-close-btn') || e.target.closest('.ynki-mobile-nav-close')) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeDrawer();
+      }
+    }, true);
 
     // Connect to burger buttons (explicit button selector)
     var burgerButtons = document.querySelectorAll('button.awb-menu__m-toggle, .awb-menu__m-toggle, .fusion-mobile-menu-icons');
