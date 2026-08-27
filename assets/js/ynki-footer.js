@@ -260,6 +260,9 @@
         }
 
         /* ENSURE HEADER & ALL PARENT CONTAINERS DO NOT CLIP DROPDOWNS */
+        #boxed-wrapper,
+        #wrapper,
+        .fusion-wrapper,
         header,
         #fusion-header,
         .fusion-header,
@@ -283,7 +286,34 @@
         .fusion-header-wrapper,
         .fusion-fullwidth.fusion-builder-row-1 {
           position: relative !important;
-          z-index: 999999 !important;
+          z-index: 99999999 !important;
+        }
+
+        #main,
+        #sliders-container,
+        .fusion-slider-visibility {
+          position: relative !important;
+          z-index: 1 !important;
+        }
+
+        /* Header single row layout */
+        .fusion-builder-row-1 {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          flex-wrap: nowrap !important;
+        }
+
+        .fusion-builder-column-0 {
+          flex: 0 0 auto !important;
+          width: auto !important;
+          max-width: 280px !important;
+        }
+
+        .fusion-builder-column-1 {
+          flex: 1 1 auto !important;
+          width: auto !important;
+          max-width: none !important;
         }
 
         /* SHOW DESKTOP NAV CONTAINER */
@@ -294,17 +324,20 @@
           justify-content: flex-end !important;
           visibility: visible !important;
           opacity: 1 !important;
+          width: 100% !important;
         }
 
         /* Desktop Main Navigation Bar */
         .awb-menu__main-ul {
           display: flex !important;
+          flex-wrap: nowrap !important;
+          white-space: nowrap !important;
           align-items: center !important;
           justify-content: flex-end !important;
           list-style: none !important;
           margin: 0 !important;
           padding: 0 !important;
-          gap: 6px !important;
+          gap: 16px !important;
           visibility: visible !important;
           opacity: 1 !important;
         }
@@ -315,17 +348,18 @@
           margin: 0 !important;
           padding: 0 !important;
           display: inline-block !important;
+          overflow: visible !important;
         }
 
         .awb-menu__main-a {
           display: inline-flex !important;
           align-items: center !important;
-          padding: 10px 14px !important;
+          padding: 10px 12px !important;
           font-size: 13.5px !important;
           font-weight: 700 !important;
           color: #12291e !important;
           text-decoration: none !important;
-          transition: color 0.18s ease !important;
+          transition: color 0.15s ease !important;
         }
 
         .awb-menu__main-li:hover > .awb-menu__main-a,
@@ -340,24 +374,24 @@
           position: absolute !important;
           top: 100% !important;
           left: 0 !important;
-          min-width: 260px !important;
+          min-width: 250px !important;
           background: #ffffff !important;
           border: 1px solid #d2e8d1 !important;
           border-top: 3px solid #117710 !important;
           border-radius: 0 0 10px 10px !important;
-          box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15) !important;
+          box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16) !important;
           padding: 8px 0 !important;
           margin: 0 !important;
           list-style: none !important;
-          opacity: 0 !important;
-          visibility: hidden !important;
-          pointer-events: none !important;
-          transform: translateY(6px) !important;
-          transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s !important;
-          z-index: 9999999 !important;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          transform: translateY(4px);
+          transition: opacity 0.12s ease, transform 0.12s ease, visibility 0.12s !important;
+          z-index: 999999999 !important;
         }
 
-        /* Instant Dropdown Trigger on Hover / Focus / Class */
+        /* Instant Dropdown Trigger on CSS Hover / Focus */
         .awb-menu__main-li:hover > .awb-menu__sub-ul,
         .awb-menu__main-li.hover > .awb-menu__sub-ul,
         .awb-menu__main-li:focus-within > .awb-menu__sub-ul,
@@ -377,12 +411,12 @@
 
         .awb-menu__sub-a {
           display: block !important;
-          padding: 9px 20px !important;
+          padding: 9px 18px !important;
           font-size: 13px !important;
           font-weight: 600 !important;
           color: #1e2d24 !important;
           text-decoration: none !important;
-          transition: all 0.18s ease !important;
+          transition: all 0.15s ease !important;
           border-left: 3px solid transparent !important;
           background: transparent !important;
           line-height: 1.4 !important;
@@ -393,7 +427,7 @@
           background: #eaf6ea !important;
           color: #117710 !important;
           border-left: 3px solid #117710 !important;
-          padding-left: 24px !important;
+          padding-left: 22px !important;
         }
       }
 
@@ -586,25 +620,43 @@
     }
   }
 
-  // 2. Desktop Dropdown Handlers (Instant Hover & Focus)
+  // 2. Desktop Dropdown Handlers (Instant Hover & Focus with Direct State Override)
   function initDesktopDropdowns() {
+    // Remove blocking loading classes from Avada nav
+    var navs = document.querySelectorAll('nav.awb-menu');
+    navs.forEach(function (nav) {
+      nav.classList.remove('loading');
+      nav.classList.remove('mega-menu-loading');
+    });
+
     var menuItems = document.querySelectorAll('.awb-menu__main-li, .menu-item-has-children');
     menuItems.forEach(function (item) {
       var sub = item.querySelector('.awb-menu__sub-ul, .sub-menu');
       if (!sub) return;
 
-      item.addEventListener('mouseenter', function () {
+      function showSubmenu() {
         item.classList.add('is-open');
-      });
-      item.addEventListener('mouseleave', function () {
+        sub.style.setProperty('opacity', '1', 'important');
+        sub.style.setProperty('visibility', 'visible', 'important');
+        sub.style.setProperty('pointer-events', 'auto', 'important');
+        sub.style.setProperty('transform', 'translateY(0)', 'important');
+      }
+
+      function hideSubmenu() {
         item.classList.remove('is-open');
-      });
-      item.addEventListener('focusin', function () {
-        item.classList.add('is-open');
-      });
+        sub.style.setProperty('opacity', '0', 'important');
+        sub.style.setProperty('visibility', 'hidden', 'important');
+        sub.style.setProperty('pointer-events', 'none', 'important');
+        sub.style.setProperty('transform', 'translateY(4px)', 'important');
+      }
+
+      item.addEventListener('mouseenter', showSubmenu);
+      item.addEventListener('mouseover', showSubmenu);
+      item.addEventListener('mouseleave', hideSubmenu);
+      item.addEventListener('focusin', showSubmenu);
       item.addEventListener('focusout', function (e) {
         if (!item.contains(e.relatedTarget)) {
-          item.classList.remove('is-open');
+          hideSubmenu();
         }
       });
     });

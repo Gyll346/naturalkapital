@@ -2458,6 +2458,9 @@
     </style>
     <style id="ynki-universal-clean-header">
       /* ===== YNKI GLOBAL NAVBAR CLEANUP & DESKTOP DROPDOWN ENGINE ===== */
+      #boxed-wrapper,
+      #wrapper,
+      .fusion-wrapper,
       header,
       .fusion-tb-header,
       .fusion-tb-header > .fusion-fullwidth,
@@ -2474,7 +2477,7 @@
         box-shadow: none !important;
         overflow: visible !important;
         position: relative !important;
-        z-index: 999999 !important;
+        z-index: 99999999 !important;
       }
 
       .fusion-builder-row,
@@ -2485,6 +2488,13 @@
       .awb-menu__main-ul,
       .awb-menu__main-li {
         overflow: visible !important;
+      }
+
+      #main,
+      #sliders-container,
+      .fusion-slider-visibility {
+        position: relative !important;
+        z-index: 1 !important;
       }
 
       /* Desktop: Hide ONLY Burger Buttons & Mobile Drawer */
@@ -2511,6 +2521,26 @@
           left: -9999px !important;
         }
 
+        /* Header single row layout */
+        .fusion-builder-row-1 {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          flex-wrap: nowrap !important;
+        }
+
+        .fusion-builder-column-0 {
+          flex: 0 0 auto !important;
+          width: auto !important;
+          max-width: 280px !important;
+        }
+
+        .fusion-builder-column-1 {
+          flex: 1 1 auto !important;
+          width: auto !important;
+          max-width: none !important;
+        }
+
         /* Show Nav Container */
         nav.awb-menu,
         .awb-menu {
@@ -2519,13 +2549,19 @@
           justify-content: flex-end !important;
           visibility: visible !important;
           opacity: 1 !important;
+          width: 100% !important;
         }
 
         .awb-menu__main-ul {
           display: flex !important;
+          flex-wrap: nowrap !important;
+          white-space: nowrap !important;
           align-items: center !important;
           justify-content: flex-end !important;
           list-style: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          gap: 16px !important;
           visibility: visible !important;
           opacity: 1 !important;
         }
@@ -2533,7 +2569,10 @@
         .awb-menu__main-li {
           position: relative !important;
           list-style: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
           display: inline-block !important;
+          overflow: visible !important;
         }
 
         .awb-menu__main-li > a,
@@ -2542,9 +2581,10 @@
           font-weight: 700 !important;
           font-size: 13.5px !important;
           text-decoration: none !important;
-          padding: 10px 14px !important;
+          padding: 10px 12px !important;
           display: inline-flex !important;
           align-items: center !important;
+          transition: color 0.15s ease !important;
         }
 
         .awb-menu__main-li:hover > a,
@@ -2559,21 +2599,21 @@
           position: absolute !important;
           top: 100% !important;
           left: 0 !important;
-          min-width: 260px !important;
+          min-width: 250px !important;
           background: #ffffff !important;
           border: 1px solid #d2e8d1 !important;
           border-top: 3px solid #117710 !important;
           border-radius: 0 0 10px 10px !important;
-          box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15) !important;
+          box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16) !important;
           padding: 8px 0 !important;
           margin: 0 !important;
           list-style: none !important;
-          opacity: 0 !important;
-          visibility: hidden !important;
-          pointer-events: none !important;
-          transform: translateY(6px) !important;
-          transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s !important;
-          z-index: 9999999 !important;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          transform: translateY(4px);
+          transition: opacity 0.12s ease, transform 0.12s ease, visibility 0.12s !important;
+          z-index: 999999999 !important;
         }
 
         .awb-menu__main-li:hover > .awb-menu__sub-ul,
@@ -2595,22 +2635,23 @@
 
         .awb-menu__sub-a {
           display: block !important;
-          padding: 9px 20px !important;
+          padding: 9px 18px !important;
           font-size: 13px !important;
           font-weight: 600 !important;
           color: #1e2d24 !important;
           text-decoration: none !important;
-          transition: all 0.18s ease !important;
+          transition: all 0.15s ease !important;
           border-left: 3px solid transparent !important;
           background: transparent !important;
           line-height: 1.4 !important;
         }
 
-        .awb-menu__sub-a:hover {
+        .awb-menu__sub-a:hover,
+        .awb-menu__sub-li.current-menu-item > .awb-menu__sub-a {
           background: #eaf6ea !important;
           color: #117710 !important;
           border-left: 3px solid #117710 !important;
-          padding-left: 24px !important;
+          padding-left: 22px !important;
         }
       }
 
