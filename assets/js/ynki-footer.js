@@ -236,10 +236,10 @@
          DESKTOP NAVBAR FIX (>= 993px)
          ======================================================= */
       @media (min-width: 993px) {
-        /* HIDE ALL BURGER BUTTONS & MOBILE DRAWER ON DESKTOP */
-        .awb-menu__m-toggle,
-        .awb-menu_mobile-toggle,
+        /* HIDE ONLY THE BURGER BUTTON & MOBILE DRAWER ON DESKTOP */
         button.awb-menu__m-toggle,
+        .awb-menu__m-toggle,
+        .awb-menu__m-toggle-inner,
         button[class*="awb-menu__m-toggle"],
         .fusion-mobile-menu-icons,
         .fusion-mobile-nav-holder,
@@ -286,6 +286,16 @@
           z-index: 999999 !important;
         }
 
+        /* SHOW DESKTOP NAV CONTAINER */
+        nav.awb-menu,
+        .awb-menu {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: flex-end !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+
         /* Desktop Main Navigation Bar */
         .awb-menu__main-ul {
           display: flex !important;
@@ -304,6 +314,7 @@
           list-style: none !important;
           margin: 0 !important;
           padding: 0 !important;
+          display: inline-block !important;
         }
 
         .awb-menu__main-a {

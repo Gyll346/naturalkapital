@@ -982,20 +982,77 @@ img {
    DESKTOP NAVBAR DROPDOWN STYLING & HOVER FIX (>= 993px)
    ========================================================================== */
 @media (min-width: 993px) {
-  /* Hide mobile drawer completely on desktop */
+  /* Hide ONLY burger buttons & mobile drawer on desktop */
+  button.awb-menu__m-toggle,
+  .awb-menu__m-toggle,
+  .awb-menu__m-toggle-inner,
+  button[class*="awb-menu__m-toggle"],
+  .fusion-mobile-menu-icons,
+  .fusion-mobile-nav-holder,
+  .collapsed-nav-text,
+  .awb-menu__open-nav-submenu_mobile,
   .ynki-mobile-nav-drawer,
-  .ynki-mobile-nav-backdrop {
+  .ynki-mobile-nav-backdrop,
+  #ynki-mobile-drawer,
+  #ynki-mobile-backdrop {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
+  /* Ensure all header containers do not clip dropdown submenus */
+  header,
+  #fusion-header,
+  .fusion-header,
+  .fusion-tb-header,
+  .fusion-header-wrapper,
+  .fusion-fullwidth,
+  .fusion-fullwidth.fusion-builder-row-1,
+  .fusion-builder-row,
+  .fusion-builder-row-1,
+  .fusion-layout-column,
+  .fusion-column-wrapper,
+  nav.awb-menu,
+  .awb-menu,
+  .awb-menu__main-ul,
+  .awb-menu__main-li {
+    overflow: visible !important;
+  }
+
+  .fusion-tb-header,
+  .fusion-header,
+  .fusion-header-wrapper,
+  .fusion-fullwidth.fusion-builder-row-1 {
+    position: relative !important;
+    z-index: 999999 !important;
+  }
+
+  /* Show Desktop Nav Container */
+  nav.awb-menu,
+  .awb-menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   /* Desktop Menu container */
   .awb-menu__main-ul {
     display: flex !important;
     align-items: center !important;
+    justify-content: flex-end !important;
     list-style: none !important;
     margin: 0 !important;
     padding: 0 !important;
     gap: 8px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .awb-menu__main-li {
@@ -1003,18 +1060,19 @@ img {
     list-style: none !important;
     margin: 0 !important;
     padding: 0 !important;
+    display: inline-block !important;
   }
 
   .awb-menu__main-a {
-    display: flex !important;
+    display: inline-flex !important;
     align-items: center !important;
-    padding: 12px 16px !important;
+    padding: 10px 14px !important;
     font-family: 'Inter', 'Candara', sans-serif !important;
-    font-size: 14px !important;
+    font-size: 13.5px !important;
     font-weight: 700 !important;
     color: #12291e !important;
     text-decoration: none !important;
-    transition: color 0.2s ease !important;
+    transition: color 0.18s ease !important;
     position: relative !important;
   }
 
@@ -1028,27 +1086,28 @@ img {
   .awb-menu__main-li .awb-menu__sub-ul {
     display: block !important;
     position: absolute !important;
-    top: calc(100% - 2px) !important;
+    top: 100% !important;
     left: 0 !important;
     min-width: 260px !important;
     background: #ffffff !important;
     border: 1px solid #d2e8d1 !important;
     border-top: 3px solid #117710 !important;
-    border-radius: 0 0 12px 12px !important;
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12) !important;
+    border-radius: 0 0 10px 10px !important;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15) !important;
     padding: 8px 0 !important;
     margin: 0 !important;
     list-style: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
-    transform: translateY(12px) !important;
-    transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s !important;
-    z-index: 99999 !important;
+    transform: translateY(6px) !important;
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s !important;
+    z-index: 9999999 !important;
   }
 
   /* Trigger hover and active states */
   .awb-menu__main-li:hover > .awb-menu__sub-ul,
+  .awb-menu__main-li.hover > .awb-menu__sub-ul,
   .awb-menu__main-li:focus-within > .awb-menu__sub-ul,
   .awb-menu__main-li.is-open > .awb-menu__sub-ul {
     opacity: 1 !important;
@@ -1066,12 +1125,12 @@ img {
 
   .awb-menu__sub-a {
     display: block !important;
-    padding: 10px 22px !important;
-    font-size: 13.5px !important;
+    padding: 9px 20px !important;
+    font-size: 13px !important;
     font-weight: 600 !important;
     color: #1e2d24 !important;
     text-decoration: none !important;
-    transition: all 0.2s ease !important;
+    transition: all 0.18s ease !important;
     border-left: 3px solid transparent !important;
     background: transparent !important;
     line-height: 1.4 !important;
@@ -1082,9 +1141,10 @@ img {
     background: #eaf6ea !important;
     color: #117710 !important;
     border-left: 3px solid #117710 !important;
-    padding-left: 26px !important;
+    padding-left: 24px !important;
   }
 }
+
 
 /* ==========================================================================
    MOBILE DRAWER & ACCORDION NAVIGATION STYLES

@@ -2713,11 +2713,11 @@
         overflow: visible !important;
       }
 
-      /* Desktop: Hide All Burger Buttons & Mobile Drawer */
+      /* Desktop: Hide ONLY Burger Buttons & Mobile Drawer */
       @media (min-width: 993px) {
-        .awb-menu__m-toggle,
-        .awb-menu_mobile-toggle,
         button.awb-menu__m-toggle,
+        .awb-menu__m-toggle,
+        .awb-menu__m-toggle-inner,
         button[class*="awb-menu__m-toggle"],
         .fusion-mobile-menu-icons,
         .fusion-mobile-nav-holder,
@@ -2737,16 +2737,29 @@
           left: -9999px !important;
         }
 
+        /* Show Nav Container */
+        nav.awb-menu,
+        .awb-menu {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: flex-end !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+
         .awb-menu__main-ul {
           display: flex !important;
           align-items: center !important;
           justify-content: flex-end !important;
           list-style: none !important;
+          visibility: visible !important;
+          opacity: 1 !important;
         }
 
         .awb-menu__main-li {
           position: relative !important;
           list-style: none !important;
+          display: inline-block !important;
         }
 
         .awb-menu__main-li > a,
