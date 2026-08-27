@@ -259,17 +259,27 @@
           left: -9999px !important;
         }
 
-        /* ENSURE HEADER & ALL PARENT CONTAINERS DO NOT CLIP DROPDOWNS */
+        /* GUARANTEE HEADER STACKS ON TOP OF HERO & ALL PAGE SECTIONS */
         #boxed-wrapper,
         #wrapper,
-        .fusion-wrapper,
+        .fusion-wrapper {
+          overflow: visible !important;
+          position: relative !important;
+        }
+
         header,
         #fusion-header,
         .fusion-header,
         .fusion-tb-header,
         .fusion-header-wrapper,
-        .fusion-fullwidth,
-        .fusion-fullwidth.fusion-builder-row-1,
+        .fusion-fullwidth.fusion-builder-row-1 {
+          position: relative !important;
+          z-index: 999999999 !important;
+          overflow: visible !important;
+          transform: none !important;
+          filter: none !important;
+        }
+
         .fusion-builder-row,
         .fusion-builder-row-1,
         .fusion-layout-column,
@@ -281,17 +291,13 @@
           overflow: visible !important;
         }
 
-        .fusion-tb-header,
-        .fusion-header,
-        .fusion-header-wrapper,
-        .fusion-fullwidth.fusion-builder-row-1 {
-          position: relative !important;
-          z-index: 99999999 !important;
-        }
-
-        #main,
+        /* Hero & content sections placed below header */
         #sliders-container,
-        .fusion-slider-visibility {
+        .fusion-slider-visibility,
+        main,
+        #main,
+        #hero-home,
+        .fusion-fullwidth:not(.fusion-builder-row-1) {
           position: relative !important;
           z-index: 1 !important;
         }
@@ -372,19 +378,19 @@
           color: #117710 !important;
         }
 
-        /* DROPDOWN SUBMENU BOX - PURE ROBUST CSS */
+        /* DROPDOWN SUBMENU BOX - MATCHING IMAGE 1 DESIGN */
         .awb-menu__main-li .awb-menu__sub-ul {
           display: none !important;
           position: absolute !important;
           top: 100% !important;
           left: 0 !important;
-          min-width: 250px !important;
+          min-width: 260px !important;
           background: #ffffff !important;
           border: 1px solid #d2e8d1 !important;
           border-top: 3px solid #117710 !important;
-          border-radius: 0 0 10px 10px !important;
-          box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16) !important;
-          padding: 8px 0 !important;
+          border-radius: 0 0 6px 6px !important;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16) !important;
+          padding: 0 !important;
           margin: 0 !important;
           list-style: none !important;
           z-index: 999999999 !important;
@@ -405,28 +411,33 @@
           padding: 0 !important;
           margin: 0 !important;
           display: block !important;
+          border-bottom: 1px solid #edf2ed !important;
+        }
+
+        .awb-menu__sub-li:last-child {
+          border-bottom: none !important;
         }
 
         .awb-menu__sub-a {
           display: block !important;
-          padding: 10px 20px !important;
-          font-size: 13px !important;
-          font-weight: 600 !important;
+          padding: 12px 18px !important;
+          font-size: 13.5px !important;
+          font-weight: 500 !important;
           color: #1e2d24 !important;
           text-decoration: none !important;
           transition: all 0.15s ease !important;
           border-left: 3px solid transparent !important;
-          background: transparent !important;
+          background: #ffffff !important;
           line-height: 1.4 !important;
           cursor: pointer !important;
         }
 
         .awb-menu__sub-a:hover,
         .awb-menu__sub-li.current-menu-item > .awb-menu__sub-a {
-          background: #eaf6ea !important;
+          background: #f0f8f0 !important;
           color: #117710 !important;
           border-left: 3px solid #117710 !important;
-          padding-left: 24px !important;
+          padding-left: 22px !important;
         }
       }
 
