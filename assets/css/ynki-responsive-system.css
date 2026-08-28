@@ -1870,7 +1870,56 @@ img {
 .positioning-cta-box > *,
 .join-banner-box > *,
 .unduh-card > *,
-.ynki-watermark-banner > *,
+.ynki-watermark-banner > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* =====================================================
+   PROGRAM CTA FULL-WIDTH SECTIONS WITH NATURE FOR LIVINGS WATERMARK
+   ===================================================== */
+#lg-cta,
+#nc-cta,
+#sus-cta,
+#int-cta,
+#inst-cta,
+#porto-cta,
+#dampak-mel,
+.program-cta-section {
+  background: #117710 !important;
+  padding: 90px 24px !important;
+  text-align: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+#lg-cta::before,
+#nc-cta::before,
+#sus-cta::before,
+#int-cta::before,
+#inst-cta::before,
+#porto-cta::before,
+#dampak-mel::before,
+.program-cta-section::before {
+  content: "NATURE FOR LIVINGS" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  font-size: clamp(38px, 6.5vw, 88px) !important;
+  font-weight: 900 !important;
+  color: rgba(255, 255, 255, 0.055) !important;
+  white-space: nowrap !important;
+  letter-spacing: 8px !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  font-family: 'Outfit', 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  text-transform: uppercase !important;
+  user-select: none !important;
+  line-height: 1 !important;
+  display: block !important;
+}
+
 #lg-cta > *,
 #nc-cta > *,
 #sus-cta > *,

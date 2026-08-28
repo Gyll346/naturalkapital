@@ -3804,7 +3804,33 @@
             }
 
             /* CTA */
-            #lg-cta { background: #ffffff; padding: 80px 24px; }
+            #lg-cta {
+              background: #117710;
+              padding: 90px 24px;
+              text-align: center;
+              position: relative;
+              overflow: hidden;
+            }
+            #lg-cta::before {
+              content: "NATURE FOR LIVINGS";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: clamp(38px, 6.5vw, 88px);
+              font-weight: 900;
+              color: rgba(255, 255, 255, 0.055);
+              white-space: nowrap;
+              letter-spacing: 8px;
+              pointer-events: none;
+              z-index: 0;
+              font-family: inherit;
+              user-select: none;
+            }
+            #lg-cta > * {
+              position: relative;
+              z-index: 1;
+            }
             #lg-cta h2 {
               font-size: clamp(24px, 3.5vw, 36px);
               font-weight: 800;
@@ -4581,8 +4607,7 @@
                   <!-- ================= CTA ================= -->
                   <section id="lg-cta" class="ynki-section">
                     <div class="ynki-container">
-                      <div class="gerakan-box">
-                        <span class="section-badge white"
+                      <span class="section-badge white"
                         >BERGABUNG BERSAMA KAMI</span
                       >
                       <h2>Dukung Program Landscape Governance YNKI</h2>
@@ -4630,7 +4655,6 @@
                           </svg>
                           Lihat Portfolio
                         </a>
-                      </div>
                       </div>
                     </div>
                   </section>
