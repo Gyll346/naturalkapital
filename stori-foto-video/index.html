@@ -3326,40 +3326,66 @@ img {
 .section-badge.green { background: #e8f5e8; color: #117710; border-color: #117710; }
 .divider-line { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 14px; }
 .divider-line .line { flex: 1; height: 1px; background: #d2e8d1; }
+
 .hero-section { position: relative; min-height: 82vh; display: flex; align-items: center; background-image: linear-gradient(155deg, rgba(5,42,5,0.93) 0%, rgba(12,80,11,0.72) 55%, rgba(0,0,0,0.40) 100%), url('/assets/images/homepage/hero-bg.png'); background-size: cover; background-position: center; padding: 110px 24px 90px; }
 .hero-section::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, #ffffff); pointer-events: none; }
 .hero-inner { position: relative; z-index: 2; max-width: 920px; margin: 0 auto; text-align: center; }
 .hero-crumb { font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #a3e0a2; margin-bottom: 20px; }
 .hero-crumb a { color: #d2f0d1; text-decoration: none; }
+.hero-crumb a:hover { color: #FF8000; }
 .hero-h1 { font-size: clamp(28px, 4.5vw, 48px); font-weight: 900; line-height: 1.2; color: #ffffff; margin: 0 0 20px; letter-spacing: -0.02em; }
 .hero-h1 .hl, .hero-h1 span.hl { color: #a3e0a2; font-size: 0.85em; display: inline-block; font-weight: 800; }
 .hero-sub { font-size: clamp(14px, 1.6vw, 17px); line-height: 1.85; color: #d2f0d1; max-width: 820px; margin: 0 auto 32px; }
 .hero-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
 .cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-.cta-section { background: #117710; padding: 90px 24px; text-align: center; }
-.cta-section h2 { font-size: clamp(24px,3.5vw,36px); font-weight: 800; color: #fff; margin: 0 0 16px; }
-.cta-section p { font-size: 15.5px; color: #d2f0d1; max-width: 700px; margin: 0 auto 32px; line-height: 1.7; }
-</style>
-<style>
+
+.stats-strip, #story-stats {
+  background: #117710;
+  padding: 64px 24px;
+  margin-top: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.stats-strip::before, #story-stats::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.stats-strip > *, #story-stats > * {
+  position: relative;
+  z-index: 1;
+}
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; }
+.stat-box { text-align: center; padding: 10px 24px; position: relative; }
+.stat-box:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 10%; bottom: 10%; width: 1px; background: rgba(255,255,255,0.15); }
+.stat-num { font-size: clamp(32px, 4vw, 50px); font-weight: 900; color: #fff; line-height: 1; margin-bottom: 8px; }
+.stat-num .plus { color: #FF8000; }
+.stat-label { font-size: 14px; font-weight: 700; color: #a3e0a2; margin-bottom: 6px; }
+.stat-desc { font-size: 12px; color: #d2f0d1; margin: 0; line-height: 1.5; }
+
 .intro-sec { background: #f5f8f5; padding: 90px 24px; }
 .intro-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; max-width: 1100px; margin: 0 auto; align-items: center; }
 .intro-text h3 { font-size: 26px; font-weight: 800; color: #0e241b; margin: 0 0 16px; line-height: 1.3; }
 .intro-text p { font-size: 15px; color: #536b5f; line-height: 1.8; margin: 0 0 16px; }
 
-.stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-.fstat-box { background: #fff; border: 1.5px solid #d2e8d1; border-radius: 16px; padding: 24px; display: flex; align-items: flex-start; gap: 16px; }
-.fstat-icon { font-size: 32px; line-height: 1; }
-.fstat-num { font-size: 26px; font-weight: 900; color: #117710; line-height: 1; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
-.fstat-num span { font-size: 18px; color: #FF8000; }
-.fstat-info h4 { font-size: 14px; font-weight: 800; color: #0e241b; margin: 0 0 4px; }
-.fstat-info p { font-size: 12.5px; color: #536b5f; margin: 0; }
+.intro-card { background: #fff; border: 1.5px solid #d2e8d1; border-radius: 18px; padding: 32px 28px; box-shadow: 0 10px 30px rgba(17,119,16,0.06); }
+.intro-card h4 { font-size: 18px; font-weight: 800; color: #0e241b; margin: 0 0 12px; }
+.intro-card p { font-size: 14px; color: #536b5f; line-height: 1.7; margin: 0 0 18px; }
+.intro-card .card-highlight { background: #e8f5e8; border-left: 4px solid #117710; padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 13.5px; color: #117710; font-weight: 600; }
 
-.filter-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 44px; }
-.filter-tag { font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 50px; border: 2px solid #d2e8d1; color: #117710; cursor: pointer; transition: all 0.3s; background: #fff; }
+.filter-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 40px; margin-bottom: 40px; }
+.filter-tag { font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 50px; border: 2px solid #d2e8d1; color: #117710; cursor: pointer; transition: all 0.3s; background: #fff; text-decoration: none; }
 .filter-tag:hover, .filter-tag.active { background: #117710; color: #fff; border-color: #117710; }
 
-.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; max-width: 1100px; margin-left: auto; margin-right: auto; }
-.g-card { background: #fff; border: 1px solid #dce8e1; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+.g-card { background: #fff; border: 1.5px solid #dce8e1; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
 .g-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(17,119,16,0.12); border-color: #117710; }
 .g-img { width: 100%; height: 200px; background: #eaf6ea; position: relative; display: flex; align-items: center; justify-content: center; font-size: 40px; color: #117710; overflow: hidden; }
 .g-img::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.03); transition: background 0.3s; }
@@ -3367,29 +3393,85 @@ img {
 .g-body { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
 .g-loc { font-size: 11px; font-weight: 800; color: #FF8000; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
 .g-body h3 { font-size: 16.5px; font-weight: 800; color: #0e241b; margin: 0 0 10px; line-height: 1.4; }
-.g-body p { font-size: 13.5px; color: #536b5f; line-height: 1.6; margin: 0; flex-grow: 1; }
+.g-body p { font-size: 13.5px; color: #536b5f; line-height: 1.65; margin: 0 0 16px; flex-grow: 1; }
+.btn-gallery { font-size: 13px; font-weight: 700; color: #117710; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+.btn-gallery:hover { opacity: 0.7; }
 
-.video-sec { background: #117710; padding: 90px 24px; }
-.video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; margin-top: 40px; }
-.v-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; overflow: hidden; transition: transform 0.3s; }
+.video-sec {
+  background: #117710;
+  padding: 90px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.video-sec::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.video-sec > * {
+  position: relative;
+  z-index: 1;
+}
+.video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 40px auto 0; }
+.v-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; overflow: hidden; transition: transform 0.3s, background 0.3s; display: flex; flex-direction: column; }
 .v-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.12); }
 .v-thumb { width: 100%; height: 180px; background: rgba(0,0,0,0.3); position: relative; display: flex; align-items: center; justify-content: center; }
-.v-play { width: 50px; height: 50px; background: #B22231; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; transition: transform 0.2s; }
+.v-play { width: 50px; height: 50px; background: #B22231; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; transition: transform 0.2s; box-shadow: 0 4px 14px rgba(0,0,0,0.3); }
 .v-card:hover .v-play { transform: scale(1.1); }
-.v-body { padding: 24px; }
+.v-body { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
 .v-dur { font-size: 11.5px; font-weight: 700; color: #a3e0a2; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
 .v-body h3 { font-size: 16px; font-weight: 800; color: #fff; margin: 0 0 10px; line-height: 1.4; }
-.v-body p { font-size: 13.5px; color: #d2f0d1; line-height: 1.6; margin: 0; }
+.v-body p { font-size: 13.5px; color: #d2f0d1; line-height: 1.6; margin: 0; flex-grow: 1; }
+
+.cta-section {
+  background: linear-gradient(135deg, #0c500b 0%, #082e07 100%);
+  padding: 90px 24px;
+  text-align: center;
+  margin-top: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: "NATURE FOR LIVINGS";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(38px, 6.5vw, 88px);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.055);
+  white-space: nowrap;
+  letter-spacing: 8px;
+  pointer-events: none;
+  z-index: 0;
+  font-family: inherit;
+  user-select: none;
+}
+.cta-section > * {
+  position: relative;
+  z-index: 1;
+}
+.cta-section h2 { font-size: clamp(24px,3.5vw,36px); font-weight: 800; color: #fff; margin: 0 0 16px; }
+.cta-section p { font-size: 15.5px; color: #d2f0d1; max-width: 700px; margin: 0 auto 32px; line-height: 1.7; }
 
 @media (max-width: 1024px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .stat-box::after { display: none; }
   .intro-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .video-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
+  .stats-row { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr; }
   .video-grid { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: 1fr; }
 }
 </style>
 <div class="fusion-row" style="max-width:100%;">
@@ -3400,7 +3482,7 @@ img {
 <!-- HERO -->
 <section class="hero-section ynki-section">
   <div class="hero-inner">
-    <div class="hero-crumb"><a href="/">Beranda</a> &nbsp;/&nbsp; <a href="/pustaka/">Pustaka &amp; Pengetahuan</a> &nbsp;/&nbsp; <span>Foto Story &amp; Video</span></div>
+    <div class="hero-crumb"><a href="/">Beranda</a> &nbsp;/&nbsp; <a href="/penelitian-laporan/">Pustaka &amp; Pengetahuan</a> &nbsp;/&nbsp; <span>Foto Story &amp; Video</span></div>
     <h1 class="hero-h1">Momen Perubahan<br><span class="hl">dalam Bingkai Visual</span></h1>
     <p class="hero-sub">Setiap gambar dan video adalah cerita tentang perubahan nyata di lapangan. Temukan dokumentasi visual perjalanan YNKI dalam memperkuat tata kelola lanskap yang inklusif dan kolaboratif.</p>
     <div class="hero-btns">
@@ -3410,44 +3492,51 @@ img {
   </div>
 </section>
 
-<!-- INTRO & STATS -->
+<!-- STATS STRIP WITH BUBBLE -->
+<section id="story-stats" class="stats-strip ynki-section">
+  <div class="ynki-container">
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-num">500<span class="plus">+</span></div>
+        <div class="stat-label">Foto Dokumentasi</div>
+        <p class="stat-desc">Dokumentasi kegiatan dan lanskap program</p>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">30<span class="plus">+</span></div>
+        <div class="stat-label">Video Dokumenter</div>
+        <p class="stat-desc">Cerita perubahan dan liputan lapangan</p>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">200<span class="plus">+</span></div>
+        <div class="stat-label">Publikasi Visual</div>
+        <p class="stat-desc">Konten edukasi dan kampanye sosial</p>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">1.000<span class="plus">+</span></div>
+        <div class="stat-label">Warga Terlibat</div>
+        <p class="stat-desc">Potret kebersamaan masyarakat lokal</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO NARRATIVE -->
 <section class="intro-sec ynki-section">
   <div class="ynki-container">
     <div class="intro-grid">
       <div class="intro-text">
         <div class="divider-line" style="margin-bottom:20px;justify-content:flex-start;"><span class="section-badge">KOLEKSI VISUAL YNKI</span><span class="line" style="flex:0.5;"></span></div>
-        <h3>Mendokumentasikan Setiap Langkah Perubahan</h3>
-        <p>YNKI secara aktif mendokumentasikan setiap langkah perjalanan dalam mendorong perubahan di tingkat lanskap, kelembagaan, dan masyarakat di Kalimantan Barat. Berikut adalah koleksi visual yang telah diabadikan dari berbagai program dan kegiatan lapangan.</p>
+        <h3>Mendokumentasikan Setiap Langkah Perubahan Lanskap</h3>
+        <p>YNKI secara aktif mendokumentasikan setiap langkah perjalanan dalam mendorong perubahan di tingkat lanskap, kelembagaan, dan masyarakat di Kalimantan Barat. Melalui media foto dan video, kami menangkap esensi kerja keras mitra dan komunitas lokal di lapangan.</p>
+        <p>Kisah visual ini menjadi jembatan transparansi sekaligus sumber inspirasi bagi publik untuk terus mendukung pelestarian ekosistem dan penguatan mata pencaharian ramah lingkungan.</p>
       </div>
       
-      <div class="stats-grid">
-        <div class="fstat-box">
-          <div class="fstat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg></div>
-          <div>
-            <div class="fstat-num">500<span>+</span></div>
-            <div class="fstat-info"><h4>Foto &amp; Dokumentasi</h4><p>Koleksi foto lapangan program YNKI</p></div>
-          </div>
-        </div>
-        <div class="fstat-box">
-          <div class="fstat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></div>
-          <div>
-            <div class="fstat-num">30<span>+</span></div>
-            <div class="fstat-info"><h4>Video Kegiatan</h4><p>Dokumentasi lapangan &amp; wawancara</p></div>
-          </div>
-        </div>
-        <div class="fstat-box">
-          <div class="fstat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></div>
-          <div>
-            <div class="fstat-num">200<span>+</span></div>
-            <div class="fstat-info"><h4>Postingan Medsos</h4><p>Update program di LinkedIn &amp; IG</p></div>
-          </div>
-        </div>
-        <div class="fstat-box">
-          <div class="fstat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-          <div>
-            <div class="fstat-num">1.000<span>+</span></div>
-            <div class="fstat-info"><h4>Momen Bersama Masyarakat</h4><p>Kebersamaan di berbagai desa</p></div>
-          </div>
+      <div class="intro-card">
+        <span class="section-badge green">CERITA DARI TAPAK</span>
+        <h4>Kekuatan Narasi Visual Komunitas</h4>
+        <p>Bagi YNKI, dokumentasi bukan sekadar arsip, melainkan medium pemberdayaan untuk menyuarakan aspirasi masyarakat yang menjaga bentang alam Kalimantan Barat.</p>
+        <div class="card-highlight">
+          "Sebuah foto dapat menceritakan seribu perjuangan, dan sebuah video mampu menghadirkan denyut kehidupan lanskap langsung ke hadapan dunia."
         </div>
       </div>
     </div>
@@ -3460,16 +3549,16 @@ img {
     <div style="text-align:center;">
       <div class="divider-line"><span class="line"></span><span class="section-badge green">GALERI FOTO YNKI</span><span class="line"></span></div>
       <h2 style="font-size:clamp(22px,3vw,34px);font-weight:800;color:#0e241b;margin:0 0 12px;">Foto-Foto dari Lapangan</h2>
-      <p style="font-size:15px;color:#536b5f;max-width:700px;margin:0 auto;">Kumpulan foto dokumentasi dari berbagai program. Setiap foto adalah cerita tentang perubahan dan harapan yang nyata.</p>
+      <p style="font-size:15px;color:#536b5f;max-width:760px;margin:0 auto;">Kumpulan foto dokumentasi dari berbagai program. Setiap foto adalah cerita tentang perubahan dan harapan yang nyata.</p>
     </div>
 
     <!-- Filter -->
     <div class="filter-row">
-      <span class="filter-tag active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Semua Visual</span>
-      <span class="filter-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M12 18s2.5-1.5 3-4"></path><path d="M12 14s-2.5-1.5-3-4"></path><path d="M12 10s2.5-1.5 3-4"></path><path d="M12 6s-2.5-1.5-3-4"></path></svg> Restorasi Gambut</span>
-      <span class="filter-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 22h20L12 2z"></path><path d="M12 2v20"></path><path d="M7 12l5 10 5-10"></path></svg> Youth Camp</span>
-      <span class="filter-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg> Pemberdayaan Masyarakat</span>
-      <span class="filter-tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Kolaborasi Kemitraan</span>
+      <span class="filter-tag active">Semua Visual</span>
+      <span class="filter-tag">Restorasi Gambut</span>
+      <span class="filter-tag">Youth Camp &amp; Pemuda</span>
+      <span class="filter-tag">Pemberdayaan Masyarakat</span>
+      <span class="filter-tag">Kemitraan &amp; Lokakarya</span>
     </div>
 
     <div class="gallery-grid">
@@ -3480,6 +3569,7 @@ img {
           <div class="g-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Desa Permata Jaya · 2024</div>
           <h3>Restorasi Gambut di Desa Permata Jaya</h3>
           <p>Penanaman pohon dalam rangka Hari Lingkungan Hidup Sedunia, melibatkan BKSDA KalBar, Dinas Lingkungan Hidup, masyarakat, dan pelajar.</p>
+          <a href="#" class="btn-gallery">Buka Album Foto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
       <!-- 2 -->
@@ -3489,6 +3579,7 @@ img {
           <div class="g-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Kabupaten Ketapang · 2024</div>
           <h3>Youth Camp: Community Action to Protect Forest</h3>
           <p>Youth Camp melibatkan 30 anak muda dari Desa Mayak, Ulak Medang, dan Tanjungpura untuk menjadi agen perubahan di komunitas mereka.</p>
+          <a href="#" class="btn-gallery">Buka Album Foto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
       <!-- 3 -->
@@ -3498,6 +3589,7 @@ img {
           <div class="g-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Desa Ulak Medang · 2024</div>
           <h3>Pengembangan Usaha Madu Hutan Desa Ulak Medang</h3>
           <p>Penyerahan peralatan canggih (dehumidifier, refraktometer) untuk meningkatkan kualitas madu hutan sesuai standar SNI.</p>
+          <a href="#" class="btn-gallery">Buka Album Foto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
       <!-- 4 -->
@@ -3507,6 +3599,7 @@ img {
           <div class="g-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Kabupaten Ketapang · 2024</div>
           <h3>Rapat Koordinasi YNKI-UNDP KalFor bersama OPD &amp; NGO</h3>
           <p>Pertemuan puncak kolaborasi pendampingan satu tahun di tiga desa, mencerminkan komitmen tata kelola lanskap inklusif.</p>
+          <a href="#" class="btn-gallery">Buka Album Foto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
       <!-- 5 -->
@@ -3516,6 +3609,7 @@ img {
           <div class="g-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Desa Permata Jaya · 2024</div>
           <h3>Lokakarya Restorasi Gambut Partisipatif</h3>
           <p>Forum dialog perencanaan bersama untuk pemulihan ekosistem gambut yang mempertemukan berbagai elemen masyarakat desa.</p>
+          <a href="#" class="btn-gallery">Buka Album Foto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
       <!-- 6 -->
@@ -3525,6 +3619,7 @@ img {
           <div class="g-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Sungai Tohor, Riau · 2022</div>
           <h3>Studi Banding Restorasi Gambut ke Pulau Tebing Tinggi</h3>
           <p>Berbagi pengalaman dan praktik terbaik restorasi gambut untuk memperkaya wawasan dan memperluas jaringan kolaborasi YNKI.</p>
+          <a href="#" class="btn-gallery">Buka Album Foto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
     </div>
@@ -3537,7 +3632,7 @@ img {
     <div style="text-align:center;">
       <span class="section-badge white">VIDEO DOKUMENTASI YNKI</span>
       <h2 style="font-size:clamp(22px,3vw,34px);font-weight:800;color:#fff;margin:12px 0;">Saksikan Perubahan Nyata di Lapangan</h2>
-      <p style="font-size:15px;color:#d2f0d1;max-width:700px;margin:0 auto;">Saksikan momen-momen penting perjalanan YNKI melalui video dokumentasi kegiatan lapangan dan wawancara dengan masyarakat.</p>
+      <p style="font-size:15px;color:#d2f0d1;max-width:760px;margin:0 auto;">Saksikan momen-momen penting perjalanan YNKI melalui video dokumentasi kegiatan lapangan dan wawancara dengan masyarakat.</p>
     </div>
 
     <div class="video-grid">
@@ -3548,7 +3643,7 @@ img {
         <div class="v-body">
           <div class="v-dur">⏱ Durasi: 3:45 menit</div>
           <h3>Restorasi Gambut Bersama Masyarakat Permata Jaya</h3>
-          <p>Dokumentasi lengkap kegiatan penanaman pohon dan pemulihan ekosistem gambut di Kabupaten Kubu Raya.</p>
+          <p>Dokumentasi penanaman pohon dan pembangunan sekat kanal berbasis komunitas di Desa Permata Jaya.</p>
         </div>
       </div>
       <div class="v-card">
@@ -3557,8 +3652,8 @@ img {
         </div>
         <div class="v-body">
           <div class="v-dur">⏱ Durasi: 4:20 menit</div>
-          <h3>Youth Camp: Anak Muda Menjaga Hutan</h3>
-          <p>Kisah inspiratif 30 anak muda di Ketapang belajar menjadi pemimpin perubahan dalam perlindungan hutan.</p>
+          <h3>Youth Camp: Aksi Nyata Generasi Muda Kalbar</h3>
+          <p>Potret semangat anak muda penjaga hutan di lanskap Ketapang dalam melindungi keanekaragaman hayati.</p>
         </div>
       </div>
       <div class="v-card">
@@ -3567,8 +3662,8 @@ img {
         </div>
         <div class="v-body">
           <div class="v-dur">⏱ Durasi: 5:10 menit</div>
-          <h3>Kolaborasi YNKI-UNDP KalFor untuk Desa Berkelanjutan</h3>
-          <p>Perjalanan satu tahun kolaborasi mendampingi tiga desa di Kabupaten Ketapang menuju tata kelola komunitas yang kuat.</p>
+          <h3>Kisah Madu Hutan Lestari Desa Ulak Medang</h3>
+          <p>Wawancara dengan pemanen madu hutan tentang peningkatan kualitas pascapanen berstandar SNI.</p>
         </div>
       </div>
     </div>
@@ -3578,16 +3673,19 @@ img {
 <!-- CTA -->
 <section class="cta-section ynki-section">
   <div class="ynki-container">
-    <h2>Bagikan Foto &amp; Cerita Anda!</h2>
-    <p>YNKI mengundang masyarakat dan mitra untuk berbagi foto tentang perubahan yang terjadi di desa atau lanskap Anda. Setiap momen perubahan layak untuk dibagikan kepada dunia.</p>
+    <span class="section-badge white">BERGABUNG BERSAMA KAMI</span>
+    <h2>Bagikan &amp; Dukung Cerita Perubahan Lanskap</h2>
+    <p>Mari bersama menyebarkan inspirasi pemulihan modal alam dan kesejahteraan masyarakat di lanskap Kalimantan Barat.</p>
     <div class="cta-btns">
-      <a href="/kontak/" class="btn-cta-main" style="background:#fff;color:#117710;">Kirimkan Dokumentasi Anda</a>
+      <a href="/kontak-kami/" class="btn-cta-main">Dukung Aksi Kami</a>
+      <a href="/penelitian-laporan/" class="btn-cta-second">Lihat Publikasi Riset</a>
     </div>
   </div>
 </section>
 
 </div></div></section></div>
 </main>
+
         <div class="fusion-tb-footer fusion-footer">
           <div class="fusion-footer-widget-area fusion-widget-area">
             <div
