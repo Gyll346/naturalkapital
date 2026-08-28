@@ -233,7 +233,7 @@
         <div class="ynki-footer-grid">
             <div class="footer-col">
                 <h4>Yayasan Natural Kapital Indonesia</h4>
-                <p>Nature for Life<br>Pontianak, Kalimantan Barat, Indonesia</p>
+                <p>Nature for Life<br>Gg. Gn. Malabar, Sungai Jawi, Kec. Pontianak Kota, Kota Pontianak, Kalimantan Barat 78244</p>
                 <p>📧 <a href="mailto:sekretariat@naturalkapital.or.id">sekretariat@naturalkapital.or.id</a></p>
                 <div class="ynki-footer-social" style="margin-top: 16px;">
                     <a href="https://www.youtube.com/@naturalkapital123" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-youtube" title="YouTube" aria-label="YouTube">
