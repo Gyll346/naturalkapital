@@ -1878,6 +1878,9 @@ img {
 /* =====================================================
    PROGRAM CTA FULL-WIDTH SECTIONS WITH NATURE FOR LIVINGS WATERMARK
    ===================================================== */
+/* =====================================================
+   PROGRAM & GENERAL CTA FULL-WIDTH SECTIONS WITH NATURE FOR LIVINGS WATERMARK
+   ===================================================== */
 #lg-cta,
 #nc-cta,
 #sus-cta,
@@ -1885,10 +1888,12 @@ img {
 #inst-cta,
 #porto-cta,
 #dampak-mel,
-.program-cta-section {
+.program-cta-section,
+.cta-section {
   background: linear-gradient(135deg, #0c500b 0%, #082e07 100%) !important;
   padding: 90px 24px !important;
   text-align: center !important;
+  margin-top: 48px !important;
   position: relative !important;
   overflow: hidden !important;
 }
@@ -1900,7 +1905,8 @@ img {
 #inst-cta::before,
 #porto-cta::before,
 #dampak-mel::before,
-.program-cta-section::before {
+.program-cta-section::before,
+.cta-section::before {
   content: "NATURE FOR LIVINGS" !important;
   position: absolute !important;
   top: 50% !important;
@@ -1918,6 +1924,9 @@ img {
   user-select: none !important;
   line-height: 1 !important;
   display: block !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0 !important;
 }
 
 #lg-cta > *,
@@ -1927,13 +1936,14 @@ img {
 #inst-cta > *,
 #porto-cta > *,
 #dampak-mel > *,
-.program-cta-section > * {
+.program-cta-section > *,
+.cta-section > * {
   position: relative !important;
   z-index: 1 !important;
 }
 
 /* =====================================================
-   SEKSI DENGAN GELEMBUNG POJOK KANAN ATAS (STATS, HASIL STRATEGIS & CTA SECTION)
+   SEKSI DENGAN GELEMBUNG POJOK KANAN ATAS (STATS & HASIL STRATEGIS)
    ===================================================== */
 #stats-home,
 #lg-hasil,
@@ -1944,8 +1954,7 @@ img {
 #dampak-angka,
 #liputan-stats,
 .stats-strip,
-.hasil-strategis-section,
-.cta-section {
+.hasil-strategis-section {
   background: #117710 !important;
   position: relative !important;
   overflow: hidden !important;
@@ -1967,11 +1976,6 @@ img {
   margin-top: 48px !important;
 }
 
-.cta-section {
-  padding: 90px 24px !important;
-  margin-top: 48px !important;
-}
-
 #stats-home::before,
 #lg-hasil::before,
 #nc-hasil::before,
@@ -1981,8 +1985,7 @@ img {
 #dampak-angka::before,
 #liputan-stats::before,
 .stats-strip::before,
-.hasil-strategis-section::before,
-.cta-section::before {
+.hasil-strategis-section::before {
   content: "" !important;
   position: absolute !important;
   top: -50% !important;
@@ -2005,8 +2008,7 @@ img {
 #dampak-angka > *,
 #liputan-stats > *,
 .stats-strip > *,
-.hasil-strategis-section > *,
-.cta-section > * {
+.hasil-strategis-section > * {
   position: relative !important;
   z-index: 1 !important;
 }
