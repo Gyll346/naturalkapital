@@ -3653,6 +3653,16 @@
               position: relative;
               overflow: hidden;
             }
+            #stats-home::before {
+              content: "";
+              position: absolute;
+              top: -50%;
+              right: -10%;
+              width: 500px;
+              height: 500px;
+              background: rgba(255, 255, 255, 0.04);
+              border-radius: 50%;
+            }
             .stats-grid {
               display: grid;
               grid-template-columns: repeat(4, 1fr);
