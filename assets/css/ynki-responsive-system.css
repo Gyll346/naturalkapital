@@ -1818,7 +1818,8 @@ img {
 
 /* =====================================================
    UNIVERSAL CTA BANNER & WATERMARK SYSTEM (NATURE FOR LIVINGS)
-   Matching Gambar 1 (Home), Gambar 2 (Sejarah), Gambar 3 (Tim), Gambar 4 (LGOS)
+   Matching Gambar 1 (Home), Gambar 2 (Sejarah), Gambar 3 (Tim), Gambar 4 (LGOS),
+   and Program CTA Sections (Landscape Governance, Natural Capital, etc.)
    ===================================================== */
 .gerakan-box,
 .positioning-cta-box,
@@ -1833,12 +1834,34 @@ img {
   z-index: 1 !important;
 }
 
+#lg-cta,
+#nc-cta,
+#sus-cta,
+#int-cta,
+#inst-cta,
+#porto-cta,
+#dampak-mel,
+.program-cta-section {
+  background: #117710 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+}
+
 /* Background Watermark Text "NATURE FOR LIVINGS" */
 .gerakan-box::before,
 .positioning-cta-box::before,
 .join-banner-box::before,
 .unduh-card::before,
-.ynki-watermark-banner::before {
+.ynki-watermark-banner::before,
+#lg-cta::before,
+#nc-cta::before,
+#sus-cta::before,
+#int-cta::before,
+#inst-cta::before,
+#porto-cta::before,
+#dampak-mel::before,
+.program-cta-section::before {
   content: "NATURE FOR LIVINGS" !important;
   position: absolute !important;
   top: 50% !important;
@@ -1862,10 +1885,35 @@ img {
 .positioning-cta-box > *,
 .join-banner-box > *,
 .unduh-card > *,
-.ynki-watermark-banner > * {
+.ynki-watermark-banner > *,
+#lg-cta > *,
+#nc-cta > *,
+#sus-cta > *,
+#int-cta > *,
+#inst-cta > *,
+#porto-cta > *,
+#dampak-mel > *,
+.program-cta-section > * {
   position: relative !important;
   z-index: 1 !important;
 }
+
+/* =====================================================
+   STATS SECTION - CLEAN SOLID GREEN BACKGROUND LIKE GAMBAR 1
+   ===================================================== */
+#stats-home,
+.stats-section-clean {
+  background: #117710 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+#stats-home::before,
+.stats-section-clean::before {
+  display: none !important;
+  content: none !important;
+}
+
 
 
 

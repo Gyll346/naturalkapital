@@ -3412,7 +3412,33 @@ img {
 .kaitan-body p { font-size: 13px; line-height: 1.6; color: #536b5f; margin: 0; }
 
 /* CTA */
-#lg-cta { background: #117710; padding: 90px 24px; text-align: center; }
+#lg-cta {
+  background: linear-gradient(135deg, #0c500b 0%, #082e07 100%);
+  padding: 90px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#lg-cta::before {
+  content: "NATURE FOR LIVINGS";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(38px, 6.5vw, 88px);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.055);
+  white-space: nowrap;
+  letter-spacing: 8px;
+  pointer-events: none;
+  z-index: 0;
+  font-family: inherit;
+  user-select: none;
+}
+#lg-cta > * {
+  position: relative;
+  z-index: 1;
+}
 #lg-cta h2 { font-size: clamp(24px,3.5vw,36px); font-weight: 800; color: #ffffff; margin: 0 0 16px; }
 #lg-cta p { font-size: 15.5px; color: #d2f0d1; max-width: 700px; margin: 0 auto 32px; line-height: 1.7; }
 .cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
