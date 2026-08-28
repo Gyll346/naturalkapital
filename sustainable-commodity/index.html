@@ -3585,7 +3585,9 @@
               margin: 0;
             }
 
-            #sus-hasil { background: linear-gradient(135deg, #0c500b 0%, #082e07 100%); padding: 90px 24px; }
+            #sus-hasil { background: #117710; padding: 90px 24px; position: relative; overflow: hidden; }
+#sus-hasil::before { content: ""; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: rgba(255, 255, 255, 0.04); border-radius: 50%; pointer-events: none; z-index: 0; }
+#sus-hasil > * { position: relative; z-index: 1; }
             .hasil-grid {
               display: grid;
               grid-template-columns: repeat(5, 1fr);

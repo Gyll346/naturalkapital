@@ -1876,31 +1876,50 @@ img {
 }
 
 /* =====================================================
-   HASIL STRATEGIS SECTIONS - MATCHING RICH DARK GREEN GRADIENT
+   SEKSI DENGAN GELEMBUNG POJOK KANAN ATAS (STATS & HASIL STRATEGIS)
    ===================================================== */
+#stats-home,
 #lg-hasil,
 #nc-hasil,
 #sus-hasil,
 #int-hasil,
 #inst-hasil,
 .hasil-strategis-section {
-  background: linear-gradient(135deg, #0c500b 0%, #082e07 100%) !important;
-}
-
-/* =====================================================
-   STATS SECTION - CLEAN SOLID GREEN BACKGROUND LIKE GAMBAR 1
-   ===================================================== */
-#stats-home,
-.stats-section-clean {
   background: #117710 !important;
+  padding: 70px 24px !important;
   position: relative !important;
   overflow: hidden !important;
 }
 
 #stats-home::before,
-.stats-section-clean::before {
-  display: none !important;
-  content: none !important;
+#lg-hasil::before,
+#nc-hasil::before,
+#sus-hasil::before,
+#int-hasil::before,
+#inst-hasil::before,
+.hasil-strategis-section::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -50% !important;
+  right: -10% !important;
+  width: 500px !important;
+  height: 500px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  display: block !important;
+}
+
+#stats-home > *,
+#lg-hasil > *,
+#nc-hasil > *,
+#sus-hasil > *,
+#int-hasil > *,
+#inst-hasil > *,
+.hasil-strategis-section > * {
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 

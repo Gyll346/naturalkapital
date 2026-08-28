@@ -3622,7 +3622,9 @@
               box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
             }
 
-            #int-hasil { background: linear-gradient(135deg, #0c500b 0%, #082e07 100%); padding: 90px 24px; }
+            #int-hasil { background: #117710; padding: 90px 24px; position: relative; overflow: hidden; }
+#int-hasil::before { content: ""; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: rgba(255, 255, 255, 0.04); border-radius: 50%; pointer-events: none; z-index: 0; }
+#int-hasil > * { position: relative; z-index: 1; }
             .hasil-grid {
               display: grid;
               grid-template-columns: repeat(5, 1fr);
