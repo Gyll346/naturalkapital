@@ -1833,6 +1833,14 @@ img {
   z-index: 1 !important;
 }
 
+.gerakan-box,
+.positioning-cta-box,
+.join-banner-box,
+.ynki-watermark-banner {
+  padding: 60px 48px !important;
+  text-align: center !important;
+}
+
 /* Background Watermark Text "NATURE FOR LIVINGS" */
 .gerakan-box::before,
 .positioning-cta-box::before,
