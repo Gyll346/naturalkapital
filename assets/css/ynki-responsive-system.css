@@ -1886,7 +1886,7 @@ img {
 #porto-cta,
 #dampak-mel,
 .program-cta-section {
-  background: #117710 !important;
+  background: linear-gradient(135deg, #0c500b 0%, #082e07 100%) !important;
   padding: 90px 24px !important;
   text-align: center !important;
   position: relative !important;
