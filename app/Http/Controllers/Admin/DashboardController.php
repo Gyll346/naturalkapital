@@ -40,10 +40,23 @@ class DashboardController extends Controller
         $totalArticlesCount = Article::count();
 
         // 4. Interaksi & Partisipasi
-        $totalContactMessagesCount = ContactMessage::count();
-        $unreadContactMessagesCount = ContactMessage::where('is_read', false)->count();
-        $totalParticipationsCount = Participation::count();
-        $unreadParticipationsCount = Participation::where('is_read', false)->count();
+        $totalContactMessagesCount = 0;
+        $unreadContactMessagesCount = 0;
+        if (\Illuminate\Support\Facades\Schema::hasTable('contact_messages')) {
+            try {
+                $totalContactMessagesCount = ContactMessage::count();
+                $unreadContactMessagesCount = ContactMessage::where('is_read', false)->count();
+            } catch (\Throwable $e) {}
+        }
+
+        $totalParticipationsCount = 0;
+        $unreadParticipationsCount = 0;
+        if (\Illuminate\Support\Facades\Schema::hasTable('participations')) {
+            try {
+                $totalParticipationsCount = Participation::count();
+                $unreadParticipationsCount = Participation::where('is_read', false)->count();
+            } catch (\Throwable $e) {}
+        }
 
         // 5. Hitung Total Dokumen File PDF & Media Terunggah
         $totalPdfDocsCount = TransparencyReport::whereNotNull('file_pdf_path')->count()
