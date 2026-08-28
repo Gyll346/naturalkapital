@@ -3021,49 +3021,71 @@ div[class*="fusion-builder-row-1"],
           <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap">
 
           <style>
-            .ynki-hero-compact {
-              position: relative;
-              background: linear-gradient(155deg, rgba(5,42,5,0.92) 0%, rgba(12,80,11,0.85) 60%, rgba(0,0,0,0.6) 100%), url('/assets/images/homepage/hero-bg.png');
-              background-size: cover;
-              background-position: center;
-              padding: 70px 24px 60px;
-              color: #ffffff;
-              text-align: center;
-            }
-            .section-badge-orange {
-              display: inline-flex;
-              align-items: center;
-              gap: 6px;
-              font-size: 11px;
-              font-weight: 800;
-              letter-spacing: 1.5px;
-              text-transform: uppercase;
-              color: #FF8000 !important;
-              background: #fff3e6 !important;
-              border: 1px solid rgba(255,128,0,0.4) !important;
-              padding: 5px 16px;
-              border-radius: 50px;
-              margin-bottom: 16px;
-              box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            }
-            .ynki-hero-h1 {
-              font-family: 'Montserrat', sans-serif;
-              font-size: clamp(26px, 4vw, 40px);
-              font-weight: 900;
-              line-height: 1.25;
-              color: #ffffff;
-              margin: 0 0 14px;
-            }
-            .ynki-hero-h1 span.hl-orange {
-              color: #FF8000;
-            }
-            .ynki-hero-sub {
-              font-size: clamp(14px, 1.5vw, 16.5px);
-              line-height: 1.75;
-              color: #d2f0d1;
-              max-width: 800px;
-              margin: 0 auto;
-            }
+            /* Standard Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(155deg, rgba(5,42,5,0.93) 0%, rgba(12,80,11,0.72) 55%, rgba(0,0,0,0.40) 100%), url('/assets/images/homepage/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  padding: 110px 24px 90px;
+}
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, #ffffff);
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-crumb {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #a3e0a2;
+  margin-bottom: 20px;
+}
+.hero-crumb a { color: #d2f0d1; text-decoration: none; }
+.hero-crumb a:hover { color: #FF8000; }
+.hero-h1 {
+  font-size: clamp(28px, 4.5vw, 48px);
+  font-weight: 900;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0 0 20px;
+  letter-spacing: -0.02em;
+}
+.hero-h1 .hl, .hero-h1 span.hl {
+  color: #a3e0a2;
+  font-size: 0.85em;
+  display: inline-block;
+  font-weight: 800;
+}
+.hero-sub {
+  font-size: clamp(14px, 1.6vw, 17px);
+  line-height: 1.85;
+  color: #d2f0d1;
+  max-width: 820px;
+  margin: 0 auto 32px;
+}
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
 
             .ynki-grid-donation {
               max-width: 1200px;
@@ -3226,15 +3248,16 @@ div[class*="fusion-builder-row-1"],
           </style>
 
           <!-- Hero Section Compact -->
-          <section class="ynki-hero-compact">
-            <div style="max-width: 920px; margin: 0 auto; position: relative; z-index: 2;">
-              <span class="section-badge-orange">Dukungan &amp; Filantropi Konservasi</span>
-              <h1 class="ynki-hero-h1">Dukung Pelestarian <span class="hl-orange">Lanskap Berkelanjutan</span></h1>
-              <p class="ynki-hero-sub">
-                Setiap kontribusi Anda disalurkan secara langsung untuk program restorasi ekosistem gambut, kemandirian masyarakat adat di sekitar lanskap, dan perlindungan keanekaragaman hayati Kalimantan.
-              </p>
-            </div>
-          </section>
+          <section class="hero-section ynki-section">
+  <div class="hero-inner">
+    <div class="hero-crumb"><a href="/">Beranda</a> &nbsp;/&nbsp; <span>Donasi &amp; Dukungan Program</span></div>
+    <h1 class="hero-h1">Dukung Pelestarian Lanskap<br><span class="hl">&amp; Kesejahteraan Masyarakat Tapak</span></h1>
+    <p class="hero-sub">Setiap kontribusi Anda disalurkan secara langsung untuk program restorasi ekosistem gambut, kemandirian masyarakat lokal di sekitar lanskap, dan perlindungan keanekaragaman hayati Kalimantan Barat.</p>
+    <div class="hero-btns">
+      <a href="#form-donasi" class="btn-cta-main">Salurkan Donasi</a><a href="#program-donasi" class="btn-cta-second">Pilihan Program</a>
+    </div>
+  </div>
+</section>
 
           <!-- Grid Konten Donasi -->
           <div class="ynki-grid-donation">
