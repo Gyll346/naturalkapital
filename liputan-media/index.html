@@ -3482,6 +3482,25 @@
               background: #117710;
               padding: 90px 24px;
               text-align: center;
+              margin-top: 48px;
+              position: relative;
+              overflow: hidden;
+            }
+            .cta-section::before {
+              content: "";
+              position: absolute;
+              top: -50%;
+              right: -10%;
+              width: 500px;
+              height: 500px;
+              background: rgba(255, 255, 255, 0.04);
+              border-radius: 50%;
+              pointer-events: none;
+              z-index: 0;
+            }
+            .cta-section > * {
+              position: relative;
+              z-index: 1;
             }
             .cta-section h2 {
               font-size: clamp(24px, 3.5vw, 36px);

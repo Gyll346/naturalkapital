@@ -1933,7 +1933,7 @@ img {
 }
 
 /* =====================================================
-   SEKSI DENGAN GELEMBUNG POJOK KANAN ATAS (STATS & HASIL STRATEGIS)
+   SEKSI DENGAN GELEMBUNG POJOK KANAN ATAS (STATS, HASIL STRATEGIS & CTA SECTION)
    ===================================================== */
 #stats-home,
 #lg-hasil,
@@ -1944,7 +1944,8 @@ img {
 #dampak-angka,
 #liputan-stats,
 .stats-strip,
-.hasil-strategis-section {
+.hasil-strategis-section,
+.cta-section {
   background: #117710 !important;
   position: relative !important;
   overflow: hidden !important;
@@ -1966,6 +1967,11 @@ img {
   margin-top: 48px !important;
 }
 
+.cta-section {
+  padding: 90px 24px !important;
+  margin-top: 48px !important;
+}
+
 #stats-home::before,
 #lg-hasil::before,
 #nc-hasil::before,
@@ -1975,7 +1981,8 @@ img {
 #dampak-angka::before,
 #liputan-stats::before,
 .stats-strip::before,
-.hasil-strategis-section::before {
+.hasil-strategis-section::before,
+.cta-section::before {
   content: "" !important;
   position: absolute !important;
   top: -50% !important;
@@ -1998,7 +2005,8 @@ img {
 #dampak-angka > *,
 #liputan-stats > *,
 .stats-strip > *,
-.hasil-strategis-section > * {
+.hasil-strategis-section > *,
+.cta-section > * {
   position: relative !important;
   z-index: 1 !important;
 }
