@@ -1941,11 +1941,29 @@ img {
 #sus-hasil,
 #int-hasil,
 #inst-hasil,
+#dampak-angka,
+#liputan-stats,
+.stats-strip,
 .hasil-strategis-section {
   background: #117710 !important;
-  padding: 70px 24px !important;
   position: relative !important;
   overflow: hidden !important;
+}
+
+#stats-home,
+#lg-hasil,
+#nc-hasil,
+#sus-hasil,
+#int-hasil,
+#inst-hasil,
+.hasil-strategis-section {
+  padding: 70px 24px !important;
+}
+
+#dampak-angka,
+#liputan-stats {
+  padding: 64px 24px !important;
+  margin-top: 48px !important;
 }
 
 #stats-home::before,
@@ -1954,6 +1972,9 @@ img {
 #sus-hasil::before,
 #int-hasil::before,
 #inst-hasil::before,
+#dampak-angka::before,
+#liputan-stats::before,
+.stats-strip::before,
 .hasil-strategis-section::before {
   content: "" !important;
   position: absolute !important;
@@ -1974,6 +1995,9 @@ img {
 #sus-hasil > *,
 #int-hasil > *,
 #inst-hasil > *,
+#dampak-angka > *,
+#liputan-stats > *,
+.stats-strip > *,
 .hasil-strategis-section > * {
   position: relative !important;
   z-index: 1 !important;

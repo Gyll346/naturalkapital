@@ -3343,7 +3343,29 @@ img {
 .cta-section p { font-size: 15.5px; color: #d2f0d1; max-width: 700px; margin: 0 auto 32px; line-height: 1.7; }
 </style>
 <style>
-.stats-strip { background: #117710; padding: 64px 24px; }
+.stats-strip, #dampak-angka {
+  background: #117710;
+  padding: 64px 24px;
+  margin-top: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.stats-strip::before, #dampak-angka::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.stats-strip > *, #dampak-angka > * {
+  position: relative;
+  z-index: 1;
+}
 .stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; }
 .stat-box { text-align: center; padding: 10px 24px; position: relative; }
 .stat-box:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 10%; bottom: 10%; width: 1px; background: rgba(255,255,255,0.15); }
