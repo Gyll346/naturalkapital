@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\LgosController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\TransparencyController;
 use App\Http\Controllers\Admin\MediaStoryController;
+use App\Http\Controllers\Admin\ContactMessageController;
+use App\Http\Controllers\Admin\ParticipationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,8 +53,10 @@ Route::get('/stori-foto-video', [PageContentController::class, 'mediaStories']);
 // Halaman Khusus Ikut Serta & Kontak Kami
 Route::get('/ikut-terlibat', [PageContentController::class, 'ikutTerlibat'])->name('public.ikut_terlibat');
 Route::get('/ikut-serta', [PageContentController::class, 'ikutTerlibat'])->name('public.ikut_serta');
+Route::post('/ikut-serta', [PageContentController::class, 'storeParticipation'])->name('public.ikut_serta.store');
 Route::get('/kontak-kami', [PageContentController::class, 'kontakKami'])->name('public.kontak_kami');
 Route::get('/hubungi-kami', [PageContentController::class, 'kontakKami'])->name('public.hubungi_kami');
+Route::post('/kontak-kami', [PageContentController::class, 'storeContactMessage'])->name('public.kontak_kami.store');
 
 
 /*
@@ -82,6 +86,20 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     Route::get('donations/{id}', [DonationController::class, 'show'])->name('donations.show');
     Route::patch('donations/{id}/verify', [DonationController::class, 'verify'])->name('donations.verify');
     Route::patch('donations/{id}/reject', [DonationController::class, 'reject'])->name('donations.reject');
+
+    // Pesan Masuk (Kontak Kami)
+    Route::get('contact-messages', [ContactMessageController::class, 'index'])->name('contact-messages.index');
+    Route::get('contact-messages/{id}', [ContactMessageController::class, 'show'])->name('contact-messages.show');
+    Route::patch('contact-messages/{id}/read', [ContactMessageController::class, 'markAsRead'])->name('contact-messages.read');
+    Route::patch('contact-messages/{id}/unread', [ContactMessageController::class, 'markAsUnread'])->name('contact-messages.unread');
+    Route::delete('contact-messages/{id}', [ContactMessageController::class, 'destroy'])->name('contact-messages.destroy');
+
+    // Formulir Partisipasi (Ikut Serta)
+    Route::get('participations', [ParticipationController::class, 'index'])->name('participations.index');
+    Route::get('participations/{id}', [ParticipationController::class, 'show'])->name('participations.show');
+    Route::patch('participations/{id}/read', [ParticipationController::class, 'markAsRead'])->name('participations.read');
+    Route::patch('participations/{id}/unread', [ParticipationController::class, 'markAsUnread'])->name('participations.unread');
+    Route::delete('participations/{id}', [ParticipationController::class, 'destroy'])->name('participations.destroy');
     
     // CRUD Tim & Pengurus YNKI
     Route::resource('teams', TeamMemberController::class);

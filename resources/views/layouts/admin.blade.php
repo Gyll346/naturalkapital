@@ -584,6 +584,32 @@
                 </a>
             </li>
 
+            <li class="menu-category">Interaksi & Komunikasi</li>
+            <li class="menu-item">
+                <a class="menu-link {{ request()->routeIs('admin.contact-messages.*') ? 'active' : '' }}" href="{{ route('admin.contact-messages.index') }}">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    Pesan Kontak Masuk
+                    @php
+                        $unreadMsgCount = \App\Models\ContactMessage::where('is_read', false)->count();
+                    @endphp
+                    @if ($unreadMsgCount > 0)
+                        <span style="margin-left: auto; background: #FF8000; color: #fff; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 10px;">{{ $unreadMsgCount }}</span>
+                    @endif
+                </a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link {{ request()->routeIs('admin.participations.*') ? 'active' : '' }}" href="{{ route('admin.participations.index') }}">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    Pendaftaran Ikut Serta
+                    @php
+                        $unreadPartCount = \App\Models\Participation::where('is_read', false)->count();
+                    @endphp
+                    @if ($unreadPartCount > 0)
+                        <span style="margin-left: auto; background: #117710; color: #fff; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 10px;">{{ $unreadPartCount }}</span>
+                    @endif
+                </a>
+            </li>
+
             <li class="menu-category">Donasi & Keuangan</li>
             <li class="menu-item">
                 <a class="menu-link {{ request()->routeIs('admin.donations.*') ? 'active' : '' }}" href="{{ route('admin.donations.index') }}">

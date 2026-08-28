@@ -12,6 +12,8 @@ use App\Models\PortfolioProject;
 use App\Models\TransparencyReport;
 use App\Models\MediaStory;
 use App\Models\ActivityLog;
+use App\Models\ContactMessage;
+use App\Models\Participation;
 
 class DashboardController extends Controller
 {
@@ -37,7 +39,13 @@ class DashboardController extends Controller
         $mediaStoriesCount = MediaStory::count();
         $totalArticlesCount = Article::count();
 
-        // 4. Hitung Total Dokumen File PDF & Media Terunggah
+        // 4. Interaksi & Partisipasi
+        $totalContactMessagesCount = ContactMessage::count();
+        $unreadContactMessagesCount = ContactMessage::where('is_read', false)->count();
+        $totalParticipationsCount = Participation::count();
+        $unreadParticipationsCount = Participation::where('is_read', false)->count();
+
+        // 5. Hitung Total Dokumen File PDF & Media Terunggah
         $totalPdfDocsCount = TransparencyReport::whereNotNull('file_pdf_path')->count()
             + LgosComponent::whereNotNull('document_pdf_path')->count()
             + PortfolioProject::whereNotNull('document_pdf_path')->count()
@@ -68,6 +76,10 @@ class DashboardController extends Controller
             'gisCount',
             'mediaStoriesCount',
             'totalArticlesCount',
+            'totalContactMessagesCount',
+            'unreadContactMessagesCount',
+            'totalParticipationsCount',
+            'unreadParticipationsCount',
             'totalPdfDocsCount',
             'recentDonations',
             'recentLogs'

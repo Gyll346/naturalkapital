@@ -11,6 +11,8 @@ use App\Models\TransparencyReport;
 use App\Models\Article;
 use App\Models\ArticleCategory;
 use App\Models\MediaStory;
+use App\Models\ContactMessage;
+use App\Models\Participation;
 
 class PageContentController extends Controller
 {
@@ -508,12 +510,70 @@ class PageContentController extends Controller
         return response($html, 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
 
+    public function storeParticipation(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:150',
+            'email' => 'required|email|max:150',
+            'phone' => 'required|string|max:50',
+            'interest' => 'required|string|max:100',
+            'message' => 'nullable|string|max:3000',
+        ]);
+
+        Participation::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'],
+            'interest' => $validated['interest'],
+            'message' => $validated['message'] ?? null,
+            'is_read' => false,
+        ]);
+
+        if ($request->ajax() || $request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Terima kasih! Formulir minat keterlibatan Anda telah berhasil dikirim ke Sekretariat YNKI.'
+            ]);
+        }
+
+        return redirect()->back()->with('success', 'Terima kasih! Formulir minat keterlibatan Anda telah berhasil dikirim ke Sekretariat YNKI.');
+    }
+
     // 12. Kontak Kami / Hubungi Kami (/kontak-kami/, /hubungi-kami/)
     public function kontakKami()
     {
         $filePath = base_path('kontak-kami/index.html');
         $html = file_exists($filePath) ? file_get_contents($filePath) : '';
         return response($html, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    }
+
+    public function storeContactMessage(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:150',
+            'email' => 'required|email|max:150',
+            'phone' => 'nullable|string|max:50',
+            'subject' => 'nullable|string|max:150',
+            'message' => 'required|string|max:5000',
+        ]);
+
+        ContactMessage::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'] ?? null,
+            'subject' => $validated['subject'] ?? 'Umum',
+            'message' => $validated['message'],
+            'is_read' => false,
+        ]);
+
+        if ($request->ajax() || $request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Terima kasih! Pesan Anda telah berhasil terkirim ke Sekretariat YNKI.'
+            ]);
+        }
+
+        return redirect()->back()->with('success', 'Terima kasih! Pesan Anda telah berhasil terkirim ke Sekretariat YNKI.');
     }
 }
 

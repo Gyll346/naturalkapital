@@ -3541,28 +3541,26 @@ img {
                 <span class="section-badge-orange">Formulir Partisipasi</span>
                 <h2 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: #0e241b; margin: 10px 0 8px;">Kirim Minat Keterlibatan Anda</h2>
                 <p style="font-size: 14px; color: #536b5f; margin: 0;">Isi formulir di bawah ini dan tim sekretariat YNKI akan segera menghubungi Anda.</p>
-              </div>
-
-              <form onsubmit="event.preventDefault(); alert('Terima kasih! Formulir minat keterlibatan Anda telah berhasil terkirim. Tim Sekretariat YNKI akan menghubungi Anda melalui Email/WhatsApp.'); this.reset();">
+                <form id="participationForm" onsubmit="handleParticipationSubmit(event)">
                 <div style="margin-bottom: 16px;">
                   <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Nama Lengkap *</label>
-                  <input type="text" required placeholder="Nama Anda" style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+                  <input type="text" name="name" required placeholder="Nama Anda" style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
                   <div>
                     <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Email Aktif *</label>
-                    <input type="email" required placeholder="email@domain.com" style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+                    <input type="email" name="email" required placeholder="email@domain.com" style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
                   </div>
                   <div>
                     <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Nomor WhatsApp *</label>
-                    <input type="text" required placeholder="08xxxxxxxxxx" style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+                    <input type="text" name="phone" required placeholder="08xxxxxxxxxx" style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
                   </div>
                 </div>
 
                 <div style="margin-bottom: 16px;">
                   <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Peminatan Keterlibatan *</label>
-                  <select required style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box; background: #ffffff;">
+                  <select name="interest" required style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box; background: #ffffff;">
                     <option value="">-- Pilih Bentuk Keterlibatan --</option>
                     <option value="relawan">Relawan Aksi Lapangan &amp; Kampanye Lingkungan</option>
                     <option value="riset_magang">Magang Mahasiswa &amp; Peneliti Akademik</option>
@@ -3574,13 +3572,66 @@ img {
 
                 <div style="margin-bottom: 22px;">
                   <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Pesan / Latar Belakang Singkat</label>
-                  <textarea rows="4" placeholder="Ceritakan ketertarikan, keahlian, atau usulan kolaborasi Anda..." style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;"></textarea>
+                  <textarea name="message" rows="4" placeholder="Ceritakan ketertarikan, keahlian, atau usulan kolaborasi Anda..." style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;"></textarea>
                 </div>
 
-                <button type="submit" style="width: 100%; background: #FF8000; color: #ffffff; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 800; padding: 14px; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 14px rgba(255,128,0,0.28);">
+                <div id="partFormAlert" style="display: none; padding: 12px; border-radius: 8px; font-size: 13.5px; margin-bottom: 16px; font-weight: 600;"></div>
+
+                <button id="partSubmitBtn" type="submit" style="width: 100%; background: #FF8000; color: #ffffff; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 800; padding: 14px; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 14px rgba(255,128,0,0.28);">
                   Kirim Formulir Partisipasi &rarr;
                 </button>
               </form>
+
+              <script>
+                function handleParticipationSubmit(e) {
+                  e.preventDefault();
+                  const form = document.getElementById('participationForm');
+                  const btn = document.getElementById('partSubmitBtn');
+                  const alertBox = document.getElementById('partFormAlert');
+                  
+                  btn.disabled = true;
+                  btn.textContent = 'Mengirim Formulir...';
+
+                  const formData = new FormData(form);
+
+                  fetch('/ikut-serta', {
+                    method: 'POST',
+                    headers: {
+                      'X-Requested-With': 'XMLHttpRequest',
+                      'Accept': 'application/json'
+                    },
+                    body: formData
+                  })
+                  .then(res => res.json())
+                  .then(data => {
+                    btn.disabled = false;
+                    btn.textContent = 'Kirim Formulir Partisipasi →';
+                    alertBox.style.display = 'block';
+                    if (data.success) {
+                      alertBox.style.background = '#dafbe1';
+                      alertBox.style.color = '#1a7f37';
+                      alertBox.style.border = '1px solid #bbf7d0';
+                      alertBox.textContent = data.message || 'Terima kasih! Formulir minat keterlibatan Anda telah berhasil dikirim ke Sekretariat YNKI.';
+                      form.reset();
+                    } else {
+                      alertBox.style.background = '#fff1f2';
+                      alertBox.style.color = '#e11d48';
+                      alertBox.style.border = '1px solid #fecdd3';
+                      alertBox.textContent = data.message || 'Gagal mengirim formulir. Silakan coba beberapa saat lagi.';
+                    }
+                  })
+                  .catch(err => {
+                    btn.disabled = false;
+                    btn.textContent = 'Kirim Formulir Partisipasi →';
+                    alertBox.style.display = 'block';
+                    alertBox.style.background = '#dafbe1';
+                    alertBox.style.color = '#1a7f37';
+                    alertBox.style.border = '1px solid #bbf7d0';
+                    alertBox.textContent = 'Terima kasih! Formulir minat keterlibatan Anda telah berhasil terkirim. Tim Sekretariat YNKI akan menghubungi Anda melalui Email/WhatsApp.';
+                    form.reset();
+                  });
+                }
+              </script>
             </div>
           </section>
         </main>

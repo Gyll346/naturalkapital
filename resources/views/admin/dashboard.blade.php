@@ -220,6 +220,42 @@
                 </div>
             </div>
 
+            <!-- 11. Pesan Kontak Masuk -->
+            <div style="background: #fffbf7; border: 1.5px solid #fed7aa; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="background: #fff3e6; color: #c2410c; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px;">INTERAKSI</span>
+                        <strong style="color: #c2410c; font-size: 13px;">{{ $totalContactMessagesCount }} Pesan</strong>
+                    </div>
+                    <h4 style="font-size: 15px; font-weight: 700; color: #0e241b; margin: 0 0 6px;">Pesan Kontak Masuk</h4>
+                    <p style="font-size: 12.5px; color: #536b5f; margin: 0 0 14px; line-height: 1.5;">Tinjau dan balas pertanyaan, permohonan riset, dan surat masuk dari formulir kontak.</p>
+                </div>
+                <div style="display: flex; gap: 8px; border-top: 1px solid #fed7aa; padding-top: 12px;">
+                    <a href="{{ route('admin.contact-messages.index') }}" class="btn-action btn-primary" style="font-size: 12px; padding: 6px 12px; background: #FF8000; border-color: #FF8000;">Lihat Pesan</a>
+                    @if ($unreadContactMessagesCount > 0)
+                        <span style="font-size: 11.5px; color: #c2410c; font-weight: 700; align-self: center;">{{ $unreadContactMessagesCount }} Belum Dibaca</span>
+                    @endif
+                </div>
+            </div>
+
+            <!-- 12. Pendaftaran Ikut Serta & Relawan -->
+            <div style="background: #fbfdfc; border: 1.5px solid #bbf7d0; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="background: #eaf5ee; color: #0F5132; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px;">KOMUNITAS</span>
+                        <strong style="color: #117710; font-size: 13px;">{{ $totalParticipationsCount }} Pendaftar</strong>
+                    </div>
+                    <h4 style="font-size: 15px; font-weight: 700; color: #0e241b; margin: 0 0 6px;">Pendaftaran Ikut Serta</h4>
+                    <p style="font-size: 12.5px; color: #536b5f; margin: 0 0 14px; line-height: 1.5;">Data pendaftar relawan lapangan, magang akademik, riset, dan kemitraan CSO.</p>
+                </div>
+                <div style="display: flex; gap: 8px; border-top: 1px solid #bbf7d0; padding-top: 12px;">
+                    <a href="{{ route('admin.participations.index') }}" class="btn-action btn-primary" style="font-size: 12px; padding: 6px 12px;">Lihat Pendaftar</a>
+                    @if ($unreadParticipationsCount > 0)
+                        <span style="font-size: 11.5px; color: #117710; font-weight: 700; align-self: center;">{{ $unreadParticipationsCount }} Belum Ditinjau</span>
+                    @endif
+                </div>
+            </div>
+
         </div>
     </div>
 
