@@ -3446,22 +3446,62 @@ img {
 .sejarah-overview {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 50px;
-  align-items: center;
-  margin-bottom: 60px;
+  gap: 40px;
+  align-items: stretch;
 }
-.sejarah-overview h2 {
+.sejarah-text-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.sejarah-text-side h2 {
   font-size: clamp(26px, 3vw, 36px);
   font-weight: 800;
   color: #0e241b;
   margin: 0 0 20px;
   line-height: 1.25;
 }
-.sejarah-overview p {
+.sejarah-text-side p {
   font-size: 15.5px;
   line-height: 1.8;
   color: #3d5648;
   margin-bottom: 18px;
+}
+.sejarah-img-box {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.5px solid #d2e8d1;
+  box-shadow: 0 10px 28px rgba(17, 119, 16, 0.08);
+  margin-top: 14px;
+}
+.sejarah-img-box img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.sejarah-img-box:hover img {
+  transform: scale(1.03);
+}
+.sejarah-img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(14, 36, 27, 0.92) 0%, rgba(14, 36, 27, 0.4) 75%, transparent 100%);
+  padding: 20px 18px 12px;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sejarah-img-caption span {
+  color: #d2f0d1;
 }
 .timeline-card {
   background: #f8faf8;
@@ -3469,6 +3509,11 @@ img {
   border-radius: 18px;
   padding: 36px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
 }
 .timeline-item {
   position: relative;
@@ -3822,18 +3867,30 @@ img {
         <section id="sejarah-timeline" class="ynki-section">
           <div class="ynki-container">
             <div class="sejarah-overview">
-              <div>
-                <div class="section-badge">JEJAK LANGKAH KAMI</div>
-                <h2>Sejarah dan Kelahiran YNKI</h2>
-                <p>
-                  Yayasan Natural Kapital Indonesia (YNKI) didirikan pada tahun 2019 di Pontianak, Kalimantan Barat. Kelahiran YNKI dilatarbelakangi oleh pengamatan bahwa sebagian besar permasalahan lingkungan dan sosial tidak terjadi secara terpisah—melainkan muncul dari kegagalan mengelola hubungan antara manusia, alam, dan ekonomi secara terpadu.
-                </p>
-                <p>
-                  Deforestasi, degradasi gambut, hilangnya keanekaragaman hayati, konflik tenurial, hingga dampak perubahan iklim merupakan manifestasi dari sistem tata kelola yang belum mampu mengintegrasikan berbagai kepentingan dalam satu lanskap yang sama.
-                </p>
-                <p>
-                  YNKI hadir sebagai <strong>Landscape Governance Backbone Organization</strong>—membangun jembatan antara pengetahuan, kebijakan, dan aksi nyata di lapangan.
-                </p>
+              <div class="sejarah-text-side">
+                <div>
+                  <div class="section-badge">JEJAK LANGKAH KAMI</div>
+                  <h2>Sejarah dan Kelahiran YNKI</h2>
+                  <p>
+                    Yayasan Natural Kapital Indonesia (YNKI) didirikan pada tahun 2019 di Pontianak, Kalimantan Barat. Kelahiran YNKI dilatarbelakangi oleh pengamatan bahwa sebagian besar permasalahan lingkungan dan sosial tidak terjadi secara terpisah—melainkan muncul dari kegagalan mengelola hubungan antara manusia, alam, dan ekonomi secara terpadu.
+                  </p>
+                  <p>
+                    Deforestasi, degradasi gambut, hilangnya keanekaragaman hayati, konflik tenurial, hingga dampak perubahan iklim merupakan manifestasi dari sistem tata kelola yang belum mampu mengintegrasikan berbagai kepentingan dalam satu lanskap yang sama.
+                  </p>
+                  <p>
+                    YNKI hadir sebagai <strong>Landscape Governance Backbone Organization</strong>—membangun jembatan antara pengetahuan, kebijakan, dan aksi nyata di lapangan.
+                  </p>
+                </div>
+                <div class="sejarah-img-box">
+                  <img
+                    src="/wp-content/uploads/2026/05/Direktur-YNKI-Haryono-768x582.webp"
+                    alt="Konsolidasi Strategis dan Perjalanan Sejarah YNKI"
+                    loading="lazy"
+                  />
+                  <div class="sejarah-img-caption">
+                    <span>Konsolidasi Strategis Tata Kelola Lanskap Berkelanjutan — YNKI Pontianak</span>
+                  </div>
+                </div>
               </div>
 
               <!-- Timeline -->
