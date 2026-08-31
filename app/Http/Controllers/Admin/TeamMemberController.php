@@ -11,10 +11,40 @@ use Illuminate\Support\Facades\Auth;
 
 class TeamMemberController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $members = TeamMember::with('category')->orderBy('sort_order')->paginate(20);
-        return view('admin.teams.index', compact('members'));
+        $group = $request->get('group', 'all'); // 'all', 'pengurus', 'tim-ahli'
+        
+        $query = TeamMember::with('category')->orderBy('sort_order');
+        
+        if ($group === 'pengurus') {
+            $query->whereHas('category', function ($q) {
+                $q->where('category_name', 'not like', '%ahli%')
+                  ->where('category_name', 'not like', '%lapangan%');
+            });
+        } elseif ($group === 'tim-ahli') {
+            $query->whereHas('category', function ($q) {
+                $q->where('category_name', 'like', '%ahli%')
+                  ->orWhere('category_name', 'like', '%lapangan%');
+            });
+        }
+        
+        $members = $query->paginate(20)->withQueryString();
+        
+        // Count for tabs
+        $countPengurus = TeamMember::whereHas('category', function ($q) {
+            $q->where('category_name', 'not like', '%ahli%')
+              ->where('category_name', 'not like', '%lapangan%');
+        })->count();
+        
+        $countTimAhli = TeamMember::whereHas('category', function ($q) {
+            $q->where('category_name', 'like', '%ahli%')
+              ->orWhere('category_name', 'like', '%lapangan%');
+        })->count();
+        
+        $countAll = TeamMember::count();
+
+        return view('admin.teams.index', compact('members', 'group', 'countPengurus', 'countTimAhli', 'countAll'));
     }
 
     public function create()

@@ -3,10 +3,15 @@
 @section('title', 'Manajemen Pengurus & Tim YNKI')
 
 @section('content')
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 700; color: var(--primary-dark);">
-            Struktur Pengurus & Tim Ahli YNKI
-        </h2>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+        <div>
+            <h2 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 700; color: var(--primary-dark); margin-bottom: 4px;">
+                Struktur Pengurus & Tim Ahli YNKI
+            </h2>
+            <p style="font-size: 13px; color: var(--text-muted);">
+                Kelola data Dewan Pengurus dan Tim Ahli Pendukung YNKI yang ditampilkan pada website publik.
+            </p>
+        </div>
         <a href="{{ route('admin.teams.create') }}" class="btn-action btn-primary">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             Tambah Anggota / Tim Baru
@@ -19,6 +24,27 @@
             {{ session('success') }}
         </div>
     @endif
+
+    <!-- Split Tab Pengurus vs Tim Ahli -->
+    <div style="display: flex; gap: 10px; margin-bottom: 18px; border-bottom: 2px solid var(--border); padding-bottom: 12px; overflow-x: auto;">
+        <a href="{{ route('admin.teams.index', ['group' => 'all']) }}" 
+           style="text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 6px; {{ $group === 'all' ? 'background: var(--primary); color: #ffffff;' : 'background: #ffffff; color: var(--text-dark); border: 1px solid var(--border);' }}">
+            <span>Semua Anggota</span>
+            <span style="font-size: 11px; padding: 2px 7px; border-radius: 12px; {{ $group === 'all' ? 'background: rgba(255,255,255,0.25); color: #ffffff;' : 'background: #eaf3eb; color: var(--primary);' }}">{{ $countAll }}</span>
+        </a>
+        <a href="{{ route('admin.teams.index', ['group' => 'pengurus']) }}" 
+           style="text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 6px; {{ $group === 'pengurus' ? 'background: var(--primary); color: #ffffff;' : 'background: #ffffff; color: var(--text-dark); border: 1px solid var(--border);' }}">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+            <span>Dewan Pengurus YNKI</span>
+            <span style="font-size: 11px; padding: 2px 7px; border-radius: 12px; {{ $group === 'pengurus' ? 'background: rgba(255,255,255,0.25); color: #ffffff;' : 'background: #eaf3eb; color: var(--primary);' }}">{{ $countPengurus }}</span>
+        </a>
+        <a href="{{ route('admin.teams.index', ['group' => 'tim-ahli']) }}" 
+           style="text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 6px; {{ $group === 'tim-ahli' ? 'background: var(--primary); color: #ffffff;' : 'background: #ffffff; color: var(--text-dark); border: 1px solid var(--border);' }}">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            <span>Tim Ahli Pendukung YNKI</span>
+            <span style="font-size: 11px; padding: 2px 7px; border-radius: 12px; {{ $group === 'tim-ahli' ? 'background: rgba(255,255,255,0.25); color: #ffffff;' : 'background: #eaf3eb; color: var(--primary);' }}">{{ $countTimAhli }}</span>
+        </a>
+    </div>
 
     <div class="card-table">
         <div class="table-responsive">

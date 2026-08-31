@@ -3819,7 +3819,7 @@
                         <!-- Domain 1 -->
                         <div class="lead-card">
                           <div class="lead-photo-wrap">
-                            <img src="/wp-content/uploads/2026/05/madu.webp" alt="Ekologi Lanskap & Natural Capital" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
+                            <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Ekologi Lanskap & Natural Capital" />
                           </div>
                           <div class="lead-body">
                             <h3 class="lead-name">Ekologi Lanskap &amp; Natural Capital</h3>
@@ -3831,7 +3831,7 @@
                         <!-- Domain 2 -->
                         <div class="lead-card">
                           <div class="lead-photo-wrap">
-                            <img src="/wp-content/uploads/2026/05/kopi.webp" alt="Tata Kelola & Kebijakan" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
+                            <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Tata Kelola & Kebijakan" />
                           </div>
                           <div class="lead-body">
                             <h3 class="lead-name">Tata Kelola &amp; Kebijakan</h3>
@@ -3843,7 +3843,7 @@
                         <!-- Domain 3 -->
                         <div class="lead-card">
                           <div class="lead-photo-wrap">
-                            <img src="/wp-content/uploads/2026/05/kelapa-1.webp" alt="Keterlacakan Komoditas & Rantai Pasok" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
+                            <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Keterlacakan Komoditas & Rantai Pasok" />
                           </div>
                           <div class="lead-body">
                             <h3 class="lead-name">Keterlacakan Komoditas &amp; Rantai Pasok</h3>
@@ -3855,7 +3855,7 @@
                         <!-- Domain 4 -->
                         <div class="lead-card">
                           <div class="lead-photo-wrap">
-                            <img src="/wp-content/uploads/2026/05/madu.webp" alt="Pemberdayaan Masyarakat & Inklusi Sosial" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
+                            <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Pemberdayaan Masyarakat & Inklusi Sosial" />
                           </div>
                           <div class="lead-body">
                             <h3 class="lead-name">Pemberdayaan Masyarakat &amp; Inklusi Sosial</h3>
@@ -3867,7 +3867,7 @@
                         <!-- Domain 5 -->
                         <div class="lead-card">
                           <div class="lead-photo-wrap">
-                            <img src="/wp-content/uploads/2026/05/kopi.webp" alt="Ketahanan Iklim & Solusi Berbasis Alam" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
+                            <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Ketahanan Iklim & Solusi Berbasis Alam" />
                           </div>
                           <div class="lead-body">
                             <h3 class="lead-name">Ketahanan Iklim &amp; Solusi Berbasis Alam</h3>
@@ -3879,7 +3879,7 @@
                         <!-- Domain 6 -->
                         <div class="lead-card">
                           <div class="lead-photo-wrap">
-                            <img src="/wp-content/uploads/2026/05/kelapa-1.webp" alt="GIS, Penginderaan Jauh & Inovasi Digital" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
+                            <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="GIS, Penginderaan Jauh & Inovasi Digital" />
                           </div>
                           <div class="lead-body">
                             <h3 class="lead-name">GIS, Penginderaan Jauh &amp; Inovasi Digital</h3>
@@ -3891,7 +3891,7 @@
                         <!-- Domain 7 -->
                         <div class="lead-card">
                           <div class="lead-photo-wrap">
-                            <img src="/wp-content/uploads/2026/05/madu.webp" alt="Monitoring, Evaluasi & Pembelajaran" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
+                            <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Monitoring, Evaluasi & Pembelajaran" />
                           </div>
                           <div class="lead-body">
                             <h3 class="lead-name">Monitoring, Evaluasi &amp; Pembelajaran</h3>
@@ -3903,7 +3903,7 @@
                         <!-- Domain 8 -->
                         <div class="lead-card">
                           <div class="lead-photo-wrap">
-                            <img src="/wp-content/uploads/2026/05/kopi.webp" alt="Pembiayaan Berkelanjutan & Mobilisasi Sumber Daya" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
+                            <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Pembiayaan Berkelanjutan & Mobilisasi Sumber Daya" />
                           </div>
                           <div class="lead-body">
                             <h3 class="lead-name">Pembiayaan Berkelanjutan &amp; Mobilisasi Sumber Daya</h3>
