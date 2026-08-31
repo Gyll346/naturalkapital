@@ -3018,22 +3018,14 @@ div[class*="fusion-builder-row-1"],
         <main id="main" class="clearfix width-100" style="font-family:'Inter',Arial,Helvetica,sans-serif; padding: 0 !important;">
           <link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
           <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800&display=swap">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800&display=swap">
 
           <!-- Hero Title Section -->
-          <section style="position: relative; background: linear-gradient(155deg, rgba(5,42,5,0.94) 0%, rgba(12,80,11,0.85) 60%, rgba(0,0,0,0.65) 100%), url('/assets/images/homepage/hero-bg.png'); background-size: cover; background-position: center; padding: 95px 24px 85px; color: #ffffff; text-align: center;">
+          <section style="position: relative; background: linear-gradient(155deg, rgba(5,42,5,0.94) 0%, rgba(12,80,11,0.85) 60%, rgba(0,0,0,0.65) 100%), url('/assets/images/homepage/hero-bg.png'); background-size: cover; background-position: center; padding: 110px 24px 95px; color: #ffffff; text-align: center;">
             <div style="max-width: 960px; margin: 0 auto; position: relative; z-index: 2;">
-              <div style="font-size: 12.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #a3e0a2; margin-bottom: 16px;">
-                {{ $article->published_at ? $article->published_at->translatedFormat('l, d F Y') : 'Publikasi Resmi' }}
-              </div>
-              <h1 style="font-family: 'Montserrat', sans-serif; font-size: clamp(24px, 4vw, 42px); font-weight: 800; line-height: 1.3; color: #ffffff; margin: 0 0 20px;">
+              <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif; font-size: clamp(28px, 4.5vw, 48px); font-weight: 500; line-height: 1.25; color: #ffffff; margin: 0; letter-spacing: -0.01em;">
                 {{ $article->title }}
               </h1>
-              <div style="display: flex; justify-content: center; gap: 10px;">
-                <span style="font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; padding: 5px 16px; border-radius: 50px; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); color: #ffffff;">
-                  {{ $article->category->category_name ?? 'Pustaka & Pengetahuan' }}
-                </span>
-              </div>
             </div>
           </section>
 
