@@ -7,21 +7,21 @@
     <div class="grid-stats">
         <div class="stat-card">
             <div class="stat-content">
-                <span class="stat-label">Total Donasi Terverifikasi</span>
-                <div class="stat-value">Rp {{ number_format($totalDonationAmount, 0, ',', '.') }}</div>
+                <span class="stat-label">Pesan Kontak Masuk</span>
+                <div class="stat-value">{{ $totalContactMessagesCount }} Pesan</div>
             </div>
             <div class="stat-icon icon-green">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 6v12"></path></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             </div>
         </div>
 
         <div class="stat-card">
             <div class="stat-content">
-                <span class="stat-label">Perlu Verifikasi</span>
-                <div class="stat-value" style="color: #b45309;">{{ $pendingDonationsCount }} Transaksi</div>
+                <span class="stat-label">Pendaftar Ikut Serta</span>
+                <div class="stat-value" style="color: #117710;">{{ $totalParticipationsCount }} Pendaftar</div>
             </div>
             <div class="stat-icon icon-amber">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
             </div>
         </div>
 
@@ -259,68 +259,7 @@
         </div>
     </div>
 
-    <!-- Tabel Donasi Terbaru -->
-    <div class="card-table">
-        <div class="card-header">
-            <h3>Transaksi Donasi Masuk Terbaru</h3>
-            <a href="{{ route('admin.donations.index') }}" class="btn-action btn-outline">
-                Lihat Semua Donasi
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-        </div>
 
-        <div class="table-responsive">
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th>No. Invoice</th>
-                        <th>Donatur</th>
-                        <th>Program</th>
-                        <th>Jumlah</th>
-                        <th>Rekening Tujuan</th>
-                        <th>Status</th>
-                        <th>Tanggal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($recentDonations as $donation)
-                        <tr>
-                            <td><strong>{{ $donation->invoice_number }}</strong></td>
-                            <td>{{ $donation->is_anonymous ? 'Hamba Allah (Anonim)' : $donation->donor_name }}</td>
-                            <td>{{ $donation->program->program_name ?? 'Donasi Umum Lanskap' }}</td>
-                            <td><strong>Rp {{ number_format($donation->amount, 0, ',', '.') }}</strong></td>
-                            <td>{{ $donation->account->bank_name ?? '-' }}</td>
-                            <td>
-                                @if ($donation->status === 'verified')
-                                    <span class="badge badge-success">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                        Terverifikasi
-                                    </span>
-                                @elseif ($donation->status === 'pending')
-                                    <span class="badge badge-warning">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                                        Menunggu
-                                    </span>
-                                @else
-                                    <span class="badge badge-danger">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                                        Ditolak
-                                    </span>
-                                @endif
-                            </td>
-                            <td>{{ $donation->created_at->format('d M Y H:i') }}</td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 30px;">
-                                Belum ada transaksi donasi yang tercatat.
-                            </td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
-        </div>
-    </div>
 
     <!-- Tabel Log Aktivitas Admin -->
     <div class="card-table">

@@ -620,25 +620,6 @@
                 </a>
             </li>
 
-            <li class="menu-category">Donasi & Keuangan</li>
-            <li class="menu-item">
-                <a class="menu-link {{ request()->routeIs('admin.donations.*') ? 'active' : '' }}" href="{{ route('admin.donations.index') }}">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 6v12"></path></svg>
-                    Transaksi Donasi
-                </a>
-            </li>
-            <li class="menu-item">
-                <a class="menu-link {{ request()->routeIs('admin.accounts.*') ? 'active' : '' }}" href="{{ route('admin.accounts.index') }}">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                    Rekening & QRIS
-                </a>
-            </li>
-            <li class="menu-item">
-                <a class="menu-link {{ request()->routeIs('admin.reports.*') ? 'active' : '' }}" href="{{ route('admin.reports.donations.excel') }}">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                    Ekspor Laporan
-                </a>
-            </li>
         </ul>
 
         <div class="sidebar-footer">

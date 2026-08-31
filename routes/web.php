@@ -26,8 +26,7 @@ use App\Http\Controllers\Admin\ParticipationController;
 |--------------------------------------------------------------------------
 */
 Route::get('/', [HomeController::class, 'index'])->name('public.home');
-Route::get('/donasi', [PublicDonationController::class, 'index'])->name('public.donation');
-Route::post('/donasi', [PublicDonationController::class, 'store'])->name('public.donation.store');
+Route::get('/donasi', fn() => redirect('/kontak-kami'))->name('public.donation');
 Route::get('/artikel-cms', [PublicArticleController::class, 'index'])->name('public.article.index');
 Route::get('/artikel-cms/{slug}', [PublicArticleController::class, 'show'])->name('public.article.show');
 
