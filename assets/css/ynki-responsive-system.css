@@ -174,7 +174,7 @@ h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3,
 .pptx-hero h1 {
   font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
   font-size: clamp(30px, 4.5vw, 50px) !important;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
   line-height: 1.25 !important;
   color: #ffffff !important;
   margin: 0 0 22px !important;
@@ -207,7 +207,7 @@ h1 span.hl {
   color: #a3e0a2 !important;
   font-size: 0.85em !important;
   display: inline-block;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 
 .hero-sub,

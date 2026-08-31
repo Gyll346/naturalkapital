@@ -4,7 +4,7 @@
 
 @section('content')
     <div style="background: linear-gradient(150deg, #092b1a 0%, #0F5132 100%); color: #ffffff; padding: 60px 24px; text-align: center;">
-        <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif; font-size: 34px; font-weight: 300; margin-bottom: 12px; letter-spacing: 0.01em;">
+        <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: 34px !important; font-weight: 400 !important; margin-bottom: 12px !important; letter-spacing: normal !important;">
             Pustaka & Publikasi Riset
         </h1>
         <p style="font-size: 16px; color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto;">

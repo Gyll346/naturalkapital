@@ -3023,7 +3023,7 @@ div[class*="fusion-builder-row-1"],
           <!-- Hero Title Section -->
           <section style="position: relative; background: linear-gradient(155deg, rgba(5,42,5,0.94) 0%, rgba(12,80,11,0.85) 60%, rgba(0,0,0,0.65) 100%), url('/assets/images/homepage/hero-bg.png'); background-size: cover; background-position: center; padding: 110px 24px 95px; color: #ffffff; text-align: center;">
             <div style="max-width: 960px; margin: 0 auto; position: relative; z-index: 2;">
-              <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif; font-size: clamp(26px, 4.2vw, 44px); font-weight: 300; line-height: 1.3; color: #ffffff; margin: 0; letter-spacing: 0.01em;">
+              <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: clamp(24px, 4vw, 42px) !important; font-weight: 400 !important; line-height: 1.35 !important; color: #ffffff !important; margin: 0 !important; letter-spacing: normal !important;">
                 {{ $article->title }}
               </h1>
             </div>
