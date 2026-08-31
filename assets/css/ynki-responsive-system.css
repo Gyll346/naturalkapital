@@ -226,6 +226,36 @@ h1 span.hl {
 }
 
 /* ==========================================================================
+   SUB-JUDUL / SECTION HEADINGS (MONTSERRAT REGULAR - 400 MATCHING HERO)
+   ========================================================================== */
+h2,
+h3,
+h4,
+.sejarah-overview h2,
+.tujuan-box h3,
+.masalah-card h4,
+.int-card h4,
+.cta-section h2,
+.pstat-card h4,
+.collab-card h4,
+.tim-card h4,
+.kaitan-body h4,
+.fusion-title h2,
+.fusion-title h3,
+.fusion-title h4,
+.fusion-title-heading,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+section h2,
+section h3,
+section h4 {
+  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* ==========================================================================
    HEADER & NAVBAR (TRANSPARAN TANPA BACKGROUND PADAT & INSTANT DROPDOWN HOVER)
    ========================================================================== */
 #boxed-wrapper,
