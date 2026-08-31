@@ -3814,87 +3814,102 @@
                         </div>
                       </div>
 
-                      <div class="expertise-grid-9">
+                      <div class="leadership-grid-4">
                         
                         <!-- Domain 1 -->
-                        <div class="expert-box">
-                          <div class="expert-icon-wrap">
-                            <img src="/assets/images/mockup-tim/image13.svg" alt="Ekologi Lanskap & Natural Capital" onerror="this.src='/wp-content/uploads/2026/05/madu.webp'" />
+                        <div class="lead-card">
+                          <div class="lead-photo-wrap">
+                            <img src="/wp-content/uploads/2026/05/madu.webp" alt="Ekologi Lanskap & Natural Capital" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
                           </div>
-                          <h4>Ekologi Lanskap &amp; Natural Capital</h4>
-                          <p>Penilaian dan pemulihan ekosistem, valuasi jasa ekosistem, dan pengelolaan sumber daya alam berbasis sains.</p>
+                          <div class="lead-body">
+                            <h3 class="lead-name">Ekologi Lanskap &amp; Natural Capital</h3>
+                            <div class="lead-role">Tim Ahli Ekologi &amp; Sains</div>
+                            <p class="lead-bio">Penilaian dan pemulihan ekosistem, valuasi jasa ekosistem, dan pengelolaan sumber daya alam berbasis sains.</p>
+                          </div>
                         </div>
 
                         <!-- Domain 2 -->
-                        <div class="expert-box">
-                          <div class="expert-icon-wrap">
-                            <img src="/assets/images/mockup-tim/image14.svg" alt="Tata Kelola & Kebijakan" onerror="this.src='/wp-content/uploads/2026/05/kopi.webp'" />
+                        <div class="lead-card">
+                          <div class="lead-photo-wrap">
+                            <img src="/wp-content/uploads/2026/05/kopi.webp" alt="Tata Kelola & Kebijakan" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
                           </div>
-                          <h4>Tata Kelola &amp; Kebijakan</h4>
-                          <p>Analisis regulasi, advokasi kebijakan, dan penguatan kapasitas institusi pemerintah daerah dan nasional.</p>
+                          <div class="lead-body">
+                            <h3 class="lead-name">Tata Kelola &amp; Kebijakan</h3>
+                            <div class="lead-role">Tim Ahli Kebijakan Publik</div>
+                            <p class="lead-bio">Analisis regulasi, advokasi kebijakan, dan penguatan kapasitas institusi pemerintah daerah dan nasional.</p>
+                          </div>
                         </div>
 
                         <!-- Domain 3 -->
-                        <div class="expert-box">
-                          <div class="expert-icon-wrap">
-                            <img src="/assets/images/mockup-tim/image15.svg" alt="Keterlacakan Komoditas & Rantai Pasok" onerror="this.src='/wp-content/uploads/2026/05/kelapa-1.webp'" />
+                        <div class="lead-card">
+                          <div class="lead-photo-wrap">
+                            <img src="/wp-content/uploads/2026/05/kelapa-1.webp" alt="Keterlacakan Komoditas & Rantai Pasok" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
                           </div>
-                          <h4>Keterlacakan Komoditas &amp; Rantai Pasok</h4>
-                          <p>Sistem verifikasi dan sertifikasi komoditas ramah lingkungan untuk pasar domestik dan ekspor internasional.</p>
+                          <div class="lead-body">
+                            <h3 class="lead-name">Keterlacakan Komoditas &amp; Rantai Pasok</h3>
+                            <div class="lead-role">Tim Ahli Rantai Pasok Hijau</div>
+                            <p class="lead-bio">Sistem verifikasi dan sertifikasi komoditas ramah lingkungan untuk pasar domestik dan ekspor internasional.</p>
+                          </div>
                         </div>
 
                         <!-- Domain 4 -->
-                        <div class="expert-box">
-                          <div class="expert-icon-wrap">
-                            <img src="/assets/images/mockup-tim/image16.svg" alt="Pemberdayaan Masyarakat & Inklusi Sosial" onerror="this.src='/wp-content/uploads/2026/05/madu.webp'" />
+                        <div class="lead-card">
+                          <div class="lead-photo-wrap">
+                            <img src="/wp-content/uploads/2026/05/madu.webp" alt="Pemberdayaan Masyarakat & Inklusi Sosial" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
                           </div>
-                          <h4>Pemberdayaan Masyarakat &amp; Inklusi Sosial</h4>
-                          <p>Fasilitasi partisipasi komunitas adat dan lokal, kesetaraan gender, dan penguatan hak-hak sosial ekonomi.</p>
+                          <div class="lead-body">
+                            <h3 class="lead-name">Pemberdayaan Masyarakat &amp; Inklusi Sosial</h3>
+                            <div class="lead-role">Tim Ahli Sosial &amp; Gender</div>
+                            <p class="lead-bio">Fasilitasi partisipasi komunitas adat dan lokal, kesetaraan gender, dan penguatan hak-hak sosial ekonomi.</p>
+                          </div>
                         </div>
 
                         <!-- Domain 5 -->
-                        <div class="expert-box">
-                          <div class="expert-icon-wrap">
-                            <img src="/assets/images/mockup-tim/image17.svg" alt="Ketahanan Iklim & Solusi Berbasis Alam" onerror="this.src='/wp-content/uploads/2026/05/kopi.webp'" />
+                        <div class="lead-card">
+                          <div class="lead-photo-wrap">
+                            <img src="/wp-content/uploads/2026/05/kopi.webp" alt="Ketahanan Iklim & Solusi Berbasis Alam" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
                           </div>
-                          <h4>Ketahanan Iklim &amp; Solusi Berbasis Alam</h4>
-                          <p>Perencanaan adaptasi iklim, restorasi gambut, dan implementasi solusi berbasis alam di lanskap prioritas.</p>
+                          <div class="lead-body">
+                            <h3 class="lead-name">Ketahanan Iklim &amp; Solusi Berbasis Alam</h3>
+                            <div class="lead-role">Tim Ahli Adaptasi Iklim</div>
+                            <p class="lead-bio">Perencanaan adaptasi iklim, restorasi gambut, dan implementasi solusi berbasis alam di lanskap prioritas.</p>
+                          </div>
                         </div>
 
                         <!-- Domain 6 -->
-                        <div class="expert-box">
-                          <div class="expert-icon-wrap">
-                            <img src="/assets/images/mockup-tim/image18.svg" alt="GIS, Penginderaan Jauh & Inovasi Digital" onerror="this.src='/wp-content/uploads/2026/05/kelapa-1.webp'" />
+                        <div class="lead-card">
+                          <div class="lead-photo-wrap">
+                            <img src="/wp-content/uploads/2026/05/kelapa-1.webp" alt="GIS, Penginderaan Jauh & Inovasi Digital" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
                           </div>
-                          <h4>GIS, Penginderaan Jauh &amp; Inovasi Digital</h4>
-                          <p>Pemetaan spasial, analisis citra satelit, dan pengembangan platform data untuk pemantauan lanskap.</p>
+                          <div class="lead-body">
+                            <h3 class="lead-name">GIS, Penginderaan Jauh &amp; Inovasi Digital</h3>
+                            <div class="lead-role">Tim Ahli Data &amp; Pemetaan Spasial</div>
+                            <p class="lead-bio">Pemetaan spasial, analisis citra satelit, dan pengembangan platform data untuk pemantauan lanskap.</p>
+                          </div>
                         </div>
 
                         <!-- Domain 7 -->
-                        <div class="expert-box">
-                          <div class="expert-icon-wrap">
-                            <img src="/assets/images/mockup-tim/image19.svg" alt="Monitoring, Evaluasi & Pembelajaran" onerror="this.src='/wp-content/uploads/2026/05/madu.webp'" />
+                        <div class="lead-card">
+                          <div class="lead-photo-wrap">
+                            <img src="/wp-content/uploads/2026/05/madu.webp" alt="Monitoring, Evaluasi & Pembelajaran" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
                           </div>
-                          <h4>Monitoring, Evaluasi &amp; Pembelajaran</h4>
-                          <p>Pengembangan kerangka MEL, pengumpulan data lapangan, dan pengelolaan pengetahuan organisasi.</p>
+                          <div class="lead-body">
+                            <h3 class="lead-name">Monitoring, Evaluasi &amp; Pembelajaran</h3>
+                            <div class="lead-role">Tim Ahli MEL &amp; Pengetahuan</div>
+                            <p class="lead-bio">Pengembangan kerangka MEL, pengumpulan data lapangan, dan pengelolaan pengetahuan organisasi.</p>
+                          </div>
                         </div>
 
                         <!-- Domain 8 -->
-                        <div class="expert-box">
-                          <div class="expert-icon-wrap">
-                            <img src="/assets/images/mockup-tim/image20.svg" alt="Pembiayaan Berkelanjutan & Mobilisasi Sumber Daya" onerror="this.src='/wp-content/uploads/2026/05/kopi.webp'" />
+                        <div class="lead-card">
+                          <div class="lead-photo-wrap">
+                            <img src="/wp-content/uploads/2026/05/kopi.webp" alt="Pembiayaan Berkelanjutan & Mobilisasi Sumber Daya" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
                           </div>
-                          <h4>Pembiayaan Berkelanjutan &amp; Mobilisasi Sumber Daya</h4>
-                          <p>Pengembangan mekanisme keuangan hijau, penggalangan dana, dan kemitraan strategis dengan donor internasional.</p>
-                        </div>
-
-                        <!-- Domain 9 -->
-                        <div class="expert-box">
-                          <div class="expert-icon-wrap">
-                            <img src="/assets/images/mockup-tim/image21.svg" alt="Fasilitasi Multipihak & Resolusi Konflik" onerror="this.src='/wp-content/uploads/2026/05/kelapa-1.webp'" />
+                          <div class="lead-body">
+                            <h3 class="lead-name">Pembiayaan Berkelanjutan &amp; Mobilisasi Sumber Daya</h3>
+                            <div class="lead-role">Tim Ahli Keuangan Hijau</div>
+                            <p class="lead-bio">Pengembangan mekanisme keuangan hijau, penggalangan dana, dan kemitraan strategis dengan donor internasional.</p>
                           </div>
-                          <h4>Fasilitasi Multipihak &amp; Resolusi Konflik</h4>
-                          <p>Desain proses dialog, mediasi konflik lahan, dan penguatan platform kolaborasi antarpemangku kepentingan.</p>
                         </div>
 
                       </div>

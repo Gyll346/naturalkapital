@@ -19,36 +19,72 @@ class PageContentController extends Controller
     // 1. Tim & Pengurus YNKI (/tim/)
     public function team()
     {
-        $leadershipMembers = TeamMember::where('status', 'active')
-            ->orderBy('sort_order', 'asc')
-            ->get();
-
         $originalHtml = file_get_contents(base_path('tim/index.html'));
 
-        $dynamicCardsHtml = '';
-        foreach ($leadershipMembers as $member) {
-            $photoSrc = $member->photo_path 
-                ? '/storage/' . $member->photo_path 
-                : '/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp';
-            
-            $dynamicCardsHtml .= '
-            <div class="lead-card">
-              <div class="lead-photo-wrap">
-                <img src="' . htmlspecialchars($photoSrc) . '" alt="' . htmlspecialchars($member->full_name) . '" onerror="this.src=\'/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp\'" />
-              </div>
-              <div class="lead-body">
-                <h3 class="lead-name">' . htmlspecialchars($member->full_name) . '</h3>
-                <div class="lead-role">' . htmlspecialchars($member->position) . '</div>
-                <p class="lead-bio">' . htmlspecialchars($member->bio ?? '') . '</p>
-              </div>
-            </div>';
+        try {
+            $allMembers = TeamMember::with('category')
+                ->where('status', 'active')
+                ->orderBy('sort_order', 'asc')
+                ->get();
+
+            if ($allMembers->isNotEmpty()) {
+                // Kelompokkan pengurus dewan vs tim ahli / lainnya
+                $leadershipMembers = $allMembers->filter(function ($m) {
+                    $catName = strtolower($m->category->category_name ?? '');
+                    return !str_contains($catName, 'ahli') && !str_contains($catName, 'lapangan');
+                });
+
+                $expertMembers = $allMembers->filter(function ($m) {
+                    $catName = strtolower($m->category->category_name ?? '');
+                    return str_contains($catName, 'ahli') || str_contains($catName, 'lapangan');
+                });
+
+                // Fallback jika belum dibagi kategori khusus ahli: masukkan ke leadership
+                if ($leadershipMembers->isEmpty()) {
+                    $leadershipMembers = $allMembers;
+                }
+
+                $renderCards = function ($members) {
+                    $html = '';
+                    foreach ($members as $member) {
+                        $photoSrc = $member->photo_path 
+                            ? (str_starts_with($member->photo_path, 'http') || str_starts_with($member->photo_path, '/') ? $member->photo_path : '/storage/' . $member->photo_path)
+                            : '/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp';
+                        
+                        $html .= '
+                        <div class="lead-card">
+                          <div class="lead-photo-wrap">
+                            <img src="' . htmlspecialchars($photoSrc) . '" alt="' . htmlspecialchars($member->full_name) . '" onerror="this.src=\'/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp\'" />
+                          </div>
+                          <div class="lead-body">
+                            <h3 class="lead-name">' . htmlspecialchars($member->full_name) . '</h3>
+                            <div class="lead-role">' . htmlspecialchars($member->position) . '</div>
+                            <p class="lead-bio">' . htmlspecialchars($member->bio ?? '') . '</p>
+                          </div>
+                        </div>';
+                    }
+                    return $html;
+                };
+
+                // Render dynamic Dewan Pengurus
+                if ($leadershipMembers->isNotEmpty()) {
+                    $dynamicLeadershipHtml = $renderCards($leadershipMembers);
+                    $patternLeadership = '/(<section id="leadership-section"[^>]*>.*?<div class="leadership-grid-4">)(.*?)(<\/div>\s*<\/div>\s*<\/section>)/s';
+                    $originalHtml = preg_replace($patternLeadership, '$1' . $dynamicLeadershipHtml . '$3', $originalHtml);
+                }
+
+                // Render dynamic Tim Ahli Pendukung jika ada data anggota tim ahli di DB
+                if ($expertMembers->isNotEmpty()) {
+                    $dynamicExpertHtml = $renderCards($expertMembers);
+                    $patternExpert = '/(<section id="tim-ahli-section"[^>]*>.*?<div class="leadership-grid-4">)(.*?)(<\/div>\s*<\/div>\s*<\/section>)/s';
+                    $originalHtml = preg_replace($patternExpert, '$1' . $dynamicExpertHtml . '$3', $originalHtml);
+                }
+            }
+        } catch (\Throwable $e) {
+            // Fallback gracefully ke konten statis tim/index.html jika DB tidak terhubung
         }
 
-        $pattern = '/<div class="leadership-grid-4">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-        $replacement = '<div class="leadership-grid-4">' . $dynamicCardsHtml . '</div></div></section>';
-        $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
-
-        return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+        return response($originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
 
     // 2. LGOS: Sistem Operasi Organisasi (/lgos/)
