@@ -3,55 +3,55 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\TeamMember;
-use App\Models\LgosComponent;
-use App\Models\PortfolioProject;
-use App\Models\TransparencyReport;
 use App\Models\Article;
 use App\Models\ArticleCategory;
-use App\Models\MediaStory;
 use App\Models\ContactMessage;
+use App\Models\LgosComponent;
+use App\Models\MediaStory;
 use App\Models\Participation;
+use App\Models\PortfolioProject;
+use App\Models\TeamMember;
+use App\Models\TransparencyReport;
+use Illuminate\Http\Request;
 
 class PageContentController extends Controller
 {
-    // 1. Tim & Pengurus YNKI (/tim/)
-    public function team()
-    {
-        $originalHtml = file_get_contents(base_path('tim/index.html'));
+  // 1. Tim & Pengurus YNKI (/tim/)
+  public function team()
+  {
+    $originalHtml = file_get_contents(base_path('tim/index.html'));
 
-        try {
-            $allMembers = TeamMember::with('category')
-                ->where('status', 'active')
-                ->orderBy('sort_order', 'asc')
-                ->get();
+    try {
+      $allMembers = TeamMember::with('category')
+        ->where('status', 'active')
+        ->orderBy('sort_order', 'asc')
+        ->get();
 
-            if ($allMembers->isNotEmpty()) {
-                // Kelompokkan pengurus dewan vs tim ahli / lainnya
-                $leadershipMembers = $allMembers->filter(function ($m) {
-                    $catName = strtolower($m->category->category_name ?? '');
-                    return !str_contains($catName, 'ahli') && !str_contains($catName, 'lapangan');
-                });
+      if ($allMembers->isNotEmpty()) {
+        // Kelompokkan pengurus dewan vs tim ahli / lainnya
+        $leadershipMembers = $allMembers->filter(function ($m) {
+          $catName = strtolower($m->category->category_name ?? '');
+          return !str_contains($catName, 'ahli') && !str_contains($catName, 'lapangan');
+        });
 
-                $expertMembers = $allMembers->filter(function ($m) {
-                    $catName = strtolower($m->category->category_name ?? '');
-                    return str_contains($catName, 'ahli') || str_contains($catName, 'lapangan');
-                });
+        $expertMembers = $allMembers->filter(function ($m) {
+          $catName = strtolower($m->category->category_name ?? '');
+          return str_contains($catName, 'ahli') || str_contains($catName, 'lapangan');
+        });
 
-                // Fallback jika belum dibagi kategori khusus ahli: masukkan ke leadership
-                if ($leadershipMembers->isEmpty()) {
-                    $leadershipMembers = $allMembers;
-                }
+        // Fallback jika belum dibagi kategori khusus ahli: masukkan ke leadership
+        if ($leadershipMembers->isEmpty()) {
+          $leadershipMembers = $allMembers;
+        }
 
-                $renderCards = function ($members) {
-                    $html = '';
-                    foreach ($members as $member) {
-                        $photoSrc = $member->photo_path 
-                            ? (str_starts_with($member->photo_path, 'http') || str_starts_with($member->photo_path, '/') ? $member->photo_path : '/storage/' . $member->photo_path)
-                            : '/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp';
-                        
-                        $html .= '
+        $renderCards = function ($members) {
+          $html = '';
+          foreach ($members as $member) {
+            $photoSrc = $member->photo_path
+              ? (str_starts_with($member->photo_path, 'http') || str_starts_with($member->photo_path, '/') ? $member->photo_path : '/storage/' . $member->photo_path)
+              : '/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp';
+
+            $html .= '
                         <div class="lead-card">
                           <div class="lead-photo-wrap">
                             <img src="' . htmlspecialchars($photoSrc) . '" alt="' . htmlspecialchars($member->full_name) . '" onerror="this.src=\'/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp\'" />
@@ -62,81 +62,82 @@ class PageContentController extends Controller
                             <p class="lead-bio">' . htmlspecialchars($member->bio ?? '') . '</p>
                           </div>
                         </div>';
-                    }
-                    return $html;
-                };
+          }
+          return $html;
+        };
 
-                // Render dynamic Dewan Pengurus
-                if ($leadershipMembers->isNotEmpty()) {
-                    $dynamicLeadershipHtml = $renderCards($leadershipMembers);
-                    $patternLeadership = '/(<section id="leadership-section"[^>]*>.*?<div class="leadership-grid-4">)(.*?)(<\/div>\s*<\/div>\s*<\/section>)/s';
-                    $originalHtml = preg_replace($patternLeadership, '$1' . $dynamicLeadershipHtml . '$3', $originalHtml);
-                }
-
-                // Render dynamic Tim Ahli Pendukung jika ada data anggota tim ahli di DB
-                if ($expertMembers->isNotEmpty()) {
-                    $dynamicExpertHtml = $renderCards($expertMembers);
-                    $patternExpert = '/(<section id="tim-ahli-section"[^>]*>.*?<div class="leadership-grid-4">)(.*?)(<\/div>\s*<\/div>\s*<\/section>)/s';
-                    $originalHtml = preg_replace($patternExpert, '$1' . $dynamicExpertHtml . '$3', $originalHtml);
-                }
-            }
-        } catch (\Throwable $e) {
-            // Fallback gracefully ke konten statis tim/index.html jika DB tidak terhubung
+        // Render dynamic Dewan Pengurus
+        if ($leadershipMembers->isNotEmpty()) {
+          $dynamicLeadershipHtml = $renderCards($leadershipMembers);
+          $patternLeadership = '/(<section id="leadership-section"[^>]*>.*?<div class="leadership-grid-4">)(.*?)(<\/div>\s*<\/div>\s*<\/section>)/s';
+          $originalHtml = preg_replace($patternLeadership, '$1' . $dynamicLeadershipHtml . '$3', $originalHtml);
         }
 
-        return response($originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
-    }
-
-    // 2. LGOS: Sistem Operasi Organisasi (/lgos/)
-    public function lgos()
-    {
-        $originalHtml = file_get_contents(base_path('lgos/index.html'));
-
-        try {
-            $components = LgosComponent::where('is_active', true)
-                ->orderBy('sort_order', 'asc')
-                ->get();
-
-            if ($components->isNotEmpty()) {
-                foreach ($components as $c) {
-                    if (!empty($c->document_pdf_path) && $c->sort_order <= 5) {
-                        $compCode = $c->code ?: sprintf('KOMPONEN %02d', $c->sort_order);
-                        $pdfUrl = '/storage/' . htmlspecialchars($c->document_pdf_path);
-                        
-                        // Replace href="#" or existing link with uploaded PDF link for this specific component card
-                        $pattern = '/(<div class="lgos-num">\s*' . preg_quote($compCode, '/') . '\s*<\/div>.*?<a\s+[^>]*href=")([^"]*)(".*?class="[^"]*btn-lgos-doc download[^"]*")/is';
-                        $originalHtml = preg_replace($pattern, '$1' . $pdfUrl . '$3 target="_blank"', $originalHtml);
-                    }
-                }
-            }
-        } catch (\Throwable $e) {
-            // Graceful fallback to static lgos/index.html
+        // Render dynamic Tim Ahli Pendukung jika ada data anggota tim ahli di DB
+        if ($expertMembers->isNotEmpty()) {
+          $dynamicExpertHtml = $renderCards($expertMembers);
+          $patternExpert = '/(<section id="tim-ahli-section"[^>]*>.*?<div class="leadership-grid-4">)(.*?)(<\/div>\s*<\/div>\s*<\/section>)/s';
+          $originalHtml = preg_replace($patternExpert, '$1' . $dynamicExpertHtml . '$3', $originalHtml);
         }
-
-        return response($originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+      }
+    } catch (\Throwable $e) {
+      // Fallback gracefully ke konten statis tim/index.html jika DB tidak terhubung
     }
 
-    // 3. Portfolio (/portofolio/)
-    public function portfolio()
-    {
-        $projects = PortfolioProject::orderBy('sort_order', 'asc')->get();
-        $originalHtml = file_get_contents(base_path('portofolio/index.html'));
+    return response($originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
 
-        $dynamicCardsHtml = '';
-        foreach ($projects as $p) {
-            $coverImg = $p->image_cover_path
-                ? '/storage/' . $p->image_cover_path
-                : '/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp';
+  // 2. LGOS: Sistem Operasi Organisasi (/lgos/)
+  public function lgos()
+  {
+    $originalHtml = file_get_contents(base_path('lgos/index.html'));
 
-            $downloadDoc = $p->document_pdf_path
-                ? '<a href="/storage/' . htmlspecialchars($p->document_pdf_path) . '" target="_blank" style="color:#117710;font-weight:700;font-size:12.5px;text-decoration:none;margin-top:10px;display:inline-block;">&darr; Unduh Factsheet PDF</a>'
-                : '';
+    try {
+      $components = LgosComponent::where('is_active', true)
+        ->orderBy('sort_order', 'asc')
+        ->get();
 
-            $statusBadge = $p->status === 'ongoing'
-                ? '<span style="background:#eaf5ee;color:#0F5132;padding:4px 10px;border-radius:50px;font-size:11px;font-weight:700;">Ongoing</span>'
-                : '<span style="background:#f0f4f2;color:#5a7364;padding:4px 10px;border-radius:50px;font-size:11px;font-weight:700;">Completed</span>';
+      foreach ($components as $c) {
+        if (!empty($c->document_pdf_path) && $c->sort_order <= 5) {
+          $compCode = $c->code ?: sprintf('KOMPONEN %02d', $c->sort_order);
+          $pdfUrl = '/storage/' . ltrim($c->document_pdf_path, '/');
 
-            $dynamicCardsHtml .= '
+          // Match the card with this component code and inject the uploaded PDF download link
+          $pattern = '/(<div class="lgos-num">\s*' . preg_quote($compCode, '/') . '\s*<\/div>[\s\S]*?<a\s+[^>]*?href=")([^"]*)("[\s\S]*?class="[^"]*btn-lgos-doc download[^"]*")/i';
+
+          if (preg_match($pattern, $originalHtml)) {
+            $originalHtml = preg_replace($pattern, '$1' . $pdfUrl . '$3 target="_blank" download', $originalHtml, 1);
+          }
+        }
+      }
+    } catch (\Throwable $e) {
+      // Graceful fallback to static lgos/index.html
+    }
+
+    return response($originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
+
+  // 3. Portfolio (/portofolio/)
+  public function portfolio()
+  {
+    $projects = PortfolioProject::orderBy('sort_order', 'asc')->get();
+    $originalHtml = file_get_contents(base_path('portofolio/index.html'));
+
+    $dynamicCardsHtml = '';
+    foreach ($projects as $p) {
+      $coverImg = $p->image_cover_path
+        ? '/storage/' . $p->image_cover_path
+        : '/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp';
+
+      $downloadDoc = $p->document_pdf_path
+        ? '<a href="/storage/' . htmlspecialchars($p->document_pdf_path) . '" target="_blank" style="color:#117710;font-weight:700;font-size:12.5px;text-decoration:none;margin-top:10px;display:inline-block;">&darr; Unduh Factsheet PDF</a>'
+        : '';
+
+      $statusBadge = $p->status === 'ongoing'
+        ? '<span style="background:#eaf5ee;color:#0F5132;padding:4px 10px;border-radius:50px;font-size:11px;font-weight:700;">Ongoing</span>'
+        : '<span style="background:#f0f4f2;color:#5a7364;padding:4px 10px;border-radius:50px;font-size:11px;font-weight:700;">Completed</span>';
+
+      $dynamicCardsHtml .= '
             <div class="proyek-card" data-cat="' . htmlspecialchars($p->category) . '">
               <div class="proyek-img-wrap" style="position:relative;">
                 <img src="' . htmlspecialchars($coverImg) . '" alt="' . htmlspecialchars($p->project_title) . '" style="width:100%;height:220px;object-fit:cover;" onerror="this.src=\'/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp\'" />
@@ -152,27 +153,27 @@ class PageContentController extends Controller
                 ' . $downloadDoc . '
               </div>
             </div>';
-        }
-
-        $pattern = '/<div class="proyek-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-        $replacement = '<div class="proyek-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-top:30px;">' . $dynamicCardsHtml . '</div></div></section>';
-        $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
-
-        return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
 
-    // 4. Transparansi (/transparansi/)
-    public function transparansi()
-    {
-        $reports = TransparencyReport::where('is_active', true)
-            ->orderBy('report_year', 'desc')
-            ->get();
+    $pattern = '/<div class="proyek-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
+    $replacement = '<div class="proyek-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-top:30px;">' . $dynamicCardsHtml . '</div></div></section>';
+    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
 
-        $originalHtml = file_get_contents(base_path('transparansi/index.html'));
+    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
 
-        $dynamicCardsHtml = '';
-        foreach ($reports as $r) {
-            $dynamicCardsHtml .= '
+  // 4. Transparansi (/transparansi/)
+  public function transparansi()
+  {
+    $reports = TransparencyReport::where('is_active', true)
+      ->orderBy('report_year', 'desc')
+      ->get();
+
+    $originalHtml = file_get_contents(base_path('transparansi/index.html'));
+
+    $dynamicCardsHtml = '';
+    foreach ($reports as $r) {
+      $dynamicCardsHtml .= '
             <div class="laporan-card" style="background:#fff;border:1.5px solid #d2e8d1;border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;">
               <div>
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
@@ -189,33 +190,33 @@ class PageContentController extends Controller
                 </a>
               </div>
             </div>';
-        }
-
-        $pattern = '/<div class="laporan-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-        $replacement = '<div class="laporan-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-top:30px;">' . $dynamicCardsHtml . '</div></div></section>';
-        $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
-
-        return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
 
-    // 5. News & Features (/news-features/) - Kabar Terkini dari Program YNKI
-    public function newsFeatures()
-    {
-        $category = ArticleCategory::where('slug', 'news-features')->first();
-        $articles = Article::where('status', 'published')
-            ->when($category, fn($q) => $q->where('category_id', $category->id))
-            ->orderBy('published_at', 'desc')
-            ->get();
+    $pattern = '/<div class="laporan-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
+    $replacement = '<div class="laporan-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-top:30px;">' . $dynamicCardsHtml . '</div></div></section>';
+    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
 
-        $originalHtml = file_get_contents(base_path('news-features/index.html'));
+    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
 
-        $cardsHtml = '';
-        foreach ($articles as $art) {
-            $imgThumb = $art->featured_image_path 
-                ? '/storage/' . $art->featured_image_path 
-                : '/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp';
+  // 5. News & Features (/news-features/) - Kabar Terkini dari Program YNKI
+  public function newsFeatures()
+  {
+    $category = ArticleCategory::where('slug', 'news-features')->first();
+    $articles = Article::where('status', 'published')
+      ->when($category, fn($q) => $q->where('category_id', $category->id))
+      ->orderBy('published_at', 'desc')
+      ->get();
 
-            $cardsHtml .= '
+    $originalHtml = file_get_contents(base_path('news-features/index.html'));
+
+    $cardsHtml = '';
+    foreach ($articles as $art) {
+      $imgThumb = $art->featured_image_path
+        ? '/storage/' . $art->featured_image_path
+        : '/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp';
+
+      $cardsHtml .= '
             <div class="pptx-card">
               <div class="pptx-card-thumb">
                 <img src="' . htmlspecialchars($imgThumb) . '" alt="' . htmlspecialchars($art->title) . '" onerror="this.src=\'/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp\'">
@@ -228,33 +229,33 @@ class PageContentController extends Controller
                 <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '" class="btn-read-more">Baca Selengkapnya &rarr;</a>
               </div>
             </div>';
-        }
-
-        $pattern = '/<div class="pptx-cards-3col">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-        $replacement = '<div class="pptx-cards-3col">' . $cardsHtml . '</div></div></section>';
-        $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
-
-        return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
 
-    // 6. Penelitian & Laporan (/penelitian-laporan/) - Kumpulan Penelitian & Laporan
-    public function researchReports()
-    {
-        $category = ArticleCategory::where('slug', 'penelitian-laporan')->first();
-        $articles = Article::where('status', 'published')
-            ->when($category, fn($q) => $q->where('category_id', $category->id))
-            ->orderBy('published_at', 'desc')
-            ->get();
+    $pattern = '/<div class="pptx-cards-3col">.*?<\/div>\s*<\/div>\s*<\/section>/s';
+    $replacement = '<div class="pptx-cards-3col">' . $cardsHtml . '</div></div></section>';
+    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
 
-        $originalHtml = file_get_contents(base_path('penelitian-laporan/index.html'));
+    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
 
-        $itemsHtml = '';
-        foreach ($articles as $art) {
-            $pdfBtn = $art->attachment_pdf_path
-                ? '<a href="/storage/' . htmlspecialchars($art->attachment_pdf_path) . '" target="_blank" class="btn-download"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh PDF</a>'
-                : '';
+  // 6. Penelitian & Laporan (/penelitian-laporan/) - Kumpulan Penelitian & Laporan
+  public function researchReports()
+  {
+    $category = ArticleCategory::where('slug', 'penelitian-laporan')->first();
+    $articles = Article::where('status', 'published')
+      ->when($category, fn($q) => $q->where('category_id', $category->id))
+      ->orderBy('published_at', 'desc')
+      ->get();
 
-            $itemsHtml .= '
+    $originalHtml = file_get_contents(base_path('penelitian-laporan/index.html'));
+
+    $itemsHtml = '';
+    foreach ($articles as $art) {
+      $pdfBtn = $art->attachment_pdf_path
+        ? '<a href="/storage/' . htmlspecialchars($art->attachment_pdf_path) . '" target="_blank" class="btn-download"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh PDF</a>'
+        : '';
+
+      $itemsHtml .= '
             <div class="pen-item">
               <div class="pen-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
@@ -272,33 +273,33 @@ class PageContentController extends Controller
                 </div>
               </div>
             </div>';
-        }
-
-        $pattern = '/<div class="penelitian-list">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-        $replacement = '<div class="penelitian-list">' . $itemsHtml . '</div></div></section>';
-        $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
-
-        return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
 
-    // 7. Analisis & Kebijakan (/analisis-kebijakan/) - Kumpulan Analisis & Policy Brief
-    public function policyAnalysis()
-    {
-        $category = ArticleCategory::where('slug', 'analisis-kebijakan')->first();
-        $articles = Article::where('status', 'published')
-            ->when($category, fn($q) => $q->where('category_id', $category->id))
-            ->orderBy('published_at', 'desc')
-            ->get();
+    $pattern = '/<div class="penelitian-list">.*?<\/div>\s*<\/div>\s*<\/section>/s';
+    $replacement = '<div class="penelitian-list">' . $itemsHtml . '</div></div></section>';
+    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
 
-        $originalHtml = file_get_contents(base_path('analisis-kebijakan/index.html'));
+    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
 
-        $docsHtml = '';
-        foreach ($articles as $art) {
-            $pdfBtn = $art->attachment_pdf_path
-                ? '<a href="/storage/' . htmlspecialchars($art->attachment_pdf_path) . '" target="_blank" class="btn-dl"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh PDF</a>'
-                : '';
+  // 7. Analisis & Kebijakan (/analisis-kebijakan/) - Kumpulan Analisis & Policy Brief
+  public function policyAnalysis()
+  {
+    $category = ArticleCategory::where('slug', 'analisis-kebijakan')->first();
+    $articles = Article::where('status', 'published')
+      ->when($category, fn($q) => $q->where('category_id', $category->id))
+      ->orderBy('published_at', 'desc')
+      ->get();
 
-            $docsHtml .= '
+    $originalHtml = file_get_contents(base_path('analisis-kebijakan/index.html'));
+
+    $docsHtml = '';
+    foreach ($articles as $art) {
+      $pdfBtn = $art->attachment_pdf_path
+        ? '<a href="/storage/' . htmlspecialchars($art->attachment_pdf_path) . '" target="_blank" class="btn-dl"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh PDF</a>'
+        : '';
+
+      $docsHtml .= '
             <div class="doc-card">
               <div class="doc-header">
                 <span class="doc-badge b-policy">' . htmlspecialchars($art->category->category_name ?? 'Kebijakan') . '</span>
@@ -311,33 +312,33 @@ class PageContentController extends Controller
                 <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '" style="color:#117710;font-weight:700;font-size:13px;text-decoration:none;margin-left:12px;">Baca Ringkasan &rarr;</a>
               </div>
             </div>';
-        }
-
-        $pattern = '/<div class="docs-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-        $replacement = '<div class="docs-grid">' . $docsHtml . '</div></div></section>';
-        $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
-
-        return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
 
-    // 8. Perspektif Budaya (/perspektif-budaya/) - Artikel Perspektif Budaya
-    public function culturalPerspective()
-    {
-        $category = ArticleCategory::where('slug', 'perspektif-budaya')->first();
-        $articles = Article::where('status', 'published')
-            ->when($category, fn($q) => $q->where('category_id', $category->id))
-            ->orderBy('published_at', 'desc')
-            ->get();
+    $pattern = '/<div class="docs-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
+    $replacement = '<div class="docs-grid">' . $docsHtml . '</div></div></section>';
+    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
 
-        $originalHtml = file_get_contents(base_path('perspektif-budaya/index.html'));
+    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
 
-        $cardsHtml = '';
-        foreach ($articles as $art) {
-            $imgThumb = $art->featured_image_path 
-                ? '/storage/' . $art->featured_image_path 
-                : '/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp';
+  // 8. Perspektif Budaya (/perspektif-budaya/) - Artikel Perspektif Budaya
+  public function culturalPerspective()
+  {
+    $category = ArticleCategory::where('slug', 'perspektif-budaya')->first();
+    $articles = Article::where('status', 'published')
+      ->when($category, fn($q) => $q->where('category_id', $category->id))
+      ->orderBy('published_at', 'desc')
+      ->get();
 
-            $cardsHtml .= '
+    $originalHtml = file_get_contents(base_path('perspektif-budaya/index.html'));
+
+    $cardsHtml = '';
+    foreach ($articles as $art) {
+      $imgThumb = $art->featured_image_path
+        ? '/storage/' . $art->featured_image_path
+        : '/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp';
+
+      $cardsHtml .= '
             <div class="berita-card">
               <div class="berita-thumb">
                 <img src="' . htmlspecialchars($imgThumb) . '" alt="' . htmlspecialchars($art->title) . '" onerror="this.src=\'/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp\'">
@@ -353,41 +354,41 @@ class PageContentController extends Controller
                 <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '" class="berita-read">Baca Selengkapnya &rarr;</a>
               </div>
             </div>';
-        }
-
-        $pattern = '/<div class="berita-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-        $replacement = '<div class="berita-grid">' . $cardsHtml . '</div></div></section>';
-        $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
-
-        return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
 
-    // 9. Data Spasial & GIS (/data-spasial-dan-gis/) - Peta & Analisis GIS
-    public function spatialGis()
-    {
-        $category = ArticleCategory::where('slug', 'data-spasial-dan-gis')->first();
-        $articles = Article::where('status', 'published')
-            ->when($category, fn($q) => $q->where('category_id', $category->id))
-            ->orderBy('published_at', 'desc')
-            ->get();
+    $pattern = '/<div class="berita-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
+    $replacement = '<div class="berita-grid">' . $cardsHtml . '</div></div></section>';
+    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
 
-        $path = file_exists(base_path('data-spasial-dan-gis/index.html'))
-            ? base_path('data-spasial-dan-gis/index.html')
-            : base_path('data-spasial-gis/index.html');
+    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
 
-        $originalHtml = file_get_contents($path);
+  // 9. Data Spasial & GIS (/data-spasial-dan-gis/) - Peta & Analisis GIS
+  public function spatialGis()
+  {
+    $category = ArticleCategory::where('slug', 'data-spasial-dan-gis')->first();
+    $articles = Article::where('status', 'published')
+      ->when($category, fn($q) => $q->where('category_id', $category->id))
+      ->orderBy('published_at', 'desc')
+      ->get();
 
-        $gisCardsHtml = '';
-        foreach ($articles as $art) {
-            $imgCover = $art->featured_image_path 
-                ? '/storage/' . $art->featured_image_path 
-                : '/assets/images/data-spasial-gis/image12.png';
+    $path = file_exists(base_path('data-spasial-dan-gis/index.html'))
+      ? base_path('data-spasial-dan-gis/index.html')
+      : base_path('data-spasial-gis/index.html');
 
-            $pdfLink = $art->attachment_pdf_path 
-                ? '/storage/' . $art->attachment_pdf_path 
-                : '/artikel-cms/' . $art->slug;
+    $originalHtml = file_get_contents($path);
 
-            $gisCardsHtml .= '
+    $gisCardsHtml = '';
+    foreach ($articles as $art) {
+      $imgCover = $art->featured_image_path
+        ? '/storage/' . $art->featured_image_path
+        : '/assets/images/data-spasial-gis/image12.png';
+
+      $pdfLink = $art->attachment_pdf_path
+        ? '/storage/' . $art->attachment_pdf_path
+        : '/artikel-cms/' . $art->slug;
+
+      $gisCardsHtml .= '
             <div class="gis-product-card">
               <div class="card-img-wrap">
                 <img src="' . htmlspecialchars($imgCover) . '" alt="' . htmlspecialchars($art->title) . '" loading="lazy" onerror="this.src=\'/assets/images/data-spasial-gis/image12.png\'">
@@ -415,45 +416,45 @@ class PageContentController extends Controller
                 </div>
               </div>
             </div>';
-        }
-
-        // Replace the 5 GIS product cards grid
-        $pattern = '/<!-- 5 GIS Product Cards Grid -->\s*<div style="display:grid;grid-template-columns:repeat\(auto-fit, minmax\(320px, 1fr\)\);gap:26px;">.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/s';
-        $replacement = '<!-- 5 GIS Product Cards Grid -->
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:26px;">' . $gisCardsHtml . '</div></div></div></div>';
-        
-        $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
-
-        return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
 
-    // 10. Story Foto & Video (/story-foto-video/ & /stori-foto-video/)
-    public function mediaStories()
-    {
-        $photos = MediaStory::where('is_active', true)
-            ->where('media_type', 'photo')
-            ->orderBy('sort_order', 'asc')
-            ->get();
+    // Replace the 5 GIS product cards grid
+    $pattern = '/<!-- 5 GIS Product Cards Grid -->\s*<div style="display:grid;grid-template-columns:repeat\(auto-fit, minmax\(320px, 1fr\)\);gap:26px;">.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/s';
+    $replacement = '<!-- 5 GIS Product Cards Grid -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:26px;">' . $gisCardsHtml . '</div></div></div></div>';
 
-        $videos = MediaStory::where('is_active', true)
-            ->where('media_type', 'video')
-            ->orderBy('sort_order', 'asc')
-            ->get();
+    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
 
-        $path = file_exists(base_path('story-foto-video/index.html'))
-            ? base_path('story-foto-video/index.html')
-            : base_path('stori-foto-video/index.html');
+    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
 
-        $originalHtml = file_get_contents($path);
+  // 10. Story Foto & Video (/story-foto-video/ & /stori-foto-video/)
+  public function mediaStories()
+  {
+    $photos = MediaStory::where('is_active', true)
+      ->where('media_type', 'photo')
+      ->orderBy('sort_order', 'asc')
+      ->get();
 
-        // 1. Render Foto-Foto dari Lapangan
-        $photosHtml = '';
-        foreach ($photos as $s) {
-            $imgSrc = $s->image_path 
-                ? '/storage/' . $s->image_path 
-                : '/assets/images/stori-foto-video/image5.png';
+    $videos = MediaStory::where('is_active', true)
+      ->where('media_type', 'video')
+      ->orderBy('sort_order', 'asc')
+      ->get();
 
-            $photosHtml .= '
+    $path = file_exists(base_path('story-foto-video/index.html'))
+      ? base_path('story-foto-video/index.html')
+      : base_path('stori-foto-video/index.html');
+
+    $originalHtml = file_get_contents($path);
+
+    // 1. Render Foto-Foto dari Lapangan
+    $photosHtml = '';
+    foreach ($photos as $s) {
+      $imgSrc = $s->image_path
+        ? '/storage/' . $s->image_path
+        : '/assets/images/stori-foto-video/image5.png';
+
+      $photosHtml .= '
             <div class="photo-story-card">
               <div class="card-img-wrap">
                 <img src="' . htmlspecialchars($imgSrc) . '" alt="' . htmlspecialchars($s->title) . '" loading="lazy" onerror="this.src=\'/assets/images/stori-foto-video/image5.png\'">
@@ -479,17 +480,17 @@ class PageContentController extends Controller
                 </div>
               </div>
             </div>';
-        }
+    }
 
-        // 2. Render Saksikan Perubahan Nyata di Lapangan (Video)
-        $videosHtml = '';
-        foreach ($videos as $v) {
-            $embedUrl = $v->youtube_url;
-            if (str_contains($embedUrl, 'watch?v=')) {
-                $embedUrl = str_replace('watch?v=', 'embed/', $embedUrl);
-            }
+    // 2. Render Saksikan Perubahan Nyata di Lapangan (Video)
+    $videosHtml = '';
+    foreach ($videos as $v) {
+      $embedUrl = $v->youtube_url;
+      if (str_contains($embedUrl, 'watch?v=')) {
+        $embedUrl = str_replace('watch?v=', 'embed/', $embedUrl);
+      }
 
-            $videosHtml .= '
+      $videosHtml .= '
             <div class="video-card">
               <div class="video-thumb-wrap" style="position:relative;height:200px;background:#000;">
                 <iframe src="' . htmlspecialchars($embedUrl) . '" style="width:100%;height:100%;border:none;" allowfullscreen></iframe>
@@ -511,99 +512,98 @@ class PageContentController extends Controller
                 </div>
               </div>
             </div>';
-        }
+    }
 
-        // Replace photo section
-        $patternPhoto = '/<!-- 3 Photo Story Cards Grid -->\s*<div style="display:grid;grid-template-columns:repeat\(auto-fit, minmax\(320px, 1fr\)\);gap:26px;">.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/s';
-        $replacementPhoto = '<!-- 3 Photo Story Cards Grid -->
+    // Replace photo section
+    $patternPhoto = '/<!-- 3 Photo Story Cards Grid -->\s*<div style="display:grid;grid-template-columns:repeat\(auto-fit, minmax\(320px, 1fr\)\);gap:26px;">.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/s';
+    $replacementPhoto = '<!-- 3 Photo Story Cards Grid -->
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:26px;">' . $photosHtml . '</div></div></div></div>';
-        
-        $renderedHtml = preg_replace($patternPhoto, $replacementPhoto, $originalHtml);
 
-        // Replace video section
-        $patternVideo = '/<!-- 3 Video Cards Grid -->\s*<div style="display:grid;grid-template-columns:repeat\(auto-fit, minmax\(320px, 1fr\)\);gap:26px;">.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/s';
-        $replacementVideo = '<!-- 3 Video Cards Grid -->
+    $renderedHtml = preg_replace($patternPhoto, $replacementPhoto, $originalHtml);
+
+    // Replace video section
+    $patternVideo = '/<!-- 3 Video Cards Grid -->\s*<div style="display:grid;grid-template-columns:repeat\(auto-fit, minmax\(320px, 1fr\)\);gap:26px;">.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/s';
+    $replacementVideo = '<!-- 3 Video Cards Grid -->
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:26px;">' . $videosHtml . '</div></div></div></div>';
 
-        if ($renderedHtml) {
-            $renderedHtml = preg_replace($patternVideo, $replacementVideo, $renderedHtml);
-        }
-
-        return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    if ($renderedHtml) {
+      $renderedHtml = preg_replace($patternVideo, $replacementVideo, $renderedHtml);
     }
 
-    // 11. Ikut Terlibat / Ikut Serta (/ikut-terlibat/, /ikut-serta/)
-    public function ikutTerlibat()
-    {
-        $filePath = base_path('ikut-terlibat/index.html');
-        $html = file_exists($filePath) ? file_get_contents($filePath) : '';
-        return response($html, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
+
+  // 11. Ikut Terlibat / Ikut Serta (/ikut-terlibat/, /ikut-serta/)
+  public function ikutTerlibat()
+  {
+    $filePath = base_path('ikut-terlibat/index.html');
+    $html = file_exists($filePath) ? file_get_contents($filePath) : '';
+    return response($html, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
+
+  public function storeParticipation(Request $request)
+  {
+    $validated = $request->validate([
+      'name' => 'required|string|max:150',
+      'email' => 'required|email|max:150',
+      'phone' => 'required|string|max:50',
+      'interest' => 'required|string|max:100',
+      'message' => 'nullable|string|max:3000',
+    ]);
+
+    Participation::create([
+      'name' => $validated['name'],
+      'email' => $validated['email'],
+      'phone' => $validated['phone'],
+      'interest' => $validated['interest'],
+      'message' => $validated['message'] ?? null,
+      'is_read' => false,
+    ]);
+
+    if ($request->ajax() || $request->wantsJson()) {
+      return response()->json([
+        'success' => true,
+        'message' => 'Terima kasih! Formulir minat keterlibatan Anda telah berhasil dikirim ke Sekretariat YNKI.'
+      ]);
     }
 
-    public function storeParticipation(Request $request)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string|max:150',
-            'email' => 'required|email|max:150',
-            'phone' => 'required|string|max:50',
-            'interest' => 'required|string|max:100',
-            'message' => 'nullable|string|max:3000',
-        ]);
+    return redirect()->back()->with('success', 'Terima kasih! Formulir minat keterlibatan Anda telah berhasil dikirim ke Sekretariat YNKI.');
+  }
 
-        Participation::create([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'phone' => $validated['phone'],
-            'interest' => $validated['interest'],
-            'message' => $validated['message'] ?? null,
-            'is_read' => false,
-        ]);
+  // 12. Kontak Kami / Hubungi Kami (/kontak-kami/, /hubungi-kami/)
+  public function kontakKami()
+  {
+    $filePath = base_path('kontak-kami/index.html');
+    $html = file_exists($filePath) ? file_get_contents($filePath) : '';
+    return response($html, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
 
-        if ($request->ajax() || $request->wantsJson()) {
-            return response()->json([
-                'success' => true,
-                'message' => 'Terima kasih! Formulir minat keterlibatan Anda telah berhasil dikirim ke Sekretariat YNKI.'
-            ]);
-        }
+  public function storeContactMessage(Request $request)
+  {
+    $validated = $request->validate([
+      'name' => 'required|string|max:150',
+      'email' => 'required|email|max:150',
+      'phone' => 'nullable|string|max:50',
+      'subject' => 'nullable|string|max:150',
+      'message' => 'required|string|max:5000',
+    ]);
 
-        return redirect()->back()->with('success', 'Terima kasih! Formulir minat keterlibatan Anda telah berhasil dikirim ke Sekretariat YNKI.');
+    ContactMessage::create([
+      'name' => $validated['name'],
+      'email' => $validated['email'],
+      'phone' => $validated['phone'] ?? null,
+      'subject' => $validated['subject'] ?? 'Umum',
+      'message' => $validated['message'],
+      'is_read' => false,
+    ]);
+
+    if ($request->ajax() || $request->wantsJson()) {
+      return response()->json([
+        'success' => true,
+        'message' => 'Terima kasih! Pesan Anda telah berhasil terkirim ke Sekretariat YNKI.'
+      ]);
     }
 
-    // 12. Kontak Kami / Hubungi Kami (/kontak-kami/, /hubungi-kami/)
-    public function kontakKami()
-    {
-        $filePath = base_path('kontak-kami/index.html');
-        $html = file_exists($filePath) ? file_get_contents($filePath) : '';
-        return response($html, 200)->header('Content-Type', 'text/html; charset=UTF-8');
-    }
-
-    public function storeContactMessage(Request $request)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string|max:150',
-            'email' => 'required|email|max:150',
-            'phone' => 'nullable|string|max:50',
-            'subject' => 'nullable|string|max:150',
-            'message' => 'required|string|max:5000',
-        ]);
-
-        ContactMessage::create([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'phone' => $validated['phone'] ?? null,
-            'subject' => $validated['subject'] ?? 'Umum',
-            'message' => $validated['message'],
-            'is_read' => false,
-        ]);
-
-        if ($request->ajax() || $request->wantsJson()) {
-            return response()->json([
-                'success' => true,
-                'message' => 'Terima kasih! Pesan Anda telah berhasil terkirim ke Sekretariat YNKI.'
-            ]);
-        }
-
-        return redirect()->back()->with('success', 'Terima kasih! Pesan Anda telah berhasil terkirim ke Sekretariat YNKI.');
-    }
+    return redirect()->back()->with('success', 'Terima kasih! Pesan Anda telah berhasil terkirim ke Sekretariat YNKI.');
+  }
 }
-
