@@ -169,8 +169,16 @@ h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3,
 #hero-lgos h1,
 #hero-port h1,
 #hero-trans h1,
+#hero-budaya h1,
+#hero-lg h1,
+#hero-nc h1,
+#hero-sus h1,
+#hero-int h1,
+#hero-inst h1,
+.hero-content h1,
 .hero-content-sejarah h1,
 .hero-content-trans h1,
+.hero-inner h1,
 .pptx-hero h1 {
   font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
   font-size: clamp(30px, 4.5vw, 50px) !important;
@@ -201,6 +209,13 @@ h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3,
 #hero-lgos h1 span.hl,
 #hero-port h1 span.hl,
 #hero-trans h1 span.hl,
+#hero-lg h1 span.hl,
+#hero-nc h1 span.hl,
+#hero-sus h1 span.hl,
+#hero-int h1 span.hl,
+#hero-inst h1 span.hl,
+.hero-inner h1 span.hl,
+.hero-inner h1 span.highlight,
 h1 span.highlight,
 h1 span.hl {
   font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
@@ -216,7 +231,13 @@ h1 span.hl {
 .hero-desc,
 .pptx-hero-desc,
 .hero-section p.hero-sub,
-#hero-sejarah p.hero-desc-sejarah {
+#hero-sejarah p.hero-desc-sejarah,
+#hero-lg p.hero-sub,
+#hero-nc p.hero-sub,
+#hero-sus p.hero-sub,
+#hero-int p.hero-sub,
+#hero-inst p.hero-sub,
+.hero-inner p.hero-sub {
   font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
   font-size: clamp(15px, 1.6vw, 18px) !important;
   line-height: 1.8 !important;
