@@ -99,11 +99,11 @@ class PageContentController extends Controller
 
       foreach ($components as $c) {
         if (!empty($c->document_pdf_path) && $c->sort_order <= 5) {
-          $compCode = $c->code ?: sprintf('KOMPONEN %02d', $c->sort_order);
+          $order = intval($c->sort_order);
           $pdfUrl = '/storage/' . ltrim($c->document_pdf_path, '/');
 
-          // Match the card with this component code and inject the uploaded PDF download link
-          $pattern = '/(<div class="lgos-num">\s*' . preg_quote($compCode, '/') . '\s*<\/div>[\s\S]*?<a\s+[^>]*?href=")([^"]*)("[\s\S]*?class="[^"]*btn-lgos-doc download[^"]*")/i';
+          // Match the card with this component order number (e.g. KOMPONEN 01) and inject the uploaded PDF download link
+          $pattern = '/(<div class="lgos-num">\s*KOMPONEN\s*0*' . $order . '\s*<\/div>[\s\S]*?<a\s+[^>]*?href=")([^"]*)("[\s\S]*?class="[^"]*btn-lgos-doc download[^"]*")/i';
 
           if (preg_match($pattern, $originalHtml)) {
             $originalHtml = preg_replace($pattern, '$1' . $pdfUrl . '$3 target="_blank" download', $originalHtml, 1);
