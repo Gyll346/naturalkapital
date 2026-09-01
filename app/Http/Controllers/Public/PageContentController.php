@@ -103,8 +103,8 @@ class PageContentController extends Controller
                         $compCode = $c->code ?: sprintf('KOMPONEN %02d', $c->sort_order);
                         $pdfUrl = '/storage/' . htmlspecialchars($c->document_pdf_path);
                         
-                        // Replace href="#" with uploaded PDF link for this specific component card
-                        $pattern = '/(<div class="lgos-num">\s*' . preg_quote($compCode, '/') . '\s*<\/div>.*?<a href=")(#)(".*?class="btn-lgos-doc download")/s';
+                        // Replace href="#" or existing link with uploaded PDF link for this specific component card
+                        $pattern = '/(<div class="lgos-num">\s*' . preg_quote($compCode, '/') . '\s*<\/div>.*?<a\s+[^>]*href=")([^"]*)(".*?class="[^"]*btn-lgos-doc download[^"]*")/is';
                         $originalHtml = preg_replace($pattern, '$1' . $pdfUrl . '$3 target="_blank"', $originalHtml);
                     }
                 }
