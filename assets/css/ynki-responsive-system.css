@@ -98,12 +98,11 @@ ul li, ol li, table td, table th,
   -webkit-font-smoothing: antialiased;
 }
 
-/* Judul (H1 - H4) Menggunakan Montserrat / Inter Bold */
+/* Judul (H1 - H4) Menggunakan Montserrat / Inter */
 h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3,
 .section-title, .mengapa-label, .mitra-logos strong {
-  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
-  font-weight: 800 !important;
-  letter-spacing: -0.02em;
+  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 /* ==========================================================================
