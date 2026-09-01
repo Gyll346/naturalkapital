@@ -106,60 +106,8 @@ h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3,
 }
 
 /* ==========================================================================
-   HERO SECTION TYPOGRAPHY (MONTSERRAT FONT UNTUK HERO HEADINGS)
+   HERO SECTION TYPOGRAPHY (CANDARA / SEGOE UI HERO HEADINGS & SUBTITLES)
    ========================================================================== */
-.hero-section h1,
-.hero-h1,
-#hero-sejarah h1,
-#hero-home h1,
-#hero-tim h1,
-#hero-lgos h1,
-#hero-port h1,
-#hero-trans h1,
-#hero-budaya h1,
-#hero-int h1,
-.hero-content h1,
-.hero-content-sejarah h1,
-.hero-content-trans h1,
-.pptx-hero h1 {
-  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
-}
-
-.hero-section,
-#hero-sejarah,
-.hero-content-sejarah,
-.hero-content-trans,
-.hero-inner {
-  text-align: center;
-}
-
-.hero-crumb,
-.hero-breadcrumb {
-  font-size: 12px !important;
-  font-weight: 700 !important;
-  letter-spacing: 1.5px !important;
-  text-transform: uppercase !important;
-  color: #a3e0a2 !important;
-  margin-bottom: 18px !important;
-}
-
-.hero-crumb a,
-.hero-breadcrumb a {
-  color: #d2f0d1 !important;
-  text-decoration: none !important;
-  transition: color 0.2s ease !important;
-}
-
-.hero-crumb a:hover,
-.hero-breadcrumb a:hover {
-  color: #FF8000 !important;
-}
-
-.hero-crumb span,
-.hero-breadcrumb span {
-  color: #a3e0a2 !important;
-}
-
 .hero-section h1,
 .hero-h1,
 #hero-sejarah h1,
@@ -179,9 +127,9 @@ h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3,
 .hero-content-trans h1,
 .hero-inner h1,
 .pptx-hero h1 {
-  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
-  font-size: clamp(28px, 4vw, 46px) !important;
-  font-weight: 300 !important;
+  font-family: 'Candara', 'Segoe UI', Calibri, 'Inter', Arial, sans-serif !important;
+  font-size: clamp(30px, 4.5vw, 50px) !important;
+  font-weight: 400 !important;
   line-height: 1.25 !important;
   color: #ffffff !important;
   margin: 0 0 20px !important;
@@ -217,11 +165,11 @@ h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3,
 .hero-inner h1 span.highlight,
 h1 span.highlight,
 h1 span.hl {
-  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
+  font-family: 'Candara', 'Segoe UI', Calibri, 'Inter', Arial, sans-serif !important;
   color: #a3e0a2 !important;
   font-size: 0.88em !important;
   display: inline-block;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
 }
 
 .hero-sub,
@@ -237,7 +185,7 @@ h1 span.hl {
 #hero-int p.hero-sub,
 #hero-inst p.hero-sub,
 .hero-inner p.hero-sub {
-  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
+  font-family: 'Candara', 'Segoe UI', Calibri, 'Inter', Arial, sans-serif !important;
   font-size: clamp(14px, 1.5vw, 17px) !important;
   line-height: 1.8 !important;
   color: #d2f0d1 !important;
