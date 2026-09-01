@@ -3065,7 +3065,7 @@
                               class="awb-menu__sub-a"
                               aria-current="page"
                               ><span
-                                >Landscape Intelligence &amp; Innovation</span
+                                >Pengetahuan Lanskap &amp; Inovasi</span
                               ></a
                             >
                           </li>

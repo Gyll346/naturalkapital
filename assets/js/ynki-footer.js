@@ -95,7 +95,8 @@
         ['/landscape-governance/', 'Landscape Governance'],
         ['/natural-capital/', 'Natural Capital & Restoration'],
         ['/sustainable-commodity/', 'Sustainable Commodity System'],
-        ['/landscape-intelligence/', 'Landscape Intelligence & Innovation'],
+        ['/landscape-intelligence/', 'Pengetahuan Lanskap & Inovasi'],
+        ['/institutional-partnership/', 'Institutional Partnership'],
         ['/annual-report/', 'Annual Report']
       ]
     },
