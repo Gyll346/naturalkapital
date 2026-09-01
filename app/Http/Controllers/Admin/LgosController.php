@@ -26,6 +26,7 @@ class LgosController extends Controller
         $validated = $request->validate([
             'component_name' => 'required|string|max:255',
             'code' => 'nullable|string|max:50',
+            'role' => 'nullable|string|max:255',
             'description' => 'required|string',
             'document_pdf' => 'nullable|file|mimes:pdf|max:25600',
             'sort_order' => 'nullable|integer',
@@ -40,6 +41,7 @@ class LgosController extends Controller
         $component = LgosComponent::create([
             'component_name' => $validated['component_name'],
             'code' => $validated['code'] ?? null,
+            'role' => $validated['role'] ?? null,
             'description' => $validated['description'],
             'document_pdf_path' => $pdfPath,
             'sort_order' => $validated['sort_order'] ?? 0,
@@ -50,7 +52,7 @@ class LgosController extends Controller
             'user_id' => auth()->id(),
             'action' => 'CREATE_LGOS_COMPONENT',
             'module' => 'LGOS',
-            'details' => 'Menambahkan komponen pendukung LGOS: ' . $component->component_name,
+            'details' => 'Menambahkan komponen LGOS: ' . $component->component_name,
             'ip_address' => $request->ip(),
         ]);
 
@@ -70,6 +72,7 @@ class LgosController extends Controller
         $validated = $request->validate([
             'component_name' => 'required|string|max:255',
             'code' => 'nullable|string|max:50',
+            'role' => 'nullable|string|max:255',
             'description' => 'required|string',
             'document_pdf' => 'nullable|file|mimes:pdf|max:25600',
             'sort_order' => 'nullable|integer',
@@ -86,6 +89,7 @@ class LgosController extends Controller
         $component->update([
             'component_name' => $validated['component_name'],
             'code' => $validated['code'] ?? null,
+            'role' => $validated['role'] ?? null,
             'description' => $validated['description'],
             'sort_order' => $validated['sort_order'] ?? 0,
             'is_active' => $request->has('is_active'),
@@ -95,7 +99,7 @@ class LgosController extends Controller
             'user_id' => auth()->id(),
             'action' => 'UPDATE_LGOS_COMPONENT',
             'module' => 'LGOS',
-            'details' => 'Memperbarui komponen pendukung LGOS: ' . $component->component_name,
+            'details' => 'Memperbarui komponen LGOS: ' . $component->component_name,
             'ip_address' => $request->ip(),
         ]);
 

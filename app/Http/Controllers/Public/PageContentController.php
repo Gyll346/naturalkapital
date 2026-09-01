@@ -90,36 +90,61 @@ class PageContentController extends Controller
     // 2. LGOS: Sistem Operasi Organisasi (/lgos/)
     public function lgos()
     {
-        $components = LgosComponent::where('is_active', true)
-            ->orderBy('sort_order', 'asc')
-            ->get();
-
         $originalHtml = file_get_contents(base_path('lgos/index.html'));
 
-        $dynamicRowsHtml = '';
-        foreach ($components as $c) {
-            $downloadBtn = $c->document_pdf_path
-                ? '<a href="/storage/' . htmlspecialchars($c->document_pdf_path) . '" target="_blank" class="download-btn" style="background:#117710;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg> Unduh PDF</a>'
-                : '<span style="color:#888;font-size:12px;">Tersedia di Internal</span>';
+        try {
+            $components = LgosComponent::where('is_active', true)
+                ->orderBy('sort_order', 'asc')
+                ->get();
 
-            $dynamicRowsHtml .= '
-            <tr>
-              <td>
-                <div class="comp-name">' . htmlspecialchars($c->component_name) . '</div>
-                <div class="comp-label">' . htmlspecialchars($c->code ?? 'KOMPONEN') . '</div>
-              </td>
-              <td>
-                <div class="comp-desc">' . htmlspecialchars($c->description) . '</div>
-              </td>
-              <td style="text-align: center; vertical-align: middle;">' . $downloadBtn . '</td>
-            </tr>';
+            if ($components->isNotEmpty()) {
+                $dynamicCardsHtml = '';
+                foreach ($components as $index => $c) {
+                    $code = $c->code ?: sprintf('KOMPONEN %02d', ($c->sort_order ?: ($index + 1)));
+                    $role = $c->role ? '<div class="role">' . htmlspecialchars($c->role) . '</div>' : '';
+
+                    if ($c->sort_order <= 5) {
+                        $downloadUrl = $c->document_pdf_path 
+                            ? '/storage/' . htmlspecialchars($c->document_pdf_path) 
+                            : '#';
+                        $downloadTarget = $c->document_pdf_path ? ' target="_blank"' : '';
+                        $actionHtml = '
+                          <div class="lgos-card-action">
+                            <a href="' . $downloadUrl . '"' . $downloadTarget . ' class="btn-lgos-doc download">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                              Unduh Dokumen
+                            </a>
+                          </div>';
+                    } else {
+                        $actionHtml = '
+                          <div class="lgos-card-action">
+                            <a href="/kontak-kami/" class="btn-lgos-doc contact">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                              Hubungi Kami
+                            </a>
+                          </div>';
+                    }
+
+                    $dynamicCardsHtml .= '
+                        <div class="lgos-card">
+                          <div class="lgos-num">' . htmlspecialchars($code) . '</div>
+                          <h4>' . htmlspecialchars($c->component_name) . '</h4>
+                          ' . $role . '
+                          <p>' . htmlspecialchars($c->description) . '</p>
+                          ' . $actionHtml . '
+                        </div>';
+                }
+
+                $pattern = '/(<div class="lgos-grid">)(.*?)(<\/div>\s*<!-- Tagline bawah grid -->)/s';
+                if (preg_match($pattern, $originalHtml)) {
+                    $originalHtml = preg_replace($pattern, '$1' . $dynamicCardsHtml . '$3', $originalHtml);
+                }
+            }
+        } catch (\Throwable $e) {
+            // Fallback gracefully ke konten statis lgos/index.html jika DB belum siap
         }
 
-        $pattern = '/<tbody>.*?<\/tbody>/s';
-        $replacement = '<tbody>' . $dynamicRowsHtml . '</tbody>';
-        $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
-
-        return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+        return response($originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
 
     // 3. Portfolio (/portofolio/)

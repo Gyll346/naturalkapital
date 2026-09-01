@@ -251,42 +251,68 @@ class DatabaseSeeder extends Seeder
             TeamMember::firstOrCreate(['full_name' => $member['full_name']], $member);
         }
 
-        // 6. Data Komponen Pendukung LGOS
+        // 6. Data 8 Komponen LGOS (Komponen 1-5 Unduh Dokumen, Komponen 6-8 Kontak Kami)
         $lgosComponents = [
             [
-                'component_name' => 'Kerangka Kebijakan & Rencana Strategis (RPJM & RKT)',
-                'code' => 'LGOS-01',
-                'description' => 'Pedoman perumusan strategi jangka panjang (RPJM 5 tahun) dan Rencana Kerja Tahunan terukur berbasis indikator kinerja utama tata kelola lanskap.',
+                'component_name' => 'Kertas Posisi',
+                'code' => 'KOMPONEN 01',
+                'role' => 'Mengapa Kami Ada',
+                'description' => 'Fondasi filosofis yang menjelaskan mengapa YNKI ada dan nilai-nilai yang mendasari seluruh keputusan organisasi.',
                 'sort_order' => 1,
             ],
             [
-                'component_name' => 'SOP Tata Kelola Keuangan & Akuntabilitas Hibah Donor',
-                'code' => 'LGOS-02',
-                'description' => 'Prosedur operasional baku pengelolaan anggaran, pengadaan barang/jasa, pencatatan transaksi, serta audit berkala sesuai standar akuntansi nirlaba.',
+                'component_name' => 'Master ToC',
+                'code' => 'KOMPONEN 02',
+                'role' => 'Bagaimana Perubahan Terjadi',
+                'description' => 'Menggambarkan hubungan antara tata kelola lanskap, perubahan perilaku, kelembagaan, dan dampak jangka panjang.',
                 'sort_order' => 2,
             ],
             [
-                'component_name' => 'Pedoman Safeguards Sosial & Lingkungan (ESMS)',
-                'code' => 'LGOS-03',
-                'description' => 'Kerangka perlindungan hak masyarakat adat, kesetaraan gender, mitigasi dampak lingkungan, dan protokol persetujuan atas dasar informasi awal tanpa paksaan (FPIC).',
+                'component_name' => 'Rencana Strategis',
+                'code' => 'KOMPONEN 03',
+                'role' => 'Ke Mana Kami Melangkah',
+                'description' => 'Menerjemahkan Theory of Change menjadi arah organisasi jangka menengah dan panjang (2026–2035).',
                 'sort_order' => 3,
             ],
             [
-                'component_name' => 'Protokol Pemantauan & Evaluasi Dampak (PMEL)',
-                'code' => 'LGOS-04',
-                'description' => 'Sistem monitoring terpadu untuk melacak luasan restorasi, status keanekaragaman hayati, dan indeks kesejahteraan masyarakat di wilayah intervensi.',
+                'component_name' => 'Kerangka Program',
+                'code' => 'KOMPONEN 04',
+                'role' => 'Portofolio Program',
+                'description' => 'Menentukan portofolio 5 program strategis sebagai jembatan antara strategi dan implementasi di lapangan.',
                 'sort_order' => 4,
             ],
             [
-                'component_name' => 'Sistem Manajemen Pengetahuan & Komunikasi Data Spasial',
-                'code' => 'LGOS-05',
-                'description' => 'Platform integrasi data geospasial, repositori publikasi penelitian, dan distribusi infografis kebijakan kepada pemangku kepentingan lintas sektor.',
+                'component_name' => 'Portofolio Proyek',
+                'code' => 'KOMPONEN 05',
+                'role' => 'Proyek & Kemitraan',
+                'description' => 'Menerjemahkan strategi ke dalam proyek, kemitraan, dan inisiatif lapangan sebagai antarmuka dengan pemangku kepentingan.',
                 'sort_order' => 5,
+            ],
+            [
+                'component_name' => 'Sistem MEL',
+                'code' => 'KOMPONEN 06',
+                'role' => 'Monitoring, Evaluation, & Learning',
+                'description' => 'Menghasilkan pembelajaran dan mendukung adaptive management melalui monitoring, evaluasi, dan pembelajaran berkelanjutan.',
+                'sort_order' => 6,
+            ],
+            [
+                'component_name' => 'Pengetahuan Organisasi',
+                'code' => 'KOMPONEN 07',
+                'role' => 'Memori Organisasi',
+                'description' => 'Menjaga memori organisasi agar pengalaman, data, dan inovasi tidak hilang ketika proyek atau individu berubah.',
+                'sort_order' => 7,
+            ],
+            [
+                'component_name' => 'Mobilisasi Sumber Daya',
+                'code' => 'KOMPONEN 08',
+                'role' => 'Pendanaan & Kemitraan',
+                'description' => 'Menyediakan energi (pendanaan, kemitraan, pengetahuan, teknologi) untuk menjalankan seluruh sistem organisasi.',
+                'sort_order' => 8,
             ],
         ];
 
         foreach ($lgosComponents as $comp) {
-            LgosComponent::firstOrCreate(['code' => $comp['code']], $comp);
+            LgosComponent::updateOrCreate(['code' => $comp['code']], $comp);
         }
 
         // 7. Data Portfolio Program & Proyek

@@ -12,7 +12,8 @@ return new class extends Migration
         Schema::create('lgos_components', function (Blueprint $table) {
             $table->id();
             $table->string('component_name');
-            $table->string('code')->nullable(); // misal: KOMP-01
+            $table->string('code')->nullable(); // misal: KOMPONEN 01
+            $table->string('role')->nullable(); // misal: Mengapa Kami Ada
             $table->text('description');
             $table->string('document_pdf_path')->nullable();
             $table->integer('sort_order')->default(0);

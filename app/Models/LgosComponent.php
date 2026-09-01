@@ -14,6 +14,7 @@ class LgosComponent extends Model
     protected $fillable = [
         'component_name',
         'code',
+        'role',
         'description',
         'document_pdf_path',
         'sort_order',
