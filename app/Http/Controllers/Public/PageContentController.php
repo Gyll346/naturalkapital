@@ -260,6 +260,19 @@ class PageContentController extends Controller
   private function getPortfolioCatalogue(): array
   {
     return [
+      'sistem-cerdas-pemantauan-lanskap-gis' => [
+        'title' => 'Sistem Cerdas Pemantauan Lanskap & GIS',
+        'slug' => 'sistem-cerdas-pemantauan-lanskap-gis',
+        'category' => 'Landscape Intelligence & Innovation',
+        'category_slug' => 'pemetaan',
+        'status' => 'ongoing',
+        'location' => 'Kalimantan Barat',
+        'period' => '2023 – Sekarang',
+        'partner_donor' => 'Yayasan Natural Kapital Indonesia & Mitra',
+        'summary' => 'Platform geospasial cerdas dan pemantauan lanskap berbasis data spasial real-time untuk mendukung perencanaan wilayah dan konservasi terpadu di Kalimantan Barat.',
+        'description' => 'Inisiatif pengembangan sistem cerdas pemantauan spasial berbasis GIS (Geographic Information System) dan citra satelit resolusi tinggi untuk memantau dinamika perubahan tutupan lahan, potensi deforestasi, hidrologi gambut, serta koridor Area Bernilai Konservasi Tinggi (ABKT) di Kalimantan Barat. Platform ini memadukan analisis kecerdasan buatan, data lapangan partisipatif komunitas, dan integrasi kebijakan satu peta (One Map Policy) guna menyediakan data geospasial yang akurat dan terbuka bagi pengambil kebijakan publik, pengelola kawasan, serta mitra pembangunan berkelanjutan.',
+        'document_pdf_path' => null,
+      ],
       'tfca-kalimantan-mitigasi-adaptasi-iklim-desa-gambut' => [
         'title' => 'Program TFCA Kalimantan – Penguatan Mitigasi & Adaptasi Iklim Desa Gambut',
         'slug' => 'tfca-kalimantan-mitigasi-adaptasi-iklim-desa-gambut',
