@@ -98,52 +98,19 @@ class PageContentController extends Controller
                 ->get();
 
             if ($components->isNotEmpty()) {
-                $dynamicCardsHtml = '';
-                foreach ($components as $index => $c) {
-                    $code = $c->code ?: sprintf('KOMPONEN %02d', ($c->sort_order ?: ($index + 1)));
-                    $role = $c->role ? '<div class="role">' . htmlspecialchars($c->role) . '</div>' : '';
-
-                    if ($c->sort_order <= 5) {
-                        $downloadUrl = $c->document_pdf_path 
-                            ? '/storage/' . htmlspecialchars($c->document_pdf_path) 
-                            : '#';
-                        $downloadTarget = $c->document_pdf_path ? ' target="_blank"' : '';
-                        $actionHtml = '
-                          <div class="lgos-card-action">
-                            <div class="lgos-doc-label">Dokumen Pendukung</div>
-                            <a href="' . $downloadUrl . '"' . $downloadTarget . ' class="btn-lgos-doc download">
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                              Unduh Dokumen
-                            </a>
-                          </div>';
-                    } else {
-                        $actionHtml = '
-                          <div class="lgos-card-action">
-                            <div class="lgos-doc-label">Dokumen Pendukung</div>
-                            <a href="/kontak-kami/" class="btn-lgos-doc contact">
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                              Hubungi Kami
-                            </a>
-                          </div>';
+                foreach ($components as $c) {
+                    if (!empty($c->document_pdf_path) && $c->sort_order <= 5) {
+                        $compCode = $c->code ?: sprintf('KOMPONEN %02d', $c->sort_order);
+                        $pdfUrl = '/storage/' . htmlspecialchars($c->document_pdf_path);
+                        
+                        // Replace href="#" with uploaded PDF link for this specific component card
+                        $pattern = '/(<div class="lgos-num">\s*' . preg_quote($compCode, '/') . '\s*<\/div>.*?<a href=")(#)(".*?class="btn-lgos-doc download")/s';
+                        $originalHtml = preg_replace($pattern, '$1' . $pdfUrl . '$3 target="_blank"', $originalHtml);
                     }
-
-                    $dynamicCardsHtml .= '
-                        <div class="lgos-card">
-                          <div class="lgos-num">' . htmlspecialchars($code) . '</div>
-                          <h4>' . htmlspecialchars($c->component_name) . '</h4>
-                          ' . $role . '
-                          <p>' . htmlspecialchars($c->description) . '</p>
-                          ' . $actionHtml . '
-                        </div>';
-                }
-
-                $pattern = '/(<div class="lgos-grid">)(.*?)(<\/div>\s*<!-- Tagline bawah grid -->)/s';
-                if (preg_match($pattern, $originalHtml)) {
-                    $originalHtml = preg_replace($pattern, '$1' . $dynamicCardsHtml . '$3', $originalHtml);
                 }
             }
         } catch (\Throwable $e) {
-            // Fallback gracefully ke konten statis lgos/index.html jika DB belum siap
+            // Graceful fallback to static lgos/index.html
         }
 
         return response($originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
