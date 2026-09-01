@@ -37,6 +37,7 @@ Route::get('/lgos', [PageContentController::class, 'lgos'])->name('public.lgos')
 Route::get('/lgos/index.html', [PageContentController::class, 'lgos']);
 Route::get('/portofolio', [PageContentController::class, 'portfolio'])->name('public.portfolio');
 Route::get('/portofolio/index.html', [PageContentController::class, 'portfolio']);
+Route::get('/portofolio/{slug}', [PageContentController::class, 'portfolioDetail'])->name('public.portfolio.show');
 Route::get('/transparansi', [PageContentController::class, 'transparansi'])->name('public.transparansi');
 Route::get('/annual-report', [PageContentController::class, 'transparansi'])->name('public.annual_report');
 

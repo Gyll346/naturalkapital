@@ -131,7 +131,7 @@ class PageContentController extends Controller
 
     $dynamicCardsHtml = '';
     foreach ($projects as $p) {
-      $isOngoing = strtolower($p->status) === 'ongoing';
+      $isOngoing = strtolower($p->status) === 'ongoing' || str_contains(strtolower($p->status), 'berjalan');
       $statusBadge = $isOngoing
         ? '<span class="tag-status berjalan">Sedang Berjalan</span>'
         : '<span class="tag-status selesai">Selesai</span>';
@@ -147,6 +147,8 @@ class PageContentController extends Controller
       } elseif (str_contains($catLower, 'kebijakan') || str_contains($catLower, 'policy') || str_contains($catLower, 'governance')) {
         $catSlug = 'kebijakan';
       }
+
+      $slug = $p->slug ?: \Illuminate\Support\Str::slug($p->project_title);
 
       $downloadDoc = $p->document_pdf_path
         ? '<a href="/storage/' . htmlspecialchars($p->document_pdf_path) . '" target="_blank" download style="color:#117710;font-weight:700;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">&darr; Factsheet PDF</a>'
@@ -171,10 +173,10 @@ class PageContentController extends Controller
                 </div>
                 <p class="proyek-desc">' . htmlspecialchars($summary) . '</p>
                 <div class="proyek-card-footer">
-                  <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
-                    <span>Baca Artikel Proyek</span>
+                  <a href="/portofolio/' . htmlspecialchars($slug) . '" class="btn-read-article">
+                    <span>Baca Selengkapnya</span>
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </button>
+                  </a>
                   ' . ($downloadDoc ? '<div style="margin-top:8px;text-align:right;">' . $downloadDoc . '</div>' : '') . '
                 </div>
               </div>
@@ -186,6 +188,300 @@ class PageContentController extends Controller
     $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
 
     return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+  }
+
+  // 3b. Portfolio Single Article (/portofolio/{slug})
+  public function portfolioDetail($slug)
+  {
+    $catalog = $this->getPortfolioCatalogue();
+
+    // Look up in database first
+    $dbProject = PortfolioProject::where('slug', $slug)
+      ->orWhere('id', is_numeric($slug) ? (int)$slug : 0)
+      ->first();
+
+    if ($dbProject) {
+      $isOngoing = strtolower($dbProject->status) === 'ongoing' || str_contains(strtolower($dbProject->status), 'berjalan');
+      $catSlug = 'restorasi';
+      $catLower = strtolower($dbProject->category ?? '');
+      if (str_contains($catLower, 'spasial') || str_contains($catLower, 'pemetaan') || str_contains($catLower, 'intelligence')) {
+        $catSlug = 'pemetaan';
+      } elseif (str_contains($catLower, 'komoditas') || str_contains($catLower, 'commodity')) {
+        $catSlug = 'komoditas';
+      } elseif (str_contains($catLower, 'kapasitas') || str_contains($catLower, 'capacity')) {
+        $catSlug = 'kapasitas';
+      } elseif (str_contains($catLower, 'kebijakan') || str_contains($catLower, 'policy') || str_contains($catLower, 'governance')) {
+        $catSlug = 'kebijakan';
+      }
+
+      $project = [
+        'title' => $dbProject->project_title,
+        'slug' => $dbProject->slug ?: \Illuminate\Support\Str::slug($dbProject->project_title),
+        'category' => $dbProject->category,
+        'category_slug' => $catSlug,
+        'status' => $isOngoing ? 'ongoing' : 'completed',
+        'location' => $dbProject->location ?? 'Kalimantan Barat',
+        'period' => $dbProject->period ?? '-',
+        'partner_donor' => $dbProject->partner_donor ?? 'Yayasan Natural Kapital Indonesia',
+        'summary' => $dbProject->summary ?? $dbProject->description,
+        'description' => $dbProject->description ?? $dbProject->summary,
+        'document_pdf_path' => $dbProject->document_pdf_path,
+      ];
+    } elseif (isset($catalog[$slug])) {
+      $project = $catalog[$slug];
+    } else {
+      // Fuzzy matching by slug
+      $matched = null;
+      foreach ($catalog as $key => $val) {
+        if (\Illuminate\Support\Str::slug($val['title']) === $slug || str_contains($key, $slug) || str_contains($slug, $key)) {
+          $matched = $val;
+          break;
+        }
+      }
+      if ($matched) {
+        $project = $matched;
+      } else {
+        abort(404, 'Artikel portofolio tidak ditemukan.');
+      }
+    }
+
+    // Get 3 other related projects
+    $relatedProjects = [];
+    foreach ($catalog as $key => $p) {
+      if ($p['slug'] !== $project['slug']) {
+        $relatedProjects[] = $p;
+      }
+      if (count($relatedProjects) >= 3) break;
+    }
+
+    return view('public.portfolio.show', compact('project', 'relatedProjects'));
+  }
+
+  private function getPortfolioCatalogue(): array
+  {
+    return [
+      'tfca-kalimantan-mitigasi-adaptasi-iklim-desa-gambut' => [
+        'title' => 'Program TFCA Kalimantan – Penguatan Mitigasi & Adaptasi Iklim Desa Gambut',
+        'slug' => 'tfca-kalimantan-mitigasi-adaptasi-iklim-desa-gambut',
+        'category' => 'Restorasi & Konservasi',
+        'category_slug' => 'restorasi',
+        'status' => 'ongoing',
+        'location' => 'Kab. Kubu Raya, Kalimantan Barat',
+        'period' => 'April 2026 – Maret 2028',
+        'partner_donor' => 'Yayasan Kehati (TFCA Kalimantan)',
+        'summary' => 'Program penguatan mitigasi dan adaptasi iklim desa gambut untuk komunitas yang rentan terhadap perubahan iklim melalui restorasi hidrologis dan ekonomi hijau.',
+        'description' => 'Program kemitraan multipihak bersama Yayasan Kehati dalam kerangka Tropical Forest Conservation Act (TFCA) Kalimantan. Inisiatif strategis ini berfokus pada penguatan kapasitas ketahanan sosial dan ekologis desa-desa gambut di Kabupaten Kubu Raya dalam menghadapi ancaman perubahan iklim, kebakaran hutan dan lahan, serta penurunan kualitas hidrologis lahan gambut. Pendekatan mencakup restorasi hidrologis melalui pembangunan sekat kanal (canal blocking), revegetasi vegetasi endemik bernilai ekonomi, serta penguatan model mata pencaharian ramah gambut (paludikultur dan agroforestri).',
+        'document_pdf_path' => null,
+      ],
+      'restorasi-gambut-pm-haze-singapore' => [
+        'title' => 'Restorasi Gambut – PM Haze Singapore',
+        'slug' => 'restorasi-gambut-pm-haze-singapore',
+        'category' => 'Restorasi & Konservasi',
+        'category_slug' => 'restorasi',
+        'status' => 'ongoing',
+        'location' => 'Desa Kalibandung, Kab. Kubu Raya',
+        'period' => 'Mei 2022 – Sekarang',
+        'partner_donor' => 'PM Haze – Singapore',
+        'summary' => 'Pengembangan model restorasi gambut berbasis komunitas di Desa Kalibandung sebagai replikasi praktik terbaik mitigasi kabut asap.',
+        'description' => 'Kolaborasi internasional bersama People\'s Movement to Stop Haze (PM Haze) Singapore untuk mewujudkan bentang lahan gambut yang sehat dan bebas dari ancaman kabut asap lintas batas (transboundary haze). Melalui pendampingan intensif bagi kelompok masyarakat di Desa Kalibandung, program ini mengintegrasikan pemantauan tinggi muka air tanah gambut, pembibitan pohon lokal (jelutung rawa, belangeran), serta kampanye edukasi kesadaran publik regional mengenai pentingnya pelestarian ekosistem gambut tropis Kalimantan Barat.',
+        'document_pdf_path' => null,
+      ],
+      'penilaian-rantai-pasok-karet-berkelanjutan-kalbar' => [
+        'title' => 'Penilaian Rantai Pasok Karet Berkelanjutan di Kalimantan Barat',
+        'slug' => 'penilaian-rantai-pasok-karet-berkelanjutan-kalbar',
+        'category' => 'Komoditas Berkelanjutan',
+        'category_slug' => 'komoditas',
+        'status' => 'ongoing',
+        'location' => 'Kalimantan Barat',
+        'period' => 'April 2023 – Sekarang',
+        'partner_donor' => 'PT. Inovasi Digital',
+        'summary' => 'Rekomendasi intervensi untuk rantai pasok karet berkelanjutan yang mendukung kesejahteraan petani dan kelestarian lingkungan.',
+        'description' => 'Inisiatif kajian komprehensif rantai pasok karet alam di berbagai kabupaten sentra Kalimantan Barat. Proyek ini memetakan alur distribusi dari petani swadaya ke tengkulak hingga pabrik pengolahan, mengidentifikasi hambatan legalitas dan mutu bahan olah karet rakyat (Bokar), serta merumuskan rekomendasi intervensi digital dan ketertelusuran (traceability) guna meningkatkan nilai tawar dan pendapatan petani karet hutan.',
+        'document_pdf_path' => null,
+      ],
+      'promosi-hortikultura-petani-kecil-kalbar' => [
+        'title' => 'Promosi Hortikultura Petani Kecil di Kalimantan Barat',
+        'slug' => 'promosi-hortikultura-petani-kecil-kalbar',
+        'category' => 'Komoditas Berkelanjutan',
+        'category_slug' => 'komoditas',
+        'status' => 'ongoing',
+        'location' => 'Kalimantan Barat',
+        'period' => '2020 – Sekarang',
+        'partner_donor' => 'PT. East West Indonesia (Ewindo)',
+        'summary' => 'Lahan demo untuk komoditas hortikultura sebagai diversifikasi pendapatan petani kecil ramah lingkungan.',
+        'description' => 'Program pendampingan budidaya hortikultura berkelanjutan yang bekerja sama dengan PT. East West Seed Indonesia. Mengembangkan lahan-lahan percontohan (demo plots) tanaman sayuran unggul seperti cabai, bawang merah, dan jagung manis di lahan-lahan marjinal tanpa bakar, guna memperkuat kemandirian pangan lokal, ketahanan ekonomi rumah tangga petani, serta membuka akses pasar yang adil.',
+        'document_pdf_path' => null,
+      ],
+      'survei-rantai-pasok-karet-kesiapan-eudr-tropenbos' => [
+        'title' => 'Survei Rantai Pasok Karet & Kesiapan EUDR – Tropenbos Indonesia',
+        'slug' => 'survei-rantai-pasok-karet-kesiapan-eudr-tropenbos',
+        'category' => 'Komoditas Berkelanjutan',
+        'category_slug' => 'komoditas',
+        'status' => 'completed',
+        'location' => 'Kab. Ketapang, Sanggau, Sintang',
+        'period' => 'Januari 2025 – Maret 2025',
+        'partner_donor' => 'Tropenbos Indonesia',
+        'summary' => 'Dokumen strategis rantai pasok karet dan rekomendasi kesiapan EUDR untuk tiga kabupaten di Kalimantan Barat.',
+        'description' => 'Studi mendalam mengenai profil petani karet swadaya, legalitas lahan (STDB), koordinat geolokasi poligon kebun, serta rantai pasok lokal di Ketapang, Sanggau, dan Sintang. Menghasilkan kertas kebijakan dan peta jalan kesiapan pemenuhan regulasi European Union Deforestation Regulation (EUDR) agar pekebun rakyat tidak terdiskriminasi dari pasar ekspor global.',
+        'document_pdf_path' => null,
+      ],
+      'kerangka-strategis-sop-abkt-perda-6-2018' => [
+        'title' => 'Penyusunan Kerangka Strategis & SOP ABKT Perda 6 Tahun 2018 Kalimantan Barat',
+        'slug' => 'kerangka-strategis-sop-abkt-perda-6-2018',
+        'category' => 'Kebijakan & Tata Kelola',
+        'category_slug' => 'kebijakan',
+        'status' => 'completed',
+        'location' => 'Kalimantan Barat',
+        'period' => 'Januari 2025 – Maret 2025',
+        'partner_donor' => 'Tropenbos Indonesia',
+        'summary' => 'Dokumen kerangka strategis, panduan, dan SOP implementasi ABKT untuk mendukung pelaksanaan Perda 6 Tahun 2018.',
+        'description' => 'Fasilitasi teknis dan legal perumusan instrumen pelaksanaan Peraturan Daerah Provinsi Kalimantan Barat No. 6 Tahun 2018 tentang Pengelolaan Usaha Berbasis Lahan Berkelanjutan. Dokumen ini memuat standar operasional prosedur penetapan, pengelolaan, pemantauan, dan resolusi konflik untuk Area Bernilai Konservasi Tinggi (ABKT) di luar kawasan hutan negara.',
+        'document_pdf_path' => null,
+      ],
+      'program-undp-kalfor-perencanaan-hutan-ketapang' => [
+        'title' => 'Program UNDP KalFor – Penguatan Perencanaan Kawasan Hutan Ketapang',
+        'slug' => 'program-undp-kalfor-perencanaan-hutan-ketapang',
+        'category' => 'Kebijakan & Tata Kelola',
+        'category_slug' => 'kebijakan',
+        'status' => 'completed',
+        'location' => '3 Desa di Kab. Ketapang',
+        'period' => 'Juni 2023 – Juni 2024',
+        'partner_donor' => 'UNDP KalFor',
+        'summary' => 'Pendampingan intensif di 3 desa di Kabupaten Ketapang untuk penguatan perencanaan kawasan hutan berbasis masyarakat.',
+        'description' => 'Pendampingan desa dalam kerangka proyek Kalimantan Forest (KalFor) UNDP bersama Kementerian Lingkungan Hidup dan Kehutanan. Program ini berhasil memfasilitasi integrasi kawasan berhutan bernilai konservasi tinggi ke dalam Rencana Pembangunan Jangka Menengah Desa (RPJMDes) dan peraturan desa tentang perlindungan sumber daya alam di 3 desa dampingan.',
+        'document_pdf_path' => null,
+      ],
+      'program-peat-impacts-indonesia-pengelolaan-gambut' => [
+        'title' => 'Program Peat IMPACTS Indonesia – Peningkatan Pengelolaan Gambut',
+        'slug' => 'program-peat-impacts-indonesia-pengelolaan-gambut',
+        'category' => 'Restorasi & Konservasi',
+        'category_slug' => 'restorasi',
+        'status' => 'completed',
+        'location' => 'Kab. Kubu Raya',
+        'period' => 'Juni 2022 – Mei 2023',
+        'partner_donor' => 'ICRAF Indonesia',
+        'summary' => 'Pelatihan dan penguatan kapasitas petani kecil untuk mengembangkan agroforestri di lahan gambut secara berkelanjutan.',
+        'description' => 'Penguatan kapasitas petani gambut melalui transfer teknologi budidaya agroforestri cerdas iklim bersama ICRAF (World Agroforestry). Mengombinasikan tanaman kehutanan seperti jelutung dan pinang dengan tanaman musiman untuk mencegah kebakaran lahan gambut sekaligus menjamin penghasilan berkala masyarakat desa.',
+        'document_pdf_path' => null,
+      ],
+      'penilaian-hcv-hcs-pt-perintis-sawit-andalan' => [
+        'title' => 'Penilaian HCV-HCS PT. Perintis Sawit Andalan',
+        'slug' => 'penilaian-hcv-hcs-pt-perintis-sawit-andalan',
+        'category' => 'Pemetaan & Spasial',
+        'category_slug' => 'pemetaan',
+        'status' => 'completed',
+        'location' => 'Kab. Bengkayang',
+        'period' => 'Mei 2022 – November 2022',
+        'partner_donor' => 'PT. Perintis Sawit Andalan',
+        'summary' => 'Penilaian komprehensif HCV-HCS untuk mendukung praktik pengelolaan perkebunan sawit yang bertanggung jawab.',
+        'description' => 'Penilaian lapangan saintifik terpadu mengidentifikasi keanekaragaman hayati, koridor satwa, kawasan resapan air, situs budaya adat, dan cadangan biomassa karbon tinggi di dalam areal izin perkebunan kelapa sawit di Bengkayang, menghasilkan rencana aksi pengelolaan dan pemantauan lingkungan.',
+        'document_pdf_path' => null,
+      ],
+      'pemetaan-hcv-hcs-lanskap-sawit-kalbar' => [
+        'title' => 'Pemetaan HCV-HCS Lanskap Sawit Kalimantan Barat',
+        'slug' => 'pemetaan-hcv-hcs-lanskap-sawit-kalbar',
+        'category' => 'Pemetaan & Spasial',
+        'category_slug' => 'pemetaan',
+        'status' => 'completed',
+        'location' => 'Kalimantan Barat',
+        'period' => 'November 2020 – Maret 2021',
+        'partner_donor' => 'NMI-CSF – Abler Nordic',
+        'summary' => 'Pemetaan HCV dan HCS lanskap sawit di Kalimantan Barat untuk mendukung pengelolaan bertanggung jawab.',
+        'description' => 'Pemetaan spasial skala lanskap menggunakan data satelit optik dan radar untuk mengidentifikasi fragmentasi habitat dan zona konservasi kritis di kawasan perkebunan kelapa sawit seluruh Kalimantan Barat.',
+        'document_pdf_path' => null,
+      ],
+      'pelatihan-petani-sawit-swadaya-gema-sawit-lestari' => [
+        'title' => 'Pelatihan Petani Sawit Swadaya – Kelompok Gema Sawit Lestari',
+        'slug' => 'pelatihan-petani-sawit-swadaya-gema-sawit-lestari',
+        'category' => 'Pengembangan Kapasitas',
+        'category_slug' => 'kapasitas',
+        'status' => 'completed',
+        'location' => 'Kab. Sanggau',
+        'period' => 'November 2020 – Mei 2021',
+        'partner_donor' => 'NMI-CSF (Climate Smart Fund)',
+        'summary' => 'Pelatihan petani sawit swadaya untuk peningkatan kapasitas kelompok Gema Sawit Lestari menuju pertanian bertanggung jawab.',
+        'description' => 'Pelatihan intensif mencakup pemupukan berimbang ramah lingkungan, panen higienis, pencegahan kebakaran, dan manajemen kebun mandiri guna mempersiapkan petani swadaya menuju sertifikasi sawit berkelanjutan.',
+        'document_pdf_path' => null,
+      ],
+      'insentif-tumpang-sari-padi-lahan-kering-sawit' => [
+        'title' => 'Insentif Tumpang Sari Padi Lahan Kering untuk Petani Sawit Swadaya',
+        'slug' => 'insentif-tumpang-sari-padi-lahan-kering-sawit',
+        'category' => 'Komoditas Berkelanjutan',
+        'category_slug' => 'komoditas',
+        'status' => 'completed',
+        'location' => 'Kab. Sanggau',
+        'period' => 'November 2020 – Mei 2021',
+        'partner_donor' => 'NMI-CSF (Climate Smart Fund)',
+        'summary' => 'Lahan demo pertanian padi lahan kering sebagai alternatif mata pencaharian berkelanjutan bagi petani sawit swadaya.',
+        'description' => 'Program ketahanan pangan lokal dengan menanam padi gogo/lahan kering di antara tanaman kelapa sawit usia belum menghasilkan (TBM), menghasilkan panen padi mandiri bagi keluarga petani tanpa membuka lahan baru dengan cara membakar.',
+        'document_pdf_path' => null,
+      ],
+      'analisis-spasial-dampak-deforestasi-sintang-sanggau' => [
+        'title' => 'Analisis Spasial Dampak Deforestasi Petani Kecil Sintang & Sanggau',
+        'slug' => 'analisis-spasial-dampak-deforestasi-sintang-sanggau',
+        'category' => 'Pemetaan & Spasial',
+        'category_slug' => 'pemetaan',
+        'status' => 'completed',
+        'location' => 'Kab. Sintang dan Sanggau',
+        'period' => 'Februari 2020 – Juni 2020',
+        'partner_donor' => 'NMI-CSF – Abler Nordic',
+        'summary' => 'Rekomendasi dokumen intervensi untuk petani kecil di Sintang berdasarkan analisis dampak deforestasi.',
+        'description' => 'Analisis temporal perubahan tutupan lahan 10 tahun terakhir untuk melihat dinamika pembukaan lahan oleh pekebun rakyat serta rekomendasi zonasi penyangga konservasi.',
+        'document_pdf_path' => null,
+      ],
+      'rencana-strategis-cagar-biosfer-bkds-kapuas-hulu' => [
+        'title' => 'Rencana Strategis Cagar Biosfer Betung Kerihun Danau Sentarum',
+        'slug' => 'rencana-strategis-cagar-biosfer-bkds-kapuas-hulu',
+        'category' => 'Kebijakan & Tata Kelola',
+        'category_slug' => 'kebijakan',
+        'status' => 'completed',
+        'location' => 'Kab. Kapuas Hulu',
+        'period' => 'Juli 2020',
+        'partner_donor' => 'GIZ SFM',
+        'summary' => 'Rekomendasi strategis dan strategi pengelolaan Cagar Biosfer BKDS Kapuas Hulu untuk konservasi jangka panjang.',
+        'description' => 'Kerangka strategis pengelolaan kawasan Cagar Biosfer UNESCO Betung Kerihun Danau Sentarum Kapuas Hulu (BKDS) yang memadukan konservasi koridor ekologis dan pemanfaatan berkelanjutan hasil hutan bukan kayu oleh masyarakat adat Dayak dan Melayu.',
+        'document_pdf_path' => null,
+      ],
+      'restorasi-gambut-kalibandung' => [
+        'title' => 'Restorasi Gambut Kalibandung',
+        'slug' => 'restorasi-gambut-kalibandung',
+        'category' => 'Restorasi & Konservasi',
+        'category_slug' => 'restorasi',
+        'status' => 'completed',
+        'location' => 'Desa Kalibandung, Kab. Kubu Raya',
+        'period' => 'Agustus 2019 – September 2021',
+        'partner_donor' => 'WWF-US',
+        'summary' => 'Restorasi revegetasi hutan desa Kalibandung, Kubu Raya untuk pemulihan ekosistem gambut yang terdegradasi.',
+        'description' => 'Program revegetasi lahan gambut terdegradasi bekas kebakaran hutan melalui penanaman lebih dari 20.000 bibit pohon lokal bersama Lembaga Pengelola Hutan Desa (LPHD) Kalibandung.',
+        'document_pdf_path' => null,
+      ],
+      'rencana-pemulihan-lanskap-delta-kapuas' => [
+        'title' => 'Rencana Pemulihan Lanskap Delta Kapuas untuk Konsesi Sawit & Gambut',
+        'slug' => 'rencana-pemulihan-lanskap-delta-kapuas',
+        'category' => 'Restorasi & Konservasi',
+        'category_slug' => 'restorasi',
+        'status' => 'completed',
+        'location' => 'Lanskap Delta Kapuas, Kubu Raya',
+        'period' => 'September 2019 – Desember 2019',
+        'partner_donor' => 'WWF Indonesia',
+        'summary' => 'Rekomendasi dokumen area pemulihan di lanskap Delta Kapuas untuk konsesi sawit dan kawasan gambut.',
+        'description' => 'Delineasi koridor hidrologis dan zona restorasi prioritas di bentang delta muara sungai Kapuas guna menyelaraskan izin usaha perkebunan dengan fungsi tata air dan pencegahan intrusi air laut.',
+        'document_pdf_path' => null,
+      ],
+      'analisis-hcv-hcs-agropolitan-kapuas-hulu' => [
+        'title' => 'Analisis HCV-HCS Kawasan Agropolitan Kapuas Hulu',
+        'slug' => 'analisis-hcv-hcs-agropolitan-kapuas-hulu',
+        'category' => 'Pemetaan & Spasial',
+        'category_slug' => 'pemetaan',
+        'status' => 'completed',
+        'location' => 'Kab. Kapuas Hulu',
+        'period' => 'Juli 2019',
+        'partner_donor' => 'WWF Id – KAK',
+        'summary' => 'Analisis HCV dan HCS di kawasan agropolitan Kabupaten Kapuas Hulu untuk mendukung perencanaan tata guna lahan.',
+        'description' => 'Kajian spasial dan ekologis untuk penyusunan masterplan kawasan agropolitan berbasis komoditas unggulan lokal (karet, tengkawang, kratom) dengan tetap mempertahankan tutupan hutan dan kawasan bernilai konservasi tinggi di Kabupaten Kapuas Hulu.',
+        'document_pdf_path' => null,
+      ],
+    ];
   }
 
   // 4. Transparansi (/transparansi/)
