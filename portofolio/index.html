@@ -3725,50 +3725,178 @@
               color: #b22231;
             }
             .tag-status {
-              font-size: 10.5px;
+              font-size: 11px;
               font-weight: 700;
-              padding: 3px 10px;
+              padding: 4px 12px;
               border-radius: 50px;
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
             }
             .tag-status.selesai {
-              background: #d2e8d1;
-              color: #0a5509;
+              background: #f0f4f2;
+              color: #4a6356;
+              border: 1px solid #d4dfd8;
             }
             .tag-status.berjalan {
-              background: #fff3cd;
-              color: #856404;
-              border: 1px solid #ffc107;
+              background: #e6f7ec;
+              color: #0b6832;
+              border: 1px solid #9fe2b6;
+              font-weight: 800;
+            }
+            .tag-status.berjalan::before {
+              content: "";
+              display: inline-block;
+              width: 7px;
+              height: 7px;
+              border-radius: 50%;
+              background: #10b981;
+              box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+              animation: pulse-live-dot 1.8s infinite;
+            }
+            @keyframes pulse-live-dot {
+              0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+              70% { transform: scale(1.05); box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+              100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
             }
             .proyek-card h4 {
-              font-size: 14.5px;
+              font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+              font-size: 15.5px;
               font-weight: 800;
               color: #0e241b;
-              margin: 0 0 10px;
-              line-height: 1.4;
+              margin: 0 0 12px;
+              line-height: 1.45;
+              letter-spacing: -0.01em;
             }
             .proyek-meta {
               display: flex;
               flex-direction: column;
-              gap: 5px;
-              margin-bottom: 12px;
+              gap: 6px;
+              margin-bottom: 14px;
+              background: #fbfdfb;
+              padding: 10px 12px;
+              border-radius: 8px;
+              border: 1px solid #edf5ee;
             }
             .proyek-meta span {
               font-size: 12px;
-              color: #536b5f;
+              color: #4a6657;
               display: flex;
               align-items: flex-start;
-              gap: 6px;
+              gap: 7px;
+              line-height: 1.4;
             }
             .proyek-meta svg {
               flex-shrink: 0;
-              margin-top: 1px;
+              margin-top: 2px;
+              color: #117710;
             }
             .proyek-desc {
-              font-size: 12.5px;
-              color: #536b5f;
-              line-height: 1.65;
-              margin: 0;
+              font-size: 13.5px;
+              color: #3f554b;
+              line-height: 1.7;
+              margin: 0 0 16px;
               flex: 1;
+            }
+            .proyek-card-footer {
+              padding-top: 14px;
+              border-top: 1px dashed #d8eade;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 10px;
+              margin-top: auto;
+            }
+            .btn-read-article {
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 12.5px;
+              font-weight: 800;
+              color: #117710;
+              background: #eaf6ea;
+              border: 1px solid #bce1bc;
+              padding: 8px 14px;
+              border-radius: 8px;
+              cursor: pointer;
+              text-decoration: none;
+              transition: all 0.25s ease;
+              width: 100%;
+              justify-content: center;
+            }
+            .btn-read-article:hover {
+              background: #117710;
+              color: #ffffff;
+              border-color: #117710;
+              box-shadow: 0 4px 12px rgba(17, 119, 16, 0.2);
+            }
+            .btn-read-article svg {
+              transition: transform 0.25s ease;
+            }
+            .btn-read-article:hover svg {
+              transform: translateX(3px);
+            }
+
+            /* Article Modal Reader */
+            .ynki-article-modal {
+              display: none;
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100vw;
+              height: 100vh;
+              z-index: 999999;
+              background: rgba(14, 36, 27, 0.7);
+              backdrop-filter: blur(6px);
+              align-items: center;
+              justify-content: center;
+              padding: 20px;
+              box-sizing: border-box;
+              opacity: 0;
+              transition: opacity 0.3s ease;
+            }
+            .ynki-article-modal.is-open {
+              display: flex;
+              opacity: 1;
+            }
+            .ynki-modal-box {
+              background: #ffffff;
+              border-radius: 20px;
+              width: 100%;
+              max-width: 720px;
+              max-height: 88vh;
+              overflow-y: auto;
+              box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+              position: relative;
+              padding: 36px 32px;
+              box-sizing: border-box;
+              border: 1.5px solid #d2e8d1;
+              animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            @keyframes modalSlideUp {
+              from { transform: translateY(20px) scale(0.97); opacity: 0; }
+              to { transform: translateY(0) scale(1); opacity: 1; }
+            }
+            .ynki-modal-close {
+              position: absolute;
+              top: 18px;
+              right: 18px;
+              background: #f0f4f2;
+              border: none;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 20px;
+              color: #4a6356;
+              cursor: pointer;
+              transition: all 0.2s ease;
+            }
+            .ynki-modal-close:hover {
+              background: #117710;
+              color: #ffffff;
             }
 
             /* ======================== PETA SEBARAN ======================== */
@@ -4276,7 +4404,7 @@
                       <div style="text-align: center">
                         <div class="divider-line">
                           <span class="line"></span
-                          ><span class="section-badge">PORTOFOLIO LENGKAP</span
+                          ><span class="section-badge">PORTOFOLIO</span
                           ><span class="line"></span>
                         </div>
                         <h2
@@ -4317,1277 +4445,411 @@
                       </div>
 
                       <div class="proyek-grid">
-                        <!-- 1 -->
-                        <div class="proyek-card">
+                        <!-- 1 (ONGOING) -->
+                        <div class="proyek-card" data-cat="restorasi" data-title="Program TFCA Kalimantan – Penguatan Mitigasi &amp; Adaptasi Iklim Desa Gambut" data-status="Sedang Berjalan" data-location="Kab. Kubu Raya" data-period="April 2026 – Maret 2028" data-partner="Yayasan Kehati (TFCA Kalimantan)" data-desc="Program penguatan mitigasi dan adaptasi iklim desa gambut untuk komunitas yang rentan terhadap perubahan iklim melalui restorasi hidrologis, pembasahan gambut, dan diversifikasi mata pencaharian ramah lingkungan. Inisiatif ini berfokus pada ketahanan sosial-ekologis berbasis kemitraan multipihak.">
                           <div class="proyek-cat-bar restorasi"></div>
                           <div class="proyek-body">
                             <div class="proyek-tags">
-                              <span class="tag-cat restorasi"
-                                >Restorasi &amp; Konservasi</span
-                              >
+                              <span class="tag-cat restorasi">Restorasi &amp; Konservasi</span>
+                              <span class="tag-status berjalan">Sedang Berjalan</span>
+                            </div>
+                            <h4>Program TFCA Kalimantan – Penguatan Mitigasi &amp; Adaptasi Iklim Desa Gambut</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Kubu Raya</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>April 2026 – Maret 2028</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Yayasan Kehati (TFCA Kalimantan)</span>
+                            </div>
+                            <p class="proyek-desc">Program penguatan mitigasi dan adaptasi iklim desa gambut untuk komunitas yang rentan terhadap perubahan iklim melalui restorasi hidrologis dan ekonomi hijau.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 2 (ONGOING) -->
+                        <div class="proyek-card" data-cat="restorasi" data-title="Restorasi Gambut – PM Haze Singapore" data-status="Sedang Berjalan" data-location="Desa Kalibandung, Kab. Kubu Raya" data-period="Mei 2022 – Sekarang" data-partner="PM Haze – Singapore" data-desc="Pengembangan model restorasi gambut berbasis komunitas di Desa Kalibandung sebagai replikasi praktik terbaik untuk mitigasi kebakaran hutan, reboisasi tanaman endemik, dan perlindungan keanekaragaman hayati lintas batas negara.">
+                          <div class="proyek-cat-bar restorasi"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat restorasi">Restorasi &amp; Konservasi</span>
+                              <span class="tag-status berjalan">Sedang Berjalan</span>
+                            </div>
+                            <h4>Restorasi Gambut – PM Haze Singapore</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Desa Kalibandung, Kab. Kubu Raya</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mei 2022 – Sekarang</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>PM Haze – Singapore</span>
+                            </div>
+                            <p class="proyek-desc">Pengembangan model restorasi gambut berbasis komunitas di Desa Kalibandung sebagai replikasi praktik terbaik mitigasi kabut asap.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 3 (ONGOING) -->
+                        <div class="proyek-card" data-cat="komoditas" data-title="Penilaian Rantai Pasok Karet Berkelanjutan di Kalimantan Barat" data-status="Sedang Berjalan" data-location="Kalimantan Barat" data-period="April 2023 – Sekarang" data-partner="PT. Inovasi Digital" data-desc="Rekomendasi intervensi strategis untuk rantai pasok karet berkelanjutan yang mendukung kesejahteraan petani swadaya, ketertelusuran produk berbasis digital, dan kelestarian lanskap perkebunan.">
+                          <div class="proyek-cat-bar komoditas"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat komoditas">Komoditas Berkelanjutan</span>
+                              <span class="tag-status berjalan">Sedang Berjalan</span>
+                            </div>
+                            <h4>Penilaian Rantai Pasok Karet Berkelanjutan di Kalimantan Barat</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kalimantan Barat</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>April 2023 – Sekarang</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>PT. Inovasi Digital</span>
+                            </div>
+                            <p class="proyek-desc">Rekomendasi intervensi untuk rantai pasok karet berkelanjutan yang mendukung kesejahteraan petani dan kelestarian lingkungan.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 4 (ONGOING) -->
+                        <div class="proyek-card" data-cat="komoditas" data-title="Promosi Hortikultura Petani Kecil di Kalimantan Barat" data-status="Sedang Berjalan" data-location="Kalimantan Barat" data-period="2020 – Sekarang" data-partner="PT. East West Indonesia (Ewindo)" data-desc="Lahan percontohan (demo plot) pertanian hortikultura (bawang merah, cabai, jagung manis) sebagai program diversifikasi sumber pendapatan petani kecil demi ketahanan pangan dan kemandirian ekonomi keluarga petani.">
+                          <div class="proyek-cat-bar komoditas"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat komoditas">Komoditas Berkelanjutan</span>
+                              <span class="tag-status berjalan">Sedang Berjalan</span>
+                            </div>
+                            <h4>Promosi Hortikultura Petani Kecil di Kalimantan Barat</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kalimantan Barat</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>2020 – Sekarang</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>PT. East West Indonesia (Ewindo)</span>
+                            </div>
+                            <p class="proyek-desc">Lahan demo untuk komoditas hortikultura sebagai diversifikasi pendapatan petani kecil ramah lingkungan.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 5 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="komoditas" data-title="Survei Rantai Pasok Karet &amp; Kesiapan EUDR – Tropenbos Indonesia" data-status="Selesai" data-location="Kab. Ketapang, Sanggau, dan Sintang" data-period="Januari 2025 – Maret 2025" data-partner="Tropenbos Indonesia" data-desc="Dokumen analisis strategis rantai pasok karet dan rekomendasi kesiapan pemenuhan regulasi EUDR (European Union Deforestation Regulation) bagi petani kecil di tiga kabupaten sentra Kalimantan Barat.">
+                          <div class="proyek-cat-bar komoditas"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat komoditas">Komoditas Berkelanjutan</span>
+                              <span class="tag-status selesai">Selesai</span>
+                            </div>
+                            <h4>Survei Rantai Pasok Karet &amp; Kesiapan EUDR – Tropenbos Indonesia</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Ketapang, Sanggau, Sintang</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Januari 2025 – Maret 2025</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Tropenbos Indonesia</span>
+                            </div>
+                            <p class="proyek-desc">Dokumen strategis rantai pasok karet dan rekomendasi kesiapan EUDR untuk tiga kabupaten di Kalimantan Barat.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 6 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="kebijakan" data-title="Penyusunan Kerangka Strategis &amp; SOP ABKT Perda 6 Tahun 2018 Kalimantan Barat" data-status="Selesai" data-location="Kalimantan Barat" data-period="Januari 2025 – Maret 2025" data-partner="Tropenbos Indonesia" data-desc="Penyusunan kerangka regulasi teknis, panduan operasional baku (SOP), dan mekanisme monitoring ABKT (Area Bernilai Konservasi Tinggi) untuk mendukung implementasi Peraturan Daerah Provinsi Kalbar No 6/2018.">
+                          <div class="proyek-cat-bar kebijakan"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat kebijakan">Kebijakan &amp; Tata Kelola</span>
+                              <span class="tag-status selesai">Selesai</span>
+                            </div>
+                            <h4>Penyusunan Kerangka Strategis &amp; SOP ABKT Perda 6 Tahun 2018 Kalimantan Barat</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kalimantan Barat</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Januari 2025 – Maret 2025</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Tropenbos Indonesia</span>
+                            </div>
+                            <p class="proyek-desc">Dokumen kerangka strategis, panduan, dan SOP implementasi ABKT untuk mendukung pelaksanaan Perda 6 Tahun 2018.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 7 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="kebijakan" data-title="Program UNDP KalFor – Penguatan Perencanaan Kawasan Hutan Ketapang" data-status="Selesai" data-location="3 Desa di Kab. Ketapang" data-period="Juni 2023 – Juni 2024" data-partner="UNDP KalFor" data-desc="Pendampingan intensif bagi 3 desa di Kabupaten Ketapang dalam rangka penguatan perencanaan tata kelola kawasan hutan di luar kawasan konservasi negara (KPA/KSA) berbasis partisipasi masyarakat lokal.">
+                          <div class="proyek-cat-bar kebijakan"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat kebijakan">Kebijakan &amp; Tata Kelola</span>
+                              <span class="tag-status selesai">Selesai</span>
+                            </div>
+                            <h4>Program UNDP KalFor – Penguatan Perencanaan Kawasan Hutan Ketapang</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>3 Desa di Kab. Ketapang</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Juni 2023 – Juni 2024</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>UNDP KalFor</span>
+                            </div>
+                            <p class="proyek-desc">Pendampingan intensif di 3 desa di Kabupaten Ketapang untuk penguatan perencanaan kawasan hutan berbasis masyarakat.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 8 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="restorasi" data-title="Program Peat IMPACTS Indonesia – Peningkatan Pengelolaan Gambut" data-status="Selesai" data-location="Kab. Kubu Raya" data-period="Juni 2022 – Mei 2023" data-partner="ICRAF Indonesia" data-desc="Penguatan kapasitas dan pelatihan bagi kelompok tani swadaya dalam menerapkan praktik agroforestri berkelanjutan di ekosistem lahan gambut demi pencegahan degradasi tanah dan peningkatan ekonomi desa.">
+                          <div class="proyek-cat-bar restorasi"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat restorasi">Restorasi &amp; Konservasi</span>
+                              <span class="tag-status selesai">Selesai</span>
+                            </div>
+                            <h4>Program Peat IMPACTS Indonesia – Peningkatan Pengelolaan Gambut</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Kubu Raya</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Juni 2022 – Mei 2023</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>ICRAF Indonesia</span>
+                            </div>
+                            <p class="proyek-desc">Pelatihan dan penguatan kapasitas petani kecil untuk mengembangkan agroforestri di lahan gambut secara berkelanjutan.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 9 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="pemetaan" data-title="Penilaian HCV-HCS PT. Perintis Sawit Andalan" data-status="Selesai" data-location="Kab. Bengkayang" data-period="Mei 2022 – November 2022" data-partner="PT. Perintis Sawit Andalan" data-desc="Kajian spasial dan ekologis komprehensif High Conservation Value (HCV) dan High Carbon Stock (HCS) untuk menetapkan area lindung bernilai konservasi tinggi dalam konsesi perkebunan kelapa sawit.">
+                          <div class="proyek-cat-bar pemetaan"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat pemetaan">Pemetaan &amp; Spasial</span>
+                              <span class="tag-status selesai">Selesai</span>
+                            </div>
+                            <h4>Penilaian HCV-HCS PT. Perintis Sawit Andalan</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Bengkayang</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mei 2022 – November 2022</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>PT. Perintis Sawit Andalan</span>
+                            </div>
+                            <p class="proyek-desc">Penilaian komprehensif HCV-HCS untuk mendukung praktik pengelolaan perkebunan sawit yang bertanggung jawab.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 10 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="pemetaan" data-title="Pemetaan HCV-HCS Lanskap Sawit Kalimantan Barat" data-status="Selesai" data-location="Kalimantan Barat" data-period="November 2020 – Maret 2021" data-partner="NMI-CSF – Abler Nordic" data-desc="Pemetaan dan kajian batas indikatif HCV serta tutupan cadangan karbon tinggi (HCS) di seluruh lanskap sawit Kalimantan Barat untuk integrasi perencanaan spasial berkelanjutan.">
+                          <div class="proyek-cat-bar pemetaan"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat pemetaan">Pemetaan &amp; Spasial</span>
+                              <span class="tag-status selesai">Selesai</span>
+                            </div>
+                            <h4>Pemetaan HCV-HCS Lanskap Sawit Kalimantan Barat</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kalimantan Barat</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>November 2020 – Maret 2021</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>NMI-CSF – Abler Nordic</span>
+                            </div>
+                            <p class="proyek-desc">Pemetaan HCV dan HCS lanskap sawit di Kalimantan Barat untuk mendukung pengelolaan bertanggung jawab.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 11 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="kapasitas" data-title="Pelatihan Petani Sawit Swadaya – Kelompok Gema Sawit Lestari" data-status="Selesai" data-location="Kab. Sanggau" data-period="November 2020 – Mei 2021" data-partner="NMI-CSF (Climate Smart Fund)" data-desc="Program pelatihan intensif Good Agricultural Practices (GAP), sertifikasi ISPO/RSPO swadaya, dan pengelolaan perkebunan sawit ramah lingkungan bagi kelompok tani di Sanggau.">
+                          <div class="proyek-cat-bar kapasitas"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat kapasitas">Pengembangan Kapasitas</span>
+                              <span class="tag-status selesai">Selesai</span>
+                            </div>
+                            <h4>Pelatihan Petani Sawit Swadaya – Kelompok Gema Sawit Lestari</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Sanggau</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>November 2020 – Mei 2021</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>NMI-CSF (Climate Smart Fund)</span>
+                            </div>
+                            <p class="proyek-desc">Pelatihan petani sawit swadaya untuk peningkatan kapasitas kelompok Gema Sawit Lestari menuju pertanian bertanggung jawab.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 12 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="komoditas" data-title="Insentif Tumpang Sari Padi Lahan Kering untuk Petani Sawit Swadaya" data-status="Selesai" data-location="Kab. Sanggau" data-period="November 2020 – Mei 2021" data-partner="NMI-CSF (Climate Smart Fund)" data-desc="Penerapan sistem tumpang sari (intercropping) padi lahan kering di sela tanaman sawit muda sebagai alternatif sumber pangan mandiri dan penguatan pendapatan petani.">
+                          <div class="proyek-cat-bar komoditas"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat komoditas">Komoditas Berkelanjutan</span>
+                              <span class="tag-status selesai">Selesai</span>
+                            </div>
+                            <h4>Insentif Tumpang Sari Padi Lahan Kering untuk Petani Sawit Swadaya</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Sanggau</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>November 2020 – Mei 2021</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>NMI-CSF (Climate Smart Fund)</span>
+                            </div>
+                            <p class="proyek-desc">Lahan demo pertanian padi lahan kering sebagai alternatif mata pencaharian berkelanjutan bagi petani sawit swadaya.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 13 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="pemetaan" data-title="Analisis Spasial Dampak Deforestasi Petani Kecil Sintang &amp; Sanggau" data-status="Selesai" data-location="Kab. Sintang dan Sanggau" data-period="Februari 2020 – Juni 2020" data-partner="NMI-CSF – Abler Nordic" data-desc="Kajian spasial berbasis citra satelit resolusi tinggi untuk memetakan laju deforestasi serta menyusun rekomendasi mitigasi bagi pekebun swadaya di Sintang dan Sanggau.">
+                          <div class="proyek-cat-bar pemetaan"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat pemetaan">Pemetaan &amp; Spasial</span>
+                              <span class="tag-status selesai">Selesai</span>
+                            </div>
+                            <h4>Analisis Spasial Dampak Deforestasi Petani Kecil Sintang &amp; Sanggau</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Sintang dan Sanggau</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Februari 2020 – Juni 2020</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>NMI-CSF – Abler Nordic</span>
+                            </div>
+                            <p class="proyek-desc">Rekomendasi dokumen intervensi untuk petani kecil di Sintang berdasarkan analisis dampak deforestasi.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 14 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="kebijakan" data-title="Rencana Strategis Cagar Biosfer Betung Kerihun Danau Sentarum" data-status="Selesai" data-location="Kab. Kapuas Hulu" data-period="Juli 2020" data-partner="GIZ SFM" data-desc="Penyusunan peta jalan strategis dan model tata kelola kolaboratif Cagar Biosfer BKDS Kapuas Hulu guna menyelaraskan konservasi keanekaragaman hayati dan mata pencaharian masyarakat adat.">
+                          <div class="proyek-cat-bar kebijakan"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat kebijakan">Kebijakan &amp; Tata Kelola</span>
+                              <span class="tag-status selesai">Selesai</span>
+                            </div>
+                            <h4>Rencana Strategis Cagar Biosfer Betung Kerihun Danau Sentarum</h4>
+                            <div class="proyek-meta">
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Kapuas Hulu</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Juli 2020</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>GIZ SFM</span>
+                            </div>
+                            <p class="proyek-desc">Rekomendasi strategis dan strategi pengelolaan Cagar Biosfer BKDS Kapuas Hulu untuk konservasi jangka panjang.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 15 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="restorasi" data-title="Restorasi Gambut Kalibandung" data-status="Selesai" data-location="Desa Kalibandung, Kab. Kubu Raya" data-period="Agustus 2019 – September 2021" data-partner="WWF-US" data-desc="Rehabilitasi dan revegetasi ekosistem gambut terdegradasi di Hutan Desa Kalibandung melalui penanaman jenis pohon lokal dan pelibatan aktif Lembaga Pengelola Hutan Desa (LPHD).">
+                          <div class="proyek-cat-bar restorasi"></div>
+                          <div class="proyek-body">
+                            <div class="proyek-tags">
+                              <span class="tag-cat restorasi">Restorasi &amp; Konservasi</span>
                               <span class="tag-status selesai">Selesai</span>
                             </div>
                             <h4>Restorasi Gambut Kalibandung</h4>
                             <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Desa Kalibandung, Kab. Kubu Raya</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >Agustus 2019 – September 2021</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >WWF-US</span
-                              >
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Desa Kalibandung, Kab. Kubu Raya</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Agustus 2019 – September 2021</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>WWF-US</span>
                             </div>
-                            <p class="proyek-desc">
-                              Restorasi revegetasi hutan desa Kalibandung, Kubu
-                              Raya untuk pemulihan ekosistem gambut yang
-                              terdegradasi.
-                            </p>
+                            <p class="proyek-desc">Restorasi revegetasi hutan desa Kalibandung, Kubu Raya untuk pemulihan ekosistem gambut yang terdegradasi.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
                           </div>
                         </div>
 
-                        <!-- 2 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar pemetaan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat pemetaan"
-                                >Pemetaan &amp; Spasial</span
-                              >
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>
-                              Pemetaan HCV-HCS Lanskap Sawit Kalimantan Barat
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kalimantan Barat</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >November 2020 – Maret 2021</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >NMI-CSF – Abler Nordic</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Pemetaan HCV dan HCS lanskap sawit di Kalimantan
-                              Barat untuk mendukung pengelolaan bertanggung
-                              jawab.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 3 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar pemetaan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat pemetaan"
-                                >Pemetaan &amp; Spasial</span
-                              >
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>
-                              Analisis Spasial Dampak Deforestasi Petani Kecil
-                              Sintang &amp; Sanggau
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kab. Sintang dan Sanggau</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >Februari 2020 – Juni 2020</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >NMI-CSF – Abler Nordic</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Rekomendasi dokumen intervensi untuk petani kecil
-                              di Sintang berdasarkan analisis dampak
-                              deforestasi.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 4 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar pemetaan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat pemetaan"
-                                >Pemetaan &amp; Spasial</span
-                              >
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>
-                              Analisis HCV-HCS Kawasan Agropolitan Kapuas Hulu
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kab. Kapuas Hulu</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >Juli 2019</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >WWF Id – Konservasi Alam Kalimantan (KAK)</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Analisis HCV dan HCS di kawasan agropolitan
-                              Kabupaten Kapuas Hulu untuk mendukung perencanaan
-                              tata guna lahan.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 5 -->
-                        <div class="proyek-card">
+                        <!-- 16 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="restorasi" data-title="Rencana Pemulihan Lanskap Delta Kapuas untuk Konsesi Sawit &amp; Gambut" data-status="Selesai" data-location="Lanskap Delta Kapuas, Kab. Kubu Raya" data-period="September 2019 – Desember 2019" data-partner="WWF Indonesia" data-desc="Penyusunan dokumen kajian teknis dan delineasi zona pemulihan ekologis di bentang lanskap Delta Kapuas guna integrasi konservasi dalam konsesi perkebunan kelapa sawit dan lahan gambut.">
                           <div class="proyek-cat-bar restorasi"></div>
                           <div class="proyek-body">
                             <div class="proyek-tags">
-                              <span class="tag-cat restorasi"
-                                >Restorasi &amp; Konservasi</span
-                              >
+                              <span class="tag-cat restorasi">Restorasi &amp; Konservasi</span>
                               <span class="tag-status selesai">Selesai</span>
                             </div>
-                            <h4>
-                              Rencana Pemulihan Lanskap Delta Kapuas untuk
-                              Konsesi Sawit &amp; Gambut
-                            </h4>
+                            <h4>Rencana Pemulihan Lanskap Delta Kapuas untuk Konsesi Sawit &amp; Gambut</h4>
                             <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Lanskap Delta Kapuas, Kab. Kubu Raya</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >September 2019 – Desember 2019</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >WWF Indonesia</span
-                              >
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Lanskap Delta Kapuas, Kubu Raya</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>September 2019 – Desember 2019</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>WWF Indonesia</span>
                             </div>
-                            <p class="proyek-desc">
-                              Rekomendasi dokumen area pemulihan di lanskap
-                              Delta Kapuas untuk konsesi sawit dan kawasan
-                              gambut.
-                            </p>
+                            <p class="proyek-desc">Rekomendasi dokumen area pemulihan di lanskap Delta Kapuas untuk konsesi sawit dan kawasan gambut.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
+                            </div>
                           </div>
                         </div>
 
-                        <!-- 6 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar komoditas"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat komoditas"
-                                >Komoditas Berkelanjutan</span
-                              >
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>
-                              Insentif Tumpang Sari Padi Lahan Kering untuk
-                              Petani Sawit Swadaya
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kab. Sanggau</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >November 2020 – Mei 2021</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >NMI-CSF (Climate Smart Fund)</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Lahan demo pertanian padi lahan kering sebagai
-                              alternatif mata pencaharian berkelanjutan bagi
-                              petani sawit swadaya.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 7 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar kapasitas"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat kapasitas"
-                                >Pengembangan Kapasitas</span
-                              >
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>
-                              Pelatihan Petani Sawit Swadaya – Kelompok Gema
-                              Sawit Lestari
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kab. Sanggau</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >November 2020 – Mei 2021</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >NMI-CSF (Climate Smart Fund)</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Pelatihan petani sawit swadaya untuk peningkatan
-                              kapasitas kelompok Gema Sawit Lestari menuju
-                              pertanian bertanggung jawab.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 8 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar komoditas"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat komoditas"
-                                >Komoditas Berkelanjutan</span
-                              >
-                              <span class="tag-status berjalan"
-                                >Sedang Berjalan</span
-                              >
-                            </div>
-                            <h4>
-                              Promosi Hortikultura Petani Kecil di Kalimantan
-                              Barat
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kalimantan Barat</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >2020 – Sekarang</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >PT. East West Indonesia (Ewindo)</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Lahan demo untuk bawang merah, cabai, dan jagung
-                              manis sebagai diversifikasi pendapatan petani
-                              kecil.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 9 -->
-                        <div class="proyek-card">
+                        <!-- 17 (COMPLETED) -->
+                        <div class="proyek-card" data-cat="pemetaan" data-title="Analisis HCV-HCS Kawasan Agropolitan Kapuas Hulu" data-status="Selesai" data-location="Kab. Kapuas Hulu" data-period="Juli 2019" data-partner="WWF Id – Konservasi Alam Kalimantan (KAK)" data-desc="Kajian identifikasi nilai konservasi tinggi (HCV) dan stok karbon tinggi (HCS) pada kawasan agropolitan Kabupaten Kapuas Hulu sebagai landasan rencana tata ruang wilayah ramah lingkungan.">
                           <div class="proyek-cat-bar pemetaan"></div>
                           <div class="proyek-body">
                             <div class="proyek-tags">
-                              <span class="tag-cat pemetaan"
-                                >Pemetaan &amp; Spasial</span
-                              >
+                              <span class="tag-cat pemetaan">Pemetaan &amp; Spasial</span>
                               <span class="tag-status selesai">Selesai</span>
                             </div>
-                            <h4>
-                              Penilaian HCV-HCS PT. Perintis Sawit Andalan
-                            </h4>
+                            <h4>Analisis HCV-HCS Kawasan Agropolitan Kapuas Hulu</h4>
                             <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kab. Bengkayang</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >Mei 2022 – November 2022</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >PT. Perintis Sawit Andalan</span
-                              >
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Kapuas Hulu</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Juli 2019</span>
+                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>WWF Id – KAK</span>
                             </div>
-                            <p class="proyek-desc">
-                              Penilaian komprehensif HCV-HCS untuk mendukung
-                              praktik pengelolaan perkebunan sawit yang
-                              bertanggung jawab.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 10 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar restorasi"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat restorasi"
-                                >Restorasi &amp; Konservasi</span
-                              >
-                              <span class="tag-status selesai">Selesai</span>
+                            <p class="proyek-desc">Analisis HCV dan HCS di kawasan agropolitan Kabupaten Kapuas Hulu untuk mendukung perencanaan tata guna lahan.</p>
+                            <div class="proyek-card-footer">
+                              <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                                <span>Baca Artikel Proyek</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                              </button>
                             </div>
-                            <h4>
-                              Program Peat IMPACTS Indonesia – Peningkatan
-                              Pengelolaan Gambut
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kab. Kubu Raya</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >Juni 2022 – Mei 2023</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >ICRAF Indonesia</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Pelatihan dan penguatan kapasitas petani kecil
-                              untuk mengembangkan agroforestri di lahan gambut
-                              secara berkelanjutan.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 11 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar kebijakan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat kebijakan"
-                                >Kebijakan &amp; Tata Kelola</span
-                              >
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>
-                              Rencana Strategis Cagar Biosfer Betung Kerihun
-                              Danau Sentarum
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kab. Kapuas Hulu</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >Juli 2020</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >GIZ SFM</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Rekomendasi strategis dan strategi pengelolaan
-                              Cagar Biosfer BKDS Kapuas Hulu untuk konservasi
-                              jangka panjang.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 12 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar restorasi"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat restorasi"
-                                >Restorasi &amp; Konservasi</span
-                              >
-                              <span class="tag-status berjalan"
-                                >Sedang Berjalan</span
-                              >
-                            </div>
-                            <h4>Restorasi Gambut – PM Haze Singapore</h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Desa Kalibandung, Kab. Kubu Raya</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >Mei 2022 – Sekarang</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >PM Haze – Singapore</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Pengembangan model restorasi gambut berbasis
-                              komunitas di Desa Kalibandung sebagai replikasi
-                              praktik terbaik.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 13 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar komoditas"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat komoditas"
-                                >Komoditas Berkelanjutan</span
-                              >
-                              <span class="tag-status berjalan"
-                                >Sedang Berjalan</span
-                              >
-                            </div>
-                            <h4>
-                              Penilaian Rantai Pasok Karet Berkelanjutan di
-                              Kalimantan Barat
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kalimantan Barat</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >April 2023 – Sekarang</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >PT. Inovasi Digital</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Rekomendasi intervensi untuk rantai pasok karet
-                              berkelanjutan yang mendukung kesejahteraan petani
-                              dan kelestarian lingkungan.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 14 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar kebijakan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat kebijakan"
-                                >Kebijakan &amp; Tata Kelola</span
-                              >
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>
-                              Program UNDP KalFor – Penguatan Perencanaan
-                              Kawasan Hutan Ketapang
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >3 Desa di Kab. Ketapang</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >Juni 2023 – Juni 2024</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >UNDP KalFor</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Pendampingan intensif di 3 desa di Kabupaten
-                              Ketapang untuk penguatan perencanaan kawasan hutan
-                              berbasis masyarakat.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 15 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar komoditas"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat komoditas"
-                                >Komoditas Berkelanjutan</span
-                              >
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>
-                              Survei Rantai Pasok Karet &amp; Kesiapan EUDR –
-                              Tropenbos Indonesia
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kab. Ketapang, Sanggau, dan Sintang</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >Januari 2025 – Maret 2025</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >Tropenbos Indonesia</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Dokumen strategis rantai pasok karet dan
-                              rekomendasi kesiapan EUDR untuk tiga kabupaten di
-                              Kalimantan Barat.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 16 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar kebijakan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat kebijakan"
-                                >Kebijakan &amp; Tata Kelola</span
-                              >
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>
-                              Penyusunan Kerangka Strategis &amp; SOP ABKT Perda
-                              6 Tahun 2018 Kalimantan Barat
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kalimantan Barat</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >Januari 2025 – Maret 2025</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >Tropenbos Indonesia</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Dokumen kerangka strategis, panduan, dan SOP
-                              implementasi ABKT untuk mendukung pelaksanaan
-                              Perda 6 Tahun 2018.
-                            </p>
-                          </div>
-                        </div>
-
-                        <!-- 17 -->
-                        <div class="proyek-card">
-                          <div class="proyek-cat-bar restorasi"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat restorasi"
-                                >Restorasi &amp; Konservasi</span
-                              >
-                              <span class="tag-status berjalan"
-                                >Sedang Berjalan</span
-                              >
-                            </div>
-                            <h4>
-                              Program TFCA Kalimantan – Penguatan Mitigasi &amp;
-                              Adaptasi Iklim Desa Gambut
-                            </h4>
-                            <div class="proyek-meta">
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Kab. Kubu Raya</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <rect
-                                    x="3"
-                                    y="4"
-                                    width="18"
-                                    height="18"
-                                    rx="2"
-                                  />
-                                  <line x1="16" y1="2" x2="16" y2="6" />
-                                  <line x1="8" y1="2" x2="8" y2="6" />
-                                  <line x1="3" y1="10" x2="21" y2="10" /></svg
-                                >April 2026 – Maret 2028</span
-                              >
-                              <span
-                                ><svg
-                                  width="13"
-                                  height="13"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >Yayasan Kehati (TFCA Kalimantan)</span
-                              >
-                            </div>
-                            <p class="proyek-desc">
-                              Program penguatan mitigasi dan adaptasi iklim desa
-                              gambut untuk komunitas yang rentan terhadap
-                              perubahan iklim.
-                            </p>
                           </div>
                         </div>
                       </div>
@@ -6524,6 +5786,120 @@
         ></a
       >
     </section>
+    <!-- Article Reader Modal -->
+    <div id="proyekArticleModal" class="ynki-article-modal" onclick="if(event.target===this) closeProyekArticle()">
+      <div class="ynki-modal-box">
+        <button type="button" class="ynki-modal-close" onclick="closeProyekArticle()" aria-label="Tutup">&times;</button>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+          <span id="modalCat" class="tag-cat restorasi">Restorasi</span>
+          <span id="modalStatus" class="tag-status berjalan">Sedang Berjalan</span>
+        </div>
+        <h2 id="modalTitle" style="font-family:'Montserrat','Inter',sans-serif;font-size:clamp(20px,2.5vw,26px);font-weight:800;color:#0e241b;margin:0 0 16px;line-height:1.35;"></h2>
+        
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;background:#f6fbf7;border:1.5px solid #d8eade;border-radius:12px;padding:16px 18px;margin-bottom:20px;">
+          <div>
+            <div style="font-size:11px;font-weight:800;color:#117710;text-transform:uppercase;margin-bottom:3px;">Lokasi Kegiatan</div>
+            <div id="modalLocation" style="font-size:13px;color:#223e30;font-weight:600;"></div>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:800;color:#117710;text-transform:uppercase;margin-bottom:3px;">Periode Program</div>
+            <div id="modalPeriod" style="font-size:13px;color:#223e30;font-weight:600;"></div>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:800;color:#117710;text-transform:uppercase;margin-bottom:3px;">Mitra / Donor</div>
+            <div id="modalPartner" style="font-size:13px;color:#223e30;font-weight:600;"></div>
+          </div>
+        </div>
+
+        <div style="font-size:11.5px;font-weight:800;color:#117710;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Ringkasan &amp; Ulasan Artikel Proyek</div>
+        <div id="modalDesc" style="font-size:15px;color:#2c4438;line-height:1.8;margin-bottom:24px;"></div>
+
+        <div style="display:flex;justify-content:flex-end;gap:12px;border-top:1px solid #e2ede5;padding-top:18px;">
+          <button type="button" onclick="closeProyekArticle()" style="background:#f0f4f2;color:#3f554b;font-weight:700;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-size:13px;">Tutup</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openProyekArticle(btn) {
+        const card = btn.closest('.proyek-card');
+        if (!card) return;
+        const title = card.getAttribute('data-title') || card.querySelector('h4')?.innerText || '';
+        const cat = card.getAttribute('data-cat') || 'restorasi';
+        const catText = card.querySelector('.tag-cat')?.innerText || 'Program';
+        const status = card.getAttribute('data-status') || card.querySelector('.tag-status')?.innerText || 'Ongoing';
+        const location = card.getAttribute('data-location') || 'Kalimantan Barat';
+        const period = card.getAttribute('data-period') || '-';
+        const partner = card.getAttribute('data-partner') || 'YNKI';
+        const desc = card.getAttribute('data-desc') || card.querySelector('.proyek-desc')?.innerText || '';
+
+        document.getElementById('modalTitle').innerText = title;
+        const modalCat = document.getElementById('modalCat');
+        modalCat.className = 'tag-cat ' + cat;
+        modalCat.innerText = catText;
+
+        const modalStatus = document.getElementById('modalStatus');
+        if (status.toLowerCase().includes('berjalan') || status.toLowerCase().includes('ongoing')) {
+          modalStatus.className = 'tag-status berjalan';
+          modalStatus.innerText = 'Sedang Berjalan';
+        } else {
+          modalStatus.className = 'tag-status selesai';
+          modalStatus.innerText = 'Selesai';
+        }
+
+        document.getElementById('modalLocation').innerText = location;
+        document.getElementById('modalPeriod').innerText = period;
+        document.getElementById('modalPartner').innerText = partner;
+        document.getElementById('modalDesc').innerText = desc;
+
+        const modal = document.getElementById('proyekArticleModal');
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeProyekArticle() {
+        const modal = document.getElementById('proyekArticleModal');
+        if (modal) {
+          modal.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
+      }
+
+      // Filter handling
+      document.addEventListener('DOMContentLoaded', function() {
+        const filterBtns = document.querySelectorAll('.filter-bar .filter-btn');
+        const cards = document.querySelectorAll('.proyek-grid .proyek-card');
+
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filterText = this.innerText.trim().toLowerCase();
+
+            cards.forEach(card => {
+              const catClass = card.getAttribute('data-cat') || '';
+              const cardCatText = card.querySelector('.tag-cat')?.innerText.toLowerCase() || '';
+              
+              if (filterText === 'semua') {
+                card.style.display = '';
+              } else if (filterText.includes('restorasi') && (catClass === 'restorasi' || cardCatText.includes('restorasi'))) {
+                card.style.display = '';
+              } else if (filterText.includes('pemetaan') && (catClass === 'pemetaan' || cardCatText.includes('pemetaan'))) {
+                card.style.display = '';
+              } else if (filterText.includes('komoditas') && (catClass === 'komoditas' || cardCatText.includes('komoditas'))) {
+                card.style.display = '';
+              } else if (filterText.includes('kapasitas') && (catClass === 'kapasitas' || cardCatText.includes('kapasitas'))) {
+                card.style.display = '';
+              } else if (filterText.includes('kebijakan') && (catClass === 'kebijakan' || cardCatText.includes('kebijakan'))) {
+                card.style.display = '';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
+      });
+    </script>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script src="/assets/js/ynki-footer.js"></script>
   </body>

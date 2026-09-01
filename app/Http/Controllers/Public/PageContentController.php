@@ -120,43 +120,69 @@ class PageContentController extends Controller
   // 3. Portfolio (/portofolio/)
   public function portfolio()
   {
-    $projects = PortfolioProject::orderBy('sort_order', 'asc')->get();
+    $projects = PortfolioProject::orderByRaw("CASE WHEN status = 'ongoing' THEN 0 ELSE 1 END")
+      ->orderBy('sort_order', 'asc')
+      ->get();
     $originalHtml = file_get_contents(base_path('portofolio/index.html'));
+
+    if ($projects->isEmpty()) {
+      return response($originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    }
 
     $dynamicCardsHtml = '';
     foreach ($projects as $p) {
-      $coverImg = $p->image_cover_path
-        ? '/storage/' . $p->image_cover_path
-        : '/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp';
+      $isOngoing = strtolower($p->status) === 'ongoing';
+      $statusBadge = $isOngoing
+        ? '<span class="tag-status berjalan">Sedang Berjalan</span>'
+        : '<span class="tag-status selesai">Selesai</span>';
+
+      $catSlug = 'restorasi';
+      $catLower = strtolower($p->category ?? '');
+      if (str_contains($catLower, 'spasial') || str_contains($catLower, 'pemetaan') || str_contains($catLower, 'intelligence')) {
+        $catSlug = 'pemetaan';
+      } elseif (str_contains($catLower, 'komoditas') || str_contains($catLower, 'commodity')) {
+        $catSlug = 'komoditas';
+      } elseif (str_contains($catLower, 'kapasitas') || str_contains($catLower, 'capacity')) {
+        $catSlug = 'kapasitas';
+      } elseif (str_contains($catLower, 'kebijakan') || str_contains($catLower, 'policy') || str_contains($catLower, 'governance')) {
+        $catSlug = 'kebijakan';
+      }
 
       $downloadDoc = $p->document_pdf_path
-        ? '<a href="/storage/' . htmlspecialchars($p->document_pdf_path) . '" target="_blank" style="color:#117710;font-weight:700;font-size:12.5px;text-decoration:none;margin-top:10px;display:inline-block;">&darr; Unduh Factsheet PDF</a>'
+        ? '<a href="/storage/' . htmlspecialchars($p->document_pdf_path) . '" target="_blank" download style="color:#117710;font-weight:700;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">&darr; Factsheet PDF</a>'
         : '';
 
-      $statusBadge = $p->status === 'ongoing'
-        ? '<span style="background:#eaf5ee;color:#0F5132;padding:4px 10px;border-radius:50px;font-size:11px;font-weight:700;">Ongoing</span>'
-        : '<span style="background:#f0f4f2;color:#5a7364;padding:4px 10px;border-radius:50px;font-size:11px;font-weight:700;">Completed</span>';
+      $desc = $p->description ?: ($p->summary ?? '');
+      $summary = $p->summary ?: ($p->description ?? '');
 
       $dynamicCardsHtml .= '
-            <div class="proyek-card" data-cat="' . htmlspecialchars($p->category) . '">
-              <div class="proyek-img-wrap" style="position:relative;">
-                <img src="' . htmlspecialchars($coverImg) . '" alt="' . htmlspecialchars($p->project_title) . '" style="width:100%;height:220px;object-fit:cover;" onerror="this.src=\'/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp\'" />
-                <div style="position:absolute;top:12px;left:12px;">' . $statusBadge . '</div>
-              </div>
-              <div class="proyek-bd" style="padding:22px;">
-                <div class="proyek-cat" style="font-size:11px;font-weight:800;color:#117710;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">' . htmlspecialchars($p->category) . '</div>
-                <h3 class="proyek-title" style="font-size:16px;font-weight:800;color:#0e241b;margin:0 0 10px;line-height:1.4;">' . htmlspecialchars($p->project_title) . '</h3>
-                <p style="font-size:13.5px;color:#536b5f;line-height:1.6;margin:0 0 12px;">' . htmlspecialchars($p->summary) . '</p>
-                <div style="font-size:12px;color:#7a9485;border-top:1px solid #eef4f0;padding-top:10px;">
-                  <strong>Lokasi:</strong> ' . htmlspecialchars($p->location ?? 'Kalimantan Barat') . ' | <strong>Mitra:</strong> ' . htmlspecialchars($p->partner_donor ?? 'YNKI') . '
+            <div class="proyek-card" data-cat="' . htmlspecialchars($catSlug) . '" data-title="' . htmlspecialchars($p->project_title) . '" data-status="' . ($isOngoing ? 'Sedang Berjalan' : 'Selesai') . '" data-location="' . htmlspecialchars($p->location ?? 'Kalimantan Barat') . '" data-period="' . htmlspecialchars($p->period ?? '-') . '" data-partner="' . htmlspecialchars($p->partner_donor ?? 'YNKI') . '" data-desc="' . htmlspecialchars($desc) . '">
+              <div class="proyek-cat-bar ' . htmlspecialchars($catSlug) . '"></div>
+              <div class="proyek-body">
+                <div class="proyek-tags">
+                  <span class="tag-cat ' . htmlspecialchars($catSlug) . '">' . htmlspecialchars($p->category) . '</span>
+                  ' . $statusBadge . '
                 </div>
-                ' . $downloadDoc . '
+                <h4>' . htmlspecialchars($p->project_title) . '</h4>
+                <div class="proyek-meta">
+                  <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>' . htmlspecialchars($p->location ?? 'Kalimantan Barat') . '</span>
+                  <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' . htmlspecialchars($p->period ?? '-') . '</span>
+                  <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>' . htmlspecialchars($p->partner_donor ?? 'YNKI') . '</span>
+                </div>
+                <p class="proyek-desc">' . htmlspecialchars($summary) . '</p>
+                <div class="proyek-card-footer">
+                  <button type="button" class="btn-read-article" onclick="openProyekArticle(this)">
+                    <span>Baca Artikel Proyek</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </button>
+                  ' . ($downloadDoc ? '<div style="margin-top:8px;text-align:right;">' . $downloadDoc . '</div>' : '') . '
+                </div>
               </div>
             </div>';
     }
 
     $pattern = '/<div class="proyek-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-    $replacement = '<div class="proyek-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-top:30px;">' . $dynamicCardsHtml . '</div></div></section>';
+    $replacement = '<div class="proyek-grid">' . $dynamicCardsHtml . '</div></div></section>';
     $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
 
     return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
