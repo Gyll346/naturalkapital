@@ -106,7 +106,7 @@ h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3,
 }
 
 /* ==========================================================================
-   HERO SECTION TYPOGRAPHY (CANDARA / SEGOE UI HERO HEADINGS & SUBTITLES)
+   HERO SECTION TYPOGRAPHY (SLIM, ELEGANT, 300 WEIGHT MATCHING BERANDA)
    ========================================================================== */
 .hero-section h1,
 .hero-h1,
@@ -127,13 +127,36 @@ h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3,
 .hero-content-trans h1,
 .hero-inner h1,
 .pptx-hero h1 {
-  font-family: 'Candara', 'Segoe UI', Calibri, 'Inter', Arial, sans-serif !important;
-  font-size: clamp(30px, 4.5vw, 50px) !important;
-  font-weight: 400 !important;
+  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
+  font-size: clamp(24px, 3.5vw, 42px) !important;
+  font-weight: 300 !important;
   line-height: 1.25 !important;
   color: #ffffff !important;
   margin: 0 0 20px !important;
   letter-spacing: -0.01em !important;
+}
+
+.hero-section h1 *,
+.hero-h1 *,
+#hero-sejarah h1 *,
+#hero-home h1 *,
+#hero-tim h1 *,
+#hero-lgos h1 *,
+#hero-port h1 *,
+#hero-trans h1 *,
+#hero-budaya h1 *,
+#hero-lg h1 *,
+#hero-nc h1 *,
+#hero-sus h1 *,
+#hero-int h1 *,
+#hero-inst h1 *,
+.hero-content h1 *,
+.hero-content-sejarah h1 *,
+.hero-content-trans h1 *,
+.hero-inner h1 *,
+.pptx-hero h1 * {
+  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
+  font-weight: 300 !important;
 }
 
 .hero-section h1 span.hl,
@@ -165,11 +188,11 @@ h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3,
 .hero-inner h1 span.highlight,
 h1 span.highlight,
 h1 span.hl {
-  font-family: 'Candara', 'Segoe UI', Calibri, 'Inter', Arial, sans-serif !important;
+  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
   color: #a3e0a2 !important;
   font-size: 0.88em !important;
   display: inline-block;
-  font-weight: 400 !important;
+  font-weight: 300 !important;
 }
 
 .hero-sub,
@@ -185,7 +208,7 @@ h1 span.hl {
 #hero-int p.hero-sub,
 #hero-inst p.hero-sub,
 .hero-inner p.hero-sub {
-  font-family: 'Candara', 'Segoe UI', Calibri, 'Inter', Arial, sans-serif !important;
+  font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
   font-size: clamp(14px, 1.5vw, 17px) !important;
   line-height: 1.8 !important;
   color: #d2f0d1 !important;
