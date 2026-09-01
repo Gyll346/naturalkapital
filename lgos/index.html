@@ -3561,6 +3561,47 @@
               margin: 0;
               flex: 1;
             }
+            .lgos-card-action {
+              margin-top: 18px;
+              padding-top: 14px;
+              border-top: 1px dashed #d2e8d1;
+            }
+            .btn-lgos-doc {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              gap: 7px;
+              width: 100%;
+              padding: 9px 12px;
+              font-size: 12.5px;
+              font-weight: 700;
+              border-radius: 8px;
+              text-decoration: none;
+              transition: all 0.25s ease;
+              box-sizing: border-box;
+            }
+            .btn-lgos-doc.download {
+              background: #eaf6ea;
+              color: #117710;
+              border: 1.5px solid #b5ddb5;
+            }
+            .btn-lgos-doc.download:hover {
+              background: #117710;
+              color: #ffffff;
+              border-color: #117710;
+              box-shadow: 0 4px 12px rgba(17, 119, 16, 0.2);
+            }
+            .btn-lgos-doc.contact {
+              background: #fff4ea;
+              color: #c45e00;
+              border: 1.5px solid #fed2a4;
+            }
+            .btn-lgos-doc.contact:hover {
+              background: #ff8000;
+              color: #ffffff;
+              border-color: #ff8000;
+              box-shadow: 0 4px 12px rgba(255, 128, 0, 0.2);
+            }
 
             /* ========================
    3 KOMPONEN UTAMA (GREEN BG)
@@ -3931,9 +3972,9 @@
                         <a href="/tentang-kami/">Tentang Kami</a> &nbsp;/&nbsp;
                         <span>LGOS</span>
                       </div>
-                      <h1>
+                      <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: clamp(32px, 4.5vw, 54px) !important; font-weight: 300 !important; line-height: 1.25 !important; color: #ffffff !important; margin: 0 0 20px !important; letter-spacing: -0.01em !important;">
                         Landscape Governance<br />
-                        <span class="hl">Operating System (LGOS)</span>
+                        <span class="hl" style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: 0.88em !important; font-weight: 300 !important; color: #a3e0a2 !important; display: inline-block;">Operating System (LGOS)</span>
                       </h1>
                       <p class="hero-sub">
                         Sebagai
@@ -3967,7 +4008,7 @@
                           </svg>
                           8 Komponen LGOS
                         </a>
-                        <a href="#lgos-unduh" class="btn-cta-second">
+                        <a href="#lgos-utama" class="btn-cta-second">
                           <svg
                             width="17"
                             height="17"
@@ -3976,13 +4017,10 @@
                             stroke="currentColor"
                             stroke-width="2"
                           >
-                            <path
-                              d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                            />
-                            <polyline points="7 10 12 15 17 10" />
-                            <line x1="12" y1="15" x2="12" y2="3" />
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
                           </svg>
-                          Unduh Dokumen LGOS
+                          3 Komponen Utama
                         </a>
                       </div>
                     </div>
@@ -4007,7 +4045,7 @@
                             margin: 0 0 12px;
                           "
                         >
-                          8 Komponen yang Saling Terhubung
+                          8 Komponen LGOS yang Saling Terhubung
                         </h2>
                         <p
                           style="
@@ -4028,95 +4066,143 @@
                         <div class="lgos-card">
                           <div class="lgos-num">KOMPONEN 01</div>
                           <h4>Kertas Posisi</h4>
-                          <div class="role">Filosofi — Mengapa Kami Ada</div>
+                          <div class="role">Mengapa Kami Ada</div>
                           <p>
                             Fondasi filosofis yang menjelaskan mengapa YNKI ada
                             dan nilai-nilai yang mendasari seluruh keputusan
                             organisasi.
                           </p>
+                          <div class="lgos-card-action">
+                            <a href="#" class="btn-lgos-doc download">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                              Unduh Dokumen
+                            </a>
+                          </div>
                         </div>
                         <div class="lgos-card">
                           <div class="lgos-num">KOMPONEN 02</div>
                           <h4>Master ToC</h4>
                           <div class="role">
-                            Mesin Perubahan — Bagaimana Perubahan Terjadi
+                            Bagaimana Perubahan Terjadi
                           </div>
                           <p>
                             Menggambarkan hubungan antara tata kelola lanskap,
                             perubahan perilaku, kelembagaan, dan dampak jangka
                             panjang.
                           </p>
+                          <div class="lgos-card-action">
+                            <a href="#" class="btn-lgos-doc download">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                              Unduh Dokumen
+                            </a>
+                          </div>
                         </div>
                         <div class="lgos-card">
                           <div class="lgos-num">KOMPONEN 03</div>
                           <h4>Rencana Strategis</h4>
                           <div class="role">
-                            Sistem Navigasi — Ke Mana Kami Melangkah
+                            Ke Mana Kami Melangkah
                           </div>
                           <p>
                             Menerjemahkan Theory of Change menjadi arah
                             organisasi jangka menengah dan panjang (2026–2035).
                           </p>
+                          <div class="lgos-card-action">
+                            <a href="#" class="btn-lgos-doc download">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                              Unduh Dokumen
+                            </a>
+                          </div>
                         </div>
                         <div class="lgos-card">
                           <div class="lgos-num">KOMPONEN 04</div>
                           <h4>Kerangka Program</h4>
                           <div class="role">
-                            Lapisan Aplikasi — Portofolio Program
+                            Portofolio Program
                           </div>
                           <p>
                             Menentukan portofolio 5 program strategis sebagai
                             jembatan antara strategi dan implementasi di
                             lapangan.
                           </p>
+                          <div class="lgos-card-action">
+                            <a href="#" class="btn-lgos-doc download">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                              Unduh Dokumen
+                            </a>
+                          </div>
                         </div>
                         <div class="lgos-card">
                           <div class="lgos-num">KOMPONEN 05</div>
                           <h4>Portofolio Proyek</h4>
                           <div class="role">
-                            Antarmuka Lapangan — Proyek &amp; Kemitraan
+                            Proyek &amp; Kemitraan
                           </div>
                           <p>
                             Menerjemahkan strategi ke dalam proyek, kemitraan,
                             dan inisiatif lapangan sebagai antarmuka dengan
                             pemangku kepentingan.
                           </p>
+                          <div class="lgos-card-action">
+                            <a href="#" class="btn-lgos-doc download">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                              Unduh Dokumen
+                            </a>
+                          </div>
                         </div>
                         <div class="lgos-card">
                           <div class="lgos-num">KOMPONEN 06</div>
                           <h4>Sistem MEL</h4>
                           <div class="role">
-                            Mesin Pembelajaran — Monitoring &amp; Evaluasi
+                            Monitoring, Evaluation, &amp; Learning
                           </div>
                           <p>
                             Menghasilkan pembelajaran dan mendukung adaptive
                             management melalui monitoring, evaluasi, dan
                             pembelajaran berkelanjutan.
                           </p>
+                          <div class="lgos-card-action">
+                            <a href="/kontak-kami/" class="btn-lgos-doc contact">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                              Hubungi Kami
+                            </a>
+                          </div>
                         </div>
                         <div class="lgos-card">
                           <div class="lgos-num">KOMPONEN 07</div>
-                          <h4>Manajemen Pengetahuan</h4>
+                          <h4>Pengetahuan Organisasi</h4>
                           <div class="role">
-                            Sistem Memori — Memori Organisasi
+                            Memori Organisasi
                           </div>
                           <p>
                             Menjaga memori organisasi agar pengalaman, data, dan
                             inovasi tidak hilang ketika proyek atau individu
                             berubah.
                           </p>
+                          <div class="lgos-card-action">
+                            <a href="/kontak-kami/" class="btn-lgos-doc contact">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                              Hubungi Kami
+                            </a>
+                          </div>
                         </div>
                         <div class="lgos-card">
                           <div class="lgos-num">KOMPONEN 08</div>
                           <h4>Mobilisasi Sumber Daya</h4>
                           <div class="role">
-                            Sistem Energi — Pendanaan &amp; Kemitraan
+                            Pendanaan &amp; Kemitraan
                           </div>
                           <p>
                             Menyediakan energi (pendanaan, kemitraan,
                             pengetahuan, teknologi) untuk menjalankan seluruh
                             sistem organisasi.
                           </p>
+                          <div class="lgos-card-action">
+                            <a href="/kontak-kami/" class="btn-lgos-doc contact">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                              Hubungi Kami
+                            </a>
+                          </div>
                         </div>
                       </div>
 
@@ -4237,352 +4323,7 @@
                     </div>
                   </section>
 
-                  <!-- =========================================
-             4. 5 KOMPONEN PENDUKUNG (TABLE)
-             ========================================= -->
-                  <section id="lgos-pendukung" class="ynki-section">
-                    <div class="ynki-container">
-                      <div style="text-align: center">
-                        <div class="divider-line">
-                          <span class="line"></span
-                          ><span class="section-badge"
-                            >5 KOMPONEN PENDUKUNG</span
-                          ><span class="line"></span>
-                        </div>
-                        <h2
-                          style="
-                            font-size: clamp(22px, 3vw, 32px);
-                            font-weight: 800;
-                            color: #0e241b;
-                            margin: 0 0 12px;
-                          "
-                        >
-                          Komponen Pendukung LGOS
-                        </h2>
-                        <p
-                          style="
-                            font-size: 15px;
-                            color: #536b5f;
-                            max-width: 760px;
-                            margin: 0 auto;
-                          "
-                        >
-                          Selain tiga komponen utama, LGOS terdiri dari lima
-                          komponen pendukung yang saling melengkapi. Setiap
-                          komponen memiliki fungsi spesifik dalam memastikan
-                          organisasi berjalan secara efektif, adaptif, dan
-                          berkelanjutan — dari implementasi program hingga
-                          mobilisasi sumber daya strategis.
-                        </p>
-                      </div>
 
-                      <table class="pendukung-table">
-                        <thead>
-                          <tr>
-                            <th style="width: 220px">Komponen</th>
-                            <th>Fungsi Spesifik</th>
-                            <th style="width: 140px; text-align: center">
-                              Dokumen
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="comp-name">Program Framework</div>
-                              <div class="comp-label">Komponen 04</div>
-                            </td>
-                            <td class="comp-desc">
-                              Menentukan portofolio 5 program strategis sebagai
-                              jembatan antara strategi dan implementasi di
-                              lapangan.
-                            </td>
-                            <td style="text-align: center">
-                              <a href="#" class="btn-unduh-sm"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2.5"
-                                >
-                                  <path
-                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                  />
-                                  <polyline points="7 10 12 15 17 10" />
-                                  <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                Unduh PDF</a
-                              >
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="comp-name">Project Portfolio</div>
-                              <div class="comp-label">Komponen 05</div>
-                            </td>
-                            <td class="comp-desc">
-                              Menerjemahkan strategi ke dalam proyek, kemitraan,
-                              dan inisiatif lapangan sebagai antarmuka dengan
-                              pemangku kepentingan.
-                            </td>
-                            <td style="text-align: center">
-                              <a href="#" class="btn-unduh-sm"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2.5"
-                                >
-                                  <path
-                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                  />
-                                  <polyline points="7 10 12 15 17 10" />
-                                  <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                Unduh PDF</a
-                              >
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="comp-name">MEL System</div>
-                              <div class="comp-label">Komponen 06</div>
-                            </td>
-                            <td class="comp-desc">
-                              Menghasilkan pembelajaran dan mendukung adaptive
-                              management melalui monitoring, evaluasi, dan
-                              pembelajaran berkelanjutan.
-                            </td>
-                            <td style="text-align: center">
-                              <a href="#" class="btn-unduh-sm"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2.5"
-                                >
-                                  <path
-                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                  />
-                                  <polyline points="7 10 12 15 17 10" />
-                                  <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                Unduh PDF</a
-                              >
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="comp-name">Knowledge Management</div>
-                              <div class="comp-label">Komponen 07</div>
-                            </td>
-                            <td class="comp-desc">
-                              Menjaga memori organisasi agar pengalaman, data,
-                              dan inovasi tidak hilang ketika proyek atau
-                              individu berubah.
-                            </td>
-                            <td style="text-align: center">
-                              <a href="#" class="btn-unduh-sm"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2.5"
-                                >
-                                  <path
-                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                  />
-                                  <polyline points="7 10 12 15 17 10" />
-                                  <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                Unduh PDF</a
-                              >
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="comp-name">Resource Mobilization</div>
-                              <div class="comp-label">Komponen 08</div>
-                            </td>
-                            <td class="comp-desc">
-                              Menyediakan energi (pendanaan, kemitraan,
-                              pengetahuan, teknologi) untuk menjalankan seluruh
-                              sistem organisasi.
-                            </td>
-                            <td style="text-align: center">
-                              <a href="#" class="btn-unduh-sm"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2.5"
-                                >
-                                  <path
-                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                  />
-                                  <polyline points="7 10 12 15 17 10" />
-                                  <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                Unduh PDF</a
-                              >
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </section>
-
-                  <!-- =========================================
-             5. UNDUH DOKUMEN LENGKAP LGOS
-             ========================================= -->
-                  <section id="lgos-unduh" class="ynki-section">
-                    <div class="ynki-container">
-                      <div style="text-align: center; margin-bottom: 36px">
-                        <div class="divider-line">
-                          <span class="line"></span
-                          ><span class="section-badge">DOKUMEN RESMI</span
-                          ><span class="line"></span>
-                        </div>
-                        <h2
-                          style="
-                            font-size: clamp(22px, 3vw, 32px);
-                            font-weight: 800;
-                            color: #0e241b;
-                            margin: 0 0 10px;
-                          "
-                        >
-                          Unduh Dokumen Lengkap LGOS
-                        </h2>
-                        <p
-                          style="
-                            font-size: 15px;
-                            color: #536b5f;
-                            max-width: 680px;
-                            margin: 0 auto;
-                          "
-                        >
-                          Untuk memahami secara utuh bagaimana LGOS menjadi
-                          sistem operasi YNKI, unduh dokumen lengkap yang
-                          mencakup seluruh 8 komponen, hubungan antar komponen,
-                          dan panduan implementasinya.
-                        </p>
-                      </div>
-
-                      <div class="unduh-card">
-                        <div class="unduh-icon-wrap">
-                          <svg
-                            width="38"
-                            height="38"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="#a3e0a2"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path
-                              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                            />
-                            <polyline points="14 2 14 8 20 8" />
-                            <line x1="16" y1="13" x2="8" y2="13" />
-                            <line x1="16" y1="17" x2="8" y2="17" />
-                            <polyline points="10 9 9 9 8 9" />
-                          </svg>
-                        </div>
-                        <div class="unduh-info">
-                          <h3>
-                            Dokumen LGOS — Landscape Governance Operating System
-                          </h3>
-                          <p>
-                            Dokumen ini dirancang untuk pembuat kebijakan, staf
-                            organisasi, dan mitra lanskap yang ingin memahami
-                            cara YNKI beroperasi sebagai
-                            <em>Landscape Governance Backbone Organization</em>.
-                          </p>
-                          <ul class="unduh-features">
-                            <li>
-                              <svg
-                                width="16"
-                                height="16"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" />
-                              </svg>
-                              <span
-                                ><strong>8 Komponen Terintegrasi</strong> —
-                                Seluruh komponen LGOS dalam satu dokumen
-                                komprehensif.</span
-                              >
-                            </li>
-                            <li>
-                              <svg
-                                width="16"
-                                height="16"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" />
-                              </svg>
-                              <span
-                                ><strong>Hubungan Antar Komponen</strong> — Peta
-                                koneksi yang menjelaskan bagaimana setiap
-                                komponen saling menguatkan.</span
-                              >
-                            </li>
-                            <li>
-                              <svg
-                                width="16"
-                                height="16"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" />
-                              </svg>
-                              <span
-                                ><strong>Panduan Implementasi</strong> — Panduan
-                                praktis untuk menerapkan LGOS di dalam
-                                organisasi.</span
-                              >
-                            </li>
-                          </ul>
-                          <a href="#" class="btn-unduh-main">
-                            <svg
-                              width="18"
-                              height="18"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2.5"
-                            >
-                              <path
-                                d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                              />
-                              <polyline points="7 10 12 15 17 10" />
-                              <line x1="12" y1="15" x2="12" y2="3" />
-                            </svg>
-                            Unduh Dokumen Lengkap LGOS (PDF)
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
 
                   <!-- =========================================
              6. JELAJAHI KOMPONEN LGOS LAINNYA
