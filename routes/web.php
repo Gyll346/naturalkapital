@@ -42,7 +42,7 @@ Route::get('/transparansi', [PageContentController::class, 'transparansi'])->nam
 Route::get('/annual-report', [PageContentController::class, 'transparansi'])->name('public.annual_report');
 
 
-// Subhalaman Dinamis Database (Pustaka & Pengetahuan)
+// Subhalaman Dinamis Database (Literasi & Pengetahuan)
 Route::get('/news-features', [PageContentController::class, 'newsFeatures'])->name('public.news_features');
 Route::get('/penelitian-laporan', [PageContentController::class, 'researchReports'])->name('public.research_reports');
 Route::get('/analisis-kebijakan', [PageContentController::class, 'policyAnalysis'])->name('public.policy_analysis');

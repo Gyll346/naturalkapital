@@ -23,7 +23,7 @@ class DashboardController extends Controller
         $totalPortfolioCount = PortfolioProject::count();
         $totalTransparencyCount = TransparencyReport::count();
 
-        // 2. Modul Pustaka & Pengetahuan
+        // 2. Modul Literasi & Pengetahuan
         $newsCount = Article::whereHas('category', fn($q) => $q->where('slug', 'news-features'))->count();
         $researchCount = Article::whereHas('category', fn($q) => $q->where('slug', 'penelitian-laporan'))->count();
         $policyCount = Article::whereHas('category', fn($q) => $q->where('slug', 'analisis-kebijakan'))->count();

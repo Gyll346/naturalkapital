@@ -540,7 +540,7 @@
                 </a>
             </li>
 
-            <li class="menu-category">Pustaka & Pengetahuan</li>
+            <li class="menu-category">Literasi & Pengetahuan</li>
             <li class="menu-item">
                 <a class="menu-link {{ request()->routeIs('admin.articles.*') && !request()->has('category') ? 'active' : '' }}" href="{{ route('admin.articles.index') }}">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>

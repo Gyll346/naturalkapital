@@ -2930,13 +2930,13 @@ div[class*="fusion-builder-row-1"],
                           class="awb-menu__main-a awb-menu__main-a_regular"
                           aria-current="page"
                           ><span class="menu-text"
-                            >Pustaka &amp; Pengetahuan</span
+                            >Literasi &amp; Pengetahuan</span
                           ><span
                             class="awb-menu__open-nav-submenu-hover"
                           ></span></a
                         ><button
                           type="button"
-                          aria-label="Open submenu of Pustaka &amp; Pengetahuan"
+                          aria-label="Open submenu of Literasi &amp; Pengetahuan"
                           aria-expanded="false"
                           class="awb-menu__open-nav-submenu_mobile awb-menu__open-nav-submenu_main"
                         ></button>
@@ -3608,7 +3608,7 @@ div[class*="fusion-builder-row-1"],
                         <li>Program Kami</li>
                         <li>Dampak &amp; Pembelajaran</li>
                         <li>Ikut Terlibat</li>
-                        <li>Pustaka &amp; Pengetahuan</li>
+                        <li>Literasi &amp; Pengetahuan</li>
                         <li>Hubungi Kami</li>
                       </ul>
                       <p>
