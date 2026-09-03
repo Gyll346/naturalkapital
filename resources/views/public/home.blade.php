@@ -184,7 +184,7 @@
     <meta property="og:url" content="/" />
     <meta
       property="og:image"
-      content="/wp-content/uploads/2026/05/logo-ynki-40.webp"
+      content="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3"
     />
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="40" />
@@ -2539,7 +2539,17 @@
         .fusion-builder-column-0 {
           flex: 0 0 auto !important;
           width: auto !important;
-          max-width: 280px !important;
+          max-width: 420px !important;
+        }
+
+        .fusion-builder-column-0 img,
+        .fusion-tb-header .fusion-imageframe img,
+        .fusion-tb-header img.wp-image-183 {
+          max-width: 360px !important;
+          width: auto !important;
+          height: 64px !important;
+          max-height: 72px !important;
+          object-fit: contain !important;
         }
 
         .fusion-builder-column-1 {
@@ -2803,21 +2813,8 @@
                         class="fusion-no-lightbox"
                         href="/"
                         target="_self"
-                        aria-label="logo-ynki-80"
-                        ><img
-                          decoding="async"
-                          width="300"
-                          height="60"
-                          alt="Natural Kapital Foundation"
-                          class="img-responsive wp-image-183 disable-lazyload"
-                          data-
-                          data-
-                          src="/wp-content/uploads/2026/05/logo-ynki-80-300x60.webp"
-                          srcset="
-                            /wp-content/uploads/2026/05/logo-ynki-80-200x40.webp 200w,
-                            /wp-content/uploads/2026/05/logo-ynki-80.webp        399w
-                          "
-                          sizes="(max-width: 1024px) 100vw, (max-width: 640px) 100vw, 300px" /></a
+                        aria-label="logo-ynki-500"
+                        ><img decoding="async" width="300" height="60" alt="Natural Kapital Foundation" class="img-responsive wp-image-183 disable-lazyload" src="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3" /></a
                     ></span>
                   </div>
                 </div>
@@ -2942,7 +2939,7 @@
                           class="awb-menu__main-background-active awb-menu__main-background-active_top-vertical"
                         ></span
                         ><a
-                          href="/sejarah-visi-misi/"
+                          href="#"
                           class="awb-menu__main-a awb-menu__main-a_regular"
                           aria-current="page"
                           ><span class="menu-text">Tentang Kami</span
@@ -3328,17 +3325,10 @@
               min-height: 92vh;
               display: flex;
               align-items: center;
-              background-image:
-                linear-gradient(
-                  155deg,
-                  rgba(7, 53, 6, 0.88) 0%,
-                  rgba(12, 80, 11, 0.62) 55%,
-                  rgba(0, 0, 0, 0.3) 100%
-                ),
-                url("/assets/images/homepage/hero-bg.png");
+              background-image:url("/wp-content/uploads/2026/07/drone-YNKI-UNDP-2024-8.webp");
               background-size: cover;
               background-position: center center;
-              padding: 80px 24px 70px;
+              padding: 50px 24px 70px;
               overflow: hidden;
             }
             #hero-home::after {
@@ -3529,6 +3519,7 @@
               width: 100%;
               height: 400px;
               object-fit: cover;
+              object-position: center 25%;
               display: block;
             }
             .mengapa-visual-badge {
@@ -4069,7 +4060,7 @@
                           <img
                             src="/wp-content/uploads/2026/07/drone-YNKI-UNDP-2024-8-1200x675.webp"
                             alt="Lanskap Kalimantan Barat dari udara — program YNKI"
-                            loading="lazy"
+                            loading="lazy"   
                             onerror="
                               this.src = '/assets/images/homepage/hero-bg.png'
                             "

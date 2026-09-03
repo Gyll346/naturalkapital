@@ -237,7 +237,7 @@
         <div class="login-card">
             <div class="login-header">
                 <!-- Logo Resmi YNKI dari Website Bawaan -->
-                <img src="/wp-content/uploads/2026/05/logo-ynki-80.webp" alt="Yayasan Natural Kapital Indonesia" class="login-logo" onerror="this.onerror=null; this.src='/wp-content/uploads/2026/05/logo-ynki-80.png';">
+                <img src="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3" alt="Yayasan Natural Kapital Indonesia" class="login-logo" onerror="this.onerror=null; this.src='/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3';">
                 
                 <div>
                     <span class="login-badge">Internal CMS Portal</span>

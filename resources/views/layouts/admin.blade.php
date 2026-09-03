@@ -498,7 +498,7 @@
     <!-- Sidebar -->
     <aside class="admin-sidebar">
         <div class="sidebar-brand">
-            <img src="/wp-content/uploads/2026/05/logo-ynki-80.webp" alt="YNKI" class="sidebar-brand-img" onerror="this.style.display='none'">
+            <img src="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3" alt="YNKI" class="sidebar-brand-img" onerror="this.style.display='none'">
             <div class="sidebar-brand-text">
                 <h2>YNKI Admin</h2>
                 <p>Internal CMS Panel</p>

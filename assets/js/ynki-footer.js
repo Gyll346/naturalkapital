@@ -1051,7 +1051,7 @@
       
       var items = sec.querySelectorAll('.section-divider, .divider-line, .section-badge, .section-badge-orange, .section-badge-green');
       items.forEach(function (item) {
-        if (item.closest('.proyek-tags, .pilar-card, .masalah-card, .hasil-card, .int-card, .pen-meta, .doc-header, .pptx-card-body, .gerakan-items, .tujuan-quote, .card-highlight, .timeline-item')) return;
+        if (item.closest('.positioning-cta-box, .proyek-tags, .pilar-card, .masalah-card, .hasil-card, .int-card, .pen-meta, .doc-header, .pptx-card-body, .gerakan-items, .tujuan-quote, .card-highlight, .timeline-item')) return;
         
         // If it's a badge inside an already-targeted divider/line, skip to avoid double processing
         if (item.classList.contains('section-badge') && item.closest('.section-divider, .divider-line')) return;

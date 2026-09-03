@@ -181,7 +181,7 @@
     <meta property="og:url" content="/" />
     <meta
       property="og:image"
-      content="/wp-content/uploads/2026/05/logo-ynki-40.webp"
+      content="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3"
     />
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="40" />
@@ -2585,7 +2585,7 @@ div[class*="fusion-builder-row-1"],
                         href="/"
                         target="_self"
                         aria-label="logo-ynki-80"
-                        ><img decoding="async" width="300" height="60" alt="Natural Kapital Foundation" class="img-responsive wp-image-183 disable-lazyload" data- data- src="/wp-content/uploads/2026/05/logo-ynki-80-300x60.webp" srcset=" /wp-content/uploads/2026/05/logo-ynki-80-200x40.webp 200w, /wp-content/uploads/2026/05/logo-ynki-80.webp 399w " sizes="(max-width: 1024px) 100vw, (max-width: 640px) 100vw, 300px" /></a
+                        ><img decoding="async" width="300" height="60" alt="Natural Kapital Foundation" class="img-responsive wp-image-183 disable-lazyload" src="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3" /></a
                     ></span>
                   </div>
                 </div>
@@ -3027,7 +3027,7 @@ div[class*="fusion-builder-row-1"],
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(155deg, rgba(5,42,5,0.93) 0%, rgba(12,80,11,0.72) 55%, rgba(0,0,0,0.40) 100%), url('/assets/images/homepage/hero-bg.png');
+  background-image: linear-gradient(155deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.50) 55%, rgba(0, 0, 0, 0.30) 100%), url('/assets/images/homepage/hero-bg.png');
   background-size: cover;
   background-position: center;
   padding: 110px 24px 90px;
