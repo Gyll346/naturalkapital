@@ -80,12 +80,14 @@
   // 3. Tautan cepat sesuai konteks halaman
   var sections = [
     {
-      match: ['/sejarah-visi-misi/', '/tim/', '/lgos/', '/portofolio/', '/transparansi/', '/annual-report/'],
+      match: ['/sejarah-visi-misi/', '/tim/', '/lgos/', '/portofolio/', '/transparansi/', '/kontak-kami/', '/annual-report/'],
       links: [
         ['/sejarah-visi-misi/', 'Sejarah, Visi & Misi'],
         ['/tim/', 'Tim & Pengurus YNKI'],
         ['/lgos/', 'LGOS: Sistem Operasi Organisasi'],
         ['/portofolio/', 'Portfolio'],
+        ['/kontak-kami/', 'Kontak Kami'],
+        ['/ikut-serta/', 'Ikut Serta'],
         ['/annual-report/', 'Annual Report']
       ]
     },
@@ -97,6 +99,8 @@
         ['/sustainable-commodity/', 'Sustainable Commodity System'],
         ['/landscape-intelligence/', 'Pengetahuan Lanskap & Inovasi'],
         ['/institutional-partnership/', 'Institutional Partnership'],
+        ['/kontak-kami/', 'Kontak Kami'],
+        ['/ikut-serta/', 'Ikut Serta'],
         ['/annual-report/', 'Annual Report']
       ]
     },
@@ -106,6 +110,8 @@
         ['/dampak/', 'Dampak'],
         ['/kisah-perubahan/', 'Kisah Perubahan'],
         ['/liputan-media/', 'Liputan Media'],
+        ['/kontak-kami/', 'Kontak Kami'],
+        ['/ikut-serta/', 'Ikut Serta'],
         ['/annual-report/', 'Annual Report']
       ]
     },
@@ -117,6 +123,8 @@
         ['/analisis-kebijakan/', 'Analisis & Kebijakan'],
         ['/kategori/perspektif-budaya/', 'Perspektif Budaya'],
         ['/data-spasial-gis/', 'Data Spasial dan GIS'],
+        ['/kontak-kami/', 'Kontak Kami'],
+        ['/ikut-serta/', 'Ikut Serta'],
         ['/annual-report/', 'Annual Report']
       ]
     }
@@ -128,6 +136,8 @@
     ['/landscape-governance/', 'Landscape Governance'],
     ['/dampak/', 'Dampak'],
     ['/news-features/', 'News & Features'],
+    ['/kontak-kami/', 'Kontak Kami'],
+    ['/ikut-serta/', 'Ikut Serta'],
     ['/annual-report/', 'Annual Report']
   ];
 
