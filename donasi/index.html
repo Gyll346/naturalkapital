@@ -3027,7 +3027,7 @@ div[class*="fusion-builder-row-1"],
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background-image: url('/assets/images/homepage/hero-bg.png');
+  background-image: url('/wp-content/uploads/2026/05/hero-zoel-hz-desa-pasak-piang-1536x858.webp');
   background-size: cover;
   background-position: center;
   padding: 110px 24px 90px;
