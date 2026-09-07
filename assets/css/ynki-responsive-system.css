@@ -94,8 +94,9 @@ ul li, ol li, table td, table th,
 .card-desc, .card-meta, .card-excerpt,
 .btn-cta-main, .btn-cta-second,
 .btn-cta-main-home, .btn-cta-second-home, .btn-ghost-home {
-  font-family: 'Candara', 'Segoe UI', Calibri, 'Inter', Arial, sans-serif !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Judul (H1 - H4) Menggunakan Montserrat / Inter */
@@ -129,7 +130,7 @@ h1, h2, h3, h4, .fusion-title h1, .fusion-title h2, .fusion-title h3,
 .hero-inner h1,
 .pptx-hero h1 {
   font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
-  font-size: clamp(32px, 4.5vw, 54px) !important;
+  font-size: clamp(26px, 3.8vw, 44px) !important;
   font-weight: 300 !important;
   line-height: 1.25 !important;
   color: #ffffff !important;
@@ -645,11 +646,13 @@ select:focus {
 }
 
 .fusion-tb-footer {
-  position: relative;
+  position: relative !important;
   background: #117710 !important;
   background-color: #117710 !important;
   border-top: 4px solid #094708 !important;
   padding: 48px 0 38px !important;
+  clear: both !important;
+  width: 100% !important;
 }
 .fusion-tb-footer::before {
   display: none !important;
@@ -667,14 +670,15 @@ select:focus {
 .fusion-tb-footer .fusion-column-wrapper {
   background: #0d5c0c !important;
   background-color: #0d5c0c !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  border-radius: 18px !important;
-  padding: 30px 28px !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 16px !important;
+  padding: 28px 26px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
   transition: all 0.3s ease;
+  box-sizing: border-box !important;
 }
 .fusion-tb-footer .fusion-column-wrapper:hover {
-  border-color: rgba(255, 255, 255, 0.45) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
   background: #0a4709 !important;
   background-color: #0a4709 !important;
 }

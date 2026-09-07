@@ -3257,9 +3257,9 @@
 
           <style>
             /* ===================================================
-   HOMEPAGE STYLES - beranda YNKI
-
-/* Transparent Navbar */
+   HOMEPAGE STYLE */
+   
+            /* Transparent Navbar */
             .fusion-tb-header,
             .fusion-tb-header > .fusion-fullwidth:first-child,
             .fusion-header,
@@ -3270,13 +3270,13 @@
               border-bottom: none !important;
             }
 
-            Palet Warna:
-   Brand  : #117710
-   Orange : #FF8000
-   Purple : #8000FF
-   Red    : #B22231 (CTA Utama)
-   Blue   : #A0D2F5 (CTA Kedua)
-=================================================== */
+            /* Palet Warna:
+               Brand  : #117710
+               Orange : #FF8000
+               Purple : #8000FF
+               Red    : #B22231 (CTA Utama)
+               Blue   : #A0D2F5 (CTA Kedua)
+            */
 
 /* Section utility */
 .ynki-section {
@@ -3325,7 +3325,14 @@
               min-height: 92vh;
               display: flex;
               align-items: center;
-              background-image:url("/wp-content/uploads/2026/07/drone-YNKI-UNDP-2024-8.webp");
+              background-image:
+                linear-gradient(
+                  155deg,
+                  rgba(15, 23, 42, 0.72) 0%,
+                  rgba(15, 23, 42, 0.5) 50%,
+                  rgba(0, 0, 0, 0.65) 100%
+                ),
+                url("/wp-content/uploads/2026/07/drone-YNKI-UNDP-2024-8.webp");
               background-size: cover;
               background-position: center center;
               padding: 50px 24px 70px;
@@ -3366,25 +3373,25 @@
               display: inline-block;
             }
             #hero-home h1 {
-              font-size: clamp(30px, 4.5vw, 54px);
+              font-size: clamp(26px, 3.8vw, 44px);
               font-weight: 800;
-              line-height: 1.18;
+              line-height: 1.22;
               color: #ffffff;
-              margin: 0 0 22px;
-              letter-spacing: -0.02em;
+              margin: 0 0 20px;
+              letter-spacing: -0.015em;
             }
             #hero-home h1 span.highlight {
               color: #a3e0a2;
-              font-size: 0.85em;
+              font-size: 0.88em;
               display: inline-block;
               font-weight: 800;
             }
             .hero-desc {
-              font-size: clamp(15px, 1.6vw, 18px);
-              line-height: 1.8;
+              font-size: clamp(14px, 1.4vw, 16.5px);
+              line-height: 1.75;
               color: #d2f0d1;
-              max-width: 820px;
-              margin: 0 auto 36px;
+              max-width: 780px;
+              margin: 0 auto 32px;
             }
             .hero-tagline {
               font-size: 13px;
@@ -4058,7 +4065,7 @@
                         <!-- Right: Visual -->
                         <div class="mengapa-visual">
                           <img
-                            src="/wp-content/uploads/2026/07/drone-YNKI-UNDP-2024-8-1200x675.webp"
+                            src="/wp-content/uploads/2026/05/hero-zoel-hz-desa-pasak-piang-640-460x295.webp"
                             alt="Lanskap Kalimantan Barat dari udara — program YNKI"
                             loading="lazy"   
                             onerror="
