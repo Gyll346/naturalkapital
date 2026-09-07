@@ -3326,12 +3326,6 @@
               display: flex;
               align-items: center;
               background-image:
-                linear-gradient(
-                  155deg,
-                  rgba(15, 23, 42, 0.72) 0%,
-                  rgba(15, 23, 42, 0.5) 50%,
-                  rgba(0, 0, 0, 0.65) 100%
-                ),
                 url("/wp-content/uploads/2026/07/drone-YNKI-UNDP-2024-8.webp");
               background-size: cover;
               background-position: center center;

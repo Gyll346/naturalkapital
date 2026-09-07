@@ -3027,7 +3027,7 @@ div[class*="fusion-builder-row-1"],
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(155deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.50) 55%, rgba(0, 0, 0, 0.30) 100%), url('/assets/images/homepage/hero-bg.png');
+  background-image: url('/assets/images/homepage/hero-bg.png');
   background-size: cover;
   background-position: center;
   padding: 110px 24px 90px;
