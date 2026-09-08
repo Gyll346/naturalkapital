@@ -123,6 +123,7 @@
         ['/analisis-kebijakan/', 'Analisis & Kebijakan'],
         ['/kategori/perspektif-budaya/', 'Perspektif Budaya'],
         ['/data-spasial-gis/', 'Data Spasial dan GIS'],
+        ['/story-foto-video/', 'Story Foto Video'],
         ['/kontak-kami/', 'Kontak Kami'],
         ['/ikut-serta/', 'Ikut Serta'],
         ['/annual-report/', 'Annual Report']
