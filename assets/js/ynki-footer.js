@@ -385,12 +385,14 @@
         .awb-menu__main-a {
           display: inline-flex !important;
           align-items: center !important;
-          padding: 10px 12px !important;
+          padding: 8px 14px !important;
           font-size: 13.5px !important;
           font-weight: 700 !important;
           color: #12291e !important;
           text-decoration: none !important;
-          transition: color 0.15s ease !important;
+          border-radius: 8px !important;
+          background: transparent !important;
+          transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
           cursor: pointer !important;
         }
 
@@ -398,6 +400,9 @@
         .awb-menu__main-li.current-menu-item > .awb-menu__main-a,
         .awb-menu__main-li.current-menu-ancestor > .awb-menu__main-a {
           color: #117710 !important;
+          background: #f0fdf4 !important;
+          box-shadow: 0 2px 8px rgba(17, 119, 16, 0.12) !important;
+          transform: translateY(-1px) !important;
         }
 
         /* Invisible hover bridge to prevent losing hover when moving mouse down */

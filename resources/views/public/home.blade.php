@@ -2539,16 +2539,16 @@
         .fusion-builder-column-0 {
           flex: 0 0 auto !important;
           width: auto !important;
-          max-width: 420px !important;
+          max-width: 480px !important;
         }
 
         .fusion-builder-column-0 img,
         .fusion-tb-header .fusion-imageframe img,
         .fusion-tb-header img.wp-image-183 {
-          max-width: 360px !important;
+          max-width: 480px !important;
           width: auto !important;
-          height: 64px !important;
-          max-height: 72px !important;
+          height: auto !important;
+          max-height: 85px !important;
           object-fit: contain !important;
         }
 
@@ -2601,17 +2601,23 @@
           font-weight: 700 !important;
           font-size: 13.5px !important;
           text-decoration: none !important;
-          padding: 10px 12px !important;
+          padding: 8px 14px !important;
           display: inline-flex !important;
           align-items: center !important;
-          transition: color 0.15s ease !important;
+          border-radius: 8px !important;
+          background: transparent !important;
+          transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
           cursor: pointer !important;
         }
 
         .awb-menu__main-li:hover > a,
+        .awb-menu__main-li:hover > .awb-menu__main-a,
         .awb-menu__main-li.current-menu-item > a,
         .awb-menu__main-li.current-menu-ancestor > a {
           color: #117710 !important;
+          background: #f0fdf4 !important;
+          box-shadow: 0 2px 8px rgba(17, 119, 16, 0.12) !important;
+          transform: translateY(-1px) !important;
         }
 
         /* DROPDOWN SUBMENU BOX - MATCHING IMAGE 1 DESIGN */
@@ -2814,7 +2820,7 @@
                         href="/"
                         target="_self"
                         aria-label="logo-ynki-500"
-                        ><img decoding="async" width="300" height="60" alt="Natural Kapital Foundation" class="img-responsive wp-image-183 disable-lazyload" src="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3" /></a
+                        ><img decoding="async" width="300" height="60" alt="Natural Kapital Foundation" class="img-responsive wp-image-183 disable-lazyload" src="/wp-content/uploads/2026/05/logo-ynki-500.webp" /></a
                     ></span>
                   </div>
                 </div>
