@@ -2107,6 +2107,107 @@ img {
   padding-left: 24px !important;
 }
 
+/* ==========================================================================
+   UNIVERSAL SECTION BADGE & SECTION DIVIDER (ORANGE & ALTERNATING)
+   ========================================================================== */
+.section-badge,
+.section-badge.green,
+.section-badge.purple,
+.section-badge-orange,
+.section-badge-green {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  text-transform: uppercase !important;
+  color: #FF8000 !important;
+  background: #fff3e6 !important;
+  border: 1px solid rgba(255, 128, 0, 0.35) !important;
+  padding: 5px 16px !important;
+  border-radius: 50px !important;
+  margin-bottom: 14px !important;
+  line-height: normal !important;
+  box-sizing: border-box !important;
+}
+
+/* For dark background hero or CTA sections where .white is explicitly needed */
+.section-badge.white {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Base divider-line & section-divider */
+.section-divider,
+.divider-line {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-bottom: 14px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.section-divider .line,
+.divider-line .line {
+  flex: 1 !important;
+  height: 1px !important;
+  background: #d2e8d1 !important;
+}
+
+/* Alternating Alignment States (Left and Right) */
+.divider-line.align-left,
+.section-divider.align-left {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+.divider-line.align-left .section-badge,
+.section-divider.align-left .section-badge {
+  order: 1 !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+.divider-line.align-left .line,
+.section-divider.align-left .line {
+  order: 2 !important;
+  display: block !important;
+}
+
+.divider-line.align-right,
+.section-divider.align-right {
+  justify-content: flex-end !important;
+  text-align: right !important;
+}
+.divider-line.align-right .line,
+.section-divider.align-right .line {
+  order: 1 !important;
+  display: block !important;
+}
+.divider-line.align-right .section-badge,
+.section-divider.align-right .section-badge {
+  order: 2 !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.divider-line.align-center,
+.section-divider.align-center {
+  justify-content: center !important;
+  text-align: center !important;
+}
+.divider-line.align-center .line,
+.section-divider.align-center .line {
+  display: block !important;
+}
+.divider-line.align-center .section-badge,
+.section-divider.align-center .section-badge {
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+
 
 
 

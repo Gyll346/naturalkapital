@@ -1048,88 +1048,133 @@
 
   function initAlternatingBadges() {
     var mainContainer = document.querySelector('#content, .post-content, #main, main') || document.body;
-    var sections = mainContainer.querySelectorAll('section, .ynki-section');
     
+    // Query all badge and divider elements inside the main content area
+    var candidates = mainContainer.querySelectorAll('.section-divider, .divider-line, .section-badge, .section-badge-orange, .section-badge-green');
     var badgeContainers = [];
 
-    sections.forEach(function (sec) {
-      if (sec.id && (sec.id.indexOf('hero') !== -1 || sec.classList.contains('hero-section'))) return;
-      
-      var items = sec.querySelectorAll('.section-divider, .divider-line, .section-badge, .section-badge-orange, .section-badge-green');
-      items.forEach(function (item) {
-        if (item.closest('.positioning-cta-box, .proyek-tags, .pilar-card, .masalah-card, .hasil-card, .int-card, .pen-meta, .doc-header, .pptx-card-body, .gerakan-items, .tujuan-quote, .card-highlight, .timeline-item')) return;
-        
-        // If it's a badge inside an already-targeted divider/line, skip to avoid double processing
-        if (item.classList.contains('section-badge') && item.closest('.section-divider, .divider-line')) return;
+    candidates.forEach(function (item) {
+      // Skip hero, header, footer, or nested item cards
+      if (item.closest('#hero-sejarah, #hero-lgos, #hero-lg, .hero-section, #hero, .fusion-tb-header, .fusion-tb-footer, .fusion-footer')) return;
+      if (item.closest('.proyek-tags, .pilar-card, .masalah-card, .hasil-card, .int-card, .pen-meta, .doc-header, .pptx-card-body, .gerakan-items, .card-highlight, .timeline-item, .lead-card, .values-grid-4, .dimensi-card, .mel-card, .cta-cards')) return;
 
-        badgeContainers.push(item);
-      });
+      // If item is a badge already inside a divider-line/section-divider, skip the badge itself (the parent container handles it)
+      if (item.classList.contains('section-badge') && item.closest('.section-divider, .divider-line')) return;
+
+      badgeContainers.push(item);
     });
 
     var badgeIndex = 0;
     badgeContainers.forEach(function (el) {
+      // Alternating sequence strictly Left and Right:
+      // Even (0, 2, 4...): Left aligned (Badge on left, Line on right)
+      // Odd  (1, 3, 5...): Right aligned (Line on left, Badge on right)
       var isLeft = (badgeIndex % 2 === 0);
       badgeIndex++;
 
       if (el.classList.contains('section-divider') || el.classList.contains('divider-line')) {
         var badge = el.querySelector('.section-badge, .section-badge-orange, .section-badge-green, [class*="badge"]');
         var lines = el.querySelectorAll('.line');
-        
+
+        // Apply orange color styling to badge unless inside a white banner
+        if (badge) {
+          var isExplicitWhite = badge.classList.contains('white') || badge.closest('.join-banner-box, .cta-section');
+          if (!isExplicitWhite) {
+            badge.style.color = '#FF8000';
+            badge.style.background = '#fff3e6';
+            badge.style.borderColor = 'rgba(255, 128, 0, 0.35)';
+          }
+        }
+
+        var isWhite = badge && (badge.classList.contains('white') || badge.closest('.join-banner-box, .cta-section'));
+        var lineColor = isWhite ? 'rgba(255,255,255,0.25)' : '#d2e8d1';
+
         el.style.display = 'flex';
         el.style.alignItems = 'center';
         el.style.gap = '16px';
         el.style.marginBottom = el.style.marginBottom || '14px';
+        el.style.width = '100%';
 
-        var isWhite = badge && (badge.classList.contains('white') || badge.style.color === '#ffffff' || badge.style.color === 'rgb(255, 255, 255)');
-        var lineColor = isWhite ? 'rgba(255,255,255,0.25)' : '#d2e8d1';
-
-        if (lines.length >= 2) {
-          if (isLeft) {
-            el.style.justifyContent = 'flex-start';
+        if (isLeft) {
+          // Left aligned: Badge on left (order 1), line on right (order 2)
+          el.style.justifyContent = 'flex-start';
+          el.style.textAlign = 'left';
+          if (badge) {
+            badge.style.order = '1';
+            badge.style.margin = '0';
+          }
+          if (lines.length >= 2) {
             lines[0].style.display = 'none';
             lines[1].style.display = 'block';
             lines[1].style.flex = '1';
+            lines[1].style.order = '2';
             lines[1].style.background = lineColor;
-          } else {
-            el.style.justifyContent = 'flex-end';
+          } else if (lines.length === 1) {
             lines[0].style.display = 'block';
             lines[0].style.flex = '1';
+            lines[0].style.order = '2';
             lines[0].style.background = lineColor;
-            lines[1].style.display = 'none';
-          }
-        } else if (lines.length === 1) {
-          lines[0].style.flex = '1';
-          lines[0].style.background = lineColor;
-          if (isLeft) {
-            el.style.justifyContent = 'flex-start';
             if (badge && el.firstChild !== badge) {
               el.insertBefore(badge, lines[0]);
             }
-          } else {
-            el.style.justifyContent = 'flex-end';
-            if (badge && el.lastChild !== badge) {
+          } else if (badge) {
+            var newLine = document.createElement('span');
+            newLine.className = 'line';
+            newLine.style.flex = '1';
+            newLine.style.height = '1px';
+            newLine.style.background = lineColor;
+            newLine.style.order = '2';
+            el.appendChild(newLine);
+          }
+        } else {
+          // Right aligned: Line on left (order 1), badge on right (order 2)
+          el.style.justifyContent = 'flex-end';
+          el.style.textAlign = 'right';
+          if (lines.length >= 2) {
+            lines[0].style.display = 'block';
+            lines[0].style.flex = '1';
+            lines[0].style.order = '1';
+            lines[0].style.background = lineColor;
+            if (badge) {
+              badge.style.order = '2';
+              badge.style.margin = '0';
+            }
+            lines[1].style.display = 'none';
+          } else if (lines.length === 1 && badge) {
+            lines[0].style.display = 'block';
+            lines[0].style.flex = '1';
+            lines[0].style.order = '1';
+            lines[0].style.background = lineColor;
+            badge.style.order = '2';
+            badge.style.margin = '0';
+            if (el.lastChild !== badge) {
               el.appendChild(badge);
             }
-          }
-        } else if (badge) {
-          var newLine = document.createElement('span');
-          newLine.className = 'line';
-          newLine.style.flex = '1';
-          newLine.style.height = '1px';
-          newLine.style.background = lineColor;
-          if (isLeft) {
-            el.style.justifyContent = 'flex-start';
-            el.appendChild(newLine);
-          } else {
-            el.style.justifyContent = 'flex-end';
-            el.insertBefore(newLine, badge);
+          } else if (badge) {
+            badge.style.order = '2';
+            badge.style.margin = '0';
+            var leftLine = document.createElement('span');
+            leftLine.className = 'line';
+            leftLine.style.flex = '1';
+            leftLine.style.height = '1px';
+            leftLine.style.background = lineColor;
+            leftLine.style.order = '1';
+            el.insertBefore(leftLine, badge);
           }
         }
       } else {
+        // Standalone badge: Wrap it into a divider-line with alternating alignment
         var parent = el.parentElement;
         if (!parent || parent.classList.contains('divider-line') || parent.classList.contains('section-divider')) return;
 
-        var isWhite = el.classList.contains('white') || el.style.color === '#ffffff' || el.style.color === 'rgb(255, 255, 255)';
+        var isExplicitWhite = el.classList.contains('white') || el.closest('.join-banner-box, .cta-section');
+        if (!isExplicitWhite) {
+          el.style.color = '#FF8000';
+          el.style.background = '#fff3e6';
+          el.style.borderColor = 'rgba(255, 128, 0, 0.35)';
+        }
+
+        var isWhite = isExplicitWhite;
         var lineColor = isWhite ? 'rgba(255,255,255,0.25)' : '#d2e8d1';
 
         var wrapper = document.createElement('div');
@@ -1140,24 +1185,38 @@
         wrapper.style.marginBottom = '14px';
         wrapper.style.width = '100%';
 
-        var line = document.createElement('span');
-        line.className = 'line';
-        line.style.flex = '1';
-        line.style.height = '1px';
-        line.style.background = lineColor;
-
         el.parentNode.insertBefore(wrapper, el);
 
         if (isLeft) {
           wrapper.style.justifyContent = 'flex-start';
+          wrapper.style.textAlign = 'left';
+          el.style.order = '1';
+          el.style.margin = '0';
           wrapper.appendChild(el);
-          wrapper.appendChild(line);
+
+          var lineRight = document.createElement('span');
+          lineRight.className = 'line';
+          lineRight.style.flex = '1';
+          lineRight.style.height = '1px';
+          lineRight.style.background = lineColor;
+          lineRight.style.order = '2';
+          wrapper.appendChild(lineRight);
         } else {
           wrapper.style.justifyContent = 'flex-end';
-          wrapper.appendChild(line);
+          wrapper.style.textAlign = 'right';
+          var lineLeft = document.createElement('span');
+          lineLeft.className = 'line';
+          lineLeft.style.flex = '1';
+          lineLeft.style.height = '1px';
+          lineLeft.style.background = lineColor;
+          lineLeft.style.order = '1';
+
+          el.style.order = '2';
+          el.style.margin = '0';
+
+          wrapper.appendChild(lineLeft);
           wrapper.appendChild(el);
         }
-        el.style.marginBottom = '0';
       }
     });
   }
