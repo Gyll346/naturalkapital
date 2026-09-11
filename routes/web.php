@@ -26,6 +26,7 @@ use App\Http\Controllers\Admin\ParticipationController;
 |--------------------------------------------------------------------------
 */
 Route::get('/', [HomeController::class, 'index'])->name('public.home');
+Route::any('/wp-admin/admin-ajax.php', fn() => response()->json(['success' => true, 'data' => []]));
 Route::get('/donasi', fn() => redirect('/kontak-kami'))->name('public.donation');
 Route::get('/artikel-cms', [PublicArticleController::class, 'index'])->name('public.article.index');
 Route::get('/artikel-cms/{slug}', [PublicArticleController::class, 'show'])->name('public.article.show');

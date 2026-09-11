@@ -1,4 +1,10 @@
 (function () {
+  // Prevent cross-origin CORS errors to production admin-ajax.php in dev/local mode
+  if (typeof window !== 'undefined') {
+    window.cffajaxurl = '/wp-admin/admin-ajax.php';
+    window.sbiajaxurl = '/wp-admin/admin-ajax.php';
+  }
+
   var footer = document.querySelector('.fusion-tb-footer');
   if (!footer) return;
 
