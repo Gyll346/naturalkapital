@@ -1228,25 +1228,64 @@
   }
 
   function initMediaFilter() {
-    var filterTags = document.querySelectorAll('.filter-row .filter-tag');
-    var cards = document.querySelectorAll('.liputan-grid .liputan-card');
-    if (!filterTags.length || !cards.length) return;
+    var filterRows = document.querySelectorAll('.filter-row');
+    if (!filterRows.length) return;
 
-    filterTags.forEach(function (tag) {
-      tag.addEventListener('click', function () {
-        filterTags.forEach(function (t) { t.classList.remove('active'); });
-        this.classList.add('active');
+    filterRows.forEach(function (row) {
+      var filterTags = row.querySelectorAll('.filter-tag');
+      var container = row.closest('.ynki-container') || row.parentElement;
+      var cards = container.querySelectorAll('.liputan-card, .doc-card');
+      if (!filterTags.length || !cards.length) return;
 
-        var filter = this.textContent.trim().toLowerCase();
-        cards.forEach(function (card) {
-          var topicEl = card.querySelector('.liputan-topic');
-          var topic = topicEl ? topicEl.textContent.trim().toLowerCase() : '';
+      filterTags.forEach(function (tag) {
+        tag.addEventListener('click', function (e) {
+          e.preventDefault();
+          filterTags.forEach(function (t) { t.classList.remove('active'); });
+          this.classList.add('active');
 
-          if (filter.indexOf('semua') !== -1 || filter === topic || (topic && filter.includes(topic)) || (topic && topic.includes(filter))) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
+          var filter = this.textContent.trim().toLowerCase();
+
+          cards.forEach(function (card) {
+            if (filter.indexOf('semua') !== -1) {
+              card.style.display = '';
+              return;
+            }
+
+            var badgeEl = card.querySelector('.liputan-topic, .doc-badge');
+            var badgeText = badgeEl ? badgeEl.textContent.trim().toLowerCase() : '';
+            var titleEl = card.querySelector('h3');
+            var titleText = titleEl ? titleEl.textContent.trim().toLowerCase() : '';
+            var descEl = card.querySelector('p, blockquote');
+            var descText = descEl ? descEl.textContent.trim().toLowerCase() : '';
+            var locEl = card.querySelector('.doc-loc, .liputan-source');
+            var locText = locEl ? locEl.textContent.trim().toLowerCase() : '';
+
+            var cardContent = badgeText + ' ' + titleText + ' ' + descText + ' ' + locText;
+
+            // Normalize keywords for matching
+            var match = false;
+            if (badgeText && (filter.includes(badgeText) || badgeText.includes(filter))) {
+              match = true;
+            } else if (filter.indexOf('gambut') !== -1 && cardContent.indexOf('gambut') !== -1) {
+              match = true;
+            } else if (filter.indexOf('iklim') !== -1 && (cardContent.indexOf('iklim') !== -1 || badgeText.indexOf('iklim') !== -1)) {
+              match = true;
+            } else if (filter.indexOf('kopi') !== -1 && (cardContent.indexOf('kopi') !== -1 || cardContent.indexOf('agroforestri') !== -1)) {
+              match = true;
+            } else if (filter.indexOf('desa') !== -1 && (cardContent.indexOf('desa') !== -1 || badgeText.indexOf('komunitas') !== -1 || badgeText.indexOf('pemberdayaan') !== -1)) {
+              match = true;
+            } else if ((filter.indexOf('pemuda') !== -1 || filter.indexOf('pendidikan') !== -1) && (cardContent.indexOf('pemuda') !== -1 || cardContent.indexOf('edukasi') !== -1 || cardContent.indexOf('pendidikan') !== -1 || cardContent.indexOf('untan') !== -1)) {
+              match = true;
+            } else if (cardContent.indexOf(filter) !== -1) {
+              match = true;
+            }
+
+            if (match) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
         });
       });
     });

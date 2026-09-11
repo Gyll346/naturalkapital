@@ -2225,7 +2225,8 @@ img {
   border-color: #117710 !important;
   box-shadow: 0 4px 12px rgba(17, 119, 16, 0.25) !important;
 }
-.liputan-card {
+.liputan-card,
+.doc-card {
   transition: opacity 0.25s ease, transform 0.25s ease !important;
 }
 
