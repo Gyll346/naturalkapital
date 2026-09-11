@@ -2207,6 +2207,29 @@ img {
   flex-shrink: 0 !important;
 }
 
+/* Liputan Media Interactive Filter Styling */
+.filter-tag {
+  cursor: pointer !important;
+  user-select: none !important;
+  transition: all 0.25s ease !important;
+}
+.filter-tag:hover {
+  background: #117710 !important;
+  color: #ffffff !important;
+  border-color: #117710 !important;
+  transform: translateY(-2px);
+}
+.filter-tag.active {
+  background: #117710 !important;
+  color: #ffffff !important;
+  border-color: #117710 !important;
+  box-shadow: 0 4px 12px rgba(17, 119, 16, 0.25) !important;
+}
+.liputan-card {
+  transition: opacity 0.25s ease, transform 0.25s ease !important;
+}
+
+
 
 
 

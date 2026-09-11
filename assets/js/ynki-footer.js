@@ -1227,11 +1227,37 @@
     });
   }
 
+  function initMediaFilter() {
+    var filterTags = document.querySelectorAll('.filter-row .filter-tag');
+    var cards = document.querySelectorAll('.liputan-grid .liputan-card');
+    if (!filterTags.length || !cards.length) return;
+
+    filterTags.forEach(function (tag) {
+      tag.addEventListener('click', function () {
+        filterTags.forEach(function (t) { t.classList.remove('active'); });
+        this.classList.add('active');
+
+        var filter = this.textContent.trim().toLowerCase();
+        cards.forEach(function (card) {
+          var topicEl = card.querySelector('.liputan-topic');
+          var topic = topicEl ? topicEl.textContent.trim().toLowerCase() : '';
+
+          if (filter.indexOf('semua') !== -1 || filter === topic || (topic && filter.includes(topic)) || (topic && topic.includes(filter))) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
   function initAllNavigation() {
     injectNavStyles();
     initDesktopDropdowns();
     initMobileDrawer();
     initAlternatingBadges();
+    initMediaFilter();
   }
 
   injectNavStyles();
