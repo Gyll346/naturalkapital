@@ -2230,6 +2230,18 @@ img {
   transition: opacity 0.25s ease, transform 0.25s ease !important;
 }
 
+/* Footer Phone Link */
+.ynki-footer-phone-p a.ynki-phone-link {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease !important;
+}
+.ynki-footer-phone-p a.ynki-phone-link:hover {
+  opacity: 0.85 !important;
+  color: #a3e0a2 !important;
+}
+
+
 
 
 

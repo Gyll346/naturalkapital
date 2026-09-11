@@ -10,6 +10,8 @@
 
   var path = location.pathname;
   var emailAddress = 'sekretariat@naturalkapital.or.id';
+  var phoneNumber = '+62 822-5408-0751';
+  var phoneClean = '+6282254080751';
 
   // 1. Direct Clickable Email Link (Lompat langsung ke Gmail / Aplikasi Email)
   var emailElements = footer.querySelectorAll('a[href*="mailto:"], a[href*="naturalkapital.or.id"], .ynki-email-link, .ynki-email-copy-btn');
@@ -28,6 +30,20 @@
     el.onclick = function (e) {
       window.location.href = 'mailto:' + emailAddress;
     };
+
+    // Tambahkan nomor telepon kontak di bawah email jika belum ada
+    var pParent = el.closest('p');
+    if (pParent && !pParent.parentNode.querySelector('.ynki-footer-phone-p')) {
+      var phoneP = document.createElement('p');
+      phoneP.className = 'ynki-footer-phone-p';
+      phoneP.style.marginTop = '8px';
+      phoneP.style.marginBottom = '14px';
+      phoneP.innerHTML = '<i class="fb-icon-element-1 fb-icon-element fontawesome-icon fa-phone-alt fa-phone fas circle-yes fusion-text-flow" style="--awb-circlebordersize: 1px; --awb-font-size: 14.08px; --awb-width: 28.16px; --awb-height: 28.16px; --awb-line-height: 26.16px; --awb-margin-right: 8px; border: 1px solid rgba(255,255,255,0.4); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; font-size: 13px; color: #ffffff; margin-right: 8px;"></i>' +
+        '<a class="ynki-phone-link" href="https://wa.me/6282254080751" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center;" title="Hubungi kami di ' + phoneNumber + '">' +
+        '<span class="ynki-phone-text" style="color:#ffffff;font-weight:600;">' + phoneNumber + '</span>' +
+        '</a>';
+      pParent.parentNode.insertBefore(phoneP, pParent.nextSibling);
+    }
   });
 
   // 2. Format / Modernize Left Column (Organization Info & Socials)
