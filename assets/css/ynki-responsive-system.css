@@ -321,23 +321,48 @@ main,
     left: -9999px !important;
   }
 
+  .fusion-tb-header .fusion-builder-row-1 .fusion-row,
+  .fusion-header .fusion-row,
+  .fusion-builder-row-1 > .fusion-row {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+
   .fusion-builder-row-1 {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     flex-wrap: nowrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .fusion-builder-column-0 {
     flex: 0 0 auto !important;
     width: auto !important;
-    max-width: 420px !important;
+    max-width: 320px !important;
   }
 
   .fusion-builder-column-1 {
     flex: 1 1 auto !important;
     width: auto !important;
     max-width: none !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+  }
+
+  .fusion-builder-column-1 .fusion-column-wrapper {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
   }
 
   nav.awb-menu,
@@ -345,6 +370,7 @@ main,
     display: flex !important;
     align-items: center !important;
     justify-content: flex-end !important;
+    margin-left: auto !important;
     visibility: visible !important;
     opacity: 1 !important;
     width: 100% !important;
@@ -353,14 +379,17 @@ main,
     box-shadow: none !important;
   }
 
-  .awb-menu__main-ul {
+  .awb-menu__main-ul,
+  .awb-menu__main-ul.awb-menu__main-ul_row,
+  .fusion-menu.awb-menu__main-ul {
     display: flex !important;
     flex-wrap: nowrap !important;
     white-space: nowrap !important;
     align-items: center !important;
     justify-content: flex-end !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
     list-style: none !important;
-    margin: 0 !important;
     padding: 0 !important;
     gap: 14px !important;
     visibility: visible !important;
@@ -978,8 +1007,9 @@ img {
   .ynki-mobile-nav-close {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
-    padding: 6px 12px;
+    padding: 8px 14px;
     background: #fff3e6;
     border: 1.5px solid #ff8000;
     border-radius: 8px;
@@ -988,6 +1018,12 @@ img {
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 2147483647 !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+    user-select: none !important;
   }
   .ynki-mobile-nav-close:hover,
   .ynki-mobile-nav-close:active {
@@ -1710,19 +1746,27 @@ img {
 .ynki-mobile-nav-close {
   display: inline-flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 6px !important;
   background: #fff3e6 !important;
   border: 1px solid rgba(255, 128, 0, 0.4) !important;
   color: #ff8000 !important;
-  font-size: 12.5px !important;
+  font-size: 13px !important;
   font-weight: 700 !important;
-  padding: 6px 14px !important;
+  padding: 8px 14px !important;
   border-radius: 8px !important;
   cursor: pointer !important;
   transition: all 0.2s ease !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 2147483647 !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: transparent !important;
+  user-select: none !important;
 }
 
-.ynki-mobile-nav-close:hover {
+.ynki-mobile-nav-close:hover,
+.ynki-mobile-nav-close:active {
   background: #ff8000 !important;
   color: #ffffff !important;
 }
@@ -2240,6 +2284,73 @@ img {
   opacity: 0.85 !important;
   color: #a3e0a2 !important;
 }
+
+/* Mobile Specific Refinements (Screens <= 768px) */
+@media (max-width: 768px) {
+  /* Mengapa Visual & Badge: Keep badge compact so image is clearly visible */
+  .mengapa-visual img {
+    height: 240px !important;
+    min-height: 220px !important;
+    object-fit: cover !important;
+  }
+  .mengapa-visual-badge {
+    bottom: 12px !important;
+    left: 12px !important;
+    padding: 8px 14px !important;
+    border-radius: 10px !important;
+    font-size: 11.5px !important;
+    max-width: 78% !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+  }
+  .mengapa-visual-badge strong {
+    font-size: 18px !important;
+    margin-bottom: 2px !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Pilar Program Strategis: Compact spacing on mobile */
+  #program-pilar,
+  #tiga-pilar {
+    padding: 42px 16px !important;
+  }
+  .pilar-grid {
+    gap: 14px !important;
+    margin-top: 24px !important;
+  }
+  .pilar-card {
+    padding: 20px 18px !important;
+    border-radius: 14px !important;
+  }
+  .pilar-icon {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 10px !important;
+    margin-bottom: 12px !important;
+  }
+  .pilar-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .pilar-num {
+    font-size: 10.5px !important;
+    margin-bottom: 6px !important;
+    letter-spacing: 1.2px !important;
+  }
+  .pilar-card h3 {
+    font-size: 16.5px !important;
+    margin-bottom: 8px !important;
+    line-height: 1.35 !important;
+  }
+  .pilar-card p {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+    margin: 0 0 16px !important;
+  }
+  .pilar-link {
+    font-size: 12.5px !important;
+  }
+}
+
 
 
 

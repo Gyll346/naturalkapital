@@ -656,16 +656,23 @@
         .ynki-mobile-nav-close {
           display: inline-flex !important;
           align-items: center !important;
+          justify-content: center !important;
           gap: 6px !important;
           background: #fff3e6 !important;
           border: 1.5px solid #ff8000 !important;
           color: #ff8000 !important;
           font-size: 13px !important;
           font-weight: 700 !important;
-          padding: 6px 12px !important;
+          padding: 8px 14px !important;
           border-radius: 8px !important;
           cursor: pointer !important;
           transition: all 0.2s ease !important;
+          pointer-events: auto !important;
+          position: relative !important;
+          z-index: 2147483647 !important;
+          touch-action: manipulation !important;
+          -webkit-tap-highlight-color: transparent !important;
+          user-select: none !important;
         }
         .ynki-mobile-nav-close:hover,
         .ynki-mobile-nav-close:active {
@@ -1015,26 +1022,29 @@
     }
 
     var closeBtn = document.getElementById('ynki-mobile-close-btn');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        closeDrawer();
-      });
-    }
-    backdrop.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      closeDrawer();
-    });
 
-    document.addEventListener('click', function (e) {
-      if (e.target.closest('#ynki-mobile-close-btn') || e.target.closest('.ynki-mobile-nav-close')) {
+    ['click', 'touchend', 'pointerup'].forEach(function (evt) {
+      if (closeBtn) {
+        closeBtn.addEventListener(evt, function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeDrawer();
+        }, { passive: false });
+      }
+      backdrop.addEventListener(evt, function (e) {
         e.preventDefault();
         e.stopPropagation();
         closeDrawer();
-      }
-    }, true);
+      }, { passive: false });
+
+      document.addEventListener(evt, function (e) {
+        if (e.target && (e.target.closest('#ynki-mobile-close-btn') || e.target.closest('.ynki-mobile-nav-close'))) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeDrawer();
+        }
+      }, { capture: true, passive: false });
+    });
 
     // Connect to burger buttons (explicit button selector)
     var burgerButtons = document.querySelectorAll('button.awb-menu__m-toggle, .awb-menu__m-toggle, .fusion-mobile-menu-icons');
