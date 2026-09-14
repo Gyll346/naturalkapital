@@ -2351,11 +2351,49 @@ img {
   }
 }
 
+/* ==========================================================================
+   PAGE LOAD FADE-IN & SCROLL REVEAL ANIMATIONS (ALL PAGES)
+   ========================================================================== */
+@keyframes ynkiPageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
+body {
+  animation: ynkiPageFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
 
+/* Scroll Fade In Elements */
+.ynki-fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
 
+.ynki-fade-in.ynki-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
 
+/* Stagger delay classes if elements are in a grid */
+.ynki-fade-delay-1 { transition-delay: 0.1s; }
+.ynki-fade-delay-2 { transition-delay: 0.2s; }
+.ynki-fade-delay-3 { transition-delay: 0.3s; }
 
-
-
+/* Respect user's accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none !important;
+  }
+  .ynki-fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
 

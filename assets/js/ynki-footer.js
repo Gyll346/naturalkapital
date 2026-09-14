@@ -1317,12 +1317,70 @@
     });
   }
 
+  /* ==========================================================================
+     LIGHTWEIGHT SCROLL FADE-IN ANIMATION ENGINE (IMAGES, TEXTS, CARDS)
+     ========================================================================== */
+  function initScrollFadeIn() {
+    // Select cards, images, section titles, paragraphs, and content blocks
+    var targetSelector = [
+      '.pilar-card',
+      '.pilar-grid > div',
+      '.liputan-card',
+      '.news-card',
+      '.story-card',
+      '.domain-card',
+      '.value-card',
+      '.team-card',
+      '.dokumen-card',
+      '.stat-card',
+      '.fusion-layout-column:not(.fusion-builder-column-0):not(.fusion-builder-column-1)',
+      '.fusion-imageframe:not(.imageframe-1)',
+      '.fusion-title',
+      '.section-title',
+      '.mengapa-grid',
+      '.gerakan-item',
+      '.impact-box',
+      '.fusion-tb-footer .fusion-column-wrapper'
+    ].join(', ');
+
+    var elements = document.querySelectorAll(targetSelector);
+    if (!elements || elements.length === 0) return;
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('ynki-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.08
+      });
+
+      elements.forEach(function (el) {
+        // Skip header elements and logo
+        if (el.closest('.fusion-tb-header') || el.closest('#header') || el.closest('header')) return;
+        el.classList.add('ynki-fade-in');
+        observer.observe(el);
+      });
+    } else {
+      // Fallback for older browsers
+      elements.forEach(function (el) {
+        el.classList.add('ynki-visible');
+      });
+    }
+  }
+
   function initAllNavigation() {
     injectNavStyles();
     initDesktopDropdowns();
     initMobileDrawer();
     initAlternatingBadges();
     initMediaFilter();
+    initScrollFadeIn();
   }
 
   injectNavStyles();
