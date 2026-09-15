@@ -3568,18 +3568,53 @@
             }
 
             /* ---- 3. TIM AHLI & STAF YNKI (SPLIT OVERVIEW + 9 EXPERT DOMAINS) ---- */
+            .demo-text {
+              font-size: 18px;
+              font-weight: bold;
+              font-family: var(--body_typography-font-family, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+            }
+
+            @keyframes fadeInUp {
+              from {
+                opacity: 0;
+                transform: translateY(20px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+
+            .fadeInUp {
+              animation: fadeInUp 1s ease-out both;
+            }
+
             #tim-ahli-section {
               background: #f8faf8;
               padding: 85px 24px;
               border-top: 1px solid #e2efe2;
               border-bottom: 1px solid #e2efe2;
             }
-            .tim-ahli-overview-split {
+            .tim-ahli-overview-split,
+            .tim-ahli-overview-split.fadeInUp,
+            .tim-ahli-overview-split.ynki-fade-in,
+            .tim-ahli-overview-split.ynki-visible {
               display: grid;
               grid-template-columns: 1.2fr 0.8fr;
               gap: 40px;
               align-items: center;
               margin: 35px 0 50px;
+              animation: fadeInUp 1s ease-out both;
+              font-family: var(--body_typography-font-family, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+            }
+            .tim-ahli-overview-split *,
+            .tim-ahli-overview-text,
+            .office-location-card,
+            .office-location-text {
+              font-family: var(--body_typography-font-family, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+            }
+            .office-location-title {
+              font-family: var(--h3_typography-font-family, var(--body_typography-font-family, 'Inter', sans-serif)) !important;
             }
             .tim-ahli-overview-text {
               font-size: 15.5px;
@@ -4037,7 +4072,7 @@
                         </h2>
                       </div>
 
-                      <div class="tim-ahli-overview-split">
+                      <div class="tim-ahli-overview-split fadeInUp">
                         <div class="tim-ahli-overview-text">
                           <p style="margin:0 0 14px;">
                             YNKI didukung oleh tim multidisiplin yang terdiri dari para ahli ekologi, botani, sistem informasi geografis, manajer kebijakan publik, dan antropologi sosial. Tim ini bekerja dari kantor pusat di <strong>Pontianak, Kalimantan Barat</strong>, serta di berbagai lanskap prioritas di seluruh Kalimantan Barat.
@@ -4535,6 +4570,24 @@
     </section>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script src="/assets/js/ynki-footer.js"></script>
+    <script>
+      (function () {
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('fadeInUp');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { rootMargin: '0px 0px -30px 0px', threshold: 0.04 });
+
+          document.querySelectorAll('.tim-ahli-overview-split').forEach(function (el) {
+            observer.observe(el);
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
 <!-- Page optimized by LiteSpeed Cache @2026-08-17 17:42:00 --><!-- Page cached by LiteSpeed Cache 7.8.1 on 2026-08-17 17:42:00 --><!-- Guest Mode --><!-- QUIC.cloud CCSS loaded ✅ /ccss/e6cdef7e17caebb6a8d79682a8c88011.css --><!-- QUIC.cloud UCSS loaded ✅ /ucss/d5027302c12ab86b6082acd2ecdd5c8e.css -->

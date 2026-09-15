@@ -782,6 +782,81 @@
           box-shadow: 0 4px 14px rgba(178, 34, 49, 0.28) !important;
         }
       }
+
+      /* =======================================================
+         PAGE LOAD FADE-IN & SCROLL REVEAL (ALL PAGES & HERO)
+         ======================================================= */
+      @keyframes ynkiPageFadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes ynkiHeroFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      body {
+        animation: ynkiPageFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+
+      /* Hero Section Fade-in (Content & Elements) */
+      .hero-section,
+      [id^="hero-"],
+      .hero-content,
+      .hero-content-sejarah,
+      .hero-content-tim,
+      .hero-inner,
+      .hero-h1,
+      .hero-section h1,
+      [id^="hero-"] h1,
+      .hero-sub,
+      .hero-desc,
+      .hero-desc-sejarah,
+      .hero-desc-tim,
+      .hero-btns,
+      .hero-actions,
+      .hero-actions-sejarah,
+      #sliders-container {
+        animation: ynkiHeroFadeIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+
+      /* Scroll Fade-in Reveal */
+      .ynki-fade-in {
+        opacity: 0 !important;
+        transform: translateY(24px) !important;
+        transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        will-change: opacity, transform;
+      }
+
+      .ynki-fade-in.ynki-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        body,
+        .hero-section,
+        [id^="hero-"],
+        .hero-inner {
+          animation: none !important;
+        }
+        .ynki-fade-in {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
     `;
 
     if (document.head) {
@@ -1321,8 +1396,15 @@
      LIGHTWEIGHT SCROLL FADE-IN ANIMATION ENGINE (IMAGES, TEXTS, CARDS)
      ========================================================================== */
   function initScrollFadeIn() {
-    // Select cards, images, section titles, paragraphs, and content blocks
+    // Select sections, cards, images, section titles, paragraphs, and content blocks across all pages
     var targetSelector = [
+      '.ynki-section',
+      '.mengapa-split > div',
+      '.stats-grid',
+      '.stat-item',
+      '.gerakan-box',
+      '.gerakan-items > div',
+      '.mitra-logos',
       '.pilar-card',
       '.pilar-grid > div',
       '.liputan-card',
@@ -1331,8 +1413,23 @@
       '.domain-card',
       '.value-card',
       '.team-card',
+      '.lead-card',
       '.dokumen-card',
       '.stat-card',
+      '.misi-card',
+      '.visi-pillar-card',
+      '.timeline-card',
+      '.timeline-item',
+      '.sejarah-overview > div',
+      '.sejarah-img-box',
+      '.tim-ahli-overview-split',
+      '.visi-quote-box',
+      '.misi-quote-box',
+      '.contact-card-box',
+      '.contact-form-card',
+      '.positioning-cta-box',
+      '.trans-card',
+      '.card',
       '.fusion-layout-column:not(.fusion-builder-column-0):not(.fusion-builder-column-1)',
       '.fusion-imageframe:not(.imageframe-1)',
       '.fusion-title',
@@ -1356,12 +1453,12 @@
         });
       }, {
         root: null,
-        rootMargin: '0px 0px -40px 0px',
-        threshold: 0.08
+        rootMargin: '0px 0px -20px 0px',
+        threshold: 0.03
       });
 
       elements.forEach(function (el) {
-        // Skip header elements and logo
+        // Skip header elements, navbar, and logo
         if (el.closest('.fusion-tb-header') || el.closest('#header') || el.closest('header')) return;
         el.classList.add('ynki-fade-in');
         observer.observe(el);

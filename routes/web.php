@@ -173,7 +173,24 @@ Route::fallback(function (\Illuminate\Http\Request $request) {
     foreach ($candidates as $file) {
         if (file_exists($file) && !is_dir($file)) {
             $content = file_get_contents($file);
-            return response($content, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+            $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+            $mimes = [
+                'png' => 'image/png',
+                'jpg' => 'image/jpeg',
+                'jpeg' => 'image/jpeg',
+                'gif' => 'image/gif',
+                'svg' => 'image/svg+xml',
+                'webp' => 'image/webp',
+                'css' => 'text/css; charset=UTF-8',
+                'js' => 'application/javascript; charset=UTF-8',
+                'json' => 'application/json',
+                'pdf' => 'application/pdf',
+                'html' => 'text/html; charset=UTF-8',
+            ];
+            $mime = $mimes[$ext] ?? 'text/html; charset=UTF-8';
+            return response($content, 200)
+                ->header('Content-Type', $mime)
+                ->header('Access-Control-Allow-Origin', '*');
         }
     }
 

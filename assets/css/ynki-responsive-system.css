@@ -2363,31 +2363,71 @@ img {
   }
 }
 
+@keyframes ynkiHeroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 body {
-  animation: ynkiPageFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: ynkiPageFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
+/* Hero Section Fade-in on Page Load (All Pages) */
+.hero-section,
+[id^="hero-"],
+.hero-inner,
+.hero-content,
+.hero-content-sejarah,
+.hero-content-tim,
+.hero-content-trans,
+.hero-content-port,
+.hero-h1,
+.hero-section h1,
+[id^="hero-"] h1,
+.hero-sub,
+.hero-desc,
+.hero-desc-sejarah,
+.hero-desc-tim,
+.hero-desc-trans,
+.hero-btns,
+.hero-actions,
+.hero-actions-sejarah,
+#sliders-container {
+  animation: ynkiHeroReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) both !important;
 }
 
 /* Scroll Fade In Elements */
-.ynki-fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+.ynki-fade-in,
+.ynki-section.ynki-fade-in {
+  opacity: 0 !important;
+  transform: translateY(24px) !important;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: opacity, transform;
 }
 
-.ynki-fade-in.ynki-visible {
+.ynki-fade-in.ynki-visible,
+.ynki-section.ynki-fade-in.ynki-visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 
 /* Stagger delay classes if elements are in a grid */
-.ynki-fade-delay-1 { transition-delay: 0.1s; }
-.ynki-fade-delay-2 { transition-delay: 0.2s; }
-.ynki-fade-delay-3 { transition-delay: 0.3s; }
+.ynki-fade-delay-1 { transition-delay: 0.1s !important; }
+.ynki-fade-delay-2 { transition-delay: 0.2s !important; }
+.ynki-fade-delay-3 { transition-delay: 0.3s !important; }
 
 /* Respect user's accessibility preferences */
 @media (prefers-reduced-motion: reduce) {
-  body {
+  body,
+  .hero-section,
+  [id^="hero-"],
+  .hero-inner {
     animation: none !important;
   }
   .ynki-fade-in {
@@ -2397,3 +2437,65 @@ body {
   }
 }
 
+/* ==========================================================================
+   CIRCULAR GALLERY - MITRA & PENDUKUNG KAMI
+   ========================================================================== */
+#ynki-circular-gallery-wrap {
+  position: relative;
+  width: 100%;
+  margin: 30px auto 10px;
+  overflow: hidden;
+}
+
+#ynki-circular-gallery-canvas,
+.circular-gallery {
+  width: 100%;
+  height: 560px;
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+#ynki-circular-gallery-canvas:active,
+.circular-gallery:active {
+  cursor: grabbing;
+}
+
+#ynki-circular-gallery-canvas:focus-visible,
+.circular-gallery:focus-visible {
+  outline: 2px solid #117710;
+  outline-offset: 4px;
+}
+
+#ynki-circular-gallery-canvas canvas,
+.circular-gallery canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ynki-gallery-hint {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #536b5f;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ynki-gallery-hint svg {
+  width: 16px;
+  height: 16px;
+  stroke: #117710;
+}
+
+@media (max-width: 768px) {
+  #ynki-circular-gallery-canvas {
+    height: 420px;
+  }
+}

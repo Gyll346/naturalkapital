@@ -3285,16 +3285,39 @@
             */
 
 /* Section utility */
+.demo-text {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: var(--body_typography-font-family, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation: fadeInUp 1s ease-out both;
+}
+
 .ynki-section {
-              width: 100%;
-              box-sizing: border-box;
-            }
-            .ynki-container {
-              max-width: 1200px;
-              margin: 0 auto;
-              padding: 0 24px;
-              box-sizing: border-box;
-            }
+  width: 100%;
+  box-sizing: border-box;
+  animation: fadeInUp 1s ease-out both;
+}
+.ynki-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  animation: fadeInUp 1s ease-out both;
+}
 
             /* Divider heading badge */
             .section-badge {
@@ -4498,6 +4521,7 @@
                         </p>
                       </div>
 
+
                       <!-- Partner logos grid (20 Logo Lengkap dari Mockup Asli) -->
                       <div
                         class="mitra-logos"
@@ -5416,7 +5440,26 @@
       >
     </section>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
+    <script src="/assets/js/ynki-circular-gallery.js"></script>
     <script src="/assets/js/ynki-footer.js"></script>
+    <script>
+      (function () {
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('fadeInUp');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { rootMargin: '0px 0px -30px 0px', threshold: 0.04 });
+
+          document.querySelectorAll('.ynki-section, .ynki-container').forEach(function (el) {
+            observer.observe(el);
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
 <!-- Page optimized by LiteSpeed Cache @2026-08-17 17:42:00 --><!-- Page cached by LiteSpeed Cache 7.8.1 on 2026-08-17 17:42:00 --><!-- Guest Mode --><!-- QUIC.cloud CCSS loaded ✅ /ccss/e6cdef7e17caebb6a8d79682a8c88011.css --><!-- QUIC.cloud UCSS loaded ✅ /ucss/d5027302c12ab86b6082acd2ecdd5c8e.css -->
