@@ -13,7 +13,10 @@
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <title>Penelitian &amp; Laporan: Pengetahuan untuk Tata Kelola Lanskap Berbasis Bukti — Yayasan Natural Kapital Indonesia (YNKI)</title>
+    <title>
+      Penelitian &amp; Laporan: Pengetahuan untuk Tata Kelola Lanskap Berbasis
+      Bukti — Yayasan Natural Kapital Indonesia (YNKI)
+    </title>
     <meta
       name="description"
       content="YNKI memperkuat kolaborasi antara pemerintah, masyarakat, sektor swasta, &amp; donor untuk membangun lanskap yang sehat, produktif, tangguh, &amp; berkelanjutan."
@@ -2191,263 +2194,269 @@
       crossorigin
     />
 
-    
-  
+    <!-- Global Avada Stylesheet Fallback -->
+    <link
+      rel="stylesheet"
+      href="/wp-content/uploads/fusion-styles/47cb6edf07d5b05fc05b3981869760b8.min.css"
+    />
 
+    <style id="avada-static-display-fix">
+      /* Animation and visibility fixes */
+      .fusion-animated {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .awb-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .mega-menu-loading {
+        opacity: 1 !important;
+      }
+      .fusion-slider-visibility {
+        visibility: visible !important;
+      }
 
+      /* Responsive visibility controls */
+      @media (min-width: 801px) {
+        div.fusion-no-large-visibility,
+        .fusion-title.fusion-no-large-visibility,
+        .fusion-layout-column.fusion-no-large-visibility,
+        .fusion-no-medium-visibility.fusion-no-large-visibility {
+          display: none !important;
+        }
+      }
+      @media (max-width: 800px) {
+        div.fusion-no-small-visibility,
+        .fusion-title.fusion-no-small-visibility,
+        .fusion-layout-column.fusion-no-small-visibility {
+          display: none !important;
+        }
+      }
 
+      /* Partner section columns and badges clean grid */
+      .fusion-builder-column-14,
+      .fusion-builder-column-15,
+      .fusion-builder-column-16,
+      .fusion-builder-column-17 {
+        width: 50% !important;
+        max-width: 50% !important;
+        flex: 0 0 50% !important;
+        min-height: auto !important;
+        height: auto !important;
+        margin-top: 0px !important;
+        margin-bottom: 25px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        display: block !important;
+        box-sizing: border-box !important;
+      }
 
+      @media (max-width: 800px) {
+        .fusion-builder-column-14,
+        .fusion-builder-column-15,
+        .fusion-builder-column-16,
+        .fusion-builder-column-17 {
+          width: 100% !important;
+          max-width: 100% !important;
+          flex: 0 0 100% !important;
+          margin-bottom: 15px !important;
+        }
+      }
 
+      .fusion-builder-column-14 .fusion-column-wrapper,
+      .fusion-builder-column-15 .fusion-column-wrapper,
+      .fusion-builder-column-16 .fusion-column-wrapper,
+      .fusion-builder-column-17 .fusion-column-wrapper {
+        min-height: auto !important;
+        height: auto !important;
+        display: block !important;
+        padding: 0 !important;
+      }
 
-<!-- Global Avada Stylesheet Fallback -->
-<link rel="stylesheet" href="/wp-content/uploads/fusion-styles/47cb6edf07d5b05fc05b3981869760b8.min.css">
+      .fusion-image-carousel,
+      .awb-carousel,
+      .awb-swiper {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
 
-<style id="avada-static-display-fix">
-  /* Animation and visibility fixes */
-  .fusion-animated { opacity: 1 !important; visibility: visible !important; }
-  .awb-menu { opacity: 1 !important; visibility: visible !important; }
-  .mega-menu-loading { opacity: 1 !important; }
-  .fusion-slider-visibility { visibility: visible !important; }
-  
-  /* Responsive visibility controls */
-  @media (min-width: 801px) {
-    div.fusion-no-large-visibility,
-    .fusion-title.fusion-no-large-visibility,
-    .fusion-layout-column.fusion-no-large-visibility,
-    .fusion-no-medium-visibility.fusion-no-large-visibility {
-      display: none !important;
-    }
-  }
-  @media (max-width: 800px) {
-    div.fusion-no-small-visibility,
-    .fusion-title.fusion-no-small-visibility,
-    .fusion-layout-column.fusion-no-small-visibility {
-      display: none !important;
-    }
-  }
+      .fusion-image-carousel .swiper-wrapper,
+      .awb-swiper .swiper-wrapper {
+        display: grid !important;
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 8px !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        transform: none !important;
+      }
 
-  /* Partner section columns and badges clean grid */
-  .fusion-builder-column-14,
-  .fusion-builder-column-15,
-  .fusion-builder-column-16,
-  .fusion-builder-column-17 {
-    width: 50% !important;
-    max-width: 50% !important;
-    flex: 0 0 50% !important;
-    min-height: auto !important;
-    height: auto !important;
-    margin-top: 0px !important;
-    margin-bottom: 25px !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    display: block !important;
-    box-sizing: border-box !important;
-  }
+      .awb-swiper.awb-swiper-carousel:not(.swiper-initialized) .swiper-slide,
+      .fusion-image-carousel .swiper-slide,
+      .awb-swiper .swiper-slide {
+        display: flex !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: 55px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 4px 6px !important;
+        margin: 0 !important;
+        background: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        border-radius: 6px !important;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+        box-sizing: border-box !important;
+      }
 
-  @media (max-width: 800px) {
-    .fusion-builder-column-14,
-    .fusion-builder-column-15,
-    .fusion-builder-column-16,
-    .fusion-builder-column-17 {
-      width: 100% !important;
-      max-width: 100% !important;
-      flex: 0 0 100% !important;
-      margin-bottom: 15px !important;
-    }
-  }
+      @media (max-width: 600px) {
+        .fusion-image-carousel .swiper-wrapper,
+        .awb-swiper .swiper-wrapper {
+          grid-template-columns: repeat(3, 1fr) !important;
+        }
+      }
 
-  .fusion-builder-column-14 .fusion-column-wrapper,
-  .fusion-builder-column-15 .fusion-column-wrapper,
-  .fusion-builder-column-16 .fusion-column-wrapper,
-  .fusion-builder-column-17 .fusion-column-wrapper {
-    min-height: auto !important;
-    height: auto !important;
-    display: block !important;
-    padding: 0 !important;
-  }
+      .fusion-image-carousel .fusion-carousel-item-wrapper,
+      .fusion-image-carousel .fusion-image-wrapper,
+      .awb-swiper .fusion-image-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
 
-  .fusion-image-carousel,
-  .awb-carousel,
-  .awb-swiper {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
-    overflow: visible !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
+      .fusion-image-carousel img,
+      .awb-swiper img {
+        max-height: 34px !important;
+        max-width: 90% !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto !important;
+      }
 
-  .fusion-image-carousel .swiper-wrapper,
-  .awb-swiper .swiper-wrapper {
-    display: grid !important;
-    grid-template-columns: repeat(5, 1fr) !important;
-    gap: 8px !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
-    transform: none !important;
-  }
+      /* Team member card grid fix for tim page */
+      .fusion-builder-column-1_3 {
+        flex: 0 0 33.333% !important;
+        max-width: 33.333% !important;
+      }
+      @media (max-width: 800px) {
+        .fusion-builder-column-1_3 {
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+        }
+      }
 
-  .awb-swiper.awb-swiper-carousel:not(.swiper-initialized) .swiper-slide,
-  .fusion-image-carousel .swiper-slide,
-  .awb-swiper .swiper-slide {
-    display: flex !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    height: 55px !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 4px 6px !important;
-    margin: 0 !important;
-    background: #ffffff !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    border-radius: 6px !important;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
-    box-sizing: border-box !important;
-  }
+      /* Map overlay fix */
+      .fusion-google-map .gm-style-moc {
+        display: none !important;
+      }
 
-  @media (max-width: 600px) {
-    .fusion-image-carousel .swiper-wrapper,
-    .awb-swiper .swiper-wrapper {
-      grid-template-columns: repeat(3, 1fr) !important;
-    }
-  }
+      /* Footer styling */
+      .fusion-tb-footer,
+      .fusion-footer {
+        display: block !important;
+        width: 100% !important;
+        position: relative !important;
+        clear: both !important;
+        margin-top: 40px !important;
+      }
+    </style>
 
-  .fusion-image-carousel .fusion-carousel-item-wrapper,
-  .fusion-image-carousel .fusion-image-wrapper,
-  .awb-swiper .fusion-image-wrapper {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
+    <link rel="stylesheet" href="/assets/css/ynki-responsive-system.css" />
+    <style id="ynki-universal-polish">
+      /* ===== YNKI GLOBAL POLISH & NAVBAR FIX ===== */
+      .fusion-tb-header > .fusion-fullwidth:first-child,
+      .fusion-tb-header,
+      .fusion-header,
+      .fusion-header-wrapper,
+      #fusion-header {
+        background: transparent !important;
+        background-color: transparent !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+        box-shadow: none !important;
+      }
 
-  .fusion-image-carousel img,
-  .awb-swiper img {
-    max-height: 34px !important;
-    max-width: 90% !important;
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain !important;
-    display: block !important;
-    margin: 0 auto !important;
-  }
+      /* Nav Links - clear dark green */
+      .awb-menu__main-li > a,
+      .awb-menu__main-a {
+        color: #12291e !important;
+        font-weight: 700 !important;
+      }
+      .awb-menu__main-li > a:hover,
+      .awb-menu__main-li.current-menu-item > a {
+        color: #117710 !important;
+      }
 
-  /* Team member card grid fix for tim page */
-  .fusion-builder-column-1_3 {
-    flex: 0 0 33.333% !important;
-    max-width: 33.333% !important;
-  }
-  @media (max-width: 800px) {
-    .fusion-builder-column-1_3 {
-      flex: 0 0 100% !important;
-      max-width: 100% !important;
-    }
-  }
+      /* Ensure no green backgrounds on header containers */
+      .fusion-fullwidth.fusion-builder-row-1 {
+        background-color: transparent !important;
+      }
 
-  /* Map overlay fix */
-  .fusion-google-map .gm-style-moc {
-    display: none !important;
-  }
+      /* Universal Button Overrides according to Color Specs */
+      .btn-cta-main,
+      a.btn-cta-main,
+      .fusion-button.button-primary:not(.btn-cta-second) {
+        background: #b22231 !important;
+        color: #ffffff !important;
+        border: none !important;
+        box-shadow: 0 4px 14px rgba(178, 34, 49, 0.28) !important;
+      }
+      .btn-cta-main:hover,
+      a.btn-cta-main:hover {
+        background: #941724 !important;
+        color: #ffffff !important;
+      }
 
-  /* Footer styling */
-  .fusion-tb-footer, .fusion-footer {
-    display: block !important;
-    width: 100% !important;
-    position: relative !important;
-    clear: both !important;
-    margin-top: 40px !important;
-  }
-</style>
+      .btn-cta-second,
+      a.btn-cta-second {
+        background: #a0d2f5 !important;
+        color: #0e241b !important;
+        border: 1px solid rgba(14, 36, 27, 0.12) !important;
+        box-shadow: 0 4px 14px rgba(160, 210, 245, 0.3) !important;
+      }
+      .btn-cta-second:hover,
+      a.btn-cta-second:hover {
+        background: #82c4f1 !important;
+        color: #05140d !important;
+      }
 
-<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
-<style id="ynki-universal-polish">
-/* ===== YNKI GLOBAL POLISH & NAVBAR FIX ===== */
-.fusion-tb-header > .fusion-fullwidth:first-child,
-.fusion-tb-header,
-.fusion-header,
-.fusion-header-wrapper,
-#fusion-header {
-  background: transparent !important;
-  background-color: transparent !important;
-  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
-  box-shadow: none !important;
-}
+      /* Universal Badge Accent: Oranye #FF8000 */
+      .badge-highlight,
+      .badge-orange,
+      .section-badge,
+      .tag-highlight {
+        color: #ff8000 !important;
+        background: #fff3e6 !important;
+        border-color: rgba(255, 128, 0, 0.35) !important;
+      }
 
-/* Nav Links - clear dark green */
-.awb-menu__main-li > a,
-.awb-menu__main-a {
-  color: #12291e !important;
-  font-weight: 700 !important;
-}
-.awb-menu__main-li > a:hover,
-.awb-menu__main-li.current-menu-item > a {
-  color: #117710 !important;
-}
+      /* Universal Accent Sekunder: Ungu #8000FF */
+      .badge-purple,
+      .category-tag-purple,
+      .tag-category,
+      .category-badge {
+        color: #8000ff !important;
+        background: #f3e8ff !important;
+        border-color: rgba(128, 0, 255, 0.3) !important;
+      }
 
-/* Ensure no green backgrounds on header containers */
-.fusion-fullwidth.fusion-builder-row-1 {
-  background-color: transparent !important;
-}
-
-/* Universal Button Overrides according to Color Specs */
-.btn-cta-main,
-a.btn-cta-main,
-.fusion-button.button-primary:not(.btn-cta-second) {
-  background: #B22231 !important;
-  color: #ffffff !important;
-  border: none !important;
-  box-shadow: 0 4px 14px rgba(178,34,49,0.28) !important;
-}
-.btn-cta-main:hover,
-a.btn-cta-main:hover {
-  background: #941724 !important;
-  color: #ffffff !important;
-}
-
-.btn-cta-second,
-a.btn-cta-second {
-  background: #A0D2F5 !important;
-  color: #0e241b !important;
-  border: 1px solid rgba(14,36,27,0.12) !important;
-  box-shadow: 0 4px 14px rgba(160,210,245,0.3) !important;
-}
-.btn-cta-second:hover,
-a.btn-cta-second:hover {
-  background: #82c4f1 !important;
-  color: #05140d !important;
-}
-
-/* Universal Badge Accent: Oranye #FF8000 */
-.badge-highlight,
-.badge-orange,
-.section-badge,
-.tag-highlight {
-  color: #FF8000 !important;
-  background: #fff3e6 !important;
-  border-color: rgba(255,128,0,0.35) !important;
-}
-
-/* Universal Accent Sekunder: Ungu #8000FF */
-.badge-purple,
-.category-tag-purple,
-.tag-category,
-.category-badge {
-  color: #8000FF !important;
-  background: #f3e8ff !important;
-  border-color: rgba(128,0,255,0.3) !important;
-}
-
-/* Responsive clean image wrappers */
-img {
-  max-width: 100% !important;
-  height: auto !important;
-}
-</style>
-<style id="ynki-universal-clean-header">
+      /* Responsive clean image wrappers */
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+    </style>
+    <style id="ynki-universal-clean-header">
       /* ===== YNKI GLOBAL NAVBAR: ZERO SCROLL DEPENDENCY & PURE INSTANT HOVER ===== */
       #boxed-wrapper,
       #wrapper,
@@ -2623,7 +2632,7 @@ img {
 
         /* Invisible hover bridge to prevent losing hover when moving mouse down */
         .awb-menu__main-li::after {
-          content: '' !important;
+          content: "" !important;
           position: absolute !important;
           top: 100% !important;
           left: 0 !important;
@@ -2647,7 +2656,8 @@ img {
         }
 
         /* DEFAULT HIDDEN STATE WHEN NOT HOVERED */
-        .awb-menu__main-li:not(:hover):not(.is-open):not(:focus-within) > .awb-menu__sub-ul {
+        .awb-menu__main-li:not(:hover):not(.is-open):not(:focus-within)
+          > .awb-menu__sub-ul {
           display: none !important;
           opacity: 0 !important;
           visibility: hidden !important;
@@ -2783,24 +2793,53 @@ img {
         }
       }
     </style>
-<style>
-.ynki-footer-social { display: flex !important; align-items: center !important; gap: 10px !important; margin-top: 20px !important; flex-wrap: wrap !important; }
-.ynki-social-btn { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: 44px !important; background: rgba(255, 255, 255, 0.12) !important; border: 1px solid rgba(255, 255, 255, 0.22) !important; border-radius: 12px !important; color: #ffffff !important; text-decoration: none !important; transition: all 0.25s ease !important; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important; }
-.ynki-social-btn:hover { background: rgba(255, 255, 255, 0.28) !important; transform: translateY(-3px) !important; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2) !important; }
-.ynki-social-btn svg { width: 20px !important; height: 20px !important; fill: #ffffff !important; }
-</style>
-</head>
+    <style>
+      .ynki-footer-social {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin-top: 20px !important;
+        flex-wrap: wrap !important;
+      }
+      .ynki-social-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 44px !important;
+        height: 44px !important;
+        background: rgba(255, 255, 255, 0.12) !important;
+        border: 1px solid rgba(255, 255, 255, 0.22) !important;
+        border-radius: 12px !important;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        transition: all 0.25s ease !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+      }
+      .ynki-social-btn:hover {
+        background: rgba(255, 255, 255, 0.28) !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2) !important;
+      }
+      .ynki-social-btn svg {
+        width: 20px !important;
+        height: 20px !important;
+        fill: #ffffff !important;
+      }
+    </style>
+  </head>
   <body
     class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr no-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
     data-awb-post-id="5283"
   >
-    <a class="skip-link screen-reader-text" href="/sustainable-commodity/">Skip to content</a>
+    <a class="skip-link screen-reader-text" href="/sustainable-commodity/"
+      >Skip to content</a
+    >
     <div id="boxed-wrapper">
       <div id="wrapper" class="fusion-wrapper">
         <div id="home" style="position: relative; top: -1px"></div>
         <div class="fusion-tb-header">
           <div
-            class="fusion-fullwidth fullwidth-box fusion-builder-row-1 fusion-flex-container nonhundred-percent-fullwidth  fusion-animated fusion-custom-z-index"
+            class="fusion-fullwidth fullwidth-box fusion-builder-row-1 fusion-flex-container nonhundred-percent-fullwidth fusion-animated fusion-custom-z-index"
             style="
               --awb-border-radius-top-left: 0px;
               --awb-border-radius-top-right: 0px;
@@ -2882,7 +2921,15 @@ img {
                         href="/"
                         target="_self"
                         aria-label="logo-ynki-80"
-                        ><img decoding="async" width="300" height="60" alt="Natural Kapital Foundation" class="img-responsive wp-image-183 disable-lazyload" data- data- src="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3" /></a
+                        ><img
+                          decoding="async"
+                          width="300"
+                          height="60"
+                          alt="Natural Kapital Foundation"
+                          class="img-responsive wp-image-183 disable-lazyload"
+                          data-
+                          data-
+                          src="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3" /></a
                     ></span>
                   </div>
                 </div>
@@ -3059,7 +3106,6 @@ img {
                               ><span>Portfolio</span></a
                             >
                           </li>
-                          
                         </ul>
                       </li>
                       <li
@@ -3129,9 +3175,7 @@ img {
                               href="/landscape-intelligence/"
                               class="awb-menu__sub-a"
                               aria-current="page"
-                              ><span
-                                >Pengetahuan Lanskap &amp; Inovasi</span
-                              ></a
+                              ><span>Pengetahuan Lanskap &amp; Inovasi</span></a
                             >
                           </li>
                           <li
@@ -3313,283 +3357,946 @@ img {
           </div>
         </div>
         <div id="sliders-container" class="fusion-slider-visibility"></div>
-        <main id="main" class="clearfix width-100" style="font-family:'Inter',Arial,Helvetica,sans-serif;">
-<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-<style>
-*, *::before, *::after { box-sizing: border-box; }
-.ynki-section { width: 100%; }
-.ynki-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.section-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #FF8000; background: #fff3e6; border: 1px solid rgba(255,128,0,0.35); padding: 5px 16px; border-radius: 50px; margin-bottom: 14px; }
-.section-badge.white { background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.3); }
-.section-badge.green { background: #e8f5e8; color: #117710; border-color: #117710; }
-.divider-line { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 14px; }
-.divider-line .line { flex: 1; height: 1px; background: #d2e8d1; }
-.hero-section { position: relative; min-height: 82vh; display: flex; align-items: center; background-image: url('/assets/images/penelitian-laporan/image1.png'); background-size: cover; background-position: center; padding: 110px 24px 90px; }
-.hero-section::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, #ffffff); pointer-events: none; }
-.hero-inner { position: relative; z-index: 2; max-width: 920px; margin: 0 auto; text-align: center; }
-.hero-crumb { font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #a3e0a2; margin-bottom: 20px; }
-.hero-crumb a { color: #d2f0d1; text-decoration: none; }
-.hero-h1 { font-size: clamp(28px, 4.5vw, 48px); font-weight: 900; line-height: 1.2; color: #ffffff; margin: 0 0 20px; letter-spacing: -0.02em; }
-.hero-h1 .hl, .hero-h1 span.hl { color: #a3e0a2; font-size: 0.85em; display: inline-block; font-weight: 800; }
-.hero-sub { font-size: clamp(14px, 1.6vw, 17px); line-height: 1.85; color: #d2f0d1; max-width: 820px; margin: 0 auto 32px; }
-.hero-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-.cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-.cta-section { background: #117710; padding: 90px 24px; text-align: center; }
-.cta-section h2 { font-size: clamp(24px,3.5vw,36px); font-weight: 800; color: #fff; margin: 0 0 16px; }
-.cta-section p { font-size: 15.5px; color: #d2f0d1; max-width: 700px; margin: 0 auto 32px; line-height: 1.7; }
-</style>
-<style>
-.pen-stats { background: #f5f8f5; padding: 60px 24px; }
-.pstat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; }
-.pstat-card { background: #fff; border: 1.5px solid #d2e8d1; border-radius: 16px; padding: 24px; text-align: center; }
-.pstat-num { font-size: 36px; font-weight: 900; color: #117710; line-height: 1; margin-bottom: 8px; }
-.pstat-card h4 { font-size: 14px; font-weight: 800; color: #0e241b; margin: 0 0 6px; }
-.pstat-card p { font-size: 12px; color: #536b5f; margin: 0; line-height: 1.5; }
+        <main
+          id="main"
+          class="clearfix width-100"
+          style="font-family: &quot;Inter&quot;, Arial, Helvetica, sans-serif"
+        >
+          <link
+            rel="stylesheet"
+            href="/assets/css/ynki-responsive-system.css"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          />
+          <style>
+            *,
+            *::before,
+            *::after {
+              box-sizing: border-box;
+            }
+            .ynki-section {
+              width: 100%;
+            }
+            .ynki-container {
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 24px;
+            }
+            .section-badge {
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 11px;
+              font-weight: 700;
+              letter-spacing: 1.5px;
+              text-transform: uppercase;
+              color: #ff8000;
+              background: #fff3e6;
+              border: 1px solid rgba(255, 128, 0, 0.35);
+              padding: 5px 16px;
+              border-radius: 50px;
+              margin-bottom: 14px;
+            }
+            .section-badge.white {
+              background: rgba(255, 255, 255, 0.15);
+              color: #fff;
+              border-color: rgba(255, 255, 255, 0.3);
+            }
+            .section-badge.green {
+              background: #e8f5e8;
+              color: #117710;
+              border-color: #117710;
+            }
+            .divider-line {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 16px;
+              margin-bottom: 14px;
+            }
+            .divider-line .line {
+              flex: 1;
+              height: 1px;
+              background: #d2e8d1;
+            }
+            .hero-section {
+              position: relative;
+              min-height: 82vh;
+              display: flex;
+              align-items: center;
+              background-image: 
+              linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url("/assets/images/penelitian-laporan/image1.png");
+              background-size: cover;
+              background-position: center;
+              padding: 110px 24px 90px;
+            }
+            .hero-section::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 80px;
+              background: linear-gradient(to bottom, transparent, #ffffff);
+              pointer-events: none;
+            }
+            .hero-inner {
+              position: relative;
+              z-index: 2;
+              max-width: 920px;
+              margin: 0 auto;
+              text-align: center;
+            }
+            .hero-crumb {
+              font-size: 11.5px;
+              font-weight: 700;
+              letter-spacing: 1.8px;
+              text-transform: uppercase;
+              color: #a3e0a2;
+              margin-bottom: 20px;
+            }
+            .hero-crumb a {
+              color: #d2f0d1;
+              text-decoration: none;
+            }
+            .hero-h1 {
+              font-size: clamp(28px, 4.5vw, 48px);
+              font-weight: 900;
+              line-height: 1.2;
+              color: #ffffff;
+              margin: 0 0 20px;
+              letter-spacing: -0.02em;
+            }
+            .hero-h1 .hl,
+            .hero-h1 span.hl {
+              color: #a3e0a2;
+              font-size: 0.85em;
+              display: inline-block;
+              font-weight: 800;
+            }
+            .hero-sub {
+              font-size: clamp(14px, 1.6vw, 17px);
+              line-height: 1.85;
+              color: #d2f0d1;
+              max-width: 820px;
+              margin: 0 auto 32px;
+            }
+            .hero-btns {
+              display: flex;
+              justify-content: center;
+              gap: 14px;
+              flex-wrap: wrap;
+            }
+            .cta-btns {
+              display: flex;
+              justify-content: center;
+              gap: 14px;
+              flex-wrap: wrap;
+            }
+            .cta-section {
+              background: #117710;
+              padding: 90px 24px;
+              text-align: center;
+            }
+            .cta-section h2 {
+              font-size: clamp(24px, 3.5vw, 36px);
+              font-weight: 800;
+              color: #fff;
+              margin: 0 0 16px;
+            }
+            .cta-section p {
+              font-size: 15.5px;
+              color: #d2f0d1;
+              max-width: 700px;
+              margin: 0 auto 32px;
+              line-height: 1.7;
+            }
+          </style>
+          <style>
+            .pen-stats {
+              background: #f5f8f5;
+              padding: 60px 24px;
+            }
+            .pstat-grid {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 20px;
+              max-width: 1100px;
+              margin: 0 auto;
+            }
+            .pstat-card {
+              background: #fff;
+              border: 1.5px solid #d2e8d1;
+              border-radius: 16px;
+              padding: 24px;
+              text-align: center;
+            }
+            .pstat-num {
+              font-size: 36px;
+              font-weight: 900;
+              color: #117710;
+              line-height: 1;
+              margin-bottom: 8px;
+            }
+            .pstat-card h4 {
+              font-size: 14px;
+              font-weight: 800;
+              color: #0e241b;
+              margin: 0 0 6px;
+            }
+            .pstat-card p {
+              font-size: 12px;
+              color: #536b5f;
+              margin: 0;
+              line-height: 1.5;
+            }
 
-.filter-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 44px; margin-bottom: 32px; }
-.filter-tag { font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 50px; border: 1.5px solid #d2e8d1; color: #117710; cursor: pointer; transition: all 0.3s; background: #fff; }
-.filter-tag:hover, .filter-tag.active { background: #117710; color: #fff; border-color: #117710; }
+            .filter-row {
+              display: flex;
+              gap: 8px;
+              flex-wrap: wrap;
+              justify-content: center;
+              margin-top: 44px;
+              margin-bottom: 32px;
+            }
+            .filter-tag {
+              font-size: 12px;
+              font-weight: 700;
+              padding: 8px 16px;
+              border-radius: 50px;
+              border: 1.5px solid #d2e8d1;
+              color: #117710;
+              cursor: pointer;
+              transition: all 0.3s;
+              background: #fff;
+            }
+            .filter-tag:hover,
+            .filter-tag.active {
+              background: #117710;
+              color: #fff;
+              border-color: #117710;
+            }
 
-.penelitian-list { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 960px; margin: 0 auto; }
-.pen-item { background: #fff; border: 1px solid #d2e8d1; border-radius: 16px; padding: 28px; display: flex; gap: 24px; align-items: flex-start; transition: all 0.3s; }
-.pen-item:hover { box-shadow: 0 12px 30px rgba(17,119,16,0.08); border-color: #117710; }
-.pen-icon { width: 64px; height: 64px; background: #f8faf8; border-radius: 14px; border: 1.5px solid #e8f3e8; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.pen-icon svg { stroke: #117710; width: 32px; height: 32px; }
-.pen-content { flex-grow: 1; }
-.pen-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-.pen-badge { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; }
-.badge-spasial { background: #e8f5e8; color: #117710; }
-.badge-survei { background: #fff3e6; color: #FF8000; }
-.badge-program { background: #e6f3ff; color: #0066cc; }
-.badge-policy { background: #f3e6ff; color: #8000FF; }
-.badge-tahunan { background: #fff5f5; color: #B22231; }
-.pen-year { font-size: 12px; font-weight: 700; color: #8a9e94; }
-.pen-content h3 { font-size: 18px; font-weight: 800; color: #0e241b; margin: 0 0 10px; line-height: 1.4; }
-.pen-content p { font-size: 14px; color: #536b5f; line-height: 1.65; margin: 0 0 16px; }
-.pen-actions { display: flex; gap: 12px; }
-.btn-download { font-size: 12px; font-weight: 700; color: #fff; background: #117710; border-radius: 6px; padding: 8px 16px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s; }
-.btn-download:hover { background: #0c500b; }
-.btn-read { font-size: 12px; font-weight: 700; color: #117710; background: #e8f5e8; border-radius: 6px; padding: 8px 16px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s; }
-.btn-read:hover { background: #d2f0d1; }
+            .penelitian-list {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 20px;
+              max-width: 960px;
+              margin: 0 auto;
+            }
+            .pen-item {
+              background: #fff;
+              border: 1px solid #d2e8d1;
+              border-radius: 16px;
+              padding: 28px;
+              display: flex;
+              gap: 24px;
+              align-items: flex-start;
+              transition: all 0.3s;
+            }
+            .pen-item:hover {
+              box-shadow: 0 12px 30px rgba(17, 119, 16, 0.08);
+              border-color: #117710;
+            }
+            .pen-icon {
+              width: 64px;
+              height: 64px;
+              background: #f8faf8;
+              border-radius: 14px;
+              border: 1.5px solid #e8f3e8;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            }
+            .pen-icon svg {
+              stroke: #117710;
+              width: 32px;
+              height: 32px;
+            }
+            .pen-content {
+              flex-grow: 1;
+            }
+            .pen-meta {
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 12px;
+            }
+            .pen-badge {
+              font-size: 10px;
+              font-weight: 800;
+              letter-spacing: 1.2px;
+              text-transform: uppercase;
+              padding: 4px 12px;
+              border-radius: 50px;
+            }
+            .badge-spasial {
+              background: #e8f5e8;
+              color: #117710;
+            }
+            .badge-survei {
+              background: #fff3e6;
+              color: #ff8000;
+            }
+            .badge-program {
+              background: #e6f3ff;
+              color: #0066cc;
+            }
+            .badge-policy {
+              background: #f3e6ff;
+              color: #8000ff;
+            }
+            .badge-tahunan {
+              background: #fff5f5;
+              color: #b22231;
+            }
+            .pen-year {
+              font-size: 12px;
+              font-weight: 700;
+              color: #8a9e94;
+            }
+            .pen-content h3 {
+              font-size: 18px;
+              font-weight: 800;
+              color: #0e241b;
+              margin: 0 0 10px;
+              line-height: 1.4;
+            }
+            .pen-content p {
+              font-size: 14px;
+              color: #536b5f;
+              line-height: 1.65;
+              margin: 0 0 16px;
+            }
+            .pen-actions {
+              display: flex;
+              gap: 12px;
+            }
+            .btn-download {
+              font-size: 12px;
+              font-weight: 700;
+              color: #fff;
+              background: #117710;
+              border-radius: 6px;
+              padding: 8px 16px;
+              text-decoration: none;
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              transition: background 0.2s;
+            }
+            .btn-download:hover {
+              background: #0c500b;
+            }
+            .btn-read {
+              font-size: 12px;
+              font-weight: 700;
+              color: #117710;
+              background: #e8f5e8;
+              border-radius: 6px;
+              padding: 8px 16px;
+              text-decoration: none;
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              transition: background 0.2s;
+            }
+            .btn-read:hover {
+              background: #d2f0d1;
+            }
 
-.collab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
-.collab-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 28px 24px; text-align: center; transition: all 0.3s; }
-.collab-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-4px); }
-.collab-icon { width: 52px; height: 52px; background: rgba(255,255,255,0.1); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-.collab-icon svg { stroke: #a3e0a2; width: 26px; height: 26px; }
-.collab-card h4 { font-size: 16px; font-weight: 800; color: #fff; margin: 0 0 10px; }
-.collab-card p { font-size: 13.5px; color: #d2f0d1; line-height: 1.6; margin: 0; }
+            .collab-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 24px;
+              margin-top: 44px;
+            }
+            .collab-card {
+              background: rgba(255, 255, 255, 0.08);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              border-radius: 16px;
+              padding: 28px 24px;
+              text-align: center;
+              transition: all 0.3s;
+            }
+            .collab-card:hover {
+              background: rgba(255, 255, 255, 0.12);
+              transform: translateY(-4px);
+            }
+            .collab-icon {
+              width: 52px;
+              height: 52px;
+              background: rgba(255, 255, 255, 0.1);
+              border-radius: 50%;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 16px;
+            }
+            .collab-icon svg {
+              stroke: #a3e0a2;
+              width: 26px;
+              height: 26px;
+            }
+            .collab-card h4 {
+              font-size: 16px;
+              font-weight: 800;
+              color: #fff;
+              margin: 0 0 10px;
+            }
+            .collab-card p {
+              font-size: 13.5px;
+              color: #d2f0d1;
+              line-height: 1.6;
+              margin: 0;
+            }
 
-@media (max-width: 1024px) {
-  .pstat-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 768px) {
-  .pen-item { flex-direction: column; align-items: center; text-align: center; }
-  .pen-meta, .pen-actions { justify-content: center; }
-  .collab-grid { grid-template-columns: 1fr; }
-}
-</style>
-<div class="fusion-row" style="max-width:100%;">
-<section id="content" class="full-width">
-<div id="post-penelitian" class="page type-page status-publish hentry">
-<div class="post-content">
+            @media (max-width: 1024px) {
+              .pstat-grid {
+                grid-template-columns: repeat(2, 1fr);
+              }
+            }
+            @media (max-width: 768px) {
+              .pen-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+              }
+              .pen-meta,
+              .pen-actions {
+                justify-content: center;
+              }
+              .collab-grid {
+                grid-template-columns: 1fr;
+              }
+            }
+          </style>
+          <div class="fusion-row" style="max-width: 100%">
+            <section id="content" class="full-width">
+              <div
+                id="post-penelitian"
+                class="page type-page status-publish hentry"
+              >
+                <div class="post-content">
+                  <!-- HERO -->
+                  <section class="hero-section ynki-section">
+                    <div class="hero-inner">
+                      <div class="hero-crumb">
+                        <a href="/">Beranda</a> &nbsp;/&nbsp;
+                        <a href="/pustaka/">Literasi &amp; Pengetahuan</a>
+                        &nbsp;/&nbsp; <span>Penelitian &amp; Laporan</span>
+                      </div>
+                      <h1 class="hero-h1">
+                        Pengetahuan untuk Tata Kelola Lanskap<br /><span
+                          class="hl"
+                          >Berbasis Bukti</span
+                        >
+                      </h1>
+                      <p class="hero-sub">
+                        Sebagai Landscape Governance Backbone Organization, YNKI
+                        menghasilkan berbagai penelitian, laporan, dan kajian
+                        yang mendukung pengambilan keputusan berbasis bukti
+                        dalam tata kelola lanskap.
+                      </p>
+                      <div class="hero-btns">
+                        <a href="#pen-koleksi" class="btn-cta-main">
+                          <svg
+                            width="17"
+                            height="17"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                            <path
+                              d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                            />
+                          </svg>
+                          Jelajahi Publikasi
+                        </a>
+                        <a href="#pen-collab" class="btn-cta-second"
+                          >Kolaborasi Riset</a
+                        >
+                      </div>
+                    </div>
+                  </section>
 
-<!-- HERO -->
-<section class="hero-section ynki-section">
-  <div class="hero-inner">
-    <div class="hero-crumb"><a href="/">Beranda</a> &nbsp;/&nbsp; <a href="/pustaka/">Literasi &amp; Pengetahuan</a> &nbsp;/&nbsp; <span>Penelitian &amp; Laporan</span></div>
-    <h1 class="hero-h1">Pengetahuan untuk Tata Kelola Lanskap<br><span class="hl">Berbasis Bukti</span></h1>
-    <p class="hero-sub">Sebagai Landscape Governance Backbone Organization, YNKI menghasilkan berbagai penelitian, laporan, dan kajian yang mendukung pengambilan keputusan berbasis bukti dalam tata kelola lanskap.</p>
-    <div class="hero-btns">
-      <a href="#pen-koleksi" class="btn-cta-main">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        Jelajahi Publikasi
-      </a>
-      <a href="#pen-collab" class="btn-cta-second">Kolaborasi Riset</a>
-    </div>
-  </div>
-</section>
+                  <!-- STATS -->
+                  <section class="pen-stats ynki-section">
+                    <div class="ynki-container">
+                      <div style="text-align: center; margin-bottom: 36px">
+                        <span class="section-badge">KOLEKSI PENGETAHUAN</span>
+                        <h2
+                          style="
+                            font-size: clamp(20px, 2.5vw, 28px);
+                            font-weight: 800;
+                            color: #0e241b;
+                            margin: 12px 0;
+                          "
+                        >
+                          Koleksi Penelitian &amp; Laporan YNKI
+                        </h2>
+                      </div>
+                      <div class="pstat-grid">
+                        <div class="pstat-card">
+                          <div class="pstat-num">
+                            25<span style="color: #ff8000">+</span>
+                          </div>
+                          <h4>Total Laporan &amp; Penelitian</h4>
+                          <p>
+                            Dokumen riset, laporan program, dan kajian akademis.
+                          </p>
+                        </div>
+                        <div class="pstat-card">
+                          <div class="pstat-num">8</div>
+                          <h4>Analisis Spasial &amp; GIS</h4>
+                          <p>
+                            Peta tematik dan analisis geospasial lanskap
+                            prioritas.
+                          </p>
+                        </div>
+                        <div class="pstat-card">
+                          <div class="pstat-num">6</div>
+                          <h4>Policy Brief &amp; Kajian</h4>
+                          <p>
+                            Rekomendasi kebijakan berbasis bukti untuk tata
+                            kelola lanskap.
+                          </p>
+                        </div>
+                        <div class="pstat-card">
+                          <div class="pstat-num">11</div>
+                          <h4>Laporan Program</h4>
+                          <p>
+                            Dokumentasi pelaksanaan program restorasi dan desa.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
 
-<!-- STATS -->
-<section class="pen-stats ynki-section">
-  <div class="ynki-container">
-    <div style="text-align:center;margin-bottom:36px;">
-      <span class="section-badge">KOLEKSI PENGETAHUAN</span>
-      <h2 style="font-size:clamp(20px,2.5vw,28px);font-weight:800;color:#0e241b;margin:12px 0;">Koleksi Penelitian &amp; Laporan YNKI</h2>
-    </div>
-    <div class="pstat-grid">
-      <div class="pstat-card">
-        <div class="pstat-num">25<span style="color:#FF8000;">+</span></div>
-        <h4>Total Laporan &amp; Penelitian</h4>
-        <p>Dokumen riset, laporan program, dan kajian akademis.</p>
-      </div>
-      <div class="pstat-card">
-        <div class="pstat-num">8</div>
-        <h4>Analisis Spasial &amp; GIS</h4>
-        <p>Peta tematik dan analisis geospasial lanskap prioritas.</p>
-      </div>
-      <div class="pstat-card">
-        <div class="pstat-num">6</div>
-        <h4>Policy Brief &amp; Kajian</h4>
-        <p>Rekomendasi kebijakan berbasis bukti untuk tata kelola lanskap.</p>
-      </div>
-      <div class="pstat-card">
-        <div class="pstat-num">11</div>
-        <h4>Laporan Program</h4>
-        <p>Dokumentasi pelaksanaan program restorasi dan desa.</p>
-      </div>
-    </div>
-  </div>
-</section>
+                  <!-- KOLEKSI -->
+                  <section
+                    id="pen-koleksi"
+                    class="ynki-section"
+                    style="background: #fff; padding: 90px 24px"
+                  >
+                    <div class="ynki-container">
+                      <div style="text-align: center">
+                        <div class="divider-line">
+                          <span class="line"></span
+                          ><span class="section-badge green"
+                            >ARSIP PUBLIKASI</span
+                          ><span class="line"></span>
+                        </div>
+                        <h2
+                          style="
+                            font-size: clamp(22px, 3vw, 34px);
+                            font-weight: 800;
+                            color: #0e241b;
+                            margin: 0 0 12px;
+                          "
+                        >
+                          Kumpulan Penelitian &amp; Laporan
+                        </h2>
+                        <p
+                          style="
+                            font-size: 15px;
+                            color: #536b5f;
+                            max-width: 760px;
+                            margin: 0 auto;
+                          "
+                        >
+                          Setiap publikasi tersedia untuk diunduh dalam format
+                          PDF atau diakses secara daring. Produk pengetahuan ini
+                          merupakan hasil kerja tim peneliti, staf program, dan
+                          mitra YNKI di lapangan.
+                        </p>
+                      </div>
 
-<!-- KOLEKSI -->
-<section id="pen-koleksi" class="ynki-section" style="background:#fff;padding:90px 24px;">
-  <div class="ynki-container">
-    <div style="text-align:center;">
-      <div class="divider-line"><span class="line"></span><span class="section-badge green">ARSIP PUBLIKASI</span><span class="line"></span></div>
-      <h2 style="font-size:clamp(22px,3vw,34px);font-weight:800;color:#0e241b;margin:0 0 12px;">Kumpulan Penelitian &amp; Laporan</h2>
-      <p style="font-size:15px;color:#536b5f;max-width:760px;margin:0 auto;">Setiap publikasi tersedia untuk diunduh dalam format PDF atau diakses secara daring. Produk pengetahuan ini merupakan hasil kerja tim peneliti, staf program, dan mitra YNKI di lapangan.</p>
-    </div>
+                      <!-- Filter -->
+                      <div class="filter-row">
+                        <span class="filter-tag active">Semua Publikasi</span>
+                        <span class="filter-tag"
+                          >Analisis Spasial &amp; GIS</span
+                        >
+                        <span class="filter-tag">Policy Brief</span>
+                        <span class="filter-tag">Laporan Program</span>
+                        <span class="filter-tag">Survei &amp; Assessment</span>
+                        <span class="filter-tag">Laporan Tahunan</span>
+                      </div>
 
-    <!-- Filter -->
-    <div class="filter-row">
-      <span class="filter-tag active">Semua Publikasi</span>
-      <span class="filter-tag">Analisis Spasial &amp; GIS</span>
-      <span class="filter-tag">Policy Brief</span>
-      <span class="filter-tag">Laporan Program</span>
-      <span class="filter-tag">Survei &amp; Assessment</span>
-      <span class="filter-tag">Laporan Tahunan</span>
-    </div>
+                      <div class="penelitian-list">
+                        <!-- 1 -->
+                        <div class="pen-item">
+                          <div class="pen-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                              />
+                              <circle cx="12" cy="10" r="3" />
+                            </svg>
+                          </div>
+                          <div class="pen-content">
+                            <div class="pen-meta">
+                              <span class="pen-badge badge-spasial"
+                                >Analisis Spasial &amp; GIS</span
+                              >
+                              <span class="pen-year">2020</span>
+                            </div>
+                            <h3>
+                              Analisis Spasial Kebakaran Hutan dan Lahan di
+                              Lanskap Gambut Pesisir Delta Kapuas
+                            </h3>
+                            <p>
+                              Analisis spasial yang mengungkap rata-rata
+                              kebakaran seluas 51.130 hektar terjadi setiap
+                              tahunnya di Lanskap Gambut Pesisir Delta Kapuas
+                              sejak 2015–2019. Menjadi dasar perencanaan
+                              restorasi dan pencegahan kebakaran.
+                            </p>
+                            <div class="pen-actions">
+                              <a href="#" class="btn-download"
+                                ><svg
+                                  width="14"
+                                  height="14"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-width="2.5"
+                                >
+                                  <path
+                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                  />
+                                  <polyline points="7 10 12 15 17 10" />
+                                  <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                Unduh PDF</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="pen-item">
+                          <div class="pen-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                              <polyline points="2 17 12 22 22 17" />
+                              <polyline points="2 12 12 17 22 12" />
+                            </svg>
+                          </div>
+                          <div class="pen-content">
+                            <div class="pen-meta">
+                              <span class="pen-badge badge-policy"
+                                >Policy Brief</span
+                              >
+                              <span class="pen-year">2024</span>
+                            </div>
+                            <h3>
+                              Policy Brief: Penguatan Tata Kelola Lanskap dalam
+                              Perencanaan Pembangunan Desa
+                            </h3>
+                            <p>
+                              Rekomendasi kebijakan untuk mengintegrasikan
+                              pendekatan lanskap dalam perencanaan pembangunan
+                              desa (RPJMDes dan RKPDes), berdasarkan pengalaman
+                              pendampingan intensif di tiga desa di Kabupaten
+                              Ketapang.
+                            </p>
+                            <div class="pen-actions">
+                              <a href="#" class="btn-download"
+                                ><svg
+                                  width="14"
+                                  height="14"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-width="2.5"
+                                >
+                                  <path
+                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                  />
+                                  <polyline points="7 10 12 15 17 10" />
+                                  <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                Unduh PDF</a
+                              >
+                              <a href="#" class="btn-read">Baca Online</a>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="pen-item">
+                          <div class="pen-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                              />
+                              <polyline points="14 2 14 8 20 8" />
+                              <line x1="16" y1="13" x2="8" y2="13" />
+                              <line x1="16" y1="17" x2="8" y2="17" />
+                              <polyline points="10 9 9 9 8 9" />
+                            </svg>
+                          </div>
+                          <div class="pen-content">
+                            <div class="pen-meta">
+                              <span class="pen-badge badge-survei"
+                                >Survei &amp; Assessment</span
+                              >
+                              <span class="pen-year">2024</span>
+                            </div>
+                            <h3>
+                              Survei Kesadartahuan Restorasi Gambut:
+                              Mendengarkan Suara Masyarakat
+                            </h3>
+                            <p>
+                              Survei langsung di Desa Limbung dan Permata Jaya
+                              sebagai bagian dari program restorasi gambut
+                              berbasis FPIC. Mengangkat perspektif dan aspirasi
+                              masyarakat lokal dalam perencanaan restorasi.
+                            </p>
+                            <div class="pen-actions">
+                              <a href="#" class="btn-download"
+                                ><svg
+                                  width="14"
+                                  height="14"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-width="2.5"
+                                >
+                                  <path
+                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                  />
+                                  <polyline points="7 10 12 15 17 10" />
+                                  <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                Unduh PDF</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 4 -->
+                        <div class="pen-item">
+                          <div class="pen-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                              <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                          </div>
+                          <div class="pen-content">
+                            <div class="pen-meta">
+                              <span class="pen-badge badge-program"
+                                >Laporan Program</span
+                              >
+                              <span class="pen-year">2024–2025</span>
+                            </div>
+                            <h3>
+                              Laporan Program Restorasi Gambut YNKI – PM Haze
+                            </h3>
+                            <p>
+                              Laporan pelaksanaan program restorasi gambut di
+                              Desa Permata Jaya, mencakup pembangunan sekat
+                              kanal, pembibitan tanaman gambut endemik, dan
+                              pembentukan Kelompok Restorasi Gambut berbasis
+                              komunitas.
+                            </p>
+                            <div class="pen-actions">
+                              <a href="#" class="btn-download"
+                                ><svg
+                                  width="14"
+                                  height="14"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-width="2.5"
+                                >
+                                  <path
+                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                  />
+                                  <polyline points="7 10 12 15 17 10" />
+                                  <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                Unduh PDF</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 5 -->
+                        <div class="pen-item">
+                          <div class="pen-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <rect
+                                x="3"
+                                y="4"
+                                width="18"
+                                height="18"
+                                rx="2"
+                                ry="2"
+                              />
+                              <line x1="16" y1="2" x2="16" y2="6" />
+                              <line x1="8" y1="2" x2="8" y2="6" />
+                              <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                          </div>
+                          <div class="pen-content">
+                            <div class="pen-meta">
+                              <span class="pen-badge badge-tahunan"
+                                >Laporan Tahunan</span
+                              >
+                              <span class="pen-year">2024</span>
+                            </div>
+                            <h3>Laporan Tahunan YNKI 2024</h3>
+                            <p>
+                              Laporan tahunan yang mencakup capaian program,
+                              laporan keuangan, perkembangan organisasi, dan
+                              dampak yang dihasilkan sepanjang tahun 2024.
+                            </p>
+                            <div class="pen-actions">
+                              <a href="#" class="btn-download"
+                                ><svg
+                                  width="14"
+                                  height="14"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-width="2.5"
+                                >
+                                  <path
+                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                  />
+                                  <polyline points="7 10 12 15 17 10" />
+                                  <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                Unduh PDF</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
 
-    <div class="penelitian-list">
-      <!-- 1 -->
-      <div class="pen-item">
-        <div class="pen-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div class="pen-content">
-          <div class="pen-meta">
-            <span class="pen-badge badge-spasial">Analisis Spasial &amp; GIS</span>
-            <span class="pen-year">2020</span>
+                  <!-- KOLABORASI RISET -->
+                  <section
+                    id="pen-collab"
+                    class="ynki-section"
+                    style="background: #117710; padding: 90px 24px"
+                  >
+                    <div class="ynki-container">
+                      <div style="text-align: center">
+                        <span class="section-badge">KEMITRAAN RISET</span>
+                        <h2
+                          style="
+                            font-size: clamp(22px, 3vw, 34px);
+                            font-weight: 800;
+                            color: #fff;
+                            margin: 12px 0;
+                          "
+                        >
+                          Ingin Berkolaborasi dalam Riset?
+                        </h2>
+                        <p
+                          style="
+                            font-size: 15px;
+                            color: #d2f0d1;
+                            max-width: 760px;
+                            margin: 0 auto;
+                          "
+                        >
+                          YNKI terbuka untuk kolaborasi riset dan penelitian
+                          dengan universitas, lembaga penelitian, dan akademisi
+                          yang memiliki kepedulian terhadap tata kelola lanskap
+                          berkelanjutan.
+                        </p>
+                      </div>
+                      <div class="collab-grid">
+                        <div class="collab-card">
+                          <div class="collab-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                            </svg>
+                          </div>
+                          <h4>Kolaborasi Akademis</h4>
+                          <p>
+                            Bergabunglah dengan jaringan peneliti YNKI untuk
+                            riset bersama, magang lapangan, atau penulisan
+                            publikasi ilmiah.
+                          </p>
+                        </div>
+                        <div class="collab-card">
+                          <div class="collab-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                              />
+                              <circle cx="9" cy="7" r="4" />
+                              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                          </div>
+                          <h4>Kemitraan Lembaga</h4>
+                          <p>
+                            Peluang kemitraan dengan lembaga penelitian untuk
+                            menghasilkan kajian kebijakan dan analisis spasial
+                            yang berdampak.
+                          </p>
+                        </div>
+                        <div class="collab-card">
+                          <div class="collab-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <circle cx="12" cy="12" r="10" />
+                              <line x1="2" y1="12" x2="22" y2="12" />
+                              <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                              />
+                            </svg>
+                          </div>
+                          <h4>Berbagi Data &amp; Pengetahuan</h4>
+                          <p>
+                            Akses dan berbagi data spasial, hasil survei
+                            lapangan, serta produk pengetahuan YNKI untuk
+                            mendukung riset yang lebih luas.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- CTA -->
+                  <section class="cta-section ynki-section">
+                    <div class="ynki-container">
+                      <h2>Hubungi Tim Peneliti Kami</h2>
+                      <p>
+                        Mari bekerja sama membangun pengetahuan yang dapat
+                        menjadi fondasi kebijakan untuk tata kelola lanskap yang
+                        lebih adil dan berkelanjutan.
+                      </p>
+                      <div class="cta-btns">
+                        <a
+                          href="/kontak-kami/"
+                          class="btn-cta-main"
+                          style="background: #fff; color: #117710"
+                          >Mulai Kolaborasi</a
+                        >
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </section>
           </div>
-          <h3>Analisis Spasial Kebakaran Hutan dan Lahan di Lanskap Gambut Pesisir Delta Kapuas</h3>
-          <p>Analisis spasial yang mengungkap rata-rata kebakaran seluas 51.130 hektar terjadi setiap tahunnya di Lanskap Gambut Pesisir Delta Kapuas sejak 2015–2019. Menjadi dasar perencanaan restorasi dan pencegahan kebakaran.</p>
-          <div class="pen-actions">
-            <a href="#" class="btn-download"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh PDF</a>
-          </div>
-        </div>
-      </div>
-      <!-- 2 -->
-      <div class="pen-item">
-        <div class="pen-icon"><svg viewBox="0 0 24 24" fill="none"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-        <div class="pen-content">
-          <div class="pen-meta">
-            <span class="pen-badge badge-policy">Policy Brief</span>
-            <span class="pen-year">2024</span>
-          </div>
-          <h3>Policy Brief: Penguatan Tata Kelola Lanskap dalam Perencanaan Pembangunan Desa</h3>
-          <p>Rekomendasi kebijakan untuk mengintegrasikan pendekatan lanskap dalam perencanaan pembangunan desa (RPJMDes dan RKPDes), berdasarkan pengalaman pendampingan intensif di tiga desa di Kabupaten Ketapang.</p>
-          <div class="pen-actions">
-            <a href="#" class="btn-download"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh PDF</a>
-            <a href="#" class="btn-read">Baca Online</a>
-          </div>
-        </div>
-      </div>
-      <!-- 3 -->
-      <div class="pen-item">
-        <div class="pen-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-        <div class="pen-content">
-          <div class="pen-meta">
-            <span class="pen-badge badge-survei">Survei &amp; Assessment</span>
-            <span class="pen-year">2024</span>
-          </div>
-          <h3>Survei Kesadartahuan Restorasi Gambut: Mendengarkan Suara Masyarakat</h3>
-          <p>Survei langsung di Desa Limbung dan Permata Jaya sebagai bagian dari program restorasi gambut berbasis FPIC. Mengangkat perspektif dan aspirasi masyarakat lokal dalam perencanaan restorasi.</p>
-          <div class="pen-actions">
-            <a href="#" class="btn-download"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh PDF</a>
-          </div>
-        </div>
-      </div>
-      <!-- 4 -->
-      <div class="pen-item">
-        <div class="pen-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-        <div class="pen-content">
-          <div class="pen-meta">
-            <span class="pen-badge badge-program">Laporan Program</span>
-            <span class="pen-year">2024–2025</span>
-          </div>
-          <h3>Laporan Program Restorasi Gambut YNKI – PM Haze</h3>
-          <p>Laporan pelaksanaan program restorasi gambut di Desa Permata Jaya, mencakup pembangunan sekat kanal, pembibitan tanaman gambut endemik, dan pembentukan Kelompok Restorasi Gambut berbasis komunitas.</p>
-          <div class="pen-actions">
-            <a href="#" class="btn-download"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh PDF</a>
-          </div>
-        </div>
-      </div>
-      <!-- 5 -->
-      <div class="pen-item">
-        <div class="pen-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-        <div class="pen-content">
-          <div class="pen-meta">
-            <span class="pen-badge badge-tahunan">Laporan Tahunan</span>
-            <span class="pen-year">2024</span>
-          </div>
-          <h3>Laporan Tahunan YNKI 2024</h3>
-          <p>Laporan tahunan yang mencakup capaian program, laporan keuangan, perkembangan organisasi, dan dampak yang dihasilkan sepanjang tahun 2024.</p>
-          <div class="pen-actions">
-            <a href="#" class="btn-download"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh PDF</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-</section>
-
-<!-- KOLABORASI RISET -->
-<section id="pen-collab" class="ynki-section" style="background:#117710;padding:90px 24px;">
-  <div class="ynki-container">
-    <div style="text-align:center;">
-      <span class="section-badge">KEMITRAAN RISET</span>
-      <h2 style="font-size:clamp(22px,3vw,34px);font-weight:800;color:#fff;margin:12px 0;">Ingin Berkolaborasi dalam Riset?</h2>
-      <p style="font-size:15px;color:#d2f0d1;max-width:760px;margin:0 auto;">YNKI terbuka untuk kolaborasi riset dan penelitian dengan universitas, lembaga penelitian, dan akademisi yang memiliki kepedulian terhadap tata kelola lanskap berkelanjutan.</p>
-    </div>
-    <div class="collab-grid">
-      <div class="collab-card">
-        <div class="collab-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-        <h4>Kolaborasi Akademis</h4>
-        <p>Bergabunglah dengan jaringan peneliti YNKI untuk riset bersama, magang lapangan, atau penulisan publikasi ilmiah.</p>
-      </div>
-      <div class="collab-card">
-        <div class="collab-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h4>Kemitraan Lembaga</h4>
-        <p>Peluang kemitraan dengan lembaga penelitian untuk menghasilkan kajian kebijakan dan analisis spasial yang berdampak.</p>
-      </div>
-      <div class="collab-card">
-        <div class="collab-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <h4>Berbagi Data &amp; Pengetahuan</h4>
-        <p>Akses dan berbagi data spasial, hasil survei lapangan, serta produk pengetahuan YNKI untuk mendukung riset yang lebih luas.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section ynki-section">
-  <div class="ynki-container">
-    <h2>Hubungi Tim Peneliti Kami</h2>
-    <p>Mari bekerja sama membangun pengetahuan yang dapat menjadi fondasi kebijakan untuk tata kelola lanskap yang lebih adil dan berkelanjutan.</p>
-    <div class="cta-btns">
-      <a href="/kontak-kami/" class="btn-cta-main" style="background:#fff;color:#117710;">Mulai Kolaborasi</a>
-    </div>
-  </div>
-</section>
-
-</div></div></section></div>
-</main>
+        </main>
         <div class="fusion-tb-footer fusion-footer">
           <div class="fusion-footer-widget-area fusion-widget-area">
             <div
-              class="fusion-fullwidth fullwidth-box fusion-builder-row-5 fusion-flex-container has-pattern-background has-mask-background nonhundred-percent-fullwidth "
+              class="fusion-fullwidth fullwidth-box fusion-builder-row-5 fusion-flex-container has-pattern-background has-mask-background nonhundred-percent-fullwidth"
               style="
                 --awb-border-radius-top-left: 0px;
                 --awb-border-radius-top-right: 0px;
@@ -3661,7 +4368,10 @@ img {
                     >
                       <p><strong>Yayasan Natural Kapital Indonesia</strong></p>
                       <p>Nature for Life</p>
-                      <p>Gg. Gn. Malabar, Sungai Jawi, Kec. Pontianak Kota, Kota Pontianak, Kalimantan Barat 78244</p>
+                      <p>
+                        Gg. Gn. Malabar, Sungai Jawi, Kec. Pontianak Kota, Kota
+                        Pontianak, Kalimantan Barat 78244
+                      </p>
                       <p>
                         <i
                           class="fb-icon-element-1 fb-icon-element fontawesome-icon fa-envelope fas circle-yes fusion-text-flow"
@@ -3685,20 +4395,100 @@ img {
                         >
                       </p>
                       <div class="ynki-footer-social">
-                        <a href="https://www.youtube.com/@naturalkapital123" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-youtube" title="YouTube" aria-label="YouTube">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        <a
+                          href="https://www.youtube.com/@naturalkapital123"
+                          target="_blank"
+                          rel="noopener"
+                          class="ynki-social-btn ynki-social-youtube"
+                          title="YouTube"
+                          aria-label="YouTube"
+                        >
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path
+                              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                            />
+                          </svg>
                         </a>
-                        <a href="https://web.facebook.com/naturalkapital?_rdc=1&_rdr#" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-facebook" title="Facebook" aria-label="Facebook">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        <a
+                          href="https://web.facebook.com/naturalkapital?_rdc=1&_rdr#"
+                          target="_blank"
+                          rel="noopener"
+                          class="ynki-social-btn ynki-social-facebook"
+                          title="Facebook"
+                          aria-label="Facebook"
+                        >
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path
+                              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                            />
+                          </svg>
                         </a>
-                        <a href="https://www.instagram.com/yayasannaturalkapital" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-instagram" title="Instagram" aria-label="Instagram">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <a
+                          href="https://www.instagram.com/yayasannaturalkapital"
+                          target="_blank"
+                          rel="noopener"
+                          class="ynki-social-btn ynki-social-instagram"
+                          title="Instagram"
+                          aria-label="Instagram"
+                        >
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path
+                              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                            />
+                          </svg>
                         </a>
-                        <a href="https://x.com/kapital_natural" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-xtwitter" title="X (Twitter)" aria-label="X (Twitter)">
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        <a
+                          href="https://x.com/kapital_natural"
+                          target="_blank"
+                          rel="noopener"
+                          class="ynki-social-btn ynki-social-xtwitter"
+                          title="X (Twitter)"
+                          aria-label="X (Twitter)"
+                        >
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path
+                              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                            />
+                          </svg>
                         </a>
-                        <a href="https://id.linkedin.com/company/natural-kapital-foundation" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-linkedin" title="LinkedIn" aria-label="LinkedIn">
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                        <a
+                          href="https://id.linkedin.com/company/natural-kapital-foundation"
+                          target="_blank"
+                          rel="noopener"
+                          class="ynki-social-btn ynki-social-linkedin"
+                          title="LinkedIn"
+                          aria-label="LinkedIn"
+                        >
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path
+                              d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
+                            />
+                          </svg>
                         </a>
                       </div>
                     </div>
@@ -3764,9 +4554,7 @@ img {
                         <li>Literasi &amp; Pengetahuan</li>
                         <li>Hubungi Kami</li>
                       </ul>
-                      <p>
-                        © 2026 Yayasan Natural Kapital Indonesia
-                      </p>
+                      <p>© 2026 Yayasan Natural Kapital Indonesia</p>
                     </div>
                   </div>
                 </div>
@@ -3835,6 +4623,7 @@ img {
       >
     </section>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
-  <script src="/assets/js/ynki-footer.js"></script></body>
+    <script src="/assets/js/ynki-footer.js"></script>
+  </body>
 </html>
 <!-- Page optimized by LiteSpeed Cache @2026-08-17 17:42:00 --><!-- Page cached by LiteSpeed Cache 7.8.1 on 2026-08-17 17:42:00 --><!-- Guest Mode --><!-- QUIC.cloud CCSS loaded ✅ /ccss/e6cdef7e17caebb6a8d79682a8c88011.css --><!-- QUIC.cloud UCSS loaded ✅ /ucss/d5027302c12ab86b6082acd2ecdd5c8e.css -->
