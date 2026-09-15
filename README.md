@@ -1,68 +1,134 @@
 # Website Yayasan Natural Kapital Indonesia (YNKI)
 
-Website statis hasil konversi dari WordPress (Avada Theme) yang telah dioptimasi, diperbaiki, dan siap dijalankan secara lokal maupun di-deploy ke hosting statis (seperti Vercel, Netlify, Cloudflare Pages, GitHub Pages, atau Apache/Nginx).
+Portal web resmi Yayasan Natural Kapital Indonesia (YNKI) yang mengintegrasikan halaman publik berkinerja tinggi, komponen visual interaktif 3D WebGL, sistem animasi scroll reveal responsif, serta panel admin content management system (CMS) berbasis Laravel.
 
 ---
 
-## 🚀 Cara Menjalankan Website
+## 📌 Ringkasan Arsitektur
 
-### Cara 1: Double-Click File Batch (Paling Mudah di Windows)
-Cukup double-click file **[`start-website.bat`](./start-website.bat)**. File ini akan otomatis membuka browser di `http://localhost:3000` dan menjalankan web server lokal.
-
-### Cara 2: Menggunakan Node.js / NPM
-Buka terminal / PowerShell di folder ini, lalu jalankan salah satu perintah berikut:
-```bash
-npm start
-```
-atau
-```bash
-npm run dev
-```
-atau (zero-dependency server bawaan Node.js):
-```bash
-node server.js
-```
-
-Lalu buka browser Anda di: **http://localhost:3000**
+Website ini mengusung arsitektur **Hybrid Laravel**:
+1. **Frontend Dinamis & Template Engine (Blade)**:
+   - Halaman utama/beranda dimuat melalui `resources/views/public/home.blade.php` oleh `HomeController`.
+   - Terintegrasi dengan database untuk konten dinamis, termasuk artikel riset, portofolio program, transparansi, serta tim ahli.
+2. **WebGL 3D Interactive Gallery**:
+   - Bagian *Mitra & Pendukung Kami* di beranda ditenagai komponen 3D WebGL OGL Circular Gallery (`assets/js/ynki-circular-gallery.js`).
+3. **Universal Subpage Fallback Handler**:
+   - Router Laravel (`routes/web.php`) menyediakan fallback cerdas untuk melayani 190+ subhalaman tematik, laporan riset, serta arsip statis dengan penanganan MIME-type dan CORS otomatis.
+4. **Admin Panel CMS (Protected)**:
+   - Panel admin aman di `/admin/dashboard` untuk mengelola data anggota tim, artikel, donasi, portofolio, dokumen transparansi, serta formulir partisipasi dan kontak.
 
 ---
 
-## 🛠️ Pembersihan & Optimasi yang Dilakukan
+## 🚀 Cara Menjalankan Website (Lokal / Development)
 
-1. **Konversi Script & Asset LiteSpeed Cache**:
-   - Mengubah script `type="litespeed/javascript"` yang sebelumnya menunda/menghambat eksekusi JavaScript menjadi script standar yang langsung dieksekusi secara sinkron.
-   - Mengubah `<link rel="preload" ... as="style">` menjadi `<link rel="stylesheet">` langsung agar CSS segera diterapkan tanpa delay.
+### Prasyarat:
+- **PHP** >= 8.1
+- **Composer**
+- **Node.js & NPM** (opsional untuk asset bundling / static runner)
+- **Database**: SQLite (default lokal) atau MySQL/MariaDB
 
-2. **Perbaikan Gambar LazyLoad**:
-   - Menghubungkan kembali atribut `data-src` dan `data-srcset` ke `src` dan `srcset` asli, menggantikan placeholder dummy SVG agar semua gambar dan logo tampil tajam dan instan.
+### Langkah Menjalankan:
 
-3. **Perbaikan Duplikasi Judul Hero Responsif**:
-   - Menyelaraskan aturan breakpoint Avada untuk kelas `.fusion-no-small-visibility`, `.fusion-no-medium-visibility`, dan `.fusion-no-large-visibility` agar judul hero tampil tepat satu kali di setiap ukuran layar.
+1. **Instalasi Dependensi PHP**:
+   ```bash
+   composer install
+   ```
 
-4. **Perbaikan Grid Mitra & Pendukung (Partner Badges)**:
-   - Menata ulang layout partner carousel menjadi CSS Grid rapi (2 baris x 10 logo) dengan card badge putih yang elegan dan responsif.
+2. **Konfigurasi Environment**:
+   Salin `.env.example` ke `.env` (jika belum ada) dan generate app key:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-5. **Perbaikan Halaman Sub (Tim, Kontak Kami, Portofolio, dll.)**:
-   - Menyematkan stylesheet global Avada sehingga form kontak, Google Maps iframe, header menu navigasi, kartu pengurus tim, dan footer tampil utuh di seluruh 199 halaman.
+3. **Migrasi Database & Seeder**:
+   ```bash
+   php artisan migrate --seed
+   ```
 
-6. **Script Batch Optimizer**:
-   - Disertakan file **[`optimize-static.js`](./optimize-static.js)** jika Anda ingin menjalankan ulang optimasi untuk seluruh file HTML:
-     ```bash
-     npm run optimize
-     ```
+4. **Pastikan Tautan Asset (Symlink / Junction Windows)**:
+   Aset publik terhubung ke folder `public/`:
+   ```bash
+   php artisan storage:link
+   ```
+   *(Catatan Windows: Folder `assets/`, `wp-content/`, dan `wp-includes/` telah dijunction ke dalam folder `public/` agar terbaca langsung oleh web server).*
+
+5. **Jalankan Server Laravel**:
+   ```bash
+   php artisan serve
+   ```
+   Akses melalui browser di: **http://127.0.0.1:8000**
 
 ---
 
-## 🌐 Struktur Direktori Utama
+## 🌟 Fitur-Fitur Utama
 
-- `index.html`: Halaman Beranda (Home)
-- `profil/`: Halaman Tentang Kami (Profil)
-- `tim/`: Halaman Tim & Pengurus YNKI
-- `portofolio/`: Halaman Portofolio
-- `kontak-kami/`: Halaman Kontak Kami
-- `kebijakan-privasi/`: Halaman Kebijakan Privasi
-- `kategori/`: Halaman Arsip Kategori Berita & Artikel
-- `wp-content/`: Aset gambar, font, ikon, dan stylesheet tema Avada
-- `wp-includes/`: Library JavaScript pendukung (jQuery)
-- `server.js`: Web server lokal berbasis Node.js
-- `start-website.bat`: Launcher cepat Windows
+### 1. Halaman Beranda Interaktif
+- **Hero & Profil Singkat**: Banner berlatar video/gambar dengan overlay kontras tinggi dan tipografi modern.
+- **3D Circular Gallery Mitra & Pendukung**: Animasi melingkar tiga dimensi interaktif menggunakan WebGL (OGL) untuk menampilkan mitra kerja sama YNKI.
+- **Scroll Reveal & Fade-in Animations**: Animasi halus `fadeInUp` berbasis `IntersectionObserver` pada kontainer `.ynki-section` dan `.ynki-container`.
+
+### 2. Panel Admin CMS (`/login` & `/admin/dashboard`)
+- **Manajemen Donasi**: Verifikasi transaksi donasi, pengelolaan nomor rekening & QRIS yayasan, serta ekspor laporan (Excel & PDF).
+- **Pengurus & Tim Ahli**: CRUD pengurus dan anggota tim dengan foto profil, biografi, serta peran jabatan.
+- **Portofolio & Program**: Pengelolaan program lapangan, target dampak, status capaian, dan dokumentasi.
+- **Transparansi & Akuntabilitas**: Publikasi laporan tahunan (*Annual Report*), laporan keuangan terverifikasi, dan audit.
+- **Pusat Pesan & Partisipasi**: Manajemen pesan dari halaman *Kontak Kami* dan pendaftaran sukarelawan dari form *Ikut Terlibat*.
+
+### 3. Subhalaman Literasi & Pengetahuan
+- Navigasi lengkap untuk:
+  - `/tim` & `/tim-ynki` (Struktur Organisasi & Tim Ahli)
+  - `/portofolio` (Program Konservasi & Pemberdayaan)
+  - `/lgos` (Komponen Pendukung LGOS)
+  - `/transparansi` (Laporan Tahunan & Dokumen Akuntabilitas)
+  - `/news-features`, `/penelitian-laporan`, `/analisis-kebijakan`, `/perspektif-budaya`
+  - `/story-foto-video` & `/data-spasial-dan-gis`
+  - `/kontak-kami` & `/ikut-terlibat`
+
+---
+
+## 📂 Struktur Direktori Penting
+
+```plaintext
+naturalkapital/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── Admin/         # Controller CMS (Dashboard, Donasi, Tim, Artikel, dll.)
+│   │   ├── Auth/          # Login & Autentikasi
+│   │   └── Public/        # Controller Halaman Publik (HomeController, PageContentController, dll.)
+│   └── Models/            # Model Eloquent (TeamMember, Donation, Article, Portfolio, dll.)
+├── assets/
+│   ├── css/               # ynki-responsive-system.css, tema warna, tata letak
+│   ├── js/                # ynki-circular-gallery.js, ynki-footer.js, interaksi DOM
+│   └── images/            # Logo mitra, galeri, ikon, dan aset visual
+├── database/              # Migrasi skema database & seeder
+├── public/                # Document root web server (termasuk junction assets)
+├── resources/
+│   └── views/
+│       ├── admin/         # View Blade Panel Admin
+│       ├── layouts/       # Master layout Blade
+│       └── public/        # View Blade halaman publik (home.blade.php, dll.)
+├── routes/
+│   └── web.php            # Rute publik, admin CMS, dan fallback handler
+├── wp-content/            # Aset pustaka gambar, font, dan stylesheet pendukung
+└── wp-includes/           # Pustaka utilitas Javascript & dependensi jQuery
+```
+
+---
+
+## 🎨 Desain & Identitas Visual
+- **Warna Identitas Utama**:
+  - Forest Green / Hijau Rimba: `#117710`
+  - Deep Dark Green: `#0c430c`
+  - Golden Orange: `#FF8000`
+  - Blue Accent: `#A0D2F5`
+  - Accent Red: `#B22231`
+- **Tipografi**: Inter / Arial / Sans-serif yang bersih, jelas, dan terbaca di semua perangkat.
+- **Responsivitas**: Desain ramah perangkat mobile, tablet, dan desktop dengan sistem menu drawer modern.
+
+---
+
+## 🔒 Keamanan & Praktik Terbaik
+- Route form donasi, partisipasi, dan kontak dilindungi CSRF token Laravel.
+- Route `/login` tersembunyi dari navigasi umum dengan pembatasan percobaan login (rate limiter / throttle).
+- Penanganan sanitize input dan validasi form pada seluruh controller admin dan publik.
