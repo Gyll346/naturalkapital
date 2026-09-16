@@ -102,12 +102,12 @@
   // 3. Tautan cepat sesuai konteks halaman
   var sections = [
     {
-      match: ['/sejarah-visi-misi/', '/tim/', '/lgos/', '/portofolio/', '/transparansi/', '/kontak-kami/', '/annual-report/'],
+      match: ['/sejarah-visi-misi/', '/landscape-governance/', '/dampak/', '/news-features/', '/kontak-kami/', '/annual-report/'],
       links: [
         ['/sejarah-visi-misi/', 'Sejarah, Visi & Misi'],
-        ['/tim/', 'Tim & Pengurus YNKI'],
-        ['/lgos/', 'LGOS: Sistem Operasi Organisasi'],
-        ['/portofolio/', 'Portfolio'],
+        ['/landscape-governance/', 'Landscape Governance'],
+        ['/dampak/', 'Dampak'],
+        ['/news-features/', 'News & Features'],
         ['/kontak-kami/', 'Kontak Kami'],
         ['/ikut-serta/', 'Ikut Serta'],
         ['/annual-report/', 'Annual Report']
@@ -138,7 +138,7 @@
       ]
     },
     {
-      match: ['/kategori/', '/tag/', '/news-features/', '/penerbitan/', '/publikasi/', '/penelitian-laporan/', '/analisis-kebijakan/', '/perspektif-budaya/', '/data-spasial-gis/', '/data-spasial-dan-gis/', '/stori-foto-video/', '/story-foto-video/'],
+      match: ['/news-features/', '/publikasi/', '/penelitian-laporan/', '/analisis-kebijakan/', '/perspektif-budaya/', '/data-spasial-gis/', '/data-spasial-dan-gis/', '/stori-foto-video/', '/story-foto-video/'],
       links: [
         ['/news-features/', 'News & Features'],
         ['/penelitian-laporan/', 'Penelitian & Laporan'],
@@ -516,19 +516,9 @@
           font-weight: 500 !important;
           color: #1e2d24 !important;
           text-decoration: none !important;
-          transition: all 0.15s ease !important;
-          border-left: 3px solid transparent !important;
           background: #ffffff !important;
           line-height: 1.4 !important;
           cursor: pointer !important;
-        }
-
-        .awb-menu__sub-a:hover,
-        .awb-menu__sub-li.current-menu-item > .awb-menu__sub-a {
-          background: #f0f8f0 !important;
-          color: #117710 !important;
-          border-left: 3px solid #117710 !important;
-          padding-left: 22px !important;
         }
       }
 

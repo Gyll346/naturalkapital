@@ -130,65 +130,13 @@
         ]
       }
     </script>
-    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com" />
-    <link rel="dns-prefetch" href="//use.typekit.net" />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Natural Kapital Foundation » Feed"
-      href="/feed/"
-    />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Natural Kapital Foundation » Umpan Komentar"
-      href="/comments/feed/"
-    />
+
     <link
       rel="icon"
       href="/wp-content/uploads/2026/05/favicon.webp"
       type="image/webp"
     />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/wp-content/uploads/2026/05/favicon-apple.webp"
-      type="image/webp"
-    />
-    <link
-      rel="icon"
-      sizes="192x192"
-      href="/wp-content/uploads/2026/05/favicon-android.webp"
-      type="image/webp"
-    />
-    <meta
-      name="msapplication-TileImage"
-      content="/wp-content/uploads/2026/05/favicon-edge.webp"
-      type="image/webp"
-    />
-    <meta
-      name="description"
-      content="The Avada Classic website is perfect for businesses and creatives, offering a clean, timeless, and a fully customizable WordPress design."
-    />
-    <meta property="og:locale" content="id_ID" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Natural Kapital Foundation" />
-    <meta
-      property="og:title"
-      content="Natural Kapital Foundation - For Sustainable and Resilience Landscape"
-    />
-    <meta
-      property="og:description"
-      content="The Avada Classic website is perfect for businesses and creatives, offering a clean, timeless, and a fully customizable WordPress design."
-    />
-    <meta property="og:url" content="/" />
-    <meta
-      property="og:image"
-      content="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3"
-    />
-    <meta property="og:image:width" content="200" />
-    <meta property="og:image:height" content="40" />
-    <meta property="og:image:type" content="image/webp" />
+   
     <style id="litespeed-ccss">
       :root {
         --wp-block-synced-color: #7a00df;
@@ -2666,19 +2614,9 @@
           font-weight: 500 !important;
           color: #1e2d24 !important;
           text-decoration: none !important;
-          transition: all 0.15s ease !important;
-          border-left: 3px solid transparent !important;
           background: #ffffff !important;
           line-height: 1.4 !important;
           cursor: pointer !important;
-        }
-
-        .awb-menu__sub-a:hover,
-        .awb-menu__sub-li.current-menu-item > .awb-menu__sub-a {
-          background: #f0f8f0 !important;
-          color: #117710 !important;
-          border-left: 3px solid #117710 !important;
-          padding-left: 22px !important;
         }
       }
 
@@ -2730,9 +2668,6 @@
     class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr fusion-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
     data-awb-post-id="5283"
   >
-    <a class="skip-link screen-reader-text" href="/sustainable-commodity/"
-      >Skip to content</a
-    >
     <div id="boxed-wrapper">
       <div id="wrapper" class="fusion-wrapper">
         <div id="home" style="position: relative; top: -1px"></div>
@@ -2814,14 +2749,20 @@
                     "
                   >
                     <span
-                      class="fusion-imageframe imageframe-none imageframe-1 hover-type-none"
-                      ><a
+                      class="fusion-imageframe imageframe-none imageframe-1 hover-type-none">
+                      <a
                         class="fusion-no-lightbox"
                         href="/"
                         target="_self"
                         aria-label="logo-ynki-500"
-                        ><img decoding="async" width="300" height="60" alt="Natural Kapital Foundation" class="img-responsive wp-image-183 disable-lazyload" src="/wp-content/uploads/2026/05/logo-ynki-500.webp" /></a
-                    ></span>
+                        ><img
+                          decoding="async"
+                          alt="Natural Kapital Foundation"
+                          class="img-responsive wp-image-183 disable-lazyload"
+                          src="/wp-content/uploads/2026/05/logo-ynki-500.webp"
+                        />
+                      </a>
+                    </span>
                   </div>
                 </div>
               </div>
