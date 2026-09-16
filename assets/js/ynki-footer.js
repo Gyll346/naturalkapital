@@ -1435,6 +1435,9 @@
       '.fusion-title',
       '.section-title',
       '.mengapa-grid',
+      '.stats-row',
+      '.media-stats',
+      '.pstat-grid',
       '.gerakan-item',
       '.impact-box',
       '.fusion-tb-footer .fusion-column-wrapper'
@@ -1471,6 +1474,103 @@
     }
   }
 
+  /* ==========================================================================
+     LIGHTWEIGHT COUNT UP ANIMATION FOR STAT NUMBERS
+     ========================================================================== */
+  function initCountUp() {
+    var statContainers = document.querySelectorAll('.stats-grid, .stats-row, .media-stats, .pstat-grid');
+    if (!statContainers || statContainers.length === 0) return;
+
+    function animateCounter(numEl) {
+      if (numEl.dataset.counted === 'true') return;
+      numEl.dataset.counted = 'true';
+
+      var rawHtml = numEl.innerHTML;
+      var numText = '';
+      for (var i = 0; i < numEl.childNodes.length; i++) {
+        var node = numEl.childNodes[i];
+        if (node.nodeType === 3) { // Text node
+          var t = node.nodeValue.trim();
+          if (t) {
+            numText = t;
+            break;
+          }
+        }
+      }
+      if (!numText) return;
+
+      var match = numText.match(/^([0-9.,]+)([Kk%]?)$/);
+      if (!match) return;
+
+      var numStr = match[1];
+      var suffix = match[2] || '';
+      var hasDot = numStr.indexOf('.') !== -1;
+      var cleanNum = parseFloat(numStr.replace(/\./g, '').replace(/,/g, '.'));
+      if (isNaN(cleanNum)) return;
+
+      var duration = 1500;
+      var startTime = null;
+
+      function step(now) {
+        if (!startTime) startTime = now;
+        var progress = Math.min((now - startTime) / duration, 1);
+        // Easing out quadratic
+        var easeProgress = 1 - Math.pow(1 - progress, 3);
+        var current = Math.floor(easeProgress * cleanNum);
+
+        var formatted = hasDot ? current.toLocaleString('id-ID') : current.toString();
+        var fullText = formatted + suffix;
+
+        for (var j = 0; j < numEl.childNodes.length; j++) {
+          var n = numEl.childNodes[j];
+          if (n.nodeType === 3 && n.nodeValue.trim()) {
+            n.nodeValue = fullText + ' ';
+            break;
+          }
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          // Kembalikan HTML asli untuk memastikan persis
+          numEl.innerHTML = rawHtml;
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    function triggerContainer(container) {
+      var nums = container.querySelectorAll('.stat-num, .mstat-num, .pstat-num');
+      nums.forEach(function (numEl) {
+        animateCounter(numEl);
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      var countObserver = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            triggerContainer(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px 0px -30px 0px',
+        threshold: 0.15
+      });
+
+      statContainers.forEach(function (container) {
+        countObserver.observe(container);
+      });
+    } else {
+      statContainers.forEach(function (container) {
+        triggerContainer(container);
+      });
+    }
+  }
+
   function initAllNavigation() {
     injectNavStyles();
     initDesktopDropdowns();
@@ -1478,6 +1578,7 @@
     initAlternatingBadges();
     initMediaFilter();
     initScrollFadeIn();
+    initCountUp();
   }
 
   injectNavStyles();
