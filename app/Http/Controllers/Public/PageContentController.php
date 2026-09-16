@@ -51,15 +51,21 @@ class PageContentController extends Controller
               ? (str_starts_with($member->photo_path, 'http') || str_starts_with($member->photo_path, '/') ? $member->photo_path : '/storage/' . $member->photo_path)
               : '/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp';
 
+            $linkedinLink = '';
+            if (!empty($member->linkedin_url)) {
+              $linkedinLink = '<a href="' . htmlspecialchars($member->linkedin_url) . '" target="_blank" rel="noopener" class="lead-linkedin" title="Profil LinkedIn" style="display:inline-flex; align-items:center; gap:4px; font-size:12px; color:#0a66c2; text-decoration:none; margin-top:8px; font-weight:600;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6z"/></svg> LinkedIn</a>';
+            }
+
             $html .= '
                         <div class="lead-card">
                           <div class="lead-photo-wrap">
-                            <img src="' . htmlspecialchars($photoSrc) . '" alt="' . htmlspecialchars($member->full_name) . '" onerror="this.src=\'/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp\'" />
+                            <img src="' . htmlspecialchars($photoSrc) . '" alt="' . htmlspecialchars($member->full_name) . '" loading="lazy" onerror="this.src=\'/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp\'" />
                           </div>
                           <div class="lead-body">
                             <h3 class="lead-name">' . htmlspecialchars($member->full_name) . '</h3>
                             <div class="lead-role">' . htmlspecialchars($member->position) . '</div>
                             <p class="lead-bio">' . htmlspecialchars($member->bio ?? '') . '</p>
+                            ' . $linkedinLink . '
                           </div>
                         </div>';
           }
