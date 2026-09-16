@@ -422,9 +422,9 @@
         .awb-menu__main-li.current-menu-item > .awb-menu__main-a,
         .awb-menu__main-li.current-menu-ancestor > .awb-menu__main-a {
           color: #117710 !important;
-          background: #f0fdf4 !important;
-          box-shadow: 0 2px 8px rgba(17, 119, 16, 0.12) !important;
-          transform: translateY(-1px) !important;
+          background: transparent !important;
+          box-shadow: none !important;
+          transform: none !important;
         }
 
         /* Invisible hover bridge to prevent losing hover when moving mouse down */
@@ -519,6 +519,13 @@
           background: #ffffff !important;
           line-height: 1.4 !important;
           cursor: pointer !important;
+          transition: background-color 0.18s ease, color 0.18s ease !important;
+        }
+
+        .awb-menu__sub-a:hover,
+        .awb-menu__sub-li:hover > .awb-menu__sub-a {
+          background: #f0fdf4 !important;
+          color: #117710 !important;
         }
       }
 

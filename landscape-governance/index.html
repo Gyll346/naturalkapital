@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -2371,465 +2371,13 @@
       }
     </style>
 
-    <link rel="stylesheet" href="/assets/css/ynki-responsive-system.css" />
+    <link rel="stylesheet" href="/assets/css/ynki-responsive-system.css?v=2" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
     />
-    <style id="ynki-universal-polish">
-      /* ===== YNKI GLOBAL POLISH & NAVBAR FIX ===== */
-      .fusion-tb-header > .fusion-fullwidth:first-child,
-      .fusion-tb-header,
-      .fusion-header,
-      .fusion-header-wrapper,
-      #fusion-header {
-        background: transparent !important;
-        background-color: transparent !important;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
-        box-shadow: none !important;
-      }
-
-      /* Nav Links - clear dark green */
-      .awb-menu__main-li > a,
-      .awb-menu__main-a {
-        color: #12291e !important;
-        font-weight: 700 !important;
-      }
-      .awb-menu__main-li > a:hover,
-      .awb-menu__main-li.current-menu-item > a {
-        color: #117710 !important;
-      }
-
-      /* Ensure no green backgrounds on header containers */
-      .fusion-fullwidth.fusion-builder-row-1 {
-        background-color: transparent !important;
-      }
-
-      /* Universal Button Overrides according to Color Specs */
-      .btn-cta-main,
-      a.btn-cta-main,
-      .fusion-button.button-primary:not(.btn-cta-second) {
-        background: #b22231 !important;
-        color: #ffffff !important;
-        border: none !important;
-        box-shadow: 0 4px 14px rgba(178, 34, 49, 0.28) !important;
-      }
-      .btn-cta-main:hover,
-      a.btn-cta-main:hover {
-        background: #941724 !important;
-        color: #ffffff !important;
-      }
-
-      .btn-cta-second,
-      a.btn-cta-second {
-        background: #a0d2f5 !important;
-        color: #0e241b !important;
-        border: 1px solid rgba(14, 36, 27, 0.12) !important;
-        box-shadow: 0 4px 14px rgba(160, 210, 245, 0.3) !important;
-      }
-      .btn-cta-second:hover,
-      a.btn-cta-second:hover {
-        background: #82c4f1 !important;
-        color: #05140d !important;
-      }
-
-      /* Universal Badge Accent: Oranye #FF8000 */
-      .badge-highlight,
-      .badge-orange,
-      .section-badge,
-      .tag-highlight {
-        color: #ff8000 !important;
-        background: #fff3e6 !important;
-        border-color: rgba(255, 128, 0, 0.35) !important;
-      }
-
-      /* Universal Accent Sekunder: Ungu #8000FF */
-      .badge-purple,
-      .category-tag-purple,
-      .tag-category,
-      .category-badge {
-        color: #8000ff !important;
-        background: #f3e8ff !important;
-        border-color: rgba(128, 0, 255, 0.3) !important;
-      }
-
-      /* Responsive clean image wrappers */
-      img {
-        max-width: 100% !important;
-        height: auto !important;
-      }
-    </style>
-    <style id="ynki-universal-clean-header">
-      /* ===== YNKI GLOBAL NAVBAR: ZERO SCROLL DEPENDENCY & PURE INSTANT HOVER ===== */
-      #boxed-wrapper,
-      #wrapper,
-      .fusion-wrapper {
-        overflow: visible !important;
-        position: relative !important;
-      }
-
-      /* HEADER IS STRICTLY STATIC / RELATIVE (NO STICKY / NO SCROLL EFFECTS) */
-      header,
-      #fusion-header,
-      .fusion-header,
-      .fusion-tb-header,
-      .fusion-header-wrapper,
-      .fusion-fullwidth.fusion-builder-row-1,
-      .fusion-builder-row-1,
-      .fusion-is-sticky,
-      .fusion-sticky-header,
-      .fusion-sticky-menu,
-      .fusion-header-sticky,
-      .awb-sticky,
-      .element-is-sticky {
-        position: relative !important;
-        top: auto !important;
-        bottom: auto !important;
-        left: auto !important;
-        right: auto !important;
-        z-index: 999999999 !important;
-        overflow: visible !important;
-        transform: none !important;
-        transition: none !important;
-        animation: none !important;
-        filter: none !important;
-        background: transparent !important;
-        background-color: transparent !important;
-        border-bottom: none !important;
-        box-shadow: none !important;
-      }
-
-      .fusion-builder-row,
-      .fusion-layout-column,
-      .fusion-column-wrapper,
-      nav.awb-menu,
-      .awb-menu,
-      .awb-menu__main-ul,
-      .awb-menu__main-li {
-        overflow: visible !important;
-        pointer-events: auto !important;
-      }
-
-      /* Hero & content sections placed below header */
-      #sliders-container,
-      .fusion-slider-visibility,
-      main,
-      #main,
-      #hero-home,
-      .fusion-page-title-bar,
-      .fusion-fullwidth:not(.fusion-builder-row-1) {
-        position: relative !important;
-        z-index: 1 !important;
-      }
-
-      /* Desktop: Hide ONLY Burger Buttons & Mobile Drawer */
-      @media (min-width: 993px) {
-        button.awb-menu__m-toggle,
-        .awb-menu__m-toggle,
-        .awb-menu__m-toggle-inner,
-        button[class*="awb-menu__m-toggle"],
-        .fusion-mobile-menu-icons,
-        .fusion-mobile-nav-holder,
-        .collapsed-nav-text,
-        .awb-menu__open-nav-submenu_mobile,
-        .ynki-mobile-nav-drawer,
-        .ynki-mobile-nav-backdrop,
-        #ynki-mobile-drawer,
-        #ynki-mobile-backdrop {
-          display: none !important;
-          visibility: hidden !important;
-          opacity: 0 !important;
-          width: 0 !important;
-          height: 0 !important;
-          pointer-events: none !important;
-          position: absolute !important;
-          left: -9999px !important;
-        }
-
-        /* Header single row layout */
-        .fusion-builder-row-1 {
-          display: flex !important;
-          align-items: center !important;
-          justify-content: space-between !important;
-          flex-wrap: nowrap !important;
-        }
-
-        .fusion-builder-column-0 {
-          flex: 0 0 auto !important;
-          width: auto !important;
-          max-width: 420px !important;
-        }
-
-        .fusion-builder-column-0 img,
-        .fusion-tb-header .fusion-imageframe img,
-        .fusion-tb-header img.wp-image-183 {
-          max-width: 360px !important;
-          width: auto !important;
-          height: 64px !important;
-          max-height: 72px !important;
-          object-fit: contain !important;
-        }
-
-        .fusion-builder-column-1 {
-          flex: 1 1 auto !important;
-          width: auto !important;
-          max-width: none !important;
-        }
-
-        /* Show Nav Container */
-        nav.awb-menu,
-        .awb-menu {
-          display: flex !important;
-          align-items: center !important;
-          justify-content: flex-end !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          width: 100% !important;
-          background: transparent !important;
-          border: none !important;
-          box-shadow: none !important;
-        }
-
-        .awb-menu__main-ul {
-          display: flex !important;
-          flex-wrap: nowrap !important;
-          white-space: nowrap !important;
-          align-items: center !important;
-          justify-content: flex-end !important;
-          list-style: none !important;
-          margin: 0 !important;
-          padding: 0 !important;
-          gap: 14px !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
-
-        .awb-menu__main-li {
-          position: relative !important;
-          list-style: none !important;
-          margin: 0 !important;
-          padding: 0 !important;
-          display: inline-block !important;
-          overflow: visible !important;
-        }
-
-        .awb-menu__main-li > a,
-        .awb-menu__main-a {
-          color: #12291e !important;
-          font-weight: 700 !important;
-          font-size: 13.5px !important;
-          text-decoration: none !important;
-          padding: 12px 14px !important;
-          display: inline-flex !important;
-          align-items: center !important;
-          transition: color 0.15s ease !important;
-          cursor: pointer !important;
-        }
-
-        .awb-menu__main-li:hover > a,
-        .awb-menu__main-li.current-menu-item > a,
-        .awb-menu__main-li.current-menu-ancestor > a,
-        .awb-menu__main-li.is-open > a {
-          color: #117710 !important;
-        }
-
-        /* Invisible hover bridge to prevent losing hover when moving mouse down */
-        .awb-menu__main-li::after {
-          content: '' !important;
-          position: absolute !important;
-          top: 100% !important;
-          left: 0 !important;
-          width: 100% !important;
-          height: 15px !important;
-          display: block !important;
-          z-index: 999999998 !important;
-          pointer-events: auto !important;
-        }
-
-        /* RESET AVADA HIDDEN CLIPPING ON SUBMENU */
-        .awb-menu__sub-ul {
-          clip: auto !important;
-          clip-path: none !important;
-          -webkit-clip-path: none !important;
-          height: auto !important;
-          max-height: none !important;
-          transform: none !important;
-          transition: none !important;
-          overflow: visible !important;
-        }
-
-        /* DEFAULT HIDDEN STATE WHEN NOT HOVERED */
-        .awb-menu__main-li:not(:hover):not(.is-open):not(:focus-within) > .awb-menu__sub-ul {
-          display: none !important;
-          opacity: 0 !important;
-          visibility: hidden !important;
-          pointer-events: none !important;
-        }
-
-        /* DROPDOWN SUBMENU BOX - MATCHING IMAGE 1 DESIGN (PURE HOVER, ZERO SCROLL NEEDED) */
-        .awb-menu__main-li:hover > .awb-menu__sub-ul,
-        .awb-menu__main-li.is-open > .awb-menu__sub-ul,
-        .awb-menu__main-li:focus-within > .awb-menu__sub-ul,
-        .menu-item-has-children:hover > .sub-menu,
-        .menu-item-has-children:hover > .awb-menu__sub-ul {
-          display: block !important;
-          opacity: 1 !important;
-          visibility: visible !important;
-          pointer-events: auto !important;
-          position: absolute !important;
-          top: 100% !important;
-          left: 0 !important;
-          min-width: 260px !important;
-          width: max-content !important;
-          height: auto !important;
-          clip: auto !important;
-          clip-path: none !important;
-          -webkit-clip-path: none !important;
-          transform: none !important;
-          overflow: visible !important;
-          background: #ffffff !important;
-          border: 1px solid #d2e8d1 !important;
-          border-top: 3px solid #117710 !important;
-          border-radius: 0 0 6px 6px !important;
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16) !important;
-          padding: 0 !important;
-          margin: 0 !important;
-          list-style: none !important;
-          z-index: 999999999 !important;
-        }
-
-        .awb-menu__sub-li {
-          list-style: none !important;
-          padding: 0 !important;
-          margin: 0 !important;
-          display: block !important;
-          width: 100% !important;
-          border-bottom: 1px solid #edf2ed !important;
-          overflow: visible !important;
-          clip: auto !important;
-          clip-path: none !important;
-          transform: none !important;
-        }
-
-        .awb-menu__sub-li:last-child {
-          border-bottom: none !important;
-        }
-
-        .awb-menu__sub-a {
-          display: block !important;
-          padding: 12px 18px !important;
-          font-size: 13.5px !important;
-          font-weight: 500 !important;
-          color: #1e2d24 !important;
-          text-decoration: none !important;
-          transition: all 0.15s ease !important;
-          border-left: 3px solid transparent !important;
-          background: #ffffff !important;
-          line-height: 1.4 !important;
-          cursor: pointer !important;
-          box-sizing: border-box !important;
-        }
-
-        .awb-menu__sub-a:hover,
-        .awb-menu__sub-li.current-menu-item > .awb-menu__sub-a {
-          background: #f0f8f0 !important;
-          color: #117710 !important;
-          border-left: 3px solid #117710 !important;
-          padding-left: 22px !important;
-        }
-      }
-
-      /* Mobile Navbar */
-      @media (max-width: 992px) {
-        nav.awb-menu,
-        .awb-menu {
-          display: flex !important;
-          align-items: center !important;
-          justify-content: flex-end !important;
-          background: transparent !important;
-          border: none !important;
-          box-shadow: none !important;
-          padding: 0 !important;
-          margin: 0 !important;
-        }
-
-        button.awb-menu__m-toggle,
-        .awb-menu__m-toggle {
-          display: inline-flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          width: 44px !important;
-          height: 44px !important;
-          background: #f0fdf4 !important;
-          border: 1.5px solid #117710 !important;
-          border-radius: 10px !important;
-          padding: 0 !important;
-          margin: 0 !important;
-          cursor: pointer !important;
-          box-shadow: 0 2px 8px rgba(17, 119, 16, 0.15) !important;
-        }
-
-        .awb-menu__m-toggle .classic-bars-solid,
-        .awb-menu__m-toggle .fa-bars {
-          color: #117710 !important;
-          font-size: 20px !important;
-        }
-
-        /* Hide burger toggle button when mobile drawer is open so it NEVER bleeds through or overlaps */
-        body.ynki-mobile-nav-open button.awb-menu__m-toggle,
-        body.ynki-mobile-nav-open .awb-menu__m-toggle,
-        body.ynki-mobile-nav-open .fusion-mobile-menu-icons {
-          display: none !important;
-          visibility: hidden !important;
-          opacity: 0 !important;
-          pointer-events: none !important;
-        }
-
-        /* Mobile Drawer & Backdrop (Maximum Z-Index to prevent page bleed-through) */
-        .ynki-mobile-nav-backdrop {
-          z-index: 2147483640 !important;
-        }
-        .ynki-mobile-nav-drawer {
-          z-index: 2147483647 !important;
-          background: #ffffff !important;
-        }
-      }
-    </style>
-    <style>
-      .ynki-footer-social {
-        display: flex !important;
-        align-items: center !important;
-        gap: 10px !important;
-        margin-top: 20px !important;
-        flex-wrap: wrap !important;
-      }
-      .ynki-social-btn {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 44px !important;
-        height: 44px !important;
-        background: rgba(255, 255, 255, 0.12) !important;
-        border: 1px solid rgba(255, 255, 255, 0.22) !important;
-        border-radius: 12px !important;
-        color: #ffffff !important;
-        text-decoration: none !important;
-        transition: all 0.25s ease !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
-      }
-      .ynki-social-btn:hover {
-        background: rgba(255, 255, 255, 0.28) !important;
-        transform: translateY(-3px) !important;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2) !important;
-      }
-      .ynki-social-btn svg {
-        width: 20px !important;
-        height: 20px !important;
-        fill: #ffffff !important;
-      }
-    </style>
   </head>
   <body
     class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr no-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
@@ -3074,12 +2622,11 @@
                         <ul class="awb-menu__sub-ul awb-menu__sub-ul_main">
                           <li
                             id="menu-item-6760"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6760 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6760 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/sejarah-visi-misi/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Sejarah, Visi &amp; Misi</span></a
                             >
                           </li>
@@ -3093,12 +2640,11 @@
                           </li>
                           <li
                             id="menu-item-6762"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6762 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6762 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/lgos/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>LGOS: Sistem Operasi Organisasi</span></a
                             >
                           </li>
@@ -3140,45 +2686,41 @@
                         <ul class="awb-menu__sub-ul awb-menu__sub-ul_main">
                           <li
                             id="menu-item-6766"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6766 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6766 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/landscape-governance/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Landscape Governance</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6767"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6767 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6767 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/natural-capital/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Natural Capital &amp; Restoration</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6768"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6768 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6768 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/sustainable-commodity/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Sustainable Commodity System</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6769"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6769 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6769 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/landscape-intelligence/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span
                                 >Pengetahuan Lanskap &amp; Inovasi</span
                               ></a
@@ -3186,12 +2728,11 @@
                           </li>
                           <li
                             id="menu-item-6770"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6770 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6770 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/institutional-partnership/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span
                                 >Institutional Sustainability &amp;
                                 Partnership</span
@@ -3229,34 +2770,31 @@
                         <ul class="awb-menu__sub-ul awb-menu__sub-ul_main">
                           <li
                             id="menu-item-6771"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6771 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6771 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/dampak/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Dampak</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6772"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6772 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6772 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/kisah-perubahan/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Kisah Perubahan</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6773"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6773 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6773 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/liputan-media/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Liputan Media</span></a
                             >
                           </li>
@@ -3301,23 +2839,21 @@
                           </li>
                           <li
                             id="menu-item-6776"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6776 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6776 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/penelitian-laporan/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Penelitian &amp; Laporan</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6777"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6777 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6777 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/analisis-kebijakan/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Analisis &amp; Kebijakan</span></a
                             >
                           </li>
@@ -3333,23 +2869,21 @@
                           </li>
                           <li
                             id="menu-item-6778"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6778 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6778 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/data-spasial-gis/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Data Spasial dan GIS</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6779"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6779 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6779 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/stori-foto-video/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Story Foto &amp; Video</span></a
                             >
                           </li>
@@ -3374,7 +2908,7 @@
         >
           <link
             rel="stylesheet"
-            href="/assets/css/ynki-responsive-system.css"
+            href="/assets/css/ynki-responsive-system.css?v=2"
           />
 
           <style>

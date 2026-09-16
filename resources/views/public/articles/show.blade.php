@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -2363,136 +2363,8 @@
   }
 </style>
 
-<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
-<style id="ynki-universal-polish">
-/* ===== YNKI GLOBAL POLISH & NAVBAR FIX ===== */
-.fusion-tb-header > .fusion-fullwidth:first-child,
-.fusion-tb-header,
-.fusion-header,
-.fusion-header-wrapper,
-#fusion-header {
-  background: transparent !important;
-  background-color: transparent !important;
-  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
-  box-shadow: none !important;
-}
-
-/* Nav Links - clear dark green */
-.awb-menu__main-li > a,
-.awb-menu__main-a {
-  color: #12291e !important;
-  font-weight: 700 !important;
-}
-.awb-menu__main-li > a:hover,
-.awb-menu__main-li.current-menu-item > a {
-  color: #117710 !important;
-}
-
-/* Ensure no green backgrounds on header containers */
-.fusion-fullwidth.fusion-builder-row-1 {
-  background-color: transparent !important;
-}
-
-/* Universal Button Overrides according to Color Specs */
-.btn-cta-main,
-a.btn-cta-main,
-.fusion-button.button-primary:not(.btn-cta-second) {
-  background: #B22231 !important;
-  color: #ffffff !important;
-  border: none !important;
-  box-shadow: 0 4px 14px rgba(178,34,49,0.28) !important;
-}
-.btn-cta-main:hover,
-a.btn-cta-main:hover {
-  background: #941724 !important;
-  color: #ffffff !important;
-}
-
-.btn-cta-second,
-a.btn-cta-second {
-  background: #A0D2F5 !important;
-  color: #0e241b !important;
-  border: 1px solid rgba(14,36,27,0.12) !important;
-  box-shadow: 0 4px 14px rgba(160,210,245,0.3) !important;
-}
-.btn-cta-second:hover,
-a.btn-cta-second:hover {
-  background: #82c4f1 !important;
-  color: #05140d !important;
-}
-
-/* Universal Badge Accent: Oranye #FF8000 */
-.badge-highlight,
-.badge-orange,
-.section-badge,
-.tag-highlight {
-  color: #FF8000 !important;
-  background: #fff3e6 !important;
-  border-color: rgba(255,128,0,0.35) !important;
-}
-
-/* Universal Accent Sekunder: Ungu #8000FF */
-.badge-purple,
-.category-tag-purple,
-.tag-category,
-.category-badge {
-  color: #8000FF !important;
-  background: #f3e8ff !important;
-  border-color: rgba(128,0,255,0.3) !important;
-}
-
-/* Responsive clean image wrappers */
-img {
-  max-width: 100% !important;
-  height: auto !important;
-}
-</style>
-<style id="ynki-universal-clean-header">
-/* ===== YNKI GLOBAL NAVBAR CLEANUP - 100% TRANSPARENT / NO GREEN BACKGROUND ===== */
-header,
-.fusion-tb-header,
-.fusion-tb-header > .fusion-fullwidth,
-.fusion-tb-header > .fusion-fullwidth:first-child,
-.fusion-header,
-.fusion-header-wrapper,
-#fusion-header,
-.fusion-fullwidth.fusion-builder-row-1,
-div[class*="fusion-builder-row-1"],
-.fusion-top-header {
-  background: transparent !important;
-  background-color: transparent !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
-}
-
-/* Nav Menu typography and colors */
-.awb-menu__main-li > a,
-.awb-menu__main-a {
-  color: #12291e !important;
-  font-weight: 700 !important;
-  font-size: 13.5px !important;
-  text-decoration: none !important;
-}
-.awb-menu__main-li > a:hover,
-.awb-menu__main-li.current-menu-item > a,
-.awb-menu__main-li.current-menu-parent > a {
-  color: #117710 !important;
-}
-
-/* Mobile Navbar clean transparent */
-.fusion-mobile-menu-design-modern .fusion-header,
-.fusion-mobile-menu-design-classic .fusion-header {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-</style>
-<style>
-.ynki-footer-social { display: flex !important; align-items: center !important; gap: 10px !important; margin-top: 20px !important; flex-wrap: wrap !important; }
-.ynki-social-btn { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: 44px !important; background: rgba(255, 255, 255, 0.12) !important; border: 1px solid rgba(255, 255, 255, 0.22) !important; border-radius: 12px !important; color: #ffffff !important; text-decoration: none !important; transition: all 0.25s ease !important; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important; }
-.ynki-social-btn:hover { background: rgba(255, 255, 255, 0.28) !important; transform: translateY(-3px) !important; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2) !important; }
-.ynki-social-btn svg { width: 20px !important; height: 20px !important; fill: #ffffff !important; }
-</style>
-</head>
+<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css?v=2">
+  </head>
   <body
     class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr fusion-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
     data-awb-post-id="5283"
@@ -2726,12 +2598,11 @@ div[class*="fusion-builder-row-1"],
                         <ul class="awb-menu__sub-ul awb-menu__sub-ul_main">
                           <li
                             id="menu-item-6760"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6760 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6760 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/sejarah-visi-misi/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Sejarah, Visi &amp; Misi</span></a
                             >
                           </li>
@@ -2745,12 +2616,11 @@ div[class*="fusion-builder-row-1"],
                           </li>
                           <li
                             id="menu-item-6762"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6762 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6762 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/lgos/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>LGOS: Sistem Operasi Organisasi</span></a
                             >
                           </li>
@@ -2792,45 +2662,41 @@ div[class*="fusion-builder-row-1"],
                         <ul class="awb-menu__sub-ul awb-menu__sub-ul_main">
                           <li
                             id="menu-item-6766"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6766 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6766 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/landscape-governance/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Landscape Governance</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6767"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6767 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6767 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/natural-capital/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Natural Capital &amp; Restoration</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6768"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6768 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6768 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/sustainable-commodity/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Sustainable Commodity System</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6769"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6769 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6769 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/landscape-intelligence/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span
                                 >Landscape Intelligence &amp; Innovation</span
                               ></a
@@ -2838,12 +2704,11 @@ div[class*="fusion-builder-row-1"],
                           </li>
                           <li
                             id="menu-item-6770"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6770 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6770 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/institutional-partnership/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span
                                 >Institutional Sustainability &amp;
                                 Partnership</span
@@ -2881,34 +2746,31 @@ div[class*="fusion-builder-row-1"],
                         <ul class="awb-menu__sub-ul awb-menu__sub-ul_main">
                           <li
                             id="menu-item-6771"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6771 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6771 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/dampak/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Dampak</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6772"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6772 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6772 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/kisah-perubahan/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Kisah Perubahan</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6773"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6773 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6773 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/liputan-media/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Liputan Media</span></a
                             >
                           </li>
@@ -2953,23 +2815,21 @@ div[class*="fusion-builder-row-1"],
                           </li>
                           <li
                             id="menu-item-6776"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6776 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6776 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/penelitian-laporan/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Penelitian &amp; Laporan</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6777"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6777 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6777 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/analisis-kebijakan/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Analisis &amp; Kebijakan</span></a
                             >
                           </li>
@@ -2985,23 +2845,21 @@ div[class*="fusion-builder-row-1"],
                           </li>
                           <li
                             id="menu-item-6778"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6778 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6778 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/data-spasial-gis/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Data Spasial dan GIS</span></a
                             >
                           </li>
                           <li
                             id="menu-item-6779"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-6779 awb-menu__li awb-menu__sub-li"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6779 awb-menu__li awb-menu__sub-li"
                           >
                             <a
                               href="/stori-foto-video/"
                               class="awb-menu__sub-a"
-                              aria-current="page"
                               ><span>Story Foto &amp; Video</span></a
                             >
                           </li>
@@ -3016,7 +2874,7 @@ div[class*="fusion-builder-row-1"],
         </div>
         <div id="sliders-container" class="fusion-slider-visibility"></div>
         <main id="main" class="clearfix width-100" style="font-family:'Inter',Arial,Helvetica,sans-serif; padding: 0 !important;">
-          <link rel="stylesheet" href="/assets/css/ynki-responsive-system.css">
+          <link rel="stylesheet" href="/assets/css/ynki-responsive-system.css?v=2">
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800&display=swap">
 
