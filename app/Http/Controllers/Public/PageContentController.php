@@ -555,26 +555,43 @@ class PageContentController extends Controller
     foreach ($articles as $art) {
       $imgThumb = $art->featured_image_path
         ? '/storage/' . $art->featured_image_path
-        : '/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp';
+        : null;
+
+      $imgHtml = $imgThumb
+        ? '<img src="' . htmlspecialchars($imgThumb) . '" alt="' . htmlspecialchars($art->title) . '" onerror="this.onerror=null;this.parentElement.innerHTML=\'<svg width=\\\'40\\\' height=\\\'40\\\' viewBox=\\\'0 0 24 24\\\' fill=\\\'none\\\' stroke=\\\'currentColor\\\' stroke-width=\\\'1.5\\\' stroke-linecap=\\\'round\\\' stroke-linejoin=\\\'round\\\'><path d=\\\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\\\'/><polyline points=\\\'14 2 14 8 20 8\\\'/><line x1=\\\'16\\\' y1=\\\'13\\\' x2=\\\'8\\\' y2=\\\'13\\\'/><line x1=\\\'16\\\' y1=\\\'17\\\' x2=\\\'8\\\' y2=\\\'17\\\'/><polyline points=\\\'10 9 9 9 8 9\\\'/></svg>\';">'
+        : '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>';
 
       $cardsHtml .= '
-            <div class="pptx-card">
-              <div class="pptx-card-thumb">
-                <img src="' . htmlspecialchars($imgThumb) . '" alt="' . htmlspecialchars($art->title) . '" onerror="this.src=\'/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp\'">
-              </div>
-              <div class="pptx-card-body">
-                <span class="pptx-cat-tag">' . htmlspecialchars($art->category->category_name ?? 'BERITA PROGRAM') . '</span>
-                <h3 class="pptx-card-title">' . htmlspecialchars($art->title) . '</h3>
-                <div class="pptx-card-date">' . ($art->published_at ? $art->published_at->translatedFormat('d F Y') : date('d F Y')) . '</div>
-                <p class="pptx-card-text">' . htmlspecialchars($art->excerpt ?? '') . '</p>
-                <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '" class="btn-read-more">Baca Selengkapnya &rarr;</a>
-              </div>
-            </div>';
+                        <!-- Admin Dynamic Card -->
+                        <div class="doc-card">
+                          <div class="doc-img">
+                            ' . $imgHtml . '
+                          </div>
+                          <div class="doc-body">
+                            <div class="doc-meta">
+                              <span class="doc-year">' . ($art->published_at ? $art->published_at->format('Y') : date('Y')) . '</span>
+                            </div>
+                            <div class="doc-loc">' . htmlspecialchars(strtoupper($art->category->category_name ?? 'YNKI NEWS')) . '</div>
+                            <h3>
+                              <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '">' . htmlspecialchars($art->title) . '</a>
+                            </h3>
+                            <p>' . htmlspecialchars($art->excerpt ?? '') . '</p>
+                            <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '" class="btn-dl">Baca Selengkapnya
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>';
     }
 
-    $pattern = '/<div class="pptx-cards-3col">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-    $replacement = '<div class="pptx-cards-3col">' . $cardsHtml . '</div></div></section>';
-    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
+    $pattern = '/<div class="docs-grid">\s*(<!-- 1 -->.*?<\/div>\s*<\/div>)/s';
+    if (preg_match($pattern, $originalHtml)) {
+      $renderedHtml = preg_replace($pattern, '<div class="docs-grid">' . $cardsHtml . '$1', $originalHtml);
+    } else {
+      $renderedHtml = str_replace('<div class="docs-grid">', '<div class="docs-grid">' . $cardsHtml, $originalHtml);
+    }
 
     return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
   }
