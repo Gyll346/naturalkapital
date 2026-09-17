@@ -39,7 +39,7 @@
                             <option value="Landscape Governance" {{ $project->category === 'Landscape Governance' ? 'selected' : '' }}>Landscape Governance</option>
                             <option value="Natural Capital & Restoration" {{ $project->category === 'Natural Capital & Restoration' ? 'selected' : '' }}>Natural Capital & Restoration</option>
                             <option value="Sustainable Commodity System" {{ $project->category === 'Sustainable Commodity System' ? 'selected' : '' }}>Sustainable Commodity System</option>
-                            <option value="Landscape Intelligence & Innovation" {{ $project->category === 'Landscape Intelligence & Innovation' ? 'selected' : '' }}>Landscape Intelligence & Innovation</option>
+                            <option value="Pengetahuan Lanskap & Inovasi" {{ $project->category === 'Pengetahuan Lanskap & Inovasi' ? 'selected' : '' }}>Pengetahuan Lanskap & Inovasi</option>
                             <option value="Institutional Sustainability & Partnership" {{ $project->category === 'Institutional Sustainability & Partnership' ? 'selected' : '' }}>Institutional Sustainability & Partnership</option>
                         </select>
                     </div>

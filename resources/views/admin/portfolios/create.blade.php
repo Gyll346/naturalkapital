@@ -38,7 +38,7 @@
                             <option value="Landscape Governance">Landscape Governance</option>
                             <option value="Natural Capital & Restoration">Natural Capital & Restoration</option>
                             <option value="Sustainable Commodity System">Sustainable Commodity System</option>
-                            <option value="Landscape Intelligence & Innovation">Landscape Intelligence & Innovation</option>
+                            <option value="Pengetahuan Lanskap & Inovasi">Pengetahuan Lanskap & Inovasi</option>
                             <option value="Institutional Sustainability & Partnership">Institutional Sustainability & Partnership</option>
                         </select>
                     </div>

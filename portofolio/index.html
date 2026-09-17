@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3989,12 +3989,12 @@
                       </div>
 
                       <div class="filter-bar">
-                        <button class="filter-btn active">Semua</button>
-                        <button class="filter-btn">Landscape Governance</button>
-                        <button class="filter-btn">Natural Capital &amp; Restoration</button>
-                        <button class="filter-btn">Sustainable Commodity System</button>
-                        <button class="filter-btn">Pengetahuan Lanskap &amp; Inovasi</button>
-                        <button class="filter-btn">Institutional Sustainability &amp; Partnership</button>
+                        <button class="filter-btn active" data-filter="all">Semua</button>
+                        <button class="filter-btn" data-filter="kebijakan">Landscape Governance</button>
+                        <button class="filter-btn" data-filter="restorasi">Natural Capital &amp; Restoration</button>
+                        <button class="filter-btn" data-filter="komoditas">Sustainable Commodity System</button>
+                        <button class="filter-btn" data-filter="pemetaan">Pengetahuan Lanskap &amp; Inovasi</button>
+                        <button class="filter-btn" data-filter="kapasitas">Institutional Sustainability &amp; Partnership</button>
                       </div>
 
                       <div class="proyek-grid">
@@ -5095,31 +5095,34 @@
         const filterBtns = document.querySelectorAll('.filter-bar .filter-btn');
         const cards = document.querySelectorAll('.proyek-grid .proyek-card');
 
+        const catFilters = {
+          'kebijakan': ['kebijakan', 'governance', 'tata kelola', 'advokasi'],
+          'restorasi': ['restorasi', 'restoration', 'konservasi', 'natural capital', 'gambut'],
+          'komoditas': ['komoditas', 'commodity', 'sawit', 'karet', 'hortikultura'],
+          'pemetaan': ['pemetaan', 'spasial', 'gis', 'pengetahuan', 'intelligence', 'inovasi'],
+          'kapasitas': ['kapasitas', 'capacity', 'partnership', 'kelembagaan', 'sustainability', 'pelatihan']
+        };
+
         filterBtns.forEach(btn => {
           btn.addEventListener('click', function() {
             filterBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            const filterText = this.innerText.trim().toLowerCase();
+
+            const key = (this.getAttribute('data-filter') || '').toLowerCase();
+            const btnText = this.innerText.trim().toLowerCase();
 
             cards.forEach(card => {
-              const catClass = card.getAttribute('data-cat') || '';
-              const cardCatText = card.querySelector('.tag-cat')?.innerText.toLowerCase() || '';
-              
-              if (filterText === 'semua') {
+              if (!key || key === 'all' || btnText === 'semua') {
                 card.style.display = '';
-              } else if (filterText.includes('Landscape Governance') && (catClass === 'Landscape Governance' || cardCatText.includes('Landscape Governance'))) {
-                card.style.display = '';
-              } else if (filterText.includes('pemetaan') && (catClass === 'pemetaan' || cardCatText.includes('pemetaan'))) {
-                card.style.display = '';
-              } else if (filterText.includes('komoditas') && (catClass === 'komoditas' || cardCatText.includes('komoditas'))) {
-                card.style.display = '';
-              } else if (filterText.includes('kapasitas') && (catClass === 'kapasitas' || cardCatText.includes('kapasitas'))) {
-                card.style.display = '';
-              } else if (filterText.includes('kebijakan') && (catClass === 'kebijakan' || cardCatText.includes('kebijakan'))) {
-                card.style.display = '';
-              } else {
-                card.style.display = 'none';
+                return;
               }
+
+              const cat = (card.getAttribute('data-cat') || '').toLowerCase();
+              const tag = (card.querySelector('.tag-cat')?.innerText || '').toLowerCase();
+              const targets = catFilters[key] || [key, btnText];
+
+              const match = targets.some(t => cat.includes(t) || tag.includes(t));
+              card.style.display = match ? '' : 'none';
             });
           });
         });
