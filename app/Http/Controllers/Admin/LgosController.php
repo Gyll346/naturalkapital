@@ -10,10 +10,20 @@ use Illuminate\Support\Facades\Storage;
 
 class LgosController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $components = LgosComponent::orderBy('sort_order', 'asc')->get();
-        return view('admin.lgos.index', compact('components'));
+        $search = $request->get('search');
+        $query = LgosComponent::orderBy('sort_order', 'asc');
+
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('component_name', 'like', "%{$search}%")
+                  ->orWhere('role', 'like', "%{$search}%");
+            });
+        }
+
+        $components = $query->get();
+        return view('admin.lgos.index', compact('components', 'search'));
     }
 
     public function create()
