@@ -102,12 +102,12 @@
   // 3. Tautan cepat sesuai konteks halaman
   var sections = [
     {
-      match: ['/sejarah-visi-misi/', '/landscape-governance/', '/dampak/', '/news-features/', '/kontak-kami/', '/annual-report/'],
+      match: ['/sejarah-visi-misi/', '/tim/', '/lgos/', '/portofolio/', '/kontak-kami/', '/annual-report/'],
       links: [
         ['/sejarah-visi-misi/', 'Sejarah, Visi & Misi'],
-        ['/landscape-governance/', 'Landscape Governance'],
-        ['/dampak/', 'Dampak'],
-        ['/news-features/', 'News & Features'],
+        ['/tim/', 'Tim & Pengurus YNKI'],
+        ['/lgos/', 'LGOS: Sistem Operasi Organisasi'],
+        ['/portofolio/', 'Portfolio'],
         ['/kontak-kami/', 'Kontak Kami'],
         ['/ikut-serta/', 'Ikut Serta'],
         ['/annual-report/', 'Annual Report']
@@ -138,7 +138,7 @@
       ]
     },
     {
-      match: ['/news-features/', '/publikasi/', '/penelitian-laporan/', '/analisis-kebijakan/', '/perspektif-budaya/', '/data-spasial-gis/', '/data-spasial-dan-gis/', '/stori-foto-video/', '/story-foto-video/'],
+      match: ['/news-features/', '/penelitian-laporan/', '/analisis-kebijakan/', '/perspektif-budaya/', '/data-spasial-dan-gis/', '/stori-foto-video/', '/story-foto-video/'],
       links: [
         ['/news-features/', 'News & Features'],
         ['/penelitian-laporan/', 'Penelitian & Laporan'],
@@ -166,8 +166,12 @@
 
 
   var quickLinks = berandaLinks;
+  var normPath = path.endsWith('/') ? path : path + '/';
   for (var s = 0; s < sections.length; s++) {
-    if (sections[s].match.some(function (p) { return path.indexOf(p) === 0; })) {
+    if (sections[s].match.some(function (p) {
+      var normP = p.endsWith('/') ? p : p + '/';
+      return normPath.indexOf(normP) === 0 || normPath.indexOf(p) !== -1;
+    })) {
       quickLinks = sections[s].links;
       break;
     }
