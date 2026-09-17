@@ -533,8 +533,8 @@ class PageContentController extends Controller
             </div>';
     }
 
-    $pattern = '/<div class="laporan-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-    $replacement = '<div class="laporan-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-top:30px;">' . $dynamicCardsHtml . '</div></div></section>';
+    $pattern = '/<div class="laporan-grid"[^>]*>.*?<\/div>\s*(?:<div class="pagination clearfix"[^>]*>.*?<\/div>\s*)?<\/div>\s*<\/section>/s';
+    $replacement = '<div class="laporan-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-top:30px;">' . $dynamicCardsHtml . '</div><div class="pagination clearfix" id="trans-pagination"></div></div></section>';
     $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
 
     return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');

@@ -10,10 +10,21 @@ use Illuminate\Support\Facades\Storage;
 
 class TransparencyController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $reports = TransparencyReport::orderBy('report_year', 'desc')->paginate(15);
-        return view('admin.transparency.index', compact('reports'));
+        $search = $request->get('search');
+        $query = TransparencyReport::orderBy('report_year', 'desc');
+
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('report_year', 'like', "%{$search}%")
+                  ->orWhere('title', 'like', "%{$search}%")
+                  ->orWhere('category', 'like', "%{$search}%");
+            });
+        }
+
+        $reports = $query->paginate(15)->withQueryString();
+        return view('admin.transparency.index', compact('reports', 'search'));
     }
 
     public function create()

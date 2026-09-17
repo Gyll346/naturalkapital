@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3198,6 +3198,60 @@
                 grid-template-columns: 1fr;
               }
             }
+
+            /* ======================== PAGINATION CLEARFIX ======================== */
+            .pagination.clearfix {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 8px;
+              margin: 40px auto 10px;
+              clear: both;
+            }
+            .pagination.clearfix a,
+            .pagination.clearfix span {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              min-width: 38px;
+              height: 38px;
+              padding: 0 14px;
+              border-radius: 8px;
+              font-size: 13.5px;
+              font-weight: 700;
+              text-decoration: none;
+              transition: all 0.2s ease;
+              cursor: pointer;
+              border: 1.5px solid rgba(255, 255, 255, 0.4);
+              background: rgba(255, 255, 255, 0.15);
+              color: #ffffff;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            }
+            .pagination.clearfix a:hover {
+              background: #ffffff;
+              border-color: #ffffff;
+              color: #117710;
+              transform: translateY(-1px);
+            }
+            .pagination.clearfix .current {
+              background: #ffffff;
+              border-color: #ffffff;
+              color: #117710;
+              box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+              cursor: default;
+            }
+            .pagination.clearfix .pagination-prev,
+            .pagination.clearfix .pagination-next {
+              padding: 0 16px;
+              font-size: 13px;
+            }
+            .pagination.clearfix .disabled {
+              opacity: 0.35;
+              pointer-events: none;
+              cursor: not-allowed;
+              border-color: rgba(255, 255, 255, 0.2);
+            }
           </style>
 
           <div class="fusion-row" style="max-width: 100%">
@@ -3755,6 +3809,8 @@
                           </a>
                         </div>
                       </div>
+
+                      <div class="pagination clearfix" id="trans-pagination"></div>
                     </div>
                   </section>
 
@@ -4235,6 +4291,88 @@
         ></a
       >
     </section>
+    <script>
+      // Pagination handling for Laporan & Dokumen (Max 6 per page, hidden when <= 6)
+      document.addEventListener('DOMContentLoaded', function() {
+        const cards = Array.from(document.querySelectorAll('.laporan-grid .laporan-card'));
+        const paginationContainer = document.getElementById('trans-pagination');
+
+        const ITEMS_PER_PAGE = 6;
+        let currentPage = 1;
+
+        // Sembunyikan pagination bila data laporan 6 card atau kurang
+        if (cards.length <= ITEMS_PER_PAGE) {
+          if (paginationContainer) {
+            paginationContainer.innerHTML = '';
+            paginationContainer.style.display = 'none';
+          }
+          cards.forEach(card => card.style.display = '');
+          return;
+        }
+
+        const totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
+
+        function renderPagination() {
+          if (!paginationContainer) return;
+          paginationContainer.style.display = 'flex';
+          let html = '';
+
+          // Tombol Prev
+          if (currentPage > 1) {
+            html += `<a href="#trans-laporan" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Prev</a>`;
+          } else {
+            html += `<span class="pagination-prev disabled">&laquo; Prev</span>`;
+          }
+
+          // Nomor halaman
+          for (let p = 1; p <= totalPages; p++) {
+            if (p === currentPage) {
+              html += `<span class="current">${p}</span>`;
+            } else {
+              html += `<a href="#trans-laporan" class="inactive" data-page="${p}">${p}</a>`;
+            }
+          }
+
+          // Tombol Next
+          if (currentPage < totalPages) {
+            html += `<a href="#trans-laporan" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
+          } else {
+            html += `<span class="pagination-next disabled">Next &raquo;</span>`;
+          }
+
+          paginationContainer.innerHTML = html;
+
+          // Event click pagination link
+          paginationContainer.querySelectorAll('a[data-page]').forEach(link => {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              currentPage = parseInt(this.getAttribute('data-page'), 10);
+              updateView(true);
+            });
+          });
+        }
+
+        function updateView(scrollIntoView = false) {
+          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+          const endIndex = startIndex + ITEMS_PER_PAGE;
+
+          cards.forEach((card, idx) => {
+            card.style.display = (idx >= startIndex && idx < endIndex) ? '' : 'none';
+          });
+
+          renderPagination();
+
+          if (scrollIntoView) {
+            const section = document.getElementById('trans-laporan');
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }
+
+        updateView(false);
+      });
+    </script>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script src="/assets/js/ynki-footer.js"></script>
   </body>

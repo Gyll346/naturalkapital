@@ -21,6 +21,23 @@
     @endif
 
     <div class="card-table">
+        <!-- Search Bar -->
+        <div style="padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <form action="{{ route('admin.transparency.index') }}" method="GET" style="display: flex; gap: 10px; flex-grow: 1; max-width: 500px;">
+                <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari tahun, judul dokumen, atau kategori..." class="form-control" style="padding: 8px 12px; font-size: 13px;">
+                <button type="submit" class="btn-action btn-primary" style="padding: 8px 14px; font-size: 13px;">
+                    Cari
+                </button>
+                @if (request('search'))
+                    <a href="{{ route('admin.transparency.index') }}" class="btn-action btn-outline" style="padding: 8px 12px; font-size: 13px;">Reset</a>
+                @endif
+            </form>
+
+            <div style="font-size: 12.5px; color: var(--text-muted);">
+                Total: <strong>{{ $reports->total() }}</strong> dokumen
+            </div>
+        </div>
+
         <div class="table-responsive">
             <table class="admin-table">
                 <thead>
@@ -71,7 +88,11 @@
                     @empty
                         <tr>
                             <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 30px;">
-                                Belum ada dokumen transparansi yang diunggah.
+                                @if (request('search'))
+                                    Tidak ditemukan dokumen transparansi dengan kata kunci "<strong>{{ request('search') }}</strong>".
+                                @else
+                                    Belum ada dokumen transparansi yang diunggah.
+                                @endif
                             </td>
                         </tr>
                     @endforelse
