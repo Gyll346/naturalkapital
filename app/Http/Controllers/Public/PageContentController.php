@@ -189,8 +189,8 @@ class PageContentController extends Controller
             </div>';
     }
 
-    $pattern = '/<div class="proyek-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-    $replacement = '<div class="proyek-grid">' . $dynamicCardsHtml . '</div></div></section>';
+    $pattern = '/<div class="proyek-grid">.*?<\/div>\s*(?:<div class="pagination clearfix"[^>]*>.*?<\/div>\s*)?<\/div>\s*<\/section>/s';
+    $replacement = '<div class="proyek-grid">' . $dynamicCardsHtml . '</div><div class="pagination clearfix" id="porto-pagination"></div></div></section>';
     $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
 
     return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');

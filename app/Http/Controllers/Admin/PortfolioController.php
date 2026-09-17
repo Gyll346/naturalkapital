@@ -11,10 +11,24 @@ use Illuminate\Support\Facades\Storage;
 
 class PortfolioController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $projects = PortfolioProject::orderBy('sort_order', 'asc')->paginate(15);
-        return view('admin.portfolios.index', compact('projects'));
+        $search = $request->get('search');
+        $query = PortfolioProject::orderBy('sort_order', 'asc');
+
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('project_title', 'like', "%{$search}%")
+                  ->orWhere('category', 'like', "%{$search}%")
+                  ->orWhere('location', 'like', "%{$search}%")
+                  ->orWhere('partner_donor', 'like', "%{$search}%")
+                  ->orWhere('period', 'like', "%{$search}%")
+                  ->orWhere('status', 'like', "%{$search}%");
+            });
+        }
+
+        $projects = $query->paginate(15)->withQueryString();
+        return view('admin.portfolios.index', compact('projects', 'search'));
     }
 
     public function create()

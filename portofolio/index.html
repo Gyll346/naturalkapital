@@ -3640,9 +3640,60 @@
               .cat-grid {
                 grid-template-columns: repeat(2, 1fr);
               }
-              .proyek-grid {
-                grid-template-columns: 1fr;
-              }
+            }
+
+            /* ======================== PAGINATION CLEARFIX ======================== */
+            .pagination.clearfix {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 8px;
+              margin: 40px auto 10px;
+              clear: both;
+            }
+            .pagination.clearfix a,
+            .pagination.clearfix span {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              min-width: 38px;
+              height: 38px;
+              padding: 0 14px;
+              border-radius: 8px;
+              font-size: 13.5px;
+              font-weight: 700;
+              text-decoration: none;
+              transition: all 0.2s ease;
+              cursor: pointer;
+              border: 1.5px solid #d4e8d3;
+              background: #ffffff;
+              color: #1a422b;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            }
+            .pagination.clearfix a:hover {
+              background: #e8f5ec;
+              border-color: #117710;
+              color: #117710;
+              transform: translateY(-1px);
+            }
+            .pagination.clearfix .current {
+              background: #117710;
+              border-color: #117710;
+              color: #ffffff;
+              box-shadow: 0 4px 14px rgba(17, 119, 16, 0.25);
+              cursor: default;
+            }
+            .pagination.clearfix .pagination-prev,
+            .pagination.clearfix .pagination-next {
+              padding: 0 16px;
+              font-size: 13px;
+            }
+            .pagination.clearfix .disabled {
+              opacity: 0.4;
+              pointer-events: none;
+              cursor: not-allowed;
+              border-color: #e5ece5;
             }
           </style>
 
@@ -4406,6 +4457,8 @@
                           </div>
                         </div>
                       </div>
+
+                      <div class="pagination clearfix" id="porto-pagination"></div>
                     </div>
                   </section>
 
@@ -5090,10 +5143,16 @@
         ></a>
     </section>
     <script>
-      // Filter handling
+      // Filter & Pagination handling (6 items per page)
       document.addEventListener('DOMContentLoaded', function() {
         const filterBtns = document.querySelectorAll('.filter-bar .filter-btn');
-        const cards = document.querySelectorAll('.proyek-grid .proyek-card');
+        const cards = Array.from(document.querySelectorAll('.proyek-grid .proyek-card'));
+        const paginationContainer = document.getElementById('porto-pagination');
+
+        const ITEMS_PER_PAGE = 6;
+        let currentPage = 1;
+        let currentFilterKey = 'all';
+        let currentFilterText = 'semua';
 
         const catFilters = {
           'kebijakan': ['kebijakan', 'governance', 'tata kelola', 'advokasi'],
@@ -5103,29 +5162,109 @@
           'kapasitas': ['kapasitas', 'capacity', 'partnership', 'kelembagaan', 'sustainability', 'pelatihan']
         };
 
+        function getFilteredCards() {
+          if (!currentFilterKey || currentFilterKey === 'all' || currentFilterText === 'semua') {
+            return cards;
+          }
+          const targets = catFilters[currentFilterKey] || [currentFilterKey, currentFilterText];
+          return cards.filter(card => {
+            const cat = (card.getAttribute('data-cat') || '').toLowerCase();
+            const tag = (card.querySelector('.tag-cat')?.innerText || '').toLowerCase();
+            return targets.some(t => cat.includes(t) || tag.includes(t));
+          });
+        }
+
+        function renderPagination(totalItems) {
+          if (!paginationContainer) return;
+          const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+          if (totalPages <= 1) {
+            paginationContainer.innerHTML = '';
+            paginationContainer.style.display = 'none';
+            return;
+          }
+
+          paginationContainer.style.display = 'flex';
+          let html = '';
+
+          // Prev button
+          if (currentPage > 1) {
+            html += `<a href="#porto-proyek" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Prev</a>`;
+          } else {
+            html += `<span class="pagination-prev disabled">&laquo; Prev</span>`;
+          }
+
+          // Page numbers
+          for (let p = 1; p <= totalPages; p++) {
+            if (p === currentPage) {
+              html += `<span class="current">${p}</span>`;
+            } else {
+              html += `<a href="#porto-proyek" class="inactive" data-page="${p}">${p}</a>`;
+            }
+          }
+
+          // Next button
+          if (currentPage < totalPages) {
+            html += `<a href="#porto-proyek" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
+          } else {
+            html += `<span class="pagination-next disabled">Next &raquo;</span>`;
+          }
+
+          paginationContainer.innerHTML = html;
+
+          // Event listeners for pagination buttons
+          paginationContainer.querySelectorAll('a[data-page]').forEach(link => {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              currentPage = parseInt(this.getAttribute('data-page'), 10);
+              updateView(true);
+            });
+          });
+        }
+
+        function updateView(scrollIntoView = false) {
+          const filtered = getFilteredCards();
+          const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+          if (currentPage > totalPages && totalPages > 0) {
+            currentPage = 1;
+          }
+
+          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+          const endIndex = startIndex + ITEMS_PER_PAGE;
+
+          // Hide all cards first
+          cards.forEach(card => card.style.display = 'none');
+
+          // Display only the 6 cards for the active page
+          filtered.slice(startIndex, endIndex).forEach(card => {
+            card.style.display = '';
+          });
+
+          renderPagination(filtered.length);
+
+          if (scrollIntoView) {
+            const section = document.getElementById('porto-proyek');
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }
+
+        // Filter button listeners
         filterBtns.forEach(btn => {
           btn.addEventListener('click', function() {
             filterBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
 
-            const key = (this.getAttribute('data-filter') || '').toLowerCase();
-            const btnText = this.innerText.trim().toLowerCase();
-
-            cards.forEach(card => {
-              if (!key || key === 'all' || btnText === 'semua') {
-                card.style.display = '';
-                return;
-              }
-
-              const cat = (card.getAttribute('data-cat') || '').toLowerCase();
-              const tag = (card.querySelector('.tag-cat')?.innerText || '').toLowerCase();
-              const targets = catFilters[key] || [key, btnText];
-
-              const match = targets.some(t => cat.includes(t) || tag.includes(t));
-              card.style.display = match ? '' : 'none';
-            });
+            currentFilterKey = (this.getAttribute('data-filter') || '').toLowerCase();
+            currentFilterText = this.innerText.trim().toLowerCase();
+            currentPage = 1;
+            updateView(false);
           });
         });
+
+        // Initialize view
+        updateView(false);
       });
     </script>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
