@@ -14,8 +14,13 @@ class TeamMemberController extends Controller
     public function index(Request $request)
     {
         $group = $request->get('group', 'all'); // 'all', 'pengurus', 'tim-ahli'
+        $search = $request->get('search');
         
         $query = TeamMember::with('category')->orderBy('sort_order');
+        
+        if ($search) {
+            $query->where('full_name', 'like', "%{$search}%");
+        }
         
         if ($group === 'pengurus') {
             $query->whereHas('category', function ($q) {
@@ -44,7 +49,7 @@ class TeamMemberController extends Controller
         
         $countAll = TeamMember::count();
 
-        return view('admin.teams.index', compact('members', 'group', 'countPengurus', 'countTimAhli', 'countAll'));
+        return view('admin.teams.index', compact('members', 'group', 'countPengurus', 'countTimAhli', 'countAll', 'search'));
     }
 
     public function create()

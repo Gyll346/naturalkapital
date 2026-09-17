@@ -27,18 +27,18 @@
 
     <!-- Split Tab Pengurus vs Tim Ahli -->
     <div style="display: flex; gap: 10px; margin-bottom: 18px; border-bottom: 2px solid var(--border); padding-bottom: 12px; overflow-x: auto;">
-        <a href="{{ route('admin.teams.index', ['group' => 'all']) }}" 
+        <a href="{{ route('admin.teams.index', array_merge(['group' => 'all'], request('search') ? ['search' => request('search')] : [])) }}" 
            style="text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 6px; {{ $group === 'all' ? 'background: var(--primary); color: #ffffff;' : 'background: #ffffff; color: var(--text-dark); border: 1px solid var(--border);' }}">
             <span>Semua Anggota</span>
             <span style="font-size: 11px; padding: 2px 7px; border-radius: 12px; {{ $group === 'all' ? 'background: rgba(255,255,255,0.25); color: #ffffff;' : 'background: #eaf3eb; color: var(--primary);' }}">{{ $countAll }}</span>
         </a>
-        <a href="{{ route('admin.teams.index', ['group' => 'pengurus']) }}" 
+        <a href="{{ route('admin.teams.index', array_merge(['group' => 'pengurus'], request('search') ? ['search' => request('search')] : [])) }}" 
            style="text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 6px; {{ $group === 'pengurus' ? 'background: var(--primary); color: #ffffff;' : 'background: #ffffff; color: var(--text-dark); border: 1px solid var(--border);' }}">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
             <span>Dewan Pengurus YNKI</span>
             <span style="font-size: 11px; padding: 2px 7px; border-radius: 12px; {{ $group === 'pengurus' ? 'background: rgba(255,255,255,0.25); color: #ffffff;' : 'background: #eaf3eb; color: var(--primary);' }}">{{ $countPengurus }}</span>
         </a>
-        <a href="{{ route('admin.teams.index', ['group' => 'tim-ahli']) }}" 
+        <a href="{{ route('admin.teams.index', array_merge(['group' => 'tim-ahli'], request('search') ? ['search' => request('search')] : [])) }}" 
            style="text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 6px; {{ $group === 'tim-ahli' ? 'background: var(--primary); color: #ffffff;' : 'background: #ffffff; color: var(--text-dark); border: 1px solid var(--border);' }}">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
             <span>Tim Ahli Pendukung YNKI</span>
@@ -47,6 +47,26 @@
     </div>
 
     <div class="card-table">
+        <!-- Search Bar -->
+        <div style="padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <form action="{{ route('admin.teams.index') }}" method="GET" style="display: flex; gap: 10px; flex-grow: 1; max-width: 480px;">
+                @if (request('group') && request('group') !== 'all')
+                    <input type="hidden" name="group" value="{{ request('group') }}">
+                @endif
+                <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari nama lengkap anggota..." class="form-control" style="padding: 8px 12px; font-size: 13px;">
+                <button type="submit" class="btn-action btn-primary" style="padding: 8px 14px; font-size: 13px;">
+                    Cari
+                </button>
+                @if (request('search'))
+                    <a href="{{ route('admin.teams.index', request('group') ? ['group' => request('group')] : []) }}" class="btn-action btn-outline" style="padding: 8px 12px; font-size: 13px;">Reset</a>
+                @endif
+            </form>
+
+            <div style="font-size: 12.5px; color: var(--text-muted);">
+                Total: <strong>{{ $members->total() }}</strong> anggota
+            </div>
+        </div>
+
         <div class="table-responsive">
             <table class="admin-table">
                 <thead>
@@ -111,7 +131,11 @@
                     @empty
                         <tr>
                             <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 30px;">
-                                Belum ada pengurus atau anggota tim yang ditambahkan.
+                                @if (request('search'))
+                                    Tidak ditemukan anggota tim dengan kata kunci "<strong>{{ request('search') }}</strong>".
+                                @else
+                                    Belum ada pengurus atau anggota tim yang ditambahkan.
+                                @endif
                             </td>
                         </tr>
                     @endforelse
