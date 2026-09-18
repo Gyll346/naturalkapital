@@ -3181,31 +3181,57 @@
               font-weight: 600;
             }
 
-            .filter-row {
+            /* ======================== PAGINATION CLEARFIX ======================== */
+            .pagination.clearfix {
               display: flex;
-              gap: 10px;
-              flex-wrap: wrap;
               justify-content: center;
-              margin-top: 40px;
-              margin-bottom: 40px;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 8px;
+              margin: 40px auto 10px;
+              clear: both;
             }
-            .filter-tag {
-              font-size: 13px;
+            .pagination.clearfix a,
+            .pagination.clearfix span {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              min-width: 38px;
+              height: 38px;
+              padding: 0 14px;
+              border-radius: 8px;
+              font-size: 13.5px;
               font-weight: 700;
-              padding: 9px 20px;
-              border-radius: 50px;
-              border: 2px solid #d2e8d1;
-              color: #117710;
-              cursor: pointer;
-              transition: all 0.3s;
-              background: #fff;
               text-decoration: none;
+              transition: all 0.2s ease;
+              cursor: pointer;
+              border: 1.5px solid #d4e8d3;
+              background: #ffffff;
+              color: #1a422b;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
             }
-            .filter-tag:hover,
-            .filter-tag.active {
-              background: #117710;
-              color: #fff;
+            .pagination.clearfix a:hover {
+              background: #e8f5ec;
               border-color: #117710;
+              color: #117710;
+              transform: translateY(-1px);
+            }
+            .pagination.clearfix .current {
+              background: #117710;
+              border-color: #117710;
+              color: #ffffff;
+              box-shadow: 0 4px 14px rgba(17, 119, 16, 0.25);
+              cursor: default;
+            }
+            .pagination.clearfix .pagination-prev,
+            .pagination.clearfix .pagination-next {
+              padding: 0 16px;
+              font-size: 13px;
+            }
+            .pagination.clearfix .disabled {
+              opacity: 0.4;
+              pointer-events: none;
+              cursor: not-allowed;
             }
 
             .docs-grid {
@@ -3239,6 +3265,13 @@
               color: #117710;
               font-size: 40px;
               border-bottom: 1px solid #d2e8d1;
+              overflow: hidden;
+            }
+            .doc-img img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              display: block;
             }
             .doc-body {
               padding: 24px;
@@ -3687,353 +3720,242 @@
                         </p>
                       </div>
 
-                      <!-- Filter -->
-                      <div class="filter-row">
-                        <span class="filter-tag active">Semua Tulisan</span>
-                        <span class="filter-tag">Ekologi &amp; Nilai Alam</span>
-                        <span class="filter-tag">Sosial &amp; Politik</span>
-                        <span class="filter-tag">Filsafat Peradaban</span>
-                        <span class="filter-tag">Kearifan Adat</span>
-                      </div>
-
                       <div class="docs-grid">
                         <!-- 1 -->
                         <div class="doc-card">
                           <div class="doc-img">
-                            <svg
-                              width="40"
-                              height="40"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                              <path
-                                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-                              ></path>
-                            </svg>
+                            <img src="/wp-content/uploads/2026/05/site-image-yoast.webp" alt="Dorong Diversifikasi Kelapa di Kubu Raya" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
                           </div>
                           <div class="doc-body">
                             <div class="doc-meta">
-                              <span class="doc-badge badge-ekologi"
-                                >Ekologi &amp; Nilai</span
-                              >
-                              <span class="doc-year">2024</span>
+                              <span class="doc-year">2022</span>
                             </div>
-                            <div class="doc-loc">REFLEKSI ETIS</div>
                             <h3>
-                              <a
-                                href="/perspektif-budaya/nilai-intrinsik-ekosistem-vs-praktik-ekonomi-predator/"
-                                >Nilai Intrinsik Ekosistem vs Praktik Ekonomi
-                                Predator</a
-                              >
+                              <a href="/perspektif-budaya/dorong-diversifikasi-kelapa-di-kubu-raya/">Dorong Diversifikasi Kelapa di Kubu Raya</a>
                             </h3>
-                            <p>
-                              Kajian kritis terhadap reduksi alam sebagai
-                              komoditas semata serta pentingnya mengakui nilai
-                              intrinsik keberadaan seluruh makhluk hidup.
-                            </p>
-                            <a
-                              href="/perspektif-budaya/nilai-intrinsik-ekosistem-vs-praktik-ekonomi-predator/"
-                              class="btn-dl"
-                              >Baca Esai Lengkap
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
+                            <p>YNKI menilai perlunya diversifikasi produk dari kelapa sebagai sumber pemasukan dan peningkatan kesejahteraan petani.</p>
+                            <a href="/perspektif-budaya/dorong-diversifikasi-kelapa-di-kubu-raya/" class="btn-dl">Baca Esai Lengkap
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
                           </div>
                         </div>
                         <!-- 2 -->
                         <div class="doc-card">
                           <div class="doc-img">
-                            <svg
-                              width="40"
-                              height="40"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                              <path
-                                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-                              ></path>
-                            </svg>
+                            <img src="/wp-content/uploads/2026/05/Putri-Lestari-PM-YNKI-Kehati.webp" alt="Empat Luka Suriah" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
                           </div>
                           <div class="doc-body">
                             <div class="doc-meta">
-                              <span class="doc-badge badge-filsafat"
-                                >Filsafat Seni</span
-                              >
-                              <span class="doc-year">2024</span>
+                              <span class="doc-year">2026</span>
                             </div>
-                            <div class="doc-loc">HARMONI ALAM</div>
                             <h3>
-                              <a
-                                href="/perspektif-budaya/harmoni-musik-keselarasan-perbedaan-keselarasan-kehidupan/"
-                                >Harmoni Musik: Keselarasan Perbedaan &amp;
-                                Kehidupan</a
-                              >
+                              <a href="/perspektif-budaya/empat-luka-suriah-geopolitik-sektarianisme-divide-et-impera-dan-perang-dingin-timur-barat/">Empat Luka Suriah</a>
                             </h3>
-                            <p>
-                              Menelusuri keselarasan nada musik sebagai metafora
-                              hidup berdampingan secara damai dalam keberagaman
-                              lanskap ekologis.
-                            </p>
-                            <a
-                              href="/perspektif-budaya/harmoni-musik-keselarasan-perbedaan-keselarasan-kehidupan/"
-                              class="btn-dl"
-                              >Baca Esai Lengkap
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
+                            <p>Selama lebih dari 2.500 tahun, Suriah tak pernah benar-benar menjadi milik rakyatnya sendiri.</p>
+                            <a href="/perspektif-budaya/empat-luka-suriah-geopolitik-sektarianisme-divide-et-impera-dan-perang-dingin-timur-barat/" class="btn-dl">Baca Esai Lengkap
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
                           </div>
                         </div>
                         <!-- 3 -->
                         <div class="doc-card">
                           <div class="doc-img">
-                            <svg
-                              width="40"
-                              height="40"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                              <path
-                                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-                              ></path>
-                            </svg>
+                            <img src="/wp-content/uploads/2026/06/12-06-2026-Usai-diskusi-ekologi-landscape-para-pegiat-lingkungan-bermain-musik-di-selasar-kantor-YNKI-di-Pontianak-Jumat-malam.webp" alt="Harmoni Musik: Keselarasan Perbedaan, Keselarasan Kehidupan" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
                           </div>
                           <div class="doc-body">
                             <div class="doc-meta">
-                              <span class="doc-badge badge-sosial"
-                                >Keadilan Agraria</span
-                              >
-                              <span class="doc-year">2024</span>
+                              <span class="doc-year">2026</span>
                             </div>
-                            <div class="doc-loc">SEJARAH SOSIAL</div>
                             <h3>
-                              <a
-                                href="/perspektif-budaya/kehidupan-petani-kecil-dipertaruhkan-dari-cultuurstelsel-hingga-dhe-sda-indonesia/"
-                                >Kehidupan Petani Kecil: Dari Cultuurstelsel
-                                hingga DHE SDA</a
-                              >
+                              <a href="/perspektif-budaya/harmoni-musik-keselarasan-perbedaan-keselarasan-kehidupan/">Harmoni Musik: Keselarasan Perbedaan, Keselarasan Kehidupan</a>
                             </h3>
-                            <p>
-                              Tinjauan historis dinamika kebijakan agraria dan
-                              dampaknya bagi kedaulatan petani kecil di pedesaan
-                              Indonesia.
-                            </p>
-                            <a
-                              href="/perspektif-budaya/kehidupan-petani-kecil-dipertaruhkan-dari-cultuurstelsel-hingga-dhe-sda-indonesia/"
-                              class="btn-dl"
-                              >Baca Esai Lengkap
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
+                            <p>Sebelum kenal aksara, sudah tabuh kulit kayu, tiup bambu, dan berteriak selaraskan irama dengan detak jantung. Musik bahasa primer manusia.</p>
+                            <a href="/perspektif-budaya/harmoni-musik-keselarasan-perbedaan-keselarasan-kehidupan/" class="btn-dl">Baca Esai Lengkap
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
                           </div>
                         </div>
                         <!-- 4 -->
                         <div class="doc-card">
                           <div class="doc-img">
-                            <svg
-                              width="40"
-                              height="40"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                              <path
-                                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-                              ></path>
-                            </svg>
+                            <img src="/wp-content/uploads/2026/06/11-06-2026-kebun-keladi-di-kubu-padi-kuala-mandor-b.webp" alt="Kehidupan Petani Kecil Dipertaruhkan: Dari Cultuurstelsel hingga DHE SDA Indonesia" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
                           </div>
                           <div class="doc-body">
                             <div class="doc-meta">
-                              <span class="doc-badge badge-kritis"
-                                >Kritik Sosial</span
-                              >
-                              <span class="doc-year">2024</span>
+                              <span class="doc-year">2026</span>
                             </div>
-                            <div class="doc-loc">RUANG PUBLIK</div>
                             <h3>
-                              <a
-                                href="/perspektif-budaya/ruang-publik-cermin-peradaban-medan-kuasa-dan-hilangnya-rasa-bersama/"
-                                >Ruang Publik: Cermin Peradaban &amp; Medan
-                                Kuasa</a
-                              >
+                              <a href="/perspektif-budaya/kehidupan-petani-kecil-dipertaruhkan-dari-cultuurstelsel-hingga-dhe-sda-indonesia/">Kehidupan Petani Kecil Dipertaruhkan: Dari Cultuurstelsel hingga DHE SDA Indonesia</a>
                             </h3>
-                            <p>
-                              Analisis sosiologis tentang penyempitan ruang
-                              bersama serta pentingnya menjaga ruang demokratis
-                              yang inklusif.
-                            </p>
-                            <a
-                              href="/perspektif-budaya/ruang-publik-cermin-peradaban-medan-kuasa-dan-hilangnya-rasa-bersama/"
-                              class="btn-dl"
-                              >Baca Esai Lengkap
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
+                            <p>Tanam paksa (cultuurstelsel) Belanda hingga Devisa Hasil Ekspor Sumber Daya Alam (DHE SDA) Indonesia modern, petani kecil selalu jadi korban.</p>
+                            <a href="/perspektif-budaya/kehidupan-petani-kecil-dipertaruhkan-dari-cultuurstelsel-hingga-dhe-sda-indonesia/" class="btn-dl">Baca Esai Lengkap
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
                           </div>
                         </div>
                         <!-- 5 -->
                         <div class="doc-card">
                           <div class="doc-img">
-                            <svg
-                              width="40"
-                              height="40"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                              <path
-                                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-                              ></path>
-                            </svg>
+                            <img src="/wp-content/uploads/2026/05/Dwi-Anggradini-Putri-Kabid-Keu-TFCA.webp" alt="Nilai Intrinsik Ekosistem vs Praktik Ekonomi Predator" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
                           </div>
                           <div class="doc-body">
                             <div class="doc-meta">
-                              <span class="doc-badge badge-filsafat"
-                                >Peradaban</span
-                              >
-                              <span class="doc-year">2024</span>
+                              <span class="doc-year">2026</span>
                             </div>
-                            <div class="doc-loc">FILSAFAT SEJARAH</div>
                             <h3>
-                              <a
-                                href="/perspektif-budaya/paradoks-renaisans-eksploitasi-dan-dehumanisasi/"
-                                >Paradoks Renaisans: Eksploitasi &amp;
-                                Dehumanisasi</a
-                              >
+                              <a href="/perspektif-budaya/nilai-intrinsik-ekosistem-vs-praktik-ekonomi-predator/">Nilai Intrinsik Ekosistem vs Praktik Ekonomi Predator</a>
                             </h3>
-                            <p>
-                              Catatan reflektif mengenai bayang-bayang
-                              eksploitasi alam di balik kemajuan teknologis
-                              peradaban modern.
-                            </p>
-                            <a
-                              href="/perspektif-budaya/paradoks-renaisans-eksploitasi-dan-dehumanisasi/"
-                              class="btn-dl"
-                              >Baca Esai Lengkap
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
+                            <p>Ketika Alam Dipandang sebagai Sumber daya, Bukan sebagai RumahOleh: Dwi Anggradini Putri (Kepala Bagian Keuangan Program YNKI-Kehati)Pembuka: Dua C...</p>
+                            <a href="/perspektif-budaya/nilai-intrinsik-ekosistem-vs-praktik-ekonomi-predator/" class="btn-dl">Baca Esai Lengkap
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
                           </div>
                         </div>
                         <!-- 6 -->
                         <div class="doc-card">
                           <div class="doc-img">
-                            <svg
-                              width="40"
-                              height="40"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                              <path
-                                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-                              ></path>
-                            </svg>
+                            <img src="/wp-content/uploads/2026/06/17-06-2026-perbedaan-otak-pria-dan-wanita.webp" alt="Otak Pria, Tiga Sistem Cinta, dan Ketegangan Abadi Antara Perasaan dan Komitmen" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
                           </div>
                           <div class="doc-body">
                             <div class="doc-meta">
-                              <span class="doc-badge badge-sosial"
-                                >Hukum Adat</span
-                              >
-                              <span class="doc-year">2024</span>
+                              <span class="doc-year">2026</span>
                             </div>
-                            <div class="doc-loc">TENURIAL ADAT</div>
                             <h3>
-                              <a
-                                href="/perspektif-budaya/putusan-kades-kinipan/"
-                                >Refleksi Putusan Adat &amp; Perlindungan Hutan
-                                Kinipan</a
-                              >
+                              <a href="/perspektif-budaya/otak-pria-tiga-sistem-cinta-dan-ketegangan-abadi-antara-perasaan-dan-komitmen/">Otak Pria, Tiga Sistem Cinta, dan Ketegangan Abadi Antara Perasaan dan Komitmen</a>
                             </h3>
-                            <p>
-                              Menelisik perjuangan komunitas adat dalam
-                              mempertahankan wilayah adat dan keanekaragaman
-                              hayati warisan leluhur.
-                            </p>
-                            <a
-                              href="/perspektif-budaya/putusan-kades-kinipan/"
-                              class="btn-dl"
-                              >Baca Esai Lengkap
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
+                            <p>Otak pria memiliki 3 sistem cinta yang berbeda, yang bekerja secara independen, sering kali saling bertentangan, dan jarang selaras.</p>
+                            <a href="/perspektif-budaya/otak-pria-tiga-sistem-cinta-dan-ketegangan-abadi-antara-perasaan-dan-komitmen/" class="btn-dl">Baca Esai Lengkap
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
                           </div>
                         </div>
-                      </div>
+                        <!-- 7 -->
+                        <div class="doc-card">
+                          <div class="doc-img">
+                            <img src="/wp-content/uploads/2026/06/04-06-2026-HMI-Komsat-Fahutan-Untan.webp" alt="Pabrik Ijazah atau Rumah Peradaban?" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
+                          </div>
+                          <div class="doc-body">
+                            <div class="doc-meta">
+                              <span class="doc-year">2026</span>
+                            </div>
+                            <h3>
+                              <a href="/perspektif-budaya/pabrik-ijazah-atau-rumah-peradaban/">Pabrik Ijazah atau Rumah Peradaban?</a>
+                            </h3>
+                            <p>Universitas dipahami sebagai, &quot;custodian/depositary of common values, knowledge and inheritance of human cultures and civilization&quot;.</p>
+                            <a href="/perspektif-budaya/pabrik-ijazah-atau-rumah-peradaban/" class="btn-dl">Baca Esai Lengkap
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                        <!-- 8 -->
+                        <div class="doc-card">
+                          <div class="doc-img">
+                            <img src="/wp-content/uploads/2026/05/Conquest_of_Constantinople_Zonaro.webp" alt="Paradoks Renaisans: Eksploitasi dan Dehumanisasi" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
+                          </div>
+                          <div class="doc-body">
+                            <div class="doc-meta">
+                              <span class="doc-year">2026</span>
+                            </div>
+                            <h3>
+                              <a href="/perspektif-budaya/paradoks-renaisans-eksploitasi-dan-dehumanisasi/">Paradoks Renaisans: Eksploitasi dan Dehumanisasi</a>
+                            </h3>
+                            <p>Renaisans (abad ke-14–17) selalu dikenang sebagai kelahiran kembali peradaban Eropa dalam apa yang disebut Masa Kegelapan.</p>
+                            <a href="/perspektif-budaya/paradoks-renaisans-eksploitasi-dan-dehumanisasi/" class="btn-dl">Baca Esai Lengkap
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                        <!-- 9 -->
+                        <div class="doc-card">
+                          <div class="doc-img">
+                            <img src="/wp-content/uploads/2026/04/willem-hengki.webp" alt="Putusan Kades Kinipan" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
+                          </div>
+                          <div class="doc-body">
+                            <div class="doc-meta">
+                              <span class="doc-year">2022</span>
+                            </div>
+                            <h3>
+                              <a href="/perspektif-budaya/putusan-kades-kinipan/">Putusan Kades Kinipan</a>
+                            </h3>
+                            <p>Putusan di Pengadilan Tipikor Palangkaraya 15062022, Kades Kinipan Willem Hengki dinyatakan tidak bersalah &amp; bebas dari tuduhan tipikor.</p>
+                            <a href="/perspektif-budaya/putusan-kades-kinipan/" class="btn-dl">Baca Esai Lengkap
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                        <!-- 10 -->
+                        <div class="doc-card">
+                          <div class="doc-img">
+                            <img src="/wp-content/uploads/2026/05/Zulfa-Laylia-Hauro-Staf-Keuangan-YNKI-Kehati.webp" alt="Ruang Publik: Cermin Peradaban, Medan Kuasa, dan Hilangnya &amp;quot;Rasa Bersama&amp;quot;" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
+                          </div>
+                          <div class="doc-body">
+                            <div class="doc-meta">
+                              <span class="doc-year">2026</span>
+                            </div>
+                            <h3>
+                              <a href="/perspektif-budaya/ruang-publik-cermin-peradaban-medan-kuasa-dan-hilangnya-rasa-bersama/">Ruang Publik: Cermin Peradaban, Medan Kuasa, dan Hilangnya &amp;quot;Rasa Bersama&amp;quot;</a>
+                            </h3>
+                            <p>Oleh: Zulfa Laylia Hauro (Staf Keuangan Program YNKI-Yayasan Kehati)Pengantar: Lebih dari Sekadar Taman dan TrotoarApa yang terlintas di benak Anda...</p>
+                            <a href="/perspektif-budaya/ruang-publik-cermin-peradaban-medan-kuasa-dan-hilangnya-rasa-bersama/" class="btn-dl">Baca Esai Lengkap
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                        <!-- 11 -->
+                        <div class="doc-card">
+                          <div class="doc-img">
+                            <img src="/wp-content/uploads/2026/05/Liln-Dwi-Evelin-Kadiv-Kom-TFCA.webp" alt="Teori Ekonomi dan Status Terkini Kehidupan Bumi" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
+                          </div>
+                          <div class="doc-body">
+                            <div class="doc-meta">
+                              <span class="doc-year">2026</span>
+                            </div>
+                            <h3>
+                              <a href="/perspektif-budaya/teori-ekonomi-dan-status-terkini-kehidupan-bumi/">Teori Ekonomi dan Status Terkini Kehidupan Bumi</a>
+                            </h3>
+                            <p>Pembuka: Saat Neraka Berlapis EmasOleh: Lilin Dwi Evelin (Kepala Divisi Komunikasi YNKI)Kita hidup di masa yang aneh. Di satu sisi, para pemimpin d...</p>
+                            <a href="/perspektif-budaya/teori-ekonomi-dan-status-terkini-kehidupan-bumi/" class="btn-dl">Baca Esai Lengkap
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+</div>
+
+                      <!-- Pagination Clearfix -->
+                      <div class="pagination clearfix" id="budaya-pagination"></div>
                     </div>
                   </section>
 
@@ -4451,6 +4373,97 @@
         ></a
       >
     </section>
+    <script>
+      // Perspektif Budaya Pagination Clearfix (6 articles per page)
+      document.addEventListener('DOMContentLoaded', function() {
+        const ITEMS_PER_PAGE = 6;
+        let currentPage = 1;
+        const grid = document.querySelector('.docs-grid');
+        const paginationContainer = document.getElementById('budaya-pagination');
+
+        if (!grid || !paginationContainer) return;
+
+        function getCards() {
+          return Array.from(grid.querySelectorAll('.doc-card'));
+        }
+
+        function renderPagination(totalItems) {
+          const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+          if (totalPages <= 1) {
+            paginationContainer.style.display = 'none';
+            paginationContainer.innerHTML = '';
+            return;
+          }
+
+          paginationContainer.style.display = 'flex';
+          let html = '';
+
+          // Prev button
+          if (currentPage > 1) {
+            html += `<a href="#kumpulan-esai" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Previous</a>`;
+          } else {
+            html += `<span class="pagination-prev disabled">&laquo; Previous</span>`;
+          }
+
+          // Page numbers
+          for (let p = 1; p <= totalPages; p++) {
+            if (p === currentPage) {
+              html += `<span class="current">${p}</span>`;
+            } else {
+              html += `<a href="#kumpulan-esai" class="inactive" data-page="${p}">${p}</a>`;
+            }
+          }
+
+          // Next button
+          if (currentPage < totalPages) {
+            html += `<a href="#kumpulan-esai" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
+          } else {
+            html += `<span class="pagination-next disabled">Next &raquo;</span>`;
+          }
+
+          paginationContainer.innerHTML = html;
+
+          paginationContainer.querySelectorAll('a[data-page]').forEach(link => {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              currentPage = parseInt(this.getAttribute('data-page'), 10);
+              updateView(true);
+            });
+          });
+        }
+
+        function updateView(scrollIntoView = false) {
+          const cards = getCards();
+          const totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
+          if (currentPage > totalPages && totalPages > 0) {
+            currentPage = 1;
+          }
+
+          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+          const endIndex = startIndex + ITEMS_PER_PAGE;
+
+          cards.forEach((card, index) => {
+            if (index >= startIndex && index < endIndex) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          renderPagination(cards.length);
+
+          if (scrollIntoView) {
+            const section = document.getElementById('kumpulan-esai');
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }
+
+        updateView(false);
+      });
+    </script>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script src="/assets/js/ynki-footer.js"></script>
   </body>

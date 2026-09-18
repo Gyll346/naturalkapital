@@ -672,9 +672,12 @@ class PageContentController extends Controller
             </div>';
     }
 
-    $pattern = '/<div class="docs-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-    $replacement = '<div class="docs-grid">' . $docsHtml . '</div></div></section>';
-    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
+    $pattern = '/<div class="docs-grid">\s*(<!-- 1 -->.*?<\/div>\s*<\/div>)/s';
+    if (preg_match($pattern, $originalHtml)) {
+      $renderedHtml = preg_replace($pattern, '<div class="docs-grid">' . $docsHtml . '$1', $originalHtml);
+    } else {
+      $renderedHtml = str_replace('<div class="docs-grid">', '<div class="docs-grid">' . $docsHtml, $originalHtml);
+    }
 
     return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
   }
@@ -694,29 +697,42 @@ class PageContentController extends Controller
     foreach ($articles as $art) {
       $imgThumb = $art->featured_image_path
         ? '/storage/' . $art->featured_image_path
-        : '/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp';
+        : null;
+
+      $imgHtml = $imgThumb
+        ? '<img src="' . htmlspecialchars($imgThumb) . '" alt="' . htmlspecialchars($art->title) . '" onerror="this.onerror=null;this.parentElement.innerHTML=\'<svg width=\\\'40\\\' height=\\\'40\\\' viewBox=\\\'0 0 24 24\\\' fill=\\\'none\\\' stroke=\\\'currentColor\\\' stroke-width=\\\'1.5\\\' stroke-linecap=\\\'round\\\' stroke-linejoin=\\\'round\\\'><path d=\\\'M4 19.5A2.5 2.5 0 0 1 6.5 17H20\\\'></path><path d=\\\'M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z\\\'></path></svg>\';">'
+        : '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';
 
       $cardsHtml .= '
-            <div class="berita-card">
-              <div class="berita-thumb">
-                <img src="' . htmlspecialchars($imgThumb) . '" alt="' . htmlspecialchars($art->title) . '" onerror="this.src=\'/wp-content/uploads/2026/05/kebijakan-tata-ruang-dan-hutan.webp\'">
-              </div>
-              <div class="berita-body">
-                <span class="berita-topic t-bud">' . htmlspecialchars($art->category->category_name ?? 'Budaya & Tradisi') . '</span>
-                <h3 class="berita-title">' . htmlspecialchars($art->title) . '</h3>
-                <div class="berita-date">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                  ' . ($art->published_at ? $art->published_at->translatedFormat('l, d F Y') : date('d F Y')) . '
-                </div>
-                <p style="font-size:13.5px;color:#536b5f;line-height:1.6;margin:8px 0 12px;">' . htmlspecialchars($art->excerpt ?? '') . '</p>
-                <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '" class="berita-read">Baca Selengkapnya &rarr;</a>
-              </div>
-            </div>';
+                        <!-- Admin Dynamic Card -->
+                        <div class="doc-card">
+                          <div class="doc-img">
+                            ' . $imgHtml . '
+                          </div>
+                          <div class="doc-body">
+                            <div class="doc-meta">
+                              <span class="doc-year">' . ($art->published_at ? $art->published_at->format('Y') : date('Y')) . '</span>
+                            </div>
+                            <h3>
+                              <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '">' . htmlspecialchars($art->title) . '</a>
+                            </h3>
+                            <p>' . htmlspecialchars($art->excerpt ?? '') . '</p>
+                            <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '" class="btn-dl">Baca Esai Lengkap
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>';
     }
 
-    $pattern = '/<div class="berita-grid">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-    $replacement = '<div class="berita-grid">' . $cardsHtml . '</div></div></section>';
-    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
+    $pattern = '/<div class="docs-grid">\s*(<!-- 1 -->.*?<\/div>\s*<\/div>)/s';
+    if (preg_match($pattern, $originalHtml)) {
+      $renderedHtml = preg_replace($pattern, '<div class="docs-grid">' . $cardsHtml . '$1', $originalHtml);
+    } else {
+      $renderedHtml = str_replace('<div class="docs-grid">', '<div class="docs-grid">' . $cardsHtml, $originalHtml);
+    }
 
     return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
   }
