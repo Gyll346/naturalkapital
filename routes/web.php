@@ -32,6 +32,8 @@ Route::get('/artikel-cms', [PublicArticleController::class, 'index'])->name('pub
 Route::get('/artikel-cms/{slug}', [PublicArticleController::class, 'show'])->name('public.article.show');
 
 // Subhalaman Dinamis Database (Tentang Kami)
+Route::get('/sejarah-visi-misi', fn() => view('public.sejarah-visi-misi'))->name('public.sejarah_visi_misi');
+Route::get('/sejarah-visi-misi/index.html', fn() => redirect('/sejarah-visi-misi'));
 Route::get('/tim', [PageContentController::class, 'team'])->name('public.team');
 Route::get('/tim-ynki', [PageContentController::class, 'team'])->name('public.tim');
 Route::get('/lgos', [PageContentController::class, 'lgos'])->name('public.lgos');
@@ -41,6 +43,14 @@ Route::get('/portofolio/index.html', [PageContentController::class, 'portfolio']
 Route::get('/portofolio/{slug}', [PageContentController::class, 'portfolioDetail'])->name('public.portfolio.show');
 Route::get('/transparansi', [PageContentController::class, 'transparansi'])->name('public.transparansi');
 Route::get('/annual-report', [PageContentController::class, 'transparansi'])->name('public.annual_report');
+
+// Subhalaman Dampak & Pembelajaran
+Route::get('/dampak', fn() => view('public.dampak'))->name('public.dampak');
+Route::get('/dampak/index.html', fn() => redirect('/dampak'));
+Route::get('/kisah-perubahan', fn() => view('public.kisah-perubahan'))->name('public.kisah_perubahan');
+Route::get('/kisah-perubahan/index.html', fn() => redirect('/kisah-perubahan'));
+Route::get('/liputan-media', fn() => view('public.liputan-media'))->name('public.liputan_media');
+Route::get('/liputan-media/index.html', fn() => redirect('/liputan-media'));
 
 
 // Subhalaman Dinamis Database (Literasi & Pengetahuan)

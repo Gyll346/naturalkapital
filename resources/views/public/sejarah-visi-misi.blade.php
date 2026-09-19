@@ -3579,7 +3579,7 @@
                           </div>
                           <div class="sejarah-img-box">
                             <img
-                              src="/wp-content/uploads/2026/05/Direktur-YNKI-Haryono-768x582.webp"
+                              src="/wp-content/uploads/2026/05/Direktur-YNKI-Haryono.webp"
                               alt="Konsolidasi Strategis dan Perjalanan Sejarah YNKI"
                               loading="lazy"
                             />
