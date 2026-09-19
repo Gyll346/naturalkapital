@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -14,22 +14,22 @@
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <title>
-      LGOS: Sistem Operasi Organisasi — Yayasan Natural Kapital Indonesia (YNKI)
+      Annual Report — Yayasan Natural Kapital Indonesia (YNKI)
     </title>
     <meta
       name="description"
-      content="Landscape Governance Operating System (LGOS): Kerangka kerja sistem operasi 8 komponen terintegrasi Yayasan Natural Kapital Indonesia."
+      content="Komitmen transparansi, akuntabilitas publik, laporan tahunan, laporan keuangan teraudit, dan daftar mitra strategis Yayasan Natural Kapital Indonesia (YNKI)."
     />
-    <link rel="canonical" href="/lgos/" />
+    <link rel="canonical" href="/transparansi/" />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="LGOS: Sistem Operasi Organisasi — Yayasan Natural Kapital Indonesia (YNKI)"
+      content="Annual Report — Yayasan Natural Kapital Indonesia (YNKI)"
     />
     <meta
       property="og:description"
-      content="Landscape Governance Operating System (LGOS): Kerangka kerja sistem operasi 8 komponen terintegrasi YNKI."
+      content="Komitmen transparansi, akuntabilitas publik, dan laporan tahunan YNKI."
     />
     <meta property="og:url" content="/" />
     <meta property="og:site_name" content="Natural Kapital Foundation" />
@@ -167,18 +167,18 @@
     />
     <meta
       name="description"
-      content="Landscape Governance Operating System (LGOS): Kerangka kerja sistem operasi 8 komponen terintegrasi Yayasan Natural Kapital Indonesia."
+      content="Komitmen transparansi, akuntabilitas publik, laporan tahunan, laporan keuangan teraudit, dan daftar mitra strategis Yayasan Natural Kapital Indonesia (YNKI)."
     />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Natural Kapital Foundation" />
     <meta
       property="og:title"
-      content="LGOS: Sistem Operasi Organisasi — Yayasan Natural Kapital Indonesia (YNKI)"
+      content="Annual Report — Yayasan Natural Kapital Indonesia (YNKI)"
     />
     <meta
       property="og:description"
-      content="Landscape Governance Operating System (LGOS): Kerangka kerja sistem operasi 8 komponen terintegrasi YNKI."
+      content="Komitmen transparansi, akuntabilitas publik, dan laporan tahunan YNKI."
     />
     <meta property="og:url" content="/" />
     <meta
@@ -2385,7 +2385,7 @@
         <div id="home" style="position: relative; top: -1px"></div>
         <div class="fusion-tb-header">
           <div
-            class="fusion-fullwidth fullwidth-box fusion-builder-row-1 fusion-flex-container nonhundred-percent-fullwidth fusion-animated fusion-custom-z-index"
+            class="fusion-fullwidth fullwidth-box fusion-builder-row-1 fusion-flex-container nonhundred-percent-fullwidth  fusion-animated fusion-custom-z-index"
             style="
               --awb-border-radius-top-left: 0px;
               --awb-border-radius-top-right: 0px;
@@ -2650,6 +2650,7 @@
                               ><span>Portfolio</span></a
                             >
                           </li>
+                          
                         </ul>
                       </li>
                       <li
@@ -2715,7 +2716,9 @@
                             <a
                               href="/landscape-intelligence/"
                               class="awb-menu__sub-a"
-                              ><span>Pengetahuan Lanskap &amp; Inovasi</span></a
+                              ><span
+                                >Landscape Intelligence &amp; Innovation</span
+                              ></a
                             >
                           </li>
                           <li
@@ -2898,34 +2901,25 @@
             rel="stylesheet"
             href="/assets/css/ynki-responsive-system.css?v=2"
           />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-          />
 
           <style>
-            *,
-            *::before,
-            *::after {
-              box-sizing: border-box;
-            }
             .ynki-section {
               width: 100%;
+              box-sizing: border-box;
             }
             .ynki-container {
               max-width: 1200px;
               margin: 0 auto;
               padding: 0 24px;
+              box-sizing: border-box;
             }
-
             .section-badge {
               display: inline-flex;
               align-items: center;
               gap: 6px;
-              font-size: 11px;
+              font-size: 12px;
               font-weight: 700;
-              letter-spacing: 1.5px;
+              letter-spacing: 1.2px;
               text-transform: uppercase;
               color: #ff8000;
               background: #fff3e6;
@@ -2934,33 +2928,33 @@
               border-radius: 50px;
               margin-bottom: 14px;
             }
-            .divider-line {
+            .section-divider {
               display: flex;
               align-items: center;
               justify-content: center;
               gap: 16px;
               margin-bottom: 14px;
             }
-            .divider-line .line {
+            .section-divider .line {
               flex: 1;
               height: 1px;
               background: #d2e8d1;
             }
 
-            /* ========================
-   HERO
-======================== */
-            #hero-lgos {
+            /* ---- HERO ---- */
+            #hero-trans {
               position: relative;
-              min-height: 82vh;
+              min-height: 80vh;
               display: flex;
               align-items: center;
-              background-image: url("/assets/images/homepage/hero-bg.png");
+              background-image: 
+              linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url('/assets/images/DJI_0010.JPG.jpeg');
               background-size: cover;
               background-position: center center;
-              padding: 110px 24px 90px;
+              padding: 100px 24px 80px;
             }
-            #hero-lgos::after {
+            #hero-trans::after {
               content: "";
               position: absolute;
               bottom: 0;
@@ -2968,476 +2962,201 @@
               right: 0;
               height: 80px;
               background: linear-gradient(to bottom, transparent, #ffffff);
-              pointer-events: none;
             }
-            .hero-inner {
+            .hero-content-trans {
               position: relative;
               z-index: 2;
               max-width: 920px;
               margin: 0 auto;
               text-align: center;
             }
-            .hero-crumb {
-              font-size: 11.5px;
+            .hero-breadcrumb {
+              font-size: 12px;
               font-weight: 700;
-              letter-spacing: 1.8px;
+              letter-spacing: 1.5px;
               text-transform: uppercase;
               color: #a3e0a2;
-              margin-bottom: 20px;
+              margin-bottom: 18px;
             }
-            .hero-crumb a {
+            .hero-breadcrumb a {
               color: #d2f0d1;
               text-decoration: none;
             }
-            .hero-crumb a:hover {
+            .hero-breadcrumb a:hover {
               color: #ff8000;
             }
-            #hero-lgos h1 {
-              font-size: clamp(28px, 4.5vw, 48px);
+            #hero-trans h1 {
+              font-size: clamp(28px, 4.5vw, 46px);
               font-weight: 900;
               line-height: 1.2;
               color: #ffffff;
-              margin: 0 0 22px;
+              margin: 0 0 20px;
               letter-spacing: -0.02em;
             }
-            #hero-lgos h1 .hl {
+            #hero-trans h1 span.hl {
               color: #a3e0a2;
             }
-            .hero-sub {
-              font-size: clamp(14.5px, 1.6vw, 17px);
+            .hero-desc-trans {
+              font-size: clamp(14px, 1.6vw, 17px);
               line-height: 1.85;
               color: #d2f0d1;
               max-width: 820px;
-              margin: 0 auto 36px;
-            }
-            .hero-quote {
-              background: rgba(255, 255, 255, 0.08);
-              border-left: 3px solid #a3e0a2;
-              padding: 14px 22px;
-              border-radius: 0 12px 12px 0;
-              max-width: 680px;
               margin: 0 auto 32px;
-              text-align: left;
-            }
-            .hero-quote p {
-              font-size: 13.5px;
-              color: #d2f0d1;
-              margin: 0 0 6px;
-              line-height: 1.65;
-            }
-            .hero-quote span {
-              font-size: 11.5px;
-              color: #a3e0a2;
-              font-weight: 700;
-            }
-            .hero-btns {
-              display: flex;
-              justify-content: center;
-              gap: 14px;
-              flex-wrap: wrap;
             }
 
-            /* ========================
-   8 KOMPONEN ARSITEKTUR
-======================== */
-            #lgos-arsitektur {
+            /* ---- 3 PILAR ---- */
+            #trans-pilar {
               background: #ffffff;
-              padding: 90px 24px;
+              padding: 85px 24px;
             }
-            .lgos-grid {
-              display: grid;
-              grid-template-columns: repeat(4, 1fr);
-              gap: 20px;
-              margin-top: 44px;
-            }
-            .lgos-card {
-              background: #f8faf8;
-              border: 1.5px solid #d2e8d1;
-              border-radius: 16px;
-              padding: 26px 20px;
-              transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-              display: flex;
-              flex-direction: column;
-              position: relative;
-              overflow: hidden;
-            }
-            .lgos-card::before {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              height: 3px;
-              background: #d2e8d1;
-              transition: background 0.3s;
-            }
-            .lgos-card:hover {
-              transform: translateY(-6px);
-              box-shadow: 0 18px 38px rgba(17, 119, 16, 0.13);
-              border-color: #117710;
-            }
-            .lgos-card:hover::before {
-              background: #117710;
-            }
-            .lgos-num {
-              font-size: 10.5px;
-              font-weight: 900;
-              color: #ff8000;
-              letter-spacing: 1.5px;
-              margin-bottom: 10px;
-            }
-            .lgos-card h4 {
-              font-size: 15.5px;
-              font-weight: 800;
-              color: #0e241b;
-              margin: 0 0 6px;
-              line-height: 1.3;
-            }
-            .lgos-card .role {
-              font-size: 11.5px;
-              font-weight: 700;
-              color: #117710;
-              margin-bottom: 10px;
-              letter-spacing: 0.5px;
-            }
-            .lgos-card p {
-              font-size: 13px;
-              line-height: 1.65;
-              color: #536b5f;
-              margin: 0;
-              flex: 1;
-            }
-            .lgos-card-action {
-              margin-top: 18px;
-              padding-top: 14px;
-              border-top: 1px dashed #d2e8d1;
-            }
-            .lgos-doc-label {
-              font-size: 11px;
-              font-weight: 700;
-              text-transform: uppercase;
-              letter-spacing: 0.5px;
-              color: #708c7e;
-              margin-bottom: 6px;
-              display: block;
-            }
-            .btn-lgos-doc {
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              gap: 7px;
-              width: 100%;
-              padding: 9px 12px;
-              font-size: 12.5px;
-              font-weight: 700;
-              border-radius: 8px;
-              text-decoration: none;
-              transition: all 0.25s ease;
-              box-sizing: border-box;
-            }
-            .btn-lgos-doc.download {
-              background: #eaf6ea;
-              color: #117710;
-              border: 1.5px solid #b5ddb5;
-            }
-            .btn-lgos-doc.download:hover {
-              background: #117710;
-              color: #ffffff;
-              border-color: #117710;
-              box-shadow: 0 4px 12px rgba(17, 119, 16, 0.2);
-            }
-            .btn-lgos-doc.contact {
-              background: #fff4ea;
-              color: #c45e00;
-              border: 1.5px solid #fed2a4;
-            }
-            .btn-lgos-doc.contact:hover {
-              background: #ff8000;
-              color: #ffffff;
-              border-color: #ff8000;
-              box-shadow: 0 4px 12px rgba(255, 128, 0, 0.2);
-            }
-
-            /* ========================
-   3 KOMPONEN UTAMA (GREEN BG)
-======================== */
-            #lgos-utama {
-              background: #117710;
-              padding: 90px 24px;
-            }
-            .utama-grid {
+            .pilar-grid {
               display: grid;
               grid-template-columns: repeat(3, 1fr);
               gap: 24px;
               margin-top: 44px;
             }
-            .utama-card {
-              background: rgba(255, 255, 255, 0.08);
-              border: 1px solid rgba(255, 255, 255, 0.15);
+            .pilar-card {
+              border: 1px solid #d2e8d1;
               border-radius: 16px;
-              padding: 32px 26px;
-              transition: all 0.3s ease;
-              display: flex;
-              flex-direction: column;
+              overflow: hidden;
+              transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             }
-            .utama-card:hover {
-              background: rgba(255, 255, 255, 0.13);
-              transform: translateY(-5px);
+            .pilar-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 40px rgba(17, 119, 16, 0.13);
+              border-color: #117710;
             }
-            .utama-card .card-num {
-              font-size: 11px;
-              font-weight: 900;
-              color: #a3e0a2;
-              letter-spacing: 1.5px;
-              margin-bottom: 12px;
+            .pilar-header {
+              background: linear-gradient(135deg, #117710 0%, #1d9c1c 100%);
+              padding: 30px 24px;
             }
-            .utama-card h3 {
+            .pilar-header h3 {
               font-size: 18px;
               font-weight: 800;
               color: #ffffff;
               margin: 0 0 6px;
             }
-            .utama-card .sub {
-              font-size: 12px;
-              font-weight: 700;
+            .pilar-header p {
+              font-size: 13px;
               color: #a3e0a2;
-              margin-bottom: 14px;
-              letter-spacing: 0.5px;
+              margin: 0;
+              line-height: 1.5;
             }
-            .utama-card p {
-              font-size: 13.5px;
-              line-height: 1.7;
-              color: #d2f0d1;
-              margin: 0 0 14px;
-              flex: 1;
+            .pilar-body {
+              padding: 22px 24px;
+              background: #f9faf9;
             }
-            .utama-card .q {
-              font-size: 12px;
-              color: rgba(255, 255, 255, 0.6);
-              font-style: italic;
-              padding: 10px 14px;
-              background: rgba(0, 0, 0, 0.15);
-              border-radius: 8px;
-            }
-
-            /* ========================
-   5 KOMPONEN PENDUKUNG (TABLE)
-======================== */
-            #lgos-pendukung {
-              background: #f5f8f5;
-              padding: 90px 24px;
-            }
-            .pendukung-table {
-              width: 100%;
-              border-collapse: separate;
-              border-spacing: 0;
-              border-radius: 16px;
-              overflow: hidden;
-              box-shadow: 0 4px 24px rgba(17, 119, 16, 0.09);
-              margin-top: 44px;
-            }
-            .pendukung-table thead tr {
-              background: #117710;
-            }
-            .pendukung-table thead th {
-              padding: 18px 22px;
-              text-align: left;
-              font-size: 12px;
-              font-weight: 800;
-              color: #a3e0a2;
-              letter-spacing: 1.2px;
-              text-transform: uppercase;
-            }
-            .pendukung-table thead th:last-child {
-              text-align: center;
-            }
-            .pendukung-table tbody tr {
-              background: #ffffff;
+            .pilar-item {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              padding: 9px 0;
               border-bottom: 1px solid #e8f3e8;
-              transition: background 0.2s;
             }
-            .pendukung-table tbody tr:last-child {
+            .pilar-item:last-child {
               border-bottom: none;
             }
-            .pendukung-table tbody tr:hover {
-              background: #f0f8f0;
+            .pilar-item svg {
+              stroke: #117710;
+              flex-shrink: 0;
             }
-            .pendukung-table td {
-              padding: 20px 22px;
-              vertical-align: top;
-            }
-            .comp-name {
-              font-size: 15px;
-              font-weight: 800;
-              color: #0e241b;
-              margin-bottom: 4px;
-            }
-            .comp-label {
-              font-size: 11px;
-              font-weight: 700;
-              color: #117710;
-              letter-spacing: 0.8px;
-              text-transform: uppercase;
-            }
-            .comp-desc {
+            .pilar-item span {
               font-size: 13.5px;
-              color: #536b5f;
-              line-height: 1.65;
+              color: #0e241b;
+              font-weight: 500;
             }
-            .btn-unduh-sm {
+
+            /* ---- LAPORAN ---- */
+            #trans-laporan {
+              background: #117710;
+              padding: 85px 24px;
+            }
+            .laporan-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 22px;
+              margin-top: 44px;
+            }
+            .laporan-card {
+              background: rgba(255, 255, 255, 0.08);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              border-radius: 16px;
+              padding: 28px 22px;
+              transition: all 0.3s ease;
+              display: flex;
+              flex-direction: column;
+            }
+            .laporan-card:hover {
+              background: rgba(255, 255, 255, 0.14);
+              transform: translateY(-4px);
+            }
+            .laporan-tag {
+              font-size: 11px;
+              font-weight: 800;
+              color: #ff8000;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              margin-bottom: 10px;
+            }
+            .laporan-card h4 {
+              font-size: 16px;
+              font-weight: 800;
+              color: #ffffff;
+              margin: 0 0 10px;
+            }
+            .laporan-card p {
+              font-size: 13px;
+              line-height: 1.65;
+              color: #d2f0d1;
+              margin: 0 0 18px;
+              flex: 1;
+            }
+            .btn-unduh {
               display: inline-flex;
               align-items: center;
-              gap: 6px;
-              font-size: 12.5px;
+              gap: 8px;
+              font-size: 13px;
               font-weight: 700;
               color: #0e241b;
               background: #a0d2f5;
-              padding: 8px 16px;
+              border: none;
+              padding: 10px 18px;
               border-radius: 50px;
               text-decoration: none;
               transition: all 0.3s ease;
-              white-space: nowrap;
+              cursor: pointer;
+              width: fit-content;
             }
-            .btn-unduh-sm:hover {
+            .btn-unduh:hover {
               background: #7ab8e8;
               transform: translateX(3px);
             }
 
-            /* ========================
-   UNDUH DOKUMEN LENGKAP
-======================== */
-            #lgos-unduh {
-              background: #ffffff;
-              padding: 90px 24px;
+            /* ---- TATA KELOLA DONOR ---- */
+            #trans-donor {
+              background: #f9faf9;
+              padding: 85px 24px;
             }
-            .unduh-card {
-              max-width: 900px;
-              margin: 0 auto;
-              background: linear-gradient(135deg, #0c500b 0%, #082e07 100%);
-              border-radius: 24px;
-              padding: 56px 48px;
-              display: flex;
-              gap: 48px;
-              align-items: flex-start;
-              position: relative;
-              overflow: hidden;
-              box-shadow: 0 20px 60px rgba(8, 46, 7, 0.28);
-            }
-            .unduh-card::before {
-              content: "NATURE FOR LIVINGS";
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              font-size: clamp(38px, 6vw, 86px);
-              font-weight: 900;
-              color: rgba(255, 255, 255, 0.05);
-              white-space: nowrap;
-              letter-spacing: 7px;
-              pointer-events: none;
-              z-index: 0;
-              font-family: inherit;
-              user-select: none;
-            }
-            .unduh-card > * {
-              position: relative;
-              z-index: 1;
-            }
-            .unduh-icon-wrap {
-              flex-shrink: 0;
-              width: 80px;
-              height: 80px;
-              background: rgba(255, 255, 255, 0.12);
-              border-radius: 18px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-            .unduh-info {
-              flex: 1;
-            }
-            .unduh-info h3 {
-              font-size: 22px;
-              font-weight: 900;
-              color: #ffffff;
-              margin: 0 0 12px;
-            }
-            .unduh-info p {
-              font-size: 15px;
-              color: #d2f0d1;
-              line-height: 1.75;
-              margin: 0 0 24px;
-            }
-            .unduh-features {
-              display: flex;
-              flex-direction: column;
-              flex-direction: column;
-              gap: 10px;
-              margin-bottom: 28px;
-            }
-            .unduh-features li {
-              list-style: none;
-              display: flex;
-              align-items: flex-start;
-              gap: 10px;
-              font-size: 13.5px;
-              color: #d2f0d1;
-            }
-            .unduh-features li svg {
-              flex-shrink: 0;
-              margin-top: 2px;
-            }
-            .unduh-features li strong {
-              color: #ffffff;
-            }
-            .btn-unduh-main {
-              display: inline-flex;
-              align-items: center;
-              gap: 10px;
-              font-size: 15px;
-              font-weight: 700;
-              color: #0e241b;
-              background: #a0d2f5;
-              padding: 14px 28px;
-              border-radius: 50px;
-              text-decoration: none;
-              transition: all 0.3s ease;
-            }
-            .btn-unduh-main:hover {
-              background: #7ab8e8;
-              transform: translateY(-2px);
-              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            }
-
-            /* ========================
-   JELAJAHI KOMPONEN LGOS LAINNYA
-======================== */
-            #lgos-jelajahi {
-              background: #f5f8f5;
-              padding: 90px 24px;
-            }
-            .jelajahi-grid {
+            .donor-grid {
               display: grid;
-              grid-template-columns: repeat(4, 1fr);
-              gap: 20px;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 28px;
               margin-top: 44px;
             }
-            .jelajahi-card {
+            .donor-card {
               background: #ffffff;
-              border: 1.5px solid #d2e8d1;
+              border: 1px solid #d2e8d1;
               border-radius: 16px;
-              padding: 28px 22px;
-              transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+              padding: 32px;
+              transition: all 0.3s ease;
               display: flex;
-              flex-direction: column;
-              text-decoration: none;
+              gap: 18px;
             }
-            .jelajahi-card:hover {
-              transform: translateY(-6px);
-              box-shadow: 0 18px 40px rgba(17, 119, 16, 0.13);
+            .donor-card:hover {
+              box-shadow: 0 12px 30px rgba(17, 119, 16, 0.11);
               border-color: #117710;
             }
-            .jelajahi-card .icon-wrap {
+            .donor-icon {
               width: 50px;
               height: 50px;
               background: linear-gradient(135deg, #117710, #1d9c1c);
@@ -3445,608 +3164,553 @@
               display: flex;
               align-items: center;
               justify-content: center;
-              margin-bottom: 16px;
+              flex-shrink: 0;
             }
-            .jelajahi-card .icon-wrap svg {
+            .donor-icon svg {
               stroke: #ffffff;
             }
-            .jelajahi-card h4 {
+            .donor-info h4 {
               font-size: 16px;
               font-weight: 800;
               color: #0e241b;
               margin: 0 0 8px;
             }
-            .jelajahi-card p {
-              font-size: 13px;
-              color: #536b5f;
+            .donor-info p {
+              font-size: 13.5px;
               line-height: 1.65;
-              margin: 0 0 16px;
-              flex: 1;
-            }
-            .jelajahi-card .link-label {
-              font-size: 12px;
-              font-weight: 700;
-              color: #117710;
-              display: flex;
-              align-items: center;
-              gap: 5px;
-            }
-            .jelajahi-card:hover .link-label {
-              color: #0a5509;
+              color: #536b5f;
+              margin: 0;
             }
 
-            @media (max-width: 1024px) {
-              .lgos-grid {
-                grid-template-columns: repeat(2, 1fr);
-              }
-              .jelajahi-grid {
-                grid-template-columns: repeat(2, 1fr);
-              }
+            /* ---- KOMITMEN ---- */
+            #trans-komitmen {
+              background: #ffffff;
+              padding: 85px 24px;
+              text-align: center;
             }
-            @media (max-width: 768px) {
-              .utama-grid {
+
+            @media (max-width: 900px) {
+              .pilar-grid,
+              .laporan-grid {
                 grid-template-columns: 1fr;
               }
-              .unduh-card {
-                flex-direction: column;
-                gap: 24px;
-                padding: 32px 24px;
-              }
-            }
-            @media (max-width: 580px) {
-              .lgos-grid {
+              .donor-grid {
                 grid-template-columns: 1fr;
               }
-              .jelajahi-grid {
-                grid-template-columns: 1fr 1fr;
-              }
-              .pendukung-table {
-                font-size: 13px;
-              }
-              .pendukung-table td,
-              .pendukung-table th {
-                padding: 14px 14px;
-              }
+            }
+
+            /* ======================== PAGINATION CLEARFIX ======================== */
+            .pagination.clearfix {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 8px;
+              margin: 40px auto 10px;
+              clear: both;
+            }
+            .pagination.clearfix a,
+            .pagination.clearfix span {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              min-width: 38px;
+              height: 38px;
+              padding: 0 14px;
+              border-radius: 8px;
+              font-size: 13.5px;
+              font-weight: 700;
+              text-decoration: none;
+              transition: all 0.2s ease;
+              cursor: pointer;
+              border: 1.5px solid rgba(255, 255, 255, 0.4);
+              background: rgba(255, 255, 255, 0.15);
+              color: #ffffff;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            }
+            .pagination.clearfix a:hover {
+              background: #ffffff;
+              border-color: #ffffff;
+              color: #117710;
+              transform: translateY(-1px);
+            }
+            .pagination.clearfix .current {
+              background: #ffffff;
+              border-color: #ffffff;
+              color: #117710;
+              box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+              cursor: default;
+            }
+            .pagination.clearfix .pagination-prev,
+            .pagination.clearfix .pagination-next {
+              padding: 0 16px;
+              font-size: 13px;
+            }
+            .pagination.clearfix .disabled {
+              opacity: 0.35;
+              pointer-events: none;
+              cursor: not-allowed;
+              border-color: rgba(255, 255, 255, 0.2);
             }
           </style>
 
           <div class="fusion-row" style="max-width: 100%">
             <section id="content" class="full-width">
-              <div id="post-lgos" class="page type-page status-publish hentry">
+              <div id="post-trans" class="page type-page status-publish hentry">
                 <span class="entry-title rich-snippet-hidden"
-                  >LGOS: Sistem Operasi Organisasi — Yayasan Natural Kapital
+                  >Annual Report — Yayasan Natural Kapital
                   Indonesia (YNKI)</span
                 >
                 <div class="post-content">
-                  <!-- =========================================
-             1. HERO
-             ========================================= -->
-                  <section id="hero-lgos" class="ynki-section">
-                    <div class="hero-inner">
-                      <div class="hero-crumb">
-                        <a href="/">Beranda</a> &nbsp;/&nbsp;
-                        <a href="/tentang-kami/">Tentang Kami</a> &nbsp;/&nbsp;
-                        <span>LGOS</span>
+                  <!-- 1. HERO -->
+                  <section id="hero-trans" class="ynki-section">
+                    <div class="hero-content-trans">
+                      <div class="hero-breadcrumb">
+                        <a href="/">Beranda</a> /
+                        <a href="/tentang-kami/">Tentang Kami</a> /
+                        <span>Transparansi</span>
                       </div>
-                      <h1
+                      <h1>
+                        Transparansi &amp; Laporan<br />
+                        <span class="hl">Mitra YNKI</span>
+                      </h1>
+                      <p class="hero-desc-trans">
+                        Kami berkomitmen penuh pada akuntabilitas dan
+                        keterbukaan. Seluruh penggunaan dana, capaian program,
+                        dan kemitraan kami dokumentasikan secara terbuka untuk
+                        membangun kepercayaan bersama.
+                      </p>
+                      <div
                         style="
-                          font-family:
-                            &quot;Montserrat&quot;, &quot;Inter&quot;, Arial,
-                            sans-serif !important;
-                          font-size: clamp(32px, 4.5vw, 54px) !important;
-                          font-weight: 300 !important;
-                          line-height: 1.25 !important;
-                          color: #ffffff !important;
-                          margin: 0 0 20px !important;
-                          letter-spacing: -0.01em !important;
+                          display: flex;
+                          justify-content: center;
+                          gap: 14px;
+                          flex-wrap: wrap;
                         "
                       >
-                        Landscape Governance<br />
-                        <span
-                          class="hl"
-                          style="
-                            font-family:
-                              &quot;Montserrat&quot;, &quot;Inter&quot;, Arial,
-                              sans-serif !important;
-                            font-size: 0.88em !important;
-                            font-weight: 300 !important;
-                            color: #a3e0a2 !important;
-                            display: inline-block;
-                          "
-                          >Operating System (LGOS)</span
-                        >
-                      </h1>
-                      <p class="hero-sub">
-                        Sebagai
-                        <em>Landscape Governance Backbone Organization</em>,
-                        YNKI menggunakan LGOS untuk memastikan seluruh elemen
-                        organisasi bekerja secara terhubung dalam mendukung visi
-                        bersama.
-                      </p>
-                      <div class="hero-quote">
-                        <p>
-                          LGOS adalah kerangka kerja terintegrasi yang
-                          menghubungkan filosofi, strategi, program,
-                          pembelajaran, pengetahuan, dan sumber daya dalam satu
-                          sistem perubahan yang utuh.
-                        </p>
-                        <span>LGOS — Sistem Operasi Organisasi YNKI</span>
-                      </div>
-                      <div class="hero-btns">
-                        <a href="#lgos-arsitektur" class="btn-cta-main">
+                        <a href="#trans-laporan" class="btn-cta-main">
                           <svg
-                            width="17"
-                            height="17"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                            />
+                            <polyline points="14 2 14 8 20 8" />
+                          </svg>
+                          Unduh Laporan
+                        </a>
+                        <a href="#trans-pilar" class="btn-cta-second">
+                          <svg
+                            width="18"
+                            height="18"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
                             stroke-width="2"
                           >
                             <circle cx="12" cy="12" r="10" />
-                            <polyline points="12 16 16 12 12 8" />
-                            <line x1="8" y1="12" x2="16" y2="12" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
                           </svg>
-                          8 Komponen LGOS
-                        </a>
-                        <a href="#lgos-utama" class="btn-cta-second">
-                          <svg
-                            width="17"
-                            height="17"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                          >
-                            <circle cx="11" cy="11" r="8" />
-                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                          </svg>
-                          3 Komponen Utama
+                          3 Pilar Transparansi
                         </a>
                       </div>
                     </div>
                   </section>
 
-                  <!-- =========================================
-             2. ARSITEKTUR 8 KOMPONEN
-             ========================================= -->
-                  <section id="lgos-arsitektur" class="ynki-section">
+                  <!-- 2. 3 PILAR TRANSPARANSI -->
+                  <section id="trans-pilar" class="ynki-section">
                     <div class="ynki-container">
                       <div style="text-align: center">
-                        <div class="divider-line">
-                          <span class="line"></span
-                          ><span class="section-badge">ARSITEKTUR LGOS</span
-                          ><span class="line"></span>
+                        <div class="section-divider">
+                          <span class="line"></span>
+                          <span class="section-badge"
+                            >FONDASI AKUNTABILITAS</span
+                          >
+                          <span class="line"></span>
                         </div>
                         <h2
                           style="
                             font-size: clamp(22px, 3vw, 34px);
                             font-weight: 800;
                             color: #0e241b;
-                            margin: 0 0 12px;
+                            margin: 0 0 10px;
                           "
                         >
-                          8 Komponen LGOS yang Saling Terhubung
+                          3 Pilar Transparansi Organisasi
                         </h2>
                         <p
                           style="
                             font-size: 15px;
                             color: #536b5f;
-                            max-width: 760px;
+                            max-width: 680px;
                             margin: 0 auto;
                           "
                         >
-                          Setiap komponen LGOS memiliki peran spesifik — dari
-                          fondasi filosofis hingga mobilisasi sumber daya — yang
-                          bekerja bersama membentuk sistem perubahan yang utuh
-                          dan berkelanjutan.
+                          Komitmen kami terhadap keterbukaan diwujudkan melalui
+                          tiga domain akuntabilitas yang saling mendukung:
                         </p>
                       </div>
 
-                      <div class="lgos-grid">
-                        <div class="lgos-card">
-                          <div class="lgos-num">KOMPONEN 01</div>
-                          <h4>Kertas Posisi</h4>
-                          <div class="role">Mengapa Kami Ada</div>
-                          <p>
-                            Fondasi filosofis yang menjelaskan mengapa YNKI ada
-                            dan nilai-nilai yang mendasari seluruh keputusan
-                            organisasi.
-                          </p>
-                          <div class="lgos-card-action">
-                            <div class="lgos-doc-label">Dokumen Pendukung</div>
-                            <a href="#" class="btn-lgos-doc download">
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path
-                                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                />
-                                <polyline points="7 10 12 15 17 10" />
-                                <line x1="12" y1="15" x2="12" y2="3" />
-                              </svg>
-                              Unduh Dokumen
-                            </a>
-                          </div>
-                        </div>
-                        <div class="lgos-card">
-                          <div class="lgos-num">KOMPONEN 02</div>
-                          <h4>Master ToC</h4>
-                          <div class="role">Bagaimana Perubahan Terjadi</div>
-                          <p>
-                            Menggambarkan hubungan antara tata kelola lanskap,
-                            perubahan perilaku, kelembagaan, dan dampak jangka
-                            panjang.
-                          </p>
-                          <div class="lgos-card-action">
-                            <div class="lgos-doc-label">Dokumen Pendukung</div>
-                            <a href="#" class="btn-lgos-doc download">
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path
-                                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                />
-                                <polyline points="7 10 12 15 17 10" />
-                                <line x1="12" y1="15" x2="12" y2="3" />
-                              </svg>
-                              Unduh Dokumen
-                            </a>
-                          </div>
-                        </div>
-                        <div class="lgos-card">
-                          <div class="lgos-num">KOMPONEN 03</div>
-                          <h4>Rencana Strategis</h4>
-                          <div class="role">Ke Mana Kami Melangkah</div>
-                          <p>
-                            Menerjemahkan Theory of Change menjadi arah
-                            organisasi jangka menengah dan panjang (2026–2035).
-                          </p>
-                          <div class="lgos-card-action">
-                            <div class="lgos-doc-label">Dokumen Pendukung</div>
-                            <a href="#" class="btn-lgos-doc download">
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path
-                                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                />
-                                <polyline points="7 10 12 15 17 10" />
-                                <line x1="12" y1="15" x2="12" y2="3" />
-                              </svg>
-                              Unduh Dokumen
-                            </a>
-                          </div>
-                        </div>
-                        <div class="lgos-card">
-                          <div class="lgos-num">KOMPONEN 04</div>
-                          <h4>Kerangka Program</h4>
-                          <div class="role">Portofolio Program</div>
-                          <p>
-                            Menentukan portofolio 5 program strategis sebagai
-                            jembatan antara strategi dan implementasi di
-                            lapangan.
-                          </p>
-                          <div class="lgos-card-action">
-                            <div class="lgos-doc-label">Dokumen Pendukung</div>
-                            <a href="#" class="btn-lgos-doc download">
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path
-                                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                />
-                                <polyline points="7 10 12 15 17 10" />
-                                <line x1="12" y1="15" x2="12" y2="3" />
-                              </svg>
-                              Unduh Dokumen
-                            </a>
-                          </div>
-                        </div>
-                        <div class="lgos-card">
-                          <div class="lgos-num">KOMPONEN 05</div>
-                          <h4>Portofolio Proyek</h4>
-                          <div class="role">Proyek &amp; Kemitraan</div>
-                          <p>
-                            Menerjemahkan strategi ke dalam proyek, kemitraan,
-                            dan inisiatif lapangan sebagai antarmuka dengan
-                            pemangku kepentingan.
-                          </p>
-                          <div class="lgos-card-action">
-                            <div class="lgos-doc-label">Dokumen Pendukung</div>
-                            <a href="#" class="btn-lgos-doc download">
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path
-                                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                />
-                                <polyline points="7 10 12 15 17 10" />
-                                <line x1="12" y1="15" x2="12" y2="3" />
-                              </svg>
-                              Unduh Dokumen
-                            </a>
-                          </div>
-                        </div>
-                        <div class="lgos-card">
-                          <div class="lgos-num">KOMPONEN 06</div>
-                          <h4>Sistem MEL</h4>
-                          <div class="role">
-                            Monitoring, Evaluation, &amp; Learning
-                          </div>
-                          <p>
-                            Menghasilkan pembelajaran dan mendukung adaptive
-                            management melalui monitoring, evaluasi, dan
-                            pembelajaran berkelanjutan.
-                          </p>
-                          <div class="lgos-card-action">
-                            <div class="lgos-doc-label">Dokumen Pendukung</div>
-                            <a
-                              href="/kontak-kami/"
-                              class="btn-lgos-doc contact"
+                      <div class="pilar-grid">
+                        <!-- Keuangan -->
+                        <div class="pilar-card">
+                          <div class="pilar-header">
+                            <svg
+                              style="margin-bottom: 14px"
+                              width="42"
+                              height="42"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="#a3e0a2"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
                             >
+                              <circle cx="12" cy="12" r="10" />
+                              <line x1="12" y1="8" x2="12" y2="16" />
+                              <line x1="8" y1="12" x2="16" y2="12" />
+                            </svg>
+                            <h3>Transparansi Keuangan</h3>
+                            <p>
+                              Pelaporan penggunaan dana yang akurat dan dapat
+                              diaudit secara independen.
+                            </p>
+                          </div>
+                          <div class="pilar-body">
+                            <div class="pilar-item">
                               <svg
-                                width="14"
-                                height="14"
+                                width="16"
+                                height="16"
                                 viewBox="0 0 24 24"
                                 fill="none"
-                                stroke="currentColor"
+                                stroke="#117710"
                                 stroke-width="2.5"
                               >
-                                <path
-                                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                />
-                                <polyline points="22,6 12,13 2,6" />
+                                <polyline points="20 6 9 17 4 12" />
                               </svg>
-                              Hubungi Kami
-                            </a>
-                          </div>
-                        </div>
-                        <div class="lgos-card">
-                          <div class="lgos-num">KOMPONEN 07</div>
-                          <h4>Pengetahuan Organisasi</h4>
-                          <div class="role">Memori Organisasi</div>
-                          <p>
-                            Menjaga memori organisasi agar pengalaman, data, dan
-                            inovasi tidak hilang ketika proyek atau individu
-                            berubah.
-                          </p>
-                          <div class="lgos-card-action">
-                            <div class="lgos-doc-label">Dokumen Pendukung</div>
-                            <a
-                              href="/kontak-kami/"
-                              class="btn-lgos-doc contact"
-                            >
+                              <span>Laporan Keuangan Tahunan Teraudit</span>
+                            </div>
+                            <div class="pilar-item">
                               <svg
-                                width="14"
-                                height="14"
+                                width="16"
+                                height="16"
                                 viewBox="0 0 24 24"
                                 fill="none"
-                                stroke="currentColor"
+                                stroke="#117710"
                                 stroke-width="2.5"
                               >
-                                <path
-                                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                />
-                                <polyline points="22,6 12,13 2,6" />
+                                <polyline points="20 6 9 17 4 12" />
                               </svg>
-                              Hubungi Kami
-                            </a>
-                          </div>
-                        </div>
-                        <div class="lgos-card">
-                          <div class="lgos-num">KOMPONEN 08</div>
-                          <h4>Mobilisasi Sumber Daya</h4>
-                          <div class="role">Pendanaan &amp; Kemitraan</div>
-                          <p>
-                            Menyediakan energi (pendanaan, kemitraan,
-                            pengetahuan, teknologi) untuk menjalankan seluruh
-                            sistem organisasi.
-                          </p>
-                          <div class="lgos-card-action">
-                            <div class="lgos-doc-label">Dokumen Pendukung</div>
-                            <a
-                              href="/kontak-kami/"
-                              class="btn-lgos-doc contact"
-                            >
+                              <span
+                                >Rincian Alokasi per Program &amp; Proyek</span
+                              >
+                            </div>
+                            <div class="pilar-item">
                               <svg
-                                width="14"
-                                height="14"
+                                width="16"
+                                height="16"
                                 viewBox="0 0 24 24"
                                 fill="none"
-                                stroke="currentColor"
+                                stroke="#117710"
                                 stroke-width="2.5"
                               >
-                                <path
-                                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                />
-                                <polyline points="22,6 12,13 2,6" />
+                                <polyline points="20 6 9 17 4 12" />
                               </svg>
-                              Hubungi Kami
-                            </a>
+                              <span>Laporan Triwulan kepada Donor</span>
+                            </div>
+                            <div class="pilar-item">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#117710"
+                                stroke-width="2.5"
+                              >
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                              <span>Audit Eksternal Independen</span>
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      <!-- Tagline bawah grid -->
-                      <div
-                        style="
-                          text-align: center;
-                          margin-top: 44px;
-                          padding: 28px;
-                          background: #f0f8f0;
-                          border-radius: 16px;
-                          border: 1px solid #d2e8d1;
-                        "
-                      >
-                        <p
-                          style="
-                            font-size: 15px;
-                            color: #0e241b;
-                            font-weight: 600;
-                            margin: 0;
-                            line-height: 1.7;
-                          "
-                        >
-                          LGOS memastikan bahwa seluruh aktivitas organisasi
-                          tetap terhubung dengan misi dan Theory of Change.<br />
-                          <span style="color: #117710; font-weight: 800"
-                            >Setiap keputusan dapat ditelusuri kembali ke tujuan
-                            yang lebih besar:
-                            <em
-                              >Healthy Landscapes, Thriving Communities.</em
-                            ></span
-                          >
-                        </p>
+                        <!-- Program -->
+                        <div class="pilar-card">
+                          <div class="pilar-header">
+                            <svg
+                              style="margin-bottom: 14px"
+                              width="42"
+                              height="42"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="#a3e0a2"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <polyline
+                                points="22 12 18 12 15 21 9 3 6 12 2 12"
+                              />
+                            </svg>
+                            <h3>Transparansi Program</h3>
+                            <p>
+                              Pelaporan capaian, hambatan, dan pembelajaran dari
+                              setiap program dan proyek.
+                            </p>
+                          </div>
+                          <div class="pilar-body">
+                            <div class="pilar-item">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#117710"
+                                stroke-width="2.5"
+                              >
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                              <span>Laporan Capaian Indikator (KPI)</span>
+                            </div>
+                            <div class="pilar-item">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#117710"
+                                stroke-width="2.5"
+                              >
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                              <span
+                                >Dokumentasi Pembelajaran &amp; Adaptasi</span
+                              >
+                            </div>
+                            <div class="pilar-item">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#117710"
+                                stroke-width="2.5"
+                              >
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                              <span>Studi Kasus &amp; Cerita Dampak</span>
+                            </div>
+                            <div class="pilar-item">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#117710"
+                                stroke-width="2.5"
+                              >
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                              <span>Evaluasi Dampak Partisipatif</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Kemitraan -->
+                        <div class="pilar-card">
+                          <div class="pilar-header">
+                            <svg
+                              style="margin-bottom: 14px"
+                              width="42"
+                              height="42"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="#a3e0a2"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path
+                                d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                              />
+                              <circle cx="9" cy="7" r="4" />
+                              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                            <h3>Transparansi Kemitraan</h3>
+                            <p>
+                              Keterbukaan tentang siapa mitra kami, bagaimana
+                              kita berkolaborasi, dan kepentingan bersama.
+                            </p>
+                          </div>
+                          <div class="pilar-body">
+                            <div class="pilar-item">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#117710"
+                                stroke-width="2.5"
+                              >
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                              <span>Daftar Mitra &amp; Donor Terbuka</span>
+                            </div>
+                            <div class="pilar-item">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#117710"
+                                stroke-width="2.5"
+                              >
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                              <span
+                                >Perjanjian &amp; MoU yang Dipublikasikan</span
+                              >
+                            </div>
+                            <div class="pilar-item">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#117710"
+                                stroke-width="2.5"
+                              >
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                              <span>Konflik Kepentingan Diungkapkan</span>
+                            </div>
+                            <div class="pilar-item">
+                              <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#117710"
+                                stroke-width="2.5"
+                              >
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                              <span>Prinsip FPIC dengan Komunitas Adat</span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </section>
 
-                  <!-- =========================================
-             3. 3 KOMPONEN UTAMA
-             ========================================= -->
-                  <section id="lgos-utama" class="ynki-section">
+                  <!-- 3. LAPORAN & DOKUMEN -->
+                  <section id="trans-laporan" class="ynki-section">
                     <div class="ynki-container">
                       <div style="text-align: center">
-                        <span class="section-badge">3 KOMPONEN UTAMA</span>
+                        <span
+                          class="section-badge"
+                          style="
+                            background: rgba(255, 255, 255, 0.15);
+                            color: #ffffff;
+                            border-color: rgba(255, 255, 255, 0.3);
+                          "
+                          >DOKUMEN PUBLIK</span
+                        >
                         <h2
                           style="
                             font-size: clamp(22px, 3vw, 32px);
                             font-weight: 800;
                             color: #ffffff;
-                            margin: 12px 0 12px;
+                            margin: 0 0 10px;
                           "
                         >
-                          Fondasi, Mesin Perubahan, dan Sistem Navigasi LGOS
+                          Laporan Tahunan &amp; Dokumen Kebijakan
                         </h2>
                         <p
                           style="
                             font-size: 14.5px;
                             color: #d2f0d1;
-                            max-width: 750px;
+                            max-width: 680px;
                             margin: 0 auto;
                           "
                         >
-                          Tiga komponen pertama membentuk tulang punggung
-                          organisasi — menjawab pertanyaan mendasar tentang
-                          identitas, mekanisme perubahan, dan arah strategis
-                          YNKI. Wajib dipahami oleh seluruh pemangku
-                          kepentingan.
+                          Seluruh laporan tersedia untuk diunduh secara gratis
+                          sebagai bentuk komitmen kami terhadap keterbukaan:
                         </p>
                       </div>
 
-                      <div class="utama-grid">
-                        <div class="utama-card">
-                          <div class="card-num">
-                            KOMPONEN 01 &mdash; FONDASI
+                      <div class="laporan-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-top:30px;">
+                        @forelse($reports as $r)
+                          <div class="laporan-card" style="background:#fff;border:1.5px solid #d2e8d1;border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;">
+                            <div>
+                              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                                <span style="background:#eaf5ee;color:#0F5132;padding:4px 12px;border-radius:50px;font-size:11.5px;font-weight:700;">{{ $r->category }}</span>
+                                <span style="font-weight:800;color:#117710;font-size:15px;">{{ $r->report_year }}</span>
+                              </div>
+                              <h3 style="font-size:16.5px;font-weight:800;color:#0e241b;margin:0 0 10px;line-height:1.4;">{{ $r->title }}</h3>
+                              <p style="font-size:13.5px;color:#536b5f;line-height:1.6;margin:0 0 16px;">{{ $r->summary }}</p>
+                            </div>
+                            <div style="border-top:1px solid #eef4f0;padding-top:16px;display:flex;justify-content:space-between;align-items:center;">
+                              <span style="font-size:12px;color:#888;">PDF ({{ $r->file_size ?? 'Dokumen Resmi' }})</span>
+                              @if($r->file_pdf_path)
+                                <a href="/storage/{{ $r->file_pdf_path }}" target="_blank" style="background:#117710;color:#fff;padding:8px 18px;border-radius:8px;text-decoration:none;font-weight:700;font-size:12.5px;display:inline-flex;align-items:center;gap:6px;">
+                                  &darr; Unduh PDF
+                                </a>
+                              @endif
+                            </div>
                           </div>
-                          <h3>Position Paper</h3>
-                          <div class="sub">Mengapa Kami Ada</div>
-                          <p>
-                            Fondasi filosofis organisasi yang menjelaskan
-                            mengapa YNKI ada, bagaimana YNKI memandang hubungan
-                            manusia, alam, dan ekonomi, serta nilai dan prinsip
-                            yang menjadi dasar seluruh keputusan organisasi.
-                          </p>
-                          <div class="q">"Why do we exist?"</div>
-                        </div>
-                        <div class="utama-card">
-                          <div class="card-num">
-                            KOMPONEN 02 &mdash; MESIN PERUBAHAN
-                          </div>
-                          <h3>Master Theory of Change</h3>
-                          <div class="sub">Bagaimana Perubahan Terjadi</div>
-                          <p>
-                            Menggambarkan hubungan antara tata kelola lanskap,
-                            perubahan perilaku, perubahan kelembagaan, perubahan
-                            sistem, dan dampak jangka panjang. Menjadi kerangka
-                            utama yang menghubungkan visi dengan tindakan nyata
-                            di lapangan.
-                          </p>
-                          <div class="q">"How does change happen?"</div>
-                        </div>
-                        <div class="utama-card">
-                          <div class="card-num">
-                            KOMPONEN 03 &mdash; SISTEM NAVIGASI
-                          </div>
-                          <h3>Strategic Plan 2026–2035</h3>
-                          <div class="sub">Ke Mana Kami Melangkah</div>
-                          <p>
-                            Menerjemahkan Theory of Change menjadi arah
-                            organisasi jangka menengah dan panjang. Menetapkan
-                            tujuan strategis, prioritas organisasi, hasil yang
-                            ingin dicapai, dan tahapan perkembangan organisasi.
-                          </p>
-                          <div class="q">"Where are we going?"</div>
-                        </div>
+                        @empty
+                          <p style="text-align:center;grid-column:1/-1;color:#fff;">Dokumen publik belum tersedia.</p>
+                        @endforelse
                       </div>
+
+                      <div class="pagination clearfix" id="trans-pagination"></div>
                     </div>
                   </section>
 
-                  <!-- =========================================
-             6. JELAJAHI KOMPONEN LGOS LAINNYA
-             ========================================= -->
-                  <section id="lgos-jelajahi" class="ynki-section">
+                  <!-- 4. TATA KELOLA DONOR -->
+                  <section id="trans-donor" class="ynki-section">
                     <div class="ynki-container">
                       <div style="text-align: center">
-                        <div class="divider-line">
-                          <span class="line"></span
-                          ><span class="section-badge">EKSPLORASI</span
-                          ><span class="line"></span>
+                        <div class="section-divider">
+                          <span class="line"></span>
+                          <span class="section-badge">TATA KELOLA DONOR</span>
+                          <span class="line"></span>
                         </div>
                         <h2
                           style="
                             font-size: clamp(22px, 3vw, 32px);
                             font-weight: 800;
                             color: #0e241b;
-                            margin: 0 0 12px;
+                            margin: 0 0 10px;
                           "
                         >
-                          Jelajahi Komponen LGOS Lainnya
+                          Prinsip Kemitraan &amp; Tata Kelola
                         </h2>
                         <p
                           style="
                             font-size: 15px;
                             color: #536b5f;
-                            max-width: 760px;
+                            max-width: 680px;
                             margin: 0 auto;
                           "
                         >
-                          Setiap halaman di bawah ini mencerminkan salah satu
-                          komponen LGOS secara mendalam. Telusuri program,
-                          dampak, pengetahuan, dan cara berkolaborasi bersama
-                          YNKI dalam mendukung tata kelola lanskap yang inklusif
-                          dan berkelanjutan.
+                          Hubungan kami dengan mitra dan donor dibangun di atas
+                          prinsip-prinsip yang memastikan integritas dan dampak
+                          maksimal:
                         </p>
                       </div>
 
-                      <div class="jelajahi-grid">
-                        <a href="/program/" class="jelajahi-card">
-                          <div class="icon-wrap">
+                      <div class="donor-grid">
+                        <div class="donor-card">
+                          <div class="donor-icon">
                             <svg
                               width="24"
                               height="24"
@@ -4062,63 +3726,19 @@
                               />
                             </svg>
                           </div>
-                          <h4>Program Kami</h4>
-                          <p>
-                            Portofolio 5 program strategis sebagai implementasi
-                            Program Framework LGOS di lapangan.
-                          </p>
-                          <span class="link-label"
-                            >Lihat Program
-                            <svg
-                              width="14"
-                              height="14"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2.5"
-                            >
-                              <polyline points="9 18 15 12 9 6" /></svg
-                          ></span>
-                        </a>
-
-                        <a href="/dampak-pembelajaran/" class="jelajahi-card">
-                          <div class="icon-wrap">
-                            <svg
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="#ffffff"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <polyline
-                                points="22 12 18 12 15 21 9 3 6 12 2 12"
-                              />
-                            </svg>
+                          <div class="donor-info">
+                            <h4>Independensi Program</h4>
+                            <p>
+                              Agenda program ditentukan oleh kebutuhan lanskap
+                              dan komunitas, bukan oleh kepentingan donor. Donor
+                              memahami dan menyepakati prinsip ini sebelum
+                              kerjasama dimulai.
+                            </p>
                           </div>
-                          <h4>Dampak &amp; Pembelajaran</h4>
-                          <p>
-                            Sistem monitoring, evaluasi, dan pembelajaran yang
-                            mencerminkan MEL System LGOS.
-                          </p>
-                          <span class="link-label"
-                            >Lihat Dampak
-                            <svg
-                              width="14"
-                              height="14"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2.5"
-                            >
-                              <polyline points="9 18 15 12 9 6" /></svg
-                          ></span>
-                        </a>
+                        </div>
 
-                        <a href="/pustaka/" class="jelajahi-card">
-                          <div class="icon-wrap">
+                        <div class="donor-card">
+                          <div class="donor-icon">
                             <svg
                               width="24"
                               height="24"
@@ -4129,33 +3749,53 @@
                               stroke-linecap="round"
                               stroke-linejoin="round"
                             >
-                              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                               <path
-                                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
                               />
+                              <polyline points="14 2 14 8 20 8" />
+                              <line x1="16" y1="13" x2="8" y2="13" />
+                              <line x1="16" y1="17" x2="8" y2="17" />
+                              <polyline points="10 9 9 9 8 9" />
                             </svg>
                           </div>
-                          <h4>Literasi &amp; Pengetahuan</h4>
-                          <p>
-                            Repositori pengetahuan organisasi yang mencerminkan
-                            Knowledge Management System LGOS.
-                          </p>
-                          <span class="link-label"
-                            >Buka Pustaka
+                          <div class="donor-info">
+                            <h4>Pelaporan Berbasis Bukti</h4>
+                            <p>
+                              Semua laporan kepada donor disertai data
+                              verifikasi lapangan, fotografi georeferensi, dan
+                              validasi komunitas untuk memastikan akurasi.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="donor-card">
+                          <div class="donor-icon">
                             <svg
-                              width="14"
-                              height="14"
+                              width="24"
+                              height="24"
                               viewBox="0 0 24 24"
                               fill="none"
-                              stroke="currentColor"
-                              stroke-width="2.5"
+                              stroke="#ffffff"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
                             >
-                              <polyline points="9 18 15 12 9 6" /></svg
-                          ></span>
-                        </a>
+                              <circle cx="12" cy="12" r="10" />
+                              <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                          </div>
+                          <div class="donor-info">
+                            <h4>Pertanggungjawaban Tepat Waktu</h4>
+                            <p>
+                              Laporan triwulan disampaikan maksimal 30 hari
+                              setelah akhir periode, dan laporan tahunan dalam
+                              90 hari setelah tahun berakhir.
+                            </p>
+                          </div>
+                        </div>
 
-                        <a href="/ikut-serta/" class="jelajahi-card">
-                          <div class="icon-wrap">
+                        <div class="donor-card">
+                          <div class="donor-icon">
                             <svg
                               width="24"
                               height="24"
@@ -4174,23 +3814,87 @@
                               <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                             </svg>
                           </div>
-                          <h4>Ikut Serta</h4>
-                          <p>
-                            Bergabunglah sebagai mitra dan dukung Resource
-                            Mobilization untuk lanskap yang sehat.
-                          </p>
-                          <span class="link-label"
-                            >Bergabung
-                            <svg
-                              width="14"
-                              height="14"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2.5"
-                            >
-                              <polyline points="9 18 15 12 9 6" /></svg
-                          ></span>
+                          <div class="donor-info">
+                            <h4>Consent Komunitas (FPIC)</h4>
+                            <p>
+                              Setiap proyek yang melibatkan komunitas adat wajib
+                              melalui proses Free, Prior, and Informed Consent
+                              yang didokumentasikan secara resmi.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- 5. KOMITMEN CTA -->
+                  <section id="trans-komitmen" class="ynki-section">
+                    <div class="ynki-container">
+                      <span class="section-badge"
+                        >MENJADI MITRA TERPERCAYA</span
+                      >
+                      <h2
+                        style="
+                          font-size: clamp(22px, 3vw, 32px);
+                          font-weight: 800;
+                          color: #0e241b;
+                          margin: 12px 0 14px;
+                        "
+                      >
+                        Pertanyaan tentang Laporan atau Kemitraan?
+                      </h2>
+                      <p
+                        style="
+                          font-size: 15px;
+                          color: #536b5f;
+                          max-width: 640px;
+                          margin: 0 auto 28px;
+                          line-height: 1.75;
+                        "
+                      >
+                        Tim kami siap memberikan klarifikasi atas pertanyaan
+                        apapun tentang laporan keuangan, capaian program, atau
+                        prinsip tata kelola kami.
+                      </p>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: center;
+                          gap: 14px;
+                          flex-wrap: wrap;
+                        "
+                      >
+                        <a href="/kontak-kami/" class="btn-cta-main">
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                            />
+                            <polyline points="22,6 12,13 2,6" />
+                          </svg>
+                          Hubungi Kami
+                        </a>
+                        <a href="/portofolio/" class="btn-cta-second">
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <rect x="2" y="7" width="20" height="14" rx="2" />
+                            <path
+                              d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
+                            />
+                          </svg>
+                          Lihat Portfolio
                         </a>
                       </div>
                     </div>
@@ -4203,7 +3907,7 @@
         <div class="fusion-tb-footer fusion-footer">
           <div class="fusion-footer-widget-area fusion-widget-area">
             <div
-              class="fusion-fullwidth fullwidth-box fusion-builder-row-5 fusion-flex-container has-pattern-background has-mask-background nonhundred-percent-fullwidth"
+              class="fusion-fullwidth fullwidth-box fusion-builder-row-5 fusion-flex-container has-pattern-background has-mask-background nonhundred-percent-fullwidth "
               style="
                 --awb-border-radius-top-left: 0px;
                 --awb-border-radius-top-right: 0px;
@@ -4275,10 +3979,7 @@
                     >
                       <p><strong>Yayasan Natural Kapital Indonesia</strong></p>
                       <p>Nature for Life</p>
-                      <p>
-                        Gg. Gn. Malabar, Sungai Jawi, Kec. Pontianak Kota, Kota
-                        Pontianak, Kalimantan Barat 78244
-                      </p>
+                      <p>Gg. Gn. Malabar, Sungai Jawi, Kec. Pontianak Kota, Kota Pontianak, Kalimantan Barat 78244</p>
                       <p>
                         <i
                           class="fb-icon-element-1 fb-icon-element fontawesome-icon fa-envelope fas circle-yes fusion-text-flow"
@@ -4302,100 +4003,20 @@
                         >
                       </p>
                       <div class="ynki-footer-social">
-                        <a
-                          href="https://www.youtube.com/@naturalkapital123"
-                          target="_blank"
-                          rel="noopener"
-                          class="ynki-social-btn ynki-social-youtube"
-                          title="YouTube"
-                          aria-label="YouTube"
-                        >
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                          >
-                            <path
-                              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                            />
-                          </svg>
+                        <a href="https://www.youtube.com/@naturalkapital123" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-youtube" title="YouTube" aria-label="YouTube">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                         </a>
-                        <a
-                          href="https://web.facebook.com/naturalkapital?_rdc=1&_rdr#"
-                          target="_blank"
-                          rel="noopener"
-                          class="ynki-social-btn ynki-social-facebook"
-                          title="Facebook"
-                          aria-label="Facebook"
-                        >
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                          >
-                            <path
-                              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                            />
-                          </svg>
+                        <a href="https://web.facebook.com/naturalkapital?_rdc=1&_rdr#" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-facebook" title="Facebook" aria-label="Facebook">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         </a>
-                        <a
-                          href="https://www.instagram.com/yayasannaturalkapital"
-                          target="_blank"
-                          rel="noopener"
-                          class="ynki-social-btn ynki-social-instagram"
-                          title="Instagram"
-                          aria-label="Instagram"
-                        >
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                          >
-                            <path
-                              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
-                            />
-                          </svg>
+                        <a href="https://www.instagram.com/yayasannaturalkapital" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-instagram" title="Instagram" aria-label="Instagram">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                         </a>
-                        <a
-                          href="https://x.com/kapital_natural"
-                          target="_blank"
-                          rel="noopener"
-                          class="ynki-social-btn ynki-social-xtwitter"
-                          title="X (Twitter)"
-                          aria-label="X (Twitter)"
-                        >
-                          <svg
-                            width="18"
-                            height="18"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                          >
-                            <path
-                              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                            />
-                          </svg>
+                        <a href="https://x.com/kapital_natural" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-xtwitter" title="X (Twitter)" aria-label="X (Twitter)">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                         </a>
-                        <a
-                          href="https://id.linkedin.com/company/natural-kapital-foundation"
-                          target="_blank"
-                          rel="noopener"
-                          class="ynki-social-btn ynki-social-linkedin"
-                          title="LinkedIn"
-                          aria-label="LinkedIn"
-                        >
-                          <svg
-                            width="18"
-                            height="18"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                          >
-                            <path
-                              d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
-                            />
-                          </svg>
+                        <a href="https://id.linkedin.com/company/natural-kapital-foundation" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-linkedin" title="LinkedIn" aria-label="LinkedIn">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
                         </a>
                       </div>
                     </div>
@@ -4461,7 +4082,9 @@
                         <li>Literasi &amp; Pengetahuan</li>
                         <li>Hubungi Kami</li>
                       </ul>
-                      <p>© 2026 Yayasan Natural Kapital Indonesia</p>
+                      <p>
+                        © 2026 Yayasan Natural Kapital Indonesia
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -4529,6 +4152,88 @@
         ></a
       >
     </section>
+    <script>
+      // Pagination handling for Laporan & Dokumen (Max 6 per page, hidden when <= 6)
+      document.addEventListener('DOMContentLoaded', function() {
+        const cards = Array.from(document.querySelectorAll('.laporan-grid .laporan-card'));
+        const paginationContainer = document.getElementById('trans-pagination');
+
+        const ITEMS_PER_PAGE = 6;
+        let currentPage = 1;
+
+        // Sembunyikan pagination bila data laporan 6 card atau kurang
+        if (cards.length <= ITEMS_PER_PAGE) {
+          if (paginationContainer) {
+            paginationContainer.innerHTML = '';
+            paginationContainer.style.display = 'none';
+          }
+          cards.forEach(card => card.style.display = '');
+          return;
+        }
+
+        const totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
+
+        function renderPagination() {
+          if (!paginationContainer) return;
+          paginationContainer.style.display = 'flex';
+          let html = '';
+
+          // Tombol Prev
+          if (currentPage > 1) {
+            html += `<a href="#trans-laporan" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Prev</a>`;
+          } else {
+            html += `<span class="pagination-prev disabled">&laquo; Prev</span>`;
+          }
+
+          // Nomor halaman
+          for (let p = 1; p <= totalPages; p++) {
+            if (p === currentPage) {
+              html += `<span class="current">${p}</span>`;
+            } else {
+              html += `<a href="#trans-laporan" class="inactive" data-page="${p}">${p}</a>`;
+            }
+          }
+
+          // Tombol Next
+          if (currentPage < totalPages) {
+            html += `<a href="#trans-laporan" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
+          } else {
+            html += `<span class="pagination-next disabled">Next &raquo;</span>`;
+          }
+
+          paginationContainer.innerHTML = html;
+
+          // Event click pagination link
+          paginationContainer.querySelectorAll('a[data-page]').forEach(link => {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              currentPage = parseInt(this.getAttribute('data-page'), 10);
+              updateView(true);
+            });
+          });
+        }
+
+        function updateView(scrollIntoView = false) {
+          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+          const endIndex = startIndex + ITEMS_PER_PAGE;
+
+          cards.forEach((card, idx) => {
+            card.style.display = (idx >= startIndex && idx < endIndex) ? '' : 'none';
+          });
+
+          renderPagination();
+
+          if (scrollIntoView) {
+            const section = document.getElementById('trans-laporan');
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }
+
+        updateView(false);
+      });
+    </script>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script src="/assets/js/ynki-footer.js"></script>
   </body>

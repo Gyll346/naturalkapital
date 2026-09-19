@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -13,21 +13,23 @@
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <title>Donasi & Dukungan Program — Yayasan Natural Kapital Indonesia (YNKI)</title>
+    <title>
+      LGOS: Sistem Operasi Organisasi — Yayasan Natural Kapital Indonesia (YNKI)
+    </title>
     <meta
       name="description"
-      content="YNKI memperkuat kolaborasi antara pemerintah, masyarakat, sektor swasta, &amp; donor untuk membangun lanskap yang sehat, produktif, tangguh, &amp; berkelanjutan."
+      content="Landscape Governance Operating System (LGOS): Kerangka kerja sistem operasi 8 komponen terintegrasi Yayasan Natural Kapital Indonesia."
     />
-    <link rel="canonical" href="/" />
+    <link rel="canonical" href="/lgos/" />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Yayasan Natural Kapital Indonesia (YNKI)"
+      content="LGOS: Sistem Operasi Organisasi — Yayasan Natural Kapital Indonesia (YNKI)"
     />
     <meta
       property="og:description"
-      content="YNKI memperkuat kolaborasi antara pemerintah, masyarakat, sektor swasta, &amp; donor untuk membangun lanskap yang sehat, produktif, tangguh, &amp; berkelanjutan."
+      content="Landscape Governance Operating System (LGOS): Kerangka kerja sistem operasi 8 komponen terintegrasi YNKI."
     />
     <meta property="og:url" content="/" />
     <meta property="og:site_name" content="Natural Kapital Foundation" />
@@ -165,18 +167,18 @@
     />
     <meta
       name="description"
-      content="The Avada Classic website is perfect for businesses and creatives, offering a clean, timeless, and a fully customizable WordPress design."
+      content="Landscape Governance Operating System (LGOS): Kerangka kerja sistem operasi 8 komponen terintegrasi Yayasan Natural Kapital Indonesia."
     />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Natural Kapital Foundation" />
     <meta
       property="og:title"
-      content="Natural Kapital Foundation - For Sustainable and Resilience Landscape"
+      content="LGOS: Sistem Operasi Organisasi — Yayasan Natural Kapital Indonesia (YNKI)"
     />
     <meta
       property="og:description"
-      content="The Avada Classic website is perfect for businesses and creatives, offering a clean, timeless, and a fully customizable WordPress design."
+      content="Landscape Governance Operating System (LGOS): Kerangka kerja sistem operasi 8 komponen terintegrasi YNKI."
     />
     <meta property="og:url" content="/" />
     <meta
@@ -2191,191 +2193,199 @@
       crossorigin
     />
 
-    
-  
+    <!-- Global Avada Stylesheet Fallback -->
+    <link
+      rel="stylesheet"
+      href="/wp-content/uploads/fusion-styles/47cb6edf07d5b05fc05b3981869760b8.min.css"
+    />
 
+    <style id="avada-static-display-fix">
+      /* Animation and visibility fixes */
+      .fusion-animated {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .awb-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .mega-menu-loading {
+        opacity: 1 !important;
+      }
+      .fusion-slider-visibility {
+        visibility: visible !important;
+      }
 
+      /* Responsive visibility controls */
+      @media (min-width: 801px) {
+        div.fusion-no-large-visibility,
+        .fusion-title.fusion-no-large-visibility,
+        .fusion-layout-column.fusion-no-large-visibility,
+        .fusion-no-medium-visibility.fusion-no-large-visibility {
+          display: none !important;
+        }
+      }
+      @media (max-width: 800px) {
+        div.fusion-no-small-visibility,
+        .fusion-title.fusion-no-small-visibility,
+        .fusion-layout-column.fusion-no-small-visibility {
+          display: none !important;
+        }
+      }
 
+      /* Partner section columns and badges clean grid */
+      .fusion-builder-column-14,
+      .fusion-builder-column-15,
+      .fusion-builder-column-16,
+      .fusion-builder-column-17 {
+        width: 50% !important;
+        max-width: 50% !important;
+        flex: 0 0 50% !important;
+        min-height: auto !important;
+        height: auto !important;
+        margin-top: 0px !important;
+        margin-bottom: 25px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        display: block !important;
+        box-sizing: border-box !important;
+      }
 
+      @media (max-width: 800px) {
+        .fusion-builder-column-14,
+        .fusion-builder-column-15,
+        .fusion-builder-column-16,
+        .fusion-builder-column-17 {
+          width: 100% !important;
+          max-width: 100% !important;
+          flex: 0 0 100% !important;
+          margin-bottom: 15px !important;
+        }
+      }
 
+      .fusion-builder-column-14 .fusion-column-wrapper,
+      .fusion-builder-column-15 .fusion-column-wrapper,
+      .fusion-builder-column-16 .fusion-column-wrapper,
+      .fusion-builder-column-17 .fusion-column-wrapper {
+        min-height: auto !important;
+        height: auto !important;
+        display: block !important;
+        padding: 0 !important;
+      }
 
-<!-- Global Avada Stylesheet Fallback -->
-<link rel="stylesheet" href="/wp-content/uploads/fusion-styles/47cb6edf07d5b05fc05b3981869760b8.min.css">
+      .fusion-image-carousel,
+      .awb-carousel,
+      .awb-swiper {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
 
-<style id="avada-static-display-fix">
-  /* Animation and visibility fixes */
-  .fusion-animated { opacity: 1 !important; visibility: visible !important; }
-  .awb-menu { opacity: 1 !important; visibility: visible !important; }
-  .mega-menu-loading { opacity: 1 !important; }
-  .fusion-slider-visibility { visibility: visible !important; }
-  
-  /* Responsive visibility controls */
-  @media (min-width: 801px) {
-    div.fusion-no-large-visibility,
-    .fusion-title.fusion-no-large-visibility,
-    .fusion-layout-column.fusion-no-large-visibility,
-    .fusion-no-medium-visibility.fusion-no-large-visibility {
-      display: none !important;
-    }
-  }
-  @media (max-width: 800px) {
-    div.fusion-no-small-visibility,
-    .fusion-title.fusion-no-small-visibility,
-    .fusion-layout-column.fusion-no-small-visibility {
-      display: none !important;
-    }
-  }
+      .fusion-image-carousel .swiper-wrapper,
+      .awb-swiper .swiper-wrapper {
+        display: grid !important;
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 8px !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        transform: none !important;
+      }
 
-  /* Partner section columns and badges clean grid */
-  .fusion-builder-column-14,
-  .fusion-builder-column-15,
-  .fusion-builder-column-16,
-  .fusion-builder-column-17 {
-    width: 50% !important;
-    max-width: 50% !important;
-    flex: 0 0 50% !important;
-    min-height: auto !important;
-    height: auto !important;
-    margin-top: 0px !important;
-    margin-bottom: 25px !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    display: block !important;
-    box-sizing: border-box !important;
-  }
+      .awb-swiper.awb-swiper-carousel:not(.swiper-initialized) .swiper-slide,
+      .fusion-image-carousel .swiper-slide,
+      .awb-swiper .swiper-slide {
+        display: flex !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: 55px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 4px 6px !important;
+        margin: 0 !important;
+        background: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        border-radius: 6px !important;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+        box-sizing: border-box !important;
+      }
 
-  @media (max-width: 800px) {
-    .fusion-builder-column-14,
-    .fusion-builder-column-15,
-    .fusion-builder-column-16,
-    .fusion-builder-column-17 {
-      width: 100% !important;
-      max-width: 100% !important;
-      flex: 0 0 100% !important;
-      margin-bottom: 15px !important;
-    }
-  }
+      @media (max-width: 600px) {
+        .fusion-image-carousel .swiper-wrapper,
+        .awb-swiper .swiper-wrapper {
+          grid-template-columns: repeat(3, 1fr) !important;
+        }
+      }
 
-  .fusion-builder-column-14 .fusion-column-wrapper,
-  .fusion-builder-column-15 .fusion-column-wrapper,
-  .fusion-builder-column-16 .fusion-column-wrapper,
-  .fusion-builder-column-17 .fusion-column-wrapper {
-    min-height: auto !important;
-    height: auto !important;
-    display: block !important;
-    padding: 0 !important;
-  }
+      .fusion-image-carousel .fusion-carousel-item-wrapper,
+      .fusion-image-carousel .fusion-image-wrapper,
+      .awb-swiper .fusion-image-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
 
-  .fusion-image-carousel,
-  .awb-carousel,
-  .awb-swiper {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
-    overflow: visible !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
+      .fusion-image-carousel img,
+      .awb-swiper img {
+        max-height: 34px !important;
+        max-width: 90% !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto !important;
+      }
 
-  .fusion-image-carousel .swiper-wrapper,
-  .awb-swiper .swiper-wrapper {
-    display: grid !important;
-    grid-template-columns: repeat(5, 1fr) !important;
-    gap: 8px !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
-    transform: none !important;
-  }
+      /* Team member card grid fix for tim page */
+      .fusion-builder-column-1_3 {
+        flex: 0 0 33.333% !important;
+        max-width: 33.333% !important;
+      }
+      @media (max-width: 800px) {
+        .fusion-builder-column-1_3 {
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+        }
+      }
 
-  .awb-swiper.awb-swiper-carousel:not(.swiper-initialized) .swiper-slide,
-  .fusion-image-carousel .swiper-slide,
-  .awb-swiper .swiper-slide {
-    display: flex !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    height: 55px !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 4px 6px !important;
-    margin: 0 !important;
-    background: #ffffff !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    border-radius: 6px !important;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
-    box-sizing: border-box !important;
-  }
+      /* Map overlay fix */
+      .fusion-google-map .gm-style-moc {
+        display: none !important;
+      }
 
-  @media (max-width: 600px) {
-    .fusion-image-carousel .swiper-wrapper,
-    .awb-swiper .swiper-wrapper {
-      grid-template-columns: repeat(3, 1fr) !important;
-    }
-  }
+      /* Footer styling */
+      .fusion-tb-footer,
+      .fusion-footer {
+        display: block !important;
+        width: 100% !important;
+        position: relative !important;
+        clear: both !important;
+        margin-top: 40px !important;
+      }
+    </style>
 
-  .fusion-image-carousel .fusion-carousel-item-wrapper,
-  .fusion-image-carousel .fusion-image-wrapper,
-  .awb-swiper .fusion-image-wrapper {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  .fusion-image-carousel img,
-  .awb-swiper img {
-    max-height: 34px !important;
-    max-width: 90% !important;
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain !important;
-    display: block !important;
-    margin: 0 auto !important;
-  }
-
-  /* Team member card grid fix for tim page */
-  .fusion-builder-column-1_3 {
-    flex: 0 0 33.333% !important;
-    max-width: 33.333% !important;
-  }
-  @media (max-width: 800px) {
-    .fusion-builder-column-1_3 {
-      flex: 0 0 100% !important;
-      max-width: 100% !important;
-    }
-  }
-
-  /* Map overlay fix */
-  .fusion-google-map .gm-style-moc {
-    display: none !important;
-  }
-
-  /* Footer styling */
-  .fusion-tb-footer, .fusion-footer {
-    display: block !important;
-    width: 100% !important;
-    position: relative !important;
-    clear: both !important;
-    margin-top: 40px !important;
-  }
-</style>
-
-<link rel="stylesheet" href="/assets/css/ynki-responsive-system.css?v=2">
+    <link rel="stylesheet" href="/assets/css/ynki-responsive-system.css?v=2" />
   </head>
   <body
-    class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr fusion-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
+    class="home wp-singular page-template page-template-100-width page-template-100-width-php page page-id-5283 wp-theme-Avada wp-child-theme-Avada-Child-Theme fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-top fusion-body ltr no-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop avada-has-rev-slider-styles fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-classic fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mainmenu-dropdown-divider avada-has-pagetitle-bg-full avada-has-pagetitle-bg-parallax avada-has-titlebar-hide avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1"
     data-awb-post-id="5283"
   >
-    <a class="skip-link screen-reader-text" href="/sustainable-commodity/">Skip to content</a>
+    <a class="skip-link screen-reader-text" href="/sustainable-commodity/"
+      >Skip to content</a
+    >
     <div id="boxed-wrapper">
       <div id="wrapper" class="fusion-wrapper">
         <div id="home" style="position: relative; top: -1px"></div>
         <div class="fusion-tb-header">
           <div
-            class="fusion-fullwidth fullwidth-box fusion-builder-row-1 fusion-flex-container nonhundred-percent-fullwidth non-hundred-percent-height-scrolling fusion-animated fusion-custom-z-index"
+            class="fusion-fullwidth fullwidth-box fusion-builder-row-1 fusion-flex-container nonhundred-percent-fullwidth fusion-animated fusion-custom-z-index"
             style="
               --awb-border-radius-top-left: 0px;
               --awb-border-radius-top-right: 0px;
@@ -2457,7 +2467,15 @@
                         href="/"
                         target="_self"
                         aria-label="logo-ynki-80"
-                        ><img decoding="async" width="300" height="60" alt="Natural Kapital Foundation" class="img-responsive wp-image-183 disable-lazyload" src="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3" /></a
+                        ><img
+                          decoding="async"
+                          width="300"
+                          height="60"
+                          alt="Natural Kapital Foundation"
+                          class="img-responsive wp-image-183 disable-lazyload"
+                          data-
+                          data-
+                          src="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3" /></a
                     ></span>
                   </div>
                 </div>
@@ -2697,9 +2715,7 @@
                             <a
                               href="/landscape-intelligence/"
                               class="awb-menu__sub-a"
-                              ><span
-                                >Landscape Intelligence &amp; Innovation</span
-                              ></a
+                              ><span>Pengetahuan Lanskap &amp; Inovasi</span></a
                             >
                           </li>
                           <li
@@ -2873,428 +2889,1321 @@
           </div>
         </div>
         <div id="sliders-container" class="fusion-slider-visibility"></div>
-        <main id="main" class="clearfix width-100" style="font-family:'Inter',Arial,Helvetica,sans-serif; padding: 0 !important;">
-          <link rel="stylesheet" href="/assets/css/ynki-responsive-system.css?v=2">
-          <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap">
+        <main
+          id="main"
+          class="clearfix width-100"
+          style="font-family: &quot;Inter&quot;, Arial, Helvetica, sans-serif"
+        >
+          <link
+            rel="stylesheet"
+            href="/assets/css/ynki-responsive-system.css?v=2"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          />
 
           <style>
-            /* Standard Hero Section */
-.hero-section {
-  position: relative;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  background-image: url('/wp-content/uploads/2026/05/hero-zoel-hz-desa-pasak-piang-1536x858.webp');
-  background-size: cover;
-  background-position: center;
-  padding: 110px 24px 90px;
-}
-.hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, #ffffff);
-  pointer-events: none;
-}
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 920px;
-  margin: 0 auto;
-  text-align: center;
-}
-.hero-crumb {
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: #a3e0a2;
-  margin-bottom: 20px;
-}
-.hero-crumb a { color: #d2f0d1; text-decoration: none; }
-.hero-crumb a:hover { color: #FF8000; }
-.hero-h1 {
-  font-size: clamp(28px, 4.5vw, 48px);
-  font-weight: 900;
-  line-height: 1.2;
-  color: #ffffff;
-  margin: 0 0 20px;
-  letter-spacing: -0.02em;
-}
-.hero-h1 .hl, .hero-h1 span.hl {
-  color: #a3e0a2;
-  font-size: 0.85em;
-  display: inline-block;
-  font-weight: 800;
-}
-.hero-sub {
-  font-size: clamp(14px, 1.6vw, 17px);
-  line-height: 1.85;
-  color: #d2f0d1;
-  max-width: 820px;
-  margin: 0 auto 32px;
-}
-.hero-btns {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-            .ynki-grid-donation {
+            *,
+            *::before,
+            *::after {
+              box-sizing: border-box;
+            }
+            .ynki-section {
+              width: 100%;
+            }
+            .ynki-container {
               max-width: 1200px;
-              margin: 50px auto 80px;
+              margin: 0 auto;
               padding: 0 24px;
-              display: grid;
-              grid-template-columns: 1fr 1.25fr;
-              gap: 36px;
-              align-items: flex-start;
             }
 
-            .ynki-card-box {
-              background: #ffffff;
-              border: 1.5px solid #d2e8d1;
-              border-radius: 16px;
-              padding: 32px;
-              box-shadow: 0 10px 30px rgba(17,119,16,0.06);
+            .section-badge {
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 11px;
+              font-weight: 700;
+              letter-spacing: 1.5px;
+              text-transform: uppercase;
+              color: #ff8000;
+              background: #fff3e6;
+              border: 1px solid rgba(255, 128, 0, 0.35);
+              padding: 5px 16px;
+              border-radius: 50px;
+              margin-bottom: 14px;
             }
-            .ynki-card-title {
-              font-family: 'Montserrat', sans-serif;
-              font-size: 20px;
-              font-weight: 800;
-              color: #0e241b;
-              margin: 0 0 18px;
+            .divider-line {
               display: flex;
               align-items: center;
-              gap: 10px;
+              justify-content: center;
+              gap: 16px;
+              margin-bottom: 14px;
+            }
+            .divider-line .line {
+              flex: 1;
+              height: 1px;
+              background: #d2e8d1;
             }
 
-            .bank-card {
-              background: #f8faf9;
-              border: 1.5px solid #d2e8d1;
-              border-radius: 14px;
-              padding: 22px;
-              margin-bottom: 20px;
-              transition: all 0.25s ease;
+            /* ========================
+   HERO
+======================== */
+            #hero-lgos {
+              position: relative;
+              min-height: 82vh;
+              display: flex;
+              align-items: center;
+              background-image: url("/assets/images/homepage/hero-bg.png");
+              background-size: cover;
+              background-position: center center;
+              padding: 110px 24px 90px;
             }
-            .bank-card:hover {
-              transform: translateY(-3px);
-              border-color: #FF8000;
-              box-shadow: 0 8px 24px rgba(255,128,0,0.12);
+            #hero-lgos::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 80px;
+              background: linear-gradient(to bottom, transparent, #ffffff);
+              pointer-events: none;
             }
-            .bank-badge {
-              font-size: 11px;
-              font-weight: 800;
-              letter-spacing: 1.2px;
-              text-transform: uppercase;
-              color: #FF8000;
-              background: #fff3e6;
-              border: 1px solid rgba(255,128,0,0.3);
-              padding: 4px 12px;
-              border-radius: 50px;
-              display: inline-block;
-              margin-bottom: 8px;
-            }
-            .bank-acc-num {
-              font-family: 'Montserrat', sans-serif;
-              font-size: 24px;
-              font-weight: 800;
-              color: #0e241b;
-              letter-spacing: 1px;
-              margin: 4px 0;
-            }
-            .bank-holder {
-              font-size: 14px;
-              font-weight: 600;
-              color: #536b5f;
-            }
-
-            .form-group {
-              margin-bottom: 18px;
-            }
-            .form-group label {
-              display: block;
-              font-size: 13.5px;
-              font-weight: 700;
-              color: #0e241b;
-              margin-bottom: 7px;
-            }
-            .form-control {
-              width: 100%;
-              padding: 11px 15px;
-              border: 1.5px solid #d2e8d1;
-              border-radius: 8px;
-              font-size: 14px;
-              font-family: inherit;
-              color: #0e241b;
-              background: #ffffff;
-              box-sizing: border-box;
-              transition: border-color 0.2s;
-            }
-            .form-control:focus {
-              border-color: #FF8000;
-              outline: none;
-              box-shadow: 0 0 0 3px rgba(255,128,0,0.15);
-            }
-
-            .btn-submit-donation {
-              width: 100%;
-              background: #FF8000;
-              color: #ffffff;
-              font-family: 'Montserrat', sans-serif;
-              font-size: 15px;
-              font-weight: 800;
-              padding: 14px 24px;
-              border: none;
-              border-radius: 8px;
-              cursor: pointer;
-              transition: all 0.2s;
-              box-shadow: 0 4px 14px rgba(255,128,0,0.28);
-            }
-            .btn-submit-donation:hover {
-              background: #e67300;
-              transform: translateY(-2px);
-              box-shadow: 0 6px 18px rgba(255,128,0,0.38);
-            }
-
-            .impact-banner {
-              background: #f5f8f5;
-              padding: 65px 24px;
-              border-top: 1px solid #d2e8d1;
-            }
-            .impact-grid {
-              max-width: 1100px;
+            .hero-inner {
+              position: relative;
+              z-index: 2;
+              max-width: 920px;
               margin: 0 auto;
+              text-align: center;
+            }
+            .hero-crumb {
+              font-size: 11.5px;
+              font-weight: 700;
+              letter-spacing: 1.8px;
+              text-transform: uppercase;
+              color: #a3e0a2;
+              margin-bottom: 20px;
+            }
+            .hero-crumb a {
+              color: #d2f0d1;
+              text-decoration: none;
+            }
+            .hero-crumb a:hover {
+              color: #ff8000;
+            }
+            #hero-lgos h1 {
+              font-size: clamp(28px, 4.5vw, 48px);
+              font-weight: 900;
+              line-height: 1.2;
+              color: #ffffff;
+              margin: 0 0 22px;
+              letter-spacing: -0.02em;
+            }
+            #hero-lgos h1 .hl {
+              color: #a3e0a2;
+            }
+            .hero-sub {
+              font-size: clamp(14.5px, 1.6vw, 17px);
+              line-height: 1.85;
+              color: #d2f0d1;
+              max-width: 820px;
+              margin: 0 auto 36px;
+            }
+            .hero-quote {
+              background: rgba(255, 255, 255, 0.08);
+              border-left: 3px solid #a3e0a2;
+              padding: 14px 22px;
+              border-radius: 0 12px 12px 0;
+              max-width: 680px;
+              margin: 0 auto 32px;
+              text-align: left;
+            }
+            .hero-quote p {
+              font-size: 13.5px;
+              color: #d2f0d1;
+              margin: 0 0 6px;
+              line-height: 1.65;
+            }
+            .hero-quote span {
+              font-size: 11.5px;
+              color: #a3e0a2;
+              font-weight: 700;
+            }
+            .hero-btns {
+              display: flex;
+              justify-content: center;
+              gap: 14px;
+              flex-wrap: wrap;
+            }
+
+            /* ========================
+   8 KOMPONEN ARSITEKTUR
+======================== */
+            #lgos-arsitektur {
+              background: #ffffff;
+              padding: 90px 24px;
+            }
+            .lgos-grid {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 20px;
+              margin-top: 44px;
+            }
+            .lgos-card {
+              background: #f8faf8;
+              border: 1.5px solid #d2e8d1;
+              border-radius: 16px;
+              padding: 26px 20px;
+              transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+              display: flex;
+              flex-direction: column;
+              position: relative;
+              overflow: hidden;
+            }
+            .lgos-card::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: 3px;
+              background: #d2e8d1;
+              transition: background 0.3s;
+            }
+            .lgos-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 38px rgba(17, 119, 16, 0.13);
+              border-color: #117710;
+            }
+            .lgos-card:hover::before {
+              background: #117710;
+            }
+            .lgos-num {
+              font-size: 10.5px;
+              font-weight: 900;
+              color: #ff8000;
+              letter-spacing: 1.5px;
+              margin-bottom: 10px;
+            }
+            .lgos-card h4 {
+              font-size: 15.5px;
+              font-weight: 800;
+              color: #0e241b;
+              margin: 0 0 6px;
+              line-height: 1.3;
+            }
+            .lgos-card .role {
+              font-size: 11.5px;
+              font-weight: 700;
+              color: #117710;
+              margin-bottom: 10px;
+              letter-spacing: 0.5px;
+            }
+            .lgos-card p {
+              font-size: 13px;
+              line-height: 1.65;
+              color: #536b5f;
+              margin: 0;
+              flex: 1;
+            }
+            .lgos-card-action {
+              margin-top: 18px;
+              padding-top: 14px;
+              border-top: 1px dashed #d2e8d1;
+            }
+            .lgos-doc-label {
+              font-size: 11px;
+              font-weight: 700;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              color: #708c7e;
+              margin-bottom: 6px;
+              display: block;
+            }
+            .btn-lgos-doc {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              gap: 7px;
+              width: 100%;
+              padding: 9px 12px;
+              font-size: 12.5px;
+              font-weight: 700;
+              border-radius: 8px;
+              text-decoration: none;
+              transition: all 0.25s ease;
+              box-sizing: border-box;
+            }
+            .btn-lgos-doc.download {
+              background: #eaf6ea;
+              color: #117710;
+              border: 1.5px solid #b5ddb5;
+            }
+            .btn-lgos-doc.download:hover {
+              background: #117710;
+              color: #ffffff;
+              border-color: #117710;
+              box-shadow: 0 4px 12px rgba(17, 119, 16, 0.2);
+            }
+            .btn-lgos-doc.contact {
+              background: #fff4ea;
+              color: #c45e00;
+              border: 1.5px solid #fed2a4;
+            }
+            .btn-lgos-doc.contact:hover {
+              background: #ff8000;
+              color: #ffffff;
+              border-color: #ff8000;
+              box-shadow: 0 4px 12px rgba(255, 128, 0, 0.2);
+            }
+
+            /* ========================
+   3 KOMPONEN UTAMA (GREEN BG)
+======================== */
+            #lgos-utama {
+              background: #117710;
+              padding: 90px 24px;
+            }
+            .utama-grid {
               display: grid;
               grid-template-columns: repeat(3, 1fr);
               gap: 24px;
+              margin-top: 44px;
             }
-            .impact-card {
-              background: #ffffff;
-              border: 1px solid #d2e8d1;
-              border-radius: 14px;
-              padding: 26px;
+            .utama-card {
+              background: rgba(255, 255, 255, 0.08);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              border-radius: 16px;
+              padding: 32px 26px;
+              transition: all 0.3s ease;
+              display: flex;
+              flex-direction: column;
+            }
+            .utama-card:hover {
+              background: rgba(255, 255, 255, 0.13);
+              transform: translateY(-5px);
+            }
+            .utama-card .card-num {
+              font-size: 11px;
+              font-weight: 900;
+              color: #a3e0a2;
+              letter-spacing: 1.5px;
+              margin-bottom: 12px;
+            }
+            .utama-card h3 {
+              font-size: 18px;
+              font-weight: 800;
+              color: #ffffff;
+              margin: 0 0 6px;
+            }
+            .utama-card .sub {
+              font-size: 12px;
+              font-weight: 700;
+              color: #a3e0a2;
+              margin-bottom: 14px;
+              letter-spacing: 0.5px;
+            }
+            .utama-card p {
+              font-size: 13.5px;
+              line-height: 1.7;
+              color: #d2f0d1;
+              margin: 0 0 14px;
+              flex: 1;
+            }
+            .utama-card .q {
+              font-size: 12px;
+              color: rgba(255, 255, 255, 0.6);
+              font-style: italic;
+              padding: 10px 14px;
+              background: rgba(0, 0, 0, 0.15);
+              border-radius: 8px;
+            }
+
+            /* ========================
+   5 KOMPONEN PENDUKUNG (TABLE)
+======================== */
+            #lgos-pendukung {
+              background: #f5f8f5;
+              padding: 90px 24px;
+            }
+            .pendukung-table {
+              width: 100%;
+              border-collapse: separate;
+              border-spacing: 0;
+              border-radius: 16px;
+              overflow: hidden;
+              box-shadow: 0 4px 24px rgba(17, 119, 16, 0.09);
+              margin-top: 44px;
+            }
+            .pendukung-table thead tr {
+              background: #117710;
+            }
+            .pendukung-table thead th {
+              padding: 18px 22px;
+              text-align: left;
+              font-size: 12px;
+              font-weight: 800;
+              color: #a3e0a2;
+              letter-spacing: 1.2px;
+              text-transform: uppercase;
+            }
+            .pendukung-table thead th:last-child {
               text-align: center;
-              transition: transform 0.2s;
             }
-            .impact-card:hover {
-              transform: translateY(-3px);
-              border-color: #FF8000;
+            .pendukung-table tbody tr {
+              background: #ffffff;
+              border-bottom: 1px solid #e8f3e8;
+              transition: background 0.2s;
             }
-            .impact-card h4 {
-              font-family: 'Montserrat', sans-serif;
+            .pendukung-table tbody tr:last-child {
+              border-bottom: none;
+            }
+            .pendukung-table tbody tr:hover {
+              background: #f0f8f0;
+            }
+            .pendukung-table td {
+              padding: 20px 22px;
+              vertical-align: top;
+            }
+            .comp-name {
+              font-size: 15px;
+              font-weight: 800;
+              color: #0e241b;
+              margin-bottom: 4px;
+            }
+            .comp-label {
+              font-size: 11px;
+              font-weight: 700;
+              color: #117710;
+              letter-spacing: 0.8px;
+              text-transform: uppercase;
+            }
+            .comp-desc {
+              font-size: 13.5px;
+              color: #536b5f;
+              line-height: 1.65;
+            }
+            .btn-unduh-sm {
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 12.5px;
+              font-weight: 700;
+              color: #0e241b;
+              background: #a0d2f5;
+              padding: 8px 16px;
+              border-radius: 50px;
+              text-decoration: none;
+              transition: all 0.3s ease;
+              white-space: nowrap;
+            }
+            .btn-unduh-sm:hover {
+              background: #7ab8e8;
+              transform: translateX(3px);
+            }
+
+            /* ========================
+   UNDUH DOKUMEN LENGKAP
+======================== */
+            #lgos-unduh {
+              background: #ffffff;
+              padding: 90px 24px;
+            }
+            .unduh-card {
+              max-width: 900px;
+              margin: 0 auto;
+              background: linear-gradient(135deg, #0c500b 0%, #082e07 100%);
+              border-radius: 24px;
+              padding: 56px 48px;
+              display: flex;
+              gap: 48px;
+              align-items: flex-start;
+              position: relative;
+              overflow: hidden;
+              box-shadow: 0 20px 60px rgba(8, 46, 7, 0.28);
+            }
+            .unduh-card::before {
+              content: "NATURE FOR LIVINGS";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: clamp(38px, 6vw, 86px);
+              font-weight: 900;
+              color: rgba(255, 255, 255, 0.05);
+              white-space: nowrap;
+              letter-spacing: 7px;
+              pointer-events: none;
+              z-index: 0;
+              font-family: inherit;
+              user-select: none;
+            }
+            .unduh-card > * {
+              position: relative;
+              z-index: 1;
+            }
+            .unduh-icon-wrap {
+              flex-shrink: 0;
+              width: 80px;
+              height: 80px;
+              background: rgba(255, 255, 255, 0.12);
+              border-radius: 18px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .unduh-info {
+              flex: 1;
+            }
+            .unduh-info h3 {
+              font-size: 22px;
+              font-weight: 900;
+              color: #ffffff;
+              margin: 0 0 12px;
+            }
+            .unduh-info p {
+              font-size: 15px;
+              color: #d2f0d1;
+              line-height: 1.75;
+              margin: 0 0 24px;
+            }
+            .unduh-features {
+              display: flex;
+              flex-direction: column;
+              flex-direction: column;
+              gap: 10px;
+              margin-bottom: 28px;
+            }
+            .unduh-features li {
+              list-style: none;
+              display: flex;
+              align-items: flex-start;
+              gap: 10px;
+              font-size: 13.5px;
+              color: #d2f0d1;
+            }
+            .unduh-features li svg {
+              flex-shrink: 0;
+              margin-top: 2px;
+            }
+            .unduh-features li strong {
+              color: #ffffff;
+            }
+            .btn-unduh-main {
+              display: inline-flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 15px;
+              font-weight: 700;
+              color: #0e241b;
+              background: #a0d2f5;
+              padding: 14px 28px;
+              border-radius: 50px;
+              text-decoration: none;
+              transition: all 0.3s ease;
+            }
+            .btn-unduh-main:hover {
+              background: #7ab8e8;
+              transform: translateY(-2px);
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            }
+
+            /* ========================
+   JELAJAHI KOMPONEN LGOS LAINNYA
+======================== */
+            #lgos-jelajahi {
+              background: #f5f8f5;
+              padding: 90px 24px;
+            }
+            .jelajahi-grid {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 20px;
+              margin-top: 44px;
+            }
+            .jelajahi-card {
+              background: #ffffff;
+              border: 1.5px solid #d2e8d1;
+              border-radius: 16px;
+              padding: 28px 22px;
+              transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+              display: flex;
+              flex-direction: column;
+              text-decoration: none;
+            }
+            .jelajahi-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 40px rgba(17, 119, 16, 0.13);
+              border-color: #117710;
+            }
+            .jelajahi-card .icon-wrap {
+              width: 50px;
+              height: 50px;
+              background: linear-gradient(135deg, #117710, #1d9c1c);
+              border-radius: 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 16px;
+            }
+            .jelajahi-card .icon-wrap svg {
+              stroke: #ffffff;
+            }
+            .jelajahi-card h4 {
               font-size: 16px;
               font-weight: 800;
               color: #0e241b;
-              margin: 12px 0 8px;
+              margin: 0 0 8px;
             }
-            .impact-card p {
-              font-size: 13.5px;
+            .jelajahi-card p {
+              font-size: 13px;
               color: #536b5f;
-              line-height: 1.6;
-              margin: 0;
+              line-height: 1.65;
+              margin: 0 0 16px;
+              flex: 1;
+            }
+            .jelajahi-card .link-label {
+              font-size: 12px;
+              font-weight: 700;
+              color: #117710;
+              display: flex;
+              align-items: center;
+              gap: 5px;
+            }
+            .jelajahi-card:hover .link-label {
+              color: #0a5509;
             }
 
-            @media (max-width: 900px) {
-              .ynki-grid-donation { grid-template-columns: 1fr; }
-              .impact-grid { grid-template-columns: 1fr; }
+            @media (max-width: 1024px) {
+              .lgos-grid {
+                grid-template-columns: repeat(2, 1fr);
+              }
+              .jelajahi-grid {
+                grid-template-columns: repeat(2, 1fr);
+              }
+            }
+            @media (max-width: 768px) {
+              .utama-grid {
+                grid-template-columns: 1fr;
+              }
+              .unduh-card {
+                flex-direction: column;
+                gap: 24px;
+                padding: 32px 24px;
+              }
+            }
+            @media (max-width: 580px) {
+              .lgos-grid {
+                grid-template-columns: 1fr;
+              }
+              .jelajahi-grid {
+                grid-template-columns: 1fr 1fr;
+              }
+              .pendukung-table {
+                font-size: 13px;
+              }
+              .pendukung-table td,
+              .pendukung-table th {
+                padding: 14px 14px;
+              }
             }
           </style>
 
-          <!-- Hero Section Compact -->
-          <section class="hero-section ynki-section">
-  <div class="hero-inner">
-    <div class="hero-crumb"><a href="/">Beranda</a> &nbsp;/&nbsp; <span>Donasi &amp; Dukungan Program</span></div>
-    <h1 class="hero-h1">Dukung Pelestarian Lanskap<br><span class="hl">&amp; Kesejahteraan Masyarakat Tapak</span></h1>
-    <p class="hero-sub">Setiap kontribusi Anda disalurkan secara langsung untuk program restorasi ekosistem gambut, kemandirian masyarakat lokal di sekitar lanskap, dan perlindungan keanekaragaman hayati Kalimantan Barat.</p>
-    <div class="hero-btns">
-      <a href="#form-donasi" class="btn-cta-main">Salurkan Donasi</a><a href="#program-donasi" class="btn-cta-second">Pilihan Program</a>
-    </div>
-  </div>
-</section>
-
-          <!-- Grid Konten Donasi -->
-          <div class="ynki-grid-donation">
-            <!-- Kiri: Rekening Resmi & QRIS -->
-            <div>
-              <div class="ynki-card-box" style="margin-bottom: 24px;">
-                <h2 class="ynki-card-title">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF8000" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                  Rekening Resmi YNKI
-                </h2>
-                <p style="font-size: 13.5px; color: #536b5f; margin-bottom: 20px; line-height: 1.6;">
-                  Silakan salurkan donasi dan dana kemitraan Anda melalui rekening resmi Yayasan Natural Kapital Indonesia berikut:
-                </p>
-
-                @forelse ($accounts as $acc)
-                  <div class="bank-card">
-                    <span class="bank-badge">{{ $acc->bank_name }}</span>
-                    <div class="bank-acc-num">{{ $acc->account_number }}</div>
-                    <div class="bank-holder">a.n. {{ $acc->account_holder }}</div>
-                    @if ($acc->branch_name)
-                      <div style="font-size: 12px; color: #7a9485; margin-top: 4px;">Kantor Cabang: {{ $acc->branch_name }}</div>
-                    @endif
-
-                    @if ($acc->qris_image_path)
-                      <div style="margin-top: 16px; padding-top: 14px; border-top: 1px dashed #d2e8d1; text-align: center;">
-                        <img src="/storage/{{ $acc->qris_image_path }}" alt="QRIS {{ $acc->bank_name }}" style="max-width: 170px; border-radius: 8px; border: 1px solid #d2e8d1;">
-                        <div style="font-size: 11.5px; color: #536b5f; margin-top: 6px; font-weight: 600;">Scan QRIS di atas melalui Mobile Banking / E-Wallet</div>
+          <div class="fusion-row" style="max-width: 100%">
+            <section id="content" class="full-width">
+              <div id="post-lgos" class="page type-page status-publish hentry">
+                <span class="entry-title rich-snippet-hidden"
+                  >LGOS: Sistem Operasi Organisasi — Yayasan Natural Kapital
+                  Indonesia (YNKI)</span
+                >
+                <div class="post-content">
+                  <!-- =========================================
+             1. HERO
+             ========================================= -->
+                  <section id="hero-lgos" class="ynki-section">
+                    <div class="hero-inner">
+                      <div class="hero-crumb">
+                        <a href="/">Beranda</a> &nbsp;/&nbsp;
+                        <a href="/tentang-kami/">Tentang Kami</a> &nbsp;/&nbsp;
+                        <span>LGOS</span>
                       </div>
-                    @endif
-                  </div>
-                @empty
-                  <div style="background: #f8faf9; border: 1.5px solid #d2e8d1; border-radius: 14px; padding: 22px; margin-bottom: 20px;">
-                    <span class="bank-badge">BANK MANDIRI</span>
-                    <div class="bank-acc-num">146-00-1589234-1</div>
-                    <div class="bank-holder">a.n. Yayasan Natural Kapital Indonesia</div>
-                    <div style="font-size: 12px; color: #7a9485; margin-top: 4px;">Kantor Cabang: Pontianak Diponegoro</div>
-                  </div>
-                @endforelse
+                      <h1
+                        style="
+                          font-family:
+                            &quot;Montserrat&quot;, &quot;Inter&quot;, Arial,
+                            sans-serif !important;
+                          font-size: clamp(32px, 4.5vw, 54px) !important;
+                          font-weight: 300 !important;
+                          line-height: 1.25 !important;
+                          color: #ffffff !important;
+                          margin: 0 0 20px !important;
+                          letter-spacing: -0.01em !important;
+                        "
+                      >
+                        Landscape Governance<br />
+                        <span
+                          class="hl"
+                          style="
+                            font-family:
+                              &quot;Montserrat&quot;, &quot;Inter&quot;, Arial,
+                              sans-serif !important;
+                            font-size: 0.88em !important;
+                            font-weight: 300 !important;
+                            color: #a3e0a2 !important;
+                            display: inline-block;
+                          "
+                          >Operating System (LGOS)</span
+                        >
+                      </h1>
+                      <p class="hero-sub">
+                        Sebagai
+                        <em>Landscape Governance Backbone Organization</em>,
+                        YNKI menggunakan LGOS untuk memastikan seluruh elemen
+                        organisasi bekerja secara terhubung dalam mendukung visi
+                        bersama.
+                      </p>
+                      <div class="hero-quote">
+                        <p>
+                          LGOS adalah kerangka kerja terintegrasi yang
+                          menghubungkan filosofi, strategi, program,
+                          pembelajaran, pengetahuan, dan sumber daya dalam satu
+                          sistem perubahan yang utuh.
+                        </p>
+                        <span>LGOS — Sistem Operasi Organisasi YNKI</span>
+                      </div>
+                      <div class="hero-btns">
+                        <a href="#lgos-arsitektur" class="btn-cta-main">
+                          <svg
+                            width="17"
+                            height="17"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 16 16 12 12 8" />
+                            <line x1="8" y1="12" x2="16" y2="12" />
+                          </svg>
+                          8 Komponen LGOS
+                        </a>
+                        <a href="#lgos-utama" class="btn-cta-second">
+                          <svg
+                            width="17"
+                            height="17"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                          </svg>
+                          3 Komponen Utama
+                        </a>
+                      </div>
+                    </div>
+                  </section>
 
-                <div style="background: #fff3e6; border: 1px solid rgba(255,128,0,0.3); border-radius: 10px; padding: 14px 18px; font-size: 12.5px; color: #8a4500; line-height: 1.6; margin-top: 20px;">
-                  🔒 <strong>Prinsip Transparansi &amp; Akuntabilitas:</strong><br>
-                  Seluruh laporan keuangan YNKI diaudit secara berkala oleh Akuntan Publik Independen dengan opini Wajar Tanpa Pengecualian (WTP).
+                  <!-- =========================================
+             2. ARSITEKTUR 8 KOMPONEN
+             ========================================= -->
+                  <section id="lgos-arsitektur" class="ynki-section">
+                    <div class="ynki-container">
+                      <div style="text-align: center">
+                        <div class="divider-line">
+                          <span class="line"></span
+                          ><span class="section-badge">ARSITEKTUR LGOS</span
+                          ><span class="line"></span>
+                        </div>
+                        <h2
+                          style="
+                            font-size: clamp(22px, 3vw, 34px);
+                            font-weight: 800;
+                            color: #0e241b;
+                            margin: 0 0 12px;
+                          "
+                        >
+                          8 Komponen LGOS yang Saling Terhubung
+                        </h2>
+                        <p
+                          style="
+                            font-size: 15px;
+                            color: #536b5f;
+                            max-width: 760px;
+                            margin: 0 auto;
+                          "
+                        >
+                          Setiap komponen LGOS memiliki peran spesifik — dari
+                          fondasi filosofis hingga mobilisasi sumber daya — yang
+                          bekerja bersama membentuk sistem perubahan yang utuh
+                          dan berkelanjutan.
+                        </p>
+                      </div>
+
+                      <div class="lgos-grid">
+                        <div class="lgos-card">
+                          <div class="lgos-num">KOMPONEN 01</div>
+                          <h4>Kertas Posisi</h4>
+                          <div class="role">Mengapa Kami Ada</div>
+                          <p>
+                            Fondasi filosofis yang menjelaskan mengapa YNKI ada
+                            dan nilai-nilai yang mendasari seluruh keputusan
+                            organisasi.
+                          </p>
+                          <div class="lgos-card-action">
+                            <div class="lgos-doc-label">Dokumen Pendukung</div>
+                            <a href="{{ $lgosDocs[1] ?? '#' }}" class="btn-lgos-doc download" {{ !empty($lgosDocs[1]) ? 'target="_blank" download' : '' }}>
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path
+                                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                              </svg>
+                              Unduh Dokumen
+                            </a>
+                          </div>
+                        </div>
+                        <div class="lgos-card">
+                          <div class="lgos-num">KOMPONEN 02</div>
+                          <h4>Master ToC</h4>
+                          <div class="role">Bagaimana Perubahan Terjadi</div>
+                          <p>
+                            Menggambarkan hubungan antara tata kelola lanskap,
+                            perubahan perilaku, kelembagaan, dan dampak jangka
+                            panjang.
+                          </p>
+                          <div class="lgos-card-action">
+                            <div class="lgos-doc-label">Dokumen Pendukung</div>
+                            <a href="{{ $lgosDocs[2] ?? '#' }}" class="btn-lgos-doc download" {{ !empty($lgosDocs[2]) ? 'target="_blank" download' : '' }}>
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path
+                                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                              </svg>
+                              Unduh Dokumen
+                            </a>
+                          </div>
+                        </div>
+                        <div class="lgos-card">
+                          <div class="lgos-num">KOMPONEN 03</div>
+                          <h4>Rencana Strategis</h4>
+                          <div class="role">Ke Mana Kami Melangkah</div>
+                          <p>
+                            Menerjemahkan Theory of Change menjadi arah
+                            organisasi jangka menengah dan panjang (2026–2035).
+                          </p>
+                          <div class="lgos-card-action">
+                            <div class="lgos-doc-label">Dokumen Pendukung</div>
+                            <a href="{{ $lgosDocs[3] ?? '#' }}" class="btn-lgos-doc download" {{ !empty($lgosDocs[3]) ? 'target="_blank" download' : '' }}>
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path
+                                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                              </svg>
+                              Unduh Dokumen
+                            </a>
+                          </div>
+                        </div>
+                        <div class="lgos-card">
+                          <div class="lgos-num">KOMPONEN 04</div>
+                          <h4>Kerangka Program</h4>
+                          <div class="role">Portofolio Program</div>
+                          <p>
+                            Menentukan portofolio 5 program strategis sebagai
+                            jembatan antara strategi dan implementasi di
+                            lapangan.
+                          </p>
+                          <div class="lgos-card-action">
+                            <div class="lgos-doc-label">Dokumen Pendukung</div>
+                            <a href="{{ $lgosDocs[4] ?? '#' }}" class="btn-lgos-doc download" {{ !empty($lgosDocs[4]) ? 'target="_blank" download' : '' }}>
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path
+                                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                              </svg>
+                              Unduh Dokumen
+                            </a>
+                          </div>
+                        </div>
+                        <div class="lgos-card">
+                          <div class="lgos-num">KOMPONEN 05</div>
+                          <h4>Portofolio Proyek</h4>
+                          <div class="role">Proyek &amp; Kemitraan</div>
+                          <p>
+                            Menerjemahkan strategi ke dalam proyek, kemitraan,
+                            dan inisiatif lapangan sebagai antarmuka dengan
+                            pemangku kepentingan.
+                          </p>
+                          <div class="lgos-card-action">
+                            <div class="lgos-doc-label">Dokumen Pendukung</div>
+                            <a href="{{ $lgosDocs[5] ?? '#' }}" class="btn-lgos-doc download" {{ !empty($lgosDocs[5]) ? 'target="_blank" download' : '' }}>
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path
+                                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                              </svg>
+                              Unduh Dokumen
+                            </a>
+                          </div>
+                        </div>
+                        <div class="lgos-card">
+                          <div class="lgos-num">KOMPONEN 06</div>
+                          <h4>Sistem MEL</h4>
+                          <div class="role">
+                            Monitoring, Evaluation, &amp; Learning
+                          </div>
+                          <p>
+                            Menghasilkan pembelajaran dan mendukung adaptive
+                            management melalui monitoring, evaluasi, dan
+                            pembelajaran berkelanjutan.
+                          </p>
+                          <div class="lgos-card-action">
+                            <div class="lgos-doc-label">Dokumen Pendukung</div>
+                            <a
+                              href="/kontak-kami/"
+                              class="btn-lgos-doc contact"
+                            >
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path
+                                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                />
+                                <polyline points="22,6 12,13 2,6" />
+                              </svg>
+                              Hubungi Kami
+                            </a>
+                          </div>
+                        </div>
+                        <div class="lgos-card">
+                          <div class="lgos-num">KOMPONEN 07</div>
+                          <h4>Pengetahuan Organisasi</h4>
+                          <div class="role">Memori Organisasi</div>
+                          <p>
+                            Menjaga memori organisasi agar pengalaman, data, dan
+                            inovasi tidak hilang ketika proyek atau individu
+                            berubah.
+                          </p>
+                          <div class="lgos-card-action">
+                            <div class="lgos-doc-label">Dokumen Pendukung</div>
+                            <a
+                              href="/kontak-kami/"
+                              class="btn-lgos-doc contact"
+                            >
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path
+                                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                />
+                                <polyline points="22,6 12,13 2,6" />
+                              </svg>
+                              Hubungi Kami
+                            </a>
+                          </div>
+                        </div>
+                        <div class="lgos-card">
+                          <div class="lgos-num">KOMPONEN 08</div>
+                          <h4>Mobilisasi Sumber Daya</h4>
+                          <div class="role">Pendanaan &amp; Kemitraan</div>
+                          <p>
+                            Menyediakan energi (pendanaan, kemitraan,
+                            pengetahuan, teknologi) untuk menjalankan seluruh
+                            sistem organisasi.
+                          </p>
+                          <div class="lgos-card-action">
+                            <div class="lgos-doc-label">Dokumen Pendukung</div>
+                            <a
+                              href="/kontak-kami/"
+                              class="btn-lgos-doc contact"
+                            >
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                              >
+                                <path
+                                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                />
+                                <polyline points="22,6 12,13 2,6" />
+                              </svg>
+                              Hubungi Kami
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Tagline bawah grid -->
+                      <div
+                        style="
+                          text-align: center;
+                          margin-top: 44px;
+                          padding: 28px;
+                          background: #f0f8f0;
+                          border-radius: 16px;
+                          border: 1px solid #d2e8d1;
+                        "
+                      >
+                        <p
+                          style="
+                            font-size: 15px;
+                            color: #0e241b;
+                            font-weight: 600;
+                            margin: 0;
+                            line-height: 1.7;
+                          "
+                        >
+                          LGOS memastikan bahwa seluruh aktivitas organisasi
+                          tetap terhubung dengan misi dan Theory of Change.<br />
+                          <span style="color: #117710; font-weight: 800"
+                            >Setiap keputusan dapat ditelusuri kembali ke tujuan
+                            yang lebih besar:
+                            <em
+                              >Healthy Landscapes, Thriving Communities.</em
+                            ></span
+                          >
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- =========================================
+             3. 3 KOMPONEN UTAMA
+             ========================================= -->
+                  <section id="lgos-utama" class="ynki-section">
+                    <div class="ynki-container">
+                      <div style="text-align: center">
+                        <span class="section-badge">3 KOMPONEN UTAMA</span>
+                        <h2
+                          style="
+                            font-size: clamp(22px, 3vw, 32px);
+                            font-weight: 800;
+                            color: #ffffff;
+                            margin: 12px 0 12px;
+                          "
+                        >
+                          Fondasi, Mesin Perubahan, dan Sistem Navigasi LGOS
+                        </h2>
+                        <p
+                          style="
+                            font-size: 14.5px;
+                            color: #d2f0d1;
+                            max-width: 750px;
+                            margin: 0 auto;
+                          "
+                        >
+                          Tiga komponen pertama membentuk tulang punggung
+                          organisasi — menjawab pertanyaan mendasar tentang
+                          identitas, mekanisme perubahan, dan arah strategis
+                          YNKI. Wajib dipahami oleh seluruh pemangku
+                          kepentingan.
+                        </p>
+                      </div>
+
+                      <div class="utama-grid">
+                        <div class="utama-card">
+                          <div class="card-num">
+                            KOMPONEN 01 &mdash; FONDASI
+                          </div>
+                          <h3>Position Paper</h3>
+                          <div class="sub">Mengapa Kami Ada</div>
+                          <p>
+                            Fondasi filosofis organisasi yang menjelaskan
+                            mengapa YNKI ada, bagaimana YNKI memandang hubungan
+                            manusia, alam, dan ekonomi, serta nilai dan prinsip
+                            yang menjadi dasar seluruh keputusan organisasi.
+                          </p>
+                          <div class="q">"Why do we exist?"</div>
+                        </div>
+                        <div class="utama-card">
+                          <div class="card-num">
+                            KOMPONEN 02 &mdash; MESIN PERUBAHAN
+                          </div>
+                          <h3>Master Theory of Change</h3>
+                          <div class="sub">Bagaimana Perubahan Terjadi</div>
+                          <p>
+                            Menggambarkan hubungan antara tata kelola lanskap,
+                            perubahan perilaku, perubahan kelembagaan, perubahan
+                            sistem, dan dampak jangka panjang. Menjadi kerangka
+                            utama yang menghubungkan visi dengan tindakan nyata
+                            di lapangan.
+                          </p>
+                          <div class="q">"How does change happen?"</div>
+                        </div>
+                        <div class="utama-card">
+                          <div class="card-num">
+                            KOMPONEN 03 &mdash; SISTEM NAVIGASI
+                          </div>
+                          <h3>Strategic Plan 2026–2035</h3>
+                          <div class="sub">Ke Mana Kami Melangkah</div>
+                          <p>
+                            Menerjemahkan Theory of Change menjadi arah
+                            organisasi jangka menengah dan panjang. Menetapkan
+                            tujuan strategis, prioritas organisasi, hasil yang
+                            ingin dicapai, dan tahapan perkembangan organisasi.
+                          </p>
+                          <div class="q">"Where are we going?"</div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- =========================================
+             6. JELAJAHI KOMPONEN LGOS LAINNYA
+             ========================================= -->
+                  <section id="lgos-jelajahi" class="ynki-section">
+                    <div class="ynki-container">
+                      <div style="text-align: center">
+                        <div class="divider-line">
+                          <span class="line"></span
+                          ><span class="section-badge">EKSPLORASI</span
+                          ><span class="line"></span>
+                        </div>
+                        <h2
+                          style="
+                            font-size: clamp(22px, 3vw, 32px);
+                            font-weight: 800;
+                            color: #0e241b;
+                            margin: 0 0 12px;
+                          "
+                        >
+                          Jelajahi Komponen LGOS Lainnya
+                        </h2>
+                        <p
+                          style="
+                            font-size: 15px;
+                            color: #536b5f;
+                            max-width: 760px;
+                            margin: 0 auto;
+                          "
+                        >
+                          Setiap halaman di bawah ini mencerminkan salah satu
+                          komponen LGOS secara mendalam. Telusuri program,
+                          dampak, pengetahuan, dan cara berkolaborasi bersama
+                          YNKI dalam mendukung tata kelola lanskap yang inklusif
+                          dan berkelanjutan.
+                        </p>
+                      </div>
+
+                      <div class="jelajahi-grid">
+                        <a href="/program/" class="jelajahi-card">
+                          <div class="icon-wrap">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="#ffffff"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path
+                                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                              />
+                            </svg>
+                          </div>
+                          <h4>Program Kami</h4>
+                          <p>
+                            Portofolio 5 program strategis sebagai implementasi
+                            Program Framework LGOS di lapangan.
+                          </p>
+                          <span class="link-label"
+                            >Lihat Program
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2.5"
+                            >
+                              <polyline points="9 18 15 12 9 6" /></svg
+                          ></span>
+                        </a>
+
+                        <a href="/dampak-pembelajaran/" class="jelajahi-card">
+                          <div class="icon-wrap">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="#ffffff"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <polyline
+                                points="22 12 18 12 15 21 9 3 6 12 2 12"
+                              />
+                            </svg>
+                          </div>
+                          <h4>Dampak &amp; Pembelajaran</h4>
+                          <p>
+                            Sistem monitoring, evaluasi, dan pembelajaran yang
+                            mencerminkan MEL System LGOS.
+                          </p>
+                          <span class="link-label"
+                            >Lihat Dampak
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2.5"
+                            >
+                              <polyline points="9 18 15 12 9 6" /></svg
+                          ></span>
+                        </a>
+
+                        <a href="/pustaka/" class="jelajahi-card">
+                          <div class="icon-wrap">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="#ffffff"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                              <path
+                                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                              />
+                            </svg>
+                          </div>
+                          <h4>Literasi &amp; Pengetahuan</h4>
+                          <p>
+                            Repositori pengetahuan organisasi yang mencerminkan
+                            Knowledge Management System LGOS.
+                          </p>
+                          <span class="link-label"
+                            >Buka Pustaka
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2.5"
+                            >
+                              <polyline points="9 18 15 12 9 6" /></svg
+                          ></span>
+                        </a>
+
+                        <a href="/ikut-serta/" class="jelajahi-card">
+                          <div class="icon-wrap">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="#ffffff"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path
+                                d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                              />
+                              <circle cx="9" cy="7" r="4" />
+                              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                          </div>
+                          <h4>Ikut Serta</h4>
+                          <p>
+                            Bergabunglah sebagai mitra dan dukung Resource
+                            Mobilization untuk lanskap yang sehat.
+                          </p>
+                          <span class="link-label"
+                            >Bergabung
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2.5"
+                            >
+                              <polyline points="9 18 15 12 9 6" /></svg
+                          ></span>
+                        </a>
+                      </div>
+                    </div>
+                  </section>
                 </div>
               </div>
-            </div>
-
-            <!-- Kanan: Form Konfirmasi & Bukti Transfer -->
-            <div>
-              <div class="ynki-card-box">
-                <h2 class="ynki-card-title">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF8000" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                  Konfirmasi &amp; Bukti Donasi
-                </h2>
-
-                @if (session('success'))
-                  <div style="background: #dafbe1; border: 1px solid #a2e8b6; color: #1a7f37; padding: 16px 20px; border-radius: 10px; font-weight: 600; margin-bottom: 24px; font-size: 14px;">
-                    ✅ {{ session('success') }}
-                  </div>
-                @endif
-
-                @if ($errors->any())
-                  <div style="background: #ffebe9; border: 1px solid #ffc1ba; color: #cf222e; padding: 14px 18px; border-radius: 10px; font-size: 13.5px; margin-bottom: 20px;">
-                    <ul style="margin: 0; padding-left: 18px;">
-                      @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                      @endforeach
-                    </ul>
-                  </div>
-                @endif
-
-                <form action="{{ route('public.donation.store') }}" method="POST" enctype="multipart/form-data">
-                  @csrf
-
-                  <div class="form-group">
-                    <label>Nama Lengkap / Lembaga *</label>
-                    <input type="text" name="donor_name" value="{{ old('donor_name') }}" required placeholder="Contoh: Rahmat Hidayat / PT Lestari Hijau" class="form-control">
-                  </div>
-
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                    <div class="form-group">
-                      <label>Alamat Email *</label>
-                      <input type="email" name="donor_email" value="{{ old('donor_email') }}" required placeholder="nama@email.com" class="form-control">
-                    </div>
-                    <div class="form-group">
-                      <label>Nomor WhatsApp</label>
-                      <input type="text" name="donor_phone" value="{{ old('donor_phone') }}" placeholder="081234567890" class="form-control">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Pilihan Program Penyaluran *</label>
-                    <select name="program_id" class="form-control">
-                      <option value="">-- Donasi Umum Aksi Lanskap YNKI --</option>
-                      @foreach ($programs as $prog)
-                        <option value="{{ $prog->id }}" {{ old('program_id') == $prog->id ? 'selected' : '' }}>
-                          {{ $prog->program_name }}
-                        </option>
-                      @endforeach
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Rekening Tujuan Transfer *</label>
-                    <select name="donation_account_id" required class="form-control">
-                      @foreach ($accounts as $acc)
-                        <option value="{{ $acc->id }}" {{ old('donation_account_id') == $acc->id ? 'selected' : '' }}>
-                          {{ $acc->bank_name }} - {{ $acc->account_number }} (a.n. {{ $acc->account_holder }})
-                        </option>
-                      @endforeach
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Jumlah Donasi (Rp) *</label>
-                    <input type="number" name="amount" value="{{ old('amount') }}" required min="10000" step="1000" placeholder="Minimal Rp 10.000" class="form-control">
-                  </div>
-
-                  <div class="form-group">
-                    <label>Unggah Bukti Transfer (Foto / Screenshot / Struk) *</label>
-                    <input type="file" name="transfer_proof" required accept="image/jpeg,image/png,image/jpg,image/webp" class="form-control" style="padding: 9px 12px;">
-                    <small style="display:block; color: #7a9485; font-size: 11.5px; margin-top: 4px;">Format didukung: JPG, PNG, WEBP (Maksimal 5MB)</small>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Catatan / Doa untuk Alam &amp; Masyarakat (Opsional)</label>
-                    <textarea name="donor_notes" rows="3" placeholder="Tuliskan pesan atau doa Anda..." class="form-control">{{ old('donor_notes') }}</textarea>
-                  </div>
-
-                  <div style="margin-bottom: 24px;">
-                    <label style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; cursor: pointer;">
-                      <input type="checkbox" name="is_anonymous" value="1" {{ old('is_anonymous') ? 'checked' : '' }}>
-                      Sembunyikan nama saya dari daftar publik (Donatur Anonim)
-                    </label>
-                  </div>
-
-                  <button type="submit" class="btn-submit-donation">
-                    Kirim Konfirmasi Donasi Sekarang &rarr;
-                  </button>
-                </form>
-              </div>
-            </div>
+            </section>
           </div>
-
-          <!-- Impact Section -->
-          <section class="impact-banner">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto 35px;">
-              <span class="section-badge-orange">Amanah &amp; Berdampak</span>
-              <h3 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: #0e241b; margin: 10px 0 8px;">Penyaluran Kontribusi Nyata</h3>
-              <p style="font-size: 14.5px; color: #536b5f; margin: 0;">Setiap rupiah donasi Anda dikelola dengan tata kelola berbasis sistem LGOS (*Landscape Governance Operating System*).</p>
-            </div>
-            <div class="impact-grid">
-              <div class="impact-card">
-                <div style="width: 50px; height: 50px; background: #fff3e6; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8000" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-                </div>
-                <h4>Restorasi Gambut &amp; Hutan</h4>
-                <p>Mendukung rewetting sekat kanal, revegetasi pohon lokal, dan mitigasi kebakaran hutan lahan.</p>
-              </div>
-              <div class="impact-card">
-                <div style="width: 50px; height: 50px; background: #fff3e6; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8000" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <h4>Pemberdayaan Masyarakat</h4>
-                <p>Pendampingan komoditas berkelanjutan (agroforestri kopi, madu kelulut, dan kelapa terintegrasi).</p>
-              </div>
-              <div class="impact-card">
-                <div style="width: 50px; height: 50px; background: #fff3e6; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8000" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                </div>
-                <h4>Advokasi &amp; Data Spasial</h4>
-                <p>Penyusunan peta tematik spasial dan policy brief untuk tata kelola kebijakan berkelanjutan.</p>
-              </div>
-            </div>
-          </section>
         </main>
-<div class="fusion-tb-footer fusion-footer">
+        <div class="fusion-tb-footer fusion-footer">
           <div class="fusion-footer-widget-area fusion-widget-area">
             <div
-              class="fusion-fullwidth fullwidth-box fusion-builder-row-5 fusion-flex-container has-pattern-background has-mask-background nonhundred-percent-fullwidth non-hundred-percent-height-scrolling"
+              class="fusion-fullwidth fullwidth-box fusion-builder-row-5 fusion-flex-container has-pattern-background has-mask-background nonhundred-percent-fullwidth"
               style="
                 --awb-border-radius-top-left: 0px;
                 --awb-border-radius-top-right: 0px;
@@ -3366,7 +4275,10 @@
                     >
                       <p><strong>Yayasan Natural Kapital Indonesia</strong></p>
                       <p>Nature for Life</p>
-                      <p>Gg. Gn. Malabar, Sungai Jawi, Kec. Pontianak Kota, Kota Pontianak, Kalimantan Barat 78244</p>
+                      <p>
+                        Gg. Gn. Malabar, Sungai Jawi, Kec. Pontianak Kota, Kota
+                        Pontianak, Kalimantan Barat 78244
+                      </p>
                       <p>
                         <i
                           class="fb-icon-element-1 fb-icon-element fontawesome-icon fa-envelope fas circle-yes fusion-text-flow"
@@ -3390,20 +4302,100 @@
                         >
                       </p>
                       <div class="ynki-footer-social">
-                        <a href="https://www.youtube.com/@naturalkapital123" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-youtube" title="YouTube" aria-label="YouTube">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        <a
+                          href="https://www.youtube.com/@naturalkapital123"
+                          target="_blank"
+                          rel="noopener"
+                          class="ynki-social-btn ynki-social-youtube"
+                          title="YouTube"
+                          aria-label="YouTube"
+                        >
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path
+                              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                            />
+                          </svg>
                         </a>
-                        <a href="https://web.facebook.com/naturalkapital?_rdc=1&_rdr#" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-facebook" title="Facebook" aria-label="Facebook">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        <a
+                          href="https://web.facebook.com/naturalkapital?_rdc=1&_rdr#"
+                          target="_blank"
+                          rel="noopener"
+                          class="ynki-social-btn ynki-social-facebook"
+                          title="Facebook"
+                          aria-label="Facebook"
+                        >
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path
+                              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                            />
+                          </svg>
                         </a>
-                        <a href="https://www.instagram.com/yayasannaturalkapital" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-instagram" title="Instagram" aria-label="Instagram">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <a
+                          href="https://www.instagram.com/yayasannaturalkapital"
+                          target="_blank"
+                          rel="noopener"
+                          class="ynki-social-btn ynki-social-instagram"
+                          title="Instagram"
+                          aria-label="Instagram"
+                        >
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path
+                              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                            />
+                          </svg>
                         </a>
-                        <a href="https://x.com/kapital_natural" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-xtwitter" title="X (Twitter)" aria-label="X (Twitter)">
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        <a
+                          href="https://x.com/kapital_natural"
+                          target="_blank"
+                          rel="noopener"
+                          class="ynki-social-btn ynki-social-xtwitter"
+                          title="X (Twitter)"
+                          aria-label="X (Twitter)"
+                        >
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path
+                              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                            />
+                          </svg>
                         </a>
-                        <a href="https://id.linkedin.com/company/natural-kapital-foundation" target="_blank" rel="noopener" class="ynki-social-btn ynki-social-linkedin" title="LinkedIn" aria-label="LinkedIn">
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                        <a
+                          href="https://id.linkedin.com/company/natural-kapital-foundation"
+                          target="_blank"
+                          rel="noopener"
+                          class="ynki-social-btn ynki-social-linkedin"
+                          title="LinkedIn"
+                          aria-label="LinkedIn"
+                        >
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path
+                              d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
+                            />
+                          </svg>
                         </a>
                       </div>
                     </div>
@@ -3469,9 +4461,7 @@
                         <li>Literasi &amp; Pengetahuan</li>
                         <li>Hubungi Kami</li>
                       </ul>
-                      <p>
-                        © 2026 Yayasan Natural Kapital Indonesia
-                      </p>
+                      <p>© 2026 Yayasan Natural Kapital Indonesia</p>
                     </div>
                   </div>
                 </div>
@@ -3540,6 +4530,7 @@
       >
     </section>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
-  <script src="/assets/js/ynki-footer.js"></script></body>
+    <script src="/assets/js/ynki-footer.js"></script>
+  </body>
 </html>
 <!-- Page optimized by LiteSpeed Cache @2026-08-17 17:42:00 --><!-- Page cached by LiteSpeed Cache 7.8.1 on 2026-08-17 17:42:00 --><!-- Guest Mode --><!-- QUIC.cloud CCSS loaded ✅ /ccss/e6cdef7e17caebb6a8d79682a8c88011.css --><!-- QUIC.cloud UCSS loaded ✅ /ucss/d5027302c12ab86b6082acd2ecdd5c8e.css -->

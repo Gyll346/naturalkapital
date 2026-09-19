@@ -19,7 +19,8 @@ class PageContentController extends Controller
   // 1. Tim & Pengurus YNKI (/tim/)
   public function team()
   {
-    $originalHtml = file_get_contents(base_path('tim/index.html'));
+    $leadershipMembers = collect();
+    $expertMembers = collect();
 
     try {
       $allMembers = TeamMember::with('category')
@@ -28,7 +29,6 @@ class PageContentController extends Controller
         ->get();
 
       if ($allMembers->isNotEmpty()) {
-        // Kelompokkan pengurus dewan vs tim ahli / lainnya
         $leadershipMembers = $allMembers->filter(function ($m) {
           $catName = strtolower($m->category->category_name ?? '');
           return !str_contains($catName, 'ahli') && !str_contains($catName, 'lapangan');
@@ -39,65 +39,19 @@ class PageContentController extends Controller
           return str_contains($catName, 'ahli') || str_contains($catName, 'lapangan');
         });
 
-        // Fallback jika belum dibagi kategori khusus ahli: masukkan ke leadership
         if ($leadershipMembers->isEmpty()) {
           $leadershipMembers = $allMembers;
         }
-
-        $renderCards = function ($members) {
-          $html = '';
-          foreach ($members as $member) {
-            $photoSrc = $member->photo_path
-              ? (str_starts_with($member->photo_path, 'http') || str_starts_with($member->photo_path, '/') ? $member->photo_path : '/storage/' . $member->photo_path)
-              : '/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp';
-
-            $linkedinLink = '';
-            if (!empty($member->linkedin_url)) {
-              $linkedinLink = '<a href="' . htmlspecialchars($member->linkedin_url) . '" target="_blank" rel="noopener" class="lead-linkedin" title="Profil LinkedIn" style="display:inline-flex; align-items:center; gap:4px; font-size:12px; color:#0a66c2; text-decoration:none; margin-top:8px; font-weight:600;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6z"/></svg> LinkedIn</a>';
-            }
-
-            $html .= '
-                        <div class="lead-card">
-                          <div class="lead-photo-wrap">
-                            <img src="' . htmlspecialchars($photoSrc) . '" alt="' . htmlspecialchars($member->full_name) . '" loading="lazy" onerror="this.src=\'/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp\'" />
-                          </div>
-                          <div class="lead-body">
-                            <h3 class="lead-name">' . htmlspecialchars($member->full_name) . '</h3>
-                            <div class="lead-role">' . htmlspecialchars($member->position) . '</div>
-                            <p class="lead-bio">' . htmlspecialchars($member->bio ?? '') . '</p>
-                            ' . $linkedinLink . '
-                          </div>
-                        </div>';
-          }
-          return $html;
-        };
-
-        // Render dynamic Dewan Pengurus
-        if ($leadershipMembers->isNotEmpty()) {
-          $dynamicLeadershipHtml = $renderCards($leadershipMembers);
-          $patternLeadership = '/(<section id="leadership-section"[^>]*>.*?<div class="leadership-grid-4">)(.*?)(<\/div>\s*<\/div>\s*<\/section>)/s';
-          $originalHtml = preg_replace($patternLeadership, '$1' . $dynamicLeadershipHtml . '$3', $originalHtml);
-        }
-
-        // Render dynamic Tim Ahli Pendukung jika ada data anggota tim ahli di DB
-        if ($expertMembers->isNotEmpty()) {
-          $dynamicExpertHtml = $renderCards($expertMembers);
-          $patternExpert = '/(<section id="tim-ahli-section"[^>]*>.*?<div class="leadership-grid-4">)(.*?)(<\/div>\s*<\/div>\s*<\/section>)/s';
-          $originalHtml = preg_replace($patternExpert, '$1' . $dynamicExpertHtml . '$3', $originalHtml);
-        }
       }
-    } catch (\Throwable $e) {
-      // Fallback gracefully ke konten statis tim/index.html jika DB tidak terhubung
-    }
+    } catch (\Throwable $e) {}
 
-    return response($originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    return view('public.tim', compact('leadershipMembers', 'expertMembers'));
   }
 
   // 2. LGOS: Sistem Operasi Organisasi (/lgos/)
   public function lgos()
   {
-    $originalHtml = file_get_contents(base_path('lgos/index.html'));
-
+    $lgosDocs = [];
     try {
       $components = LgosComponent::where('is_active', true)
         ->orderBy('sort_order', 'asc')
@@ -106,21 +60,12 @@ class PageContentController extends Controller
       foreach ($components as $c) {
         if (!empty($c->document_pdf_path) && $c->sort_order <= 5) {
           $order = intval($c->sort_order);
-          $pdfUrl = '/storage/' . ltrim($c->document_pdf_path, '/');
-
-          // Match the card with this component order number (e.g. KOMPONEN 01) and inject the uploaded PDF download link
-          $pattern = '/(<div class="lgos-num">\s*KOMPONEN\s*0*' . $order . '\s*<\/div>[\s\S]*?<a\s+[^>]*?href=")([^"]*)("[\s\S]*?class="[^"]*btn-lgos-doc download[^"]*")/i';
-
-          if (preg_match($pattern, $originalHtml)) {
-            $originalHtml = preg_replace($pattern, '$1' . $pdfUrl . '$3 target="_blank" download', $originalHtml, 1);
-          }
+          $lgosDocs[$order] = '/storage/' . ltrim($c->document_pdf_path, '/');
         }
       }
-    } catch (\Throwable $e) {
-      // Graceful fallback to static lgos/index.html
-    }
+    } catch (\Throwable $e) {}
 
-    return response($originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    return view('public.lgos', compact('lgosDocs'));
   }
 
   // 3. Portfolio (/portofolio/)
@@ -129,71 +74,8 @@ class PageContentController extends Controller
     $projects = PortfolioProject::orderByRaw("CASE WHEN status = 'ongoing' THEN 0 ELSE 1 END")
       ->orderBy('sort_order', 'asc')
       ->get();
-    $originalHtml = file_get_contents(base_path('portofolio/index.html'));
 
-    if ($projects->isEmpty()) {
-      return response($originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
-    }
-
-    $dynamicCardsHtml = '';
-    foreach ($projects as $p) {
-      $isOngoing = strtolower($p->status) === 'ongoing' || str_contains(strtolower($p->status), 'berjalan');
-      $statusBadge = $isOngoing
-        ? '<span class="tag-status berjalan">Sedang Berjalan</span>'
-        : '<span class="tag-status selesai">Selesai</span>';
-
-      $catSlug = 'restorasi';
-      $catLower = strtolower($p->category ?? '');
-      if (str_contains($catLower, 'spasial') || str_contains($catLower, 'pemetaan') || str_contains($catLower, 'intelligence')) {
-        $catSlug = 'pemetaan';
-      } elseif (str_contains($catLower, 'komoditas') || str_contains($catLower, 'commodity')) {
-        $catSlug = 'komoditas';
-      } elseif (str_contains($catLower, 'kapasitas') || str_contains($catLower, 'capacity')) {
-        $catSlug = 'kapasitas';
-      } elseif (str_contains($catLower, 'kebijakan') || str_contains($catLower, 'policy') || str_contains($catLower, 'governance')) {
-        $catSlug = 'kebijakan';
-      }
-
-      $slug = $p->slug ?: \Illuminate\Support\Str::slug($p->project_title);
-
-      $downloadDoc = $p->document_pdf_path
-        ? '<a href="/storage/' . htmlspecialchars($p->document_pdf_path) . '" target="_blank" download style="color:#117710;font-weight:700;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">&darr; Factsheet PDF</a>'
-        : '';
-
-      $desc = $p->description ?: ($p->summary ?? '');
-      $summary = $p->summary ?: ($p->description ?? '');
-
-      $dynamicCardsHtml .= '
-            <div class="proyek-card" data-cat="' . htmlspecialchars($catSlug) . '" data-title="' . htmlspecialchars($p->project_title) . '" data-status="' . ($isOngoing ? 'Sedang Berjalan' : 'Selesai') . '" data-location="' . htmlspecialchars($p->location ?? 'Kalimantan Barat') . '" data-period="' . htmlspecialchars($p->period ?? '-') . '" data-partner="' . htmlspecialchars($p->partner_donor ?? 'YNKI') . '" data-desc="' . htmlspecialchars($desc) . '">
-              <div class="proyek-cat-bar ' . htmlspecialchars($catSlug) . '"></div>
-              <div class="proyek-body">
-                <div class="proyek-tags">
-                  <span class="tag-cat ' . htmlspecialchars($catSlug) . '">' . htmlspecialchars($p->category) . '</span>
-                  ' . $statusBadge . '
-                </div>
-                <h4>' . htmlspecialchars($p->project_title) . '</h4>
-                <div class="proyek-meta">
-                  <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>' . htmlspecialchars($p->location ?? 'Kalimantan Barat') . '</span>
-                  <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' . htmlspecialchars($p->period ?? '-') . '</span>
-                  <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>' . htmlspecialchars($p->partner_donor ?? 'YNKI') . '</span>
-                </div>
-                <p class="proyek-desc">' . htmlspecialchars($summary) . '</p>
-                <div class="proyek-card-footer">
-                  <a href="/portofolio/' . htmlspecialchars($slug) . '" class="btn-read-article">
-                    <span>Baca Selengkapnya</span>
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </a>
-                  ' . ($downloadDoc ? '<div style="margin-top:8px;text-align:right;">' . $downloadDoc . '</div>' : '') . '
-                </div>
-              </div>
-            </div>';
-    }
-
-    $pattern = '/<div class="proyek-grid">.*?<\/div>\s*(?:<div class="pagination clearfix"[^>]*>.*?<\/div>\s*)?<\/div>\s*<\/section>/s';
-    $replacement = '<div class="proyek-grid">' . $dynamicCardsHtml . '</div><div class="pagination clearfix" id="porto-pagination"></div></div></section>';
-    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
-
-    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    return view('public.portfolio.index', compact('projects'));
   }
 
   // 3b. Portfolio Single Article (/portofolio/{slug})
@@ -510,34 +392,7 @@ class PageContentController extends Controller
       ->orderBy('report_year', 'desc')
       ->get();
 
-    $originalHtml = file_get_contents(base_path('transparansi/index.html'));
-
-    $dynamicCardsHtml = '';
-    foreach ($reports as $r) {
-      $dynamicCardsHtml .= '
-            <div class="laporan-card" style="background:#fff;border:1.5px solid #d2e8d1;border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;">
-              <div>
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-                  <span style="background:#eaf5ee;color:#0F5132;padding:4px 12px;border-radius:50px;font-size:11.5px;font-weight:700;">' . htmlspecialchars($r->category) . '</span>
-                  <span style="font-weight:800;color:#117710;font-size:15px;">' . htmlspecialchars($r->report_year) . '</span>
-                </div>
-                <h3 style="font-size:16.5px;font-weight:800;color:#0e241b;margin:0 0 10px;line-height:1.4;">' . htmlspecialchars($r->title) . '</h3>
-                <p style="font-size:13.5px;color:#536b5f;line-height:1.6;margin:0 0 16px;">' . htmlspecialchars($r->summary ?? '') . '</p>
-              </div>
-              <div style="border-top:1px solid #eef4f0;padding-top:16px;display:flex;justify-content:space-between;align-items:center;">
-                <span style="font-size:12px;color:#888;">PDF (' . htmlspecialchars($r->file_size ?? 'Dokumen Resmi') . ')</span>
-                <a href="/storage/' . htmlspecialchars($r->file_pdf_path) . '" target="_blank" style="background:#117710;color:#fff;padding:8px 18px;border-radius:8px;text-decoration:none;font-weight:700;font-size:12.5px;display:inline-flex;align-items:center;gap:6px;">
-                  &darr; Unduh PDF
-                </a>
-              </div>
-            </div>';
-    }
-
-    $pattern = '/<div class="laporan-grid"[^>]*>.*?<\/div>\s*(?:<div class="pagination clearfix"[^>]*>.*?<\/div>\s*)?<\/div>\s*<\/section>/s';
-    $replacement = '<div class="laporan-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-top:30px;">' . $dynamicCardsHtml . '</div><div class="pagination clearfix" id="trans-pagination"></div></div></section>';
-    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
-
-    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    return view('public.transparansi', compact('reports'));
   }
 
   // 5. News & Features (/news-features/) - Kabar Terkini dari Program YNKI

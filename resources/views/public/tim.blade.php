@@ -13,23 +13,21 @@
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <title>
-      Portfolio Proyek & Program — Yayasan Natural Kapital Indonesia (YNKI)
-    </title>
+    <title>Tim & Pengurus — Yayasan Natural Kapital Indonesia (YNKI)</title>
     <meta
       name="description"
-      content="Portofolio lengkap proyek dan program restorasi gambut, pemetaan spasial HCV-HCS, komoditas berkelanjutan, dan tata kelola lanskap Yayasan Natural Kapital Indonesia (YNKI) sejak 2019."
+      content="Profil jajaran dewan pengurus, kepemimpinan, manajer program, dan tim ahli multidisiplin Yayasan Natural Kapital Indonesia (YNKI)."
     />
-    <link rel="canonical" href="/portofolio/" />
+    <link rel="canonical" href="/tim/" />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Portfolio Proyek & Program — Yayasan Natural Kapital Indonesia (YNKI)"
+      content="Tim & Pengurus — Yayasan Natural Kapital Indonesia (YNKI)"
     />
     <meta
       property="og:description"
-      content="Portofolio lengkap proyek dan program restorasi gambut, pemetaan spasial HCV-HCS, komoditas berkelanjutan YNKI."
+      content="Profil jajaran dewan pengurus, kepemimpinan, dan tim ahli multidisiplin YNKI."
     />
     <meta property="og:url" content="/" />
     <meta property="og:site_name" content="Natural Kapital Foundation" />
@@ -167,18 +165,18 @@
     />
     <meta
       name="description"
-      content="Portofolio lengkap proyek dan program restorasi gambut, pemetaan spasial HCV-HCS, komoditas berkelanjutan, dan tata kelola lanskap Yayasan Natural Kapital Indonesia (YNKI) sejak 2019."
+      content="Profil jajaran dewan pengurus, kepemimpinan, manajer program, dan tim ahli multidisiplin Yayasan Natural Kapital Indonesia (YNKI)."
     />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Natural Kapital Foundation" />
     <meta
       property="og:title"
-      content="Portfolio Proyek & Program — Yayasan Natural Kapital Indonesia (YNKI)"
+      content="Tim & Pengurus — Yayasan Natural Kapital Indonesia (YNKI)"
     />
     <meta
       property="og:description"
-      content="Portofolio lengkap proyek dan program restorasi gambut, pemetaan spasial HCV-HCS, komoditas berkelanjutan YNKI."
+      content="Profil jajaran dewan pengurus, kepemimpinan, dan tim ahli multidisiplin YNKI."
     />
     <meta property="og:url" content="/" />
     <meta
@@ -2895,7 +2893,7 @@
         <main
           id="main"
           class="clearfix width-100"
-          style="font-family: &quot;Inter&quot;, Arial, Helvetica, sans-serif"
+          style="font-family: 'Inter', Arial, Helvetica, sans-serif"
         >
           <link
             rel="stylesheet"
@@ -2908,26 +2906,50 @@
           />
 
           <style>
-            *,
-            *::before,
-            *::after {
-              box-sizing: border-box;
+            /* ===================================================
+               TIM & PENGURUS - EXACT PPTX LAYOUT & BRAND THEME
+               Brand Colors:
+               Primary Green : #117710
+               Orange Accent : #FF8000
+               Purple Accent : #8000FF
+               Main CTA Red  : #B22231
+               Second CTA    : #A0D2F5
+               =================================================== */
+
+            .fusion-tb-header,
+            .fusion-tb-header > .fusion-fullwidth:first-child,
+            .fusion-header,
+            .fusion-header-wrapper {
+              background: transparent !important;
+              background-color: transparent !important;
+              box-shadow: none !important;
+              border-bottom: none !important;
             }
+
+            html {
+              scroll-behavior: smooth;
+            }
+
+            *, *::before, *::after { box-sizing: border-box; }
+
             .ynki-section {
               width: 100%;
+              box-sizing: border-box;
             }
             .ynki-container {
               max-width: 1200px;
               margin: 0 auto;
               padding: 0 24px;
+              box-sizing: border-box;
             }
 
+            /* Section Badges */
             .section-badge {
               display: inline-flex;
               align-items: center;
               gap: 6px;
-              font-size: 11px;
-              font-weight: 700;
+              font-size: 11.5px;
+              font-weight: 800;
               letter-spacing: 1.5px;
               text-transform: uppercase;
               color: #ff8000;
@@ -2937,38 +2959,50 @@
               border-radius: 50px;
               margin-bottom: 14px;
             }
+            .section-badge.green {
+              background: #e8f5e8;
+              color: #117710;
+              border-color: #117710;
+            }
+            .section-badge.purple {
+              background: #f3e8ff;
+              color: #8000ff;
+              border-color: rgba(128, 0, 255, 0.3);
+            }
             .section-badge.white {
               background: rgba(255, 255, 255, 0.15);
               color: #ffffff;
-              border-color: rgba(255, 255, 255, 0.3);
+              border-color: rgba(255, 255, 255, 0.35);
             }
-            .divider-line {
+
+            .section-divider {
               display: flex;
               align-items: center;
               justify-content: center;
               gap: 16px;
               margin-bottom: 14px;
             }
-            .divider-line .line {
+            .section-divider .line {
               flex: 1;
               height: 1px;
               background: #d2e8d1;
             }
 
-            /* ======================== HERO ======================== */
-            #hero-porto {
+            /* ---- 1. HERO SECTION ---- */
+            #hero-tim {
               position: relative;
-              min-height: 82vh;
+              min-height: 88vh;
               display: flex;
               align-items: center;
               background-image: 
               linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-              url('/assets/images/portofolio/Original_TimePhoto_20260606_092415.jpg');
+              url('/assets/images/tim/bahan hero-section.jpg');
               background-size: cover;
-              background-position: center;
-              padding: 110px 24px 90px;
+              background-position: center center;
+              padding: 100px 24px 80px;
+              overflow: hidden;
             }
-            #hero-porto::after {
+            #hero-tim::after {
               content: "";
               position: absolute;
               bottom: 0;
@@ -2978,1922 +3012,806 @@
               background: linear-gradient(to bottom, transparent, #ffffff);
               pointer-events: none;
             }
-            .hero-inner {
+            .hero-content-tim {
               position: relative;
               z-index: 2;
-              max-width: 920px;
+              max-width: 940px;
               margin: 0 auto;
               text-align: center;
             }
-            .hero-crumb {
-              font-size: 11.5px;
+            .hero-breadcrumb {
+              font-size: 12px;
               font-weight: 700;
-              letter-spacing: 1.8px;
+              letter-spacing: 1.5px;
               text-transform: uppercase;
               color: #a3e0a2;
-              margin-bottom: 20px;
+              margin-bottom: 18px;
             }
-            .hero-crumb a {
+            .hero-breadcrumb a {
               color: #d2f0d1;
               text-decoration: none;
             }
-            .hero-crumb a:hover {
+            .hero-breadcrumb a:hover {
               color: #ff8000;
             }
-            #hero-porto h1, #hero-porto h1 * {
-              font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
-              font-size: clamp(32px, 4.5vw, 54px) !important;
-              font-weight: 300 !important;
-              line-height: 1.25 !important;
-              color: #ffffff !important;
-              margin: 0 0 20px !important;
-              letter-spacing: -0.01em !important;
+            #hero-tim h1 {
+              font-size: clamp(30px, 4.5vw, 52px);
+              font-weight: 900;
+              line-height: 1.2;
+              color: #ffffff;
+              margin: 0 0 22px;
+              letter-spacing: -0.02em;
             }
-            #hero-porto h1 .hl, #hero-porto h1 span.hl {
-              font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif !important;
-              color: #a3e0a2 !important;
-              font-size: 0.88em !important;
-              display: inline-block !important;
-              font-weight: 300 !important;
+            #hero-tim h1 span.highlight {
+              color: #a3e0a2;
             }
-            .hero-sub {
-              font-family: 'Montserrat', 'Inter', Arial, Helvetica, sans-serif;
-              font-size: clamp(14px, 1.5vw, 17px);
+            .hero-desc-tim {
+              font-size: clamp(15px, 1.6vw, 18px);
               line-height: 1.8;
               color: #d2f0d1;
-              max-width: 820px;
-              margin: 0 auto 34px;
+              max-width: 840px;
+              margin: 0 auto 36px;
             }
-            .hero-btns {
+            .hero-actions {
               display: flex;
               justify-content: center;
+              align-items: center;
               gap: 14px;
               flex-wrap: wrap;
             }
 
-            /* ======================== STATISTIK ======================== */
-            #porto-stats {
-              background: #117710;
-              padding: 70px 24px;
-              position: relative;
-              overflow: hidden;
+            /* ---- 2. DEWAN PENGURUS & KEPEMIMPINAN (8 CARDS GRID 4x2) ---- */
+            #leadership-section {
+              background: #ffffff;
+              padding: 85px 24px;
             }
-            /* Adding subtle circle decoration like in the image */
-            #porto-stats::after {
-              content: "";
-              position: absolute;
-              right: -50px;
-              top: -50px;
-              width: 400px;
-              height: 400px;
-              background: rgba(255, 255, 255, 0.03);
-              border-radius: 50%;
-              pointer-events: none;
-            }
-            .stats-grid {
+            .leadership-grid-4 {
               display: grid;
               grid-template-columns: repeat(4, 1fr);
-              gap: 0;
-              max-width: 1000px;
-              margin: 0 auto;
-              position: relative;
-              z-index: 2;
+              gap: 24px;
+              margin-top: 45px;
             }
-            .stat-box {
-              text-align: center;
-              padding: 10px 24px;
-              position: relative;
-            }
-            /* Vertical dividers */
-            .stat-box:not(:last-child)::after {
-              content: "";
-              position: absolute;
-              right: 0;
-              top: 10%;
-              bottom: 10%;
-              width: 1px;
-              background: rgba(255, 255, 255, 0.15);
-            }
-            .stat-num {
-              font-size: clamp(36px, 4.5vw, 54px);
-              font-weight: 900;
-              color: #ffffff;
-              line-height: 1;
-              margin-bottom: 12px;
-            }
-            .stat-num span.plus {
-              color: #ff8000;
-            }
-            .stat-label {
-              font-size: 15px;
-              font-weight: 700;
-              color: #a3e0a2;
-              margin-bottom: 8px;
-            }
-            .stat-desc {
-              font-size: 12.5px;
-              font-weight: 400;
-              color: #d2f0d1;
-              line-height: 1.5;
-              margin: 0;
-            }
-            @media (max-width: 900px) {
-              .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px 0;
-              }
-              .stat-box:nth-child(2)::after {
-                display: none;
-              }
-              .stat-box::after {
-                right: 0;
-                top: 0;
-                bottom: 0;
-              }
-            }
-            @media (max-width: 500px) {
-              .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 30px 0;
-              }
-              .stat-box::after {
-                display: none;
-              }
-            }
-
-            /* ======================== KATEGORI ======================== */
-            #porto-kategori {
+            .lead-card {
               background: #ffffff;
-              padding: 90px 24px;
-            }
-            .cat-grid {
-              display: grid;
-              grid-template-columns: repeat(5, 1fr);
-              gap: 18px;
-              margin-top: 44px;
-            }
-            .cat-card {
               border: 1.5px solid #d2e8d1;
               border-radius: 16px;
               overflow: hidden;
-              transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
               display: flex;
               flex-direction: column;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
             }
-            .cat-card:hover {
+            .lead-card:hover {
               transform: translateY(-6px);
-              box-shadow: 0 18px 40px rgba(17, 119, 16, 0.13);
+              box-shadow: 0 20px 45px rgba(17, 119, 16, 0.12);
               border-color: #117710;
             }
-            .cat-hd {
-              background: linear-gradient(135deg, #117710, #1d9c1c);
-              padding: 24px 18px;
-              text-align: center;
+            .lead-photo-wrap {
+              width: 100%;
+              height: 220px;
+              background: #eaf3eb;
+              overflow: hidden;
+              position: relative;
             }
-            .cat-hd svg {
-              display: block;
-              margin: 0 auto 12px;
+            .lead-photo-wrap img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.4s ease;
             }
-            .cat-hd h3 {
-              font-size: 14px;
-              font-weight: 800;
-              color: #ffffff;
-              margin: 0;
-              line-height: 1.3;
+            .lead-card:hover .lead-photo-wrap img {
+              transform: scale(1.06);
             }
-            .cat-bd {
-              padding: 18px;
+            .lead-body {
+              padding: 22px;
+              display: flex;
+              flex-direction: column;
               flex: 1;
             }
-            .cat-bd p {
-              font-size: 12.5px;
+            .lead-name {
+              font-size: 18px;
+              font-weight: 800;
+              color: #0e241b;
+              margin: 0 0 6px;
+              line-height: 1.3;
+            }
+            .lead-role {
+              font-size: 13px;
+              font-weight: 700;
+              color: #117710;
+              margin-bottom: 12px;
+              line-height: 1.4;
+            }
+            .lead-bio {
+              font-size: 13px;
+              line-height: 1.65;
+              color: #536b5f;
+              margin: 0;
+              flex: 1;
+            }
+
+            /* ---- 3. TIM AHLI & STAF YNKI (SPLIT OVERVIEW + 9 EXPERT DOMAINS) ---- */
+            .demo-text {
+              font-size: 18px;
+              font-weight: bold;
+              font-family: var(--body_typography-font-family, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+            }
+
+            @keyframes fadeInUp {
+              from {
+                opacity: 0;
+                transform: translateY(20px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+
+            .fadeInUp {
+              animation: fadeInUp 1s ease-out both;
+            }
+
+            #tim-ahli-section {
+              background: #f8faf8;
+              padding: 85px 24px;
+              border-top: 1px solid #e2efe2;
+              border-bottom: 1px solid #e2efe2;
+            }
+            .tim-ahli-overview-split,
+            .tim-ahli-overview-split.fadeInUp,
+            .tim-ahli-overview-split.ynki-fade-in,
+            .tim-ahli-overview-split.ynki-visible {
+              display: grid;
+              grid-template-columns: 1.2fr 0.8fr;
+              gap: 40px;
+              align-items: center;
+              margin: 35px 0 50px;
+              animation: fadeInUp 1s ease-out both;
+              font-family: var(--body_typography-font-family, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+            }
+            .tim-ahli-overview-split *,
+            .tim-ahli-overview-text,
+            .office-location-card,
+            .office-location-text {
+              font-family: var(--body_typography-font-family, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+            }
+            .office-location-title {
+              font-family: var(--h3_typography-font-family, var(--body_typography-font-family, 'Inter', sans-serif)) !important;
+            }
+            .tim-ahli-overview-text {
+              font-size: 15.5px;
+              line-height: 1.8;
+              color: #3d5648;
+            }
+            .office-location-card {
+              background: #ffffff;
+              border: 1.5px solid #d2e8d1;
+              border-radius: 16px;
+              padding: 28px 24px;
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            }
+            .office-location-title {
+              font-size: 16px;
+              font-weight: 800;
+              color: #0e241b;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin: 0 0 10px;
+            }
+            .office-location-text {
+              font-size: 13.5px;
               line-height: 1.65;
               color: #536b5f;
               margin: 0;
             }
 
-            /* ======================== PROYEK CARDS ======================== */
-            #porto-proyek {
-              background: #f5f8f5;
-              padding: 90px 24px;
-            }
-            .filter-bar {
-              display: flex;
-              gap: 10px;
-              flex-wrap: wrap;
-              margin-bottom: 36px;
-            }
-            .filter-btn {
-              font-size: 12px;
-              font-weight: 700;
-              letter-spacing: 0.5px;
-              text-transform: uppercase;
-              padding: 8px 18px;
-              border-radius: 50px;
-              border: 1.5px solid #d2e8d1;
-              background: #ffffff;
-              color: #536b5f;
-              cursor: pointer;
-              transition: all 0.25s ease;
-            }
-            .filter-btn.active,
-            .filter-btn:hover {
-              background: #117710;
-              border-color: #117710;
-              color: #ffffff;
-            }
-            .proyek-grid {
+            .expertise-grid-9 {
               display: grid;
               grid-template-columns: repeat(3, 1fr);
-              gap: 22px;
+              gap: 24px;
             }
-            .proyek-card {
+            .expert-box {
               background: #ffffff;
-              border: 1.5px solid #d2e8d1;
+              border: 1px solid #d2e8d1;
               border-radius: 16px;
-              overflow: hidden;
+              padding: 26px 22px;
               transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
               display: flex;
               flex-direction: column;
             }
-            .proyek-card:hover {
+            .expert-box:hover {
               transform: translateY(-5px);
-              box-shadow: 0 16px 36px rgba(17, 119, 16, 0.12);
               border-color: #117710;
+              box-shadow: 0 14px 35px rgba(17, 119, 16, 0.1);
             }
-            .proyek-cat-bar {
-              height: 4px;
-            }
-            .proyek-cat-bar.restorasi {
-              background: #117710;
-            }
-            .proyek-cat-bar.pemetaan {
-              background: #8000ff;
-            }
-            .proyek-cat-bar.komoditas {
-              background: #ff8000;
-            }
-            .proyek-cat-bar.kapasitas {
-              background: #a0d2f5;
-            }
-            .proyek-cat-bar.kebijakan {
-              background: #b22231;
-            }
-            .proyek-body {
-              padding: 22px 22px 18px;
-              flex: 1;
-              display: flex;
-              flex-direction: column;
-            }
-            .proyek-tags {
-              display: flex;
-              align-items: center;
-              gap: 8px;
-              margin-bottom: 12px;
-              flex-wrap: wrap;
-            }
-            .tag-cat {
-              font-size: 10.5px;
-              font-weight: 800;
-              letter-spacing: 1px;
-              text-transform: uppercase;
-              padding: 3px 12px;
-              border-radius: 50px;
-            }
-            .tag-cat.restorasi {
-              background: #e8f5e8;
-              color: #117710;
-            }
-            .tag-cat.pemetaan {
-              background: #f0e6ff;
-              color: #8000ff;
-            }
-            .tag-cat.komoditas {
-              background: #fff3e6;
-              color: #ff8000;
-            }
-            .tag-cat.kapasitas {
-              background: #e6f4fb;
-              color: #2a87c2;
-            }
-            .tag-cat.kebijakan {
-              background: #fde8ea;
-              color: #b22231;
-            }
-            .tag-status {
-              font-size: 11px;
-              font-weight: 700;
-              padding: 4px 12px;
-              border-radius: 50px;
-              display: inline-flex;
-              align-items: center;
-              gap: 6px;
-            }
-            .tag-status.selesai {
-              background: #f0f4f2;
-              color: #4a6356;
-              border: 1px solid #d4dfd8;
-            }
-            .tag-status.berjalan {
-              background: #e6f7ec;
-              color: #0b6832;
-              border: 1px solid #9fe2b6;
-              font-weight: 800;
-            }
-            .tag-status.berjalan::before {
-              content: "";
-              display: inline-block;
-              width: 7px;
-              height: 7px;
-              border-radius: 50%;
-              background: #10b981;
-              box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
-              animation: pulse-live-dot 1.8s infinite;
-            }
-            @keyframes pulse-live-dot {
-              0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
-              70% { transform: scale(1.05); box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
-              100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-            }
-            .proyek-card h4 {
-              font-family: 'Montserrat', 'Inter', Arial, sans-serif;
-              font-size: 15.5px;
-              font-weight: 800;
-              color: #0e241b;
-              margin: 0 0 12px;
-              line-height: 1.45;
-              letter-spacing: -0.01em;
-            }
-            .proyek-meta {
-              display: flex;
-              flex-direction: column;
-              gap: 6px;
-              margin-bottom: 14px;
-              background: #fbfdfb;
-              padding: 10px 12px;
-              border-radius: 8px;
-              border: 1px solid #edf5ee;
-            }
-            .proyek-meta span {
-              font-size: 12px;
-              color: #4a6657;
-              display: flex;
-              align-items: flex-start;
-              gap: 7px;
-              line-height: 1.4;
-            }
-            .proyek-meta svg {
-              flex-shrink: 0;
-              margin-top: 2px;
-              color: #117710;
-            }
-            .proyek-desc {
-              font-size: 13.5px;
-              color: #3f554b;
-              line-height: 1.7;
-              margin: 0 0 16px;
-              flex: 1;
-            }
-            .proyek-card-footer {
-              padding-top: 14px;
-              border-top: 1px dashed #d8eade;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              gap: 10px;
-              margin-top: auto;
-            }
-            .btn-read-article {
-              display: inline-flex;
-              align-items: center;
-              gap: 6px;
-              font-size: 12.5px;
-              font-weight: 800;
-              color: #117710;
+            .expert-icon-wrap {
+              width: 48px;
+              height: 48px;
               background: #eaf6ea;
-              border: 1px solid #bce1bc;
-              padding: 8px 14px;
-              border-radius: 8px;
-              cursor: pointer;
-              text-decoration: none;
-              transition: all 0.25s ease;
-              width: 100%;
-              justify-content: center;
-            }
-            .btn-read-article:hover {
-              background: #117710;
-              color: #ffffff;
-              border-color: #117710;
-              box-shadow: 0 4px 12px rgba(17, 119, 16, 0.2);
-            }
-            .btn-read-article svg {
-              transition: transform 0.25s ease;
-            }
-            .btn-read-article:hover svg {
-              transform: translateX(3px);
-            }
-
-            /* Article Modal Reader */
-            .ynki-article-modal {
-              display: none;
-              position: fixed;
-              top: 0;
-              left: 0;
-              width: 100vw;
-              height: 100vh;
-              z-index: 999999;
-              background: rgba(14, 36, 27, 0.7);
-              backdrop-filter: blur(6px);
-              align-items: center;
-              justify-content: center;
-              padding: 20px;
-              box-sizing: border-box;
-              opacity: 0;
-              transition: opacity 0.3s ease;
-            }
-            .ynki-article-modal.is-open {
-              display: flex;
-              opacity: 1;
-            }
-            .ynki-modal-box {
-              background: #ffffff;
-              border-radius: 20px;
-              width: 100%;
-              max-width: 720px;
-              max-height: 88vh;
-              overflow-y: auto;
-              box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
-              position: relative;
-              padding: 36px 32px;
-              box-sizing: border-box;
-              border: 1.5px solid #d2e8d1;
-              animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            }
-            @keyframes modalSlideUp {
-              from { transform: translateY(20px) scale(0.97); opacity: 0; }
-              to { transform: translateY(0) scale(1); opacity: 1; }
-            }
-            .ynki-modal-close {
-              position: absolute;
-              top: 18px;
-              right: 18px;
-              background: #f0f4f2;
-              border: none;
-              width: 36px;
-              height: 36px;
-              border-radius: 50%;
+              border-radius: 12px;
               display: flex;
               align-items: center;
               justify-content: center;
-              font-size: 20px;
-              color: #4a6356;
-              cursor: pointer;
-              transition: all 0.2s ease;
+              margin-bottom: 16px;
             }
-            .ynki-modal-close:hover {
-              background: #117710;
-              color: #ffffff;
+            .expert-icon-wrap img {
+              width: 26px;
+              height: 26px;
+              object-fit: contain;
             }
-
-            /* ======================== PETA SEBARAN ======================== */
-            #porto-peta {
-              background: #117710;
-              padding: 90px 24px;
-            }
-            .peta-grid {
-              display: grid;
-              grid-template-columns: repeat(2, 1fr);
-              gap: 20px;
-              margin-top: 44px;
-            }
-            .peta-card {
-              background: rgba(255, 255, 255, 0.08);
-              border: 1px solid rgba(255, 255, 255, 0.15);
-              border-radius: 14px;
-              padding: 26px;
-              transition: all 0.3s ease;
-            }
-            .peta-card:hover {
-              background: rgba(255, 255, 255, 0.13);
-              transform: translateY(-3px);
-            }
-            .peta-card h4 {
+            .expert-box h4 {
               font-size: 16px;
               font-weight: 800;
-              color: #a3e0a2;
+              color: #0e241b;
+              margin: 0 0 10px;
+              line-height: 1.35;
+            }
+            .expert-box p {
+              font-size: 13.5px;
+              line-height: 1.65;
+              color: #536b5f;
+              margin: 0;
+              flex: 1;
+            }
+
+            /* ---- 4. NILAI YANG KAMI PEGANG (4 CORE VALUES GRID 2x2) ---- */
+            #nilai-section {
+              background: #ffffff;
+              padding: 85px 24px;
+            }
+            .values-grid-4 {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 26px;
+              margin-top: 40px;
+            }
+            .value-card-box {
+              background: #fbfdfb;
+              border: 1.5px solid #d2e8d1;
+              border-radius: 18px;
+              padding: 32px 28px;
+              transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+              position: relative;
+              overflow: hidden;
+            }
+            .value-card-box::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              width: 4px;
+              background: #117710;
+              transform: scaleY(0);
+              transition: transform 0.35s ease;
+            }
+            .value-card-box:hover {
+              transform: translateY(-6px);
+              border-color: #117710;
+              box-shadow: 0 20px 45px rgba(17, 119, 16, 0.12);
+              background: #ffffff;
+            }
+            .value-card-box:hover::before {
+              transform: scaleY(1);
+            }
+            .value-card-box h3 {
+              font-size: 19px;
+              font-weight: 800;
+              color: #0e241b;
               margin: 0 0 12px;
               display: flex;
               align-items: center;
-              gap: 8px;
+              gap: 10px;
             }
-            .peta-card ul {
-              margin: 0;
-              padding: 0;
-              list-style: none;
-              display: flex;
-              flex-direction: column;
-              gap: 7px;
-            }
-            .peta-card ul li {
-              font-size: 13px;
-              color: #d2f0d1;
-              display: flex;
-              align-items: flex-start;
-              gap: 8px;
-              line-height: 1.5;
-            }
-            .peta-card ul li svg {
-              flex-shrink: 0;
-              margin-top: 1px;
-            }
-
-            /* ======================== MITRA ======================== */
-            #porto-mitra {
-              background: #f5f8f5;
-              padding: 90px 24px;
-            }
-            .mitra-grid {
-              display: grid;
-              grid-template-columns: repeat(2, 1fr);
-              gap: 20px;
-              margin-top: 44px;
-            }
-            .mitra-card {
-              background: #ffffff;
-              border: 1.5px solid #d2e8d1;
-              border-radius: 14px;
-              padding: 24px 26px;
-              transition: all 0.3s ease;
-              display: flex;
-              gap: 16px;
-              align-items: flex-start;
-            }
-            .mitra-card:hover {
-              box-shadow: 0 10px 28px rgba(17, 119, 16, 0.1);
-              border-color: #117710;
-            }
-            .mitra-icon {
-              width: 44px;
-              height: 44px;
-              background: linear-gradient(135deg, #117710, #1d9c1c);
-              border-radius: 10px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              flex-shrink: 0;
-            }
-            .mitra-icon svg {
-              stroke: #ffffff;
-            }
-            .mitra-info h4 {
+            .value-card-box p {
               font-size: 14.5px;
-              font-weight: 800;
-              color: #0e241b;
-              margin: 0 0 6px;
-            }
-            .mitra-info p {
-              font-size: 13px;
+              line-height: 1.75;
               color: #536b5f;
-              line-height: 1.6;
               margin: 0;
             }
 
-            /* ======================== CTA / INGIN MENJADI BAGIAN ======================== */
-            #porto-cta {
-              background: #ffffff;
-              padding: 90px 24px;
+            /* ---- 5. INGIN BERGABUNG (CTA BANNER & 3 OPPORTUNITY BOXES) ---- */
+            #bergabung-section {
+              background: #f8faf8;
+              padding: 85px 24px 95px;
+              border-top: 1px solid #e2efe2;
             }
-            .cta-grid {
+            .join-banner-box {
+              background: linear-gradient(135deg, #0c500b 0%, #082e07 100%);
+              border-radius: 24px;
+              padding: 60px 48px;
+              color: #ffffff;
+              margin-bottom: 40px;
+              position: relative;
+              overflow: hidden;
+              box-shadow: 0 20px 60px rgba(8, 46, 7, 0.28);
+            }
+            .join-banner-box::before {
+              content: "NATURE FOR LIVINGS";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: clamp(38px, 6vw, 86px);
+              font-weight: 900;
+              color: rgba(255, 255, 255, 0.05);
+              white-space: nowrap;
+              letter-spacing: 7px;
+              pointer-events: none;
+              z-index: 0;
+              font-family: inherit;
+              user-select: none;
+            }
+            .join-banner-box > * {
+              position: relative;
+              z-index: 1;
+            }
+            .join-banner-box h2 {
+              font-size: clamp(24px, 3.2vw, 36px);
+              font-weight: 900;
+              color: #ffffff;
+              margin: 0 0 16px;
+              line-height: 1.25;
+            }
+            .join-banner-box p {
+              font-size: 16px;
+              line-height: 1.8;
+              color: #c9e8d3;
+              margin: 0;
+            }
+
+            .join-opportunities-3 {
               display: grid;
               grid-template-columns: repeat(3, 1fr);
-              gap: 22px;
-              margin-top: 44px;
+              gap: 24px;
             }
-            .cta-card {
+            .opportunity-card {
+              background: #ffffff;
               border: 1.5px solid #d2e8d1;
               border-radius: 16px;
-              padding: 32px 26px;
-              text-align: center;
-              transition: all 0.3s ease;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
+              padding: 30px 24px;
+              transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             }
-            .cta-card:hover {
-              box-shadow: 0 16px 36px rgba(17, 119, 16, 0.12);
+            .opportunity-card:hover {
+              transform: translateY(-5px);
               border-color: #117710;
-              transform: translateY(-4px);
+              box-shadow: 0 14px 35px rgba(17, 119, 16, 0.1);
             }
-            .cta-card .icon-wrap {
-              width: 56px;
-              height: 56px;
-              background: linear-gradient(135deg, #117710, #1d9c1c);
-              border-radius: 14px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-bottom: 18px;
-            }
-            .cta-card .icon-wrap svg {
-              stroke: #ffffff;
-            }
-            .cta-card h4 {
-              font-size: 17px;
+            .opportunity-card h4 {
+              font-size: 18px;
               font-weight: 800;
               color: #0e241b;
               margin: 0 0 10px;
             }
-            .cta-card p {
-              font-size: 13.5px;
-              color: #536b5f;
+            .opportunity-card p {
+              font-size: 14px;
               line-height: 1.65;
-              margin: 0 0 20px;
-              flex: 1;
+              color: #536b5f;
+              margin: 0 0 18px;
             }
-
-            @media (max-width: 1100px) {
-              .stats-grid {
-                grid-template-columns: repeat(3, 1fr);
-              }
-              .cat-grid {
-                grid-template-columns: repeat(3, 1fr);
-              }
-            }
-            @media (max-width: 900px) {
-              .proyek-grid {
-                grid-template-columns: repeat(2, 1fr);
-              }
-              .peta-grid {
-                grid-template-columns: 1fr;
-              }
-              .mitra-grid {
-                grid-template-columns: 1fr;
-              }
-              .cta-grid {
-                grid-template-columns: 1fr;
-              }
-            }
-            @media (max-width: 600px) {
-              .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-              }
-              .cat-grid {
-                grid-template-columns: repeat(2, 1fr);
-              }
-            }
-
-            /* ======================== PAGINATION CLEARFIX ======================== */
-            .pagination.clearfix {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              flex-wrap: wrap;
-              gap: 8px;
-              margin: 40px auto 10px;
-              clear: both;
-            }
-            .pagination.clearfix a,
-            .pagination.clearfix span {
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              min-width: 38px;
-              height: 38px;
-              padding: 0 14px;
-              border-radius: 8px;
+            .opportunity-link {
               font-size: 13.5px;
               font-weight: 700;
-              text-decoration: none;
-              transition: all 0.2s ease;
-              cursor: pointer;
-              border: 1.5px solid #d4e8d3;
-              background: #ffffff;
-              color: #1a422b;
-              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-            }
-            .pagination.clearfix a:hover {
-              background: #e8f5ec;
-              border-color: #117710;
               color: #117710;
-              transform: translateY(-1px);
+              text-decoration: none;
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              transition: gap 0.2s ease;
             }
-            .pagination.clearfix .current {
-              background: #117710;
-              border-color: #117710;
-              color: #ffffff;
-              box-shadow: 0 4px 14px rgba(17, 119, 16, 0.25);
-              cursor: default;
+            .opportunity-link:hover {
+              gap: 10px;
+              color: #0c500b;
             }
-            .pagination.clearfix .pagination-prev,
-            .pagination.clearfix .pagination-next {
-              padding: 0 16px;
-              font-size: 13px;
+
+            /* Responsive */
+            @media (max-width: 1024px) {
+              .leadership-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+              }
+              .expertise-grid-9 {
+                grid-template-columns: repeat(2, 1fr);
+              }
+              .tim-ahli-overview-split {
+                grid-template-columns: 1fr;
+              }
             }
-            .pagination.clearfix .disabled {
-              opacity: 0.4;
-              pointer-events: none;
-              cursor: not-allowed;
-              border-color: #e5ece5;
+            @media (max-width: 768px) {
+              .values-grid-4 {
+                grid-template-columns: 1fr;
+              }
+              .join-opportunities-3 {
+                grid-template-columns: 1fr;
+              }
+            }
+            @media (max-width: 640px) {
+              .leadership-grid-4 {
+                grid-template-columns: 1fr;
+              }
+              .expertise-grid-9 {
+                grid-template-columns: 1fr;
+              }
+              .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+              }
+              .hero-actions a {
+                width: 100%;
+                justify-content: center;
+              }
             }
           </style>
 
           <div class="fusion-row" style="max-width: 100%">
             <section id="content" class="full-width">
-              <div id="post-porto" class="page type-page status-publish hentry">
+              <div id="post-tim" class="page type-page status-publish hentry">
                 <span class="entry-title rich-snippet-hidden"
-                  >Portfolio YNKI: Portofolio Perubahan untuk Lanskap Sehat dan
-                  Masyarakat Sejahtera</span
+                  >Tim &amp; Pengurus — Yayasan Natural Kapital Indonesia
+                  (YNKI)</span
                 >
                 <div class="post-content">
-                  <!-- ===================== 1. HERO ===================== -->
-                  <section id="hero-porto" class="ynki-section">
-                    <div class="hero-inner">
-                      <div class="hero-crumb">
-                        <a href="/">Beranda</a> &nbsp;/&nbsp;
-                        <a href="/">Dampak &amp; Pembelajaran</a> &nbsp;/&nbsp;
-                        <span>Portfolio</span>
+
+                  <!-- =====================================================
+                       1. HERO SECTION (SESUAI PPTX Y:0-450)
+                       ===================================================== -->
+                  <section id="hero-tim" class="ynki-section">
+                    <div class="hero-content-tim">
+                      <div class="hero-breadcrumb">
+                        <a href="/">Beranda</a> / <a href="/tentang-kami/">Tentang Kami</a> / <span>Tim &amp; Pengurus</span>
                       </div>
-                      <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: clamp(32px, 4.5vw, 54px) !important; font-weight: 300 !important; line-height: 1.25 !important; color: #ffffff !important; margin: 0 0 20px !important; letter-spacing: -0.01em !important;">
-                        Portfolio YNKI:<br /><span class="hl" style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: 0.88em !important; font-weight: 300 !important; color: #a3e0a2 !important; display: inline-block;"
-                          >Portofolio Perubahan</span
-                        >
+                      <h1>
+                        Tim di Balik Perubahan<br />
+                        <span class="highlight">Lanskap Berkelanjutan</span>
                       </h1>
-                      <p class="hero-sub">
-                        Sejak 2019, YNKI telah mengelola berbagai proyek
-                        strategis yang tersebar di Kalimantan Barat—dari
-                        restorasi gambut dan pemetaan HCV-HCS hingga
-                        pengembangan komoditas berkelanjutan dan penguatan tata
-                        kelola desa. Setiap proyek adalah langkah nyata menuju
-                        <em>Healthy Landscapes, Thriving Communities</em>.
+                      <p class="hero-desc-tim">
+                        Yayasan Natural Kapital Indonesia (YNKI) didukung oleh tim profesional yang berdedikasi dari berbagai latar belakang—ekologi, kebijakan publik, GIS, pemberdayaan masyarakat, dan pembangunan berkelanjutan. Kami percaya bahwa perubahan lanskap yang berarti lahir dari kolaborasi tim yang kuat dan berintegritas.
                       </p>
-                      <div class="hero-btns">
-                        <a href="#porto-proyek" class="btn-cta-main">
-                          <svg
-                            width="17"
-                            height="17"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                          >
-                            <rect x="2" y="7" width="20" height="14" rx="2" />
-                            <path
-                              d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
-                            />
-                          </svg>
-                          Jelajahi Portfolio
+                      <div class="hero-actions">
+                        <a href="#leadership-section" class="btn-cta-main">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                          Lihat Jajaran Tim
                         </a>
-                        <a href="#porto-peta" class="btn-cta-second">
-                          <svg
-                            width="17"
-                            height="17"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                          >
-                            <circle cx="11" cy="11" r="8" />
-                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                          </svg>
-                          Jelajahi Dampak
+                        <a href="#nilai-section" class="btn-cta-second">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                          Nilai-Nilai Kami
                         </a>
                       </div>
                     </div>
                   </section>
 
-                  <!-- ===================== 2. STATISTIK ===================== -->
-                  <section
-                    id="porto-stats-title"
-                    class="ynki-section"
-                    style="background: #ffffff; padding: 40px 24px 30px"
-                  >
+                  <!-- =====================================================
+                       2. KEPEMIMPINAN: DEWAN PENGURUS & KEPEMIMPINAN YNKI (PPTX Y:498-1600)
+                       ===================================================== -->
+                  <section id="leadership-section" class="ynki-section">
                     <div class="ynki-container">
                       <div style="text-align: center">
-                        <h2
-                          style="
-                            font-size: clamp(26px, 3.5vw, 36px);
-                            font-weight: 800;
-                            color: #111111;
-                            margin: 0;
-                            font-family: &quot;Inter&quot;, sans-serif;
-                          "
-                        >
-                          Portfolio YNKI dalam Angka
+                        <div class="section-divider">
+                          <span class="line"></span>
+                          <span class="section-badge">KEPEMIMPINAN</span>
+                          <span class="line"></span>
+                        </div>
+                        <h2 style="font-size: clamp(26px, 3vw, 38px); font-weight: 800; color: #0e241b; margin: 0 0 14px; letter-spacing: -0.02em;">
+                          Dewan Pengurus YNKI
                         </h2>
-                      </div>
-                    </div>
-                  </section>
-                  <section id="porto-stats" class="ynki-section">
-                    <div class="ynki-container">
-                      <div class="stats-grid">
-                        <div class="stat-box">
-                          <div class="stat-num">
-                            12<span class="plus">+</span>
-                          </div>
-                          <div class="stat-label">Kabupaten Mitra</div>
-                          <p class="stat-desc">
-                            Wilayah kerja aktif di Kalimantan Barat dan
-                            sekitarnya
-                          </p>
-                        </div>
-                        <div class="stat-box">
-                          <div class="stat-num">
-                            50K<span class="plus">+</span>
-                          </div>
-                          <div class="stat-label">Hektar Lanskap</div>
-                          <p class="stat-desc">
-                            Area lanskap yang difasilitasi dalam program tata
-                            kelola inklusif
-                          </p>
-                        </div>
-                        <div class="stat-box">
-                          <div class="stat-num">
-                            200<span class="plus">+</span>
-                          </div>
-                          <div class="stat-label">Komunitas Dampingan</div>
-                          <p class="stat-desc">
-                            Kelompok masyarakat yang terlibat aktif dalam
-                            program YNKI
-                          </p>
-                        </div>
-                        <div class="stat-box">
-                          <div class="stat-num">
-                            30<span class="plus">+</span>
-                          </div>
-                          <div class="stat-label">Mitra Strategis</div>
-                          <p class="stat-desc">
-                            Jaringan kolaborasi lintas sektor pemerintah,
-                            swasta, dan sipil
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-
-                  <!-- ===================== 3. KATEGORI ===================== -->
-                  <section id="porto-kategori" class="ynki-section">
-                    <div class="ynki-container">
-                      <div style="text-align: center">
-                        <div class="divider-line">
-                          <span class="line"></span
-                          ><span class="section-badge">KATEGORI PROGRAM</span
-                          ><span class="line"></span>
-                        </div>
-                        <h2
-                          style="
-                            font-size: clamp(22px, 3vw, 34px);
-                            font-weight: 800;
-                            color: #0e241b;
-                            margin: 0 0 12px;
-                          "
-                        >
-                          Jelajahi Portfolio Berdasarkan Kategori
-                        </h2>
-                        <p
-                          style="
-                            font-size: 15px;
-                            color: #536b5f;
-                            max-width: 760px;
-                            margin: 0 auto;
-                          "
-                        >
-                          YNKI mengelola program di lima kategori utama yang
-                          saling mendukung dalam mewujudkan tata kelola lanskap
-                          yang inklusif, berkelanjutan, dan berbasis sains.
-                        </p>
-                      </div>
-                      <div class="cat-grid">
-                        <div class="cat-card">
-                          <div class="cat-hd">
-                            <svg
-                              width="36"
-                              height="36"
-                              viewBox="0 0 48 48"
-                              fill="none"
-                              stroke="#ffffff"
-                              stroke-width="2.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path
-                                d="M24 6C10 14 6 28 14 36C18 40 22 42 24 42C26 42 30 40 34 36C42 28 38 14 24 6Z"
-                              />
-                              <path d="M24 6L24 42" />
-                              <path d="M14 20C18 22 22 22 24 20" />
-                              <path d="M34 24C30 26 26 26 24 24" />
-                            </svg>
-                            <h3>Restorasi &amp; Konservasi</h3>
-                          </div>
-                          <div class="cat-bd">
-                            <p>
-                              Proyek restorasi gambut, konservasi, dan pemulihan
-                              ekosistem di lanskap prioritas Kalimantan Barat.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="cat-card">
-                          <div class="cat-hd">
-                            <svg
-                              width="36"
-                              height="36"
-                              viewBox="0 0 48 48"
-                              fill="none"
-                              stroke="#ffffff"
-                              stroke-width="2.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <circle cx="24" cy="24" r="18" />
-                              <line x1="2" y1="24" x2="46" y2="24" />
-                              <path
-                                d="M24 6C18 12 16 18 16 24C16 30 18 36 24 42"
-                              />
-                              <path
-                                d="M24 6C30 12 32 18 32 24C32 30 30 36 24 42"
-                              />
-                            </svg>
-                            <h3>Pemetaan &amp; Analisis Spasial</h3>
-                          </div>
-                          <div class="cat-bd">
-                            <p>
-                              Pemetaan HCV-HCS, analisis spasial, dan data GIS
-                              untuk pengambilan keputusan berbasis bukti.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="cat-card">
-                          <div class="cat-hd">
-                            <svg
-                              width="36"
-                              height="36"
-                              viewBox="0 0 48 48"
-                              fill="none"
-                              stroke="#ffffff"
-                              stroke-width="2.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path d="M12 36L24 12L36 36" />
-                              <line x1="15" y1="28" x2="33" y2="28" />
-                              <circle cx="24" cy="40" r="4" />
-                            </svg>
-                            <h3>Komoditas Berkelanjutan</h3>
-                          </div>
-                          <div class="cat-bd">
-                            <p>
-                              Pengembangan komoditas karet, sawit, dan
-                              hortikultura yang ramah lingkungan dan
-                              menguntungkan petani.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="cat-card">
-                          <div class="cat-hd">
-                            <svg
-                              width="36"
-                              height="36"
-                              viewBox="0 0 48 48"
-                              fill="none"
-                              stroke="#ffffff"
-                              stroke-width="2.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <circle cx="24" cy="14" r="7" />
-                              <path
-                                d="M10 42C10 34 16 28 24 28C32 28 38 34 38 42"
-                              />
-                              <path d="M34 8Q42 12 40 20" />
-                              <path d="M14 8Q6 12 8 20" />
-                            </svg>
-                            <h3>Pengembangan Kapasitas</h3>
-                          </div>
-                          <div class="cat-bd">
-                            <p>
-                              Pelatihan, pendampingan, dan penguatan kapasitas
-                              masyarakat petani dan pemangku kepentingan lokal.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="cat-card">
-                          <div class="cat-hd">
-                            <svg
-                              width="36"
-                              height="36"
-                              viewBox="0 0 48 48"
-                              fill="none"
-                              stroke="#ffffff"
-                              stroke-width="2.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <rect x="8" y="6" width="32" height="36" rx="4" />
-                              <line x1="16" y1="16" x2="32" y2="16" />
-                              <line x1="16" y1="24" x2="32" y2="24" />
-                              <line x1="16" y1="32" x2="24" y2="32" />
-                            </svg>
-                            <h3>Kebijakan &amp; Tata Kelola</h3>
-                          </div>
-                          <div class="cat-bd">
-                            <p>
-                              Penyusunan kebijakan, strategi lanskap, dan
-                              penguatan tata kelola inklusif di tingkat
-                              kabupaten dan provinsi.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-
-                  <!-- ===================== 4. DAFTAR PROYEK ===================== -->
-                  <section id="porto-proyek" class="ynki-section">
-                    <div class="ynki-container">
-                      <div style="text-align: center">
-                        <div class="divider-line">
-                          <span class="line"></span
-                          ><span class="section-badge">PORTOFOLIO</span
-                          ><span class="line"></span>
-                        </div>
-                        <h2
-                          style="
-                            font-size: clamp(22px, 3vw, 34px);
-                            font-weight: 800;
-                            color: #0e241b;
-                            margin: 0 0 12px;
-                          "
-                        >
-                          Portfolio Program &amp; Proyek YNKI
-                        </h2>
-                        <p
-                          style="
-                            font-size: 15px;
-                            color: #536b5f;
-                            max-width: 760px;
-                            margin: 0 auto;
-                          "
-                        >
-                          Berikut adalah portofolio lengkap program dan proyek
-                          yang telah dan sedang dijalankan oleh YNKI sejak 2019.
-                          Data ini bersumber dari portofolio resmi YNKI.
+                        <p style="font-size: 15.5px; color: #536b5f; max-width: 880px; margin: 0 auto; line-height: 1.8;">
+                          Jajaran kepemimpinan YNKI terdiri dari para profesional dengan pengalaman luas di bidang tata kelola lanskap, konservasi, kebijakan publik, dan pemberdayaan masyarakat. Mereka memimpin organisasi dengan komitmen penuh pada nilai-nilai <em>Participatory Development, Democratic Landscape Governance, Adaptive Learning &amp; Co-management,</em> dan <em>Biodiversity Stewardship</em>—memastikan setiap keputusan strategis berpijak pada prinsip transparansi dan keberlanjutan jangka panjang.
                         </p>
                       </div>
 
-                      <div class="filter-bar">
-                        <button class="filter-btn active" data-filter="all">Semua</button>
-                        <button class="filter-btn" data-filter="kebijakan">Landscape Governance</button>
-                        <button class="filter-btn" data-filter="restorasi">Natural Capital &amp; Restoration</button>
-                        <button class="filter-btn" data-filter="komoditas">Sustainable Commodity System</button>
-                        <button class="filter-btn" data-filter="pemetaan">Pengetahuan Lanskap &amp; Inovasi</button>
-                        <button class="filter-btn" data-filter="kapasitas">Institutional Sustainability &amp; Partnership</button>
+                      <div class="leadership-grid-4">
+                        @forelse($leadershipMembers as $member)
+                          @php
+                            $photoSrc = $member->photo_path
+                              ? (str_starts_with($member->photo_path, 'http') || str_starts_with($member->photo_path, '/') ? $member->photo_path : '/storage/' . $member->photo_path)
+                              : '/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp';
+                          @endphp
+                          <div class="lead-card">
+                            <div class="lead-photo-wrap">
+                              <img src="{{ $photoSrc }}" alt="{{ $member->full_name }}" loading="lazy" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
+                            </div>
+                            <div class="lead-body">
+                              <h3 class="lead-name">{{ $member->full_name }}</h3>
+                              <div class="lead-role">{{ $member->position }}</div>
+                              <p class="lead-bio">{{ $member->bio }}</p>
+                              @if(!empty($member->linkedin_url))
+                                <a href="{{ $member->linkedin_url }}" target="_blank" rel="noopener" class="lead-linkedin" title="Profil LinkedIn" style="display:inline-flex; align-items:center; gap:4px; font-size:12px; color:#0a66c2; text-decoration:none; margin-top:8px; font-weight:600;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6z"/></svg> LinkedIn</a>
+                              @endif
+                            </div>
+                          </div>
+                        @empty
+                          <p style="text-align:center;grid-column:1/-1;color:#666;">Data dewan pengurus belum tersedia.</p>
+                        @endforelse
                       </div>
-
-                      <div class="proyek-grid">
-                        <!-- 1 (ONGOING) -->
-                        <div class="proyek-card" data-cat="restorasi" data-title="Program TFCA Kalimantan – Penguatan Mitigasi &amp; Adaptasi Iklim Desa Gambut" data-status="Sedang Berjalan" data-location="Kab. Kubu Raya" data-period="April 2026 – Maret 2028" data-partner="Yayasan Kehati (TFCA Kalimantan)" data-desc="Program penguatan mitigasi dan adaptasi iklim desa gambut untuk komunitas yang rentan terhadap perubahan iklim melalui restorasi hidrologis, pembasahan gambut, dan diversifikasi mata pencaharian ramah lingkungan. Inisiatif ini berfokus pada ketahanan sosial-ekologis berbasis kemitraan multipihak.">
-                          <div class="proyek-cat-bar restorasi"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat restorasi">Restorasi &amp; Konservasi</span>
-                              <span class="tag-status berjalan">Sedang Berjalan</span>
-                            </div>
-                            <h4>Program TFCA Kalimantan – Penguatan Mitigasi &amp; Adaptasi Iklim Desa Gambut</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Kubu Raya</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>April 2026 – Maret 2028</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Yayasan Kehati (TFCA Kalimantan)</span>
-                            </div>
-                            <p class="proyek-desc">Program penguatan mitigasi dan adaptasi iklim desa gambut untuk komunitas yang rentan terhadap perubahan iklim melalui restorasi hidrologis dan ekonomi hijau.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/tfca-kalimantan-mitigasi-adaptasi-iklim-desa-gambut" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 2 (ONGOING) -->
-                        <div class="proyek-card" data-cat="restorasi" data-title="Restorasi Gambut – PM Haze Singapore" data-status="Sedang Berjalan" data-location="Desa Kalibandung, Kab. Kubu Raya" data-period="Mei 2022 – Sekarang" data-partner="PM Haze – Singapore" data-desc="Pengembangan model restorasi gambut berbasis komunitas di Desa Kalibandung sebagai replikasi praktik terbaik untuk mitigasi kebakaran hutan, reboisasi tanaman endemik, dan perlindungan keanekaragaman hayati lintas batas negara.">
-                          <div class="proyek-cat-bar restorasi"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat restorasi">Restorasi &amp; Konservasi</span>
-                              <span class="tag-status berjalan">Sedang Berjalan</span>
-                            </div>
-                            <h4>Restorasi Gambut – PM Haze Singapore</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Desa Kalibandung, Kab. Kubu Raya</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mei 2022 – Sekarang</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>PM Haze – Singapore</span>
-                            </div>
-                            <p class="proyek-desc">Pengembangan model restorasi gambut berbasis komunitas di Desa Kalibandung sebagai replikasi praktik terbaik mitigasi kabut asap.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/restorasi-gambut-pm-haze-singapore" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 3 (ONGOING) -->
-                        <div class="proyek-card" data-cat="komoditas" data-title="Penilaian Rantai Pasok Karet Berkelanjutan di Kalimantan Barat" data-status="Sedang Berjalan" data-location="Kalimantan Barat" data-period="April 2023 – Sekarang" data-partner="PT. Inovasi Digital" data-desc="Rekomendasi intervensi strategis untuk rantai pasok karet berkelanjutan yang mendukung kesejahteraan petani swadaya, ketertelusuran produk berbasis digital, dan kelestarian lanskap perkebunan.">
-                          <div class="proyek-cat-bar komoditas"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat komoditas">Komoditas Berkelanjutan</span>
-                              <span class="tag-status berjalan">Sedang Berjalan</span>
-                            </div>
-                            <h4>Penilaian Rantai Pasok Karet Berkelanjutan di Kalimantan Barat</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kalimantan Barat</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>April 2023 – Sekarang</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>PT. Inovasi Digital</span>
-                            </div>
-                            <p class="proyek-desc">Rekomendasi intervensi untuk rantai pasok karet berkelanjutan yang mendukung kesejahteraan petani dan kelestarian lingkungan.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/penilaian-rantai-pasok-karet-berkelanjutan-kalbar" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 4 (ONGOING) -->
-                        <div class="proyek-card" data-cat="komoditas" data-title="Promosi Hortikultura Petani Kecil di Kalimantan Barat" data-status="Sedang Berjalan" data-location="Kalimantan Barat" data-period="2020 – Sekarang" data-partner="PT. East West Indonesia (Ewindo)" data-desc="Lahan percontohan (demo plot) pertanian hortikultura (bawang merah, cabai, jagung manis) sebagai program diversifikasi sumber pendapatan petani kecil demi ketahanan pangan dan kemandirian ekonomi keluarga petani.">
-                          <div class="proyek-cat-bar komoditas"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat komoditas">Komoditas Berkelanjutan</span>
-                              <span class="tag-status berjalan">Sedang Berjalan</span>
-                            </div>
-                            <h4>Promosi Hortikultura Petani Kecil di Kalimantan Barat</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kalimantan Barat</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>2020 – Sekarang</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>PT. East West Indonesia (Ewindo)</span>
-                            </div>
-                            <p class="proyek-desc">Lahan demo untuk komoditas hortikultura sebagai diversifikasi pendapatan petani kecil ramah lingkungan.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/promosi-hortikultura-petani-kecil-kalbar" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 5 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="komoditas" data-title="Survei Rantai Pasok Karet &amp; Kesiapan EUDR – Tropenbos Indonesia" data-status="Selesai" data-location="Kab. Ketapang, Sanggau, dan Sintang" data-period="Januari 2025 – Maret 2025" data-partner="Tropenbos Indonesia" data-desc="Dokumen analisis strategis rantai pasok karet dan rekomendasi kesiapan pemenuhan regulasi EUDR (European Union Deforestation Regulation) bagi petani kecil di tiga kabupaten sentra Kalimantan Barat.">
-                          <div class="proyek-cat-bar komoditas"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat komoditas">Komoditas Berkelanjutan</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Survei Rantai Pasok Karet &amp; Kesiapan EUDR – Tropenbos Indonesia</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Ketapang, Sanggau, Sintang</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Januari 2025 – Maret 2025</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Tropenbos Indonesia</span>
-                            </div>
-                            <p class="proyek-desc">Dokumen strategis rantai pasok karet dan rekomendasi kesiapan EUDR untuk tiga kabupaten di Kalimantan Barat.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/survei-rantai-pasok-karet-kesiapan-eudr-tropenbos" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 6 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="kebijakan" data-title="Penyusunan Kerangka Strategis &amp; SOP ABKT Perda 6 Tahun 2018 Kalimantan Barat" data-status="Selesai" data-location="Kalimantan Barat" data-period="Januari 2025 – Maret 2025" data-partner="Tropenbos Indonesia" data-desc="Penyusunan kerangka regulasi teknis, panduan operasional baku (SOP), dan mekanisme monitoring ABKT (Area Bernilai Konservasi Tinggi) untuk mendukung implementasi Peraturan Daerah Provinsi Kalbar No 6/2018.">
-                          <div class="proyek-cat-bar kebijakan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat kebijakan">Kebijakan &amp; Tata Kelola</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Penyusunan Kerangka Strategis &amp; SOP ABKT Perda 6 Tahun 2018 Kalimantan Barat</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kalimantan Barat</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Januari 2025 – Maret 2025</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Tropenbos Indonesia</span>
-                            </div>
-                            <p class="proyek-desc">Dokumen kerangka strategis, panduan, dan SOP implementasi ABKT untuk mendukung pelaksanaan Perda 6 Tahun 2018.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/kerangka-strategis-sop-abkt-perda-6-2018" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 7 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="kebijakan" data-title="Program UNDP KalFor – Penguatan Perencanaan Kawasan Hutan Ketapang" data-status="Selesai" data-location="3 Desa di Kab. Ketapang" data-period="Juni 2023 – Juni 2024" data-partner="UNDP KalFor" data-desc="Pendampingan intensif bagi 3 desa di Kabupaten Ketapang dalam rangka penguatan perencanaan tata kelola kawasan hutan di luar kawasan konservasi negara (KPA/KSA) berbasis partisipasi masyarakat lokal.">
-                          <div class="proyek-cat-bar kebijakan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat kebijakan">Kebijakan &amp; Tata Kelola</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Program UNDP KalFor – Penguatan Perencanaan Kawasan Hutan Ketapang</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>3 Desa di Kab. Ketapang</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Juni 2023 – Juni 2024</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>UNDP KalFor</span>
-                            </div>
-                            <p class="proyek-desc">Pendampingan intensif di 3 desa di Kabupaten Ketapang untuk penguatan perencanaan kawasan hutan berbasis masyarakat.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/program-undp-kalfor-perencanaan-hutan-ketapang" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 8 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="restorasi" data-title="Program Peat IMPACTS Indonesia – Peningkatan Pengelolaan Gambut" data-status="Selesai" data-location="Kab. Kubu Raya" data-period="Juni 2022 – Mei 2023" data-partner="ICRAF Indonesia" data-desc="Penguatan kapasitas dan pelatihan bagi kelompok tani swadaya dalam menerapkan praktik agroforestri berkelanjutan di ekosistem lahan gambut demi pencegahan degradasi tanah dan peningkatan ekonomi desa.">
-                          <div class="proyek-cat-bar restorasi"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat restorasi">Restorasi &amp; Konservasi</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Program Peat IMPACTS Indonesia – Peningkatan Pengelolaan Gambut</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Kubu Raya</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Juni 2022 – Mei 2023</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>ICRAF Indonesia</span>
-                            </div>
-                            <p class="proyek-desc">Pelatihan dan penguatan kapasitas petani kecil untuk mengembangkan agroforestri di lahan gambut secara berkelanjutan.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/program-peat-impacts-indonesia-pengelolaan-gambut" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 9 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="pemetaan" data-title="Penilaian HCV-HCS PT. Perintis Sawit Andalan" data-status="Selesai" data-location="Kab. Bengkayang" data-period="Mei 2022 – November 2022" data-partner="PT. Perintis Sawit Andalan" data-desc="Kajian spasial dan ekologis komprehensif High Conservation Value (HCV) dan High Carbon Stock (HCS) untuk menetapkan area lindung bernilai konservasi tinggi dalam konsesi perkebunan kelapa sawit.">
-                          <div class="proyek-cat-bar pemetaan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat pemetaan">Pemetaan &amp; Spasial</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Penilaian HCV-HCS PT. Perintis Sawit Andalan</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Bengkayang</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mei 2022 – November 2022</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>PT. Perintis Sawit Andalan</span>
-                            </div>
-                            <p class="proyek-desc">Penilaian komprehensif HCV-HCS untuk mendukung praktik pengelolaan perkebunan sawit yang bertanggung jawab.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/penilaian-hcv-hcs-pt-perintis-sawit-andalan" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 10 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="pemetaan" data-title="Pemetaan HCV-HCS Lanskap Sawit Kalimantan Barat" data-status="Selesai" data-location="Kalimantan Barat" data-period="November 2020 – Maret 2021" data-partner="NMI-CSF – Abler Nordic" data-desc="Pemetaan dan kajian batas indikatif HCV serta tutupan cadangan karbon tinggi (HCS) di seluruh lanskap sawit Kalimantan Barat untuk integrasi perencanaan spasial berkelanjutan.">
-                          <div class="proyek-cat-bar pemetaan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat pemetaan">Pemetaan &amp; Spasial</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Pemetaan HCV-HCS Lanskap Sawit Kalimantan Barat</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kalimantan Barat</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>November 2020 – Maret 2021</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>NMI-CSF – Abler Nordic</span>
-                            </div>
-                            <p class="proyek-desc">Pemetaan HCV dan HCS lanskap sawit di Kalimantan Barat untuk mendukung pengelolaan bertanggung jawab.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/pemetaan-hcv-hcs-lanskap-sawit-kalbar" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 11 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="kapasitas" data-title="Pelatihan Petani Sawit Swadaya – Kelompok Gema Sawit Lestari" data-status="Selesai" data-location="Kab. Sanggau" data-period="November 2020 – Mei 2021" data-partner="NMI-CSF (Climate Smart Fund)" data-desc="Program pelatihan intensif Good Agricultural Practices (GAP), sertifikasi ISPO/RSPO swadaya, dan pengelolaan perkebunan sawit ramah lingkungan bagi kelompok tani di Sanggau.">
-                          <div class="proyek-cat-bar kapasitas"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat kapasitas">Pengembangan Kapasitas</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Pelatihan Petani Sawit Swadaya – Kelompok Gema Sawit Lestari</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Sanggau</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>November 2020 – Mei 2021</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>NMI-CSF (Climate Smart Fund)</span>
-                            </div>
-                            <p class="proyek-desc">Pelatihan petani sawit swadaya untuk peningkatan kapasitas kelompok Gema Sawit Lestari menuju pertanian bertanggung jawab.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/pelatihan-petani-sawit-swadaya-gema-sawit-lestari" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 12 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="komoditas" data-title="Insentif Tumpang Sari Padi Lahan Kering untuk Petani Sawit Swadaya" data-status="Selesai" data-location="Kab. Sanggau" data-period="November 2020 – Mei 2021" data-partner="NMI-CSF (Climate Smart Fund)" data-desc="Penerapan sistem tumpang sari (intercropping) padi lahan kering di sela tanaman sawit muda sebagai alternatif sumber pangan mandiri dan penguatan pendapatan petani.">
-                          <div class="proyek-cat-bar komoditas"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat komoditas">Komoditas Berkelanjutan</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Insentif Tumpang Sari Padi Lahan Kering untuk Petani Sawit Swadaya</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Sanggau</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>November 2020 – Mei 2021</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>NMI-CSF (Climate Smart Fund)</span>
-                            </div>
-                            <p class="proyek-desc">Lahan demo pertanian padi lahan kering sebagai alternatif mata pencaharian berkelanjutan bagi petani sawit swadaya.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/insentif-tumpang-sari-padi-lahan-kering-sawit" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 13 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="pemetaan" data-title="Analisis Spasial Dampak Deforestasi Petani Kecil Sintang &amp; Sanggau" data-status="Selesai" data-location="Kab. Sintang dan Sanggau" data-period="Februari 2020 – Juni 2020" data-partner="NMI-CSF – Abler Nordic" data-desc="Kajian spasial berbasis citra satelit resolusi tinggi untuk memetakan laju deforestasi serta menyusun rekomendasi mitigasi bagi pekebun swadaya di Sintang dan Sanggau.">
-                          <div class="proyek-cat-bar pemetaan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat pemetaan">Pemetaan &amp; Spasial</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Analisis Spasial Dampak Deforestasi Petani Kecil Sintang &amp; Sanggau</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Sintang dan Sanggau</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Februari 2020 – Juni 2020</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>NMI-CSF – Abler Nordic</span>
-                            </div>
-                            <p class="proyek-desc">Rekomendasi dokumen intervensi untuk petani kecil di Sintang berdasarkan analisis dampak deforestasi.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/analisis-spasial-dampak-deforestasi-sintang-sanggau" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 14 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="kebijakan" data-title="Rencana Strategis Cagar Biosfer Betung Kerihun Danau Sentarum" data-status="Selesai" data-location="Kab. Kapuas Hulu" data-period="Juli 2020" data-partner="GIZ SFM" data-desc="Penyusunan peta jalan strategis dan model tata kelola kolaboratif Cagar Biosfer BKDS Kapuas Hulu guna menyelaraskan konservasi keanekaragaman hayati dan mata pencaharian masyarakat adat.">
-                          <div class="proyek-cat-bar kebijakan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat kebijakan">Kebijakan &amp; Tata Kelola</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Rencana Strategis Cagar Biosfer Betung Kerihun Danau Sentarum</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Kapuas Hulu</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Juli 2020</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>GIZ SFM</span>
-                            </div>
-                            <p class="proyek-desc">Rekomendasi strategis dan strategi pengelolaan Cagar Biosfer BKDS Kapuas Hulu untuk konservasi jangka panjang.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/rencana-strategis-cagar-biosfer-bkds-kapuas-hulu" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 15 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="restorasi" data-title="Restorasi Gambut Kalibandung" data-status="Selesai" data-location="Desa Kalibandung, Kab. Kubu Raya" data-period="Agustus 2019 – September 2021" data-partner="WWF-US" data-desc="Rehabilitasi dan revegetasi ekosistem gambut terdegradasi di Hutan Desa Kalibandung melalui penanaman jenis pohon lokal dan pelibatan aktif Lembaga Pengelola Hutan Desa (LPHD).">
-                          <div class="proyek-cat-bar restorasi"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat restorasi">Restorasi &amp; Konservasi</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Restorasi Gambut Kalibandung</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Desa Kalibandung, Kab. Kubu Raya</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Agustus 2019 – September 2021</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>WWF-US</span>
-                            </div>
-                            <p class="proyek-desc">Restorasi revegetasi hutan desa Kalibandung, Kubu Raya untuk pemulihan ekosistem gambut yang terdegradasi.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/restorasi-gambut-kalibandung" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 16 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="restorasi" data-title="Rencana Pemulihan Lanskap Delta Kapuas untuk Konsesi Sawit &amp; Gambut" data-status="Selesai" data-location="Lanskap Delta Kapuas, Kab. Kubu Raya" data-period="September 2019 – Desember 2019" data-partner="WWF Indonesia" data-desc="Penyusunan dokumen kajian teknis dan delineasi zona pemulihan ekologis di bentang lanskap Delta Kapuas guna integrasi konservasi dalam konsesi perkebunan kelapa sawit dan lahan gambut.">
-                          <div class="proyek-cat-bar restorasi"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat restorasi">Restorasi &amp; Konservasi</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Rencana Pemulihan Lanskap Delta Kapuas untuk Konsesi Sawit &amp; Gambut</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Lanskap Delta Kapuas, Kubu Raya</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>September 2019 – Desember 2019</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>WWF Indonesia</span>
-                            </div>
-                            <p class="proyek-desc">Rekomendasi dokumen area pemulihan di lanskap Delta Kapuas untuk konsesi sawit dan kawasan gambut.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/rencana-pemulihan-lanskap-delta-kapuas" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 17 (COMPLETED) -->
-                        <div class="proyek-card" data-cat="pemetaan" data-title="Analisis HCV-HCS Kawasan Agropolitan Kapuas Hulu" data-status="Selesai" data-location="Kab. Kapuas Hulu" data-period="Juli 2019" data-partner="WWF Id – Konservasi Alam Kalimantan (KAK)" data-desc="Kajian identifikasi nilai konservasi tinggi (HCV) dan stok karbon tinggi (HCS) pada kawasan agropolitan Kabupaten Kapuas Hulu sebagai landasan rencana tata ruang wilayah ramah lingkungan.">
-                          <div class="proyek-cat-bar pemetaan"></div>
-                          <div class="proyek-body">
-                            <div class="proyek-tags">
-                              <span class="tag-cat pemetaan">Pemetaan &amp; Spasial</span>
-                              <span class="tag-status selesai">Selesai</span>
-                            </div>
-                            <h4>Analisis HCV-HCS Kawasan Agropolitan Kapuas Hulu</h4>
-                            <div class="proyek-meta">
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kab. Kapuas Hulu</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Juli 2019</span>
-                              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>WWF Id – KAK</span>
-                            </div>
-                            <p class="proyek-desc">Analisis HCV dan HCS di kawasan agropolitan Kabupaten Kapuas Hulu untuk mendukung perencanaan tata guna lahan.</p>
-                            <div class="proyek-card-footer">
-                              <a href="/portofolio/analisis-hcv-hcs-agropolitan-kapuas-hulu" class="btn-read-article">
-                                <span>Baca Selengkapnya</span>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="pagination clearfix" id="porto-pagination"></div>
                     </div>
                   </section>
 
-                  <!-- ===================== 5. PETA SEBARAN ===================== -->
-                  <section id="porto-peta" class="ynki-section">
+                  <!-- =====================================================
+                       3. TIM AHLI PENDUKUNG YNKI (PPTX Y:1634-2400)
+                       ===================================================== -->
+                  <section id="tim-ahli-section" class="ynki-section">
+                    <div class="ynki-container">
+                      
+                      <div style="text-align: center">
+                        <div class="section-divider">
+                          <span class="line"></span>
+                          <span class="section-badge green">TIM AHLI</span>
+                          <span class="line"></span>
+                        </div>
+                        <h2 style="font-size: clamp(26px, 3vw, 38px); font-weight: 800; color: #0e241b; margin: 0 0 12px; letter-spacing: -0.02em;">
+                          Tim Ahli Pendukung YNKI
+                        </h2>
+                      </div>
+
+                      <div class="tim-ahli-overview-split fadeInUp">
+                        <div class="tim-ahli-overview-text">
+                          <p style="margin:0 0 14px;">
+                            YNKI didukung oleh tim multidisiplin yang terdiri dari para ahli ekologi, botani, sistem informasi geografis, manajer kebijakan publik, dan antropologi sosial. Tim ini bekerja dari kantor pusat di <strong>Pontianak, Kalimantan Barat</strong>, serta di berbagai lanskap prioritas di seluruh Kalimantan Barat.
+                          </p>
+                          <p style="margin:0;">
+                            Keberagaman latar belakang akademik dan lapangan inilah yang menjadi kekuatan utama YNKI dalam merancang intervensi yang holistik, kontekstual, dan berdampak nyata bagi masyarakat dan ekosistem.
+                          </p>
+                        </div>
+                        
+                        <div class="office-location-card">
+                          <div class="office-location-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#117710" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Kantor Pusat YNKI
+                          </div>
+                          <p class="office-location-text">
+                            <strong>Jalan Sejarah Gang Gunung Malabar, Pontianak, Kalimantan Barat 78116</strong><br>
+                            Tim YNKI aktif di lapangan di lanskap-lanskap prioritas Kalimantan Barat, bekerja bersama komunitas lokal dan pemangku kepentingan lintas sektor.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="leadership-grid-4">
+                        @if($expertMembers->isNotEmpty())
+                          @foreach($expertMembers as $member)
+                            @php
+                              $photoSrc = $member->photo_path
+                                ? (str_starts_with($member->photo_path, 'http') || str_starts_with($member->photo_path, '/') ? $member->photo_path : '/storage/' . $member->photo_path)
+                                : '/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp';
+                            @endphp
+                            <div class="lead-card">
+                              <div class="lead-photo-wrap">
+                                <img src="{{ $photoSrc }}" alt="{{ $member->full_name }}" loading="lazy" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
+                              </div>
+                              <div class="lead-body">
+                                <h3 class="lead-name">{{ $member->full_name }}</h3>
+                                <div class="lead-role">{{ $member->position }}</div>
+                                <p class="lead-bio">{{ $member->bio }}</p>
+                                @if(!empty($member->linkedin_url))
+                                  <a href="{{ $member->linkedin_url }}" target="_blank" rel="noopener" class="lead-linkedin" title="Profil LinkedIn" style="display:inline-flex; align-items:center; gap:4px; font-size:12px; color:#0a66c2; text-decoration:none; margin-top:8px; font-weight:600;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6z"/></svg> LinkedIn</a>
+                                @endif
+                              </div>
+                            </div>
+                          @endforeach
+                        @else
+                          <!-- Domain 1 -->
+                          <div class="lead-card">
+                            <div class="lead-photo-wrap">
+                              <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Ekologi Lanskap & Natural Capital" />
+                            </div>
+                            <div class="lead-body">
+                              <h3 class="lead-name">Ekologi Lanskap &amp; Natural Capital</h3>
+                              <div class="lead-role">Tim Ahli Ekologi &amp; Sains</div>
+                              <p class="lead-bio">Penilaian dan pemulihan ekosistem, valuasi jasa ekosistem, dan pengelolaan sumber daya alam berbasis sains.</p>
+                            </div>
+                          </div>
+
+                          <!-- Domain 2 -->
+                          <div class="lead-card">
+                            <div class="lead-photo-wrap">
+                              <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Tata Kelola & Kebijakan" />
+                            </div>
+                            <div class="lead-body">
+                              <h3 class="lead-name">Tata Kelola &amp; Kebijakan</h3>
+                              <div class="lead-role">Tim Ahli Kebijakan Publik</div>
+                              <p class="lead-bio">Analisis regulasi, advokasi kebijakan, dan penguatan kapasitas institusi pemerintah daerah dan nasional.</p>
+                            </div>
+                          </div>
+
+                          <!-- Domain 3 -->
+                          <div class="lead-card">
+                            <div class="lead-photo-wrap">
+                              <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Keterlacakan Komoditas & Rantai Pasok" />
+                            </div>
+                            <div class="lead-body">
+                              <h3 class="lead-name">Keterlacakan Komoditas &amp; Rantai Pasok</h3>
+                              <div class="lead-role">Tim Ahli Rantai Pasok Hijau</div>
+                              <p class="lead-bio">Sistem verifikasi dan sertifikasi komoditas ramah lingkungan untuk pasar domestik dan ekspor internasional.</p>
+                            </div>
+                          </div>
+
+                          <!-- Domain 4 -->
+                          <div class="lead-card">
+                            <div class="lead-photo-wrap">
+                              <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Pemberdayaan Masyarakat & Inklusi Sosial" />
+                            </div>
+                            <div class="lead-body">
+                              <h3 class="lead-name">Pemberdayaan Masyarakat &amp; Inklusi Sosial</h3>
+                              <div class="lead-role">Tim Ahli Sosial &amp; Gender</div>
+                              <p class="lead-bio">Fasilitasi partisipasi komunitas adat dan lokal, kesetaraan gender, dan penguatan hak-hak sosial ekonomi.</p>
+                            </div>
+                          </div>
+
+                          <!-- Domain 5 -->
+                          <div class="lead-card">
+                            <div class="lead-photo-wrap">
+                              <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Ketahanan Iklim & Solusi Berbasis Alam" />
+                            </div>
+                            <div class="lead-body">
+                              <h3 class="lead-name">Ketahanan Iklim &amp; Solusi Berbasis Alam</h3>
+                              <div class="lead-role">Tim Ahli Adaptasi Iklim</div>
+                              <p class="lead-bio">Perencanaan adaptasi iklim, restorasi gambut, dan implementasi solusi berbasis alam di lanskap prioritas.</p>
+                            </div>
+                          </div>
+
+                          <!-- Domain 6 -->
+                          <div class="lead-card">
+                            <div class="lead-photo-wrap">
+                              <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="GIS, Penginderaan Jauh & Inovasi Digital" />
+                            </div>
+                            <div class="lead-body">
+                              <h3 class="lead-name">GIS, Penginderaan Jauh &amp; Inovasi Digital</h3>
+                              <div class="lead-role">Tim Ahli Data &amp; Pemetaan Spasial</div>
+                              <p class="lead-bio">Pemetaan spasial, analisis citra satelit, dan pengembangan platform data untuk pemantauan lanskap.</p>
+                            </div>
+                          </div>
+
+                          <!-- Domain 7 -->
+                          <div class="lead-card">
+                            <div class="lead-photo-wrap">
+                              <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Monitoring, Evaluasi & Pembelajaran" />
+                            </div>
+                            <div class="lead-body">
+                              <h3 class="lead-name">Monitoring, Evaluasi &amp; Pembelajaran</h3>
+                              <div class="lead-role">Tim Ahli MEL &amp; Pengetahuan</div>
+                              <p class="lead-bio">Pengembangan kerangka MEL, pengumpulan data lapangan, dan pengelolaan pengetahuan organisasi.</p>
+                            </div>
+                          </div>
+
+                          <!-- Domain 8 -->
+                          <div class="lead-card">
+                            <div class="lead-photo-wrap">
+                              <img src="/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp" alt="Pembiayaan Berkelanjutan & Mobilisasi Sumber Daya" />
+                            </div>
+                            <div class="lead-body">
+                              <h3 class="lead-name">Pembiayaan Berkelanjutan &amp; Mobilisasi Sumber Daya</h3>
+                              <div class="lead-role">Tim Ahli Keuangan Hijau</div>
+                              <p class="lead-bio">Pengembangan mekanisme keuangan hijau, penggalangan dana, dan kemitraan strategis dengan donor internasional.</p>
+                            </div>
+                          </div>
+                        @endif
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- =====================================================
+                       4. NILAI YANG KAMI PEGANG (PPTX Y:2458-3050)
+                       ===================================================== -->
+                  <section id="nilai-section" class="ynki-section">
                     <div class="ynki-container">
                       <div style="text-align: center">
-                        <span class="section-badge"
-                          >JANGKAUAN GEOGRAFIS</span
-                        >
-                        <h2
-                          style="
-                            font-size: clamp(22px, 3vw, 34px);
-                            font-weight: 800;
-                            color: #ffffff;
-                            margin: 12px 0 12px;
-                          "
-                        >
-                          Jangkauan Dampak Sebaran Portofolio
+                        <div class="section-divider">
+                          <span class="line"></span>
+                          <span class="section-badge purple">NILAI KAMI</span>
+                          <span class="line"></span>
+                        </div>
+                        <h2 style="font-size: clamp(26px, 3vw, 38px); font-weight: 800; color: #0e241b; margin: 0 0 14px; letter-spacing: -0.02em;">
+                          Nilai yang Kami Pegang
                         </h2>
-                        <p
-                          style="
-                            font-size: 14.5px;
-                            color: #d2f0d1;
-                            max-width: 760px;
-                            margin: 0 auto;
-                          "
-                        >
-                          YNKI bekerja di berbagai kabupaten di Kalimantan
-                          Barat—menjangkau dari pesisir Kubu Raya hingga
-                          pedalaman Kapuas Hulu.
+                        <p style="font-size: 15.5px; color: #536b5f; max-width: 860px; margin: 0 auto; line-height: 1.8;">
+                          Setiap langkah kerja YNKI berpijak pada empat nilai inti yang menjadi fondasi budaya organisasi kami. Nilai-nilai ini bukan sekadar dokumen, melainkan panduan nyata dalam setiap keputusan, program, dan interaksi kami dengan masyarakat dan mitra.
                         </p>
                       </div>
 
-                      <div class="peta-grid">
-                        <div class="peta-card">
-                          <h4>
-                            <svg
-                              width="18"
-                              height="18"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="#a3e0a2"
-                              stroke-width="2"
-                            >
-                              <path
-                                d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                              />
-                              <circle cx="12" cy="10" r="3" />
-                            </svg>
-                            Kabupaten Kubu Raya
-                          </h4>
-                          <ul>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Restorasi Gambut Kalibandung
-                            </li>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Restorasi Gambut PM Haze
-                            </li>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Rencana Pemulihan Delta Kapuas
-                            </li>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Program Peat IMPACTS Indonesia
-                            </li>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Program TFCA Kalimantan
-                            </li>
-                          </ul>
+                      <div class="values-grid-4">
+                        
+                        <!-- Value 1 -->
+                        <div class="value-card-box">
+                          <h3>
+                            <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#eaf6ea;border-radius:8px;color:#117710;margin-right:4px;">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </span>
+                            Participatory Development
+                          </h3>
+                          <p>
+                            Kami meyakini bahwa perubahan yang berkelanjutan lahir dari partisipasi aktif seluruh pemangku kepentingan—termasuk masyarakat adat, petani lokal, perempuan, dan kelompok rentan yang sering terpinggirkan dari proses pengambilan keputusan.
+                          </p>
                         </div>
 
-                        <div class="peta-card">
-                          <h4>
-                            <svg
-                              width="18"
-                              height="18"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="#a3e0a2"
-                              stroke-width="2"
-                            >
-                              <path
-                                d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                              />
-                              <circle cx="12" cy="10" r="3" />
-                            </svg>
-                            Kabupaten Sanggau
-                          </h4>
-                          <ul>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Analisis Spasial Dampak Deforestasi
-                            </li>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Insentif Tumpang Sari Padi Lahan Kering
-                            </li>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Pelatihan Petani Sawit Swadaya
-                            </li>
-                          </ul>
+                        <!-- Value 2 -->
+                        <div class="value-card-box">
+                          <h3>
+                            <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#eaf6ea;border-radius:8px;color:#117710;margin-right:4px;">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21h18"></path><path d="M5 21V9"></path><path d="M19 21V9"></path><path d="M2 9h20L12 3z"></path><path d="M9 21v-7a3 3 0 0 1 6 0v7"></path></svg>
+                            </span>
+                            Democratic Landscape Governance
+                          </h3>
+                          <p>
+                            Kami menekankan prinsip-prinsip demokratis dalam tata kelola lanskap melalui pengambilan keputusan yang inklusif, representasi seluruh pemangku kepentingan dalam perencanaan lanskap, serta proses demokratis yang menjamin akses yang adil terhadap lahan dan sumber daya alam.
+                          </p>
                         </div>
 
-                        <div class="peta-card">
-                          <h4>
-                            <svg
-                              width="18"
-                              height="18"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="#a3e0a2"
-                              stroke-width="2"
-                            >
-                              <path
-                                d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                              />
-                              <circle cx="12" cy="10" r="3" />
-                            </svg>
-                            Kabupaten Kapuas Hulu
-                          </h4>
-                          <ul>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Analisis HCV-HCS Kawasan Agropolitan
-                            </li>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Rencana Strategis Cagar Biosfer BKDS
-                            </li>
-                          </ul>
+                        <!-- Value 3 -->
+                        <div class="value-card-box">
+                          <h3>
+                            <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#eaf6ea;border-radius:8px;color:#117710;margin-right:4px;">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                            </span>
+                            Adaptive Learning &amp; Co-management
+                          </h3>
+                          <p>
+                            Kami mendorong pembelajaran berkelanjutan dari pengalaman lapangan melalui siklus manajemen adaptif, tata kelola kolaboratif antara komunitas, pemerintah, dan aktor lainnya, serta berbagi pengetahuan lintas lanskap untuk memperkuat efektivitas intervensi.
+                          </p>
                         </div>
 
-                        <div class="peta-card">
-                          <h4>
-                            <svg
-                              width="18"
-                              height="18"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="#a3e0a2"
-                              stroke-width="2"
-                            >
-                              <path
-                                d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                              />
-                              <circle cx="12" cy="10" r="3" />
-                            </svg>
-                            Ketapang, Bengkayang &amp; Sintang
-                          </h4>
-                          <ul>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Program UNDP KalFor (Ketapang)
-                            </li>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Survei Rantai Pasok Karet (Ketapang &amp;
-                              Sintang)
-                            </li>
-                            <li>
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#a3e0a2"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12" /></svg
-                              >Penilaian HCV-HCS PT. PSA (Bengkayang)
-                            </li>
-                          </ul>
+                        <!-- Value 4 -->
+                        <div class="value-card-box">
+                          <h3>
+                            <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:#eaf6ea;border-radius:8px;color:#117710;margin-right:4px;">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                            </span>
+                            Biodiversity Stewardship
+                          </h3>
+                          <p>
+                            Kami memandang perlindungan dan pengelolaan keanekaragaman hayati sebagai tanggung jawab bersama. Pendekatan kami mengintegrasikan sains ekologi dengan kearifan lokal untuk menjaga keseimbangan ekosistem dalam jangka panjang.
+                          </p>
                         </div>
+
                       </div>
                     </div>
                   </section>
 
-                  <!-- ===================== 7. INGIN MENJADI BAGIAN / CTA ===================== -->
-                  <section id="porto-cta" class="ynki-section">
+                  <!-- =====================================================
+                       5. INGIN BERGABUNG DENGAN TIM YNKI? (PPTX Y:3067-3500)
+                       ===================================================== -->
+                  <section id="bergabung-section" class="ynki-section">
                     <div class="ynki-container">
-                      <div style="text-align: center">
-                        <div class="divider-line">
-                          <span class="line"></span
-                          ><span class="section-badge">KOLABORASI</span
-                          ><span class="line"></span>
-                        </div>
-                        <h2
-                          style="
-                            font-size: clamp(22px, 3vw, 34px);
-                            font-weight: 800;
-                            color: #ffffff;
-                            margin: 0 0 12px;
-                          "
-                        >
-                          Ingin Menjadi Bagian dari YNKI?
-                        </h2>
-                        <p
-                          style="
-                            font-size: 15px;
-                            color: #ffffff;
-                            max-width: 760px;
-                            margin: 0 auto;
-                          "
-                        >
-                          YNKI terbuka untuk menjalin kemitraan dan kolaborasi
-                          dalam program dan proyek yang mendukung tata kelola
-                          lanskap yang inklusif dan berkelanjutan. Jadilah
-                          bagian dari perubahan menuju
-                          <em>Healthy Landscapes, Thriving Communities</em>.
+                      
+                      <div class="join-banner-box">
+                        <span class="section-badge">BERGABUNG</span>
+                        <h2>Ingin Bergabung dengan Tim YNKI?</h2>
+                        <p>
+                          YNKI terbuka untuk kolaborasi dengan para profesional yang memiliki komitmen pada keberlanjutan lanskap dan kesejahteraan masyarakat. Kami percaya bahwa dampak terbesar dicapai ketika orang-orang yang tepat bekerja bersama dengan tujuan yang sama. Kami secara berkala membuka peluang bagi <strong>staf tetap</strong>, <strong>konsultan</strong>, dan <strong>mitra teknis</strong> di bidang ekologi, kebijakan, GIS, pemberdayaan masyarakat, dan bidang-bidang terkait lainnya. Jika Anda memiliki semangat untuk kerja konservasi berbasis lanskap dan ingin berkontribusi bagi masyarakat Kalimantan, kami mengundang Anda untuk terhubung dengan kami.
                         </p>
                       </div>
-                      <div class="cta-grid">
-                        <div class="cta-card">
-                          <div class="icon-wrap">
-                            <svg
-                              width="26"
-                              height="26"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="#ffffff"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path
-                                d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                              />
-                              <circle cx="9" cy="7" r="4" />
-                              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
-                          </div>
-                          <h4                           style="
-                            font-size: 15px;
-                            color: #ffffff;
-                            max-width: 760px;
-                            margin: 0 auto;
-                          ">Berkolaborasi dengan Kami</h4>
-                          <p                          style="
-                            font-size: 15px;
-                            color: #bbbbbb;
-                            max-width: 760px;
-                            margin: 0 auto;
-                          ">
-                            Bergabunglah sebagai mitra strategis dalam program
-                            restorasi, pemetaan, pengembangan kapasitas, atau
-                            kebijakan tata kelola lanskap di Kalimantan Barat.
-                          </p>
-                          <a href="/kontak-kami/" class="btn-cta-second"
-                            >Hubungi Kami</a
-                          >
+
+                      <div class="join-opportunities-3">
+                        
+                        <!-- Opportunity 1 -->
+                        <div class="opportunity-card">
+                          <h4>Staf &amp; Peneliti</h4>
+                          <p>Posisi penuh waktu di kantor pusat Pontianak dan di lapangan lanskap prioritas Kalimantan Barat.</p>
+                          <a href="/kontak-kami/" class="opportunity-link">Hubungi Kami &rarr;</a>
                         </div>
-                        <div class="cta-card">
-                          <div class="icon-wrap">
-                            <svg
-                              width="26"
-                              height="26"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="#ffffff"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <line x1="12" y1="1" x2="12" y2="23" />
-                              <path
-                                d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-                              />
-                            </svg>
-                          </div>
-                          <h4                           style="
-                            font-size: 15px;
-                            color: #ffffff;
-                            max-width: 760px;
-                            margin: 0 auto;
-                          ">Dukung Program Kami</h4>
-                          <p style="
-                            font-size: 15px;
-                            color: #bbbbbb;
-                            max-width: 760px;
-                            margin: 0 auto;
-                          ">
-                            Dukung perubahan nyata di lapangan melalui pendanaan
-                            program yang berdampak langsung pada masyarakat dan
-                            ekosistem Kalimantan Barat.
-                          </p>
-                          <a href="/ikut-serta/" class="btn-cta-main"
-                            >Dukung Sekarang</a
-                          >
+
+                        <!-- Opportunity 2 -->
+                        <div class="opportunity-card">
+                          <h4>Konsultan Teknis</h4>
+                          <p>Keterlibatan berbasis proyek untuk ahli ekologi, GIS, kebijakan, sosial, dan bidang spesialis lainnya.</p>
+                          <a href="/kontak-kami/" class="opportunity-link">Ajukan Kolaborasi &rarr;</a>
                         </div>
-                        <div class="cta-card">
-                          <div class="icon-wrap">
-                            <svg
-                              width="26"
-                              height="26"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="#ffffff"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <circle cx="11" cy="11" r="8" />
-                              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg>
-                          </div>
-                          <h4 style="
-                            font-size: 15px;
-                            color: #ffffff;
-                            max-width: 760px;
-                            margin: 0 auto;
-                          ">Jelajahi Program Kami</h4>
-                          <p style="
-                            font-size: 15px;
-                            color: #bbbbbb;
-                            max-width: 760px;
-                            margin: 0 auto;
-                          ">
-                            Pelajari lebih dalam tentang pendekatan, metodologi,
-                            dan dampak program YNKI dalam tata kelola lanskap
-                            inklusif.
-                          </p>
-                          <a href="/program/" class="btn-cta-second"
-                            >Lihat Program</a
-                          >
+
+                        <!-- Opportunity 3 -->
+                        <div class="opportunity-card">
+                          <h4>Mitra Kolaborasi</h4>
+                          <p>Kemitraan strategis dengan lembaga riset, LSM, pemerintah daerah, dan sektor swasta.</p>
+                          <a href="/kontak-kami/" class="opportunity-link">Bermitra Bersama &rarr;</a>
                         </div>
+
                       </div>
+
                     </div>
                   </section>
-                </div>
-              </div>
-            </section>
-          </div>
+
+                </div><!-- .post-content -->
+              </div><!-- #post-tim -->
+            </section><!-- #content -->
+          </div><!-- .fusion-row -->
         </main>
         <div class="fusion-tb-footer fusion-footer">
           <div class="fusion-footer-widget-area fusion-widget-area">
@@ -5140,135 +4058,29 @@
       <a href="#" id="toTop" class="fusion-top-top-link">
         <span id="awb-to-top-label" class="screen-reader-text"
           >Go to Top</span
-        ></a>
+        ></a
+      >
     </section>
-    <script>
-      // Filter & Pagination handling (6 items per page)
-      document.addEventListener('DOMContentLoaded', function() {
-        const filterBtns = document.querySelectorAll('.filter-bar .filter-btn');
-        const cards = Array.from(document.querySelectorAll('.proyek-grid .proyek-card'));
-        const paginationContainer = document.getElementById('porto-pagination');
-
-        const ITEMS_PER_PAGE = 6;
-        let currentPage = 1;
-        let currentFilterKey = 'all';
-        let currentFilterText = 'semua';
-
-        const catFilters = {
-          'kebijakan': ['kebijakan', 'governance', 'tata kelola', 'advokasi'],
-          'restorasi': ['restorasi', 'restoration', 'konservasi', 'natural capital', 'gambut'],
-          'komoditas': ['komoditas', 'commodity', 'sawit', 'karet', 'hortikultura'],
-          'pemetaan': ['pemetaan', 'spasial', 'gis', 'pengetahuan', 'intelligence', 'inovasi'],
-          'kapasitas': ['kapasitas', 'capacity', 'partnership', 'kelembagaan', 'sustainability', 'pelatihan']
-        };
-
-        function getFilteredCards() {
-          if (!currentFilterKey || currentFilterKey === 'all' || currentFilterText === 'semua') {
-            return cards;
-          }
-          const targets = catFilters[currentFilterKey] || [currentFilterKey, currentFilterText];
-          return cards.filter(card => {
-            const cat = (card.getAttribute('data-cat') || '').toLowerCase();
-            const tag = (card.querySelector('.tag-cat')?.innerText || '').toLowerCase();
-            return targets.some(t => cat.includes(t) || tag.includes(t));
-          });
-        }
-
-        function renderPagination(totalItems) {
-          if (!paginationContainer) return;
-          const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
-
-          if (totalPages <= 1) {
-            paginationContainer.innerHTML = '';
-            paginationContainer.style.display = 'none';
-            return;
-          }
-
-          paginationContainer.style.display = 'flex';
-          let html = '';
-
-          // Prev button
-          if (currentPage > 1) {
-            html += `<a href="#porto-proyek" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Prev</a>`;
-          } else {
-            html += `<span class="pagination-prev disabled">&laquo; Prev</span>`;
-          }
-
-          // Page numbers
-          for (let p = 1; p <= totalPages; p++) {
-            if (p === currentPage) {
-              html += `<span class="current">${p}</span>`;
-            } else {
-              html += `<a href="#porto-proyek" class="inactive" data-page="${p}">${p}</a>`;
-            }
-          }
-
-          // Next button
-          if (currentPage < totalPages) {
-            html += `<a href="#porto-proyek" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
-          } else {
-            html += `<span class="pagination-next disabled">Next &raquo;</span>`;
-          }
-
-          paginationContainer.innerHTML = html;
-
-          // Event listeners for pagination buttons
-          paginationContainer.querySelectorAll('a[data-page]').forEach(link => {
-            link.addEventListener('click', function(e) {
-              e.preventDefault();
-              currentPage = parseInt(this.getAttribute('data-page'), 10);
-              updateView(true);
-            });
-          });
-        }
-
-        function updateView(scrollIntoView = false) {
-          const filtered = getFilteredCards();
-          const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-          if (currentPage > totalPages && totalPages > 0) {
-            currentPage = 1;
-          }
-
-          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-          const endIndex = startIndex + ITEMS_PER_PAGE;
-
-          // Hide all cards first
-          cards.forEach(card => card.style.display = 'none');
-
-          // Display only the 6 cards for the active page
-          filtered.slice(startIndex, endIndex).forEach(card => {
-            card.style.display = '';
-          });
-
-          renderPagination(filtered.length);
-
-          if (scrollIntoView) {
-            const section = document.getElementById('porto-proyek');
-            if (section) {
-              section.scrollIntoView({ behavior: 'smooth' });
-            }
-          }
-        }
-
-        // Filter button listeners
-        filterBtns.forEach(btn => {
-          btn.addEventListener('click', function() {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-
-            currentFilterKey = (this.getAttribute('data-filter') || '').toLowerCase();
-            currentFilterText = this.innerText.trim().toLowerCase();
-            currentPage = 1;
-            updateView(false);
-          });
-        });
-
-        // Initialize view
-        updateView(false);
-      });
-    </script>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script src="/assets/js/ynki-footer.js"></script>
+    <script>
+      (function () {
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('fadeInUp');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { rootMargin: '0px 0px -30px 0px', threshold: 0.04 });
+
+          document.querySelectorAll('.tim-ahli-overview-split').forEach(function (el) {
+            observer.observe(el);
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
 <!-- Page optimized by LiteSpeed Cache @2026-08-17 17:42:00 --><!-- Page cached by LiteSpeed Cache 7.8.1 on 2026-08-17 17:42:00 --><!-- Guest Mode --><!-- QUIC.cloud CCSS loaded ✅ /ccss/e6cdef7e17caebb6a8d79682a8c88011.css --><!-- QUIC.cloud UCSS loaded ✅ /ucss/d5027302c12ab86b6082acd2ecdd5c8e.css -->
