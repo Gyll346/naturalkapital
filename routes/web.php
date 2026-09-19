@@ -52,6 +52,18 @@ Route::get('/kisah-perubahan/index.html', fn() => redirect('/kisah-perubahan'));
 Route::get('/liputan-media', fn() => view('public.liputan-media'))->name('public.liputan_media');
 Route::get('/liputan-media/index.html', fn() => redirect('/liputan-media'));
 
+// Subhalaman Program Kami
+Route::get('/landscape-governance', fn() => view('public.landscape-governance'))->name('public.landscape_governance');
+Route::get('/landscape-governance/index.html', fn() => redirect('/landscape-governance'));
+Route::get('/natural-capital', fn() => view('public.natural-capital'))->name('public.natural_capital');
+Route::get('/natural-capital/index.html', fn() => redirect('/natural-capital'));
+Route::get('/sustainable-commodity', fn() => view('public.sustainable-commodity'))->name('public.sustainable_commodity');
+Route::get('/sustainable-commodity/index.html', fn() => redirect('/sustainable-commodity'));
+Route::get('/landscape-intelligence', fn() => view('public.landscape-intelligence'))->name('public.landscape_intelligence');
+Route::get('/landscape-intelligence/index.html', fn() => redirect('/landscape-intelligence'));
+Route::get('/institutional-partnership', fn() => view('public.institutional-partnership'))->name('public.institutional_partnership');
+Route::get('/institutional-partnership/index.html', fn() => redirect('/institutional-partnership'));
+
 
 // Subhalaman Dinamis Database (Literasi & Pengetahuan)
 Route::get('/news-features', [PageContentController::class, 'newsFeatures'])->name('public.news_features');
