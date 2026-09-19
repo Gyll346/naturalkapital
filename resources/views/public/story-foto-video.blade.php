@@ -14,8 +14,8 @@
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <title>
-      Analisis &amp; Kebijakan: Penguatan Tata Kelola Lanskap Berbasis Bukti —
-      Yayasan Natural Kapital Indonesia (YNKI)
+      Story Foto &amp; Video: Momen Perubahan dalam Bingkai Visual — Yayasan
+      Natural Kapital Indonesia (YNKI)
     </title>
     <meta
       name="description"
@@ -2955,14 +2955,14 @@
               height: 1px;
               background: #d2e8d1;
             }
+
             .hero-section {
               position: relative;
               min-height: 82vh;
               display: flex;
               align-items: center;
-              background-image: 
-              linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-              url('/wp-content/uploads/2026/05/Desa-Gema-2_Zulkifli-HZ-1536x864.webp');
+              background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url("/assets/images/stori-foto-video/image1.png");
               background-size: cover;
               background-position: center;
               padding: 110px 24px 90px;
@@ -2995,6 +2995,9 @@
             .hero-crumb a {
               color: #d2f0d1;
               text-decoration: none;
+            }
+            .hero-crumb a:hover {
+              color: #ff8000;
             }
             .hero-h1 {
               font-size: clamp(28px, 4.5vw, 48px);
@@ -3030,10 +3033,374 @@
               gap: 14px;
               flex-wrap: wrap;
             }
-            .cta-section {
+
+            .stats-strip,
+            #story-stats {
+              background: #117710;
+              padding: 64px 24px;
+              margin-top: 48px;
+              position: relative;
+              overflow: hidden;
+            }
+            .stats-strip::before,
+            #story-stats::before {
+              content: "";
+              position: absolute;
+              top: -50%;
+              right: -10%;
+              width: 500px;
+              height: 500px;
+              background: rgba(255, 255, 255, 0.04);
+              border-radius: 50%;
+              pointer-events: none;
+              z-index: 0;
+            }
+            .stats-strip > *,
+            #story-stats > * {
+              position: relative;
+              z-index: 1;
+            }
+            .stats-row {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 0;
+              max-width: 1100px;
+              margin: 0 auto;
+            }
+            .stat-box {
+              text-align: center;
+              padding: 10px 24px;
+              position: relative;
+            }
+            .stat-box:not(:last-child)::after {
+              content: "";
+              position: absolute;
+              right: 0;
+              top: 10%;
+              bottom: 10%;
+              width: 1px;
+              background: rgba(255, 255, 255, 0.15);
+            }
+            .stat-num {
+              font-size: clamp(32px, 4vw, 50px);
+              font-weight: 900;
+              color: #fff;
+              line-height: 1;
+              margin-bottom: 8px;
+            }
+            .stat-num .plus {
+              color: #ff8000;
+            }
+            .stat-label {
+              font-size: 14px;
+              font-weight: 700;
+              color: #a3e0a2;
+              margin-bottom: 6px;
+            }
+            .stat-desc {
+              font-size: 12px;
+              color: #d2f0d1;
+              margin: 0;
+              line-height: 1.5;
+            }
+
+            .intro-sec {
+              background: #f5f8f5;
+              padding: 90px 24px;
+            }
+            .intro-grid {
+              display: grid;
+              grid-template-columns: 1fr 1.2fr;
+              gap: 48px;
+              max-width: 1100px;
+              margin: 0 auto;
+              align-items: center;
+            }
+            .intro-text h3 {
+              font-size: 26px;
+              font-weight: 800;
+              color: #0e241b;
+              margin: 0 0 16px;
+              line-height: 1.3;
+            }
+            .intro-text p {
+              font-size: 15px;
+              color: #536b5f;
+              line-height: 1.8;
+              margin: 0 0 16px;
+            }
+
+            .intro-card {
+              background: #fff;
+              border: 1.5px solid #d2e8d1;
+              border-radius: 18px;
+              padding: 32px 28px;
+              box-shadow: 0 10px 30px rgba(17, 119, 16, 0.06);
+            }
+            .intro-card h4 {
+              font-size: 18px;
+              font-weight: 800;
+              color: #0e241b;
+              margin: 0 0 12px;
+            }
+            .intro-card p {
+              font-size: 14px;
+              color: #536b5f;
+              line-height: 1.7;
+              margin: 0 0 18px;
+            }
+            .intro-card .card-highlight {
+              background: #e8f5e8;
+              border-left: 4px solid #117710;
+              padding: 12px 16px;
+              border-radius: 0 8px 8px 0;
+              font-size: 13.5px;
+              color: #117710;
+              font-weight: 600;
+            }
+
+            .filter-row {
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              justify-content: center;
+              margin-top: 40px;
+              margin-bottom: 40px;
+            }
+            .filter-tag {
+              font-size: 13px;
+              font-weight: 700;
+              padding: 9px 20px;
+              border-radius: 50px;
+              border: 2px solid #d2e8d1;
+              color: #117710;
+              cursor: pointer;
+              transition: all 0.3s;
+              background: #fff;
+              text-decoration: none;
+            }
+            .filter-tag:hover,
+            .filter-tag.active {
+              background: #117710;
+              color: #fff;
+              border-color: #117710;
+            }
+
+            .gallery-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 24px;
+              max-width: 1100px;
+              margin: 0 auto;
+            }
+            .g-card {
+              background: #fff;
+              border: 1.5px solid #dce8e1;
+              border-radius: 16px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+              cursor: pointer;
+            }
+            .g-card:hover {
+              transform: translateY(-4px);
+              box-shadow: 0 14px 30px rgba(17, 119, 16, 0.12);
+              border-color: #117710;
+            }
+            .g-img {
+              width: 100%;
+              height: 200px;
+              background: #eaf6ea;
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 40px;
+              color: #117710;
+              overflow: hidden;
+            }
+            .g-img::after {
+              content: "";
+              position: absolute;
+              inset: 0;
+              background: rgba(0, 0, 0, 0.03);
+              transition: background 0.3s;
+            }
+            .g-card:hover .g-img::after {
+              background: transparent;
+            }
+            .g-body {
+              padding: 24px;
+              flex-grow: 1;
+              display: flex;
+              flex-direction: column;
+            }
+            .g-loc {
+              font-size: 11px;
+              font-weight: 800;
+              color: #ff8000;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              margin-bottom: 8px;
+              display: flex;
+              align-items: center;
+              gap: 4px;
+            }
+            .g-body h3 {
+              font-size: 16.5px;
+              font-weight: 800;
+              color: #0e241b;
+              margin: 0 0 10px;
+              line-height: 1.4;
+            }
+            .g-body p {
+              font-size: 13.5px;
+              color: #536b5f;
+              line-height: 1.65;
+              margin: 0 0 16px;
+              flex-grow: 1;
+            }
+            .btn-gallery {
+              font-size: 13px;
+              font-weight: 700;
+              color: #117710;
+              text-decoration: none;
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+            }
+            .btn-gallery:hover {
+              opacity: 0.7;
+            }
+
+            .video-sec {
               background: #117710;
               padding: 90px 24px;
+              position: relative;
+              overflow: hidden;
+            }
+            .video-sec::before {
+              content: "";
+              position: absolute;
+              top: -50%;
+              right: -10%;
+              width: 500px;
+              height: 500px;
+              background: rgba(255, 255, 255, 0.04);
+              border-radius: 50%;
+              pointer-events: none;
+              z-index: 0;
+            }
+            .video-sec > * {
+              position: relative;
+              z-index: 1;
+            }
+            .video-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 24px;
+              max-width: 1100px;
+              margin: 40px auto 0;
+            }
+            .v-card {
+              background: rgba(255, 255, 255, 0.08);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              border-radius: 16px;
+              overflow: hidden;
+              transition:
+                transform 0.3s,
+                background 0.3s;
+              display: flex;
+              flex-direction: column;
+            }
+            .v-card:hover {
+              transform: translateY(-4px);
+              background: rgba(255, 255, 255, 0.12);
+            }
+            .v-thumb {
+              width: 100%;
+              height: 180px;
+              background: rgba(0, 0, 0, 0.3);
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .v-play {
+              width: 50px;
+              height: 50px;
+              background: #b22231;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #fff;
+              transition: transform 0.2s;
+              box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+            }
+            .v-card:hover .v-play {
+              transform: scale(1.1);
+            }
+            .v-body {
+              padding: 24px;
+              flex-grow: 1;
+              display: flex;
+              flex-direction: column;
+            }
+            .v-dur {
+              font-size: 11.5px;
+              font-weight: 700;
+              color: #a3e0a2;
+              margin-bottom: 8px;
+              display: flex;
+              align-items: center;
+              gap: 4px;
+            }
+            .v-body h3 {
+              font-size: 16px;
+              font-weight: 800;
+              color: #fff;
+              margin: 0 0 10px;
+              line-height: 1.4;
+            }
+            .v-body p {
+              font-size: 13.5px;
+              color: #d2f0d1;
+              line-height: 1.6;
+              margin: 0;
+              flex-grow: 1;
+            }
+
+            .cta-section {
+              background: linear-gradient(135deg, #0c500b 0%, #082e07 100%);
+              padding: 90px 24px;
               text-align: center;
+              margin-top: 48px;
+              position: relative;
+              overflow: hidden;
+            }
+            .cta-section::before {
+              content: "NATURE FOR LIVINGS";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: clamp(38px, 6.5vw, 88px);
+              font-weight: 900;
+              color: rgba(255, 255, 255, 0.055);
+              white-space: nowrap;
+              letter-spacing: 8px;
+              pointer-events: none;
+              z-index: 0;
+              font-family: inherit;
+              user-select: none;
+            }
+            .cta-section > * {
+              position: relative;
+              z-index: 1;
             }
             .cta-section h2 {
               font-size: clamp(24px, 3.5vw, 36px);
@@ -3048,315 +3415,33 @@
               margin: 0 auto 32px;
               line-height: 1.7;
             }
-          </style>
-          <style>
-            .landasan-section {
-              background: #f5f8f5;
-              padding: 90px 24px;
-            }
-            .landasan-grid {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 48px;
-              max-width: 1100px;
-              margin: 0 auto;
-              align-items: center;
-            }
-            .landasan-text h3 {
-              font-size: 28px;
-              font-weight: 800;
-              color: #0e241b;
-              margin: 0 0 16px;
-              line-height: 1.3;
-            }
-            .landasan-text p {
-              font-size: 15.5px;
-              color: #536b5f;
-              line-height: 1.8;
-              margin: 0 0 16px;
-            }
-            .landasan-quote {
-              background: #fff;
-              border-left: 4px solid #117710;
-              padding: 24px;
-              border-radius: 0 12px 12px 0;
-              font-size: 16px;
-              font-weight: 600;
-              color: #0e241b;
-              line-height: 1.6;
-              font-style: italic;
-              box-shadow: 0 10px 30px rgba(17, 119, 16, 0.08);
-            }
-
-            .stats-grid {
-              display: grid;
-              grid-template-columns: repeat(4, 1fr);
-              gap: 20px;
-              max-width: 1100px;
-              margin: 0 auto;
-              margin-top: 60px;
-            }
-            .stat-box {
-              background: #fff;
-              border: 1.5px solid #d2e8d1;
-              border-radius: 16px;
-              padding: 28px 24px;
-              text-align: center;
-              transition: transform 0.3s;
-            }
-            .stat-box:hover {
-              transform: translateY(-4px);
-              border-color: #117710;
-              box-shadow: 0 14px 30px rgba(17, 119, 16, 0.08);
-            }
-            .stat-num {
-              font-size: 42px;
-              font-weight: 900;
-              color: #117710;
-              line-height: 1;
-              margin-bottom: 12px;
-            }
-            .stat-box h4 {
-              font-size: 15px;
-              font-weight: 800;
-              color: #0e241b;
-              margin: 0 0 8px;
-              line-height: 1.3;
-            }
-            .stat-box p {
-              font-size: 13px;
-              color: #536b5f;
-              margin: 0;
-              line-height: 1.5;
-            }
-
-            /* ======================== PAGINATION CLEARFIX ======================== */
-            .pagination.clearfix {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              flex-wrap: wrap;
-              gap: 8px;
-              margin: 40px auto 10px;
-              clear: both;
-            }
-            .pagination.clearfix a,
-            .pagination.clearfix span {
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              min-width: 38px;
-              height: 38px;
-              padding: 0 14px;
-              border-radius: 8px;
-              font-size: 13.5px;
-              font-weight: 700;
-              text-decoration: none;
-              transition: all 0.2s ease;
-              cursor: pointer;
-              border: 1.5px solid #d4e8d3;
-              background: #ffffff;
-              color: #1a422b;
-              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-            }
-            .pagination.clearfix a:hover {
-              background: #e8f5ec;
-              border-color: #117710;
-              color: #117710;
-              transform: translateY(-1px);
-            }
-            .pagination.clearfix .current {
-              background: #117710;
-              border-color: #117710;
-              color: #ffffff;
-              box-shadow: 0 4px 14px rgba(17, 119, 16, 0.25);
-              cursor: default;
-            }
-            .pagination.clearfix .pagination-prev,
-            .pagination.clearfix .pagination-next {
-              padding: 0 16px;
-              font-size: 13px;
-            }
-            .pagination.clearfix .disabled {
-              opacity: 0.4;
-              pointer-events: none;
-              cursor: not-allowed;
-            }
-
-            .docs-grid {
-              display: grid;
-              grid-template-columns: repeat(2, 1fr);
-              gap: 24px;
-              max-width: 1100px;
-              margin: 0 auto;
-              margin-top: 44px;
-            }
-            .doc-card {
-              background: #fff;
-              border: 1px solid #d2e8d1;
-              border-radius: 16px;
-              padding: 28px;
-              display: flex;
-              flex-direction: column;
-              transition: all 0.3s;
-            }
-            .doc-card:hover {
-              box-shadow: 0 14px 36px rgba(17, 119, 16, 0.1);
-              transform: translateY(-4px);
-              border-color: #117710;
-            }
-            .doc-header {
-              display: flex;
-              justify-content: space-between;
-              align-items: flex-start;
-              margin-bottom: 16px;
-            }
-            .doc-badge {
-              font-size: 10px;
-              font-weight: 800;
-              letter-spacing: 1.2px;
-              text-transform: uppercase;
-              padding: 5px 12px;
-              border-radius: 50px;
-              display: inline-block;
-            }
-            .b-policy {
-              background: #f3e6ff;
-              color: #8000ff;
-            }
-            .b-analisis {
-              background: #fff5f5;
-              color: #b22231;
-            }
-            .b-kajian {
-              background: #e6f3ff;
-              color: #0066cc;
-            }
-            .doc-year {
-              font-size: 13px;
-              font-weight: 700;
-              color: #8a9e94;
-            }
-            .doc-card h3 {
-              font-size: 18px;
-              font-weight: 800;
-              color: #0e241b;
-              margin: 0 0 12px;
-              line-height: 1.4;
-            }
-            .doc-card p {
-              font-size: 14.5px;
-              color: #536b5f;
-              line-height: 1.65;
-              margin: 0 0 24px;
-              flex-grow: 1;
-            }
-            .doc-actions {
-              display: flex;
-              gap: 12px;
-              margin-top: auto;
-            }
-            .btn-dl {
-              font-size: 13px;
-              font-weight: 700;
-              color: #fff;
-              background: #117710;
-              border-radius: 6px;
-              padding: 10px 16px;
-              text-decoration: none;
-              display: inline-flex;
-              align-items: center;
-              gap: 6px;
-              transition: background 0.2s;
-            }
-            .btn-dl:hover {
-              background: #0c500b;
-            }
-            .btn-rd {
-              font-size: 13px;
-              font-weight: 700;
-              color: #117710;
-              background: #e8f5e8;
-              border-radius: 6px;
-              padding: 10px 16px;
-              text-decoration: none;
-              display: inline-flex;
-              align-items: center;
-              gap: 6px;
-              transition: background 0.2s;
-            }
-            .btn-rd:hover {
-              background: #d2f0d1;
-            }
-
-            .roles-grid {
-              display: grid;
-              grid-template-columns: repeat(4, 1fr);
-              gap: 20px;
-              max-width: 1100px;
-              margin: 0 auto;
-              margin-top: 44px;
-            }
-            .role-card {
-              background: rgba(255, 255, 255, 0.08);
-              border: 1px solid rgba(255, 255, 255, 0.15);
-              border-radius: 16px;
-              padding: 32px 24px;
-              text-align: center;
-              transition: all 0.3s;
-            }
-            .role-card:hover {
-              background: rgba(255, 255, 255, 0.12);
-              transform: translateY(-4px);
-            }
-            .role-icon {
-              width: 56px;
-              height: 56px;
-              background: rgba(255, 255, 255, 0.1);
-              border-radius: 14px;
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              margin-bottom: 20px;
-            }
-            .role-icon svg {
-              stroke: #a3e0a2;
-              width: 28px;
-              height: 28px;
-            }
-            .role-card h4 {
-              font-size: 16px;
-              font-weight: 800;
-              color: #fff;
-              margin: 0 0 12px;
-            }
-            .role-card p {
-              font-size: 13.5px;
-              color: #d2f0d1;
-              line-height: 1.6;
-              margin: 0;
-            }
 
             @media (max-width: 1024px) {
-              .landasan-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
+              .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
               }
-              .stats-grid {
+              .stat-box::after {
+                display: none;
+              }
+              .intro-grid {
+                grid-template-columns: 1fr;
+              }
+              .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
               }
-              .roles-grid {
+              .video-grid {
                 grid-template-columns: repeat(2, 1fr);
               }
             }
             @media (max-width: 768px) {
-              .docs-grid {
+              .stats-row {
                 grid-template-columns: 1fr;
               }
-              .stats-grid {
+              .gallery-grid {
                 grid-template-columns: 1fr;
               }
-              .roles-grid {
+              .video-grid {
                 grid-template-columns: 1fr;
               }
             }
@@ -3364,7 +3449,7 @@
           <div class="fusion-row" style="max-width: 100%">
             <section id="content" class="full-width">
               <div
-                id="post-analisis"
+                id="post-fotovideo"
                 class="page type-page status-publish hentry"
               >
                 <div class="post-content">
@@ -3373,36 +3458,82 @@
                     <div class="hero-inner">
                       <div class="hero-crumb">
                         <a href="/">Beranda</a> &nbsp;/&nbsp;
-                        <a href="/pustaka/">Literasi &amp; Pengetahuan</a>
-                        &nbsp;/&nbsp; <span>Analisis &amp; Kebijakan</span>
+                        <a href="/penelitian-laporan/"
+                          >Literasi &amp; Pengetahuan</a
+                        >
+                        &nbsp;/&nbsp; <span>Foto Story &amp; Video</span>
                       </div>
                       <h1 class="hero-h1">
-                        Penguatan Tata Kelola Lanskap<br /><span class="hl"
-                          >Berbasis Bukti</span
+                        Momen Perubahan<br /><span class="hl"
+                          >dalam Bingkai Visual</span
                         >
                       </h1>
                       <p class="hero-sub">
-                        Sebagai Landscape Governance Backbone Organization, YNKI
-                        menghasilkan analisis kebijakan, policy brief, dan
-                        kajian strategis yang mendukung pengambilan keputusan
-                        berbasis bukti dalam tata kelola lanskap.
+                        Setiap gambar dan video adalah cerita tentang perubahan
+                        nyata di lapangan. Temukan dokumentasi visual perjalanan
+                        YNKI dalam memperkuat tata kelola lanskap yang inklusif
+                        dan kolaboratif.
                       </p>
                       <div class="hero-btns">
-                        <a href="#koleksi-dokumen" class="btn-cta-main"
-                          >Lihat Koleksi Analisis</a
+                        <a href="#galeri-foto" class="btn-cta-main"
+                          >Jelajahi Galeri Foto</a
                         >
-                        <a href="#peran-ynki" class="btn-cta-second"
-                          >Peran Advokasi YNKI</a
+                        <a href="#galeri-video" class="btn-cta-second"
+                          >Tonton Video Dokumenter</a
                         >
                       </div>
                     </div>
                   </section>
 
-                  <!-- LANDASAN KERJA -->
-                  <section class="landasan-section ynki-section">
+                  <!-- STATS STRIP WITH BUBBLE -->
+                  <section id="story-stats" class="stats-strip ynki-section">
                     <div class="ynki-container">
-                      <div class="landasan-grid">
-                        <div class="landasan-text">
+                      <div class="stats-row">
+                        <div class="stat-box">
+                          <div class="stat-num">
+                            500<span class="plus">+</span>
+                          </div>
+                          <div class="stat-label">Foto Dokumentasi</div>
+                          <p class="stat-desc">
+                            Dokumentasi kegiatan dan lanskap program
+                          </p>
+                        </div>
+                        <div class="stat-box">
+                          <div class="stat-num">
+                            30<span class="plus">+</span>
+                          </div>
+                          <div class="stat-label">Video Dokumenter</div>
+                          <p class="stat-desc">
+                            Cerita perubahan dan liputan lapangan
+                          </p>
+                        </div>
+                        <div class="stat-box">
+                          <div class="stat-num">
+                            200<span class="plus">+</span>
+                          </div>
+                          <div class="stat-label">Publikasi Visual</div>
+                          <p class="stat-desc">
+                            Konten edukasi dan kampanye sosial
+                          </p>
+                        </div>
+                        <div class="stat-box">
+                          <div class="stat-num">
+                            1.000<span class="plus">+</span>
+                          </div>
+                          <div class="stat-label">Warga Terlibat</div>
+                          <p class="stat-desc">
+                            Potret kebersamaan masyarakat lokal
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- INTRO NARRATIVE -->
+                  <section class="intro-sec ynki-section">
+                    <div class="ynki-container">
+                      <div class="intro-grid">
+                        <div class="intro-text">
                           <div
                             class="divider-line"
                             style="
@@ -3410,88 +3541,53 @@
                               justify-content: flex-start;
                             "
                           >
-                            <span class="section-badge">LANDASAN KERJA</span
+                            <span class="section-badge"
+                              >KOLEKSI VISUAL YNKI</span
                             ><span class="line" style="flex: 0.5"></span>
                           </div>
-                          <h3>Analisis Kebijakan dan Tata Kelola Lanskap</h3>
+                          <h3>
+                            Mendokumentasikan Setiap Langkah Perubahan Lanskap
+                          </h3>
                           <p>
-                            Transformasi lanskap yang berkelanjutan membutuhkan
-                            kebijakan yang didasarkan pada bukti, data, dan
-                            pembelajaran dari lapangan. YNKI meyakini bahwa
-                            analisis kebijakan yang kredibel dan rekomendasi
-                            berbasis pengetahuan dapat mendorong perubahan
-                            sistemik dalam tata kelola lanskap—dari tingkat desa
-                            hingga kebijakan nasional dan internasional.
+                            YNKI secara aktif mendokumentasikan setiap langkah
+                            perjalanan dalam mendorong perubahan di tingkat
+                            lanskap, kelembagaan, dan masyarakat di Kalimantan
+                            Barat. Melalui media foto dan video, kami menangkap
+                            esensi kerja keras mitra dan komunitas lokal di
+                            lapangan.
                           </p>
                           <p>
-                            Melalui fungsi Governance Enabling, YNKI secara
-                            konsisten menghubungkan pengetahuan dari lapangan
-                            dengan proses kebijakan. Pendekatan ini memastikan
-                            bahwa suara masyarakat dan data ekologis menjadi
-                            fondasi setiap rekomendasi yang dihasilkan.
+                            Kisah visual ini menjadi jembatan transparansi
+                            sekaligus sumber inspirasi bagi publik untuk terus
+                            mendukung pelestarian ekosistem dan penguatan mata
+                            pencaharian ramah lingkungan.
                           </p>
                         </div>
-                        <div class="landasan-quote">
-                          "Kebijakan yang kuat lahir dari data yang jujur dan
-                          pembelajaran yang terus-menerus dari lapangan."<br /><br />
-                          <span
-                            style="
-                              font-size: 13px;
-                              font-style: normal;
-                              color: #ff8000;
-                              text-transform: uppercase;
-                              letter-spacing: 1px;
-                            "
-                            >— Prinsip Kerja YNKI</span
-                          >
-                        </div>
-                      </div>
 
-                      <!-- STATS -->
-                      <div class="stats-grid">
-                        <div class="stat-box">
-                          <div class="stat-num">
-                            24<span style="color: #ff8000">+</span>
+                        <div class="intro-card">
+                          <span class="section-badge green"
+                            >CERITA DARI TAPAK</span
+                          >
+                          <h4>Kekuatan Narasi Visual Komunitas</h4>
+                          <p>
+                            Bagi YNKI, dokumentasi bukan sekadar arsip,
+                            melainkan medium pemberdayaan untuk menyuarakan
+                            aspirasi masyarakat yang menjaga bentang alam
+                            Kalimantan Barat.
+                          </p>
+                          <div class="card-highlight">
+                            "Sebuah foto dapat menceritakan seribu perjuangan,
+                            dan sebuah video mampu menghadirkan denyut kehidupan
+                            lanskap langsung ke hadapan dunia."
                           </div>
-                          <h4>Policy Brief &amp; Analisis</h4>
-                          <p>
-                            Total dokumen analisis kebijakan yang telah
-                            diterbitkan YNKI
-                          </p>
-                        </div>
-                        <div class="stat-box">
-                          <div class="stat-num">12</div>
-                          <h4>Kajian Kelembagaan</h4>
-                          <p>
-                            Kajian mendalam tentang struktur tata kelola &amp;
-                            penguatan kelembagaan
-                          </p>
-                        </div>
-                        <div class="stat-box">
-                          <div class="stat-num">
-                            38<span style="color: #ff8000">+</span>
-                          </div>
-                          <h4>Rekomendasi Kebijakan</h4>
-                          <p>
-                            Rekomendasi spesifik yang disampaikan kepada
-                            pemangku kebijakan
-                          </p>
-                        </div>
-                        <div class="stat-box">
-                          <div class="stat-num">8</div>
-                          <h4>Analisis Regulasi</h4>
-                          <p>
-                            Analisis regulasi nasional &amp; internasional
-                            (EUDR, ESG, dll.)
-                          </p>
                         </div>
                       </div>
                     </div>
                   </section>
 
-                  <!-- KOLEKSI DOKUMEN -->
+                  <!-- GALERI FOTO -->
                   <section
-                    id="koleksi-dokumen"
+                    id="galeri-foto"
                     class="ynki-section"
                     style="background: #fff; padding: 90px 24px"
                   >
@@ -3500,7 +3596,7 @@
                         <div class="divider-line">
                           <span class="line"></span
                           ><span class="section-badge green"
-                            >KUMPULAN DOKUMEN</span
+                            >GALERI FOTO YNKI</span
                           ><span class="line"></span>
                         </div>
                         <h2
@@ -3511,41 +3607,83 @@
                             margin: 0 0 12px;
                           "
                         >
-                          Kumpulan Analisis &amp; Policy Brief
+                          Foto-Foto dari Lapangan
                         </h2>
                         <p
                           style="
-                            font-size: 15.5px;
+                            font-size: 15px;
                             color: #536b5f;
                             max-width: 760px;
                             margin: 0 auto;
                           "
                         >
-                          Berikut adalah kumpulan analisis kebijakan, policy
-                          brief, dan kajian strategis yang telah dihasilkan oleh
-                          YNKI. Setiap publikasi tersedia untuk diunduh dalam
-                          format PDF secara gratis.
+                          Kumpulan foto dokumentasi dari berbagai program.
+                          Setiap foto adalah cerita tentang perubahan dan
+                          harapan yang nyata.
                         </p>
                       </div>
 
-                      <div class="docs-grid">
-
+                      <!-- Filter -->
+                      <div class="filter-row">
+                        <span class="filter-tag active">Semua Visual</span>
+                        <span class="filter-tag">Restorasi Gambut</span>
+                        <span class="filter-tag">Youth Camp &amp; Pemuda</span>
+                        <span class="filter-tag">Pemberdayaan Masyarakat</span>
+                        <span class="filter-tag"
+                          >Kemitraan &amp; Lokakarya</span
+                        >
                       </div>
 
-                      <!-- Pagination Clearfix -->
-                      <div class="pagination clearfix" id="kebijakan-pagination"></div>
+                      <div class="gallery-grid">
+                        @forelse($photos as $s)
+                        <div class="g-card">
+                          <div class="g-img" style="position:relative;overflow:hidden;height:220px;background:#1a382b;">
+                            @if($s->image_path)
+                            <img src="/storage/{{ ltrim($s->image_path, '/') }}" alt="{{ $s->title }}" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\' ry=\'2\'></rect><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'></circle><polyline points=\'21 15 16 10 5 21\'></polyline></svg>';">
+                            @else
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                            @endif
+                          </div>
+                          <div class="g-body">
+                            <div class="g-loc">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                              </svg>
+                              {{ $s->location ?? 'Kalimantan Barat' }} · {{ $s->category }}
+                            </div>
+                            <h3>{{ $s->title }}</h3>
+                            <p>{{ $s->caption }}</p>
+                            @if($s->photographer_credits)
+                            <div style="font-size:12px;color:#777;margin-bottom:10px;">Foto: {{ $s->photographer_credits }}</div>
+                            @endif
+                            @if($s->image_path)
+                            <a href="/storage/{{ ltrim($s->image_path, '/') }}" target="_blank" class="btn-gallery">
+                              Lihat Foto Penuh
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
+                            @endif
+                          </div>
+                        </div>
+                        @empty
+                        <div style="grid-column:1 / -1; text-align:center; padding:40px; color:#666;">
+                          <p>Belum ada dokumentasi foto yang dipublikasikan.</p>
+                        </div>
+                        @endforelse
+                      </div>
                     </div>
                   </section>
 
-                  <!-- PERAN YNKI -->
-                  <section
-                    id="peran-ynki"
-                    class="ynki-section"
-                    style="background: #117710; padding: 90px 24px"
-                  >
+                  <!-- GALERI VIDEO -->
+                  <section id="galeri-video" class="video-sec ynki-section">
                     <div class="ynki-container">
                       <div style="text-align: center">
-                        <span class="section-badge">ADVOKASI KEBIJAKAN</span>
+                        <span class="section-badge"
+                          >VIDEO DOKUMENTASI YNKI</span
+                        >
                         <h2
                           style="
                             font-size: clamp(22px, 3vw, 34px);
@@ -3554,95 +3692,49 @@
                             margin: 12px 0;
                           "
                         >
-                          Peran YNKI dalam Advokasi Kebijakan
+                          Saksikan Perubahan Nyata di Lapangan
                         </h2>
                         <p
                           style="
-                            font-size: 15.5px;
+                            font-size: 15px;
                             color: #d2f0d1;
-                            max-width: 820px;
+                            max-width: 760px;
                             margin: 0 auto;
                           "
                         >
-                          YNKI berperan aktif dalam mendorong kebijakan tata
-                          kelola lanskap yang inklusif dan berbasis bukti.
-                          Sebagai organisasi backbone, YNKI menjalankan empat
-                          fungsi utama advokasi kebijakan yang saling
-                          melengkapi.
+                          Saksikan momen-momen penting perjalanan YNKI melalui
+                          video dokumentasi kegiatan lapangan dan wawancara
+                          dengan masyarakat.
                         </p>
                       </div>
 
-                      <div class="roles-grid">
-                        <div class="role-card">
-                          <div class="role-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                              <path
-                                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                              />
-                              <polyline points="14 2 14 8 20 8" />
-                              <line x1="16" y1="13" x2="8" y2="13" />
-                              <line x1="16" y1="17" x2="8" y2="17" />
-                              <polyline points="10 9 9 9 8 9" />
-                            </svg>
+                      <div class="video-grid">
+                        @forelse($videos as $v)
+                        <div class="v-card">
+                          <div class="v-thumb" style="position:relative;overflow:hidden;height:200px;background:#133324;display:flex;align-items:center;justify-content:center;">
+                            @if($v->image_path)
+                            <img src="/storage/{{ ltrim($v->image_path, '/') }}" alt="{{ $v->title }}" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+                            @endif
+                            <div class="v-play" style="position:relative;z-index:2;">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                              </svg>
+                            </div>
                           </div>
-                          <h4>Penyusunan Policy Brief</h4>
-                          <p>
-                            Menyusun rekomendasi kebijakan operasional
-                            berdasarkan data lapangan, riset komparatif, dan
-                            pembelajaran dari program YNKI di Kalimantan Barat.
-                          </p>
-                        </div>
-                        <div class="role-card">
-                          <div class="role-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                              <path
-                                d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                              />
-                              <circle cx="9" cy="7" r="4" />
-                              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
+                          <div class="v-body">
+                            <div class="v-dur">🎬 {{ $v->location ?? 'Kalimantan Barat' }} · {{ $v->category }}</div>
+                            <h3>{{ $v->title }}</h3>
+                            <p>{{ $v->caption }}</p>
+                            @if($v->youtube_url)
+                            <a href="{{ $v->youtube_url }}" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;color:#d2f0d1;font-size:13px;font-weight:700;text-decoration:none;">Tonton di YouTube &rarr;</a>
+                            @endif
                           </div>
-                          <h4>Fasilitasi Dialog Kebijakan</h4>
-                          <p>
-                            Memfasilitasi forum multi-pihak mempertemukan
-                            pemerintah, masyarakat adat, sektor swasta, dan
-                            akademisi untuk membangun konsensus berbasis bukti.
-                          </p>
                         </div>
-                        <div class="role-card">
-                          <div class="role-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                              <circle cx="12" cy="12" r="10" />
-                              <path d="M12 16v-4" />
-                              <path d="M12 8h.01" />
-                              <path
-                                d="M15.5 12A3.5 3.5 0 0 0 12 8.5v3.5l2.5 2.5"
-                              />
-                            </svg>
-                          </div>
-                          <h4>Dukungan Teknis Kebijakan</h4>
-                          <p>
-                            Memberikan asistensi teknis kepada pemerintah daerah
-                            dalam penyusunan, perencanaan, dan implementasi
-                            kebijakan tata kelola lanskap inklusif.
-                          </p>
+                        @empty
+                        <div style="grid-column:1 / -1; text-align:center; padding:40px; color:#d2f0d1;">
+                          <p>Belum ada dokumentasi video yang dipublikasikan.</p>
                         </div>
-                        <div class="role-card">
-                          <div class="role-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                              <path
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                              />
-                            </svg>
-                          </div>
-                          <h4>Analisis Regulasi</h4>
-                          <p>
-                            Menganalisis regulasi nasional dan internasional
-                            relevan dengan lanskap (EUDR, ESG) dan memberikan
-                            rekomendasi perbaikan actionable.
-                          </p>
-                        </div>
+                        @endforelse
                       </div>
                     </div>
                   </section>
@@ -3650,20 +3742,19 @@
                   <!-- CTA -->
                   <section class="cta-section ynki-section">
                     <div class="ynki-container">
-                      <h2>Kolaborasi dalam Advokasi Kebijakan YNKI?</h2>
+                      <span class="section-badge">BERGABUNG BERSAMA KAMI</span>
+                      <h2>Bagikan &amp; Dukung Cerita Perubahan Lanskap</h2>
                       <p>
-                        YNKI terbuka untuk kolaborasi dengan pemerintah daerah,
-                        lembaga penelitian, dan CSO. Jika Anda memiliki data
-                        lapangan, ingin melakukan kajian bersama, atau
-                        membutuhkan dukungan penyusunan kebijakan, kami siap
-                        berdiskusi.
+                        Mari bersama menyebarkan inspirasi pemulihan modal alam
+                        dan kesejahteraan masyarakat di lanskap Kalimantan
+                        Barat.
                       </p>
                       <div class="cta-btns">
-                        <a
-                          href="/kontak/"
-                          class="btn-cta-main"
-                          style="background: #fff; color: #117710"
-                          >Mari Berdiskusi &amp; Berkolaborasi</a
+                        <a href="/kontak-kami/" class="btn-cta-main"
+                          >Dukung Aksi Kami</a
+                        >
+                        <a href="/penelitian-laporan/" class="btn-cta-second"
+                          >Lihat Publikasi Riset</a
                         >
                       </div>
                     </div>
@@ -3673,6 +3764,7 @@
             </section>
           </div>
         </main>
+
         <div class="fusion-tb-footer fusion-footer">
           <div class="fusion-footer-widget-area fusion-widget-area">
             <div
@@ -4002,97 +4094,6 @@
         ></a
       >
     </section>
-    <script>
-      // Analisis Kebijakan Pagination Clearfix (4 cards per page)
-      document.addEventListener('DOMContentLoaded', function() {
-        const ITEMS_PER_PAGE = 4;
-        let currentPage = 1;
-        const grid = document.querySelector('.docs-grid');
-        const paginationContainer = document.getElementById('kebijakan-pagination');
-
-        if (!grid || !paginationContainer) return;
-
-        function getCards() {
-          return Array.from(grid.querySelectorAll('.doc-card'));
-        }
-
-        function renderPagination(totalItems) {
-          const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
-
-          if (totalPages <= 1) {
-            paginationContainer.style.display = 'none';
-            paginationContainer.innerHTML = '';
-            return;
-          }
-
-          paginationContainer.style.display = 'flex';
-          let html = '';
-
-          // Prev button
-          if (currentPage > 1) {
-            html += `<a href="#koleksi-dokumen" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Previous</a>`;
-          } else {
-            html += `<span class="pagination-prev disabled">&laquo; Previous</span>`;
-          }
-
-          // Page numbers
-          for (let p = 1; p <= totalPages; p++) {
-            if (p === currentPage) {
-              html += `<span class="current">${p}</span>`;
-            } else {
-              html += `<a href="#koleksi-dokumen" class="inactive" data-page="${p}">${p}</a>`;
-            }
-          }
-
-          // Next button
-          if (currentPage < totalPages) {
-            html += `<a href="#koleksi-dokumen" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
-          } else {
-            html += `<span class="pagination-next disabled">Next &raquo;</span>`;
-          }
-
-          paginationContainer.innerHTML = html;
-
-          paginationContainer.querySelectorAll('a[data-page]').forEach(link => {
-            link.addEventListener('click', function(e) {
-              e.preventDefault();
-              currentPage = parseInt(this.getAttribute('data-page'), 10);
-              updateView(true);
-            });
-          });
-        }
-
-        function updateView(scrollIntoView = false) {
-          const cards = getCards();
-          const totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
-          if (currentPage > totalPages && totalPages > 0) {
-            currentPage = 1;
-          }
-
-          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-          const endIndex = startIndex + ITEMS_PER_PAGE;
-
-          cards.forEach((card, index) => {
-            if (index >= startIndex && index < endIndex) {
-              card.style.display = '';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-
-          renderPagination(cards.length);
-
-          if (scrollIntoView) {
-            const section = document.getElementById('koleksi-dokumen');
-            if (section) {
-              section.scrollIntoView({ behavior: 'smooth' });
-            }
-          }
-        }
-
-        updateView(false);
-      });
-    </script>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script src="/assets/js/ynki-footer.js"></script>
   </body>

@@ -47,24 +47,30 @@ Route::get('/annual-report', [PageContentController::class, 'transparansi'])->na
 Route::get('/news-features', [PageContentController::class, 'newsFeatures'])->name('public.news_features');
 Route::get('/kategori/news-features', [PageContentController::class, 'newsFeatures']);
 Route::get('/kategori/news-features/{slug}', function ($slug) {
-    // Check if static article exists under news-features
-    $file = base_path('news-features/' . $slug . '/index.html');
+    // Check if static article exists under resources/legacy_articles
+    $file = resource_path("legacy_articles/news-features/{$slug}/index.html");
     if (file_exists($file)) {
         return response(file_get_contents($file), 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
     return redirect('/news-features');
+});
+Route::get('/news-features/{slug}', function ($slug) {
+    return redirect('/kategori/news-features/' . $slug);
 });
 Route::get('/penelitian-laporan', [PageContentController::class, 'researchReports'])->name('public.research_reports');
 Route::get('/analisis-kebijakan', [PageContentController::class, 'policyAnalysis'])->name('public.policy_analysis');
 Route::get('/perspektif-budaya', [PageContentController::class, 'culturalPerspective'])->name('public.cultural_perspective');
 Route::get('/kategori/perspektif-budaya', [PageContentController::class, 'culturalPerspective']);
 Route::get('/kategori/perspektif-budaya/{slug}', function ($slug) {
-    // Check if static article exists under perspektif-budaya
-    $file = base_path('perspektif-budaya/' . $slug . '/index.html');
+    // Check if static article exists under resources/legacy_articles
+    $file = resource_path("legacy_articles/perspektif-budaya/{$slug}/index.html");
     if (file_exists($file)) {
         return response(file_get_contents($file), 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
     return redirect('/perspektif-budaya');
+});
+Route::get('/perspektif-budaya/{slug}', function ($slug) {
+    return redirect('/kategori/perspektif-budaya/' . $slug);
 });
 Route::get('/data-spasial-dan-gis', [PageContentController::class, 'spatialGis'])->name('public.spatial_gis');
 Route::get('/data-spasial-gis', [PageContentController::class, 'spatialGis']);

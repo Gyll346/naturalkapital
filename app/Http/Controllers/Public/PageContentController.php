@@ -395,6 +395,57 @@ class PageContentController extends Controller
     return view('public.transparansi', compact('reports'));
   }
 
+  // Helper untuk membaca artikel lama dari resources/legacy_articles
+  private function getLegacyArticles(string $subfolder): array
+  {
+    $dir = resource_path("legacy_articles/{$subfolder}");
+    if (!is_dir($dir)) {
+      return [];
+    }
+
+    $items = [];
+    $folders = glob($dir . '/*', GLOB_ONLYDIR);
+    foreach ($folders as $f) {
+      $slug = basename($f);
+      $htmlFile = $f . '/index.html';
+      if (!file_exists($htmlFile)) {
+        continue;
+      }
+
+      $html = file_get_contents($htmlFile, false, null, 0, 50000);
+      preg_match('/<title>(.*?)<\/title>/is', $html, $t);
+      $title = isset($t[1]) ? trim(explode('-', $t[1])[0]) : ucwords(str_replace('-', ' ', $slug));
+
+      preg_match('/property=["\']og:image["\']\s+content=["\']([^"\']+)["\']/is', $html, $img);
+      if (empty($img[1])) {
+        preg_match('/content=["\']([^"\']+)["\']\s+property=["\']og:image["\']/is', $html, $img);
+      }
+      $featuredImage = $img[1] ?? null;
+
+      preg_match('/property=["\']og:description["\']\s+content=["\']([^"\']+)["\']/is', $html, $desc);
+      if (empty($desc[1])) {
+        preg_match('/content=["\']([^"\']+)["\']\s+property=["\']og:description["\']/is', $html, $desc);
+      }
+      $excerpt = $desc[1] ?? '';
+
+      preg_match('/(?:property=["\']article:published_time["\']\s+content=["\']([^"\']+)["\']|content=["\']([^"\']+)["\']\s+property=["\']article:published_time["\'])/is', $html, $date);
+      $publishedTime = $date[1] ?? ($date[2] ?? null);
+      $year = $publishedTime ? date('Y', strtotime($publishedTime)) : 'Arsip';
+
+      $items[] = (object) [
+        'title' => $title,
+        'slug' => $slug,
+        'featured_image_path' => $featuredImage,
+        'excerpt' => $excerpt,
+        'year' => $year,
+        'url' => "/kategori/{$subfolder}/{$slug}",
+        'is_legacy' => true,
+      ];
+    }
+
+    return $items;
+  }
+
   // 5. News & Features (/news-features/) - Kabar Terkini dari Program YNKI
   public function newsFeatures()
   {
@@ -404,51 +455,9 @@ class PageContentController extends Controller
       ->orderBy('published_at', 'desc')
       ->get();
 
-    $originalHtml = file_get_contents(base_path('news-features/index.html'));
+    $legacyArticles = $this->getLegacyArticles('news-features');
 
-    $cardsHtml = '';
-    foreach ($articles as $art) {
-      $imgThumb = $art->featured_image_path
-        ? '/storage/' . $art->featured_image_path
-        : null;
-
-      $imgHtml = $imgThumb
-        ? '<img src="' . htmlspecialchars($imgThumb) . '" alt="' . htmlspecialchars($art->title) . '" onerror="this.onerror=null;this.parentElement.innerHTML=\'<svg width=\\\'40\\\' height=\\\'40\\\' viewBox=\\\'0 0 24 24\\\' fill=\\\'none\\\' stroke=\\\'currentColor\\\' stroke-width=\\\'1.5\\\' stroke-linecap=\\\'round\\\' stroke-linejoin=\\\'round\\\'><path d=\\\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\\\'/><polyline points=\\\'14 2 14 8 20 8\\\'/><line x1=\\\'16\\\' y1=\\\'13\\\' x2=\\\'8\\\' y2=\\\'13\\\'/><line x1=\\\'16\\\' y1=\\\'17\\\' x2=\\\'8\\\' y2=\\\'17\\\'/><polyline points=\\\'10 9 9 9 8 9\\\'/></svg>\';">'
-        : '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>';
-
-      $cardsHtml .= '
-                        <!-- Admin Dynamic Card -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            ' . $imgHtml . '
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">' . ($art->published_at ? $art->published_at->format('Y') : date('Y')) . '</span>
-                            </div>
-                            <div class="doc-loc">' . htmlspecialchars(strtoupper($art->category->category_name ?? 'YNKI NEWS')) . '</div>
-                            <h3>
-                              <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '">' . htmlspecialchars($art->title) . '</a>
-                            </h3>
-                            <p>' . htmlspecialchars($art->excerpt ?? '') . '</p>
-                            <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>';
-    }
-
-    $pattern = '/<div class="docs-grid">\s*(<!-- 1 -->.*?<\/div>\s*<\/div>)/s';
-    if (preg_match($pattern, $originalHtml)) {
-      $renderedHtml = preg_replace($pattern, '<div class="docs-grid">' . $cardsHtml . '$1', $originalHtml);
-    } else {
-      $renderedHtml = str_replace('<div class="docs-grid">', '<div class="docs-grid">' . $cardsHtml, $originalHtml);
-    }
-
-    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    return view('public.news-features', compact('articles', 'legacyArticles'));
   }
 
   // 6. Penelitian & Laporan (/penelitian-laporan/) - Kumpulan Penelitian & Laporan
@@ -460,39 +469,7 @@ class PageContentController extends Controller
       ->orderBy('published_at', 'desc')
       ->get();
 
-    $originalHtml = file_get_contents(base_path('penelitian-laporan/index.html'));
-
-    $itemsHtml = '';
-    foreach ($articles as $art) {
-      $pdfBtn = $art->attachment_pdf_path
-        ? '<a href="/storage/' . htmlspecialchars($art->attachment_pdf_path) . '" target="_blank" class="btn-download"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh PDF</a>'
-        : '';
-
-      $itemsHtml .= '
-            <div class="pen-item">
-              <div class="pen-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              </div>
-              <div class="pen-content">
-                <div class="pen-meta">
-                  <span class="pen-badge badge-spasial">' . htmlspecialchars($art->category->category_name ?? 'Riset') . '</span>
-                  <span class="pen-year">' . ($art->published_at ? $art->published_at->format('Y') : date('Y')) . '</span>
-                </div>
-                <h3>' . htmlspecialchars($art->title) . '</h3>
-                <p>' . htmlspecialchars($art->excerpt ?? '') . '</p>
-                <div class="pen-actions">
-                  ' . $pdfBtn . '
-                  <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '" class="btn-read" style="margin-left:8px;">Baca Online &rarr;</a>
-                </div>
-              </div>
-            </div>';
-    }
-
-    $pattern = '/<div class="penelitian-list">.*?<\/div>\s*<\/div>\s*<\/section>/s';
-    $replacement = '<div class="penelitian-list">' . $itemsHtml . '</div></div></section>';
-    $renderedHtml = preg_replace($pattern, $replacement, $originalHtml);
-
-    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    return view('public.penelitian-laporan', compact('articles'));
   }
 
   // 7. Analisis & Kebijakan (/analisis-kebijakan/) - Kumpulan Analisis & Policy Brief
@@ -504,37 +481,7 @@ class PageContentController extends Controller
       ->orderBy('published_at', 'desc')
       ->get();
 
-    $originalHtml = file_get_contents(base_path('analisis-kebijakan/index.html'));
-
-    $docsHtml = '';
-    foreach ($articles as $art) {
-      $pdfBtn = $art->attachment_pdf_path
-        ? '<a href="/storage/' . htmlspecialchars($art->attachment_pdf_path) . '" target="_blank" class="btn-dl"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh PDF</a>'
-        : '';
-
-      $docsHtml .= '
-            <div class="doc-card">
-              <div class="doc-header">
-                <span class="doc-badge b-policy">' . htmlspecialchars($art->category->category_name ?? 'Kebijakan') . '</span>
-                <span class="doc-year">' . ($art->published_at ? $art->published_at->format('Y') : date('Y')) . '</span>
-              </div>
-              <h3>' . htmlspecialchars($art->title) . '</h3>
-              <p>' . htmlspecialchars($art->excerpt ?? '') . '</p>
-              <div class="doc-actions">
-                ' . $pdfBtn . '
-                <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '" style="color:#117710;font-weight:700;font-size:13px;text-decoration:none;margin-left:12px;">Baca Ringkasan &rarr;</a>
-              </div>
-            </div>';
-    }
-
-    $pattern = '/<div class="docs-grid">\s*(<!-- 1 -->.*?<\/div>\s*<\/div>)/s';
-    if (preg_match($pattern, $originalHtml)) {
-      $renderedHtml = preg_replace($pattern, '<div class="docs-grid">' . $docsHtml . '$1', $originalHtml);
-    } else {
-      $renderedHtml = str_replace('<div class="docs-grid">', '<div class="docs-grid">' . $docsHtml, $originalHtml);
-    }
-
-    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    return view('public.analisis-kebijakan', compact('articles'));
   }
 
   // 8. Perspektif Budaya (/perspektif-budaya/) - Artikel Perspektif Budaya
@@ -546,50 +493,9 @@ class PageContentController extends Controller
       ->orderBy('published_at', 'desc')
       ->get();
 
-    $originalHtml = file_get_contents(base_path('perspektif-budaya/index.html'));
+    $legacyArticles = $this->getLegacyArticles('perspektif-budaya');
 
-    $cardsHtml = '';
-    foreach ($articles as $art) {
-      $imgThumb = $art->featured_image_path
-        ? '/storage/' . $art->featured_image_path
-        : null;
-
-      $imgHtml = $imgThumb
-        ? '<img src="' . htmlspecialchars($imgThumb) . '" alt="' . htmlspecialchars($art->title) . '" onerror="this.onerror=null;this.parentElement.innerHTML=\'<svg width=\\\'40\\\' height=\\\'40\\\' viewBox=\\\'0 0 24 24\\\' fill=\\\'none\\\' stroke=\\\'currentColor\\\' stroke-width=\\\'1.5\\\' stroke-linecap=\\\'round\\\' stroke-linejoin=\\\'round\\\'><path d=\\\'M4 19.5A2.5 2.5 0 0 1 6.5 17H20\\\'></path><path d=\\\'M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z\\\'></path></svg>\';">'
-        : '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';
-
-      $cardsHtml .= '
-                        <!-- Admin Dynamic Card -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            ' . $imgHtml . '
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">' . ($art->published_at ? $art->published_at->format('Y') : date('Y')) . '</span>
-                            </div>
-                            <h3>
-                              <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '">' . htmlspecialchars($art->title) . '</a>
-                            </h3>
-                            <p>' . htmlspecialchars($art->excerpt ?? '') . '</p>
-                            <a href="/artikel-cms/' . htmlspecialchars($art->slug) . '" class="btn-dl">Baca Esai Lengkap
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>';
-    }
-
-    $pattern = '/<div class="docs-grid">\s*(<!-- 1 -->.*?<\/div>\s*<\/div>)/s';
-    if (preg_match($pattern, $originalHtml)) {
-      $renderedHtml = preg_replace($pattern, '<div class="docs-grid">' . $cardsHtml . '$1', $originalHtml);
-    } else {
-      $renderedHtml = str_replace('<div class="docs-grid">', '<div class="docs-grid">' . $cardsHtml, $originalHtml);
-    }
-
-    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    return view('public.perspektif-budaya', compact('articles', 'legacyArticles'));
   }
 
   // 9. Data Spasial & GIS (/data-spasial-dan-gis/) - Peta & Analisis GIS
@@ -670,97 +576,9 @@ class PageContentController extends Controller
       ->orderBy('sort_order', 'asc')
       ->get();
 
-    $path = file_exists(base_path('story-foto-video/index.html'))
-      ? base_path('story-foto-video/index.html')
-      : base_path('stori-foto-video/index.html');
-
-    $originalHtml = file_get_contents($path);
-
-    // 1. Render Foto-Foto dari Lapangan
-    $photosHtml = '';
-    foreach ($photos as $s) {
-      $imgSrc = $s->image_path
-        ? '/storage/' . $s->image_path
-        : '/assets/images/stori-foto-video/image5.png';
-
-      $photosHtml .= '
-            <div class="photo-story-card">
-              <div class="card-img-wrap">
-                <img src="' . htmlspecialchars($imgSrc) . '" alt="' . htmlspecialchars($s->title) . '" loading="lazy" onerror="this.src=\'/assets/images/stori-foto-video/image5.png\'">
-              </div>
-              <div style="padding:22px 20px;flex:1;display:flex;flex-direction:column;justify-content:space-between;">
-                <div>
-                  <div class="tag-location">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    ' . htmlspecialchars($s->location ?? 'Kalimantan Barat') . ' · ' . htmlspecialchars($s->category) . '
-                  </div>
-                  <h3 style="font-size:17.5px;font-weight:700;color:#0e241b;margin:0 0 10px;line-height:1.38;">
-                    ' . htmlspecialchars($s->title) . '
-                  </h3>
-                  <p style="font-size:14px;line-height:1.68;color:#435c50;margin:0;">
-                    ' . htmlspecialchars($s->caption ?? '') . '
-                  </p>
-                </div>
-                <div style="margin-top:16px;padding-top:14px;border-top:1px solid #eef4f0;display:flex;justify-content:space-between;align-items:center;">
-                  <small style="color:#888;font-size:12px;">' . htmlspecialchars($s->photographer_credits ?? 'YNKI') . '</small>
-                  <a href="' . htmlspecialchars($imgSrc) . '" target="_blank" class="btn-hero-primary" style="font-size:12px;padding:8px 16px;">
-                    Lihat Foto Resolusi Penuh &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>';
-    }
-
-    // 2. Render Saksikan Perubahan Nyata di Lapangan (Video)
-    $videosHtml = '';
-    foreach ($videos as $v) {
-      $embedUrl = $v->youtube_url;
-      if (str_contains($embedUrl, 'watch?v=')) {
-        $embedUrl = str_replace('watch?v=', 'embed/', $embedUrl);
-      }
-
-      $videosHtml .= '
-            <div class="video-card">
-              <div class="video-thumb-wrap" style="position:relative;height:200px;background:#000;">
-                <iframe src="' . htmlspecialchars($embedUrl) . '" style="width:100%;height:100%;border:none;" allowfullscreen></iframe>
-              </div>
-              <div style="padding:22px 20px;flex:1;display:flex;flex-direction:column;justify-content:space-between;">
-                <div>
-                  <div style="font-size:12.5px;color:#117710;font-weight:700;margin-bottom:6px;">DOKUMENTER LAPANGAN</div>
-                  <h3 style="font-size:17px;font-weight:700;color:#0e241b;margin:0 0 8px;line-height:1.38;">
-                    ' . htmlspecialchars($v->title) . '
-                  </h3>
-                  <p style="font-size:13.5px;line-height:1.65;color:#435c50;margin:0;">
-                    ' . htmlspecialchars($v->caption ?? '') . '
-                  </p>
-                </div>
-                <div style="margin-top:16px;padding-top:14px;border-top:1px solid #eef4f0;">
-                  <a href="' . htmlspecialchars($v->youtube_url) . '" target="_blank" rel="noopener noreferrer" class="read-more-btn" style="color:#117710;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
-                    Tonton di YouTube &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>';
-    }
-
-    // Replace photo section
-    $patternPhoto = '/<!-- 3 Photo Story Cards Grid -->\s*<div style="display:grid;grid-template-columns:repeat\(auto-fit, minmax\(320px, 1fr\)\);gap:26px;">.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/s';
-    $replacementPhoto = '<!-- 3 Photo Story Cards Grid -->
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:26px;">' . $photosHtml . '</div></div></div></div>';
-
-    $renderedHtml = preg_replace($patternPhoto, $replacementPhoto, $originalHtml);
-
-    // Replace video section
-    $patternVideo = '/<!-- 3 Video Cards Grid -->\s*<div style="display:grid;grid-template-columns:repeat\(auto-fit, minmax\(320px, 1fr\)\);gap:26px;">.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/s';
-    $replacementVideo = '<!-- 3 Video Cards Grid -->
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:26px;">' . $videosHtml . '</div></div></div></div>';
-
-    if ($renderedHtml) {
-      $renderedHtml = preg_replace($patternVideo, $replacementVideo, $renderedHtml);
-    }
-
-    return response($renderedHtml ?: $originalHtml, 200)->header('Content-Type', 'text/html; charset=UTF-8');
+    return view('public.story-foto-video', compact('photos', 'videos'));
   }
+
 
   // 11. Ikut Terlibat / Ikut Serta (/ikut-terlibat/, /ikut-serta/)
   public function ikutTerlibat()

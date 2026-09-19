@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -14,7 +14,7 @@
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <title>
-      Perspektif Budaya: Merenungkan Hubungan Manusia, Alam, dan Kebudayaan —
+      Analisis &amp; Kebijakan: Penguatan Tata Kelola Lanskap Berbasis Bukti —
       Yayasan Natural Kapital Indonesia (YNKI)
     </title>
     <meta
@@ -2955,15 +2955,14 @@
               height: 1px;
               background: #d2e8d1;
             }
-
             .hero-section {
               position: relative;
               min-height: 82vh;
               display: flex;
               align-items: center;
-              background-image:
-                linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url("/wp-content/uploads/2026/05/hero-michael-eko-for-ynki-landscape-hutan-1536x1152.webp");
+              background-image: 
+              linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url('/wp-content/uploads/2026/05/Desa-Gema-2_Zulkifli-HZ-1536x864.webp');
               background-size: cover;
               background-position: center;
               padding: 110px 24px 90px;
@@ -2996,9 +2995,6 @@
             .hero-crumb a {
               color: #d2f0d1;
               text-decoration: none;
-            }
-            .hero-crumb a:hover {
-              color: #ff8000;
             }
             .hero-h1 {
               font-size: clamp(28px, 4.5vw, 48px);
@@ -3034,151 +3030,104 @@
               gap: 14px;
               flex-wrap: wrap;
             }
-
-            .stats-strip,
-            #budaya-stats {
+            .cta-section {
               background: #117710;
-              padding: 64px 24px;
-              margin-top: 48px;
-              position: relative;
-              overflow: hidden;
-            }
-            .stats-strip::before,
-            #budaya-stats::before {
-              content: "";
-              position: absolute;
-              top: -50%;
-              right: -10%;
-              width: 500px;
-              height: 500px;
-              background: rgba(255, 255, 255, 0.04);
-              border-radius: 50%;
-              pointer-events: none;
-              z-index: 0;
-            }
-            .stats-strip > *,
-            #budaya-stats > * {
-              position: relative;
-              z-index: 1;
-            }
-            .stats-row {
-              display: grid;
-              grid-template-columns: repeat(4, 1fr);
-              gap: 0;
-              max-width: 1100px;
-              margin: 0 auto;
-            }
-            .stat-box {
+              padding: 90px 24px;
               text-align: center;
-              padding: 10px 24px;
-              position: relative;
             }
-            .stat-box:not(:last-child)::after {
-              content: "";
-              position: absolute;
-              right: 0;
-              top: 10%;
-              bottom: 10%;
-              width: 1px;
-              background: rgba(255, 255, 255, 0.15);
-            }
-            .stat-num {
-              font-size: clamp(32px, 4vw, 50px);
-              font-weight: 900;
+            .cta-section h2 {
+              font-size: clamp(24px, 3.5vw, 36px);
+              font-weight: 800;
               color: #fff;
-              line-height: 1;
-              margin-bottom: 8px;
+              margin: 0 0 16px;
             }
-            .stat-num .plus {
-              color: #ff8000;
-            }
-            .stat-label {
-              font-size: 14px;
-              font-weight: 700;
-              color: #a3e0a2;
-              margin-bottom: 6px;
-            }
-            .stat-desc {
-              font-size: 12px;
+            .cta-section p {
+              font-size: 15.5px;
               color: #d2f0d1;
-              margin: 0;
-              line-height: 1.5;
+              max-width: 700px;
+              margin: 0 auto 32px;
+              line-height: 1.7;
             }
-
-            .intro-sec {
+          </style>
+          <style>
+            .landasan-section {
               background: #f5f8f5;
               padding: 90px 24px;
             }
-            .intro-grid {
+            .landasan-grid {
               display: grid;
-              grid-template-columns: 1.1fr 1fr;
+              grid-template-columns: 1fr 1fr;
               gap: 48px;
               max-width: 1100px;
               margin: 0 auto;
               align-items: center;
             }
-            .intro-text h3 {
-              font-size: 26px;
+            .landasan-text h3 {
+              font-size: 28px;
               font-weight: 800;
               color: #0e241b;
               margin: 0 0 16px;
               line-height: 1.3;
             }
-            .intro-text p {
-              font-size: 15px;
+            .landasan-text p {
+              font-size: 15.5px;
               color: #536b5f;
               line-height: 1.8;
               margin: 0 0 16px;
             }
-            .intro-list {
-              list-style: none;
-              padding: 0;
-              margin: 24px 0 0;
-            }
-            .intro-list li {
-              display: flex;
-              align-items: flex-start;
-              gap: 12px;
-              margin-bottom: 16px;
-              font-size: 14px;
-              color: #3d5648;
+            .landasan-quote {
+              background: #fff;
+              border-left: 4px solid #117710;
+              padding: 24px;
+              border-radius: 0 12px 12px 0;
+              font-size: 16px;
+              font-weight: 600;
+              color: #0e241b;
               line-height: 1.6;
-            }
-            .intro-list li svg {
-              flex-shrink: 0;
-              width: 20px;
-              height: 20px;
-              color: #117710;
-              margin-top: 2px;
+              font-style: italic;
+              box-shadow: 0 10px 30px rgba(17, 119, 16, 0.08);
             }
 
-            .intro-card {
+            .stats-grid {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 20px;
+              max-width: 1100px;
+              margin: 0 auto;
+              margin-top: 60px;
+            }
+            .stat-box {
               background: #fff;
               border: 1.5px solid #d2e8d1;
-              border-radius: 18px;
-              padding: 32px 28px;
-              box-shadow: 0 10px 30px rgba(17, 119, 16, 0.06);
+              border-radius: 16px;
+              padding: 28px 24px;
+              text-align: center;
+              transition: transform 0.3s;
             }
-            .intro-card h4 {
-              font-size: 18px;
+            .stat-box:hover {
+              transform: translateY(-4px);
+              border-color: #117710;
+              box-shadow: 0 14px 30px rgba(17, 119, 16, 0.08);
+            }
+            .stat-num {
+              font-size: 42px;
+              font-weight: 900;
+              color: #117710;
+              line-height: 1;
+              margin-bottom: 12px;
+            }
+            .stat-box h4 {
+              font-size: 15px;
               font-weight: 800;
               color: #0e241b;
-              margin: 0 0 12px;
+              margin: 0 0 8px;
+              line-height: 1.3;
             }
-            .intro-card p {
-              font-size: 14px;
+            .stat-box p {
+              font-size: 13px;
               color: #536b5f;
-              line-height: 1.7;
-              margin: 0 0 18px;
-            }
-            .intro-card .card-highlight {
-              background: #e8f5e8;
-              border-left: 4px solid #117710;
-              padding: 12px 16px;
-              border-radius: 0 8px 8px 0;
-              font-size: 13.5px;
-              color: #117710;
-              font-weight: 600;
+              margin: 0;
+              line-height: 1.5;
             }
 
             /* ======================== PAGINATION CLEARFIX ======================== */
@@ -3236,256 +3185,178 @@
 
             .docs-grid {
               display: grid;
-              grid-template-columns: repeat(3, 1fr);
+              grid-template-columns: repeat(2, 1fr);
               gap: 24px;
               max-width: 1100px;
               margin: 0 auto;
+              margin-top: 44px;
             }
             .doc-card {
               background: #fff;
-              border: 1.5px solid #d2e8d1;
+              border: 1px solid #d2e8d1;
               border-radius: 16px;
-              overflow: hidden;
+              padding: 28px;
               display: flex;
               flex-direction: column;
               transition: all 0.3s;
             }
             .doc-card:hover {
-              transform: translateY(-4px);
               box-shadow: 0 14px 36px rgba(17, 119, 16, 0.1);
+              transform: translateY(-4px);
               border-color: #117710;
             }
-            .doc-img {
-              width: 100%;
-              height: 170px;
-              background: #e8f5e8;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              color: #117710;
-              font-size: 40px;
-              border-bottom: 1px solid #d2e8d1;
-              overflow: hidden;
-            }
-            .doc-img img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              display: block;
-            }
-            .doc-body {
-              padding: 24px;
-              flex-grow: 1;
-              display: flex;
-              flex-direction: column;
-            }
-            .doc-meta {
+            .doc-header {
               display: flex;
               justify-content: space-between;
-              align-items: center;
-              margin-bottom: 12px;
+              align-items: flex-start;
+              margin-bottom: 16px;
             }
             .doc-badge {
-              font-size: 10.5px;
+              font-size: 10px;
               font-weight: 800;
               letter-spacing: 1.2px;
               text-transform: uppercase;
-              padding: 4px 12px;
+              padding: 5px 12px;
               border-radius: 50px;
+              display: inline-block;
             }
-            .badge-ekologi {
-              background: #e8f5e8;
-              color: #117710;
+            .b-policy {
+              background: #f3e6ff;
+              color: #8000ff;
             }
-            .badge-sosial {
-              background: #e6f3ff;
-              color: #0066cc;
-            }
-            .badge-filsafat {
-              background: #fff3e6;
-              color: #ff8000;
-            }
-            .badge-kritis {
+            .b-analisis {
               background: #fff5f5;
               color: #b22231;
             }
+            .b-kajian {
+              background: #e6f3ff;
+              color: #0066cc;
+            }
             .doc-year {
-              font-size: 12px;
+              font-size: 13px;
               font-weight: 700;
               color: #8a9e94;
             }
-            .doc-loc {
-              font-size: 11.5px;
-              font-weight: 800;
-              color: #ff8000;
-              text-transform: uppercase;
-              letter-spacing: 1px;
-              margin-bottom: 8px;
-            }
-            .doc-body h3 {
-              font-size: 17px;
+            .doc-card h3 {
+              font-size: 18px;
               font-weight: 800;
               color: #0e241b;
               margin: 0 0 12px;
               line-height: 1.4;
             }
-            .doc-body h3 a {
-              color: #0e241b;
-              text-decoration: none;
-              transition: color 0.2s;
-            }
-            .doc-body h3 a:hover {
-              color: #117710;
-            }
-            .doc-body p {
-              font-size: 13.5px;
+            .doc-card p {
+              font-size: 14.5px;
               color: #536b5f;
               line-height: 1.65;
-              margin: 0 0 20px;
+              margin: 0 0 24px;
               flex-grow: 1;
+            }
+            .doc-actions {
+              display: flex;
+              gap: 12px;
+              margin-top: auto;
             }
             .btn-dl {
               font-size: 13px;
               font-weight: 700;
-              color: #117710;
+              color: #fff;
+              background: #117710;
+              border-radius: 6px;
+              padding: 10px 16px;
               text-decoration: none;
               display: inline-flex;
               align-items: center;
               gap: 6px;
+              transition: background 0.2s;
             }
             .btn-dl:hover {
-              opacity: 0.7;
+              background: #0c500b;
+            }
+            .btn-rd {
+              font-size: 13px;
+              font-weight: 700;
+              color: #117710;
+              background: #e8f5e8;
+              border-radius: 6px;
+              padding: 10px 16px;
+              text-decoration: none;
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              transition: background 0.2s;
+            }
+            .btn-rd:hover {
+              background: #d2f0d1;
             }
 
-            .unggulan-sec {
-              background: #117710;
-              padding: 90px 24px;
-              position: relative;
-              overflow: hidden;
-            }
-            .unggulan-sec::before {
-              content: "";
-              position: absolute;
-              top: -50%;
-              right: -10%;
-              width: 500px;
-              height: 500px;
-              background: rgba(255, 255, 255, 0.04);
-              border-radius: 50%;
-              pointer-events: none;
-              z-index: 0;
-            }
-            .unggulan-sec > * {
-              position: relative;
-              z-index: 1;
-            }
-            .unggulan-grid {
+            .roles-grid {
               display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 24px;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 20px;
               max-width: 1100px;
-              margin: 40px auto 0;
+              margin: 0 auto;
+              margin-top: 44px;
             }
-            .ung-card {
+            .role-card {
               background: rgba(255, 255, 255, 0.08);
               border: 1px solid rgba(255, 255, 255, 0.15);
               border-radius: 16px;
-              padding: 32px 28px;
+              padding: 32px 24px;
+              text-align: center;
               transition: all 0.3s;
-              display: flex;
-              flex-direction: column;
             }
-            .ung-card:hover {
+            .role-card:hover {
               background: rgba(255, 255, 255, 0.12);
               transform: translateY(-4px);
             }
-            .ung-meta {
-              font-size: 11.5px;
-              font-weight: 700;
-              color: #a3e0a2;
-              text-transform: uppercase;
-              letter-spacing: 1.5px;
-              margin-bottom: 12px;
+            .role-icon {
+              width: 56px;
+              height: 56px;
+              background: rgba(255, 255, 255, 0.1);
+              border-radius: 14px;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 20px;
             }
-            .ung-card h3 {
-              font-size: 20px;
+            .role-icon svg {
+              stroke: #a3e0a2;
+              width: 28px;
+              height: 28px;
+            }
+            .role-card h4 {
+              font-size: 16px;
               font-weight: 800;
               color: #fff;
-              margin: 0 0 16px;
-              line-height: 1.35;
+              margin: 0 0 12px;
             }
-            .ung-card p {
-              font-size: 14.5px;
+            .role-card p {
+              font-size: 13.5px;
               color: #d2f0d1;
-              line-height: 1.65;
-              margin: 0 0 24px;
-            }
-
-            .cta-section {
-              background: linear-gradient(135deg, #0c500b 0%, #082e07 100%);
-              padding: 90px 24px;
-              text-align: center;
-              margin-top: 48px;
-              position: relative;
-              overflow: hidden;
-            }
-            .cta-section::before {
-              content: "NATURE FOR LIVINGS";
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              font-size: clamp(38px, 6.5vw, 88px);
-              font-weight: 900;
-              color: rgba(255, 255, 255, 0.055);
-              white-space: nowrap;
-              letter-spacing: 8px;
-              pointer-events: none;
-              z-index: 0;
-              font-family: inherit;
-              user-select: none;
-            }
-            .cta-section > * {
-              position: relative;
-              z-index: 1;
-            }
-            .cta-section h2 {
-              font-size: clamp(24px, 3.5vw, 36px);
-              font-weight: 800;
-              color: #fff;
-              margin: 0 0 16px;
-            }
-            .cta-section p {
-              font-size: 15.5px;
-              color: #d2f0d1;
-              max-width: 700px;
-              margin: 0 auto 32px;
-              line-height: 1.7;
+              line-height: 1.6;
+              margin: 0;
             }
 
             @media (max-width: 1024px) {
-              .stats-row {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-              }
-              .stat-box::after {
-                display: none;
-              }
-              .intro-grid {
+              .landasan-grid {
                 grid-template-columns: 1fr;
+                gap: 32px;
               }
-              .docs-grid {
+              .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
               }
-              .unggulan-grid {
-                grid-template-columns: 1fr;
+              .roles-grid {
+                grid-template-columns: repeat(2, 1fr);
               }
             }
             @media (max-width: 768px) {
-              .stats-row {
+              .docs-grid {
                 grid-template-columns: 1fr;
               }
-              .docs-grid {
+              .stats-grid {
+                grid-template-columns: 1fr;
+              }
+              .roles-grid {
                 grid-template-columns: 1fr;
               }
             }
@@ -3493,7 +3364,7 @@
           <div class="fusion-row" style="max-width: 100%">
             <section id="content" class="full-width">
               <div
-                id="post-perspektif"
+                id="post-analisis"
                 class="page type-page status-publish hentry"
               >
                 <div class="post-content">
@@ -3502,80 +3373,36 @@
                     <div class="hero-inner">
                       <div class="hero-crumb">
                         <a href="/">Beranda</a> &nbsp;/&nbsp;
-                        <a href="/penelitian-laporan/"
-                          >Literasi &amp; Pengetahuan</a
-                        >
-                        &nbsp;/&nbsp; <span>Perspektif Budaya</span>
+                        <a href="/pustaka/">Literasi &amp; Pengetahuan</a>
+                        &nbsp;/&nbsp; <span>Analisis &amp; Kebijakan</span>
                       </div>
                       <h1 class="hero-h1">
-                        Merajut Kearifan Budaya<br /><span class="hl"
-                          >dalam Tata Kelola Lanskap Berkelanjutan</span
+                        Penguatan Tata Kelola Lanskap<br /><span class="hl"
+                          >Berbasis Bukti</span
                         >
                       </h1>
                       <p class="hero-sub">
-                        Menjelajahi hubungan mendalam antara manusia,
-                        kebudayaan, nilai filosofis, dan lanskap alam. Gagasan
-                        kritis dan refleksi kearifan lokal untuk memperkaya
-                        dialog lingkungan hidup di Nusantara.
+                        Sebagai Landscape Governance Backbone Organization, YNKI
+                        menghasilkan analisis kebijakan, policy brief, dan
+                        kajian strategis yang mendukung pengambilan keputusan
+                        berbasis bukti dalam tata kelola lanskap.
                       </p>
                       <div class="hero-btns">
-                        <a href="#kumpulan-esai" class="btn-cta-main"
-                          >Jelajahi Esai &amp; Refleksi</a
+                        <a href="#koleksi-dokumen" class="btn-cta-main"
+                          >Lihat Koleksi Analisis</a
                         >
-                        <a href="#filsafat-lanskap" class="btn-cta-second"
-                          >Wawasan Kearifan Tapak</a
+                        <a href="#peran-ynki" class="btn-cta-second"
+                          >Peran Advokasi YNKI</a
                         >
                       </div>
                     </div>
                   </section>
 
-                  <!-- STATS STRIP WITH BUBBLE -->
-                  <section id="budaya-stats" class="stats-strip ynki-section">
+                  <!-- LANDASAN KERJA -->
+                  <section class="landasan-section ynki-section">
                     <div class="ynki-container">
-                      <div class="stats-row">
-                        <div class="stat-box">
-                          <div class="stat-num">
-                            15<span class="plus">+</span>
-                          </div>
-                          <div class="stat-label">Esai &amp; Opini Kritis</div>
-                          <p class="stat-desc">
-                            Refleksi sosial, ekologi, dan filsafat
-                          </p>
-                        </div>
-                        <div class="stat-box">
-                          <div class="stat-num">5</div>
-                          <div class="stat-label">Tema Pemikiran</div>
-                          <p class="stat-desc">
-                            Sosial, budaya, ekonomi, dan etika
-                          </p>
-                        </div>
-                        <div class="stat-box">
-                          <div class="stat-num">
-                            10<span class="plus">+</span>
-                          </div>
-                          <div class="stat-label">Kajian Kearifan Lokal</div>
-                          <p class="stat-desc">
-                            Etnografi dan tradisi penjaga rimba
-                          </p>
-                        </div>
-                        <div class="stat-box">
-                          <div class="stat-num">
-                            100<span class="plus">%</span>
-                          </div>
-                          <div class="stat-label">Perspektif Inklusif</div>
-                          <p class="stat-desc">
-                            Dialog terbuka memperkaya khazanah
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-
-                  <!-- INTRO NARRATIVE -->
-                  <section class="intro-sec ynki-section">
-                    <div class="ynki-container">
-                      <div class="intro-grid">
-                        <div class="intro-text">
+                      <div class="landasan-grid">
+                        <div class="landasan-text">
                           <div
                             class="divider-line"
                             style="
@@ -3583,108 +3410,88 @@
                               justify-content: flex-start;
                             "
                           >
-                            <span class="section-badge"
-                              >FILSAFAT &amp; PERADABAN</span
+                            <span class="section-badge">LANDASAN KERJA</span
                             ><span class="line" style="flex: 0.5"></span>
                           </div>
-                          <h3>
-                            Kebudayaan Sebagai Fondasi Kelestarian Modal Alam
-                          </h3>
+                          <h3>Analisis Kebijakan dan Tata Kelola Lanskap</h3>
                           <p>
-                            Kelestarian alam tidak dapat dipisahkan dari cara
-                            pandang kebudayaan manusia yang mendiaminya. YNKI
-                            membuka ruang refleksi pemikiran untuk mengkaji
-                            bagaimana nilai budaya, seni, tradisi, dan etika
-                            moral berinteraksi dengan bentang alam Kalimantan
-                            Barat.
+                            Transformasi lanskap yang berkelanjutan membutuhkan
+                            kebijakan yang didasarkan pada bukti, data, dan
+                            pembelajaran dari lapangan. YNKI meyakini bahwa
+                            analisis kebijakan yang kredibel dan rekomendasi
+                            berbasis pengetahuan dapat mendorong perubahan
+                            sistemik dalam tata kelola lanskap—dari tingkat desa
+                            hingga kebijakan nasional dan internasional.
                           </p>
-                          <ul class="intro-list">
-                            <li>
-                              <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                              </svg>
-                              <div>
-                                <strong>Nilai Intrinsik Ekosistem:</strong>
-                                Menggeser paradigma eksploitatif menuju
-                                penghormatan atas hak alam dan generasi masa
-                                depan.
-                              </div>
-                            </li>
-                            <li>
-                              <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                              </svg>
-                              <div>
-                                <strong>Kearifan Lokal Komunitas:</strong>
-                                Mendokumentasikan tradisi adat dalam menjaga
-                                keseimbangan hutan dan perairan.
-                              </div>
-                            </li>
-                            <li>
-                              <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                              </svg>
-                              <div>
-                                <strong>Kritik Sosial &amp; Geopolitik:</strong>
-                                Refleksi tajam terhadap tata kelola sumber daya
-                                alam, ruang publik, dan keadilan sosial.
-                              </div>
-                            </li>
-                            <li>
-                              <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                              </svg>
-                              <div>
-                                <strong>Ruang Dialog Terbuka:</strong> Menampung
-                                pemikiran para akademisi, budayawan, dan aktivis
-                                tapak.
-                              </div>
-                            </li>
-                          </ul>
+                          <p>
+                            Melalui fungsi Governance Enabling, YNKI secara
+                            konsisten menghubungkan pengetahuan dari lapangan
+                            dengan proses kebijakan. Pendekatan ini memastikan
+                            bahwa suara masyarakat dan data ekologis menjadi
+                            fondasi setiap rekomendasi yang dihasilkan.
+                          </p>
                         </div>
+                        <div class="landasan-quote">
+                          "Kebijakan yang kuat lahir dari data yang jujur dan
+                          pembelajaran yang terus-menerus dari lapangan."<br /><br />
+                          <span
+                            style="
+                              font-size: 13px;
+                              font-style: normal;
+                              color: #ff8000;
+                              text-transform: uppercase;
+                              letter-spacing: 1px;
+                            "
+                            >— Prinsip Kerja YNKI</span
+                          >
+                        </div>
+                      </div>
 
-                        <div class="intro-card">
-                          <span class="section-badge green">REFLEKSI YNKI</span>
-                          <h4>Harmoni Manusia dan Alam</h4>
-                          <p>
-                            Memahami lanskap secara utuh berarti merangkul
-                            denyut kebudayaan yang hidup di dalamnya—karena di
-                            balik setiap pohon dan aliran sungai, terdapat
-                            peradaban yang berupaya menjaga keseimbangan.
-                          </p>
-                          <div class="card-highlight">
-                            "Kebudayaan sejati adalah peradaban yang mampu
-                            memelihara tanah tempat ia bertumbuh dan mewariskan
-                            mata air bagi generasi masa depan."
+                      <!-- STATS -->
+                      <div class="stats-grid">
+                        <div class="stat-box">
+                          <div class="stat-num">
+                            24<span style="color: #ff8000">+</span>
                           </div>
+                          <h4>Policy Brief &amp; Analisis</h4>
+                          <p>
+                            Total dokumen analisis kebijakan yang telah
+                            diterbitkan YNKI
+                          </p>
+                        </div>
+                        <div class="stat-box">
+                          <div class="stat-num">12</div>
+                          <h4>Kajian Kelembagaan</h4>
+                          <p>
+                            Kajian mendalam tentang struktur tata kelola &amp;
+                            penguatan kelembagaan
+                          </p>
+                        </div>
+                        <div class="stat-box">
+                          <div class="stat-num">
+                            38<span style="color: #ff8000">+</span>
+                          </div>
+                          <h4>Rekomendasi Kebijakan</h4>
+                          <p>
+                            Rekomendasi spesifik yang disampaikan kepada
+                            pemangku kebijakan
+                          </p>
+                        </div>
+                        <div class="stat-box">
+                          <div class="stat-num">8</div>
+                          <h4>Analisis Regulasi</h4>
+                          <p>
+                            Analisis regulasi nasional &amp; internasional
+                            (EUDR, ESG, dll.)
+                          </p>
                         </div>
                       </div>
                     </div>
                   </section>
 
-                  <!-- ARTIKEL GRID -->
+                  <!-- KOLEKSI DOKUMEN -->
                   <section
-                    id="kumpulan-esai"
+                    id="koleksi-dokumen"
                     class="ynki-section"
                     style="background: #fff; padding: 90px 24px"
                   >
@@ -3693,7 +3500,7 @@
                         <div class="divider-line">
                           <span class="line"></span
                           ><span class="section-badge green"
-                            >KATALOG PEMIKIRAN</span
+                            >KUMPULAN DOKUMEN</span
                           ><span class="line"></span>
                         </div>
                         <h2
@@ -3704,269 +3511,66 @@
                             margin: 0 0 12px;
                           "
                         >
-                          Esai, Opini &amp; Perspektif Budaya
+                          Kumpulan Analisis &amp; Policy Brief
                         </h2>
                         <p
                           style="
-                            font-size: 15px;
+                            font-size: 15.5px;
                             color: #536b5f;
                             max-width: 760px;
                             margin: 0 auto;
                           "
                         >
-                          Kumpulan tulisan reflektif yang mengkaji isu
-                          sosial-ekologi dari kacamata peradaban, etika moral,
-                          dan kearifan masyarakat adat.
+                          Berikut adalah kumpulan analisis kebijakan, policy
+                          brief, dan kajian strategis yang telah dihasilkan oleh
+                          YNKI. Setiap publikasi tersedia untuk diunduh dalam
+                          format PDF secara gratis.
                         </p>
                       </div>
 
                       <div class="docs-grid">
-                        <!-- 1 -->
+                        @forelse($articles as $art)
                         <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/site-image-yoast.webp" alt="Dorong Diversifikasi Kelapa di Kubu Raya" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
+                          <div class="doc-header">
+                            <span class="doc-badge b-policy">{{ $art->category->category_name ?? 'Kebijakan' }}</span>
+                            <span class="doc-year">{{ $art->published_at ? $art->published_at->format('Y') : date('Y') }}</span>
                           </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <h3>
-                              <a href="/perspektif-budaya/dorong-diversifikasi-kelapa-di-kubu-raya/">Dorong Diversifikasi Kelapa di Kubu Raya</a>
-                            </h3>
-                            <p>YNKI menilai perlunya diversifikasi produk dari kelapa sebagai sumber pemasukan dan peningkatan kesejahteraan petani.</p>
-                            <a href="/perspektif-budaya/dorong-diversifikasi-kelapa-di-kubu-raya/" class="btn-dl">Baca Esai Lengkap
+                          <h3>{{ $art->title }}</h3>
+                          <p>{{ $art->excerpt ?? '' }}</p>
+                          <div class="doc-actions">
+                            @if($art->attachment_pdf_path)
+                            <a href="/storage/{{ ltrim($art->attachment_pdf_path, '/') }}" target="_blank" class="btn-dl">
                               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                              </svg> Unduh PDF
                             </a>
+                            @endif
+                            <a href="/artikel-cms/{{ $art->slug }}" style="color:#117710;font-weight:700;font-size:13px;text-decoration:none;margin-left:12px;">Baca Ringkasan &rarr;</a>
                           </div>
                         </div>
-                        <!-- 2 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Putri-Lestari-PM-YNKI-Kehati.webp" alt="Empat Luka Suriah" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <h3>
-                              <a href="/perspektif-budaya/empat-luka-suriah-geopolitik-sektarianisme-divide-et-impera-dan-perang-dingin-timur-barat/">Empat Luka Suriah</a>
-                            </h3>
-                            <p>Selama lebih dari 2.500 tahun, Suriah tak pernah benar-benar menjadi milik rakyatnya sendiri.</p>
-                            <a href="/perspektif-budaya/empat-luka-suriah-geopolitik-sektarianisme-divide-et-impera-dan-perang-dingin-timur-barat/" class="btn-dl">Baca Esai Lengkap
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
+                        @empty
+                        <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666;">
+                          <p>Belum ada dokumen analisis kebijakan yang dipublikasikan saat ini.</p>
                         </div>
-                        <!-- 3 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/06/12-06-2026-Usai-diskusi-ekologi-landscape-para-pegiat-lingkungan-bermain-musik-di-selasar-kantor-YNKI-di-Pontianak-Jumat-malam.webp" alt="Harmoni Musik: Keselarasan Perbedaan, Keselarasan Kehidupan" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <h3>
-                              <a href="/perspektif-budaya/harmoni-musik-keselarasan-perbedaan-keselarasan-kehidupan/">Harmoni Musik: Keselarasan Perbedaan, Keselarasan Kehidupan</a>
-                            </h3>
-                            <p>Sebelum kenal aksara, sudah tabuh kulit kayu, tiup bambu, dan berteriak selaraskan irama dengan detak jantung. Musik bahasa primer manusia.</p>
-                            <a href="/perspektif-budaya/harmoni-musik-keselarasan-perbedaan-keselarasan-kehidupan/" class="btn-dl">Baca Esai Lengkap
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 4 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/06/11-06-2026-kebun-keladi-di-kubu-padi-kuala-mandor-b.webp" alt="Kehidupan Petani Kecil Dipertaruhkan: Dari Cultuurstelsel hingga DHE SDA Indonesia" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <h3>
-                              <a href="/perspektif-budaya/kehidupan-petani-kecil-dipertaruhkan-dari-cultuurstelsel-hingga-dhe-sda-indonesia/">Kehidupan Petani Kecil Dipertaruhkan: Dari Cultuurstelsel hingga DHE SDA Indonesia</a>
-                            </h3>
-                            <p>Tanam paksa (cultuurstelsel) Belanda hingga Devisa Hasil Ekspor Sumber Daya Alam (DHE SDA) Indonesia modern, petani kecil selalu jadi korban.</p>
-                            <a href="/perspektif-budaya/kehidupan-petani-kecil-dipertaruhkan-dari-cultuurstelsel-hingga-dhe-sda-indonesia/" class="btn-dl">Baca Esai Lengkap
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 5 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Dwi-Anggradini-Putri-Kabid-Keu-TFCA.webp" alt="Nilai Intrinsik Ekosistem vs Praktik Ekonomi Predator" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <h3>
-                              <a href="/perspektif-budaya/nilai-intrinsik-ekosistem-vs-praktik-ekonomi-predator/">Nilai Intrinsik Ekosistem vs Praktik Ekonomi Predator</a>
-                            </h3>
-                            <p>Ketika Alam Dipandang sebagai Sumber daya, Bukan sebagai RumahOleh: Dwi Anggradini Putri (Kepala Bagian Keuangan Program YNKI-Kehati)Pembuka: Dua C...</p>
-                            <a href="/perspektif-budaya/nilai-intrinsik-ekosistem-vs-praktik-ekonomi-predator/" class="btn-dl">Baca Esai Lengkap
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 6 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/06/17-06-2026-perbedaan-otak-pria-dan-wanita.webp" alt="Otak Pria, Tiga Sistem Cinta, dan Ketegangan Abadi Antara Perasaan dan Komitmen" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <h3>
-                              <a href="/perspektif-budaya/otak-pria-tiga-sistem-cinta-dan-ketegangan-abadi-antara-perasaan-dan-komitmen/">Otak Pria, Tiga Sistem Cinta, dan Ketegangan Abadi Antara Perasaan dan Komitmen</a>
-                            </h3>
-                            <p>Otak pria memiliki 3 sistem cinta yang berbeda, yang bekerja secara independen, sering kali saling bertentangan, dan jarang selaras.</p>
-                            <a href="/perspektif-budaya/otak-pria-tiga-sistem-cinta-dan-ketegangan-abadi-antara-perasaan-dan-komitmen/" class="btn-dl">Baca Esai Lengkap
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 7 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/06/04-06-2026-HMI-Komsat-Fahutan-Untan.webp" alt="Pabrik Ijazah atau Rumah Peradaban?" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <h3>
-                              <a href="/perspektif-budaya/pabrik-ijazah-atau-rumah-peradaban/">Pabrik Ijazah atau Rumah Peradaban?</a>
-                            </h3>
-                            <p>Universitas dipahami sebagai, &quot;custodian/depositary of common values, knowledge and inheritance of human cultures and civilization&quot;.</p>
-                            <a href="/perspektif-budaya/pabrik-ijazah-atau-rumah-peradaban/" class="btn-dl">Baca Esai Lengkap
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 8 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Conquest_of_Constantinople_Zonaro.webp" alt="Paradoks Renaisans: Eksploitasi dan Dehumanisasi" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <h3>
-                              <a href="/perspektif-budaya/paradoks-renaisans-eksploitasi-dan-dehumanisasi/">Paradoks Renaisans: Eksploitasi dan Dehumanisasi</a>
-                            </h3>
-                            <p>Renaisans (abad ke-14–17) selalu dikenang sebagai kelahiran kembali peradaban Eropa dalam apa yang disebut Masa Kegelapan.</p>
-                            <a href="/perspektif-budaya/paradoks-renaisans-eksploitasi-dan-dehumanisasi/" class="btn-dl">Baca Esai Lengkap
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 9 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/04/willem-hengki.webp" alt="Putusan Kades Kinipan" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <h3>
-                              <a href="/perspektif-budaya/putusan-kades-kinipan/">Putusan Kades Kinipan</a>
-                            </h3>
-                            <p>Putusan di Pengadilan Tipikor Palangkaraya 15062022, Kades Kinipan Willem Hengki dinyatakan tidak bersalah &amp; bebas dari tuduhan tipikor.</p>
-                            <a href="/perspektif-budaya/putusan-kades-kinipan/" class="btn-dl">Baca Esai Lengkap
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 10 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Zulfa-Laylia-Hauro-Staf-Keuangan-YNKI-Kehati.webp" alt="Ruang Publik: Cermin Peradaban, Medan Kuasa, dan Hilangnya &amp;quot;Rasa Bersama&amp;quot;" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <h3>
-                              <a href="/perspektif-budaya/ruang-publik-cermin-peradaban-medan-kuasa-dan-hilangnya-rasa-bersama/">Ruang Publik: Cermin Peradaban, Medan Kuasa, dan Hilangnya &amp;quot;Rasa Bersama&amp;quot;</a>
-                            </h3>
-                            <p>Oleh: Zulfa Laylia Hauro (Staf Keuangan Program YNKI-Yayasan Kehati)Pengantar: Lebih dari Sekadar Taman dan TrotoarApa yang terlintas di benak Anda...</p>
-                            <a href="/perspektif-budaya/ruang-publik-cermin-peradaban-medan-kuasa-dan-hilangnya-rasa-bersama/" class="btn-dl">Baca Esai Lengkap
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 11 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Liln-Dwi-Evelin-Kadiv-Kom-TFCA.webp" alt="Teori Ekonomi dan Status Terkini Kehidupan Bumi" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <h3>
-                              <a href="/perspektif-budaya/teori-ekonomi-dan-status-terkini-kehidupan-bumi/">Teori Ekonomi dan Status Terkini Kehidupan Bumi</a>
-                            </h3>
-                            <p>Pembuka: Saat Neraka Berlapis EmasOleh: Lilin Dwi Evelin (Kepala Divisi Komunikasi YNKI)Kita hidup di masa yang aneh. Di satu sisi, para pemimpin d...</p>
-                            <a href="/perspektif-budaya/teori-ekonomi-dan-status-terkini-kehidupan-bumi/" class="btn-dl">Baca Esai Lengkap
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-</div>
+                        @endforelse
+                      </div>
 
                       <!-- Pagination Clearfix -->
-                      <div class="pagination clearfix" id="budaya-pagination"></div>
+                      <div class="pagination clearfix" id="kebijakan-pagination"></div>
                     </div>
                   </section>
 
-                  <!-- UNGGULAN & FILSAFAT LANSKAP -->
+                  <!-- PERAN YNKI -->
                   <section
-                    id="filsafat-lanskap"
-                    class="unggulan-sec ynki-section"
+                    id="peran-ynki"
+                    class="ynki-section"
+                    style="background: #117710; padding: 90px 24px"
                   >
                     <div class="ynki-container">
                       <div style="text-align: center">
-                        <span class="section-badge">FILSAFAT LANSKAP</span>
+                        <span class="section-badge">ADVOKASI KEBIJAKAN</span>
                         <h2
                           style="
                             font-size: clamp(22px, 3vw, 34px);
@@ -3975,43 +3579,93 @@
                             margin: 12px 0;
                           "
                         >
-                          Etika Lingkungan &amp; Transformasi Nilai
+                          Peran YNKI dalam Advokasi Kebijakan
                         </h2>
                         <p
                           style="
-                            font-size: 15px;
+                            font-size: 15.5px;
                             color: #d2f0d1;
-                            max-width: 760px;
+                            max-width: 820px;
                             margin: 0 auto;
                           "
                         >
-                          Memulihkan hubungan harmonis antara peradaban manusia
-                          dan modal alam melalui kearifan tradisi dan etika
-                          ekologi.
+                          YNKI berperan aktif dalam mendorong kebijakan tata
+                          kelola lanskap yang inklusif dan berbasis bukti.
+                          Sebagai organisasi backbone, YNKI menjalankan empat
+                          fungsi utama advokasi kebijakan yang saling
+                          melengkapi.
                         </p>
                       </div>
 
-                      <div class="unggulan-grid">
-                        <div class="ung-card">
-                          <div class="ung-meta">TRANSFORMASI PARADIGMA</div>
-                          <h3>Dari Antroposentrisme Menuju Ekosentrisme</h3>
+                      <div class="roles-grid">
+                        <div class="role-card">
+                          <div class="role-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                              />
+                              <polyline points="14 2 14 8 20 8" />
+                              <line x1="16" y1="13" x2="8" y2="13" />
+                              <line x1="16" y1="17" x2="8" y2="17" />
+                              <polyline points="10 9 9 9 8 9" />
+                            </svg>
+                          </div>
+                          <h4>Penyusunan Policy Brief</h4>
                           <p>
-                            Mengajak masyarakat dan pengambil kebijakan untuk
-                            menempatkan keseimbangan biosfer sebagai landasan
-                            utama dalam setiap perencanaan pembangunan dan
-                            investasi ekonomi lanskap.
+                            Menyusun rekomendasi kebijakan operasional
+                            berdasarkan data lapangan, riset komparatif, dan
+                            pembelajaran dari program YNKI di Kalimantan Barat.
                           </p>
                         </div>
-                        <div class="ung-card">
-                          <div class="ung-meta">ETIKA GENERASI MENDATANG</div>
-                          <h3>
-                            Keadilan Intergenerasi dalam Pengelolaan Lanskap
-                          </h3>
+                        <div class="role-card">
+                          <div class="role-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                              />
+                              <circle cx="9" cy="7" r="4" />
+                              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                          </div>
+                          <h4>Fasilitasi Dialog Kebijakan</h4>
                           <p>
-                            Menegaskan tanggung jawab moral generasi hari ini
-                            untuk mewariskan modal alam yang sehat,
-                            keanekaragaman hayati yang lestari, dan ketahanan
-                            iklim bagi anak cucu di masa depan.
+                            Memfasilitasi forum multi-pihak mempertemukan
+                            pemerintah, masyarakat adat, sektor swasta, dan
+                            akademisi untuk membangun konsensus berbasis bukti.
+                          </p>
+                        </div>
+                        <div class="role-card">
+                          <div class="role-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <circle cx="12" cy="12" r="10" />
+                              <path d="M12 16v-4" />
+                              <path d="M12 8h.01" />
+                              <path
+                                d="M15.5 12A3.5 3.5 0 0 0 12 8.5v3.5l2.5 2.5"
+                              />
+                            </svg>
+                          </div>
+                          <h4>Dukungan Teknis Kebijakan</h4>
+                          <p>
+                            Memberikan asistensi teknis kepada pemerintah daerah
+                            dalam penyusunan, perencanaan, dan implementasi
+                            kebijakan tata kelola lanskap inklusif.
+                          </p>
+                        </div>
+                        <div class="role-card">
+                          <div class="role-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                              <path
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                              />
+                            </svg>
+                          </div>
+                          <h4>Analisis Regulasi</h4>
+                          <p>
+                            Menganalisis regulasi nasional dan internasional
+                            relevan dengan lanskap (EUDR, ESG) dan memberikan
+                            rekomendasi perbaikan actionable.
                           </p>
                         </div>
                       </div>
@@ -4021,19 +3675,20 @@
                   <!-- CTA -->
                   <section class="cta-section ynki-section">
                     <div class="ynki-container">
-                      <span class="section-badge">RUANG DIALOG BUDAYA</span>
-                      <h2>Ingin Berbagi Refleksi atau Menulis Bersama YNKI?</h2>
+                      <h2>Kolaborasi dalam Advokasi Kebijakan YNKI?</h2>
                       <p>
-                        Kami membuka ruang kontribusi esai dan opini kritis bagi
-                        para akademisi, budayawan, peneliti, dan penggerak
-                        masyarakat di Kalimantan Barat.
+                        YNKI terbuka untuk kolaborasi dengan pemerintah daerah,
+                        lembaga penelitian, dan CSO. Jika Anda memiliki data
+                        lapangan, ingin melakukan kajian bersama, atau
+                        membutuhkan dukungan penyusunan kebijakan, kami siap
+                        berdiskusi.
                       </p>
                       <div class="cta-btns">
-                        <a href="/kontak-kami/" class="btn-cta-main"
-                          >Kirim Tulisan Opini</a
-                        >
-                        <a href="/penelitian-laporan/" class="btn-cta-second"
-                          >Lihat Publikasi Riset</a
+                        <a
+                          href="/kontak/"
+                          class="btn-cta-main"
+                          style="background: #fff; color: #117710"
+                          >Mari Berdiskusi &amp; Berkolaborasi</a
                         >
                       </div>
                     </div>
@@ -4043,7 +3698,6 @@
             </section>
           </div>
         </main>
-
         <div class="fusion-tb-footer fusion-footer">
           <div class="fusion-footer-widget-area fusion-widget-area">
             <div
@@ -4374,12 +4028,12 @@
       >
     </section>
     <script>
-      // Perspektif Budaya Pagination Clearfix (6 articles per page)
+      // Analisis Kebijakan Pagination Clearfix (4 cards per page)
       document.addEventListener('DOMContentLoaded', function() {
-        const ITEMS_PER_PAGE = 6;
+        const ITEMS_PER_PAGE = 4;
         let currentPage = 1;
         const grid = document.querySelector('.docs-grid');
-        const paginationContainer = document.getElementById('budaya-pagination');
+        const paginationContainer = document.getElementById('kebijakan-pagination');
 
         if (!grid || !paginationContainer) return;
 
@@ -4401,7 +4055,7 @@
 
           // Prev button
           if (currentPage > 1) {
-            html += `<a href="#kumpulan-esai" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Previous</a>`;
+            html += `<a href="#koleksi-dokumen" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Previous</a>`;
           } else {
             html += `<span class="pagination-prev disabled">&laquo; Previous</span>`;
           }
@@ -4411,13 +4065,13 @@
             if (p === currentPage) {
               html += `<span class="current">${p}</span>`;
             } else {
-              html += `<a href="#kumpulan-esai" class="inactive" data-page="${p}">${p}</a>`;
+              html += `<a href="#koleksi-dokumen" class="inactive" data-page="${p}">${p}</a>`;
             }
           }
 
           // Next button
           if (currentPage < totalPages) {
-            html += `<a href="#kumpulan-esai" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
+            html += `<a href="#koleksi-dokumen" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
           } else {
             html += `<span class="pagination-next disabled">Next &raquo;</span>`;
           }
@@ -4454,7 +4108,7 @@
           renderPagination(cards.length);
 
           if (scrollIntoView) {
-            const section = document.getElementById('kumpulan-esai');
+            const section = document.getElementById('koleksi-dokumen');
             if (section) {
               section.scrollIntoView({ behavior: 'smooth' });
             }

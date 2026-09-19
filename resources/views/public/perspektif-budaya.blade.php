@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -14,8 +14,8 @@
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <title>
-      News &amp; Features — Yayasan Natural Kapital Indonesia (YNKI) | Tata
-      Kelola Lanskap Kalimantan
+      Perspektif Budaya: Merenungkan Hubungan Manusia, Alam, dan Kebudayaan —
+      Yayasan Natural Kapital Indonesia (YNKI)
     </title>
     <meta
       name="description"
@@ -184,7 +184,7 @@
     <meta property="og:url" content="/" />
     <meta
       property="og:image"
-      content="/wp-content/uploads/2026/05/logo-ynki-500.webp"
+      content="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3"
     />
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="40" />
@@ -2476,7 +2476,7 @@
                           class="img-responsive wp-image-183 disable-lazyload"
                           data-
                           data-
-                          src="/wp-content/uploads/2026/05/logo-ynki-500.webp" /></a
+                          src="/wp-content/uploads/2026/05/logo-ynki-500.webp?v=3" /></a
                     ></span>
                   </div>
                 </div>
@@ -2961,9 +2961,9 @@
               min-height: 82vh;
               display: flex;
               align-items: center;
-              background-image: 
-              linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-              url("/assets/images/news/image2.png");
+              background-image:
+                linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url("/wp-content/uploads/2026/05/hero-michael-eko-for-ynki-landscape-hutan-1536x1152.webp");
               background-size: cover;
               background-position: center;
               padding: 110px 24px 90px;
@@ -3036,7 +3036,7 @@
             }
 
             .stats-strip,
-            #news-stats {
+            #budaya-stats {
               background: #117710;
               padding: 64px 24px;
               margin-top: 48px;
@@ -3044,7 +3044,7 @@
               overflow: hidden;
             }
             .stats-strip::before,
-            #news-stats::before {
+            #budaya-stats::before {
               content: "";
               position: absolute;
               top: -50%;
@@ -3057,7 +3057,7 @@
               z-index: 0;
             }
             .stats-strip > *,
-            #news-stats > * {
+            #budaya-stats > * {
               position: relative;
               z-index: 1;
             }
@@ -3293,19 +3293,19 @@
               padding: 4px 12px;
               border-radius: 50px;
             }
-            .badge-program {
+            .badge-ekologi {
               background: #e8f5e8;
               color: #117710;
             }
-            .badge-iklim {
+            .badge-sosial {
               background: #e6f3ff;
               color: #0066cc;
             }
-            .badge-komunitas {
+            .badge-filsafat {
               background: #fff3e6;
               color: #ff8000;
             }
-            .badge-liputan {
+            .badge-kritis {
               background: #fff5f5;
               color: #b22231;
             }
@@ -3492,7 +3492,10 @@
           </style>
           <div class="fusion-row" style="max-width: 100%">
             <section id="content" class="full-width">
-              <div id="post-news" class="page type-page status-publish hentry">
+              <div
+                id="post-perspektif"
+                class="page type-page status-publish hentry"
+              >
                 <div class="post-content">
                   <!-- HERO -->
                   <section class="hero-section ynki-section">
@@ -3502,66 +3505,66 @@
                         <a href="/penelitian-laporan/"
                           >Literasi &amp; Pengetahuan</a
                         >
-                        &nbsp;/&nbsp; <span>News &amp; Features</span>
+                        &nbsp;/&nbsp; <span>Perspektif Budaya</span>
                       </div>
                       <h1 class="hero-h1">
-                        Kabar, Cerita &amp; Liputan<br /><span class="hl"
-                          >dari Jantung Lanskap Kalimantan Barat</span
+                        Merajut Kearifan Budaya<br /><span class="hl"
+                          >dalam Tata Kelola Lanskap Berkelanjutan</span
                         >
                       </h1>
                       <p class="hero-sub">
-                        Menyajikan berita terkini, artikel mendalam (*in-depth
-                        features*), catatan perjalanan lapangan, dan dinamika
-                        tata kelola lanskap berkelanjutan bersama mitra dan
-                        komunitas lokal YNKI.
+                        Menjelajahi hubungan mendalam antara manusia,
+                        kebudayaan, nilai filosofis, dan lanskap alam. Gagasan
+                        kritis dan refleksi kearifan lokal untuk memperkaya
+                        dialog lingkungan hidup di Nusantara.
                       </p>
                       <div class="hero-btns">
-                        <a href="#kumpulan-berita" class="btn-cta-main"
-                          >Jelajahi Berita &amp; Artikel</a
+                        <a href="#kumpulan-esai" class="btn-cta-main"
+                          >Jelajahi Esai &amp; Refleksi</a
                         >
-                        <a href="#inisiatif-liputan" class="btn-cta-second"
-                          >Inisiatif Liputan Khusus</a
+                        <a href="#filsafat-lanskap" class="btn-cta-second"
+                          >Wawasan Kearifan Tapak</a
                         >
                       </div>
                     </div>
                   </section>
 
                   <!-- STATS STRIP WITH BUBBLE -->
-                  <section id="news-stats" class="stats-strip ynki-section">
+                  <section id="budaya-stats" class="stats-strip ynki-section">
                     <div class="ynki-container">
                       <div class="stats-row">
                         <div class="stat-box">
                           <div class="stat-num">
-                            60<span class="plus">+</span>
+                            15<span class="plus">+</span>
                           </div>
-                          <div class="stat-label">Artikel &amp; Liputan</div>
+                          <div class="stat-label">Esai &amp; Opini Kritis</div>
                           <p class="stat-desc">
-                            Dokumentasi program dan aksi tapak
+                            Refleksi sosial, ekologi, dan filsafat
                           </p>
                         </div>
                         <div class="stat-box">
                           <div class="stat-num">5</div>
-                          <div class="stat-label">Lanskap Prioritas</div>
+                          <div class="stat-label">Tema Pemikiran</div>
                           <p class="stat-desc">
-                            Kubu Raya, Ketapang, Kayong Utara, dll.
+                            Sosial, budaya, ekonomi, dan etika
                           </p>
                         </div>
                         <div class="stat-box">
                           <div class="stat-num">
-                            20<span class="plus">+</span>
+                            10<span class="plus">+</span>
                           </div>
-                          <div class="stat-label">Wawancara Komunitas</div>
+                          <div class="stat-label">Kajian Kearifan Lokal</div>
                           <p class="stat-desc">
-                            Suara petani dan tetua adat lokal
+                            Etnografi dan tradisi penjaga rimba
                           </p>
                         </div>
                         <div class="stat-box">
                           <div class="stat-num">
                             100<span class="plus">%</span>
                           </div>
-                          <div class="stat-label">Berbasis Bukti Tapak</div>
+                          <div class="stat-label">Perspektif Inklusif</div>
                           <p class="stat-desc">
-                            Fakta langsung dari pendampingan lapangan
+                            Dialog terbuka memperkaya khazanah
                           </p>
                         </div>
                       </div>
@@ -3580,18 +3583,20 @@
                               justify-content: flex-start;
                             "
                           >
-                            <span class="section-badge">JURNALISME LANSKAP</span
+                            <span class="section-badge"
+                              >FILSAFAT &amp; PERADABAN</span
                             ><span class="line" style="flex: 0.5"></span>
                           </div>
                           <h3>
-                            Merekam Denyut Perubahan Lanskap Kalimantan Barat
+                            Kebudayaan Sebagai Fondasi Kelestarian Modal Alam
                           </h3>
                           <p>
-                            Setiap program dan intervensi YNKI di tingkat tapak
-                            menghasilkan pembelajaran berharga. Melalui kanal
-                            News &amp; Features, kami membagikan proses,
-                            tantangan, dan capaian nyata bersama masyarakat desa
-                            dan mitra multipihak.
+                            Kelestarian alam tidak dapat dipisahkan dari cara
+                            pandang kebudayaan manusia yang mendiaminya. YNKI
+                            membuka ruang refleksi pemikiran untuk mengkaji
+                            bagaimana nilai budaya, seni, tradisi, dan etika
+                            moral berinteraksi dengan bentang alam Kalimantan
+                            Barat.
                           </p>
                           <ul class="intro-list">
                             <li>
@@ -3604,9 +3609,10 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                               </svg>
                               <div>
-                                <strong>Berita Program Terkini:</strong> Update
-                                reguler tentang implementasi restorasi,
-                                kemitraan, dan pelatihan masyarakat.
+                                <strong>Nilai Intrinsik Ekosistem:</strong>
+                                Menggeser paradigma eksploitatif menuju
+                                penghormatan atas hak alam dan generasi masa
+                                depan.
                               </div>
                             </li>
                             <li>
@@ -3619,9 +3625,9 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                               </svg>
                               <div>
-                                <strong>Kisah Inspiratif Komunitas:</strong>
-                                Profil petani, pemuda, dan tokoh desa yang
-                                memimpin aksi perlindungan lanskap.
+                                <strong>Kearifan Lokal Komunitas:</strong>
+                                Mendokumentasikan tradisi adat dalam menjaga
+                                keseimbangan hutan dan perairan.
                               </div>
                             </li>
                             <li>
@@ -3634,11 +3640,9 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                               </svg>
                               <div>
-                                <strong
-                                  >Analisis &amp; Wawasan Kebijakan:</strong
-                                >
-                                Catatan kritis dan refleksi tata kelola
-                                lingkungan hidup di tingkat regional.
+                                <strong>Kritik Sosial &amp; Geopolitik:</strong>
+                                Refleksi tajam terhadap tata kelola sumber daya
+                                alam, ruang publik, dan keadilan sosial.
                               </div>
                             </li>
                             <li>
@@ -3651,29 +3655,27 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                               </svg>
                               <div>
-                                <strong>Transparansi Aksi:</strong>
-                                Akuntabilitas publik atas kerja-kerja konservasi
-                                dan pembangunan berkelanjutan.
+                                <strong>Ruang Dialog Terbuka:</strong> Menampung
+                                pemikiran para akademisi, budayawan, dan aktivis
+                                tapak.
                               </div>
                             </li>
                           </ul>
                         </div>
 
                         <div class="intro-card">
-                          <span class="section-badge green"
-                            >KOMITMEN NARASI YNKI</span
-                          >
-                          <h4>Menghadirkan Suara dari Garis Depan</h4>
+                          <span class="section-badge green">REFLEKSI YNKI</span>
+                          <h4>Harmoni Manusia dan Alam</h4>
                           <p>
-                            Kami meyakini bahwa keterbukaan informasi dan cerita
-                            autentik dari masyarakat lokal adalah pendorong
-                            utama terciptanya kolaborasi tata kelola lanskap
-                            yang berkelanjutan.
+                            Memahami lanskap secara utuh berarti merangkul
+                            denyut kebudayaan yang hidup di dalamnya—karena di
+                            balik setiap pohon dan aliran sungai, terdapat
+                            peradaban yang berupaya menjaga keseimbangan.
                           </p>
                           <div class="card-highlight">
-                            "Kisah perubahan bukan sekadar laporan pencapaian,
-                            melainkan bukti ketangguhan alam dan manusia yang
-                            saling menjaga dalam keseimbangan."
+                            "Kebudayaan sejati adalah peradaban yang mampu
+                            memelihara tanah tempat ia bertumbuh dan mewariskan
+                            mata air bagi generasi masa depan."
                           </div>
                         </div>
                       </div>
@@ -3682,7 +3684,7 @@
 
                   <!-- ARTIKEL GRID -->
                   <section
-                    id="kumpulan-berita"
+                    id="kumpulan-esai"
                     class="ynki-section"
                     style="background: #fff; padding: 90px 24px"
                   >
@@ -3691,7 +3693,7 @@
                         <div class="divider-line">
                           <span class="line"></span
                           ><span class="section-badge green"
-                            >KUMPULAN BERITA &amp; FITUR</span
+                            >KATALOG PEMIKIRAN</span
                           ><span class="line"></span>
                         </div>
                         <h2
@@ -3702,7 +3704,7 @@
                             margin: 0 0 12px;
                           "
                         >
-                          Artikel &amp; Cerita Lapangan Terbaru
+                          Esai, Opini &amp; Perspektif Budaya
                         </h2>
                         <p
                           style="
@@ -3712,28 +3714,31 @@
                             margin: 0 auto;
                           "
                         >
-                          Jelajahi kumpulan artikel, liputan kegiatan, dan
-                          dokumentasi inisiatif program YNKI di Kalimantan
-                          Barat.
+                          Kumpulan tulisan reflektif yang mengkaji isu
+                          sosial-ekologi dari kacamata peradaban, etika moral,
+                          dan kearifan masyarakat adat.
                         </p>
                       </div>
 
                       <div class="docs-grid">
-                        <!-- 1 -->
+                        @forelse($articles as $art)
                         <div class="doc-card">
                           <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Agroforestri-Kopi-di-Desa-Pasak-Piang-Kabupaten-Kubu-Raya.webp" alt="Agroforestri Kopi di Desa Pasak Piang Kabupaten Kubu Raya" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
+                            @if($art->featured_image_path)
+                            <img src="/storage/{{ ltrim($art->featured_image_path, '/') }}" alt="{{ $art->title }}" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M4 19.5A2.5 2.5 0 0 1 6.5 17H20\'></path><path d=\'M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z\'></path></svg>';">
+                            @else
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                            @endif
                           </div>
                           <div class="doc-body">
                             <div class="doc-meta">
-                              <span class="doc-year">2022</span>
+                              <span class="doc-year">{{ $art->published_at ? $art->published_at->format('Y') : date('Y') }}</span>
                             </div>
-                            <div class="doc-loc">KABUPATEN KUBU RAYA</div>
                             <h3>
-                              <a href="/news-features/agroforestri-kopi-di-desa-pasak-piang-kabupaten-kubu-raya/">Agroforestri Kopi di Desa Pasak Piang Kabupaten Kubu Raya</a>
+                              <a href="/artikel-cms/{{ $art->slug }}">{{ $art->title }}</a>
                             </h3>
-                            <p>Kebun masyarakat Desa Pasak Piang sudah menjadi kebun agroforestri karena terdapat pohon durian, jengkol, karet, lada, dan pengembangan madu kelulut.</p>
-                            <a href="/news-features/agroforestri-kopi-di-desa-pasak-piang-kabupaten-kubu-raya/" class="btn-dl">Baca Selengkapnya
+                            <p>{{ $art->excerpt ?? '' }}</p>
+                            <a href="/artikel-cms/{{ $art->slug }}" class="btn-dl">Baca Esai Lengkap
                               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <path d="M5 12h14" />
                                 <path d="M12 5l7 7-7 7" />
@@ -3741,21 +3746,32 @@
                             </a>
                           </div>
                         </div>
-                        <!-- 2 -->
+                        @empty
+                        @if(empty($legacyArticles))
+                        <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666;">
+                          <p>Belum ada esai atau tulisan perspektif budaya yang dipublikasikan saat ini.</p>
+                        </div>
+                        @endif
+                        @endforelse
+
+                        @foreach($legacyArticles as $lArt)
                         <div class="doc-card">
                           <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/kelapa.webp" alt="Air Kelapa: Kaya Mineral Menjadi Bio Lahang" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
+                            @if($lArt->featured_image_path)
+                            <img src="{{ $lArt->featured_image_path }}" alt="{{ $lArt->title }}" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M4 19.5A2.5 2.5 0 0 1 6.5 17H20\'></path><path d=\'M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z\'></path></svg>';">
+                            @else
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                            @endif
                           </div>
                           <div class="doc-body">
                             <div class="doc-meta">
-                              <span class="doc-year">2022</span>
+                              <span class="doc-year">{{ $lArt->year }}</span>
                             </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
                             <h3>
-                              <a href="/news-features/air-kelapa-kaya-mineral-menjadi-bio-lahang/">Air Kelapa: Kaya Mineral Menjadi Bio Lahang</a>
+                              <a href="{{ $lArt->url }}">{{ $lArt->title }}</a>
                             </h3>
-                            <p>Yayasan Natural Kapital Indonesia (YNKI) mempraktikkan pembuatan Bio Lahang bersama Ahmad Azhari (@putraleuser).</p>
-                            <a href="/news-features/air-kelapa-kaya-mineral-menjadi-bio-lahang/" class="btn-dl">Baca Selengkapnya
+                            <p>{{ $lArt->excerpt }}</p>
+                            <a href="{{ $lArt->url }}" class="btn-dl">Baca Esai Lengkap
                               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <path d="M5 12h14" />
                                 <path d="M12 5l7 7-7 7" />
@@ -3763,1165 +3779,22 @@
                             </a>
                           </div>
                         </div>
-                        <!-- 3 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Analisis-Spasial-Tutupan-Hutan-di-Luar-Wilayah-Kelola-KPH-Berbasis-DAS.webp" alt="Analisis Spasial Tutupan Hutan di Luar Wilayah Kelola KPH Berbasis DAS" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/analisis-spasial-tutupan-hutan-di-luar-wilayah-kelola-kph-berbasis-das/">Analisis Spasial Tutupan Hutan di Luar Wilayah Kelola KPH Berbasis DAS</a>
-                            </h3>
-                            <p>Pemerintah Provinsi Kalimantan Barat melalui Kepala Dinas Lingkungan Hidup dan Kehutanan menerbitkan SK No. S22/66/LHK/2022.</p>
-                            <a href="/news-features/analisis-spasial-tutupan-hutan-di-luar-wilayah-kelola-kph-berbasis-das/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 4 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Bertani-dan-bisnis-lokal-kubu-raya.webp" alt="Bertani dan Bisnis Lokal Kubu Raya" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KABUPATEN KUBU RAYA</div>
-                            <h3>
-                              <a href="/news-features/bertani-dan-bisnis-lokal-kubu-raya/">Bertani dan Bisnis Lokal Kubu Raya</a>
-                            </h3>
-                            <p>YNKI bersama Pengelola Cafe 1O1 Pontianak menyelenggarakan sharing pengetahuan mengenai pengolahan kopi pascapanen yang baik dan sesuai standar.</p>
-                            <a href="/news-features/bertani-dan-bisnis-lokal-kubu-raya/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 5 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/06/17-06-2026-beruang-madu.webp" alt="Beruang Madu vs Peternak Kelulut di Limbung: Bukan Salah Beruang tapi Lanskap yang Rusak" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">DESA LIMBUNG</div>
-                            <h3>
-                              <a href="/news-features/beruang-madu-vs-peternak-kelulut-di-limbung-bukan-salah-beruang-tapi-lanskap-yang-rusak/">Beruang Madu vs Peternak Kelulut di Limbung: Bukan Salah Beruang tapi Lanskap yang Rusak</a>
-                            </h3>
-                            <p>Beruang madu berkeliaran di Sidomulyo, Limbung, Kubu Raya, Kalimantan Barat. Dalam seminggu, 15 sarang rusak, 200 sarang terancam.</p>
-                            <a href="/news-features/beruang-madu-vs-peternak-kelulut-di-limbung-bukan-salah-beruang-tapi-lanskap-yang-rusak/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 6 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/04-05-2026-cakar-elang-gambut-pasak-piang.webp" alt="Dari Teh Herbal hingga Suplemen Kicau Mania: Cakar Elang Pasak Piang Punya Segudang Manfaat" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">DESA PASAK PIANG</div>
-                            <h3>
-                              <a href="/news-features/cakar-elang-tambah-pendapatan-warga-pasak-piang/">Dari Teh Herbal hingga Suplemen Kicau Mania: Cakar Elang Pasak Piang Punya Segudang Manfaat</a>
-                            </h3>
-                            <p>Desa Pasak Piang Kecamatan Sungai Ambawang Kabupaten Kubu Raya ada potensi hasil hutan bukan kayu: Cakar Elang (Katenis ligni).</p>
-                            <a href="/news-features/cakar-elang-tambah-pendapatan-warga-pasak-piang/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 7 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/06/20-05-2026-Penguatan-Fasdes.webp" alt="Dari Riset ke Aksi Nyata: YNKI–TFCA Kalimantan Bangun Ketahanan Iklim Desa Gambut Kubu Raya" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">KABUPATEN KUBU RAYA</div>
-                            <h3>
-                              <a href="/news-features/dari-riset-ke-aksi-nyata-ynki-tfca-kalimantan-bangun-ketahanan-iklim-desa-gambut-kubu-raya/">Dari Riset ke Aksi Nyata: YNKI–TFCA Kalimantan Bangun Ketahanan Iklim Desa Gambut Kubu Raya</a>
-                            </h3>
-                            <p>YNKI bersama TFCA Kalimantan resmi meluncurkan program &quot;Penguatan Mitigasi dan Adaptasi Iklim Desa Gambut Kabupaten Kubu Raya&quot; .</p>
-                            <a href="/news-features/dari-riset-ke-aksi-nyata-ynki-tfca-kalimantan-bangun-ketahanan-iklim-desa-gambut-kubu-raya/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 8 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/ynki.webp" alt="Delapan Tahun Perda Pengelolaan Usaha Berbasis Lahan Berkelanjutan Belum Dilaksanakan" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2025</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/delapan-tahun-perda-pengelolaan-usaha-berbasis-lahan-berkelanjutan-belum-dilaksanakan/">Delapan Tahun Perda Pengelolaan Usaha Berbasis Lahan Berkelanjutan Belum Dilaksanakan</a>
-                            </h3>
-                            <p>Sejak tahun 2018, Kalimantan Barat sudah memiliki Perda 6/2018 tentang Pengelolaan Usaha Berbasis Lahan Berkelanjutan.</p>
-                            <a href="/news-features/delapan-tahun-perda-pengelolaan-usaha-berbasis-lahan-berkelanjutan-belum-dilaksanakan/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 9 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/29_04_2026_Yuliantini-dan-pak-Kades-Limbung-Wiyono_.webp" alt="Desa Limbung dan Beras Kopi: Dari Kejayaan Masa Lalu hingga Ambisi Kebangkitan Kembali" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">DESA LIMBUNG</div>
-                            <h3>
-                              <a href="/news-features/desa-limbung-pernah-berjaya-di-beras-kopi/">Desa Limbung dan Beras Kopi: Dari Kejayaan Masa Lalu hingga Ambisi Kebangkitan Kembali</a>
-                            </h3>
-                            <p>Beras kopi Desa Limbung dulu menjadi bagian dari rantai pasok ke ibu kota provinsi, Pontianak, dan kabupaten/kota se-Kalbar.</p>
-                            <a href="/news-features/desa-limbung-pernah-berjaya-di-beras-kopi/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 10 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/29_04_2026_Kunjungan-ke-kantor-desa-Limbung.webp" alt="Menjaga Bandara, Membiarkan Desa: Ironi Karhutla di Desa Limbung, Tuan Rumah Bandara Supadio" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">DESA LIMBUNG</div>
-                            <h3>
-                              <a href="/news-features/desa-limbung-tuan-rumah-bandara-internasional-supadio-tapi-rawan-karhutla/">Menjaga Bandara, Membiarkan Desa: Ironi Karhutla di Desa Limbung, Tuan Rumah Bandara Supadio</a>
-                            </h3>
-                            <p>Wilayah Desa Limbung Kabupaten Kubu Raya didominasi gambut dan rawan kebaran hutan dan lahan (karhutla) setiap tahun.</p>
-                            <a href="/news-features/desa-limbung-tuan-rumah-bandara-internasional-supadio-tapi-rawan-karhutla/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 11 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Diskusi-Penerapan-Pendekatan-Lanskap-dan-Pengelolaannya.webp" alt="Diskusi Penerapan Pendekatan Lanskap dan Pengelolaannya" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/diskusi-penerapan-pendekatan-lanskap-dan-pengelolaannya/">Diskusi Penerapan Pendekatan Lanskap dan Pengelolaannya</a>
-                            </h3>
-                            <p>Diskusi yang difasilitasi @wwf_id dihadiri berbagai pihak untuk berbagi pengalaman dalam penerapan pendekatan lanskap dan pengelolaannya.</p>
-                            <a href="/news-features/diskusi-penerapan-pendekatan-lanskap-dan-pengelolaannya/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 12 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/19-04-2026-Kunjungan-BEM-Untan-ke-YNKI.webp" alt="BEM Untan dan YNKI Bersatu untuk Bumi: Lomba Eco Creative Sambut Hari Lingkungan Hidup 2026" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/eco-creative-lingkungan-bem-untan-bertandang-ke-ynki/">BEM Untan dan YNKI Bersatu untuk Bumi: Lomba Eco Creative Sambut Hari Lingkungan Hidup 2026</a>
-                            </h3>
-                            <p>Memperingati Hari Lingkungan Sedunia 2026, BEM Untan Pontianak mengusung tajuk “Eco Creative Lingkungan” ke YNKI di Pontianak, Selasa, 19 Mei 2026.</p>
-                            <a href="/news-features/eco-creative-lingkungan-bem-untan-bertandang-ke-ynki/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 13 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/zulfa-lailia-hauro-dwi-anggradini-putri-putri-lestari-raymundus-yuliantini-lilin-dwi-evelyn.webp" alt="YNKI: Program Mitigasi - Adaptasi Iklim Desa Gambut di Kubu Raya Mewujudkan Empat Tujuan TFCA" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">KABUPATEN KUBU RAYA</div>
-                            <h3>
-                              <a href="/news-features/empat-tujuan-penguatan-mitigasi-dan-adaptasi-iklim-desa-gambut-kabupaten-kubu-raya/">YNKI: Program Mitigasi - Adaptasi Iklim Desa Gambut di Kubu Raya Mewujudkan Empat Tujuan TFCA</a>
-                            </h3>
-                            <p>Program penguatan mitigasi dan adaptasi iklim desa gambut di Kabupaten Kubu Raya, Kalimantan Barat, memiliki empat tujuan.</p>
-                            <a href="/news-features/empat-tujuan-penguatan-mitigasi-dan-adaptasi-iklim-desa-gambut-kabupaten-kubu-raya/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 14 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/29_04_2026_Kades-Wiyono-menunjukkan-peta-kawasan-hutan-desa-limbung-ke-tim-YNKI-Yuliantini.webp" alt="Mempertahankan 0,8 Hektar Hutan Terakhir: Kades Limbung Tolak Data 0% Tutupan Hutan" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">DESA LIMBUNG</div>
-                            <h3>
-                              <a href="/news-features/enggan-disebut-kawasan-hutan-di-desa-limbung-sudah-habis/">Mempertahankan 0,8 Hektar Hutan Terakhir: Kades Limbung Tolak Data 0% Tutupan Hutan</a>
-                            </h3>
-                            <p>Hanya tersisa 25 hektare Hutan Kota Kubu Raya yang ada di Desa Limbung, tapi vegetasi tanaman hutannya sudah ludes terbakar.</p>
-                            <a href="/news-features/enggan-disebut-kawasan-hutan-di-desa-limbung-sudah-habis/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 15 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2025/01/WhatsApp-Image-2026-06-17-at-07.56.43.webp" alt="Facilitating and Assisting Planning Forest Area Management by Village" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2025</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/facilitating-and-assisting-planning-forest-area-management-by-village/">Facilitating and Assisting Planning Forest Area Management by Village</a>
-                            </h3>
-                            <p>Forest Area Planning &amp; Management in Kalimantan (KALFOR), Program Ditjen PKTL KLHK dengan pendanaan dari Global Environmental Facility (GEF) United...</p>
-                            <a href="/news-features/facilitating-and-assisting-planning-forest-area-management-by-village/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 16 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Inisiatif-Pendekatan-Lanskap-Pada-Pembangunan-Desa.webp" alt="Inisiatif Pendekatan Lanskap pada Pembangunan Desa" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/inisiatif-pendekatan-lanskap-pada-pembangunan-desa/">Inisiatif Pendekatan Lanskap pada Pembangunan Desa</a>
-                            </h3>
-                            <p>Perencanaan tata guna lahan partisipatif tingkat desa merupakan faktor penting dalam proses pembangunan tingkat desa.</p>
-                            <a href="/news-features/inisiatif-pendekatan-lanskap-pada-pembangunan-desa/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 17 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/29-4-2026-Tim-YNKI-hadiri-Musrembang-RKPD-Kubu-Raya-2-April-2026-di-Aula-Praja-Utama-KKR-2.webp" alt="Kisah Pak Acui dan Jambu Mete Limbung: Dari Tanaman Rehabilitasi Lahan Kritis, Kini Tembus Pasar Mancanegara" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">DESA LIMBUNG</div>
-                            <h3>
-                              <a href="/news-features/kacang-mete-desa-limbung-diminati-pasar-domestik-hingga-mancanegara/">Kisah Pak Acui dan Jambu Mete Limbung: Dari Tanaman Rehabilitasi Lahan Kritis, Kini Tembus Pasar Mancanegara</a>
-                            </h3>
-                            <p>Kades Limbung, Wiyono menyampaikan jika ada warga desanya, biasa dipanggil pak Acui, berhasil menanam 200 pohon jambu mete untuk dijual kacang mete...</p>
-                            <a href="/news-features/kacang-mete-desa-limbung-diminati-pasar-domestik-hingga-mancanegara/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 18 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/06/17-06-2026-Beruang-Madu_Maulina-Siregar_.webp" alt="Kasus Konflik Satwa di Desa Limbung: Perspektif Ekologi Lanskap" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">DESA LIMBUNG</div>
-                            <h3>
-                              <a href="/news-features/kasus-konflik-satwa-di-desa-limbung-perspektif-ekologi-lanskap/">Kasus Konflik Satwa di Desa Limbung: Perspektif Ekologi Lanskap</a>
-                            </h3>
-                            <p>Berulang kali, konflik Peternak Madu Lebah Kelulut vs Beruang Madu (Helarctos malayanus) yang rusak habitatnya di Desa Limbung, Kubu Raya, Kalbar.</p>
-                            <a href="/news-features/kasus-konflik-satwa-di-desa-limbung-perspektif-ekologi-lanskap/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 19 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/05-05-2026-katalis-ligni-lilin-dwi-evelin.webp" alt="Cakar Elang, Tanaman Liar Gambut Kubu Raya: Kaya Nama Lokal tapi Belum Tercatat dalam Botani Dunia" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">KABUPATEN KUBU RAYA</div>
-                            <h3>
-                              <a href="/news-features/katenis-ligni-belum-tercatat-spesies-resmi-botani-internasional/">Cakar Elang, Tanaman Liar Gambut Kubu Raya: Kaya Nama Lokal tapi Belum Tercatat dalam Botani Dunia</a>
-                            </h3>
-                            <p>Warga desa Kubu Raya cukup heterogen. Akhirnya banyak istilah untuk menyebut tanaman rambat di rawa gambut: Cakar Elang.</p>
-                            <a href="/news-features/katenis-ligni-belum-tercatat-spesies-resmi-botani-internasional/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 20 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Kawasan-penting-mangrove-kubu-raya.webp" alt="Kawasan Penting Mangrove Kubu Raya, Ancaman dan Praktik Terbaik" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KABUPATEN KUBU RAYA</div>
-                            <h3>
-                              <a href="/news-features/kawasan-penting-mangrove-kubu-raya-ancaman-dan-praktik-terbaik/">Kawasan Penting Mangrove Kubu Raya, Ancaman dan Praktik Terbaik</a>
-                            </h3>
-                            <p>Kawasan Mangrove di Kecamatan Teluk Pakedai dan Kecamatan Kakap adalah salah satu hutan mangrove dengan kualitas paling baik.</p>
-                            <a href="/news-features/kawasan-penting-mangrove-kubu-raya-ancaman-dan-praktik-terbaik/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 21 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Kelelawar-si-penyerbuk-malam-hari.webp" alt="Kelelawar Si Pernyerbuk Malam Hari" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/kelelawar-si-pernyerbuk-malam-hari/">Kelelawar Si Pernyerbuk Malam Hari</a>
-                            </h3>
-                            <p>Keberadaan kelelawar di lingkungan masyarakat memberikan manfaat karena kelelawar menjadi penyerbuk alami pada tanaman buah.</p>
-                            <a href="/news-features/kelelawar-si-pernyerbuk-malam-hari/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 22 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Kenaikan-Suhu-dan-Ancaman-Punahnya-Es-di-Puncak-Jayawijaya.webp" alt="Kenaikan Suhu dan Ancaman Punahnya Es di Puncak Jayawijaya" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/kenaikan-suhu-dan-ancaman-punahnya-es-di-puncak-jayawijaya/">Kenaikan Suhu dan Ancaman Punahnya Es di Puncak Jayawijaya</a>
-                            </h3>
-                            <p>CNN Indonesia mengabarkan bahwa BMKG memprediksi tahun 2025, es abadi di Pegunungan Jayawijaya Papua akan mencair.</p>
-                            <a href="/news-features/kenaikan-suhu-dan-ancaman-punahnya-es-di-puncak-jayawijaya/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 23 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Kopi-dan-Penghidupan-Petani-di-Desa-Sungai-Bulan-dan-Jangkang-Dua.webp" alt="Kopi dan Penghidupan Petani di Desa Sungai Bulan dan Jangkang Dua" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/kopi-dan-penghidupan-petani-di-desa-sungai-bulan-dan-jangkang-dua/">Kopi dan Penghidupan Petani di Desa Sungai Bulan dan Jangkang Dua</a>
-                            </h3>
-                            <p>Produksi kopi dari Desa Sungai Bulan dan Jangkang Dua telah lama menjadi alternatif pendapatan bagi petani.</p>
-                            <a href="/news-features/kopi-dan-penghidupan-petani-di-desa-sungai-bulan-dan-jangkang-dua/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 24 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/site-image-yoast.webp" alt="Kunjungan YNKI untuk Menjadi Guru Tamu di SMK Negeri 1 Sungai Kakap" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">SUNGAI KAKAP</div>
-                            <h3>
-                              <a href="/news-features/kunjungan-ynki-untuk-menjadi-guru-tamu-di-smk-negeri-1-sungai-kakap/">Kunjungan YNKI untuk Menjadi Guru Tamu di SMK Negeri 1 Sungai Kakap</a>
-                            </h3>
-                            <p>YNKI menjadi guru tamu praktik pengolahan hasil pertanian di SMK Negeri 1 Sungai Kakap pada 21/1/2022.</p>
-                            <a href="/news-features/kunjungan-ynki-untuk-menjadi-guru-tamu-di-smk-negeri-1-sungai-kakap/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 25 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/05-05-2026-Awal-di-Kubu-Padi.webp" alt="7 Tahun Terbentuk, LPHD Kubu Padi Bersatu: &amp;quot;Kami Butuh Dokumen untuk Menghidupkan Hutan Desa&amp;quot;" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/lphd-kubu-padi-belum-ada-rkps/">7 Tahun Terbentuk, LPHD Kubu Padi Bersatu: &amp;quot;Kami Butuh Dokumen untuk Menghidupkan Hutan Desa&amp;quot;</a>
-                            </h3>
-                            <p>Kades Kubu Padi H Oesman menyampaikan LPHD Kubu Padi sudah terbentuk tahun 2019, tetapi belum ada kegiatan karena RKPS-nya belum ada.</p>
-                            <a href="/news-features/lphd-kubu-padi-belum-ada-rkps/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 26 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Melalui-Peat-IMPACTS-Indonesia-Mewujudkan-Ekosistem-Gambut-Lestari.webp" alt="Melalui Peat-IMPACTS Indonesia Mewujudkan Ekosistem Gambut Lestari" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/melalui-peat-impacts-indonesia-mewujudkan-ekosistem-gambut-lestari/">Melalui Peat-IMPACTS Indonesia Mewujudkan Ekosistem Gambut Lestari</a>
-                            </h3>
-                            <p>Proyek ICRAF pada mendorong pengelolaan bentang lahan gambut lestari Bersama Para Pihak melalui proyek Peat-IMPACTS di Kubu Raya.</p>
-                            <a href="/news-features/melalui-peat-impacts-indonesia-mewujudkan-ekosistem-gambut-lestari/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 27 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Mempersatukan-Keberlanjutan-Produksi-dan-Pengolahan-Madu-Hutan-Danau-Sentarum.webp" alt="Mempersatukan Keberlanjutan Produksi dan Pengolahan Madu Hutan Danau Sentarum" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">DANAU SENTARUM</div>
-                            <h3>
-                              <a href="/news-features/mempersatukan-keberlanjutan-produksi-dan-pengolahan-madu-hutan-danau-sentarum/">Mempersatukan Keberlanjutan Produksi dan Pengolahan Madu Hutan Danau Sentarum</a>
-                            </h3>
-                            <p>Kemajuan, peningkatan pengetahuan, dan praktik Periau telah ada tapi pengolahan hasil, pengemasan, dan pemasaran untuk jaminan kualitas perlu ditin...</p>
-                            <a href="/news-features/mempersatukan-keberlanjutan-produksi-dan-pengolahan-madu-hutan-danau-sentarum/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 28 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Merawat-Peradaban-dan-Tradisi.webp" alt="Merawat Peradaban dan Tradisi" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/merawat-peradaban-dan-tradisi/">Merawat Peradaban dan Tradisi</a>
-                            </h3>
-                            <p>Masyarakat Pontianak seluruhnya akan menerima dan menyatakan tidak sah jika tidak ada kue lapis legit saat hari raya.</p>
-                            <a href="/news-features/merawat-peradaban-dan-tradisi/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 29 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/pembuatan-tikung.webp" alt="Minimalisir Resiko Kerja dan Menjaga Keberlanjutan Kehidupan Lebah Melalui Panen Lestari serta Pemasangan Tikung di Desa Ulak Medang, Ketapang" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2024</span>
-                            </div>
-                            <div class="doc-loc">KETAPANG</div>
-                            <h3>
-                              <a href="/news-features/minimalisir-resiko-kerja-dan-menjaga-keberlanjutan-kehidupan-lebah-melalui-panen-lestari-serta-pemasangan-tikung-di-desa-ulak-medang-ketapang/">Minimalisir Resiko Kerja dan Menjaga Keberlanjutan Kehidupan Lebah Melalui Panen Lestari serta Pemasangan Tikung di Desa Ulak Medang, Ketapang</a>
-                            </h3>
-                            <p>Tiap masa panen dari November–Februari, warga Desa Ulak Medang Kabupaten Ketapang dapat memanen 500-700 kg madu hutan lalo.</p>
-                            <a href="/news-features/minimalisir-resiko-kerja-dan-menjaga-keberlanjutan-kehidupan-lebah-melalui-panen-lestari-serta-pemasangan-tikung-di-desa-ulak-medang-ketapang/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 30 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Mudik-Lebaran-Menjaga-Spiritualitas-Budaya-dan-Identitas.webp" alt="Mudik Lebaran Menjaga Spiritualitas, Budaya, dan Identitas" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/mudik-lebaran-menjaga-spiritualitas-budaya-dan-identitas/">Mudik Lebaran Menjaga Spiritualitas, Budaya, dan Identitas</a>
-                            </h3>
-                            <p>Pemerintah menyatakan jumlah pemudik lebaran 2022 mencapai 85 juta orang atau 32% penduduk Indonesia melakukan perjalanan mudik.</p>
-                            <a href="/news-features/mudik-lebaran-menjaga-spiritualitas-budaya-dan-identitas/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 31 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/29_04_2026_Kunjungan-ke-kantor-desa-Limbung-KKR-Kalbar-ditemui-Kades-Limbung-Wiyono.webp" alt="Muhibah YNKI ke Desa Limbung: Menyampaikan Kabar Gembira Program TFCA Kalimantan" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">DESA LIMBUNG</div>
-                            <h3>
-                              <a href="/news-features/muhibah-mesra-tim-ynki-ke-pemdes-limbung-kkr/">Muhibah YNKI ke Desa Limbung: Menyampaikan Kabar Gembira Program TFCA Kalimantan</a>
-                            </h3>
-                            <p>Kubu Raya, naturalkapital.or.id. Tim Yayasan Natural Kapital Indonesia (YNKI) melaksanakan kunjungan muhibah ke Pemerintah Desa (Pemdes) Limbung, K...</p>
-                            <a href="/news-features/muhibah-mesra-tim-ynki-ke-pemdes-limbung-kkr/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 32 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/YNKI-Diskusi-Pemahaman-Strategi-Komunikasi-Bersama-Ahmad-Sofian-dZ.webp" alt="Ngabuburit: Diskusi Pemahaman Strategi Komunikasi Bersama Ahmad Sofian dZ Direktur Lembaga Pengkajian dan Studi Arus Informasi Regional" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/ngabuburit-diskusi-pemahaman-strategi-komunikasi-bersama-ahmad-sofian-dz-direktur-lembaga-pengkajian-dan-studi-arus-informasi-regional/">Ngabuburit: Diskusi Pemahaman Strategi Komunikasi Bersama Ahmad Sofian dZ Direktur Lembaga Pengkajian dan Studi Arus Informasi Regional</a>
-                            </h3>
-                            <p>Yayasan Natural Kapital Indonesia (YNKI) mengadakan diskusi dalam rangka mencapai efektivitas strategi komunikasi, Jumat, 15 April 2022.</p>
-                            <a href="/news-features/ngabuburit-diskusi-pemahaman-strategi-komunikasi-bersama-ahmad-sofian-dz-direktur-lembaga-pengkajian-dan-studi-arus-informasi-regional/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 33 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Nilai-Tinggi-Konservasi.webp" alt="Nilai Tinggi Konservasi: Upaya Pencegahan Deforestasi dan Menyelaraskan Sosial, Ekonomi, dan Lingkungan" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/nilai-tinggi-konservasi-upaya-pencegahan-deforestasi-dan-menyelaraskan-sosial-ekonomi-dan-lingkungan/">Nilai Tinggi Konservasi: Upaya Pencegahan Deforestasi dan Menyelaraskan Sosial, Ekonomi, dan Lingkungan</a>
-                            </h3>
-                            <p>HCV atau Nilai Konservasi Tinggi merupakan pendekatan yang digunakan untuk memelihara, meningkatkan nilai dan fungsi-fungsi konservasi.</p>
-                            <a href="/news-features/nilai-tinggi-konservasi-upaya-pencegahan-deforestasi-dan-menyelaraskan-sosial-ekonomi-dan-lingkungan/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 34 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/site-image-yoast.webp" alt="Panen Jagung Pipil di Lahan Gambut Desa Limbung, Kubu Raya" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KABUPATEN KUBU RAYA</div>
-                            <h3>
-                              <a href="/news-features/panen-jagung-pipil-di-lahan-gambut-desa-limbung-kubu-raya/">Panen Jagung Pipil di Lahan Gambut Desa Limbung, Kubu Raya</a>
-                            </h3>
-                            <p>Very Judo, salah satu anggota YNKI melakukan panen jagung yang ditanam di lahan gambut pada 05/02/2022.</p>
-                            <a href="/news-features/panen-jagung-pipil-di-lahan-gambut-desa-limbung-kubu-raya/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 35 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Pelatihan-adaptasi-dan-mitigasi-perubahan-iklim.webp" alt="Pelatihan Adaptasi dan Mitigasi Perubahan Iklim oleh GCoM-Asia sebagai Kota Percontohan Ramah Iklim" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/pelatihan-adaptasi-dan-mitigasi-perubahan-iklim-oleh-gcom-asia-sebagai-kota-percontohan-ramah-iklim/">Pelatihan Adaptasi dan Mitigasi Perubahan Iklim oleh GCoM-Asia sebagai Kota Percontohan Ramah Iklim</a>
-                            </h3>
-                            <p>Pemkot Pontianak, Kelompok Kerja adaptasi dan mitigasi perubahan iklim Kota Pontianak, dan @uclgaspac melaksanakan pelatihan adaptasi dan mitigasi ...</p>
-                            <a href="/news-features/pelatihan-adaptasi-dan-mitigasi-perubahan-iklim-oleh-gcom-asia-sebagai-kota-percontohan-ramah-iklim/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 36 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/putri-lestari-raymundus-dwi-anggradini-putri-zulfa-lailia-hauro-lilin-dwi-evelyn-yuliantini.webp" alt="Siap Kelola Hibah TFCA Kalimantan: YNKI Ikuti Pelatihan dan Penyegaran Pengelolaan Administrasi Keuangan dari Kehati" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/pelatihan-dan-penyegaran-pengelolaan-hibah-siklus-6-tfca-kalimantan-bersama-kehati/">Siap Kelola Hibah TFCA Kalimantan: YNKI Ikuti Pelatihan dan Penyegaran Pengelolaan Administrasi Keuangan dari Kehati</a>
-                            </h3>
-                            <p>YNKI mengikuti pelatihan dan penyegaran pengelolaan dana hibah siklus ke-6 program TFCA Kalimantan, Senin, 20 April 2026.</p>
-                            <a href="/news-features/pelatihan-dan-penyegaran-pengelolaan-hibah-siklus-6-tfca-kalimantan-bersama-kehati/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 37 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Pendidikan-konservasi-20-22-Mei-2022-di-UPT-BKSDA-Kalbar.webp" alt="Pemuda Kalbar Ikut Serta dalam Pendidikan Konservasi" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/pemuda-kalbar-ikut-serta-dalam-pendidikan-konservasi/">Pemuda Kalbar Ikut Serta dalam Pendidikan Konservasi</a>
-                            </h3>
-                            <p>Kementerian LHK bersama @bksdakalbar dan @greenleadersid menyelenggarakan pendidikan konservasi pada 20-22 Mei 2022 di UPT BKSDA Kalbar.</p>
-                            <a href="/news-features/pemuda-kalbar-ikut-serta-dalam-pendidikan-konservasi/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 38 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Pengelolaan-Hutan-oleh-Masyarakat-di-Luar-Kawasan-Hutan.webp" alt="Pengelolaan Hutan oleh Masyarakat di Luar Kawasan Hutan" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/pengelolaan-hutan-oleh-masyarakat-di-luar-kawasan-hutan/">Pengelolaan Hutan oleh Masyarakat di Luar Kawasan Hutan</a>
-                            </h3>
-                            <p>Pemerintah Kabupaten Sintang didukung oleh UNDP KalFor Project menerbitkan Peraturan Bupati Sintang No. 122 tahun 2021.</p>
-                            <a href="/news-features/pengelolaan-hutan-oleh-masyarakat-di-luar-kawasan-hutan/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 39 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Direktur-YNKI-Haryono.webp" alt="Penerapan Safeguards Sosial dan Lingkungan" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">KABUPATEN KUBU RAYA</div>
-                            <h3>
-                              <a href="/news-features/penguatan-mitigasi-dan-adaptasi-iklim-desa-gambut-kabupaten-kubu-raya/">Penerapan Safeguards Sosial dan Lingkungan</a>
-                            </h3>
-                            <p>Direktur YNKI Haryono memimpin rapat strategi aksi pencapaian program “penguatan mitigasi dan adaptasi iklim desa gambut” di Kabupaten Kubu Raya, K...</p>
-                            <a href="/news-features/penguatan-mitigasi-dan-adaptasi-iklim-desa-gambut-kabupaten-kubu-raya/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 40 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/site-image-yoast.webp" alt="Penguatan Pengelolaan Perhutanan Sosial Melalui Aplikasi SMART Patrol" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/penguatan-pengelolaan-perhutanan-sosial-melalui-aplikasi-smart-patrol/">Penguatan Pengelolaan Perhutanan Sosial Melalui Aplikasi SMART Patrol</a>
-                            </h3>
-                            <p>FCF melalui Perkumpulan PADI Indonesia mengadakan Pelatihan Penggunaan Aplikasi SMART pada 20-26 Maret 2022 di Balikpapan, Kalimantan Timur.</p>
-                            <a href="/news-features/penguatan-pengelolaan-perhutanan-sosial-melalui-aplikasi-smart-patrol/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 41 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/04/PM-Haze.webp" alt="People&#39;s Movement (PM) to Stop Haze Observasi Peluang Kemitraan Restorasi Gambut" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/peoples-movement-pm-to-stop-haze-observasi-peluang-kemitraan-restorasi-gambut/">People&#39;s Movement (PM) to Stop Haze Observasi Peluang Kemitraan Restorasi Gambut</a>
-                            </h3>
-                            <p>YNKI berkesempatan mendampingi PM Haze dalam pemetaan potensi restorasi gambut di Kubu Raya, sejak 13 Mei-18 Mei.</p>
-                            <a href="/news-features/peoples-movement-pm-to-stop-haze-observasi-peluang-kemitraan-restorasi-gambut/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 42 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Gula-kelapa.webp" alt="Produk Turunan Tanaman Kelapa" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/produk-turunan-tanaman-kelapa/">Produk Turunan Tanaman Kelapa</a>
-                            </h3>
-                            <p>YNKI berkunjung ke Desa Sungai Kupah untuk melihat proses pengolahan nira menjadi gula kelapa serta cara berkebun petani pada 19/01/22.</p>
-                            <a href="/news-features/produk-turunan-tanaman-kelapa/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 43 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Rehabilitasi-Kanal-untuk-Penanganan-Karhutla-dan-Kesuburan-Lahan-Kabupaten-Kubu-Raya.webp" alt="Rehabilitasi Kanal untuk Penanganan Karhutla dan Kesuburan Lahan Kabupaten Kubu Raya" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KABUPATEN KUBU RAYA</div>
-                            <h3>
-                              <a href="/news-features/rehabilitasi-kanal-untuk-penanganan-karhutla-dan-kesuburan-lahan-kabupaten-kubu-raya/">Rehabilitasi Kanal untuk Penanganan Karhutla dan Kesuburan Lahan Kabupaten Kubu Raya</a>
-                            </h3>
-                            <p>Pemerintah Kabupaten Kubu Raya melakukan normalisasi kanal menggunakan excavator amfibi di Kawasan Desa Pal IX, 17 Mei 2022.</p>
-                            <a href="/news-features/rehabilitasi-kanal-untuk-penanganan-karhutla-dan-kesuburan-lahan-kabupaten-kubu-raya/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 44 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/29-04-2026-Kades-Limbung-Wiyono_.webp" alt="Desa Limbung Menyambut Program Iklim YNKI-TFCA: &amp;quot;Kami Ingin Kembalikan Kejayaan Beras Kopi&amp;quot;" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">DESA LIMBUNG</div>
-                            <h3>
-                              <a href="/news-features/sambut-penguatan-mitigasi-dan-adaptasi-iklim-desa-gambut/">Desa Limbung Menyambut Program Iklim YNKI-TFCA: &amp;quot;Kami Ingin Kembalikan Kejayaan Beras Kopi&amp;quot;</a>
-                            </h3>
-                            <p>Kubu Raya, naturalkapital.or.id. Pemerintah Desa (Pemdes) Limbung menyambut baik dimulainya program Penguatan Mitigasi dan Adaptasi Iklim Desa Gamb...</p>
-                            <a href="/news-features/sambut-penguatan-mitigasi-dan-adaptasi-iklim-desa-gambut/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 45 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Saya-pemilik-pengetahuan-Hari-Kartini.webp" alt="Saya Pemilik Pengetahuan" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2021</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/saya-pemilik-pengetahuan/">Saya Pemilik Pengetahuan</a>
-                            </h3>
-                            <p>Perjuangan R.A. Kartini pada masanya memantik arus utama kesetaraan gender untuk lebih melibatkan perempuan dalam berbagai aktivitas.</p>
-                            <a href="/news-features/saya-pemilik-pengetahuan/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 46 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Agroforestri.webp" alt="Sistem Agroforestri: adalah sistem pertanian yang melibatkan tanaman pangan dan tanaman kehutanan dalam lahan yang sama" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/sistem-agroforestri-adalah-sistem-pertanian-yang-melibatkan-tanaman-pangan-dan-tanaman-kehutanan-dalam-lahan-yang-sama/">Sistem Agroforestri: adalah sistem pertanian yang melibatkan tanaman pangan dan tanaman kehutanan dalam lahan yang sama</a>
-                            </h3>
-                            <p>Sistem agroforestri (wana tani) adalah sistem pertanian yang melibatkan tanaman pangan dan tanaman kehutanan dalam lahan yang sama.</p>
-                            <a href="/news-features/sistem-agroforestri-adalah-sistem-pertanian-yang-melibatkan-tanaman-pangan-dan-tanaman-kehutanan-dalam-lahan-yang-sama/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 47 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Bangkinang.webp" alt="Spesies Endemik Terancam di Hutan Kalibandung" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/spesies-endemik-terancam-di-hutan-kalibandung/">Spesies Endemik Terancam di Hutan Kalibandung</a>
-                            </h3>
-                            <p>Jika keanekaragaman hayati terjaga dan lestari maka akan mendatangkan manfaat yang besar baik manfaat secara ekonomi, sosial, dan lingkungan.</p>
-                            <a href="/news-features/spesies-endemik-terancam-di-hutan-kalibandung/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 48 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/putri-lestari-zulfa-lailia-hauro-zulkifli-hz.webp" alt="Empat Pilar SOP Dokumentasi Mitra TFCA Kalimantan" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/standar-pelaporan-dokumentasi-mitra-tfca-kalimantan/">Empat Pilar SOP Dokumentasi Mitra TFCA Kalimantan</a>
-                            </h3>
-                            <p>Hari kedua, pelatihan dan penyegaran pengelolaan dana hibah siklus ke-6 program TFCA Kalimantan, menyiarkan logo baru.</p>
-                            <a href="/news-features/standar-pelaporan-dokumentasi-mitra-tfca-kalimantan/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 49 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/06/17-4-2026-selayang-pandang-program-tfca.webp" alt="Tiga Desa, Satu Tujuan: Mengenal Lokasi Program Mitigasi Iklim Desa Gambut YNKI-TFCA di Kubu Raya" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2026</span>
-                            </div>
-                            <div class="doc-loc">KABUPATEN KUBU RAYA</div>
-                            <h3>
-                              <a href="/news-features/tiga-desa-satu-tujuan-mengenal-lokasi-program-mitigasi-iklim-desa-gambut-ynki-tfca-di-kubu-raya/">Tiga Desa, Satu Tujuan: Mengenal Lokasi Program Mitigasi Iklim Desa Gambut YNKI-TFCA di Kubu Raya</a>
-                            </h3>
-                            <p>YNKI dan TFCA Kalimantan periode 2026-2028, gandeng tiga desa sebagai percontohan restorasi gambut: Desa Kubu Padi, Pasak Piang, dan Limbung.</p>
-                            <a href="/news-features/tiga-desa-satu-tujuan-mengenal-lokasi-program-mitigasi-iklim-desa-gambut-ynki-tfca-di-kubu-raya/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 50 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Tingkatkan-Literasi-dan-Kesadaran-Perubahan-Iklim.webp" alt="Tingkatkan Literasi dan Kesadaran Perubahan Iklim" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/tingkatkan-literasi-dan-kesadaran-perubahan-iklim/">Tingkatkan Literasi dan Kesadaran Perubahan Iklim</a>
-                            </h3>
-                            <p>AJI Pontianak menyelenggarakan Webinar Dampak Perubahan Iklim di Kalbar, Upaya Mitigasi dan Penguatan Literasi pada, Jumat 22 April 2022.</p>
-                            <a href="/news-features/tingkatkan-literasi-dan-kesadaran-perubahan-iklim/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 51 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/Webinar-Dampak-Perubahan-Iklim-di-Kalbar-Upaya-Mitigasi-dan-Penguatan-Literasi.webp" alt="Webinar Dampak Perubahan Iklim di Kalbar, Upaya Mitigasi dan Penguatan Literasi" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/webinar-dampak-perubahan-iklim-di-kalbar-upaya-mitigasi-dan-penguatan-literasi/">Webinar Dampak Perubahan Iklim di Kalbar, Upaya Mitigasi dan Penguatan Literasi</a>
-                            </h3>
-                            <p>AJI bekerja sama dengan GNI mengadakan webinar “Dampak Perubahan Iklim di Kalbar, Upaya Mitigasi dan Penguatan Literasi&quot;, Jumat, 22 April 2022.</p>
-                            <a href="/news-features/webinar-dampak-perubahan-iklim-di-kalbar-upaya-mitigasi-dan-penguatan-literasi/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 52 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/wiki-gambut.webp" alt="Wiki Gambut: kontribusi penjaga pengetahuan gambut" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              <a href="/news-features/wiki-gambut-kontribusi-penjaga-pengetahuan-gambut/">Wiki Gambut: kontribusi penjaga pengetahuan gambut</a>
-                            </h3>
-                            <p>@icraf_indonesia melaksanakan kegiatan Kopi Darat Wiki Gambut Kalimantan Barat pada Jumat, 10 Juni 2022 di Blingkaan Cafe, Pontianak.</p>
-                            <a href="/news-features/wiki-gambut-kontribusi-penjaga-pengetahuan-gambut/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 53 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/site-image-yoast.webp" alt="Workshop Pengolahan Kopi Pascapanen di SMK Negeri 1 Sungai Kakap" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">SUNGAI KAKAP</div>
-                            <h3>
-                              <a href="/news-features/workshop-pengolahan-kopi-pascapanen-di-smk-negeri-1-sungai-kakap/">Workshop Pengolahan Kopi Pascapanen di SMK Negeri 1 Sungai Kakap</a>
-                            </h3>
-                            <p>YNKI menjadi guru tamu dalam workshop pengolahan kopi pascapanen di SMK Negeri 1 Sungai Kakap pada 28 Januari 2022.</p>
-                            <a href="/news-features/workshop-pengolahan-kopi-pascapanen-di-smk-negeri-1-sungai-kakap/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <!-- 54 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <img src="/wp-content/uploads/2026/05/YNKI-Kubu-Raya-Coffee-Series-Menjadi-Tuan-Rumah-di-Rumah-Sendiri.webp" alt="YNKI - Kubu Raya Coffee Series, Menjadi Tuan Rumah di Rumah Sendiri" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-year">2022</span>
-                            </div>
-                            <div class="doc-loc">KABUPATEN KUBU RAYA</div>
-                            <h3>
-                              <a href="/news-features/ynki-kubu-raya-coffee-series-menjadi-tuan-rumah-di-rumah-sendiri/">YNKI - Kubu Raya Coffee Series, Menjadi Tuan Rumah di Rumah Sendiri</a>
-                            </h3>
-                            <p>Semua lanskap terkoneksi dengan pasar lokal - global tidak terkecuali Kubu Raya dengan salah satu komoditasnya yaitu Kopi yang merupakan bagian dar...</p>
-                            <a href="/news-features/ynki-kubu-raya-coffee-series-menjadi-tuan-rumah-di-rumah-sendiri/" class="btn-dl">Baca Selengkapnya
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-</div>
+                        @endforeach
+                      </div>
 
                       <!-- Pagination Clearfix -->
-                      <div class="pagination clearfix" id="news-pagination"></div>
+                      <div class="pagination clearfix" id="budaya-pagination"></div>
                     </div>
                   </section>
 
-                  <!-- UNGGULAN & INISIATIF LIPUTAN -->
+                  <!-- UNGGULAN & FILSAFAT LANSKAP -->
                   <section
-                    id="inisiatif-liputan"
+                    id="filsafat-lanskap"
                     class="unggulan-sec ynki-section"
                   >
                     <div class="ynki-container">
                       <div style="text-align: center">
-                        <span class="section-badge">JURNALISME LANSKAP</span>
+                        <span class="section-badge">FILSAFAT LANSKAP</span>
                         <h2
                           style="
                             font-size: clamp(22px, 3vw, 34px);
@@ -4930,7 +3803,7 @@
                             margin: 12px 0;
                           "
                         >
-                          Transparansi, Edukasi &amp; Suara Komunitas
+                          Etika Lingkungan &amp; Transformasi Nilai
                         </h2>
                         <p
                           style="
@@ -4940,31 +3813,33 @@
                             margin: 0 auto;
                           "
                         >
-                          YNKI menghadirkan jurnalisme pembangunan yang
-                          objektif, transparan, dan berpusat pada masyarakat
-                          tapak.
+                          Memulihkan hubungan harmonis antara peradaban manusia
+                          dan modal alam melalui kearifan tradisi dan etika
+                          ekologi.
                         </p>
                       </div>
 
                       <div class="unggulan-grid">
                         <div class="ung-card">
-                          <div class="ung-meta">NARASI DARI TINGKAT TAPAK</div>
-                          <h3>Mengangkat Pengetahuan &amp; Kearifan Lokal</h3>
+                          <div class="ung-meta">TRANSFORMASI PARADIGMA</div>
+                          <h3>Dari Antroposentrisme Menuju Ekosentrisme</h3>
                           <p>
-                            Setiap artikel diproduksi bersama masyarakat
-                            setempat, mendokumentasikan kearifan adat dalam
-                            menjaga rimba dan gambut, serta menghormati hak
-                            tenurial komunitas lokal.
+                            Mengajak masyarakat dan pengambil kebijakan untuk
+                            menempatkan keseimbangan biosfer sebagai landasan
+                            utama dalam setiap perencanaan pembangunan dan
+                            investasi ekonomi lanskap.
                           </p>
                         </div>
                         <div class="ung-card">
-                          <div class="ung-meta">LITERASI &amp; ADVOKASI</div>
-                          <h3>Membangun Kesadaran Publik Multipihak</h3>
+                          <div class="ung-meta">ETIKA GENERASI MENDATANG</div>
+                          <h3>
+                            Keadilan Intergenerasi dalam Pengelolaan Lanskap
+                          </h3>
                           <p>
-                            Menyajikan data, temuan lapangan, dan analisis
-                            kritis guna mendukung pembuatan kebijakan pemerintah
-                            daerah yang berpihak pada keberlanjutan ekosistem
-                            dan keadilan iklim.
+                            Menegaskan tanggung jawab moral generasi hari ini
+                            untuk mewariskan modal alam yang sehat,
+                            keanekaragaman hayati yang lestari, dan ketahanan
+                            iklim bagi anak cucu di masa depan.
                           </p>
                         </div>
                       </div>
@@ -4974,21 +3849,19 @@
                   <!-- CTA -->
                   <section class="cta-section ynki-section">
                     <div class="ynki-container">
-                      <span class="section-badge">KOLABORASI MEDIA</span>
-                      <h2>
-                        Punya Cerita atau Ingin Berkolaborasi Meliput Lanskap?
-                      </h2>
+                      <span class="section-badge">RUANG DIALOG BUDAYA</span>
+                      <h2>Ingin Berbagi Refleksi atau Menulis Bersama YNKI?</h2>
                       <p>
-                        YNKI terbuka bagi jurnalis, media, dan pembuat konten
-                        yang ingin mengangkat cerita nyata tentang kelestarian
-                        alam dan kesejahteraan masyarakat di Kalimantan Barat.
+                        Kami membuka ruang kontribusi esai dan opini kritis bagi
+                        para akademisi, budayawan, peneliti, dan penggerak
+                        masyarakat di Kalimantan Barat.
                       </p>
                       <div class="cta-btns">
                         <a href="/kontak-kami/" class="btn-cta-main"
-                          >Hubungi Tim Komunikasi</a
+                          >Kirim Tulisan Opini</a
                         >
-                        <a href="/liputan-media/" class="btn-cta-second"
-                          >Lihat Arsip Liputan Media</a
+                        <a href="/penelitian-laporan/" class="btn-cta-second"
+                          >Lihat Publikasi Riset</a
                         >
                       </div>
                     </div>
@@ -5092,19 +3965,11 @@
                         ></i
                         ><span style="color: #ffffff"
                           ><a
-                            class="ynki-email-link"
+                            style="color: #ffffff"
                             href="mailto:sekretariat@naturalkapital.or.id"
                             target="_blank"
                             rel="noopener"
-                            style="
-                              color: #ffffff;
-                              text-decoration: none;
-                              font-weight: 600;
-                            "
-                            title="Kirim email ke sekretariat@naturalkapital.or.id"
-                            ><span class="ynki-email-text"
-                              >sekretariat@naturalkapital.or.id</span
-                            ></a
+                            >sekretariat@naturalkapital.or.id</a
                           ></span
                         >
                       </p>
@@ -5261,20 +4126,12 @@
                     >
                       <p><strong>Tautan Cepat</strong></p>
                       <ul>
-                        <li>
-                          <a href="/sejarah-visi-misi/"
-                            >Sejarah, Visi &amp; Misi</a
-                          >
-                        </li>
-                        <li>
-                          <a href="/landscape-governance/"
-                            >Landscape Governance</a
-                          >
-                        </li>
-                        <li><a href="/dampak/">Dampak</a></li>
-                        <li>
-                          <a href="/news-features/">News &amp; Features</a>
-                        </li>
+                        <li>Tentang Kami</li>
+                        <li>Program Kami</li>
+                        <li>Dampak &amp; Pembelajaran</li>
+                        <li>Ikut Terlibat</li>
+                        <li>Literasi &amp; Pengetahuan</li>
+                        <li>Hubungi Kami</li>
                       </ul>
                       <p>© 2026 Yayasan Natural Kapital Indonesia</p>
                     </div>
@@ -5345,12 +4202,12 @@
       >
     </section>
     <script>
-      // News & Features Pagination Clearfix (6 articles per page)
+      // Perspektif Budaya Pagination Clearfix (6 articles per page)
       document.addEventListener('DOMContentLoaded', function() {
         const ITEMS_PER_PAGE = 6;
         let currentPage = 1;
         const grid = document.querySelector('.docs-grid');
-        const paginationContainer = document.getElementById('news-pagination');
+        const paginationContainer = document.getElementById('budaya-pagination');
 
         if (!grid || !paginationContainer) return;
 
@@ -5372,7 +4229,7 @@
 
           // Prev button
           if (currentPage > 1) {
-            html += `<a href="#kumpulan-berita" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Previous</a>`;
+            html += `<a href="#kumpulan-esai" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Previous</a>`;
           } else {
             html += `<span class="pagination-prev disabled">&laquo; Previous</span>`;
           }
@@ -5382,13 +4239,13 @@
             if (p === currentPage) {
               html += `<span class="current">${p}</span>`;
             } else {
-              html += `<a href="#kumpulan-berita" class="inactive" data-page="${p}">${p}</a>`;
+              html += `<a href="#kumpulan-esai" class="inactive" data-page="${p}">${p}</a>`;
             }
           }
 
           // Next button
           if (currentPage < totalPages) {
-            html += `<a href="#kumpulan-berita" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
+            html += `<a href="#kumpulan-esai" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
           } else {
             html += `<span class="pagination-next disabled">Next &raquo;</span>`;
           }
@@ -5425,7 +4282,7 @@
           renderPagination(cards.length);
 
           if (scrollIntoView) {
-            const section = document.getElementById('kumpulan-berita');
+            const section = document.getElementById('kumpulan-esai');
             if (section) {
               section.scrollIntoView({ behavior: 'smooth' });
             }

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3465,252 +3465,43 @@
                       </div>
 
                       <div class="penelitian-list">
-                        <!-- 1 -->
+                        @forelse($articles as $art)
                         <div class="pen-item">
                           <div class="pen-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                              <path
-                                d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                              />
-                              <circle cx="12" cy="10" r="3" />
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                              <polyline points="14 2 14 8 20 8"/>
+                              <line x1="16" y1="13" x2="8" y2="13"/>
+                              <line x1="16" y1="17" x2="8" y2="17"/>
+                              <polyline points="10 9 9 9 8 9"/>
                             </svg>
                           </div>
                           <div class="pen-content">
                             <div class="pen-meta">
-                              <span class="pen-badge badge-spasial"
-                                >Analisis Spasial &amp; GIS</span
-                              >
-                              <span class="pen-year">2020</span>
+                              <span class="pen-badge badge-spasial">{{ $art->category->category_name ?? 'Riset' }}</span>
+                              <span class="pen-year">{{ $art->published_at ? $art->published_at->format('Y') : date('Y') }}</span>
                             </div>
-                            <h3>
-                              Analisis Spasial Kebakaran Hutan dan Lahan di
-                              Lanskap Gambut Pesisir Delta Kapuas
-                            </h3>
-                            <p>
-                              Analisis spasial yang mengungkap rata-rata
-                              kebakaran seluas 51.130 hektar terjadi setiap
-                              tahunnya di Lanskap Gambut Pesisir Delta Kapuas
-                              sejak 2015–2019. Menjadi dasar perencanaan
-                              restorasi dan pencegahan kebakaran.
-                            </p>
+                            <h3>{{ $art->title }}</h3>
+                            <p>{{ $art->excerpt ?? '' }}</p>
                             <div class="pen-actions">
-                              <a href="#" class="btn-download"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2.5"
-                                >
-                                  <path
-                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                  />
-                                  <polyline points="7 10 12 15 17 10" />
-                                  <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                Unduh PDF</a
-                              >
+                              @if($art->attachment_pdf_path)
+                              <a href="/storage/{{ ltrim($art->attachment_pdf_path, '/') }}" target="_blank" class="btn-download">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                  <polyline points="7 10 12 15 17 10"/>
+                                  <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg> Unduh PDF
+                              </a>
+                              @endif
+                              <a href="/artikel-cms/{{ $art->slug }}" class="btn-read" style="margin-left:8px; display:inline-block; padding:8px 16px; background:#e8f5e9; color:#117710; border-radius:6px; font-size:13px; font-weight:600; text-decoration:none;">Baca Online &rarr;</a>
                             </div>
                           </div>
                         </div>
-                        <!-- 2 -->
-                        <div class="pen-item">
-                          <div class="pen-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                              <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                              <polyline points="2 17 12 22 22 17" />
-                              <polyline points="2 12 12 17 22 12" />
-                            </svg>
-                          </div>
-                          <div class="pen-content">
-                            <div class="pen-meta">
-                              <span class="pen-badge badge-policy"
-                                >Policy Brief</span
-                              >
-                              <span class="pen-year">2024</span>
-                            </div>
-                            <h3>
-                              Policy Brief: Penguatan Tata Kelola Lanskap dalam
-                              Perencanaan Pembangunan Desa
-                            </h3>
-                            <p>
-                              Rekomendasi kebijakan untuk mengintegrasikan
-                              pendekatan lanskap dalam perencanaan pembangunan
-                              desa (RPJMDes dan RKPDes), berdasarkan pengalaman
-                              pendampingan intensif di tiga desa di Kabupaten
-                              Ketapang.
-                            </p>
-                            <div class="pen-actions">
-                              <a href="#" class="btn-download"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2.5"
-                                >
-                                  <path
-                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                  />
-                                  <polyline points="7 10 12 15 17 10" />
-                                  <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                Unduh PDF</a
-                              >
-                              <a href="#" class="btn-read">Baca Online</a>
-                            </div>
-                          </div>
+                        @empty
+                        <div style="text-align: center; padding: 40px; color: #666;">
+                          <p>Belum ada publikasi penelitian &amp; laporan yang diterbitkan saat ini.</p>
                         </div>
-                        <!-- 3 -->
-                        <div class="pen-item">
-                          <div class="pen-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                              <path
-                                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                              />
-                              <polyline points="14 2 14 8 20 8" />
-                              <line x1="16" y1="13" x2="8" y2="13" />
-                              <line x1="16" y1="17" x2="8" y2="17" />
-                              <polyline points="10 9 9 9 8 9" />
-                            </svg>
-                          </div>
-                          <div class="pen-content">
-                            <div class="pen-meta">
-                              <span class="pen-badge badge-survei"
-                                >Survei &amp; Assessment</span
-                              >
-                              <span class="pen-year">2024</span>
-                            </div>
-                            <h3>
-                              Survei Kesadartahuan Restorasi Gambut:
-                              Mendengarkan Suara Masyarakat
-                            </h3>
-                            <p>
-                              Survei langsung di Desa Limbung dan Permata Jaya
-                              sebagai bagian dari program restorasi gambut
-                              berbasis FPIC. Mengangkat perspektif dan aspirasi
-                              masyarakat lokal dalam perencanaan restorasi.
-                            </p>
-                            <div class="pen-actions">
-                              <a href="#" class="btn-download"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2.5"
-                                >
-                                  <path
-                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                  />
-                                  <polyline points="7 10 12 15 17 10" />
-                                  <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                Unduh PDF</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                        <!-- 4 -->
-                        <div class="pen-item">
-                          <div class="pen-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                              <polyline points="22 4 12 14.01 9 11.01" />
-                            </svg>
-                          </div>
-                          <div class="pen-content">
-                            <div class="pen-meta">
-                              <span class="pen-badge badge-program"
-                                >Laporan Program</span
-                              >
-                              <span class="pen-year">2024–2025</span>
-                            </div>
-                            <h3>
-                              Laporan Program Restorasi Gambut YNKI – PM Haze
-                            </h3>
-                            <p>
-                              Laporan pelaksanaan program restorasi gambut di
-                              Desa Permata Jaya, mencakup pembangunan sekat
-                              kanal, pembibitan tanaman gambut endemik, dan
-                              pembentukan Kelompok Restorasi Gambut berbasis
-                              komunitas.
-                            </p>
-                            <div class="pen-actions">
-                              <a href="#" class="btn-download"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2.5"
-                                >
-                                  <path
-                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                  />
-                                  <polyline points="7 10 12 15 17 10" />
-                                  <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                Unduh PDF</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                        <!-- 5 -->
-                        <div class="pen-item">
-                          <div class="pen-icon">
-                            <svg viewBox="0 0 24 24" fill="none">
-                              <rect
-                                x="3"
-                                y="4"
-                                width="18"
-                                height="18"
-                                rx="2"
-                                ry="2"
-                              />
-                              <line x1="16" y1="2" x2="16" y2="6" />
-                              <line x1="8" y1="2" x2="8" y2="6" />
-                              <line x1="3" y1="10" x2="21" y2="10" />
-                            </svg>
-                          </div>
-                          <div class="pen-content">
-                            <div class="pen-meta">
-                              <span class="pen-badge badge-tahunan"
-                                >Laporan Tahunan</span
-                              >
-                              <span class="pen-year">2024</span>
-                            </div>
-                            <h3>Laporan Tahunan YNKI 2024</h3>
-                            <p>
-                              Laporan tahunan yang mencakup capaian program,
-                              laporan keuangan, perkembangan organisasi, dan
-                              dampak yang dihasilkan sepanjang tahun 2024.
-                            </p>
-                            <div class="pen-actions">
-                              <a href="#" class="btn-download"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  stroke-width="2.5"
-                                >
-                                  <path
-                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                  />
-                                  <polyline points="7 10 12 15 17 10" />
-                                  <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                Unduh PDF</a
-                              >
-                            </div>
-                          </div>
-                        </div>
+                        @endforelse
                       </div>
                     </div>
                   </section>
