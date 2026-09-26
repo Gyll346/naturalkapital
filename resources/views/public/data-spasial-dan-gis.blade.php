@@ -3717,315 +3717,51 @@
                       </div>
 
                       <div class="docs-grid">
-                        <!-- 1 -->
+                        @forelse($articles as $art)
                         <div class="doc-card">
                           <div class="doc-img">
-                            <svg
-                              width="40"
-                              height="40"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <polygon
-                                points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"
-                              ></polygon>
+                            @if($art->featured_image_path)
+                            <img src="/storage/{{ ltrim($art->featured_image_path, '/') }}" alt="{{ $art->title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polygon points=\'3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21\'></polygon><line x1=\'9\' y1=\'3\' x2=\'9\' y2=\'18\'></line><line x1=\'15\' y1=\'6\' x2=\'15\' y2=\'21\'></line></svg>';">
+                            @else
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
                               <line x1="9" y1="3" x2="9" y2="18"></line>
                               <line x1="15" y1="6" x2="15" y2="21"></line>
                             </svg>
+                            @endif
                           </div>
                           <div class="doc-body">
                             <div class="doc-meta">
-                              <span class="doc-badge badge-spasial"
-                                >Analisis Spasial</span
-                              >
-                              <span class="doc-year">2020</span>
+                              <span class="doc-badge badge-spasial">{{ $art->category->category_name ?? 'Data Spasial' }}</span>
+                              <span class="doc-year">{{ $art->published_at ? $art->published_at->format('Y') : date('Y') }}</span>
                             </div>
-                            <div class="doc-loc">GPDK, KALIMANTAN BARAT</div>
                             <h3>
-                              Analisis Spasial Kebakaran Hutan &amp; Lahan di
-                              Lanskap GPDK
+                              <a href="/artikel-cms/{{ $art->slug }}" style="color: inherit; text-decoration: none;">{{ $art->title }}</a>
                             </h3>
-                            <p>
-                              Mengungkap rata-rata kebakaran seluas 51.130
-                              hektar setiap tahunnya di GPDK sejak 2015–2019,
-                              dasar perencanaan restorasi.
-                            </p>
-                            <a href="#" class="btn-dl"
-                              >Unduh Data
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
+                            <p>{{ $art->excerpt ?? '' }}</p>
+                            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;">
+                              @if($art->attachment_pdf_path)
+                              <a href="/storage/{{ ltrim($art->attachment_pdf_path, '/') }}" target="_blank" class="btn-dl">
+                                Unduh Peta &amp; Laporan
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                  <path d="M5 12h14" />
+                                  <path d="M12 5l7 7-7 7" />
+                                </svg>
+                              </a>
+                              @else
+                              <a href="/artikel-cms/{{ $art->slug }}" class="btn-dl">
+                                Lihat Detail
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                  <path d="M5 12h14" />
+                                  <path d="M12 5l7 7-7 7" />
+                                </svg>
+                              </a>
+                              @endif
+                            </div>
                           </div>
                         </div>
-                        <!-- 2 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <svg
-                              width="40"
-                              height="40"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <polygon
-                                points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"
-                              ></polygon>
-                              <line x1="9" y1="3" x2="9" y2="18"></line>
-                              <line x1="15" y1="6" x2="15" y2="21"></line>
-                            </svg>
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-badge badge-tematik"
-                                >Peta Tematik</span
-                              >
-                              <span class="doc-year">2024</span>
-                            </div>
-                            <div class="doc-loc">KUBU RAYA &amp; KETAPANG</div>
-                            <h3>
-                              Peta Tutupan Lahan &amp; Penggunaan Lahan Lanskap
-                              Prioritas
-                            </h3>
-                            <p>
-                              Mengidentifikasi area hutan, lahan gambut,
-                              perkebunan, dan area restorasi di lanskap
-                              intervensi YNKI.
-                            </p>
-                            <a href="#" class="btn-dl"
-                              >Unduh Data
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
-                          </div>
-                        </div>
-                        <!-- 3 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <svg
-                              width="40"
-                              height="40"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <polygon
-                                points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"
-                              ></polygon>
-                              <line x1="9" y1="3" x2="9" y2="18"></line>
-                              <line x1="15" y1="6" x2="15" y2="21"></line>
-                            </svg>
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-badge badge-partisipatif"
-                                >Peta Partisipatif</span
-                              >
-                              <span class="doc-year">2024</span>
-                            </div>
-                            <div class="doc-loc">KABUPATEN KETAPANG</div>
-                            <h3>
-                              Peta Partisipatif Potensi Desa: Tanjung Pura,
-                              Mayak &amp; Ulak Medang
-                            </h3>
-                            <p>
-                              Memetakan fasilitas umum, danau, dan hutan bersama
-                              masyarakat desa melalui program KalFor Project.
-                            </p>
-                            <a href="#" class="btn-dl"
-                              >Unduh Data
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
-                          </div>
-                        </div>
-                        <!-- 4 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <svg
-                              width="40"
-                              height="40"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <polygon
-                                points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"
-                              ></polygon>
-                              <line x1="9" y1="3" x2="9" y2="18"></line>
-                              <line x1="15" y1="6" x2="15" y2="21"></line>
-                            </svg>
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-badge badge-satelit"
-                                >Penginderaan Jauh</span
-                              >
-                              <span class="doc-year">2024</span>
-                            </div>
-                            <div class="doc-loc">PESISIR DELTA KAPUAS</div>
-                            <h3>
-                              Peta Dinamika Kedalaman Gambut &amp; Hidrologi
-                              Lanskap
-                            </h3>
-                            <p>
-                              Model analisis spasial ketebalan gambut dan zonasi
-                              hidrologis untuk prioritas intervensi sekat kanal.
-                            </p>
-                            <a href="#" class="btn-dl"
-                              >Unduh Data
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
-                          </div>
-                        </div>
-                        <!-- 5 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <svg
-                              width="40"
-                              height="40"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <polygon
-                                points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"
-                              ></polygon>
-                              <line x1="9" y1="3" x2="9" y2="18"></line>
-                              <line x1="15" y1="6" x2="15" y2="21"></line>
-                            </svg>
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-badge badge-spasial"
-                                >Analisis Spasial</span
-                              >
-                              <span class="doc-year">2024</span>
-                            </div>
-                            <div class="doc-loc">KALIMANTAN BARAT</div>
-                            <h3>
-                              Zonasi Nilai Konservasi Tinggi (HCV) &amp; Stok
-                              Karbon Tinggi (HCS)
-                            </h3>
-                            <p>
-                              Kajian spasial kawasan berhutan bernilai
-                              konservasi tinggi guna mendukung rencana aksi
-                              komoditas berkelanjutan.
-                            </p>
-                            <a href="#" class="btn-dl"
-                              >Unduh Data
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
-                          </div>
-                        </div>
-                        <!-- 6 -->
-                        <div class="doc-card">
-                          <div class="doc-img">
-                            <svg
-                              width="40"
-                              height="40"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <polygon
-                                points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"
-                              ></polygon>
-                              <line x1="9" y1="3" x2="9" y2="18"></line>
-                              <line x1="15" y1="6" x2="15" y2="21"></line>
-                            </svg>
-                          </div>
-                          <div class="doc-body">
-                            <div class="doc-meta">
-                              <span class="doc-badge badge-partisipatif"
-                                >Peta Partisipatif</span
-                              >
-                              <span class="doc-year">2024</span>
-                            </div>
-                            <div class="doc-loc">KUBU RAYA</div>
-                            <h3>
-                              Peta Batas Wilayah Kelola Rakyat &amp; Hutan Desa
-                            </h3>
-                            <p>
-                              Dokumentasi spasial kesepakatan tata batas
-                              partisipatif tingkat tapak untuk kepastian
-                              tenurial masyarakat.
-                            </p>
-                            <a href="#" class="btn-dl"
-                              >Unduh Data
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
-                          </div>
-                        </div>
+                        @empty
+                        @endforelse
                       </div>
                       <!-- Pagination Clearfix -->
                       <div class="pagination clearfix" id="gis-pagination"></div>
