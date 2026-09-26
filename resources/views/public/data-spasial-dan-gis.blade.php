@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3690,16 +3690,6 @@
                         </p>
                       </div>
 
-                      <!-- Filter -->
-                      <div class="filter-row">
-                        <span class="filter-tag active">Semua Data</span>
-                        <span class="filter-tag">Analisis Spasial</span>
-                        <span class="filter-tag">Peta Tematik</span>
-                        <span class="filter-tag">Peta Partisipatif</span>
-                        <span class="filter-tag">Penginderaan Jauh</span>
-                        <span class="filter-tag">Dashboard</span>
-                      </div>
-
                       <div class="docs-grid">
                         <!-- 1 -->
                         <div class="doc-card">
@@ -4011,6 +4001,8 @@
                           </div>
                         </div>
                       </div>
+                      <!-- Pagination Clearfix -->
+                      <div class="pagination clearfix" id="gis-pagination"></div>
                     </div>
                   </section>
 
@@ -4429,6 +4421,97 @@
         ></a
       >
     </section>
+    <script>
+      // Data Spasial & GIS Pagination Clearfix (6 items per page)
+      document.addEventListener('DOMContentLoaded', function() {
+        const ITEMS_PER_PAGE = 6;
+        let currentPage = 1;
+        const grid = document.querySelector('.docs-grid');
+        const paginationContainer = document.getElementById('gis-pagination');
+
+        if (!grid || !paginationContainer) return;
+
+        function getCards() {
+          return Array.from(grid.querySelectorAll('.doc-card'));
+        }
+
+        function renderPagination(totalItems) {
+          const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+          if (totalPages <= 1) {
+            paginationContainer.style.display = 'none';
+            paginationContainer.innerHTML = '';
+            return;
+          }
+
+          paginationContainer.style.display = 'flex';
+          let html = '';
+
+          // Prev button
+          if (currentPage > 1) {
+            html += `<a href="#kumpulan-data" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Previous</a>`;
+          } else {
+            html += `<span class="pagination-prev disabled">&laquo; Previous</span>`;
+          }
+
+          // Page numbers
+          for (let p = 1; p <= totalPages; p++) {
+            if (p === currentPage) {
+              html += `<span class="current">${p}</span>`;
+            } else {
+              html += `<a href="#kumpulan-data" class="inactive" data-page="${p}">${p}</a>`;
+            }
+          }
+
+          // Next button
+          if (currentPage < totalPages) {
+            html += `<a href="#kumpulan-data" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
+          } else {
+            html += `<span class="pagination-next disabled">Next &raquo;</span>`;
+          }
+
+          paginationContainer.innerHTML = html;
+
+          paginationContainer.querySelectorAll('a[data-page]').forEach(link => {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              currentPage = parseInt(this.getAttribute('data-page'), 10);
+              updateView(true);
+            });
+          });
+        }
+
+        function updateView(scrollIntoView = false) {
+          const cards = getCards();
+          const totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
+          if (currentPage > totalPages && totalPages > 0) {
+            currentPage = 1;
+          }
+
+          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+          const endIndex = startIndex + ITEMS_PER_PAGE;
+
+          cards.forEach((card, index) => {
+            if (index >= startIndex && index < endIndex) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          renderPagination(cards.length);
+
+          if (scrollIntoView) {
+            const section = document.getElementById('kumpulan-data');
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }
+
+        updateView(false);
+      });
+    </script>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script src="/assets/js/ynki-footer.js"></script>
   </body>
