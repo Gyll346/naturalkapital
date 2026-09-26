@@ -138,7 +138,7 @@
       ]
     },
     {
-      match: ['/news-features/', '/penelitian-laporan/', '/analisis-kebijakan/', '/perspektif-budaya/', '/data-spasial-dan-gis/', '/stori-foto-video/', '/story-foto-video/'],
+      match: ['/news-features/', '/penelitian-laporan/', '/analisis-kebijakan/', '/perspektif-budaya/', '/data-spasial-dan-gis/', '/data-spasial-gis/', '/stori-foto-video/', '/story-foto-video/'],
       links: [
         ['/news-features/', 'News & Features'],
         ['/penelitian-laporan/', 'Penelitian & Laporan'],
@@ -170,7 +170,7 @@
   for (var s = 0; s < sections.length; s++) {
     if (sections[s].match.some(function (p) {
       var normP = p.endsWith('/') ? p : p + '/';
-      return normPath.indexOf(normP) === 0 || normPath.indexOf(p) !== -1;
+      return normPath === normP;
     })) {
       quickLinks = sections[s].links;
       break;
