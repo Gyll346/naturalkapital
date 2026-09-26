@@ -3159,31 +3159,47 @@
               font-weight: 600;
             }
 
-            .filter-row {
+            /* Pagination */
+            .ynki-pagination {
               display: flex;
-              gap: 10px;
-              flex-wrap: wrap;
               justify-content: center;
-              margin-top: 40px;
-              margin-bottom: 40px;
+              align-items: center;
+              gap: 6px;
+              margin: 40px auto 0;
+              flex-wrap: wrap;
             }
-            .filter-tag {
+            .ynki-pagination a,
+            .ynki-pagination span {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              min-width: 36px;
+              height: 36px;
+              padding: 0 10px;
+              border-radius: 8px;
               font-size: 13px;
-              font-weight: 700;
-              padding: 9px 20px;
-              border-radius: 50px;
-              border: 2px solid #d2e8d1;
-              color: #117710;
-              cursor: pointer;
-              transition: all 0.3s;
-              background: #fff;
+              font-weight: 600;
               text-decoration: none;
+              border: 1.5px solid #d2e8d1;
+              color: #117710;
+              background: #fff;
+              cursor: pointer;
+              transition: all 0.2s;
             }
-            .filter-tag:hover,
-            .filter-tag.active {
+            .ynki-pagination a:hover {
               background: #117710;
               color: #fff;
               border-color: #117710;
+            }
+            .ynki-pagination span.current {
+              background: #117710;
+              color: #fff;
+              border-color: #117710;
+            }
+            .ynki-pagination span.disabled {
+              color: #bbb;
+              border-color: #eee;
+              cursor: default;
             }
 
             .gallery-grid {
@@ -3623,16 +3639,7 @@
                         </p>
                       </div>
 
-                      <!-- Filter -->
-                      <div class="filter-row">
-                        <span class="filter-tag active">Semua Visual</span>
-                        <span class="filter-tag">Restorasi Gambut</span>
-                        <span class="filter-tag">Youth Camp &amp; Pemuda</span>
-                        <span class="filter-tag">Pemberdayaan Masyarakat</span>
-                        <span class="filter-tag"
-                          >Kemitraan &amp; Lokakarya</span
-                        >
-                      </div>
+                      <div id="galeri-foto"></div>
 
                       <div class="gallery-grid">
                         @forelse($photos as $s)
@@ -3674,6 +3681,7 @@
                         </div>
                         @endforelse
                       </div>
+                      <div class="ynki-pagination clearfix" id="pagination-foto"></div>
                     </div>
                   </section>
 
@@ -4095,6 +4103,65 @@
       >
     </section>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var ITEMS_PER_PAGE = 6;
+        var currentPage = 1;
+        var paginationContainer = document.getElementById('pagination-foto');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.gallery-grid .g-card'));
+        }
+
+        function renderPagination(totalItems) {
+          var totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+          if (totalPages <= 1) {
+            paginationContainer.style.display = 'none';
+            paginationContainer.innerHTML = '';
+            return;
+          }
+          paginationContainer.style.display = 'flex';
+          var html = '';
+          html += currentPage > 1
+            ? '<a href="#galeri-foto" class="pagination-prev" data-page="' + (currentPage - 1) + '">&laquo; Previous</a>'
+            : '<span class="pagination-prev disabled">&laquo; Previous</span>';
+          for (var p = 1; p <= totalPages; p++) {
+            html += p === currentPage
+              ? '<span class="current">' + p + '</span>'
+              : '<a href="#galeri-foto" class="inactive" data-page="' + p + '">' + p + '</a>';
+          }
+          html += currentPage < totalPages
+            ? '<a href="#galeri-foto" class="pagination-next" data-page="' + (currentPage + 1) + '">Next &raquo;</a>'
+            : '<span class="pagination-next disabled">Next &raquo;</span>';
+          paginationContainer.innerHTML = html;
+          paginationContainer.querySelectorAll('a[data-page]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+              e.preventDefault();
+              currentPage = parseInt(this.getAttribute('data-page'), 10);
+              updateView(true);
+            });
+          });
+        }
+
+        function updateView(scrollIntoView) {
+          var cards = getCards();
+          var totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
+          if (currentPage > totalPages && totalPages > 0) currentPage = 1;
+          var start = (currentPage - 1) * ITEMS_PER_PAGE;
+          var end = start + ITEMS_PER_PAGE;
+          cards.forEach(function (card, i) {
+            card.style.display = (i >= start && i < end) ? '' : 'none';
+          });
+          renderPagination(cards.length);
+          if (scrollIntoView) {
+            var anchor = document.getElementById('galeri-foto');
+            if (anchor) anchor.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+
+        updateView(false);
+      });
+    </script>
     <script src="/assets/js/ynki-footer.js"></script>
   </body>
 </html>
