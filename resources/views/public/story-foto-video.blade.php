@@ -3630,7 +3630,7 @@
                             font-size: 15px;
                             color: #536b5f;
                             max-width: 760px;
-                            margin: 0 auto;
+                            margin: 0 auto 32px;
                           "
                         >
                           Kumpulan foto dokumentasi dari berbagai program.
