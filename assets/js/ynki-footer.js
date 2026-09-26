@@ -144,7 +144,7 @@
         ['/penelitian-laporan/', 'Penelitian & Laporan'],
         ['/analisis-kebijakan/', 'Analisis & Kebijakan'],
         ['/kategori/perspektif-budaya/', 'Perspektif Budaya'],
-        ['/data-spasial-gis/', 'Data Spasial dan GIS'],
+        ['/data-spasial-dan-gis/', 'Data Spasial dan GIS'],
         ['/story-foto-video/', 'Story Foto Video'],
         ['/kontak-kami/', 'Kontak Kami'],
         ['/ikut-serta/', 'Ikut Serta'],
