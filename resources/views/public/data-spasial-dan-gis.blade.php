@@ -3183,31 +3183,57 @@
               font-weight: 600;
             }
 
-            .filter-row {
+            /* ======================== PAGINATION CLEARFIX ======================== */
+            .pagination.clearfix {
               display: flex;
-              gap: 10px;
-              flex-wrap: wrap;
               justify-content: center;
-              margin-top: 40px;
-              margin-bottom: 40px;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 8px;
+              margin: 40px auto 10px;
+              clear: both;
             }
-            .filter-tag {
-              font-size: 13px;
+            .pagination.clearfix a,
+            .pagination.clearfix span {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              min-width: 38px;
+              height: 38px;
+              padding: 0 14px;
+              border-radius: 8px;
+              font-size: 13.5px;
               font-weight: 700;
-              padding: 9px 20px;
-              border-radius: 50px;
-              border: 2px solid #d2e8d1;
-              color: #117710;
-              cursor: pointer;
-              transition: all 0.3s;
-              background: #fff;
               text-decoration: none;
+              transition: all 0.2s ease;
+              cursor: pointer;
+              border: 1.5px solid #d4e8d3;
+              background: #ffffff;
+              color: #1a422b;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
             }
-            .filter-tag:hover,
-            .filter-tag.active {
-              background: #117710;
-              color: #fff;
+            .pagination.clearfix a:hover {
+              background: #e8f5ec;
               border-color: #117710;
+              color: #117710;
+              transform: translateY(-1px);
+            }
+            .pagination.clearfix .current {
+              background: #117710;
+              border-color: #117710;
+              color: #ffffff;
+              box-shadow: 0 4px 14px rgba(17, 119, 16, 0.25);
+              cursor: default;
+            }
+            .pagination.clearfix .pagination-prev,
+            .pagination.clearfix .pagination-next {
+              padding: 0 16px;
+              font-size: 13px;
+            }
+            .pagination.clearfix .disabled {
+              opacity: 0.4;
+              pointer-events: none;
+              cursor: not-allowed;
             }
 
             .docs-grid {
@@ -3215,7 +3241,7 @@
               grid-template-columns: repeat(3, 1fr);
               gap: 24px;
               max-width: 1100px;
-              margin: 0 auto;
+              margin: 40px auto 0;
             }
             .doc-card {
               background: #fff;
