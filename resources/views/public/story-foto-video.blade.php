@@ -3721,8 +3721,8 @@
                         <div class="v-card">
                           @if($v->youtube_url)
                           <a href="{{ $v->youtube_url }}" target="_blank" rel="noopener noreferrer" class="v-thumb" style="position:relative;overflow:hidden;height:200px;background:#133324;display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer;">
-                            @if($v->image_path)
-                            <img src="/storage/{{ ltrim($v->image_path, '/') }}" alt="{{ $v->title }}" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+                            @if($v->thumbnail_url)
+                            <img src="{{ $v->thumbnail_url }}" alt="{{ $v->title }}" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" loading="lazy">
                             @endif
                             <div class="v-play" style="position:relative;z-index:2;">
                               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -3732,8 +3732,8 @@
                           </a>
                           @else
                           <div class="v-thumb" style="position:relative;overflow:hidden;height:200px;background:#133324;display:flex;align-items:center;justify-content:center;">
-                            @if($v->image_path)
-                            <img src="/storage/{{ ltrim($v->image_path, '/') }}" alt="{{ $v->title }}" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+                            @if($v->thumbnail_url)
+                            <img src="{{ $v->thumbnail_url }}" alt="{{ $v->title }}" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" loading="lazy">
                             @endif
                             <div class="v-play" style="position:relative;z-index:2;">
                               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">

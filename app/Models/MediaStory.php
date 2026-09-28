@@ -28,4 +28,19 @@ class MediaStory extends Model
         'is_active' => 'boolean',
         'sort_order' => 'integer',
     ];
+
+    public function getThumbnailUrlAttribute(): ?string
+    {
+        if ($this->image_path) {
+            return '/storage/' . ltrim($this->image_path, '/');
+        }
+
+        if ($this->youtube_url) {
+            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $this->youtube_url, $match)) {
+                return 'https://img.youtube.com/vi/' . $match[1] . '/hqdefault.jpg';
+            }
+        }
+
+        return null;
+    }
 }
