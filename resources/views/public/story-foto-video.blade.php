@@ -3717,7 +3717,7 @@
                       </div>
 
                       <div class="video-grid">
-                        @forelse($videos as $v)
+                        @forelse($videos->sortByDesc('created_at') as $v)
                         <div class="v-card">
                           @if($v->youtube_url)
                           <a href="{{ $v->youtube_url }}" target="_blank" rel="noopener noreferrer" class="v-thumb" style="position:relative;overflow:hidden;height:200px;background:#133324;display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer;">

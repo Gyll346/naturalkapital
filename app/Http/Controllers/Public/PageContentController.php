@@ -520,7 +520,7 @@ class PageContentController extends Controller
 
     $videos = MediaStory::where('is_active', true)
       ->where('media_type', 'video')
-      ->orderBy('sort_order', 'asc')
+      ->orderBy('created_at', 'desc')
       ->get();
 
     return view('public.story-foto-video', compact('photos', 'videos'));
