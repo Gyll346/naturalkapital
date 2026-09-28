@@ -22,20 +22,45 @@
         </a>
     </div>
 
-    <!-- Filter Kategori Tabs -->
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;">
-        <a href="{{ route('admin.articles.index') }}" class="btn-action {{ !request()->has('category') ? 'btn-primary' : 'btn-outline' }}" style="font-size: 12.5px; padding: 7px 14px; border-radius: 50px;">
-            Semua ({{ \App\Models\Article::count() }})
-        </a>
-        @foreach($categories as $cat)
-            @php
-                $count = \App\Models\Article::where('category_id', $cat->id)->count();
-                $isActive = request()->get('category') === $cat->slug;
-            @endphp
-            <a href="{{ route('admin.articles.index', ['category' => $cat->slug]) }}" class="btn-action {{ $isActive ? 'btn-primary' : 'btn-outline' }}" style="font-size: 12.5px; padding: 7px 14px; border-radius: 50px;">
-                {{ $cat->category_name }} ({{ $count }})
+    <!-- Search Bar & Filter Kategori -->
+    <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px;">
+        <form method="GET" action="{{ route('admin.articles.index') }}" style="display: flex; gap: 8px; max-width: 480px; width: 100%;">
+            @if(request()->has('category'))
+                <input type="hidden" name="category" value="{{ request()->get('category') }}">
+            @endif
+            <div style="position: relative; flex-grow: 1;">
+                <input type="text" name="search" class="form-control" value="{{ request('search') }}" placeholder="Cari berdasarkan judul publikasi..." style="padding-left: 36px; padding-right: 12px; height: 38px; font-size: 13px; border-radius: 8px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <button type="submit" class="btn-action btn-primary" style="padding: 0 16px; height: 38px; font-size: 13px; border-radius: 8px;">
+                Cari
+            </button>
+            @if(request('search'))
+                <a href="{{ route('admin.articles.index', request()->has('category') ? ['category' => request('category')] : []) }}" class="btn-action btn-outline" style="padding: 0 14px; height: 38px; font-size: 13px; border-radius: 8px; display: inline-flex; align-items: center;" title="Reset Pencarian">
+                    Reset
+                </a>
+            @endif
+        </form>
+
+        <!-- Filter Kategori Tabs -->
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <a href="{{ route('admin.articles.index', request('search') ? ['search' => request('search')] : []) }}" class="btn-action {{ !request()->has('category') ? 'btn-primary' : 'btn-outline' }}" style="font-size: 12.5px; padding: 7px 14px; border-radius: 50px;">
+                Semua ({{ \App\Models\Article::count() }})
             </a>
-        @endforeach
+            @foreach($categories as $cat)
+                @php
+                    $count = \App\Models\Article::where('category_id', $cat->id)->count();
+                    $isActive = request()->get('category') === $cat->slug;
+                    $catParams = ['category' => $cat->slug];
+                    if (request('search')) {
+                        $catParams['search'] = request('search');
+                    }
+                @endphp
+                <a href="{{ route('admin.articles.index', $catParams) }}" class="btn-action {{ $isActive ? 'btn-primary' : 'btn-outline' }}" style="font-size: 12.5px; padding: 7px 14px; border-radius: 50px;">
+                    {{ $cat->category_name }} ({{ $count }})
+                </a>
+            @endforeach
+        </div>
     </div>
 
     @if (session('success'))
@@ -129,7 +154,11 @@
                     @empty
                         <tr>
                             <td colspan="8" style="text-align: center; color: var(--text-muted); padding: 30px;">
-                                Belum ada publikasi pada kategori ini.
+                                @if(request('search'))
+                                    Tidak ditemukan publikasi dengan judul yang mengandung kata kunci "<strong>{{ request('search') }}</strong>".
+                                @else
+                                    Belum ada publikasi pada kategori ini.
+                                @endif
                             </td>
                         </tr>
                     @endforelse

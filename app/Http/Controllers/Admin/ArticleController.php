@@ -19,10 +19,16 @@ class ArticleController extends Controller
         
         $query = Article::with(['category', 'author'])->latest();
 
+        $search = $request->query('search');
+
         if ($selectedCategorySlug) {
             $query->whereHas('category', function ($q) use ($selectedCategorySlug) {
                 $q->where('slug', $selectedCategorySlug);
             });
+        }
+
+        if ($search) {
+            $query->where('title', 'like', '%' . $search . '%');
         }
 
         $articles = $query->paginate(15)->withQueryString();
