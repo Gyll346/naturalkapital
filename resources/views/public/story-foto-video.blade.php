@@ -3719,6 +3719,18 @@
                       <div class="video-grid">
                         @forelse($videos as $v)
                         <div class="v-card">
+                          @if($v->youtube_url)
+                          <a href="{{ $v->youtube_url }}" target="_blank" rel="noopener noreferrer" class="v-thumb" style="position:relative;overflow:hidden;height:200px;background:#133324;display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer;">
+                            @if($v->image_path)
+                            <img src="/storage/{{ ltrim($v->image_path, '/') }}" alt="{{ $v->title }}" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+                            @endif
+                            <div class="v-play" style="position:relative;z-index:2;">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                              </svg>
+                            </div>
+                          </a>
+                          @else
                           <div class="v-thumb" style="position:relative;overflow:hidden;height:200px;background:#133324;display:flex;align-items:center;justify-content:center;">
                             @if($v->image_path)
                             <img src="/storage/{{ ltrim($v->image_path, '/') }}" alt="{{ $v->title }}" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
@@ -3729,12 +3741,13 @@
                               </svg>
                             </div>
                           </div>
+                          @endif
                           <div class="v-body">
                             <div class="v-dur">🎬 {{ $v->location ?? 'Kalimantan Barat' }} · {{ $v->category }}</div>
                             <h3>{{ $v->title }}</h3>
                             <p>{{ $v->caption }}</p>
                             @if($v->youtube_url)
-                            <a href="{{ $v->youtube_url }}" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;color:#d2f0d1;font-size:13px;font-weight:700;text-decoration:none;">Tonton di YouTube &rarr;</a>
+                            <a href="{{ $v->youtube_url }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;color:#d2f0d1;font-size:13px;font-weight:700;text-decoration:none;">Tonton di YouTube &rarr;</a>
                             @endif
                           </div>
                         </div>
@@ -3744,6 +3757,7 @@
                         </div>
                         @endforelse
                       </div>
+                      <div class="ynki-pagination clearfix" id="pagination-video"></div>
                     </div>
                   </section>
 
@@ -4105,61 +4119,79 @@
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        var ITEMS_PER_PAGE = 6;
-        var currentPage = 1;
-        var paginationContainer = document.getElementById('pagination-foto');
+        function setupPagination(opts) {
+          var container = document.getElementById(opts.containerId);
+          if (!container) return;
+          var currentPage = 1;
 
-        function getCards() {
-          return Array.from(document.querySelectorAll('.gallery-grid .g-card'));
-        }
+          function getCards() {
+            return Array.from(document.querySelectorAll(opts.itemSelector));
+          }
 
-        function renderPagination(totalItems) {
-          var totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
-          if (totalPages <= 1) {
-            paginationContainer.style.display = 'none';
-            paginationContainer.innerHTML = '';
-            return;
-          }
-          paginationContainer.style.display = 'flex';
-          var html = '';
-          html += currentPage > 1
-            ? '<a href="#galeri-foto" class="pagination-prev" data-page="' + (currentPage - 1) + '">&laquo; Previous</a>'
-            : '<span class="pagination-prev disabled">&laquo; Previous</span>';
-          for (var p = 1; p <= totalPages; p++) {
-            html += p === currentPage
-              ? '<span class="current">' + p + '</span>'
-              : '<a href="#galeri-foto" class="inactive" data-page="' + p + '">' + p + '</a>';
-          }
-          html += currentPage < totalPages
-            ? '<a href="#galeri-foto" class="pagination-next" data-page="' + (currentPage + 1) + '">Next &raquo;</a>'
-            : '<span class="pagination-next disabled">Next &raquo;</span>';
-          paginationContainer.innerHTML = html;
-          paginationContainer.querySelectorAll('a[data-page]').forEach(function (link) {
-            link.addEventListener('click', function (e) {
-              e.preventDefault();
-              currentPage = parseInt(this.getAttribute('data-page'), 10);
-              updateView(true);
+          function renderPagination(totalItems) {
+            var totalPages = Math.ceil(totalItems / opts.perPage);
+            if (totalPages <= 1) {
+              container.style.display = 'none';
+              container.innerHTML = '';
+              return;
+            }
+            container.style.display = 'flex';
+            var html = '';
+            html += currentPage > 1
+              ? '<a href="#' + opts.anchorId + '" class="pagination-prev" data-page="' + (currentPage - 1) + '">&laquo; Previous</a>'
+              : '<span class="pagination-prev disabled">&laquo; Previous</span>';
+            for (var p = 1; p <= totalPages; p++) {
+              html += p === currentPage
+                ? '<span class="current">' + p + '</span>'
+                : '<a href="#' + opts.anchorId + '" class="inactive" data-page="' + p + '">' + p + '</a>';
+            }
+            html += currentPage < totalPages
+              ? '<a href="#' + opts.anchorId + '" class="pagination-next" data-page="' + (currentPage + 1) + '">Next &raquo;</a>'
+              : '<span class="pagination-next disabled">Next &raquo;</span>';
+            container.innerHTML = html;
+            container.querySelectorAll('a[data-page]').forEach(function (link) {
+              link.addEventListener('click', function (e) {
+                e.preventDefault();
+                currentPage = parseInt(this.getAttribute('data-page'), 10);
+                updateView(true);
+              });
             });
-          });
-        }
-
-        function updateView(scrollIntoView) {
-          var cards = getCards();
-          var totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
-          if (currentPage > totalPages && totalPages > 0) currentPage = 1;
-          var start = (currentPage - 1) * ITEMS_PER_PAGE;
-          var end = start + ITEMS_PER_PAGE;
-          cards.forEach(function (card, i) {
-            card.style.display = (i >= start && i < end) ? '' : 'none';
-          });
-          renderPagination(cards.length);
-          if (scrollIntoView) {
-            var anchor = document.getElementById('galeri-foto');
-            if (anchor) anchor.scrollIntoView({ behavior: 'smooth' });
           }
+
+          function updateView(scrollIntoView) {
+            var cards = getCards();
+            var totalPages = Math.ceil(cards.length / opts.perPage);
+            if (currentPage > totalPages && totalPages > 0) currentPage = 1;
+            var start = (currentPage - 1) * opts.perPage;
+            var end = start + opts.perPage;
+            cards.forEach(function (card, i) {
+              card.style.display = (i >= start && i < end) ? '' : 'none';
+            });
+            renderPagination(cards.length);
+            if (scrollIntoView) {
+              var anchor = document.getElementById(opts.anchorId);
+              if (anchor) anchor.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+
+          updateView(false);
         }
 
-        updateView(false);
+        // Pagination Galeri Foto (6 item per halaman)
+        setupPagination({
+          containerId: 'pagination-foto',
+          itemSelector: '.gallery-grid .g-card',
+          anchorId: 'galeri-foto',
+          perPage: 6
+        });
+
+        // Pagination Galeri Video (3 item per halaman)
+        setupPagination({
+          containerId: 'pagination-video',
+          itemSelector: '.video-grid .v-card',
+          anchorId: 'galeri-video',
+          perPage: 3
+        });
       });
     </script>
     <script src="/assets/js/ynki-footer.js"></script>
