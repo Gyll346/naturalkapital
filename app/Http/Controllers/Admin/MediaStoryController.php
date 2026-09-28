@@ -10,9 +10,22 @@ use Illuminate\Support\Facades\Storage;
 
 class MediaStoryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $stories = MediaStory::orderBy('sort_order', 'asc')->paginate(20);
+        $search = $request->query('search');
+
+        $query = MediaStory::query();
+
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', '%' . $search . '%')
+                  ->orWhere('caption', 'like', '%' . $search . '%')
+                  ->orWhere('category', 'like', '%' . $search . '%')
+                  ->orWhere('location', 'like', '%' . $search . '%');
+            });
+        }
+
+        $stories = $query->orderBy('sort_order', 'asc')->paginate(20)->withQueryString();
         return view('admin.media_stories.index', compact('stories'));
     }
 

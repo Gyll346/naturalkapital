@@ -20,6 +20,24 @@
         </div>
     @endif
 
+    <!-- Search Bar -->
+    <div style="margin-bottom: 20px;">
+        <form method="GET" action="{{ route('admin.media-stories.index') }}" style="display: flex; gap: 8px; max-width: 520px; width: 100%;">
+            <div style="position: relative; flex-grow: 1;">
+                <input type="text" name="search" class="form-control" value="{{ request('search') }}" placeholder="Cari judul, keterangan, kategori, atau lokasi..." style="padding-left: 36px; padding-right: 12px; height: 38px; font-size: 13px; border-radius: 8px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <button type="submit" class="btn-action btn-primary" style="padding: 0 16px; height: 38px; font-size: 13px; border-radius: 8px;">
+                Cari
+            </button>
+            @if(request('search'))
+                <a href="{{ route('admin.media-stories.index') }}" class="btn-action btn-outline" style="padding: 0 14px; height: 38px; font-size: 13px; border-radius: 8px; display: inline-flex; align-items: center;" title="Reset Pencarian">
+                    Reset
+                </a>
+            @endif
+        </form>
+    </div>
+
     <div class="card-table">
         <div class="table-responsive">
             <table class="admin-table">
@@ -42,8 +60,11 @@
                                 @if ($s->media_type === 'photo' && $s->image_path)
                                     <img src="/storage/{{ $s->image_path }}" alt="{{ $s->title }}" style="width: 55px; height: 40px; border-radius: 4px; object-fit: cover;">
                                 @elseif ($s->media_type === 'video')
-                                    <div style="width: 55px; height: 40px; border-radius: 4px; background: #072214; color: #ffffff; display: flex; align-items: center; justify-content: center;">
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                                    <div style="width: 55px; height: 40px; border-radius: 4px; background: #072214; color: #ffffff; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                                        @if($s->thumbnail_url)
+                                            <img src="{{ $s->thumbnail_url }}" alt="{{ $s->title }}" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                                        @endif
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="position: relative; z-index: 1;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                                     </div>
                                 @else
                                     <div style="width: 55px; height: 40px; border-radius: 4px; background: #f0f4f2; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
@@ -86,7 +107,11 @@
                     @empty
                         <tr>
                             <td colspan="8" style="text-align: center; color: var(--text-muted); padding: 30px;">
-                                Belum ada dokumentasi foto atau video yang ditambahkan.
+                                @if(request('search'))
+                                    Tidak ditemukan dokumentasi dengan kata kunci "<strong>{{ request('search') }}</strong>".
+                                @else
+                                    Belum ada dokumentasi foto atau video yang ditambahkan.
+                                @endif
                             </td>
                         </tr>
                     @endforelse
