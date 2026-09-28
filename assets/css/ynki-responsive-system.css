@@ -2517,3 +2517,69 @@ body {
     height: 420px;
   }
 }
+
+/* ==========================================================================
+   HERO FULL-WIDTH EDGE-TO-EDGE SYSTEM
+   Menghapus padding samping dan margin default Avada/kontainer pada #main
+   sehingga background image hero membentang penuh (100% full width) ke tepi kiri & kanan.
+   Halaman kontak-kami dan ikut-terlibat/ikut-serta tetap sesuai layout aslinya.
+   ========================================================================== */
+#main {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+}
+
+#main > .fusion-row,
+#main > div > .fusion-row,
+#main .fusion-row:has(.hero-section),
+#main .fusion-row:has([id^="hero-"]) {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#content.full-width,
+#main #content,
+#main .post-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Pastikan seluruh hero section pada seluruh halaman membentang 100% full-width */
+#hero-home,
+#hero-sejarah,
+#hero-tim,
+#hero-lgos,
+#hero-trans,
+#hero-lg,
+#hero-nc,
+#hero-sus,
+#hero-int,
+#hero-inst,
+#hero-porto,
+.hero-section,
+[id^="hero-"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 992px) {
+  #main > .fusion-row,
+  #main > div > .fusion-row,
+  #main .fusion-row:has(.hero-section),
+  #main .fusion-row:has([id^="hero-"]) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+
