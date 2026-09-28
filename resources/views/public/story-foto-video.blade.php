@@ -3642,7 +3642,7 @@
                       <div id="galeri-foto"></div>
 
                       <div class="gallery-grid">
-                        @forelse($photos as $s)
+                        @forelse($photos->sortByDesc('created_at') as $s)
                         <div class="g-card">
                           <div class="g-img" style="position:relative;overflow:hidden;height:220px;background:#1a382b;">
                             @if($s->image_path)

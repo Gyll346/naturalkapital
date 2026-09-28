@@ -515,7 +515,7 @@ class PageContentController extends Controller
   {
     $photos = MediaStory::where('is_active', true)
       ->where('media_type', 'photo')
-      ->orderBy('sort_order', 'asc')
+      ->orderBy('created_at', 'desc')
       ->get();
 
     $videos = MediaStory::where('is_active', true)
