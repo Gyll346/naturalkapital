@@ -29,6 +29,8 @@ class DashboardController extends Controller
         $policyCount = Article::whereHas('category', fn($q) => $q->where('slug', 'analisis-kebijakan'))->count();
         $cultureCount = Article::whereHas('category', fn($q) => $q->where('slug', 'perspektif-budaya'))->count();
         $gisCount = Article::whereHas('category', fn($q) => $q->where('slug', 'data-spasial-dan-gis'))->count();
+        $kisahCount = Article::whereHas('category', fn($q) => $q->where('slug', 'kisah-perubahan'))->count();
+        $liputanCount = Article::whereHas('category', fn($q) => $q->where('slug', 'liputan-media'))->count();
         $mediaStoriesCount = MediaStory::count();
         $totalArticlesCount = Article::count();
 
@@ -72,6 +74,8 @@ class DashboardController extends Controller
             'policyCount',
             'cultureCount',
             'gisCount',
+            'kisahCount',
+            'liputanCount',
             'mediaStoriesCount',
             'totalArticlesCount',
             'totalContactMessagesCount',

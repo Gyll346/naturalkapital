@@ -204,6 +204,38 @@
                 </div>
             </div>
 
+            <!-- Kisah Perubahan -->
+            <div style="background: #fbfdfc; border: 1.5px solid #d2e8d1; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="background: #eff6ff; color: #1d4ed8; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px;">DAMPAK</span>
+                        <strong style="color: #1d4ed8; font-size: 13px;">{{ $kisahCount }} Kisah</strong>
+                    </div>
+                    <h4 style="font-size: 15px; font-weight: 700; color: #0e241b; margin: 0 0 6px;">Kisah Perubahan</h4>
+                    <p style="font-size: 12.5px; color: #536b5f; margin: 0 0 14px; line-height: 1.5;">Kelola cerita inspiratif, dampak lapangan, dan transformasi komunitas mitra.</p>
+                </div>
+                <div style="display: flex; gap: 8px; border-top: 1px solid #eef4f0; padding-top: 12px;">
+                    <a href="{{ route('admin.articles.create') }}" class="btn-action btn-primary" style="font-size: 12px; padding: 6px 12px;">+ Tulis Kisah</a>
+                    <a href="{{ route('admin.articles.index', ['category' => 'kisah-perubahan']) }}" class="btn-action btn-outline" style="font-size: 12px; padding: 6px 12px;">Kelola Kisah</a>
+                </div>
+            </div>
+
+            <!-- Liputan Media -->
+            <div style="background: #fbfdfc; border: 1.5px solid #d2e8d1; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="background: #eff6ff; color: #1d4ed8; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px;">MEDIA</span>
+                        <strong style="color: #1d4ed8; font-size: 13px;">{{ $liputanCount }} Liputan</strong>
+                    </div>
+                    <h4 style="font-size: 15px; font-weight: 700; color: #0e241b; margin: 0 0 6px;">Liputan Media</h4>
+                    <p style="font-size: 12.5px; color: #536b5f; margin: 0 0 14px; line-height: 1.5;">Publikasikan berita pers dan liputan eksternal mengenai program YNKI.</p>
+                </div>
+                <div style="display: flex; gap: 8px; border-top: 1px solid #eef4f0; padding-top: 12px;">
+                    <a href="{{ route('admin.articles.create') }}" class="btn-action btn-primary" style="font-size: 12px; padding: 6px 12px;">+ Tulis Liputan</a>
+                    <a href="{{ route('admin.articles.index', ['category' => 'liputan-media']) }}" class="btn-action btn-outline" style="font-size: 12px; padding: 6px 12px;">Kelola Liputan</a>
+                </div>
+            </div>
+
             <!-- 10. Story Foto & Video -->
             <div style="background: #fbfdfc; border: 1.5px solid #d2e8d1; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>

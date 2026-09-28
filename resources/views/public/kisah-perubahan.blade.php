@@ -3694,7 +3694,6 @@
                         </div>
                         <div
                           class="kisah-full-card"
-                          style="grid-column: 1 / -1"
                         >
                           <div class="kisah-header">
                             <span class="kisah-cat"
