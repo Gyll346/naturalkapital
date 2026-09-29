@@ -599,16 +599,24 @@ class PageContentController extends Controller
     $validated = $request->validate([
       'name' => 'required|string|max:150',
       'email' => 'required|email|max:150',
-      'phone' => 'nullable|string|max:50',
-      'subject' => 'nullable|string|max:150',
+      'phone' => ['required', 'string', 'max:25', 'regex:/^\+?[0-9]+$/'],
+      'subject' => 'required|string|max:150',
       'message' => 'required|string|max:5000',
+    ], [
+      'name.required' => 'Nama lengkap tidak boleh kosong.',
+      'email.required' => 'Alamat email tidak boleh kosong.',
+      'email.email' => 'Format alamat email tidak valid.',
+      'phone.required' => 'Nomor telepon/WhatsApp tidak boleh kosong.',
+      'phone.regex' => 'Nomor telepon/WhatsApp hanya boleh berisi angka dan tanda + (contoh: +628123456789 atau 08123456789).',
+      'subject.required' => 'Topik/keperluan pesan tidak boleh kosong.',
+      'message.required' => 'Isi pesan tidak boleh kosong.',
     ]);
 
     ContactMessage::create([
       'name' => $validated['name'],
       'email' => $validated['email'],
-      'phone' => $validated['phone'] ?? null,
-      'subject' => $validated['subject'] ?? 'Umum',
+      'phone' => $validated['phone'],
+      'subject' => $validated['subject'],
       'message' => $validated['message'],
       'is_read' => false,
     ]);

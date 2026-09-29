@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3492,7 +3492,7 @@
                 menanggapi pertanyaan Anda secepat mungkin.
               </p>
 
-              <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <form id="contactForm" onsubmit="handleContactSubmit(event)" novalidate>
                 <div style="margin-bottom: 16px">
                   <label
                     style="
@@ -3506,6 +3506,7 @@
                   >
                   <input
                     type="text"
+                    id="contact_name"
                     name="name"
                     required
                     placeholder="Nama Anda"
@@ -3518,6 +3519,7 @@
                       box-sizing: border-box;
                     "
                   />
+                  <div id="err_name" style="color: #dc2626; font-size: 12.5px; margin-top: 4px; display: none; font-weight: 600;"></div>
                 </div>
 
                 <div
@@ -3541,6 +3543,7 @@
                     >
                     <input
                       type="email"
+                      id="contact_email"
                       name="email"
                       required
                       placeholder="email@domain.com"
@@ -3553,6 +3556,7 @@
                         box-sizing: border-box;
                       "
                     />
+                    <div id="err_email" style="color: #dc2626; font-size: 12.5px; margin-top: 4px; display: none; font-weight: 600;"></div>
                   </div>
                   <div>
                     <label
@@ -3563,12 +3567,17 @@
                         color: #0e241b;
                         margin-bottom: 6px;
                       "
-                      >Nomor Telepon / WhatsApp</label
+                      >Nomor Telepon / WhatsApp *</label
                     >
                     <input
-                      type="text"
+                      type="tel"
+                      id="contact_phone"
                       name="phone"
-                      placeholder="08xxxxxxxxxx"
+                      required
+                      inputmode="tel"
+                      pattern="^\+?[0-9]+$"
+                      placeholder="+628xxxxxxxxxx / 08xxxxxxxxxx"
+                      oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\+.*)\+/g, '$1')"
                       style="
                         width: 100%;
                         padding: 12px 15px;
@@ -3578,6 +3587,7 @@
                         box-sizing: border-box;
                       "
                     />
+                    <div id="err_phone" style="color: #dc2626; font-size: 12.5px; margin-top: 4px; display: none; font-weight: 600;"></div>
                   </div>
                 </div>
 
@@ -3593,6 +3603,7 @@
                     >Topik / Keperluan Pesan *</label
                   >
                   <select
+                    id="contact_subject"
                     name="subject"
                     required
                     style="
@@ -3623,6 +3634,7 @@
                     </option>
                     <option value="lainnya">Lainnya</option>
                   </select>
+                  <div id="err_subject" style="color: #dc2626; font-size: 12.5px; margin-top: 4px; display: none; font-weight: 600;"></div>
                 </div>
 
                 <div class="contact-form-textarea-group">
@@ -3637,6 +3649,7 @@
                     >Isi Pesan *</label
                   >
                   <textarea
+                    id="contact_message"
                     name="message"
                     rows="8"
                     required
@@ -3650,6 +3663,7 @@
                       box-sizing: border-box;
                     "
                   ></textarea>
+                  <div id="err_message" style="color: #dc2626; font-size: 12.5px; margin-top: 4px; display: none; font-weight: 600;"></div>
                 </div>
 
                 <div
@@ -3687,11 +3701,84 @@
               </form>
 
               <script>
+                function clearContactErrors() {
+                  const errorKeys = ['name', 'email', 'phone', 'subject', 'message'];
+                  errorKeys.forEach(key => {
+                    const el = document.getElementById('err_' + key);
+                    const input = document.getElementById('contact_' + key);
+                    if (el) { el.style.display = 'none'; el.textContent = ''; }
+                    if (input) { input.style.borderColor = '#d2e8d1'; }
+                  });
+                }
+
+                function showFieldError(key, msg) {
+                  const el = document.getElementById('err_' + key);
+                  const input = document.getElementById('contact_' + key);
+                  if (el) { el.style.display = 'block'; el.textContent = msg; }
+                  if (input) { input.style.borderColor = '#dc2626'; }
+                }
+
                 function handleContactSubmit(e) {
                   e.preventDefault();
+                  clearContactErrors();
+
                   const form = document.getElementById("contactForm");
                   const btn = document.getElementById("contactSubmitBtn");
                   const alertBox = document.getElementById("contactFormAlert");
+                  alertBox.style.display = "none";
+
+                  const name = (document.getElementById("contact_name")?.value || "").trim();
+                  const email = (document.getElementById("contact_email")?.value || "").trim();
+                  const phone = (document.getElementById("contact_phone")?.value || "").trim();
+                  const subject = (document.getElementById("contact_subject")?.value || "").trim();
+                  const message = (document.getElementById("contact_message")?.value || "").trim();
+
+                  let hasError = false;
+
+                  if (!name) {
+                    showFieldError('name', 'Nama lengkap tidak boleh kosong.');
+                    hasError = true;
+                  }
+
+                  if (!email) {
+                    showFieldError('email', 'Alamat email tidak boleh kosong.');
+                    hasError = true;
+                  } else {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                      showFieldError('email', 'Format alamat email tidak valid.');
+                      hasError = true;
+                    }
+                  }
+
+                  if (!phone) {
+                    showFieldError('phone', 'Nomor telepon/WhatsApp tidak boleh kosong.');
+                    hasError = true;
+                  } else {
+                    // Validasi: hanya boleh angka dan awalan +, min 8 digit
+                    const phoneRegex = /^\+?[0-9]+$/;
+                    if (!phoneRegex.test(phone)) {
+                      showFieldError('phone', 'Nomor telepon/WhatsApp tidak boleh diisi selain angka kecuali tanda + (misal: +628123456789).');
+                      hasError = true;
+                    } else if (phone.replace(/\D/g, '').length < 8) {
+                      showFieldError('phone', 'Nomor telepon/WhatsApp minimal 8 digit angka.');
+                      hasError = true;
+                    }
+                  }
+
+                  if (!subject) {
+                    showFieldError('subject', 'Topik/keperluan pesan tidak boleh kosong.');
+                    hasError = true;
+                  }
+
+                  if (!message) {
+                    showFieldError('message', 'Isi pesan tidak boleh kosong.');
+                    hasError = true;
+                  }
+
+                  if (hasError) {
+                    return;
+                  }
 
                   btn.disabled = true;
                   btn.textContent = "Mengirim Pesan...";
@@ -3706,7 +3793,13 @@
                     },
                     body: formData,
                   })
-                    .then((res) => res.json())
+                    .then(async (res) => {
+                      const data = await res.json().catch(() => ({}));
+                      if (!res.ok) {
+                        throw data;
+                      }
+                      return data;
+                    })
                     .then((data) => {
                       btn.disabled = false;
                       btn.textContent = "Kirim Pesan Sekarang →";
@@ -3731,13 +3824,18 @@
                     .catch((err) => {
                       btn.disabled = false;
                       btn.textContent = "Kirim Pesan Sekarang →";
-                      alertBox.style.display = "block";
-                      alertBox.style.background = "#dafbe1";
-                      alertBox.style.color = "#1a7f37";
-                      alertBox.style.border = "1px solid #bbf7d0";
-                      alertBox.textContent =
-                        "Terima kasih! Pesan Anda telah terkirim ke Sekretariat YNKI. Kami akan segera merespons melalui email/telepon Anda.";
-                      form.reset();
+
+                      if (err && err.errors) {
+                        for (const [field, messages] of Object.entries(err.errors)) {
+                          showFieldError(field, messages[0]);
+                        }
+                      } else {
+                        alertBox.style.display = "block";
+                        alertBox.style.background = "#fff1f2";
+                        alertBox.style.color = "#e11d48";
+                        alertBox.style.border = "1px solid #fecdd3";
+                        alertBox.textContent = err.message || "Gagal mengirim pesan. Silakan periksa kembali isian formulir Anda.";
+                      }
                     });
                 }
               </script>
