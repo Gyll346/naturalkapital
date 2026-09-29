@@ -3626,300 +3626,50 @@
                       </div>
 
                       <div class="liputan-grid">
-                        <div class="liputan-card">
-                          <div class="liputan-card-header">
-                            <span class="liputan-topic topic-restorasi"
-                              >Restorasi Gambut</span
-                            >
-                            <span class="liputan-date">7 Maret 2025</span>
-                          </div>
-                          <div class="liputan-body">
-                            <div class="liputan-source">
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path
-                                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                                />
-                                <polyline points="14 2 14 8 20 8" />
-                              </svg>
-                              PM Haze
+                        @forelse($articles ?? [] as $art)
+                          @php
+                            $mediaData = json_decode($art->content, true) ?: [];
+                            $mediaName = $mediaData['media_name'] ?? 'Media Partner';
+                            $mediaUrl = $mediaData['external_url'] ?? '#';
+                            $topicName = $mediaData['topic_category'] ?? ($art->category->category_name ?? 'Liputan Media');
+                            $topicClass = 'topic-restorasi';
+                            $tl = strtolower($topicName);
+                            if (str_contains($tl, 'komoditas')) $topicClass = 'topic-komoditas';
+                            elseif (str_contains($tl, 'pemuda') || str_contains($tl, 'pendidikan')) $topicClass = 'topic-pemuda';
+                            elseif (str_contains($tl, 'kebijakan') || str_contains($tl, 'tata kelola')) $topicClass = 'topic-kebijakan';
+                            elseif (str_contains($tl, 'analisis') || str_contains($tl, 'penelitian')) $topicClass = 'topic-analisis';
+                          @endphp
+                          <div class="liputan-card">
+                            <div class="liputan-card-header">
+                              <span class="liputan-topic {{ $topicClass }}">{{ $topicName }}</span>
+                              <span class="liputan-date">{{ $art->published_at ? $art->published_at->format('d F Y') : $art->created_at->format('d F Y') }}</span>
                             </div>
-                            <h3>
-                              Restorasi Lahan Gambut, Wujudkan Masa Depan
-                              Berkelanjutan
-                            </h3>
-                            <blockquote>
-                              "Melalui FPIC ini, YNKI ingin memperkuat
-                              keberlanjutan program restorasi berbasis solusi
-                              dengan melibatkan semua suara masyarakat untuk
-                              masa depan ekosistem gambut dan desa yang seimbang
-                              dan adil."
-                            </blockquote>
-                            <a href="#" class="read-link"
-                              >Baca Selengkapnya
-                              <svg
-                                width="13"
-                                height="13"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
-                          </div>
-                        </div>
-                        <div class="liputan-card">
-                          <div class="liputan-card-header">
-                            <span class="liputan-topic topic-restorasi"
-                              >Restorasi Gambut</span
-                            >
-                            <span class="liputan-date">2025</span>
-                          </div>
-                          <div class="liputan-body">
-                            <div class="liputan-source">
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path
-                                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                                />
-                                <polyline points="14 2 14 8 20 8" />
-                              </svg>
-                              Newsantara.co
+                            <div class="liputan-body">
+                              <div class="liputan-source">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                  <polyline points="14 2 14 8 20 8" />
+                                </svg>
+                                {{ $mediaName }}
+                              </div>
+                              <h3>{{ $art->title }}</h3>
+                              @if($art->excerpt)
+                                <blockquote>"{{ $art->excerpt }}"</blockquote>
+                              @endif
+                              <a href="{{ $mediaUrl }}" target="_blank" rel="noopener noreferrer" class="read-link">
+                                Baca Selengkapnya
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                  <path d="M5 12h14" />
+                                  <path d="M12 5l7 7-7 7" />
+                                </svg>
+                              </a>
                             </div>
-                            <h3>
-                              Restorasi Gambut Berbasis FPIC di Desa Permata
-                              Jaya
-                            </h3>
-                            <blockquote>
-                              "Pendekatan FPIC memastikan masyarakat Desa
-                              Permata Jaya memiliki suara dan peran nyata dalam
-                              setiap tahapan restorasi gambut yang dilakukan
-                              bersama YNKI."
-                            </blockquote>
-                            <a href="#" class="read-link"
-                              >Baca Selengkapnya
-                              <svg
-                                width="13"
-                                height="13"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
                           </div>
-                        </div>
-                        <div class="liputan-card">
-                          <div class="liputan-card-header">
-                            <span class="liputan-topic topic-komoditas"
-                              >Komoditas Berkelanjutan</span
-                            >
-                            <span class="liputan-date">12 Agustus 2024</span>
+                        @empty
+                          <div style="grid-column: 1 / -1; text-align: center; padding: 48px 20px; background: #fff; border-radius: 16px; border: 1.5px dashed #d2e8d1;">
+                            <p style="color: #536b5f; font-size: 15px; margin: 0;">Belum ada liputan media yang dipublikasikan saat ini.</p>
                           </div>
-                          <div class="liputan-body">
-                            <div class="liputan-source">
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path
-                                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                                />
-                                <polyline points="14 2 14 8 20 8" />
-                              </svg>
-                              Newsantara.co
-                            </div>
-                            <h3>
-                              YNKI Beri Dukungan Penuh Pengembangan Kebijakan
-                              Ketertelusuran Karet
-                            </h3>
-                            <blockquote>
-                              "YNKI memberikan dukungan penuh kepada Dinas
-                              Perkebunan Kalimantan Barat dalam pengembangan
-                              kebijakan ketertelusuran industri karet untuk
-                              menjawab regulasi EUDR."
-                            </blockquote>
-                            <a href="#" class="read-link"
-                              >Baca Selengkapnya
-                              <svg
-                                width="13"
-                                height="13"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
-                          </div>
-                        </div>
-                        <div class="liputan-card">
-                          <div class="liputan-card-header">
-                            <span class="liputan-topic topic-komoditas"
-                              >Komoditas Berkelanjutan</span
-                            >
-                            <span class="liputan-date">Agustus 2024</span>
-                          </div>
-                          <div class="liputan-body">
-                            <div class="liputan-source">
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path
-                                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                                />
-                                <polyline points="14 2 14 8 20 8" />
-                              </svg>
-                              Newsantara.co
-                            </div>
-                            <h3>
-                              Perkuat Inovasi Bisnis, UMKM Madu Hutan di Ulak
-                              Medang Dapat Dukungan Alat Baru
-                            </h3>
-                            <blockquote>
-                              "Di tengah kekayaan SDA desa Ulak Medang, madu
-                              hutan menjadi produk unggulan yang berpotensi
-                              dikembangkan lebih jauh dengan standar kualitas
-                              yang lebih tinggi."
-                            </blockquote>
-                            <a href="#" class="read-link"
-                              >Baca Selengkapnya
-                              <svg
-                                width="13"
-                                height="13"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
-                          </div>
-                        </div>
-                        <div class="liputan-card">
-                          <div class="liputan-card-header">
-                            <span class="liputan-topic topic-pemuda"
-                              >Pemuda &amp; Pendidikan</span
-                            >
-                            <span class="liputan-date">19 Juli 2024</span>
-                          </div>
-                          <div class="liputan-body">
-                            <div class="liputan-source">
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path
-                                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                                />
-                                <polyline points="14 2 14 8 20 8" />
-                              </svg>
-                              Tribun Pontianak
-                            </div>
-                            <h3>
-                              YNKI Gelar Youth Camp untuk Tiga Desa di Ketapang
-                            </h3>
-                            <blockquote>
-                              "Yayasan Natural Kapital Indonesia (YNKI)
-                              menggelar 'Youth Camp' aksi bersama menjaga hutan
-                              yang melibatkan puluhan anak muda di Kabupaten
-                              Ketapang, Kalimantan Barat."
-                            </blockquote>
-                            <a href="#" class="read-link"
-                              >Baca Selengkapnya
-                              <svg
-                                width="13"
-                                height="13"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
-                          </div>
-                        </div>
-                        <div class="liputan-card">
-                          <div class="liputan-card-header">
-                            <span class="liputan-topic topic-restorasi"
-                              >Restorasi Gambut</span
-                            >
-                            <span class="liputan-date">10 Juni 2024</span>
-                          </div>
-                          <div class="liputan-body">
-                            <div class="liputan-source">
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path
-                                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                                />
-                                <polyline points="14 2 14 8 20 8" />
-                              </svg>
-                              Kalbar Digital
-                            </div>
-                            <h3>
-                              Kolaboratif Restorasi Gambut, Upaya Bersama
-                              Lestarikan Masa Depan
-                            </h3>
-                            <blockquote>
-                              "Direktur YNKI, Haryono, menjadikan ekosistem
-                              gambut yang sehat selain menanam pohon juga dengan
-                              membuat kanal bloking untuk mengembalikan pola
-                              aliran air yang alami."
-                            </blockquote>
-                            <a href="#" class="read-link"
-                              >Baca Selengkapnya
-                              <svg
-                                width="13"
-                                height="13"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
-                          </div>
-                        </div>
+                        @endforelse
                       </div>
                       <!-- Pagination Clearfix -->
                       <div class="pagination clearfix" id="liputan-pagination"></div>

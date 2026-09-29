@@ -584,7 +584,7 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a class="menu-link {{ request()->get('category') === 'liputan-media' ? 'active' : '' }}" href="{{ route('admin.articles.index', ['category' => 'liputan-media']) }}" style="padding-left: 24px; font-size: 13px;">
+                <a class="menu-link {{ request()->routeIs('admin.media-coverages.*') ? 'active' : '' }}" href="{{ route('admin.media-coverages.index') }}" style="padding-left: 24px; font-size: 13px;">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path></svg>
                     Liputan Media
                 </a>

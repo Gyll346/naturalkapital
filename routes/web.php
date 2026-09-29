@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\TransparencyController;
 use App\Http\Controllers\Admin\MediaStoryController;
 use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\Admin\ParticipationController;
+use App\Http\Controllers\Admin\MediaCoverageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +50,7 @@ Route::get('/dampak', fn() => view('public.dampak'))->name('public.dampak');
 Route::get('/dampak/index.html', fn() => redirect('/dampak'));
 Route::get('/kisah-perubahan', [PageContentController::class, 'kisahPerubahan'])->name('public.kisah_perubahan');
 Route::get('/kisah-perubahan/index.html', fn() => redirect('/kisah-perubahan'));
-Route::get('/liputan-media', fn() => view('public.liputan-media'))->name('public.liputan_media');
+Route::get('/liputan-media', [PageContentController::class, 'liputanMedia'])->name('public.liputan_media');
 Route::get('/liputan-media/index.html', fn() => redirect('/liputan-media'));
 
 // Subhalaman Program Kami
@@ -164,6 +165,9 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     
     // CRUD Story Foto & Video Lapangan
     Route::resource('media-stories', MediaStoryController::class);
+    
+    // CRUD Liputan Media Eksternal
+    Route::resource('media-coverages', MediaCoverageController::class);
     
     // CRUD Artikel Berita & Dokumen Riset
     Route::resource('articles', ArticleController::class);

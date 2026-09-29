@@ -231,8 +231,8 @@
                     <p style="font-size: 12.5px; color: #536b5f; margin: 0 0 14px; line-height: 1.5;">Publikasikan berita pers dan liputan eksternal mengenai program YNKI.</p>
                 </div>
                 <div style="display: flex; gap: 8px; border-top: 1px solid #eef4f0; padding-top: 12px;">
-                    <a href="{{ route('admin.articles.create') }}" class="btn-action btn-primary" style="font-size: 12px; padding: 6px 12px;">+ Tulis Liputan</a>
-                    <a href="{{ route('admin.articles.index', ['category' => 'liputan-media']) }}" class="btn-action btn-outline" style="font-size: 12px; padding: 6px 12px;">Kelola Liputan</a>
+                    <a href="{{ route('admin.media-coverages.create') }}" class="btn-action btn-primary" style="font-size: 12px; padding: 6px 12px;">+ Tulis Liputan</a>
+                    <a href="{{ route('admin.media-coverages.index') }}" class="btn-action btn-outline" style="font-size: 12px; padding: 6px 12px;">Kelola Liputan</a>
                 </div>
             </div>
 

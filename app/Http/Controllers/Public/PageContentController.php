@@ -459,6 +459,19 @@ class PageContentController extends Controller
     return view('public.kisah-perubahan', compact('articles'));
   }
 
+  // Liputan Media (/liputan-media/)
+  public function liputanMedia()
+  {
+    $category = ArticleCategory::where('slug', 'liputan-media')->first();
+    $articles = Article::with(['category', 'author'])
+      ->where('status', 'published')
+      ->when($category, fn($q) => $q->where('category_id', $category->id))
+      ->orderBy('published_at', 'desc')
+      ->get();
+
+    return view('public.liputan-media', compact('articles'));
+  }
+
   // 5. News & Features (/news-features/) - Kabar Terkini dari Program YNKI
   public function newsFeatures()
   {
