@@ -3115,6 +3115,59 @@
               margin: 0;
             }
 
+            /* ======================== PAGINATION CLEARFIX ======================== */
+            .pagination.clearfix {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 8px;
+              margin: 40px auto 10px;
+              clear: both;
+            }
+            .pagination.clearfix a,
+            .pagination.clearfix span {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              min-width: 38px;
+              height: 38px;
+              padding: 0 14px;
+              border-radius: 8px;
+              font-size: 13.5px;
+              font-weight: 700;
+              text-decoration: none;
+              transition: all 0.2s ease;
+              cursor: pointer;
+              border: 1.5px solid #d4e8d3;
+              background: #ffffff;
+              color: #1a422b;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            }
+            .pagination.clearfix a:hover {
+              background: #e8f5ec;
+              border-color: #117710;
+              color: #117710;
+              transform: translateY(-1px);
+            }
+            .pagination.clearfix .current {
+              background: #117710;
+              border-color: #117710;
+              color: #ffffff;
+              box-shadow: 0 4px 14px rgba(17, 119, 16, 0.25);
+              cursor: default;
+            }
+            .pagination.clearfix .pagination-prev,
+            .pagination.clearfix .pagination-next {
+              padding: 0 16px;
+              font-size: 13px;
+            }
+            .pagination.clearfix .disabled {
+              opacity: 0.4;
+              pointer-events: none;
+              cursor: not-allowed;
+            }
+
             .kisah-full-grid {
               display: grid;
               grid-template-columns: repeat(3, 1fr);
@@ -3504,6 +3557,8 @@
                         </div>
                         @endforelse
                       </div>
+                      <!-- Pagination Clearfix -->
+                      <div class="pagination clearfix" id="kisah-pagination"></div>
                     </div>
                   </section>
 
@@ -3812,6 +3867,98 @@
     </section>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script src="/assets/js/ynki-footer.js"></script>
+
+    <script>
+      // Kisah Perubahan Pagination Clearfix (6 cards per page)
+      document.addEventListener('DOMContentLoaded', function() {
+        const ITEMS_PER_PAGE = 6;
+        let currentPage = 1;
+        const grid = document.querySelector('.kisah-full-grid');
+        const paginationContainer = document.getElementById('kisah-pagination');
+
+        if (!grid || !paginationContainer) return;
+
+        function getCards() {
+          return Array.from(grid.querySelectorAll('.kisah-full-card'));
+        }
+
+        function renderPagination(totalItems) {
+          const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+          if (totalPages <= 1) {
+            paginationContainer.style.display = 'none';
+            paginationContainer.innerHTML = '';
+            return;
+          }
+
+          paginationContainer.style.display = 'flex';
+          let html = '';
+
+          // Prev button
+          if (currentPage > 1) {
+            html += `<a href="#kisah-stories" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Previous</a>`;
+          } else {
+            html += `<span class="pagination-prev disabled">&laquo; Previous</span>`;
+          }
+
+          // Page numbers
+          for (let p = 1; p <= totalPages; p++) {
+            if (p === currentPage) {
+              html += `<span class="current">${p}</span>`;
+            } else {
+              html += `<a href="#kisah-stories" class="inactive" data-page="${p}">${p}</a>`;
+            }
+          }
+
+          // Next button
+          if (currentPage < totalPages) {
+            html += `<a href="#kisah-stories" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
+          } else {
+            html += `<span class="pagination-next disabled">Next &raquo;</span>`;
+          }
+
+          paginationContainer.innerHTML = html;
+
+          paginationContainer.querySelectorAll('a[data-page]').forEach(link => {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              currentPage = parseInt(this.getAttribute('data-page'), 10);
+              updateView(true);
+            });
+          });
+        }
+
+        function updateView(scrollIntoView = false) {
+          const cards = getCards();
+          const totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
+          if (currentPage > totalPages && totalPages > 0) {
+            currentPage = 1;
+          }
+
+          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+          const endIndex = startIndex + ITEMS_PER_PAGE;
+
+          cards.forEach((card, index) => {
+            if (index >= startIndex && index < endIndex) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          renderPagination(cards.length);
+
+          if (scrollIntoView) {
+            const section = document.getElementById('kisah-stories');
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        }
+
+        updateView(false);
+      });
+    </script>
   </body>
 </html>
 <!-- Page optimized by LiteSpeed Cache @2026-08-17 17:42:00 --><!-- Page cached by LiteSpeed Cache 7.8.1 on 2026-08-17 17:42:00 --><!-- Guest Mode --><!-- QUIC.cloud CCSS loaded ✅ /ccss/e6cdef7e17caebb6a8d79682a8c88011.css --><!-- QUIC.cloud UCSS loaded ✅ /ucss/d5027302c12ab86b6082acd2ecdd5c8e.css -->
