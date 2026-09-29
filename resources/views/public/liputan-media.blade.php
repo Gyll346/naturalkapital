@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3143,6 +3143,59 @@
               line-height: 1.4;
             }
 
+            /* ======================== PAGINATION CLEARFIX ======================== */
+            .pagination.clearfix {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 8px;
+              margin: 40px auto 10px;
+              clear: both;
+            }
+            .pagination.clearfix a,
+            .pagination.clearfix span {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              min-width: 38px;
+              height: 38px;
+              padding: 0 14px;
+              border-radius: 8px;
+              font-size: 13.5px;
+              font-weight: 700;
+              text-decoration: none;
+              transition: all 0.2s ease;
+              cursor: pointer;
+              border: 1.5px solid #d4e8d3;
+              background: #ffffff;
+              color: #1a422b;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            }
+            .pagination.clearfix a:hover {
+              background: #e8f5ec;
+              border-color: #117710;
+              color: #117710;
+              transform: translateY(-1px);
+            }
+            .pagination.clearfix .current {
+              background: #117710;
+              border-color: #117710;
+              color: #ffffff;
+              box-shadow: 0 4px 14px rgba(17, 119, 16, 0.25);
+              cursor: default;
+            }
+            .pagination.clearfix .pagination-prev,
+            .pagination.clearfix .pagination-next {
+              padding: 0 16px;
+              font-size: 13px;
+            }
+            .pagination.clearfix .disabled {
+              opacity: 0.4;
+              pointer-events: none;
+              cursor: not-allowed;
+            }
+
             .liputan-grid {
               display: grid;
               grid-template-columns: repeat(2, 1fr);
@@ -3572,18 +3625,6 @@
                         </p>
                       </div>
 
-                      <!-- Filter -->
-                      <div class="filter-row">
-                        <span class="filter-tag active">Semua Liputan</span>
-                        <span class="filter-tag">Restorasi Gambut</span>
-                        <span class="filter-tag">Pemberdayaan Masyarakat</span>
-                        <span class="filter-tag">Pemuda &amp; Pendidikan</span>
-                        <span class="filter-tag">Komoditas Berkelanjutan</span>
-                        <span class="filter-tag"
-                          >Kebijakan &amp; Tata Kelola</span
-                        >
-                      </div>
-
                       <div class="liputan-grid">
                         <div class="liputan-card">
                           <div class="liputan-card-header">
@@ -3879,57 +3920,9 @@
                             ></a>
                           </div>
                         </div>
-                        <div class="liputan-card" style="grid-column: 1 / -1">
-                          <div class="liputan-card-header">
-                            <span class="liputan-topic topic-analisis"
-                              >Analisis &amp; Penelitian</span
-                            >
-                            <span class="liputan-date">12 Desember 2020</span>
-                          </div>
-                          <div class="liputan-body">
-                            <div class="liputan-source">
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path
-                                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                                />
-                                <polyline points="14 2 14 8 20 8" />
-                              </svg>
-                              Warta Pontianak
-                            </div>
-                            <h3>
-                              Banjir di Pesisir Delta Kapuas? Ini Analisis
-                              Yayasan Natural Kapital Indonesia
-                            </h3>
-                            <blockquote>
-                              "Menurut analisis spasial YNKI, rata-rata
-                              kebakaran hutan dan lahan (karhutla) seluas Kota
-                              Pontianak terjadi tiap tahunnya di Lanskap Gambut
-                              Pesisir Delta Kapuas, dengan total luas mencapai
-                              51.130 ha sejak 2015–2019."
-                            </blockquote>
-                            <a href="#" class="read-link"
-                              >Baca Selengkapnya
-                              <svg
-                                width="13"
-                                height="13"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" /></svg
-                            ></a>
-                          </div>
-                        </div>
                       </div>
+                      <!-- Pagination Clearfix -->
+                      <div class="pagination clearfix" id="liputan-pagination"></div>
                     </div>
                   </section>
 
@@ -4382,6 +4375,98 @@
     </section>
     <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script src="/assets/js/ynki-footer.js"></script>
+
+    <script>
+      // Liputan Media Pagination Clearfix (4 cards per page)
+      document.addEventListener('DOMContentLoaded', function() {
+        const ITEMS_PER_PAGE = 4;
+        let currentPage = 1;
+        const grid = document.querySelector('.liputan-grid');
+        const paginationContainer = document.getElementById('liputan-pagination');
+
+        if (!grid || !paginationContainer) return;
+
+        function getCards() {
+          return Array.from(grid.querySelectorAll('.liputan-card'));
+        }
+
+        function renderPagination(totalItems) {
+          const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+          if (totalPages <= 1) {
+            paginationContainer.style.display = 'none';
+            paginationContainer.innerHTML = '';
+            return;
+          }
+
+          paginationContainer.style.display = 'flex';
+          let html = '';
+
+          // Prev button
+          if (currentPage > 1) {
+            html += `<a href="#liputan-kumpulan" class="pagination-prev" data-page="${currentPage - 1}">&laquo; Previous</a>`;
+          } else {
+            html += `<span class="pagination-prev disabled">&laquo; Previous</span>`;
+          }
+
+          // Page numbers
+          for (let p = 1; p <= totalPages; p++) {
+            if (p === currentPage) {
+              html += `<span class="current">${p}</span>`;
+            } else {
+              html += `<a href="#liputan-kumpulan" class="inactive" data-page="${p}">${p}</a>`;
+            }
+          }
+
+          // Next button
+          if (currentPage < totalPages) {
+            html += `<a href="#liputan-kumpulan" class="pagination-next" data-page="${currentPage + 1}">Next &raquo;</a>`;
+          } else {
+            html += `<span class="pagination-next disabled">Next &raquo;</span>`;
+          }
+
+          paginationContainer.innerHTML = html;
+
+          paginationContainer.querySelectorAll('a[data-page]').forEach(link => {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              currentPage = parseInt(this.getAttribute('data-page'), 10);
+              updateView(true);
+            });
+          });
+        }
+
+        function updateView(scrollIntoView = false) {
+          const cards = getCards();
+          const totalPages = Math.ceil(cards.length / ITEMS_PER_PAGE);
+          if (currentPage > totalPages && totalPages > 0) {
+            currentPage = 1;
+          }
+
+          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+          const endIndex = startIndex + ITEMS_PER_PAGE;
+
+          cards.forEach((card, index) => {
+            if (index >= startIndex && index < endIndex) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          renderPagination(cards.length);
+
+          if (scrollIntoView) {
+            const section = document.getElementById('liputan-kumpulan');
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        }
+
+        updateView(false);
+      });
+    </script>
   </body>
 </html>
 <!-- Page optimized by LiteSpeed Cache @2026-08-17 17:42:00 --><!-- Page cached by LiteSpeed Cache 7.8.1 on 2026-08-17 17:42:00 --><!-- Guest Mode --><!-- QUIC.cloud CCSS loaded ✅ /ccss/e6cdef7e17caebb6a8d79682a8c88011.css --><!-- QUIC.cloud UCSS loaded ✅ /ucss/d5027302c12ab86b6082acd2ecdd5c8e.css -->
