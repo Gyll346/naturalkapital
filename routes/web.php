@@ -47,7 +47,7 @@ Route::get('/annual-report', [PageContentController::class, 'transparansi'])->na
 // Subhalaman Dampak & Pembelajaran
 Route::get('/dampak', fn() => view('public.dampak'))->name('public.dampak');
 Route::get('/dampak/index.html', fn() => redirect('/dampak'));
-Route::get('/kisah-perubahan', fn() => view('public.kisah-perubahan'))->name('public.kisah_perubahan');
+Route::get('/kisah-perubahan', [PageContentController::class, 'kisahPerubahan'])->name('public.kisah_perubahan');
 Route::get('/kisah-perubahan/index.html', fn() => redirect('/kisah-perubahan'));
 Route::get('/liputan-media', fn() => view('public.liputan-media'))->name('public.liputan_media');
 Route::get('/liputan-media/index.html', fn() => redirect('/liputan-media'));

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3117,82 +3117,102 @@
 
             .kisah-full-grid {
               display: grid;
-              grid-template-columns: repeat(2, 1fr);
-              gap: 28px;
-              margin-top: 44px;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 24px;
+              max-width: 1100px;
+              margin: 44px auto 0;
             }
             .kisah-full-card {
               background: #fff;
               border: 1.5px solid #d2e8d1;
               border-radius: 16px;
               overflow: hidden;
+              display: flex;
+              flex-direction: column;
               transition: all 0.3s;
             }
             .kisah-full-card:hover {
-              box-shadow: 0 16px 40px rgba(17, 119, 16, 0.12);
               transform: translateY(-4px);
+              box-shadow: 0 14px 36px rgba(17, 119, 16, 0.1);
+              border-color: #117710;
             }
-            .kisah-header {
-              padding: 14px 20px;
-              background: #117710;
+            .kisah-full-card .doc-img {
+              width: 100%;
+              height: 170px;
+              background: #e8f5e8;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #117710;
+              font-size: 40px;
+              border-bottom: 1px solid #d2e8d1;
+              overflow: hidden;
+            }
+            .kisah-full-card .doc-img img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              display: block;
+            }
+            .kisah-full-card .doc-body {
+              padding: 24px;
+              flex-grow: 1;
+              display: flex;
+              flex-direction: column;
+            }
+            .kisah-full-card .doc-meta {
               display: flex;
               justify-content: space-between;
               align-items: center;
+              margin-bottom: 12px;
             }
-            .kisah-cat {
-              font-size: 11px;
+            .kisah-full-card .doc-year {
+              font-size: 12px;
+              font-weight: 700;
+              color: #8a9e94;
+            }
+            .kisah-full-card .doc-loc {
+              font-size: 11.5px;
               font-weight: 800;
-              letter-spacing: 1px;
+              color: #ff8000;
               text-transform: uppercase;
-              color: #a3e0a2;
+              letter-spacing: 1px;
+              margin-bottom: 8px;
             }
-            .kisah-prog {
-              font-size: 11px;
-              color: #d2f0d1;
-            }
-            .kisah-content {
-              padding: 28px;
-            }
-            .kisah-content h3 {
-              font-size: 18px;
+            .kisah-full-card .doc-body h3 {
+              font-size: 17px;
               font-weight: 800;
               color: #0e241b;
               margin: 0 0 12px;
-              line-height: 1.35;
+              line-height: 1.4;
             }
-            .kisah-meta {
-              display: flex;
-              gap: 16px;
-              margin-bottom: 16px;
-              flex-wrap: wrap;
+            .kisah-full-card .doc-body h3 a {
+              color: #0e241b;
+              text-decoration: none;
+              transition: color 0.2s;
             }
-            .kisah-meta-item {
-              font-size: 12px;
-              color: #536b5f;
-              display: flex;
-              align-items: center;
-              gap: 5px;
-            }
-            .kisah-meta-item svg {
-              stroke: #117710;
-              flex-shrink: 0;
-            }
-            .kisah-content blockquote {
-              margin: 0 0 14px;
-              padding: 12px 18px;
-              border-left: 3px solid #117710;
-              background: #f8faf8;
-              font-size: 14px;
-              font-style: italic;
+            .kisah-full-card .doc-body h3 a:hover {
               color: #117710;
-              border-radius: 0 8px 8px 0;
-              line-height: 1.6;
             }
-            .kisah-content p {
+            .kisah-full-card .doc-body p {
               font-size: 13.5px;
               color: #536b5f;
-              line-height: 1.7;
-              margin: 0;
+              line-height: 1.65;
+              margin: 0 0 20px;
+              flex-grow: 1;
+            }
+            .kisah-full-card .btn-dl {
+              font-size: 13px;
+              font-weight: 700;
+              color: #117710;
+              text-decoration: none;
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              margin-top: auto;
+            }
+            .kisah-full-card .btn-dl:hover {
+              opacity: 0.7;
             }
 
             .filter-bar {
@@ -3250,6 +3270,11 @@
               max-width: 620px;
             }
 
+            @media (max-width: 1024px) {
+              .kisah-full-grid {
+                grid-template-columns: repeat(2, 1fr);
+              }
+            }
             @media (max-width: 768px) {
               .metodologi-grid {
                 grid-template-columns: 1fr;
@@ -3431,8 +3456,7 @@
                   <section
                     id="kisah-stories"
                     class="ynki-section"
-                    style="background: #f5f8f5; padding: 90px 24px"
-                  >
+                    style="background: #f5f8f5; padding: 90px 24px">
                     <div class="ynki-container">
                       <div style="text-align: center">
                         <span class="section-badge green">KISAH PERUBAHAN</span>
@@ -3448,314 +3472,37 @@
                         </h2>
                       </div>
                       <div class="kisah-full-grid">
+                        @forelse($articles ?? [] as $art)
                         <div class="kisah-full-card">
-                          <div class="kisah-header">
-                            <span class="kisah-cat"
-                              >Restorasi Gambut &middot; Kalimantan Barat</span
-                            >
-                            <span class="kisah-prog"
-                              >Natural Capital Program</span
-                            >
+                          <div class="doc-img">
+                            @if($art->featured_image_path)
+                            <img src="/storage/{{ ltrim($art->featured_image_path, '/') }}" alt="{{ $art->title }}" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\'/><polyline points=\'14 2 14 8 20 8\'/><line x1=\'16\' y1=\'13\' x2=\'8\' y2=\'13\'/><line x1=\'16\' y1=\'17\' x2=\'8\' y2=\'17\'/><polyline points=\'10 9 9 9 8 9\'/></svg>';">
+                            @else
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            @endif
                           </div>
-                          <div class="kisah-content">
-                            <h3>
-                              Restorasi Gambut Berbasis Masyarakat di Desa
-                              Permata Jaya
-                            </h3>
-                            <div class="kisah-meta">
-                              <span class="kisah-meta-item"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Desa Permata Jaya, Kubu Raya</span
-                              >
-                              <span class="kisah-meta-item"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >PM Haze, LDPH Permata Jaya</span
-                              >
+                          <div class="doc-body">
+                            <div class="doc-meta">
+                              <span class="doc-year">{{ $art->published_at ? $art->published_at->format('Y') : date('Y') }}</span>
                             </div>
-                            <blockquote>
-                              "Restorasi gambut bukan hanya tentang memulihkan
-                              lanskap yang rusak, tetapi juga membangun kembali
-                              hubungan harmonis antara manusia dan alam."
-                            </blockquote>
-                            <p>
-                              Sejak Agustus 2023, YNKI bersama PM Haze dan LDPH
-                              Permata Jaya membangun tiga sekat
-                              kanal—meningkatkan tinggi muka air dari 20 cm
-                              menjadi lebih dari 50 cm—dan mendirikan rumah
-                              pembibitan tanaman khas gambut serta komoditas
-                              bernilai ekonomi. Frekuensi kebakaran lahan gambut
-                              menurun dan masyarakat merasakan manfaat langsung
-                              dari berkurangnya dampak kabut asap.
-                            </p>
+                            <div class="doc-loc">{{ strtoupper($art->category->category_name ?? 'KISAH PERUBAHAN') }}</div>
+                            <h3>
+                              <a href="/artikel-cms/{{ $art->slug }}">{{ $art->title }}</a>
+                            </h3>
+                            <p>{{ $art->excerpt ?? '' }}</p>
+                            <a href="/artikel-cms/{{ $art->slug }}" class="btn-dl">Baca Selengkapnya
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14" />
+                                <path d="M12 5l7 7-7 7" />
+                              </svg>
+                            </a>
                           </div>
                         </div>
-                        <div class="kisah-full-card">
-                          <div class="kisah-header">
-                            <span class="kisah-cat"
-                              >Pemuda &amp; Pendidikan &middot; Kalimantan
-                              Barat</span
-                            >
-                            <span class="kisah-prog"
-                              >Institutional &amp; Commodity Program</span
-                            >
-                          </div>
-                          <div class="kisah-content">
-                            <h3>
-                              Youth Camp — Membangun Generasi Muda untuk Desa
-                              Berkelanjutan
-                            </h3>
-                            <div class="kisah-meta">
-                              <span class="kisah-meta-item"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Muara Pawan, Ketapang</span
-                              >
-                              <span class="kisah-meta-item"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >UNDP KalFor, Pemkab Ketapang</span
-                              >
-                            </div>
-                            <blockquote>
-                              "Bagaimana kita dapat menggali potensi desa yang
-                              kemudian dapat dimanfaatkan secara optimal." — Nur
-                              Fadly, Focal Point KalFor
-                            </blockquote>
-                            <p>
-                              Pada 19 Juli 2024, YNKI menggelar Youth Camp yang
-                              melibatkan 30 anak muda dari tiga desa di
-                              Kecamatan Muara Pawan. Kegiatan tiga hari ini
-                              meningkatkan pengetahuan, keterampilan, dan peran
-                              masyarakat desa dalam mendukung pengelolaan hutan
-                              berkelanjutan — peserta belajar menjadi konten
-                              kreator desa dan agen perubahan lokal.
-                            </p>
-                          </div>
+                        @empty
+                        <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666; background: #fff; border-radius: 16px; border: 1.5px dashed #d2e8d1;">
+                          <p>Belum ada artikel Kisah Perubahan yang dipublikasikan saat ini.</p>
                         </div>
-                        <div class="kisah-full-card">
-                          <div class="kisah-header">
-                            <span class="kisah-cat"
-                              >Pengembangan Ekonomi &middot; Kalimantan
-                              Barat</span
-                            >
-                            <span class="kisah-prog"
-                              >Sustainable Commodity Program</span
-                            >
-                          </div>
-                          <div class="kisah-content">
-                            <h3>
-                              Pengembangan Usaha Madu Hutan untuk Pemberdayaan
-                              Ekonomi
-                            </h3>
-                            <div class="kisah-meta">
-                              <span class="kisah-meta-item"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Desa Ulak Medang, Ketapang</span
-                              >
-                              <span class="kisah-meta-item"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >UNDP KalFor</span
-                              >
-                            </div>
-                            <blockquote>
-                              "Dengan peralatan yang memadai dan standar yang
-                              ketat, kelompok petani madu kini berada dalam
-                              posisi yang lebih baik untuk menghadapi tantangan
-                              pasar."
-                            </blockquote>
-                            <p>
-                              Pada 16 Juli 2024, YNKI bersama UNDP KalFor
-                              menyerahkan peralatan (dehumidifier SNI,
-                              refraktometer, APD) kepada kelompok petani madu
-                              hutan. Dengan dukungan ini, kelompok kini
-                              memproduksi madu berkualitas tinggi sambil
-                              memperkuat komitmen terhadap kelestarian hutan
-                              sebagai habitat lebah.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="kisah-full-card">
-                          <div class="kisah-header">
-                            <span class="kisah-cat"
-                              >Pengetahuan &amp; Inovasi &middot; Riau</span
-                            >
-                            <span class="kisah-prog"
-                              >Landscape Intelligence Program</span
-                            >
-                          </div>
-                          <div class="kisah-content">
-                            <h3>
-                              Berbagi Pengetahuan Restorasi Gambut Lintas
-                              Wilayah
-                            </h3>
-                            <div class="kisah-meta">
-                              <span class="kisah-meta-item"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Desa Sungai Tohor, Kep. Meranti, Riau</span
-                              >
-                              <span class="kisah-meta-item"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >LSM EKA, GEMAST, PM Haze</span
-                              >
-                            </div>
-                            <blockquote>
-                              "Skema restorasi gambut 3R—rewetting,
-                              revegetation, dan revitalization—telah diterapkan
-                              melalui dukungan para pihak."
-                            </blockquote>
-                            <p>
-                              Pada Mei 2022, YNKI melakukan studi banding ke
-                              Pulau Tebing Tinggi yang pernah mengalami
-                              kebakaran dahsyat pada 2014. Kelompok sadar
-                              lingkungan yang dipelopori Abdul Manan telah
-                              menerapkan skema 3R. Kunjungan ini memperkuat
-                              jaringan pembelajaran lintas lanskap YNKI di
-                              seluruh Indonesia.
-                            </p>
-                          </div>
-                        </div>
-                        <div
-                          class="kisah-full-card"
-                        >
-                          <div class="kisah-header">
-                            <span class="kisah-cat"
-                              >Kemitraan &amp; Kolaborasi &middot; Kalimantan
-                              Barat</span
-                            >
-                            <span class="kisah-prog"
-                              >Natural Capital Program</span
-                            >
-                          </div>
-                          <div class="kisah-content">
-                            <h3>
-                              Kolaborasi Restorasi Gambut — Penanaman Pohon
-                              Bersama di Desa Permata Jaya
-                            </h3>
-                            <div class="kisah-meta">
-                              <span class="kisah-meta-item"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                  />
-                                  <circle cx="12" cy="10" r="3" /></svg
-                                >Desa Permata Jaya, Kubu Raya</span
-                              >
-                              <span class="kisah-meta-item"
-                                ><svg
-                                  width="14"
-                                  height="14"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke-width="2"
-                                >
-                                  <path
-                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                  />
-                                  <circle cx="9" cy="7" r="4" /></svg
-                                >PM Haze, LDPH, BKSDA KalBar, Dinas LH</span
-                              >
-                            </div>
-                            <blockquote>
-                              "Restorasi ini adalah upaya untuk menyelamatkan
-                              bumi dan mencegah kebakaran hutan." — Kepala Desa
-                              Permata Jaya
-                            </blockquote>
-                            <p>
-                              Dalam rangka memperingati Hari Lingkungan Hidup
-                              Sedunia, YNKI bersama PM Haze dan LDPH Permata
-                              Jaya menanam 50 bibit pohon lokal sebagai bagian
-                              dari rehabilitasi lahan gambut. Kegiatan ini
-                              melibatkan berbagai pemangku kepentingan — dari
-                              BKSDA KalBar dan Dinas Lingkungan Hidup hingga
-                              masyarakat dan pelajar — sebagai wujud komitmen
-                              kolektif memulihkan ekosistem gambut yang rusak.
-                            </p>
-                          </div>
-                        </div>
+                        @endforelse
                       </div>
                     </div>
                   </section>

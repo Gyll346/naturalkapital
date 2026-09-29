@@ -446,6 +446,19 @@ class PageContentController extends Controller
     return $items;
   }
 
+  // Kisah Perubahan (/kisah-perubahan/)
+  public function kisahPerubahan()
+  {
+    $category = ArticleCategory::where('slug', 'kisah-perubahan')->first();
+    $articles = Article::with(['category', 'author'])
+      ->where('status', 'published')
+      ->when($category, fn($q) => $q->where('category_id', $category->id))
+      ->orderBy('published_at', 'desc')
+      ->get();
+
+    return view('public.kisah-perubahan', compact('articles'));
+  }
+
   // 5. News & Features (/news-features/) - Kabar Terkini dari Program YNKI
   public function newsFeatures()
   {
