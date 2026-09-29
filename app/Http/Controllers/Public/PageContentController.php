@@ -564,9 +564,16 @@ class PageContentController extends Controller
     $validated = $request->validate([
       'name' => 'required|string|max:150',
       'email' => 'required|email|max:150',
-      'phone' => 'required|string|max:50',
+      'phone' => ['required', 'string', 'max:25', 'regex:/^\+?[0-9]+$/'],
       'interest' => 'required|string|max:100',
       'message' => 'nullable|string|max:3000',
+    ], [
+      'name.required' => 'Nama lengkap tidak boleh kosong.',
+      'email.required' => 'Alamat email tidak boleh kosong.',
+      'email.email' => 'Format email tidak valid.',
+      'phone.required' => 'Nomor WhatsApp tidak boleh kosong.',
+      'phone.regex' => 'Nomor WhatsApp hanya boleh diisi angka dan tanda + (misal: +628123456789).',
+      'interest.required' => 'Peminatan keterlibatan wajib dipilih.',
     ]);
 
     Participation::create([

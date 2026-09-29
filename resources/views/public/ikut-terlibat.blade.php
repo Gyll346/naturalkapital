@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3106,26 +3106,39 @@
                 <p style="font-size: 14px; color: #536b5f; margin: 0;">Isi formulir di bawah ini dan tim sekretariat YNKI akan segera menghubungi Anda.</p>
               </div>
 
-              <form id="participationForm" onsubmit="handleParticipationSubmit(event)">
+              <form id="participationForm" onsubmit="handleParticipationSubmit(event)" novalidate>
                 <div style="margin-bottom: 16px;">
                   <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Nama Lengkap *</label>
-                  <input type="text" name="name" required placeholder="Nama Anda" style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+                  <input type="text" id="part_name" name="name" required placeholder="Nama Anda" style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+                  <div id="err_part_name" style="color: #dc2626; font-size: 12.5px; margin-top: 4px; display: none; font-weight: 600;"></div>
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
                   <div>
                     <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Email Aktif *</label>
-                    <input type="email" name="email" required placeholder="email@domain.com" style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+                    <input type="email" id="part_email" name="email" required placeholder="email@domain.com" style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+                    <div id="err_part_email" style="color: #dc2626; font-size: 12.5px; margin-top: 4px; display: none; font-weight: 600;"></div>
                   </div>
                   <div>
                     <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Nomor WhatsApp *</label>
-                    <input type="text" name="phone" required placeholder="08xxxxxxxxxx" style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+                    <input
+                      type="tel"
+                      id="part_phone"
+                      name="phone"
+                      required
+                      inputmode="tel"
+                      pattern="^\+?[0-9]+$"
+                      placeholder="+628xxxxxxxxxx / 08xxxxxxxxxx"
+                      oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\+.*)\+/g, '$1')"
+                      style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;"
+                    />
+                    <div id="err_part_phone" style="color: #dc2626; font-size: 12.5px; margin-top: 4px; display: none; font-weight: 600;"></div>
                   </div>
                 </div>
 
                 <div style="margin-bottom: 16px;">
                   <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Peminatan Keterlibatan *</label>
-                  <select name="interest" required style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box; background: #ffffff;">
+                  <select id="part_interest" name="interest" required style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box; background: #ffffff;">
                     <option value="">-- Pilih Bentuk Keterlibatan --</option>
                     <option value="relawan">Relawan Aksi Lapangan &amp; Kampanye Lingkungan</option>
                     <option value="riset_magang">Magang Mahasiswa &amp; Peneliti Akademik</option>
@@ -3133,11 +3146,12 @@
                     <option value="kolaborasi_media">Kolaborasi Liputan &amp; Publikasi Media</option>
                     <option value="lainnya">Lainnya</option>
                   </select>
+                  <div id="err_part_interest" style="color: #dc2626; font-size: 12.5px; margin-top: 4px; display: none; font-weight: 600;"></div>
                 </div>
 
                 <div style="margin-bottom: 22px;">
                   <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Pesan / Latar Belakang Singkat</label>
-                  <textarea name="message" rows="4" placeholder="Ceritakan ketertarikan, keahlian, atau usulan kolaborasi Anda..." style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;"></textarea>
+                  <textarea id="part_message" name="message" rows="4" placeholder="Ceritakan ketertarikan, keahlian, atau usulan kolaborasi Anda..." style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;"></textarea>
                 </div>
 
                 <div id="partFormAlert" style="display: none; padding: 12px; border-radius: 8px; font-size: 13.5px; margin-bottom: 16px; font-weight: 600;"></div>
@@ -3148,11 +3162,77 @@
               </form>
 
               <script>
+                function clearPartErrors() {
+                  const keys = ['name', 'email', 'phone', 'interest'];
+                  keys.forEach(k => {
+                    const el = document.getElementById('err_part_' + k);
+                    const inp = document.getElementById('part_' + k);
+                    if (el) { el.style.display = 'none'; el.textContent = ''; }
+                    if (inp) { inp.style.borderColor = '#d2e8d1'; }
+                  });
+                }
+
+                function showPartError(k, msg) {
+                  const el = document.getElementById('err_part_' + k);
+                  const inp = document.getElementById('part_' + k);
+                  if (el) { el.style.display = 'block'; el.textContent = msg; }
+                  if (inp) { inp.style.borderColor = '#dc2626'; }
+                }
+
                 function handleParticipationSubmit(e) {
                   e.preventDefault();
+                  clearPartErrors();
+
                   const form = document.getElementById('participationForm');
                   const btn = document.getElementById('partSubmitBtn');
                   const alertBox = document.getElementById('partFormAlert');
+                  alertBox.style.display = 'none';
+
+                  const name = (document.getElementById('part_name')?.value || '').trim();
+                  const email = (document.getElementById('part_email')?.value || '').trim();
+                  const phone = (document.getElementById('part_phone')?.value || '').trim();
+                  const interest = (document.getElementById('part_interest')?.value || '').trim();
+
+                  let hasError = false;
+
+                  if (!name) {
+                    showPartError('name', 'Nama lengkap tidak boleh kosong.');
+                    hasError = true;
+                  }
+
+                  if (!email) {
+                    showPartError('email', 'Alamat email tidak boleh kosong.');
+                    hasError = true;
+                  } else {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                      showPartError('email', 'Format alamat email tidak valid.');
+                      hasError = true;
+                    }
+                  }
+
+                  if (!phone) {
+                    showPartError('phone', 'Nomor WhatsApp tidak boleh kosong.');
+                    hasError = true;
+                  } else {
+                    const phoneRegex = /^\+?[0-9]+$/;
+                    if (!phoneRegex.test(phone)) {
+                      showPartError('phone', 'Nomor WhatsApp hanya boleh diisi angka dan tanda + (misal: +628123456789).');
+                      hasError = true;
+                    } else if (phone.replace(/\D/g, '').length < 8) {
+                      showPartError('phone', 'Nomor WhatsApp minimal 8 digit angka.');
+                      hasError = true;
+                    }
+                  }
+
+                  if (!interest) {
+                    showPartError('interest', 'Peminatan keterlibatan wajib dipilih.');
+                    hasError = true;
+                  }
+
+                  if (hasError) {
+                    return;
+                  }
                   
                   btn.disabled = true;
                   btn.textContent = 'Mengirim Formulir...';
@@ -3167,7 +3247,13 @@
                     },
                     body: formData
                   })
-                  .then(res => res.json())
+                  .then(async (res) => {
+                    const data = await res.json().catch(() => ({}));
+                    if (!res.ok) {
+                      throw data;
+                    }
+                    return data;
+                  })
                   .then(data => {
                     btn.disabled = false;
                     btn.textContent = 'Kirim Formulir Partisipasi →';
@@ -3188,12 +3274,18 @@
                   .catch(err => {
                     btn.disabled = false;
                     btn.textContent = 'Kirim Formulir Partisipasi →';
-                    alertBox.style.display = 'block';
-                    alertBox.style.background = '#dafbe1';
-                    alertBox.style.color = '#1a7f37';
-                    alertBox.style.border = '1px solid #bbf7d0';
-                    alertBox.textContent = 'Terima kasih! Formulir minat keterlibatan Anda telah berhasil terkirim. Tim Sekretariat YNKI akan menghubungi Anda melalui Email/WhatsApp.';
-                    form.reset();
+
+                    if (err && err.errors) {
+                      for (const [field, messages] of Object.entries(err.errors)) {
+                        showPartError(field, messages[0]);
+                      }
+                    } else {
+                      alertBox.style.display = 'block';
+                      alertBox.style.background = '#fff1f2';
+                      alertBox.style.color = '#e11d48';
+                      alertBox.style.border = '1px solid #fecdd3';
+                      alertBox.textContent = err.message || 'Gagal mengirim formulir. Silakan periksa isian data Anda.';
+                    }
                   });
                 }
               </script>
