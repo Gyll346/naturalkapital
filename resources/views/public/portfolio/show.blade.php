@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -2942,8 +2942,11 @@
 
             <!-- Article Content Body -->
             <article style="font-size: 16.5px; line-height: 1.85; color: #212326;">
-              @if (!empty($project['featured_image_path']))
-                <img src="/storage/{{ $project['featured_image_path'] }}" alt="{{ $project['title'] }}" style="width: 100%; max-height: 520px; object-fit: cover; border-radius: 16px; margin-bottom: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+              @php
+                $coverImage = $project['image_cover_path'] ?? ($project['featured_image_path'] ?? null);
+              @endphp
+              @if (!empty($coverImage))
+                <img src="{{ str_starts_with($coverImage, 'http') || str_starts_with($coverImage, '/') ? $coverImage : '/storage/' . $coverImage }}" alt="{{ $project['title'] }}" style="width: 100%; max-height: 520px; object-fit: cover; border-radius: 16px; margin-bottom: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
               @endif
 
               @if (!empty($project['summary']))

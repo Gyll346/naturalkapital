@@ -82,6 +82,9 @@
                     <div class="form-group">
                         <label class="form-label" for="image_cover">Ganti Foto Sampul (JPG/PNG/WebP)</label>
                         <input type="file" class="form-control" id="image_cover" name="image_cover" accept="image/*">
+                        <small style="display: block; color: var(--text-muted); font-size: 11.5px; margin-top: 4px;">
+                            Foto sampul otomatis dikompresi & dioptimasi ke format WebP ringan agar website cepat dimuat.
+                        </small>
                         @if ($project->image_cover_path)
                             <img src="/storage/{{ $project->image_cover_path }}" alt="Sampul" style="height: 60px; margin-top: 8px; border-radius: 4px;">
                         @endif

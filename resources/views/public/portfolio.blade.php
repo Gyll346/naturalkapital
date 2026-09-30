@@ -3239,6 +3239,23 @@
             .proyek-cat-bar.kebijakan {
               background: #b22231;
             }
+            .proyek-cover-wrap {
+              width: 100%;
+              height: 190px;
+              overflow: hidden;
+              background: #eef5ef;
+              position: relative;
+            }
+            .proyek-cover-img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.4s ease;
+              display: block;
+            }
+            .proyek-card:hover .proyek-cover-img {
+              transform: scale(1.05);
+            }
             .proyek-body {
               padding: 22px 22px 18px;
               flex: 1;

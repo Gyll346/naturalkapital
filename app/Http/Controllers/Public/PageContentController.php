@@ -117,6 +117,8 @@ class PageContentController extends Controller
         'partner_donor' => $dbProject->partner_donor ?? 'Yayasan Natural Kapital Indonesia',
         'summary' => $dbProject->summary ?? $dbProject->description,
         'description' => $dbProject->description ?? $dbProject->summary,
+        'image_cover_path' => $dbProject->image_cover_path,
+        'featured_image_path' => $dbProject->image_cover_path,
         'document_pdf_path' => $dbProject->document_pdf_path,
       ];
     } elseif (isset($catalog[$slug])) {

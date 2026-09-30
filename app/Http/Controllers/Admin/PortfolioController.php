@@ -46,7 +46,7 @@ class PortfolioController extends Controller
             'period' => 'nullable|string|max:50',
             'summary' => 'required|string',
             'description' => 'nullable|string',
-            'image_cover' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
+            'image_cover' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:8192',
             'document_pdf' => 'nullable|file|mimes:pdf|max:25600',
             'status' => 'required|in:ongoing,completed',
             'sort_order' => 'nullable|integer',
@@ -54,7 +54,7 @@ class PortfolioController extends Controller
 
         $coverPath = null;
         if ($request->hasFile('image_cover')) {
-            $coverPath = $request->file('image_cover')->store('portfolios/covers', 'public');
+            $coverPath = $this->compressAndSaveCover($request->file('image_cover'));
         }
 
         $pdfPath = null;
@@ -108,7 +108,7 @@ class PortfolioController extends Controller
             'period' => 'nullable|string|max:50',
             'summary' => 'required|string',
             'description' => 'nullable|string',
-            'image_cover' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
+            'image_cover' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:8192',
             'document_pdf' => 'nullable|file|mimes:pdf|max:25600',
             'status' => 'required|in:ongoing,completed',
             'sort_order' => 'nullable|integer',
@@ -118,7 +118,7 @@ class PortfolioController extends Controller
             if ($project->image_cover_path) {
                 Storage::disk('public')->delete($project->image_cover_path);
             }
-            $project->image_cover_path = $request->file('image_cover')->store('portfolios/covers', 'public');
+            $project->image_cover_path = $this->compressAndSaveCover($request->file('image_cover'));
         }
 
         if ($request->hasFile('document_pdf')) {
@@ -149,6 +149,84 @@ class PortfolioController extends Controller
         ]);
 
         return redirect()->route('admin.portfolios.index')->with('success', 'Proyek portfolio berhasil diperbarui!');
+    }
+
+    /**
+     * Kompres dan simpan gambar sampul proyek portfolio
+     * Resize proporsional (maks lebar 1200px) & konversi WebP/JPEG ringan.
+     */
+    protected function compressAndSaveCover($file, $maxWidth = 1200, $maxHeight = 800, $quality = 82): string
+    {
+        $destinationDir = storage_path('app/public/portfolios/covers');
+        if (!file_exists($destinationDir)) {
+            mkdir($destinationDir, 0755, true);
+        }
+
+        if (!extension_loaded('gd') || !function_exists('imagecreatetruecolor')) {
+            return $file->store('portfolios/covers', 'public');
+        }
+
+        $sourcePath = $file->getRealPath();
+        $mime = $file->getMimeType();
+
+        $sourceImage = null;
+        switch ($mime) {
+            case 'image/jpeg':
+            case 'image/jpg':
+                $sourceImage = @imagecreatefromjpeg($sourcePath);
+                break;
+            case 'image/png':
+                $sourceImage = @imagecreatefrompng($sourcePath);
+                break;
+            case 'image/webp':
+                if (function_exists('imagecreatefromwebp')) {
+                    $sourceImage = @imagecreatefromwebp($sourcePath);
+                }
+                break;
+        }
+
+        if (!$sourceImage) {
+            return $file->store('portfolios/covers', 'public');
+        }
+
+        $origWidth = imagesx($sourceImage);
+        $origHeight = imagesy($sourceImage);
+
+        $ratio = min($maxWidth / $origWidth, $maxHeight / $origHeight, 1.0);
+        $targetWidth = (int) round($origWidth * $ratio);
+        $targetHeight = (int) round($origHeight * $ratio);
+
+        $targetImage = imagecreatetruecolor($targetWidth, $targetHeight);
+
+        imagealphablending($targetImage, false);
+        imagesavealpha($targetImage, true);
+        $transparent = imagecolorallocatealpha($targetImage, 255, 255, 255, 127);
+        imagefilledrectangle($targetImage, 0, 0, $targetWidth, $targetHeight, $transparent);
+
+        imagecopyresampled(
+            $targetImage,
+            $sourceImage,
+            0, 0, 0, 0,
+            $targetWidth,
+            $targetHeight,
+            $origWidth,
+            $origHeight
+        );
+
+        if (function_exists('imagewebp')) {
+            $filename = uniqid('cover_', true) . '.webp';
+            $targetFile = $destinationDir . '/' . $filename;
+            imagewebp($targetImage, $targetFile, $quality);
+        } else {
+            $filename = uniqid('cover_', true) . '.jpg';
+            $targetFile = $destinationDir . '/' . $filename;
+            imagejpeg($targetImage, $targetFile, $quality);
+        }
+
+        imagedestroy($sourceImage);
+        imagedestroy($targetImage);
+
+        return 'portfolios/covers/' . $filename;
     }
 
     public function destroy(Request $request, $id)
