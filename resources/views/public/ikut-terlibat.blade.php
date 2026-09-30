@@ -3150,8 +3150,9 @@
                 </div>
 
                 <div style="margin-bottom: 22px;">
-                  <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Pesan / Latar Belakang Singkat</label>
-                  <textarea id="part_message" name="message" rows="4" placeholder="Ceritakan ketertarikan, keahlian, atau usulan kolaborasi Anda..." style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;"></textarea>
+                  <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Pesan / Latar Belakang Singkat *</label>
+                  <textarea id="part_message" name="message" rows="4" required placeholder="Ceritakan ketertarikan, keahlian, atau usulan kolaborasi Anda..." style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;"></textarea>
+                  <div id="err_part_message" style="color: #dc2626; font-size: 12.5px; margin-top: 4px; display: none; font-weight: 600;"></div>
                 </div>
 
                 <div id="partFormAlert" style="display: none; padding: 12px; border-radius: 8px; font-size: 13.5px; margin-bottom: 16px; font-weight: 600;"></div>
@@ -3163,7 +3164,7 @@
 
               <script>
                 function clearPartErrors() {
-                  const keys = ['name', 'email', 'phone', 'interest'];
+                  const keys = ['name', 'email', 'phone', 'interest', 'message'];
                   keys.forEach(k => {
                     const el = document.getElementById('err_part_' + k);
                     const inp = document.getElementById('part_' + k);
@@ -3192,6 +3193,7 @@
                   const email = (document.getElementById('part_email')?.value || '').trim();
                   const phone = (document.getElementById('part_phone')?.value || '').trim();
                   const interest = (document.getElementById('part_interest')?.value || '').trim();
+                  const message = (document.getElementById('part_message')?.value || '').trim();
 
                   let hasError = false;
 
@@ -3227,6 +3229,11 @@
 
                   if (!interest) {
                     showPartError('interest', 'Peminatan keterlibatan wajib dipilih.');
+                    hasError = true;
+                  }
+
+                  if (!message) {
+                    showPartError('message', 'Pesan / latar belakang singkat tidak boleh kosong.');
                     hasError = true;
                   }
 
