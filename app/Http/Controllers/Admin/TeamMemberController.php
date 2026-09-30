@@ -65,7 +65,7 @@ class TeamMemberController extends Controller
             'full_name' => 'required|string|max:150',
             'position' => 'required|string|max:100',
             'bio' => 'nullable|string',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:8192',
             'linkedin_url' => 'nullable|url|max:255',
             'email' => 'nullable|email|max:100',
             'sort_order' => 'nullable|integer',
@@ -74,7 +74,7 @@ class TeamMemberController extends Controller
 
         $photoPath = null;
         if ($request->hasFile('photo')) {
-            $photoPath = $request->file('photo')->store('teams', 'public');
+            $photoPath = $this->compressAndSaveImage($request->file('photo'));
         }
 
         $member = TeamMember::create([
@@ -118,7 +118,7 @@ class TeamMemberController extends Controller
             'full_name' => 'required|string|max:150',
             'position' => 'required|string|max:100',
             'bio' => 'nullable|string',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:8192',
             'linkedin_url' => 'nullable|url|max:255',
             'email' => 'nullable|email|max:100',
             'sort_order' => 'nullable|integer',
@@ -126,7 +126,7 @@ class TeamMemberController extends Controller
         ]);
 
         if ($request->hasFile('photo')) {
-            $validated['photo_path'] = $request->file('photo')->store('teams', 'public');
+            $validated['photo_path'] = $this->compressAndSaveImage($request->file('photo'));
         }
 
         $member->update($validated);
@@ -142,6 +142,89 @@ class TeamMemberController extends Controller
         ]);
 
         return redirect()->route('admin.teams.index')->with('success', 'Profil anggota tim berhasil diperbarui.');
+    }
+
+    /**
+     * Kompres dan simpan gambar foto profil (resize proporsional + kompresi WebP/JPEG)
+     * Menggunakan native PHP GD tanpa library eksternal agar server tetap ringan.
+     */
+    protected function compressAndSaveImage($file, $maxWidth = 800, $maxHeight = 800, $quality = 82): string
+    {
+        $destinationDir = storage_path('app/public/teams');
+        if (!file_exists($destinationDir)) {
+            mkdir($destinationDir, 0755, true);
+        }
+
+        // Cek ketersediaan fungsi GD
+        if (!extension_loaded('gd') || !function_exists('imagecreatetruecolor')) {
+            return $file->store('teams', 'public');
+        }
+
+        $sourcePath = $file->getRealPath();
+        $mime = $file->getMimeType();
+
+        // Buat image resource sesuai tipe mime
+        $sourceImage = null;
+        switch ($mime) {
+            case 'image/jpeg':
+            case 'image/jpg':
+                $sourceImage = @imagecreatefromjpeg($sourcePath);
+                break;
+            case 'image/png':
+                $sourceImage = @imagecreatefrompng($sourcePath);
+                break;
+            case 'image/webp':
+                if (function_exists('imagecreatefromwebp')) {
+                    $sourceImage = @imagecreatefromwebp($sourcePath);
+                }
+                break;
+        }
+
+        if (!$sourceImage) {
+            return $file->store('teams', 'public');
+        }
+
+        $origWidth = imagesx($sourceImage);
+        $origHeight = imagesy($sourceImage);
+
+        // Hitung rasio resize agar proporsional dan tidak membebani server
+        $ratio = min($maxWidth / $origWidth, $maxHeight / $origHeight, 1.0);
+        $targetWidth = (int) round($origWidth * $ratio);
+        $targetHeight = (int) round($origHeight * $ratio);
+
+        $targetImage = imagecreatetruecolor($targetWidth, $targetHeight);
+
+        // Dukungan transparansi untuk PNG & WebP
+        imagealphablending($targetImage, false);
+        imagesavealpha($targetImage, true);
+        $transparent = imagecolorallocatealpha($targetImage, 255, 255, 255, 127);
+        imagefilledrectangle($targetImage, 0, 0, $targetWidth, $targetHeight, $transparent);
+
+        imagecopyresampled(
+            $targetImage,
+            $sourceImage,
+            0, 0, 0, 0,
+            $targetWidth,
+            $targetHeight,
+            $origWidth,
+            $origHeight
+        );
+
+        // Utamakan WebP jika server mendukung (paling ringan dan efisien), fallback ke JPG
+        if (function_exists('imagewebp')) {
+            $filename = uniqid('team_', true) . '.webp';
+            $targetFile = $destinationDir . '/' . $filename;
+            imagewebp($targetImage, $targetFile, $quality);
+        } else {
+            $filename = uniqid('team_', true) . '.jpg';
+            $targetFile = $destinationDir . '/' . $filename;
+            imagejpeg($targetImage, $targetFile, $quality);
+        }
+
+        imagedestroy($sourceImage);
+        imagedestroy($targetImage);
+
+        return 'teams/' . $filename;
     }
 
     public function destroy(Request $request, $id)

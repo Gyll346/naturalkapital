@@ -39,6 +39,9 @@
                         </div>
                     @endif
                     <input type="file" name="photo" accept="image/*" style="width: 100%; padding: 8px 12px; border: 1.5px solid var(--border); border-radius: 8px;">
+                    <small style="display: block; color: var(--text-muted); font-size: 12px; margin-top: 5px;">
+                        Foto akan otomatis di-resize (maks. 800px) dan dikompresi ke format WebP/JPEG ringan agar website cepat dimuat.
+                    </small>
                 </div>
 
                 <div style="margin-bottom: 16px;">
