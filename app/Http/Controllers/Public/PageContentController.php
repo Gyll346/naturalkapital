@@ -75,6 +75,10 @@ class PageContentController extends Controller
       ->orderBy('sort_order', 'asc')
       ->get();
 
+    if (view()->exists('public.portfolio')) {
+      return view('public.portfolio', compact('projects'));
+    }
+
     return view('public.portfolio.index', compact('projects'));
   }
 
