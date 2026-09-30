@@ -8,11 +8,8 @@ use App\Http\Controllers\Public\PublicArticleController;
 use App\Http\Controllers\Public\PublicTeamController;
 use App\Http\Controllers\Public\PageContentController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\DonationAccountController;
-use App\Http\Controllers\Admin\DonationController;
 use App\Http\Controllers\Admin\TeamMemberController;
 use App\Http\Controllers\Admin\ArticleController;
-use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\LgosController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\TransparencyController;
@@ -128,15 +125,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth')->
 Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
-    // CRUD Rekening Bank / QRIS Donasi
-    Route::resource('accounts', DonationAccountController::class);
-    
-    // Verifikasi Transaksi Donasi
-    Route::get('donations', [DonationController::class, 'index'])->name('donations.index');
-    Route::get('donations/{id}', [DonationController::class, 'show'])->name('donations.show');
-    Route::patch('donations/{id}/verify', [DonationController::class, 'verify'])->name('donations.verify');
-    Route::patch('donations/{id}/reject', [DonationController::class, 'reject'])->name('donations.reject');
-
     // Pesan Masuk (Kontak Kami)
     Route::get('contact-messages', [ContactMessageController::class, 'index'])->name('contact-messages.index');
     Route::get('contact-messages/{id}', [ContactMessageController::class, 'show'])->name('contact-messages.show');
@@ -171,10 +159,6 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     
     // CRUD Artikel Berita & Dokumen Riset
     Route::resource('articles', ArticleController::class);
-    
-    // Pelaporan & Ekspor
-    Route::get('reports/donations/excel', [ReportController::class, 'exportDonationsExcel'])->name('reports.donations.excel');
-    Route::get('reports/donations/pdf', [ReportController::class, 'exportDonationsPdf'])->name('reports.donations.pdf');
 });
 
 /*
