@@ -4227,7 +4227,7 @@
                             Dukung program restorasi dan tata kelola lanskap
                             YNKI secara langsung.
                           </p>
-                          <a href="/kontak/">Hubungi Kami</a>
+                          <a href="/kontak-kami/">Hubungi Kami</a>
                         </div>
                         <div class="cta-card">
                           <h4>Jelajahi Program Kami</h4>
@@ -4235,7 +4235,7 @@
                             Pelajari lebih dalam program YNKI yang berjalan di
                             berbagai lanskap prioritas.
                           </p>
-                          <a href="/program/">Lihat Program</a>
+                          <a href="/landscape-governance/">Lihat Program</a>
                         </div>
                         <div class="cta-card">
                           <h4>Baca Publikasi &amp; Laporan</h4>
