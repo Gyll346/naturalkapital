@@ -51,7 +51,7 @@ class MediaStoryController extends Controller
 
         $imagePath = null;
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('stories/photos', 'public');
+            $imagePath = $this->compressAndSavePhoto($request->file('image'));
         }
 
         $story = MediaStory::create([
@@ -102,10 +102,10 @@ class MediaStoryController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            if ($story->image_path) {
+            if ($story->image_path && Storage::disk('public')->exists($story->image_path)) {
                 Storage::disk('public')->delete($story->image_path);
             }
-            $story->image_path = $request->file('image')->store('stories/photos', 'public');
+            $story->image_path = $this->compressAndSavePhoto($request->file('image'));
         }
 
         $story->update([
@@ -135,7 +135,7 @@ class MediaStoryController extends Controller
     {
         $story = MediaStory::findOrFail($id);
 
-        if ($story->image_path) {
+        if ($story->image_path && Storage::disk('public')->exists($story->image_path)) {
             Storage::disk('public')->delete($story->image_path);
         }
 
@@ -151,5 +151,85 @@ class MediaStoryController extends Controller
         ]);
 
         return redirect()->route('admin.media-stories.index')->with('success', 'Story media foto/video berhasil dihapus!');
+    }
+
+    /**
+     * Kompres dan simpan foto dokumentasi lapangan (WebP/JPEG, max lebar 1400px)
+     */
+    protected function compressAndSavePhoto($file, $maxWidth = 1400, $maxHeight = 900, $quality = 82): string
+    {
+        $destinationDir = storage_path('app/public/stories/photos');
+        if (!file_exists($destinationDir)) {
+            mkdir($destinationDir, 0755, true);
+        }
+
+        if (!extension_loaded('gd') || !function_exists('imagecreatetruecolor')) {
+            return $file->store('stories/photos', 'public');
+        }
+
+        $sourcePath = $file->getRealPath();
+        $mime = $file->getMimeType();
+
+        $sourceImage = null;
+        switch ($mime) {
+            case 'image/jpeg':
+            case 'image/jpg':
+                $sourceImage = @imagecreatefromjpeg($sourcePath);
+                break;
+            case 'image/png':
+                $sourceImage = @imagecreatefrompng($sourcePath);
+                break;
+            case 'image/webp':
+                if (function_exists('imagecreatefromwebp')) {
+                    $sourceImage = @imagecreatefromwebp($sourcePath);
+                }
+                break;
+        }
+
+        if (!$sourceImage) {
+            return $file->store('stories/photos', 'public');
+        }
+
+        $origWidth = imagesx($sourceImage);
+        $origHeight = imagesy($sourceImage);
+
+        // Resize proporsional menjaga aspek rasio foto dokumentasi
+        $ratio = min($maxWidth / $origWidth, $maxHeight / $origHeight, 1.0);
+        $targetWidth = (int) round($origWidth * $ratio);
+        $targetHeight = (int) round($origHeight * $ratio);
+
+        $targetImage = imagecreatetruecolor($targetWidth, $targetHeight);
+
+        // Pertahankan transparansi bila foto PNG
+        imagealphablending($targetImage, false);
+        imagesavealpha($targetImage, true);
+        $transparent = imagecolorallocatealpha($targetImage, 255, 255, 255, 127);
+        imagefilledrectangle($targetImage, 0, 0, $targetWidth, $targetHeight, $transparent);
+
+        imagecopyresampled(
+            $targetImage,
+            $sourceImage,
+            0, 0, 0, 0,
+            $targetWidth,
+            $targetHeight,
+            $origWidth,
+            $origHeight
+        );
+
+        // Konversi ke WebP jika server mendukung, fallback ke JPEG
+        if (function_exists('imagewebp')) {
+            $filename = uniqid('story_', true) . '.webp';
+            $targetFile = $destinationDir . '/' . $filename;
+            imagewebp($targetImage, $targetFile, $quality);
+        } else {
+            $filename = uniqid('story_', true) . '.jpg';
+            $targetFile = $destinationDir . '/' . $filename;
+            imagejpeg($targetImage, $targetFile, $quality);
+        }
+
+        imagedestroy($sourceImage);
+        imagedestroy($targetImage);
+
+        return 'stories/photos/' . $filename;
     }
 }

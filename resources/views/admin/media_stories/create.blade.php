@@ -63,9 +63,12 @@
                 </div>
 
                 <div class="form-group" id="photo_input_group">
-                    <label class="form-label" for="image">Unggah File Foto (JPG/PNG/WebP)</label>
+                    <label class="form-label" for="image">
+                        Unggah File Foto (JPG/PNG/WebP)
+                        <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Maks 10MB, otomatis dikompresi & dioptimasi WebP)</span>
+                    </label>
                     <input type="file" class="form-control" id="image" name="image" accept="image/*">
-                    <small style="color: var(--text-muted); font-size: 12px;">Maksimal resolusi 10 MB.</small>
+                    <small style="color: var(--text-muted); font-size: 12px;">Sistem otomatis mengoptimasi ukuran gambar dokumentasi lapangan agar cepat dibuka pengunjung.</small>
                 </div>
 
                 <div class="form-group" id="video_input_group" style="display: none;">

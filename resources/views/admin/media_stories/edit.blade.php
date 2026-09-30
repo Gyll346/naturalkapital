@@ -64,7 +64,10 @@
                 </div>
 
                 <div class="form-group" id="photo_input_group" style="{{ $story->media_type === 'photo' ? 'display:block;' : 'display:none;' }}">
-                    <label class="form-label" for="image">Ganti File Foto</label>
+                    <label class="form-label" for="image">
+                        Ganti File Foto
+                        <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Maks 10MB, otomatis dikompresi & dioptimasi WebP)</span>
+                    </label>
                     <input type="file" class="form-control" id="image" name="image" accept="image/*">
                     @if ($story->image_path)
                         <img src="/storage/{{ $story->image_path }}" alt="Foto" style="height: 60px; margin-top: 8px; border-radius: 4px;">
