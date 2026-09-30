@@ -48,7 +48,10 @@
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
                     <div>
-                        <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Gambar Sampul (Cover)</label>
+                        <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">
+                            Gambar Sampul (Cover)
+                            <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Maks 8MB, otomatis dikompresi & dioptimasi WebP)</span>
+                        </label>
                         @if ($article->featured_image_path)
                             <div style="margin-bottom: 8px;">
                                 <img src="/storage/{{ $article->featured_image_path }}" alt="Cover" style="max-height: 80px; border-radius: 4px;">

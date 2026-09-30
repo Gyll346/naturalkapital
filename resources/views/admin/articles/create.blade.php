@@ -47,7 +47,10 @@
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
                     <div>
-                        <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Gambar Sampul (Cover Image)</label>
+                        <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">
+                            Gambar Sampul (Cover Image)
+                            <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Maks 8MB, otomatis dikompresi & dioptimasi WebP)</span>
+                        </label>
                         <input type="file" name="featured_image" accept="image/*" style="width: 100%; padding: 8px 12px; border: 1.5px solid var(--border); border-radius: 8px;">
                     </div>
                     <div>
