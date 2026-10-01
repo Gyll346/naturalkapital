@@ -143,7 +143,7 @@
         ['/news-features/', 'News & Features'],
         ['/penelitian-laporan/', 'Penelitian & Laporan'],
         ['/analisis-kebijakan/', 'Analisis & Kebijakan'],
-        ['/kategori/perspektif-budaya/', 'Perspektif Budaya'],
+        ['/perspektif-budaya/', 'Perspektif Budaya'],
         ['/data-spasial-dan-gis/', 'Data Spasial dan GIS'],
         ['/story-foto-video/', 'Story Foto Video'],
         ['/kontak-kami/', 'Kontak Kami'],

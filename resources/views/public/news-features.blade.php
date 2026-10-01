@@ -4133,20 +4133,15 @@
                     >
                       <p><strong>Tautan Cepat</strong></p>
                       <ul>
-                        <li>
-                          <a href="/sejarah-visi-misi/"
-                            >Sejarah, Visi &amp; Misi</a
-                          >
-                        </li>
-                        <li>
-                          <a href="/landscape-governance/"
-                            >Landscape Governance</a
-                          >
-                        </li>
-                        <li><a href="/dampak/">Dampak</a></li>
-                        <li>
-                          <a href="/news-features/">News &amp; Features</a>
-                        </li>
+                        <li><a href="/news-features/">News &amp; Features</a></li>
+                        <li><a href="/penelitian-laporan/">Penelitian &amp; Laporan</a></li>
+                        <li><a href="/analisis-kebijakan/">Analisis &amp; Kebijakan</a></li>
+                        <li><a href="/perspektif-budaya/">Perspektif Budaya</a></li>
+                        <li><a href="/data-spasial-dan-gis/">Data Spasial dan GIS</a></li>
+                        <li><a href="/story-foto-video/">Story Foto Video</a></li>
+                        <li><a href="/kontak-kami/">Kontak Kami</a></li>
+                        <li><a href="/ikut-serta/">Ikut Serta</a></li>
+                        <li><a href="/annual-report/">Annual Report</a></li>
                       </ul>
                       <p>© 2026 Yayasan Natural Kapital Indonesia</p>
                     </div>
