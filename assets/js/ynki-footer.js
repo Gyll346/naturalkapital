@@ -102,7 +102,7 @@
   // 3. Tautan cepat sesuai konteks halaman
   var sections = [
     {
-      match: ['/sejarah-visi-misi/', '/tim/', '/lgos/', '/portofolio/', '/kontak-kami/', '/annual-report/'],
+      match: ['/sejarah-visi-misi/', '/tim/', '/lgos/', '/portofolio/', '/kontak-kami/'],
       links: [
         ['/sejarah-visi-misi/', 'Sejarah, Visi & Misi'],
         ['/tim/', 'Tim & Pengurus YNKI'],
