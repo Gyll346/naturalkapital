@@ -4150,7 +4150,7 @@
                             margin: 0 auto;
                           "
                         >
-                          YNKI bekerja di berbagai kabupaten di Kalimantan
+                          YNKI bekerja di beberapa kabupaten di Kalimantan
                           Barat—menjangkau dari pesisir Kubu Raya hingga
                           pedalaman Kapuas Hulu.
                         </p>
@@ -4511,7 +4511,7 @@
                             ekosistem Kalimantan Barat.
                           </p>
                           <a href="/ikut-serta/" class="btn-cta-main"
-                            >Dukung Sekarang</a
+                            >Donasi Sekarang</a
                           >
                         </div>
                         <div class="cta-card">

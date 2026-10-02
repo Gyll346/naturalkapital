@@ -2955,7 +2955,9 @@
               min-height: 82vh;
               display: flex;
               align-items: center;
-              background-image: url("/assets/images/homepage/hero-bg.png");
+              background-image:
+              linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url("/assets/images/DJI_0018.JPG.jpeg");
               background-size: cover;
               background-position: center center;
               padding: 110px 24px 90px;
@@ -3558,7 +3560,7 @@
                       </h1>
                       <p class="hero-sub">
                         Sebagai
-                        <em>Landscape Governance Backbone Organization</em>,
+                        <em>Tata Kelola Lanskap — Landscape Governance</em>,
                         YNKI menggunakan LGOS untuk memastikan seluruh elemen
                         organisasi bekerja secara terhubung dalam mendukung visi
                         bersama.

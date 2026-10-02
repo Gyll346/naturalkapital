@@ -2627,7 +2627,7 @@
                             <a
                               href="/sejarah-visi-misi/"
                               class="awb-menu__sub-a"
-                              ><span>Sejarah, Visi &amp; Misi</span></a
+                              ><span>Perjalanan, Visi &amp; Misi</span></a
                             >
                           </li>
                           <li
@@ -3494,7 +3494,7 @@
                             color: #a3e0a2 !important;
                             display: inline-block;
                           "
-                          >Lanskap yang Berkelanjutan</span
+                          >Lanskap Berkelanjutan</span
                         >
                       </h1>
                       <p class="hero-desc-sejarah">
@@ -3550,7 +3550,7 @@
                         <div class="sejarah-text-side">
                           <div>
                             <div class="section-badge">JEJAK LANGKAH KAMI</div>
-                            <h2>Sejarah dan Kelahiran YNKI</h2>
+                            <h2>Sejarah</h2>
                             <p>
                               Yayasan Natural Kapital Indonesia (YNKI) didirikan
                               pada tahun 2019 di Pontianak, Kalimantan Barat.
@@ -3569,12 +3569,11 @@
                               lanskap yang sama.
                             </p>
                             <p>
-                              YNKI hadir sebagai
+                              YNKI hadir dengan mendorong
                               <strong
-                                >Landscape Governance Backbone
-                                Organization</strong
-                              >—membangun jembatan antara pengetahuan,
-                              kebijakan, dan aksi nyata di lapangan.
+                                >Tata Kelola Lanskap — Landscape Governance
+                                </strong
+                              >yang menjadi jembatan antara pengetahuan, kebijakan, dan aksi nyata di lapangan.
                             </p>
                           </div>
                           <div class="sejarah-img-box">
@@ -3604,7 +3603,7 @@
                               padding-bottom: 12px;
                             "
                           >
-                            Perjalanan Perkembangan
+                            Perjalanan Organisasi
                           </h3>
 
                           <div class="timeline-item">
@@ -3695,8 +3694,7 @@
 
                       <div class="visi-quote-box">
                         <h3>
-                          "Sustainable and Resilient Landscapes for People,
-                          Nature and Future Generations."
+                          "Lanskap yang Tangguh dan Berkelanjutan untuk Kesejahteraan Masyarakat, Alam yang Melindungi dan Warisan Generasi Mendatang."
                         </h3>
                         <p
                           style="
@@ -3707,9 +3705,9 @@
                             line-height: 1.75;
                           "
                         >
-                          Masa depan keberlanjutan terletak pada kemampuan
-                          berbagai pihak untuk bekerja bersama dalam tata kelola
-                          lanskap yang kolaboratif, berbasis pengetahuan, dan
+                          Masa depan lanskap yang tangguh dan keberlanjutan terletak pada kapasitas dan kemampuan
+                          para pihak termasuk pelaku rantai nilai untuk bekerja bersama dalam tata kelola
+                          lanskap kolaboratif, berbasis pengetahuan dan
                           berorientasi jangka panjang.
                         </p>
                       </div>
@@ -3856,15 +3854,13 @@
                             margin: 0 0 14px;
                           "
                         >
-                          Misi Strategis YNKI
+                          Misi Strategis
                         </h2>
                       </div>
 
                       <div class="misi-quote-box">
                         <h3>
-                          "To transform forest - land use sector and its value
-                          chain actors for landscape productivity and climate
-                          resiliencies."
+                          "Mentransformasi sektor penggunaan lahan dan hutan serta meningkatkan kapasitas, kesadaran pelaku ekonomi rantai nilai untuk produktivitas lanskap dan ketahanan iklim."
                         </h3>
                         <p
                           style="
@@ -3875,7 +3871,7 @@
                           "
                         >
                           Untuk mewujudkan visi tersebut, YNKI menjalankan misi
-                          melalui empat fungsi inti yang saling menguatkan:
+                          melalui empat fungsi inti:
                         </p>
                       </div>
 
@@ -4114,7 +4110,7 @@
                                 d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
                               ></path>
                             </svg>
-                            Indikator Lanskap Sehat
+                            Kondisi Lanskap Sehat
                           </h3>
                           <ul class="dampak-list">
                             <li>
@@ -4160,7 +4156,7 @@
                               <circle cx="9" cy="7" r="4"></circle>
                               <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                             </svg>
-                            Indikator Komunitas Sejahtera
+                            Kondisi Komunitas Sejahtera
                           </h3>
                           <ul class="dampak-list">
                             <li>
