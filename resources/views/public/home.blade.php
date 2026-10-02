@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -2366,17 +2366,17 @@
                   --awb-bg-size: cover;
                   --awb-width-large: 33.333333333333%;
                   --awb-margin-top-large: 0px;
-                  --awb-spacing-right-large: 5.76%;
+                  --awb-spacing-right-large: 1.5%;
                   --awb-margin-bottom-large: 0px;
-                  --awb-spacing-left-large: 5.76%;
-                  --awb-width-medium: 100%;
+                  --awb-spacing-left-large: 0%;
+                  --awb-width-medium: auto;
                   --awb-order-medium: 0;
-                  --awb-spacing-right-medium: 1.92%;
-                  --awb-spacing-left-medium: 1.92%;
-                  --awb-width-small: 50%;
+                  --awb-spacing-right-medium: 1%;
+                  --awb-spacing-left-medium: 0%;
+                  --awb-width-small: auto;
                   --awb-order-small: 0;
-                  --awb-spacing-right-small: 3.84%;
-                  --awb-spacing-left-small: 3.84%;
+                  --awb-spacing-right-small: 1%;
+                  --awb-spacing-left-small: 0%;
                 "
               >
                 <div
@@ -2408,17 +2408,21 @@
                     "
                   >
                     <span
-                      class="fusion-imageframe imageframe-none imageframe-1 hover-type-none">
+                      class="fusion-imageframe imageframe-none imageframe-1 hover-type-none"
+                      style="overflow: visible !important;"
+                    >
                       <a
                         class="fusion-no-lightbox"
                         href="/"
                         target="_self"
-                        aria-label="logo-ynki-500"
+                        aria-label="logo-ynki-80"
                         ><img
                           decoding="async"
+                          width="300"
+                          height="60"
                           alt="Natural Kapital Foundation"
                           class="img-responsive wp-image-183 disable-lazyload"
-                          src="/wp-content/uploads/2026/05/logo-ynki-500.webp"
+                          src="/wp-content/uploads/2026/05/logo-ynki-500.webp?v={{ time() }}"
                         />
                       </a>
                     </span>

@@ -1164,13 +1164,19 @@ img {
     flex: 0 0 auto !important;
     margin: 0 !important;
   }
+  .fusion-tb-header .fusion-imageframe,
+  .fusion-tb-header .fusion-image-element {
+    overflow: visible !important;
+  }
+  .fusion-tb-header a[aria-label*="logo-ynki"],
   .fusion-tb-header .fusion-imageframe img,
   .fusion-tb-header img.wp-image-183 {
-    max-width: 240px !important;
+    max-width: 260px !important;
     height: 48px !important;
     max-height: 52px !important;
     width: auto !important;
     object-fit: contain !important;
+    display: block !important;
   }
 
   /* Mobile Navigation Button */
@@ -1265,14 +1271,17 @@ img {
     max-width: 420px !important;
   }
   .fusion-tb-header .fusion-image-element,
-  .fusion-tb-header .fusion-imageframe,
-  .fusion-tb-header a[aria-label="logo-ynki-80"],
+  .fusion-tb-header .fusion-imageframe {
+    overflow: visible !important;
+    width: auto !important;
+  }
+  .fusion-tb-header a[aria-label*="logo-ynki"],
   .fusion-tb-header .fusion-imageframe img,
   .fusion-tb-header img.wp-image-183 {
     max-width: 380px !important;
     width: auto !important;
-    height: 64px !important;
-    max-height: 72px !important;
+    height: 60px !important;
+    max-height: 70px !important;
     object-fit: contain !important;
     display: block !important;
   }
