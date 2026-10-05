@@ -567,6 +567,14 @@ class PageContentController extends Controller
 
   public function storeParticipation(Request $request)
   {
+    // Proteksi Bot Honeypot: jika input tersembunyi diisi bot, tolak diam-diam
+    if ($request->filled('website_hp')) {
+      if ($request->ajax() || $request->wantsJson()) {
+        return response()->json(['success' => true, 'message' => 'Terima kasih! Formulir Anda telah berhasil dikirim.']);
+      }
+      return redirect()->back()->with('success', 'Terima kasih! Formulir Anda telah berhasil dikirim.');
+    }
+
     $validated = $request->validate([
       'name' => 'required|string|max:150',
       'email' => 'required|email|max:150',
@@ -610,6 +618,14 @@ class PageContentController extends Controller
 
   public function storeContactMessage(Request $request)
   {
+    // Proteksi Bot Honeypot: jika input tersembunyi diisi bot, tolak diam-diam
+    if ($request->filled('website_hp')) {
+      if ($request->ajax() || $request->wantsJson()) {
+        return response()->json(['success' => true, 'message' => 'Terima kasih! Pesan Anda telah berhasil terkirim.']);
+      }
+      return redirect()->back()->with('success', 'Terima kasih! Pesan Anda telah berhasil terkirim.');
+    }
+
     $validated = $request->validate([
       'name' => 'required|string|max:150',
       'email' => 'required|email|max:150',

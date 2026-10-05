@@ -73,10 +73,10 @@ Route::get('/kategori/news-features/{slug}', function ($slug) {
         return response(file_get_contents($file), 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
     return redirect('/news-features');
-});
+})->where('slug', '[a-zA-Z0-9_\-]+');
 Route::get('/news-features/{slug}', function ($slug) {
     return redirect('/kategori/news-features/' . $slug);
-});
+})->where('slug', '[a-zA-Z0-9_\-]+');
 Route::get('/penelitian-laporan', [PageContentController::class, 'researchReports'])->name('public.research_reports');
 Route::get('/analisis-kebijakan', [PageContentController::class, 'policyAnalysis'])->name('public.policy_analysis');
 Route::get('/perspektif-budaya', [PageContentController::class, 'culturalPerspective'])->name('public.cultural_perspective');
@@ -88,10 +88,10 @@ Route::get('/kategori/perspektif-budaya/{slug}', function ($slug) {
         return response(file_get_contents($file), 200)->header('Content-Type', 'text/html; charset=UTF-8');
     }
     return redirect('/perspektif-budaya');
-});
+})->where('slug', '[a-zA-Z0-9_\-]+');
 Route::get('/perspektif-budaya/{slug}', function ($slug) {
     return redirect('/kategori/perspektif-budaya/' . $slug);
-});
+})->where('slug', '[a-zA-Z0-9_\-]+');
 Route::get('/data-spasial-dan-gis', [PageContentController::class, 'spatialGis'])->name('public.spatial_gis');
 Route::get('/data-spasial-gis', [PageContentController::class, 'spatialGis']);
 Route::get('/story-foto-video', [PageContentController::class, 'mediaStories'])->name('public.media_stories');
@@ -100,10 +100,10 @@ Route::get('/stori-foto-video', [PageContentController::class, 'mediaStories']);
 // Halaman Khusus Ikut Serta & Kontak Kami
 Route::get('/ikut-terlibat', [PageContentController::class, 'ikutTerlibat'])->name('public.ikut_terlibat');
 Route::get('/ikut-serta', [PageContentController::class, 'ikutTerlibat'])->name('public.ikut_serta');
-Route::post('/ikut-serta', [PageContentController::class, 'storeParticipation'])->name('public.ikut_serta.store');
+Route::post('/ikut-serta', [PageContentController::class, 'storeParticipation'])->middleware('throttle:10,1')->name('public.ikut_serta.store');
 Route::get('/kontak-kami', [PageContentController::class, 'kontakKami'])->name('public.kontak_kami');
 Route::get('/hubungi-kami', [PageContentController::class, 'kontakKami'])->name('public.hubungi_kami');
-Route::post('/kontak-kami', [PageContentController::class, 'storeContactMessage'])->name('public.kontak_kami.store');
+Route::post('/kontak-kami', [PageContentController::class, 'storeContactMessage'])->middleware('throttle:10,1')->name('public.kontak_kami.store');
 
 
 /*
@@ -171,42 +171,65 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
 Route::fallback(function (\Illuminate\Http\Request $request) {
     $path = trim($request->path(), '/');
 
-    // Daftar prioritas pengecekan file HTML asli
-    $candidates = [
-        base_path($path . '/index.html'),
-        base_path($path . '.html'),
-        base_path($path),
-    ];
-
-    // Jika path diawali 'kategori/', coba cek juga tanpa prefix 'kategori/'
-    if (str_starts_with($path, 'kategori/')) {
-        $subPath = substr($path, strlen('kategori/'));
-        $candidates[] = base_path($subPath . '/index.html');
-        $candidates[] = base_path($subPath . '.html');
-        $candidates[] = base_path($subPath);
+    // Mencegah traversal dengan menolak dot-segment atau karakter berbahaya
+    if (str_contains($path, '..') || str_contains($path, '\\')) {
+        abort(404);
     }
 
-    foreach ($candidates as $file) {
-        if (file_exists($file) && !is_dir($file)) {
-            $content = file_get_contents($file);
-            $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-            $mimes = [
-                'png' => 'image/png',
-                'jpg' => 'image/jpeg',
-                'jpeg' => 'image/jpeg',
-                'gif' => 'image/gif',
-                'svg' => 'image/svg+xml',
-                'webp' => 'image/webp',
-                'css' => 'text/css; charset=UTF-8',
-                'js' => 'application/javascript; charset=UTF-8',
-                'json' => 'application/json',
-                'pdf' => 'application/pdf',
-                'html' => 'text/html; charset=UTF-8',
-            ];
-            $mime = $mimes[$ext] ?? 'text/html; charset=UTF-8';
-            return response($content, 200)
-                ->header('Content-Type', $mime)
-                ->header('Access-Control-Allow-Origin', '*');
+    // Hanya izinkan akses ke file HTML statis warisan (legacy) atau dokumen yang valid
+    $candidates = [
+        resource_path("legacy_articles/{$path}/index.html"),
+        base_path("{$path}/index.html"),
+        base_path("{$path}.html"),
+    ];
+
+    if (str_starts_with($path, 'kategori/')) {
+        $subPath = substr($path, strlen('kategori/'));
+        if (!str_contains($subPath, '..')) {
+            $candidates[] = resource_path("legacy_articles/{$subPath}/index.html");
+            $candidates[] = base_path("{$subPath}/index.html");
+            $candidates[] = base_path("{$subPath}.html");
+        }
+    }
+
+    $allowedBaseDirs = [
+        realpath(resource_path('legacy_articles')),
+        realpath(base_path()),
+    ];
+
+    // Ekstensi yang aman disajikan via fallback
+    $allowedExtensions = ['html', 'htm', 'png', 'jpg', 'jpeg', 'webp', 'svg', 'pdf'];
+
+    foreach ($candidates as $candidate) {
+        $realFile = realpath($candidate);
+        if ($realFile && is_file($realFile)) {
+            // Pastikan file berada di dalam direktori yang diizinkan dan bukan file sensitif (.env, .php, dll)
+            $isWithinAllowedDir = false;
+            foreach ($allowedBaseDirs as $allowedDir) {
+                if ($allowedDir && str_starts_with($realFile, $allowedDir)) {
+                    $isWithinAllowedDir = true;
+                    break;
+                }
+            }
+
+            $ext = strtolower(pathinfo($realFile, PATHINFO_EXTENSION));
+
+            if ($isWithinAllowedDir && in_array($ext, $allowedExtensions, true)) {
+                $mimes = [
+                    'png' => 'image/png',
+                    'jpg' => 'image/jpeg',
+                    'jpeg' => 'image/jpeg',
+                    'gif' => 'image/gif',
+                    'svg' => 'image/svg+xml',
+                    'webp' => 'image/webp',
+                    'pdf' => 'application/pdf',
+                    'html' => 'text/html; charset=UTF-8',
+                    'htm' => 'text/html; charset=UTF-8',
+                ];
+                $mime = $mimes[$ext] ?? 'text/html; charset=UTF-8';
+                return response(file_get_contents($realFile), 200)
+                    ->header('Content-Type', $mime);
+            }
         }
     }
 

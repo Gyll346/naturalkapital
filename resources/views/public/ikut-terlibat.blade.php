@@ -3107,6 +3107,11 @@
               </div>
 
               <form id="participationForm" onsubmit="handleParticipationSubmit(event)" novalidate>
+                @csrf
+                <div style="display:none !important; visibility:hidden; opacity:0; position:absolute; left:-9999px;">
+                  <label for="part_hp_website">Jangan isi kolom ini jika Anda manusia</label>
+                  <input type="text" id="part_hp_website" name="website_hp" tabindex="-1" autocomplete="off">
+                </div>
                 <div style="margin-bottom: 16px;">
                   <label style="display: block; font-size: 13.5px; font-weight: 700; color: #0e241b; margin-bottom: 6px;">Nama Lengkap *</label>
                   <input type="text" id="part_name" name="name" required placeholder="Nama Anda" style="width: 100%; padding: 11px 15px; border: 1.5px solid #d2e8d1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">

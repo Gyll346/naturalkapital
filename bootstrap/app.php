@@ -11,12 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->validateCsrfTokens(except: [
-            'kontak-kami',
-            'hubungi-kami',
-            'ikut-serta',
-            'ikut-terlibat',
-        ]);
+        // CSRF protection aktif penuh pada seluruh rute web
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
