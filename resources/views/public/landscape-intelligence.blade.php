@@ -2168,7 +2168,7 @@
     </style>
     <link
       rel="stylesheet"
-      href="/wp-content/litespeed/ucss/d5027302c12ab86b6082acd2ecdd5c8e.css?ver=c94d4"
+      href="/assets/css/d5027302c12ab86b6082acd2ecdd5c8e.css?ver=c94d4"
     />
     <script src="/assets/js/css_async.min.js"></script>
     <link
@@ -4214,7 +4214,7 @@
       </script>
       <script
         id="jquery-core-js"
-        src="/wp-includes/js/jquery/jquery.min.js"
+        src="/assets/js/jquery.min.js"
       ></script>
     </div>
     <section
@@ -4227,7 +4227,7 @@
         ></a
       >
     </section>
-    <script src="/wp-content/litespeed/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
+    <script src="/assets/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script src="/assets/js/ynki-footer.js"></script>
   </body>
 </html>
