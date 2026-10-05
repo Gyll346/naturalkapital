@@ -2170,7 +2170,7 @@
       rel="stylesheet"
       href="/wp-content/litespeed/ucss/d5027302c12ab86b6082acd2ecdd5c8e.css?ver=c94d4"
     />
-    <script src="/wp-content/plugins/litespeed-cache/assets/js/css_async.min.js"></script>
+    <script src="/assets/js/css_async.min.js"></script>
     <link
       rel="EditURI"
       type="application/rsd+xml"
@@ -2963,7 +2963,7 @@
               align-items: center;
               background-image:
                 linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url("/wp-content/uploads/2026/05/hero-michael-eko-for-ynki-landscape-hutan-1536x1152.webp");
+                url("/wp-content/uploads/2026/05/hero-michael-eko-for-ynki-landscape-hutan.webp");
               background-size: cover;
               background-position: center;
               padding: 110px 24px 90px;

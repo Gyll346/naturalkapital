@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -2170,7 +2170,7 @@
       rel="stylesheet"
       href="/wp-content/litespeed/ucss/d5027302c12ab86b6082acd2ecdd5c8e.css?ver=c94d4"
     />
-    <script src="/wp-content/plugins/litespeed-cache/assets/js/css_async.min.js"></script>
+    <script src="/assets/js/css_async.min.js"></script>
     <link
       rel="EditURI"
       type="application/rsd+xml"
