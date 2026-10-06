@@ -2962,7 +2962,7 @@
               align-items: center;
               background-image: 
               linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-              url('/wp-content/uploads/2026/05/Desa-Gema-2_Zulkifli-HZ-1536x864.webp');
+              url('/assets/images/Original_TimePhoto_20260613_083845.jpg');
               background-size: cover;
               background-position: center;
               padding: 110px 24px 90px;

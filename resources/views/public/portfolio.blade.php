@@ -14,7 +14,7 @@
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <title>
-      Portfolio Proyek & Program — Yayasan Natural Kapital Indonesia (YNKI)
+      Rekam Jejak dan Perubahan Proyek & Program — Yayasan Natural Kapital Indonesia (YNKI)
     </title>
     <meta
       name="description"
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Portfolio Proyek & Program — Yayasan Natural Kapital Indonesia (YNKI)"
+      content="Rekam Jejak dan Perubahan Proyek & Program — Yayasan Natural Kapital Indonesia (YNKI)"
     />
     <meta
       property="og:description"
@@ -174,7 +174,7 @@
     <meta property="og:site_name" content="Natural Kapital Foundation" />
     <meta
       property="og:title"
-      content="Portfolio Proyek & Program — Yayasan Natural Kapital Indonesia (YNKI)"
+      content="Rekam Jejak dan Perubahan Proyek & Program — Yayasan Natural Kapital Indonesia (YNKI)"
     />
     <meta
       property="og:description"
@@ -1510,8 +1510,8 @@
         --blog_archive_grid_column_spacing: 40px;
         --dates_box_color: var(--awb-color2);
         --meta_font_size: 13px;
-        --portfolio_archive_column_spacing: 20px;
-        --portfolio_meta_font_size: 13px;
+        --Rekam Jejak dan Perubahan_archive_column_spacing: 20px;
+        --Rekam Jejak dan Perubahan_meta_font_size: 13px;
         --social_bg_color: var(--awb-color2);
         --social_sharing_padding-top: 1.25em;
         --social_sharing_padding-right: 1.25em;
@@ -2647,7 +2647,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6763 awb-menu__li awb-menu__sub-li"
                           >
                             <a href="/portofolio/" class="awb-menu__sub-a"
-                              ><span>Portfolio</span></a
+                              ><span>Rekam Jejak dan Perubahan</span></a
                             >
                           </li>
                           
@@ -2963,7 +2963,7 @@
               align-items: center;
               background-image: 
               linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-              url('/assets/images/portofolio/Original_TimePhoto_20260606_092415.jpg');
+              url('/assets/images/IMG20260613083506.jpg');
               background-size: cover;
               background-position: center;
               padding: 110px 24px 90px;
@@ -3718,7 +3718,7 @@
             <section id="content" class="full-width">
               <div id="post-porto" class="page type-page status-publish hentry">
                 <span class="entry-title rich-snippet-hidden"
-                  >Portfolio YNKI: Portofolio Perubahan untuk Lanskap Sehat dan
+                  >Rekam Jejak dan Perubahan YNKI: Portofolio Perubahan untuk Lanskap Sehat dan
                   Masyarakat Sejahtera</span
                 >
                 <div class="post-content">
@@ -3728,12 +3728,10 @@
                       <div class="hero-crumb">
                         <a href="/">Beranda</a> &nbsp;/&nbsp;
                         <a href="/">Dampak &amp; Pembelajaran</a> &nbsp;/&nbsp;
-                        <span>Portfolio</span>
+                        <span>Rekam Jejak dan Perubahan</span>
                       </div>
                       <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: clamp(32px, 4.5vw, 54px) !important; font-weight: 300 !important; line-height: 1.25 !important; color: #ffffff !important; margin: 0 0 20px !important; letter-spacing: -0.01em !important;">
-                        Portfolio YNKI:<br /><span class="hl" style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: 0.88em !important; font-weight: 300 !important; color: #a3e0a2 !important; display: inline-block;"
-                          >Portofolio Perubahan</span
-                        >
+                       Rekam Jejak dan Perubahan
                       </h1>
                       <p class="hero-sub">
                         Sejak 2019, YNKI telah mengelola berbagai proyek
@@ -3758,7 +3756,7 @@
                               d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
                             />
                           </svg>
-                          Jelajahi Portfolio
+                          Jelajahi Rekam Jejak dan Perubahan
                         </a>
                         <a href="#porto-peta" class="btn-cta-second">
                           <svg
@@ -3795,7 +3793,7 @@
                             font-family: &quot;Inter&quot;, sans-serif;
                           "
                         >
-                          Portfolio YNKI dalam Angka
+                          Rekam Jejak dan Perubahan YNKI dalam Angka
                         </h2>
                       </div>
                     </div>
@@ -3864,7 +3862,7 @@
                             margin: 0 0 12px;
                           "
                         >
-                          Jelajahi Portfolio Berdasarkan Kategori
+                          Jelajahi Rekam Jejak dan Perubahan dalam Kategori
                         </h2>
                         <p
                           style="
@@ -4040,7 +4038,7 @@
                             margin: 0 0 12px;
                           "
                         >
-                          Portfolio Program &amp; Proyek YNKI
+                          Rekam Jejak Program
                         </h2>
                         <p
                           style="
@@ -4050,9 +4048,8 @@
                             margin: 0 auto;
                           "
                         >
-                          Berikut adalah portofolio lengkap program dan proyek
-                          yang telah dan sedang dijalankan oleh YNKI sejak 2019.
-                          Data ini bersumber dari portofolio resmi YNKI.
+                          Berikut Adalah Rekam Jejak Lengkap Program
+                          Yang Telah dan Sedang Dijalankan oleh YNKI Sejak 2019
                         </p>
                       </div>
 
@@ -4140,7 +4137,7 @@
                             margin: 12px 0 12px;
                           "
                         >
-                          Jangkauan Dampak Sebaran Portofolio
+                          Rekam Jejak dan Dampak
                         </h2>
                         <p
                           style="
@@ -4151,8 +4148,8 @@
                           "
                         >
                           YNKI bekerja di beberapa kabupaten di Kalimantan
-                          Barat—menjangkau dari pesisir Kubu Raya hingga
-                          pedalaman Kapuas Hulu.
+                          Barat. Menjangkau dari pesisir Kubu Raya hingga
+                          Pedalaman Kapuas Hulu.
                         </p>
                       </div>
 

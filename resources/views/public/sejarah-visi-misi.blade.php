@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3571,7 +3571,7 @@
                             <p>
                               YNKI hadir dengan mendorong
                               <strong
-                                >Tata Kelola Lanskap — Landscape Governance
+                                >Tata Kelola Lanskap — <i>Landscape Governance</i>
                                 </strong
                               >yang menjadi jembatan antara pengetahuan, kebijakan, dan aksi nyata di lapangan.
                             </p>

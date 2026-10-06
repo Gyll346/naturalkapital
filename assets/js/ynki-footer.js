@@ -13,7 +13,10 @@
   var phoneNumber = '+62 822-5408-0751';
   var phoneClean = '+6282254080751';
 
-  // 1. Direct Clickable Email Link (Lompat langsung ke Gmail / Aplikasi Email)
+  // 1. Direct Clickable Email Link & Phone with Clean SVG Icons
+  var emailSvg = '<span class="ynki-footer-contact-icon" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>';
+  var phoneSvg = '<span class="ynki-footer-contact-icon" title="Telepon / WhatsApp"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>';
+
   var emailElements = footer.querySelectorAll('a[href*="mailto:"], a[href*="naturalkapital.or.id"], .ynki-email-link, .ynki-email-copy-btn');
   emailElements.forEach(function (el) {
     el.setAttribute('href', 'mailto:' + emailAddress);
@@ -24,25 +27,37 @@
     el.style.cursor = 'pointer';
     el.style.display = 'inline-flex';
     el.style.alignItems = 'center';
-    el.style.gap = '6px';
+    el.style.gap = '8px';
     el.title = 'Kirim email ke ' + emailAddress;
     el.innerHTML = '<span class="ynki-email-text" style="color:#ffffff;font-weight:600;">' + emailAddress + '</span>';
     el.onclick = function (e) {
       window.location.href = 'mailto:' + emailAddress;
     };
 
-    // Tambahkan nomor telepon kontak di bawah email jika belum ada
     var pParent = el.closest('p');
-    if (pParent && !pParent.parentNode.querySelector('.ynki-footer-phone-p')) {
-      var phoneP = document.createElement('p');
-      phoneP.className = 'ynki-footer-phone-p';
-      phoneP.style.marginTop = '8px';
-      phoneP.style.marginBottom = '14px';
-      phoneP.innerHTML = '<i class="fb-icon-element-1 fb-icon-element fontawesome-icon fa-phone-alt fa-phone fas circle-yes fusion-text-flow" style="--awb-circlebordersize: 1px; --awb-font-size: 14.08px; --awb-width: 28.16px; --awb-height: 28.16px; --awb-line-height: 26.16px; --awb-margin-right: 8px; border: 1px solid rgba(255,255,255,0.4); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; font-size: 13px; color: #ffffff; margin-right: 8px;"></i>' +
-        '<a class="ynki-phone-link" href="https://wa.me/6282254080751" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center;" title="Hubungi kami di ' + phoneNumber + '">' +
-        '<span class="ynki-phone-text" style="color:#ffffff;font-weight:600;">' + phoneNumber + '</span>' +
-        '</a>';
-      pParent.parentNode.insertBefore(phoneP, pParent.nextSibling);
+    if (pParent) {
+      // Pastikan ada ikon email SVG di sebelah kiri teks email
+      var prevIcon = pParent.querySelector('i.fa-envelope, .ynki-footer-contact-icon');
+      if (prevIcon) {
+        prevIcon.outerHTML = emailSvg;
+      } else {
+        pParent.insertAdjacentHTML('afterbegin', emailSvg);
+      }
+
+      // Tambahkan nomor telepon kontak di bawah email jika belum ada
+      if (!pParent.parentNode.querySelector('.ynki-footer-phone-p')) {
+        var phoneP = document.createElement('p');
+        phoneP.className = 'ynki-footer-phone-p';
+        phoneP.style.marginTop = '8px';
+        phoneP.style.marginBottom = '14px';
+        phoneP.style.display = 'flex';
+        phoneP.style.alignItems = 'center';
+        phoneP.innerHTML = phoneSvg +
+          '<a class="ynki-phone-link" href="https://wa.me/6282254080751" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center;" title="Hubungi kami di ' + phoneNumber + '">' +
+          '<span class="ynki-phone-text" style="color:#ffffff;font-weight:600;">' + phoneNumber + '</span>' +
+          '</a>';
+        pParent.parentNode.insertBefore(phoneP, pParent.nextSibling);
+      }
     }
   });
 
@@ -845,6 +860,104 @@
         transform: translateY(0) !important;
       }
 
+      /* =======================================================
+         GLOBAL FIX: HEADER DROPDOWN ARROWS, FOOTER CONTACT ICONS & SCROLL TO TOP
+         ======================================================= */
+      .awb-menu__open-nav-submenu-hover,
+      .awb-menu__open-nav-submenu_mobile {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+      .awb-menu__open-nav-submenu-hover:before,
+      .awb-menu__open-nav-submenu_mobile:before {
+        content: '' !important;
+        display: inline-block !important;
+        width: 5px !important;
+        height: 5px !important;
+        border-right: 2px solid currentColor !important;
+        border-bottom: 2px solid currentColor !important;
+        transform: rotate(45deg) translateY(-2px) !important;
+        margin-left: 6px !important;
+        font-family: inherit !important;
+        vertical-align: middle !important;
+        transition: transform 0.2s ease !important;
+      }
+
+      .awb-menu__main-li:hover .awb-menu__open-nav-submenu-hover:before,
+      .awb-menu__main-li.is-open .awb-menu__open-nav-submenu-hover:before {
+        transform: rotate(225deg) translateY(-2px) !important;
+      }
+
+      #toTop,
+      a#toTop,
+      .fusion-top-top-link {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background-color: #333333 !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        text-decoration: none !important;
+        transition: opacity 0.3s ease, background-color 0.2s ease, transform 0.2s ease !important;
+      }
+
+      #toTop:hover,
+      a#toTop:hover,
+      .fusion-top-top-link:hover {
+        background-color: #117710 !important;
+        transform: translateY(-3px) !important;
+      }
+
+      #toTop:before,
+      a#toTop:before,
+      .fusion-top-top-link:before {
+        content: '' !important;
+        display: inline-block !important;
+        width: 9px !important;
+        height: 9px !important;
+        border-left: 2.5px solid #ffffff !important;
+        border-top: 2.5px solid #ffffff !important;
+        transform: rotate(45deg) !important;
+        margin-top: 4px !important;
+        font-family: inherit !important;
+        line-height: normal !important;
+      }
+
+      .ynki-footer-contact-icon {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 50% !important;
+        border: 1px solid rgba(255, 255, 255, 0.45) !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        color: #ffffff !important;
+        margin-right: 8px !important;
+        vertical-align: middle !important;
+        flex-shrink: 0 !important;
+        transition: all 0.2s ease !important;
+      }
+
+      .ynki-footer-contact-icon:hover {
+        background: #117710 !important;
+        border-color: #117710 !important;
+        transform: scale(1.08) !important;
+      }
+
+      .ynki-footer-contact-icon svg {
+        width: 14px !important;
+        height: 14px !important;
+        fill: #ffffff !important;
+      }
+
+      .fusion-tb-footer p {
+        display: flex !important;
+        align-items: center !important;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         body,
         .hero-section,
@@ -1572,6 +1685,37 @@
     }
   }
 
+  /* =======================================================
+     SMOOTH SCROLL TO TOP (#toTop) HANDLER
+     ======================================================= */
+  function initScrollToTop() {
+    var toTopBtn = document.getElementById('toTop') || document.querySelector('.fusion-top-top-link');
+    if (!toTopBtn) return;
+
+    function handleScroll() {
+      if (window.scrollY > 250) {
+        toTopBtn.style.setProperty('opacity', '1', 'important');
+        toTopBtn.style.setProperty('pointer-events', 'auto', 'important');
+        toTopBtn.classList.add('fusion-to-top-active');
+      } else {
+        toTopBtn.style.setProperty('opacity', '0', 'important');
+        toTopBtn.style.setProperty('pointer-events', 'none', 'important');
+        toTopBtn.classList.remove('fusion-to-top-active');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    toTopBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   function initAllNavigation() {
     injectNavStyles();
     initDesktopDropdowns();
@@ -1580,6 +1724,7 @@
     initMediaFilter();
     initScrollFadeIn();
     initCountUp();
+    initScrollToTop();
   }
 
   injectNavStyles();

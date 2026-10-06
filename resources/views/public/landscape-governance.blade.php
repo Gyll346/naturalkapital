@@ -3457,19 +3457,7 @@
                           letter-spacing: -0.01em !important;
                         "
                       >
-                        7 Intervensi Utama Landscape Governance<br /><span
-                          class="hl"
-                          style="
-                            font-family:
-                              &quot;Montserrat&quot;, &quot;Inter&quot;, Arial,
-                              sans-serif !important;
-                            font-size: 0.88em !important;
-                            font-weight: 300 !important;
-                            color: #a3e0a2 !important;
-                            display: inline-block;
-                          "
-                          >Program Utama YNKI</span
-                        >
+                          Landscape Governance: Tujuh Intervensi Inti<br />
                       </h1>
                       <p class="hero-sub">
                         Memperkuat tata kelola lanskap yang inklusif,
@@ -3538,8 +3526,8 @@
                           pengambilan keputusan pengelolaan lanskap.
                         </p>
                         <div class="tujuan-quote">
-                          Sebagai
-                          <em>Landscape Governance Backbone Organization</em>,
+                          Sebagai Organisi yang mendorong
+                          <em>Tata Kelola Lanskap - <i>Landscape Governance</i></em>,
                           YNKI memainkan peran unik sebagai fasilitator netral
                           yang menjembatani kepentingan berbagai pihak.
                         </div>
@@ -3822,7 +3810,7 @@
                             margin: 0 0 12px;
                           "
                         >
-                          7 Intervensi Utama
+                          Tujuh Intervensi Inti
                         </h2>
                         <p
                           style="

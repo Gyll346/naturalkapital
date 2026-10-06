@@ -3391,7 +3391,7 @@
                         <a href="/program/">Program Kami</a> &nbsp;/&nbsp;
                         <span>Sustainable Commodity Systems</span>
                       </div>
-                      <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: clamp(32px, 4.5vw, 54px) !important; font-weight: 300 !important; line-height: 1.25 !important; color: #ffffff !important; margin: 0 0 20px !important; letter-spacing: -0.01em !important;">7 Intervensi Utama Sustainable Commodity Systems<br /><span class="hl" style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: 0.88em !important; font-weight: 300 !important; color: #a3e0a2 !important; display: inline-block;">Transformasi Rantai Pasok Berkelanjutan</span></h1>
+                      <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: clamp(32px, 4.5vw, 54px) !important; font-weight: 300 !important; line-height: 1.25 !important; color: #ffffff !important; margin: 0 0 20px !important; letter-spacing: -0.01em !important;">Sustainable Commodity Systems: Tujuh Intervensi Inti <br /><span class="hl" style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: 0.88em !important; font-weight: 300 !important; color: #a3e0a2 !important; display: inline-block;">Transformasi Rantai Pasok Berkelanjutan</span></h1>
                       <p class="hero-sub">
                         Mendorong transformasi sistem komoditas agar lebih
                         berkelanjutan, inklusif, dan mampu memberikan manfaat
@@ -3459,13 +3459,13 @@
                           dengan mengorbankan lingkungan dan kesejahteraan
                           komunitas lokal. Melalui pendekatan sistemik, YNKI
                           mendorong perubahan dari hulu ke hilir: dari praktik
-                          budidaya di ladang hingga transparansi di rantai pasok
-                          global.
+                          budidaya di ladang hingga transparansi dirantai pasok
+                          pasar global.
                         </p>
                         <div class="tujuan-quote">
                           "Mendorong transformasi sistem komoditas agar lebih
                           berkelanjutan, inklusif, dan mampu memberikan manfaat
-                          yang adil bagi produsen kecil serta lanskap tempat
+                          yang adil bagi petani kecil serta lanskap tempat
                           komoditas tersebut diproduksi."
                         </div>
                       </div>
@@ -3628,7 +3628,7 @@
                           <h4>Keterlacakan Meningkat</h4>
                           <p>
                             Keterlacakan komoditas meningkat dengan sistem
-                            transparan, memenuhi standar internasional EUDR.
+                            transparan, memenuhi standar internasional (EUDR, RSPO dan lainnya).
                           </p>
                         </div>
                         <div class="hasil-card">

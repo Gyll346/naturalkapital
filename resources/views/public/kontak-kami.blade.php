@@ -2918,7 +2918,7 @@
               align-items: center;
               background-image: 
               linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-              url('/wp-content/uploads/2026/05/YNKI-diskusi-1200x675.webp');
+              url('/assets/images/Original_TimePhoto_20260613_091603.jpg');
               background-size: cover;
               background-position: center;
               padding: 110px 24px 90px;

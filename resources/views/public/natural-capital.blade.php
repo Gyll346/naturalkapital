@@ -3443,7 +3443,7 @@
                         <a href="/program/">Program Kami</a> &nbsp;/&nbsp;
                         <span>Natural Capital &amp; Restoration</span>
                       </div>
-                      <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: clamp(32px, 4.5vw, 54px) !important; font-weight: 300 !important; line-height: 1.25 !important; color: #ffffff !important; margin: 0 0 20px !important; letter-spacing: -0.01em !important;">6 Intervensi Utama Natural Capital &amp; Restoration<br /><span class="hl" style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: 0.88em !important; font-weight: 300 !important; color: #a3e0a2 !important; display: inline-block;">Memulihkan Modal Alam</span></h1>
+                      <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: clamp(32px, 4.5vw, 54px) !important; font-weight: 300 !important; line-height: 1.25 !important; color: #ffffff !important; margin: 0 0 20px !important; letter-spacing: -0.01em !important;">Natural Capital &amp; Restoration: Enam Intervensi Inti<br /><span class="hl" style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: 0.88em !important; font-weight: 300 !important; color: #a3e0a2 !important; display: inline-block;">Memulihkan Modal Alam</span></h1>
                       <p class="hero-sub">
                         Melindungi dan memulihkan modal alam untuk masa depan
                         berkelanjutan. Mengintegrasikan ilmu ekologi,
@@ -3595,8 +3595,8 @@
                           "
                         >
                           Ekosistem yang sehat merupakan fondasi bagi ketahanan
-                          sosial, ekonomi, dan lingkungan yang menopang
-                          kehidupan jutaan manusia di Kalimantan.
+                          sosial, ekonomi, dan lingkungan yang menopang seluruh
+                          kehidupan di Kalimantan.
                         </p>
                       </div>
                       <div class="masalah-grid">
@@ -3704,8 +3704,8 @@
                           </div>
                           <h4>Biodiversitas Terlindungi</h4>
                           <p>
-                            Keanekaragaman hayati endemik Kalimantan terjaga dan
-                            populasi spesies prioritas dipulihkan.
+                            Keanekaragaman hayati di Kalimantan terjaga dan
+                            populasi spesies prioritas terpulihkan.
                           </p>
                         </div>
                         <div class="hasil-card">
@@ -3786,7 +3786,7 @@
                           <h4>Risiko Iklim Berkurang</h4>
                           <p>
                             Mitigasi dan adaptasi berbasis ekosistem mengurangi
-                            risiko bencana dan tingkatkan ketahanan.
+                            risiko bencana dan meningkatkan ketahanan.
                           </p>
                         </div>
                       </div>
@@ -3810,7 +3810,7 @@
                             margin: 0 0 12px;
                           "
                         >
-                          6 Intervensi Inti Utama
+                          Enam Intervensi Inti
                         </h2>
                       </div>
                       <div class="int-grid">

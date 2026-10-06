@@ -3430,7 +3430,7 @@
                         <a href="/program/">Program Kami</a> &nbsp;/&nbsp;
                         <span>Pengetahuan Lanskap &amp; Inovasi</span>
                       </div>
-                      <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: clamp(32px, 4.5vw, 54px) !important; font-weight: 300 !important; line-height: 1.25 !important; color: #ffffff !important; margin: 0 0 20px !important; letter-spacing: -0.01em !important;">8 Intervensi Utama Pengetahuan Lanskap &amp; Inovasi<br /><span class="hl" style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: 0.88em !important; font-weight: 300 !important; color: #a3e0a2 !important; display: inline-block;">Data untuk Tata Kelola</span></h1>
+                      <h1 style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: clamp(32px, 4.5vw, 54px) !important; font-weight: 300 !important; line-height: 1.25 !important; color: #ffffff !important; margin: 0 0 20px !important; letter-spacing: -0.01em !important;">Pengetahuan Lanskap &amp; Inovasi: Delapan Intervensi Inti <br /><span class="hl" style="font-family: 'Montserrat', 'Inter', Arial, sans-serif !important; font-size: 0.88em !important; font-weight: 300 !important; color: #a3e0a2 !important; display: inline-block;">Dari Data untuk Pengetahuan Pengelolaan</span></h1>
                       <p class="hero-sub">
                         Menghasilkan pengetahuan, data, teknologi, dan
                         pembelajaran yang mendukung pengambilan keputusan
