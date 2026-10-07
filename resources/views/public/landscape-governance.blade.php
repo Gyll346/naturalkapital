@@ -3684,41 +3684,20 @@
                         <div class="hasil-card">
                           <div class="hasil-icon">
                             <svg
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke-width="2"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke-width="2"
                             >
-                              <path
-                                d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                              />
-                              <circle cx="9" cy="7" r="4" />
-                              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
-                          </div>
-                          <h4>Forum Multipihak Efektif</h4>
-                          <p>
-                            Berfungsi sebagai ruang dialog dan pengambilan
-                            keputusan bersama yang inklusif dan akuntabel.
-                          </p>
-                        </div>
-                        <div class="hasil-card">
-                          <div class="hasil-icon">
-                            <svg
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke-width="2"
-                            >
-                              <rect
-                                x="3"
-                                y="3"
-                                width="18"
-                                height="18"
-                                rx="2"
-                                ry="2"
-                              />
-                              <line x1="3" y1="9" x2="21" y2="9" />
-                              <line x1="9" y1="21" x2="9" y2="9" />
+                            <rect
+                            x="3"
+                            y="3"
+                            width="18"
+                            height="18"
+                            rx="2"
+                            ry="2"
+                            />
+                            <line x1="3" y1="9" x2="21" y2="9" />
+                            <line x1="9" y1="21" x2="9" y2="9" />
                             </svg>
                           </div>
                           <h4>Pendekatan Lanskap Terintegrasi</h4>
@@ -3736,8 +3715,8 @@
                             >
                               <path
                                 d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-                              />
-                              <polyline
+                                />
+                                <polyline
                                 points="3.27 6.96 12 12.01 20.73 6.96"
                               />
                               <line x1="12" y1="22.08" x2="12" y2="12" />
@@ -3787,6 +3766,27 @@
                           <p>
                             Diakui dan terdokumentasi secara hukum dalam
                             pengelolaan lanskap.
+                          </p>
+                        </div>
+                        <div class="hasil-card">
+                          <div class="hasil-icon">
+                            <svg
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke-width="2"
+                            >
+                              <path
+                                d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                              />
+                              <circle cx="9" cy="7" r="4" />
+                              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                          </div>
+                          <h4>Forum Multipihak Efektif</h4>
+                          <p>
+                            Berfungsi sebagai ruang dialog dan pengambilan
+                            keputusan bersama yang inklusif dan akuntabel.
                           </p>
                         </div>
                       </div>
