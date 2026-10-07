@@ -958,6 +958,31 @@
         align-items: center !important;
       }
 
+      /* Hero Description 20px */
+      .hero-desc,
+      .hero-sub,
+      .hero-desc-sejarah,
+      .hero-desc-tim,
+      .hero-desc-trans,
+      .pptx-hero-desc,
+      .ynki-hero-sub,
+      .hero-section p.hero-sub,
+      .hero-section p.hero-desc,
+      #hero-sejarah p.hero-desc-sejarah,
+      #hero-tim p.hero-desc-tim,
+      #hero-trans p.hero-desc-trans,
+      #hero-home p.hero-desc,
+      #hero-lg p.hero-sub,
+      #hero-nc p.hero-sub,
+      #hero-sus p.hero-sub,
+      #hero-int p.hero-sub,
+      #hero-inst p.hero-sub,
+      .hero-inner p.hero-sub,
+      .hero-inner p.hero-desc {
+        font-size: 20px !important;
+        line-height: 1.8 !important;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         body,
         .hero-section,
