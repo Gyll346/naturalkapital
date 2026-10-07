@@ -2653,7 +2653,7 @@
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6763 awb-menu__li awb-menu__sub-li"
                           >
                             <a href="/portofolio/" class="awb-menu__sub-a"
-                              ><span>Portfolio</span></a
+                              ><span>Rekam Jejak dan Perubahan</span></a
                             >
                           </li>
                         </ul>
