@@ -27,15 +27,21 @@
     el.style.cursor = 'pointer';
     el.style.display = 'inline-flex';
     el.style.alignItems = 'center';
+    el.style.flexWrap = 'wrap';
+    el.style.wordBreak = 'break-all';
+    el.style.overflowWrap = 'anywhere';
+    el.style.maxWidth = '100%';
     el.style.gap = '8px';
     el.title = 'Kirim email ke ' + emailAddress;
-    el.innerHTML = '<span class="ynki-email-text" style="color:#ffffff;font-weight:600;">' + emailAddress + '</span>';
+    el.innerHTML = '<span class="ynki-email-text" style="color:#ffffff;font-weight:600;word-break:break-all;overflow-wrap:anywhere;">' + emailAddress + '</span>';
     el.onclick = function (e) {
       window.location.href = 'mailto:' + emailAddress;
     };
 
     var pParent = el.closest('p');
     if (pParent) {
+      pParent.style.flexWrap = 'wrap';
+      pParent.style.maxWidth = '100%';
       // Pastikan ada ikon email SVG di sebelah kiri teks email
       var prevIcon = pParent.querySelector('i.fa-envelope, .ynki-footer-contact-icon');
       if (prevIcon) {
@@ -52,8 +58,10 @@
         phoneP.style.marginBottom = '14px';
         phoneP.style.display = 'flex';
         phoneP.style.alignItems = 'center';
+        phoneP.style.flexWrap = 'wrap';
+        phoneP.style.maxWidth = '100%';
         phoneP.innerHTML = phoneSvg +
-          '<a class="ynki-phone-link" href="https://wa.me/6282254080751" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center;" title="Hubungi kami di ' + phoneNumber + '">' +
+          '<a class="ynki-phone-link" href="https://wa.me/6282254080751" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; flex-wrap: wrap; word-break: break-all;" title="Hubungi kami di ' + phoneNumber + '">' +
           '<span class="ynki-phone-text" style="color:#ffffff;font-weight:600;">' + phoneNumber + '</span>' +
           '</a>';
         pParent.parentNode.insertBefore(phoneP, pParent.nextSibling);
@@ -583,15 +591,42 @@
         }
 
         .awb-menu__m-toggle .awb-menu__m-collapse-icon {
-          display: flex !important;
-          align-items: center !important;
-          justify-content: center !important;
+          display: block !important;
+          width: 20px !important;
+          height: 14px !important;
+          position: relative !important;
+          margin: 0 auto !important;
         }
 
-        .awb-menu__m-toggle .classic-bars-solid,
-        .awb-menu__m-toggle .fa-bars {
-          color: #117710 !important;
-          font-size: 20px !important;
+        .awb-menu__m-toggle .awb-menu__m-collapse-icon::before,
+        .awb-menu__m-toggle .awb-menu__m-collapse-icon::after,
+        .awb-menu__m-toggle .awb-menu__m-collapse-icon-open {
+          content: '' !important;
+          display: block !important;
+          position: absolute !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 2.5px !important;
+          background-color: #117710 !important;
+          border-radius: 2px !important;
+          font-size: 0 !important;
+          line-height: 0 !important;
+        }
+
+        .awb-menu__m-toggle .awb-menu__m-collapse-icon::before {
+          top: 0 !important;
+        }
+
+        .awb-menu__m-toggle .awb-menu__m-collapse-icon-open {
+          top: 5.5px !important;
+        }
+
+        .awb-menu__m-toggle .awb-menu__m-collapse-icon::after {
+          bottom: 0 !important;
+        }
+
+        .awb-menu__m-toggle .awb-menu__m-collapse-icon-close {
+          display: none !important;
         }
 
         /* Hide Desktop Main Menu List */
@@ -1105,7 +1140,7 @@
     var backdrop = document.createElement('div');
     backdrop.id = 'ynki-mobile-backdrop';
     backdrop.className = 'ynki-mobile-nav-backdrop';
-    backdrop.setAttribute('onclick', "(function(){var d=document.getElementById('ynki-mobile-drawer');var b=document.getElementById('ynki-mobile-backdrop');if(d)d.classList.remove('active');if(b)b.classList.remove('active');document.body.classList.remove('ynki-mobile-nav-open');document.body.style.overflow='';})()");
+    backdrop.setAttribute('onclick', "if(window.ynkiCloseMobileDrawer){window.ynkiCloseMobileDrawer();}else{(function(){var d=document.getElementById('ynki-mobile-drawer');var b=document.getElementById('ynki-mobile-backdrop');if(d)d.classList.remove('active');if(b)b.classList.remove('active');document.body.classList.remove('ynki-mobile-nav-open');document.body.style.removeProperty('overflow');})()}");
 
     var drawer = document.createElement('div');
     drawer.id = 'ynki-mobile-drawer';
@@ -1116,7 +1151,7 @@
         <div class="ynki-mobile-nav-logo">
           <a href="/"><img src="/wp-content/uploads/2026/05/logo-ynki-500.webp" alt="YNKI" style="height:32px; max-height:32px; width:auto; max-width:170px; object-fit:contain;"></a>
         </div>
-        <button type="button" class="ynki-mobile-nav-close" id="ynki-mobile-close-btn" aria-label="Tutup Menu" onclick="(function(){var d=document.getElementById('ynki-mobile-drawer');var b=document.getElementById('ynki-mobile-backdrop');if(d)d.classList.remove('active');if(b)b.classList.remove('active');document.body.classList.remove('ynki-mobile-nav-open');document.body.style.overflow='';})()">
+        <button type="button" class="ynki-mobile-nav-close" id="ynki-mobile-close-btn" aria-label="Tutup Menu" onclick="if(window.ynkiCloseMobileDrawer){window.ynkiCloseMobileDrawer();}else{(function(){var d=document.getElementById('ynki-mobile-drawer');var b=document.getElementById('ynki-mobile-backdrop');if(d)d.classList.remove('active');if(b)b.classList.remove('active');document.body.classList.remove('ynki-mobile-nav-open');document.body.style.removeProperty('overflow');})()}">
           <span style="font-size:15px; font-weight:800; line-height:1; pointer-events:none;">✕</span>
           <span style="pointer-events:none;">Tutup</span>
         </button>
@@ -1232,25 +1267,31 @@
       drawer.classList.remove('active');
       backdrop.classList.remove('active');
       document.body.classList.remove('ynki-mobile-nav-open');
-      document.body.style.overflow = '';
+      document.body.style.removeProperty('overflow');
     }
+
+    // Expose globally so onclick attribute works 100% reliably in any scope
+    window.ynkiCloseMobileDrawer = closeDrawer;
 
     var closeBtn = document.getElementById('ynki-mobile-close-btn');
 
-    ['click', 'touchend', 'pointerup'].forEach(function (evt) {
+    ['click', 'touchend', 'pointerdown'].forEach(function (evt) {
       if (closeBtn) {
         closeBtn.addEventListener(evt, function (e) {
           e.preventDefault();
           e.stopPropagation();
           closeDrawer();
-        }, { passive: false });
+        }, { capture: true, passive: false });
       }
       backdrop.addEventListener(evt, function (e) {
         e.preventDefault();
         e.stopPropagation();
         closeDrawer();
-      }, { passive: false });
+      }, { capture: true, passive: false });
+    });
 
+    // Capture-phase document fallback for close button
+    ['click', 'touchend', 'pointerdown'].forEach(function (evt) {
       document.addEventListener(evt, function (e) {
         if (e.target && (e.target.closest('#ynki-mobile-close-btn') || e.target.closest('.ynki-mobile-nav-close'))) {
           e.preventDefault();
@@ -1263,10 +1304,12 @@
     // Connect to burger buttons (explicit button selector)
     var burgerButtons = document.querySelectorAll('button.awb-menu__m-toggle, .awb-menu__m-toggle, .fusion-mobile-menu-icons');
     burgerButtons.forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        openDrawer();
+      ['click', 'touchend'].forEach(function (evt) {
+        btn.addEventListener(evt, function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          openDrawer();
+        });
       });
     });
 
