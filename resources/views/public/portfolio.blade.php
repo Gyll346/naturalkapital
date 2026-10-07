@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -2639,7 +2639,7 @@
                             <a
                               href="/lgos/"
                               class="awb-menu__sub-a"
-                              ><span>LGOS: Sistem Operasi Organisasi</span></a
+                              ><span>STL: Sistem Tata Kelola Lanskap</span></a
                             >
                           </li>
                           <li

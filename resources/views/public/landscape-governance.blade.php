@@ -2645,7 +2645,7 @@
                             <a
                               href="/lgos/"
                               class="awb-menu__sub-a"
-                              ><span>LGOS: Sistem Operasi Organisasi</span></a
+                              ><span>STL: Sistem Tata Kelola Lanskap</span></a
                             >
                           </li>
                           <li

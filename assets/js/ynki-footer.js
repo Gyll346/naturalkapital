@@ -121,7 +121,7 @@
       links: [
         ['/sejarah-visi-misi/', 'Sejarah, Visi & Misi'],
         ['/tim/', 'Tim & Pengurus YNKI'],
-        ['/lgos/', 'LGOS: Sistem Operasi Organisasi'],
+        ['/lgos/', 'STL: Sistem Tata Kelola Lanskap'],
         ['/portofolio/', 'Rekam Jejak dan Perubahan'],
         ['/kontak-kami/', 'Kontak Kami'],
         ['/ikut-serta/', 'Ikut Serta'],
@@ -1139,7 +1139,7 @@
           <ul class="ynki-mobile-submenu">
             <li><a href="/sejarah-visi-misi/">Sejarah, Visi &amp; Misi</a></li>
             <li><a href="/tim/">Tim &amp; Pengurus YNKI</a></li>
-            <li><a href="/lgos/">LGOS: Sistem Operasi Organisasi</a></li>
+            <li><a href="/lgos/">STL: Sistem Tata Kelola Lanskap</a></li>
             <li><a href="/portofolio/">Rekam Jejak dan Perubahan</a></li>
           </ul>
         </li>

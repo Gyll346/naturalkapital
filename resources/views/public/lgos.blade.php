@@ -14,22 +14,22 @@
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <title>
-      LGOS: Sistem Operasi Organisasi — Yayasan Natural Kapital Indonesia (YNKI)
+      STL: Sistem Tata Kelola Lanskap — Yayasan Natural Kapital Indonesia (YNKI)
     </title>
     <meta
       name="description"
-      content="Landscape Governance Operating System (LGOS): Kerangka kerja sistem operasi 8 komponen terintegrasi Yayasan Natural Kapital Indonesia."
+      content="STL: Sistem Tata Kelola Lanskap — Kerangka kerja sistem operasi 8 komponen terintegrasi Yayasan Natural Kapital Indonesia."
     />
     <link rel="canonical" href="/lgos/" />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="LGOS: Sistem Operasi Organisasi — Yayasan Natural Kapital Indonesia (YNKI)"
+      content="STL: Sistem Tata Kelola Lanskap — Yayasan Natural Kapital Indonesia (YNKI)"
     />
     <meta
       property="og:description"
-      content="Landscape Governance Operating System (LGOS): Kerangka kerja sistem operasi 8 komponen terintegrasi YNKI."
+      content="STL: Sistem Tata Kelola Lanskap — Kerangka kerja sistem operasi 8 komponen terintegrasi YNKI."
     />
     <meta property="og:url" content="/" />
     <meta property="og:site_name" content="Natural Kapital Foundation" />
@@ -167,18 +167,18 @@
     />
     <meta
       name="description"
-      content="Landscape Governance Operating System (LGOS): Kerangka kerja sistem operasi 8 komponen terintegrasi Yayasan Natural Kapital Indonesia."
+      content="STL: Sistem Tata Kelola Lanskap — Kerangka kerja sistem operasi 8 komponen terintegrasi Yayasan Natural Kapital Indonesia."
     />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Natural Kapital Foundation" />
     <meta
       property="og:title"
-      content="LGOS: Sistem Operasi Organisasi — Yayasan Natural Kapital Indonesia (YNKI)"
+      content="STL: Sistem Tata Kelola Lanskap — Yayasan Natural Kapital Indonesia (YNKI)"
     />
     <meta
       property="og:description"
-      content="Landscape Governance Operating System (LGOS): Kerangka kerja sistem operasi 8 komponen terintegrasi YNKI."
+      content="STL: Sistem Tata Kelola Lanskap — Kerangka kerja sistem operasi 8 komponen terintegrasi YNKI."
     />
     <meta property="og:url" content="/" />
     <meta
@@ -2639,7 +2639,7 @@
                             <a
                               href="/lgos/"
                               class="awb-menu__sub-a"
-                              ><span>LGOS: Sistem Operasi Organisasi</span></a
+                              ><span>STL: Sistem Tata Kelola Lanskap</span></a
                             >
                           </li>
                           <li
@@ -3516,7 +3516,7 @@
             <section id="content" class="full-width">
               <div id="post-lgos" class="page type-page status-publish hentry">
                 <span class="entry-title rich-snippet-hidden"
-                  >LGOS: Sistem Operasi Organisasi — Yayasan Natural Kapital
+                  >STL: Sistem Tata Kelola Lanskap — Yayasan Natural Kapital
                   Indonesia (YNKI)</span
                 >
                 <div class="post-content">
@@ -3528,7 +3528,7 @@
                       <div class="hero-crumb">
                         <a href="/">Beranda</a> &nbsp;/&nbsp;
                         <a href="/tentang-kami/">Tentang Kami</a> &nbsp;/&nbsp;
-                        <span>LGOS</span>
+                        <span>STL</span>
                       </div>
                       <h1
                         style="
@@ -3543,7 +3543,7 @@
                           letter-spacing: -0.01em !important;
                         "
                       >
-                        Landscape Governance<br />
+                        STL:<br />
                         <span
                           class="hl"
                           style="
@@ -3555,24 +3555,24 @@
                             color: #a3e0a2 !important;
                             display: inline-block;
                           "
-                          >Operating System (LGOS)</span
+                          >Sistem Tata Kelola Lanskap</span
                         >
                       </h1>
                       <p class="hero-sub">
                         Sebagai
                         <em>Tata Kelola Lanskap — Landscape Governance</em>,
-                        YNKI menggunakan LGOS untuk memastikan seluruh elemen
+                        YNKI menggunakan STL (Sistem Tata Kelola Lanskap) untuk memastikan seluruh elemen
                         organisasi bekerja secara terhubung dalam mendukung visi
                         bersama.
                       </p>
                       <div class="hero-quote">
                         <p>
-                          LGOS adalah kerangka kerja terintegrasi yang
+                          STL adalah kerangka kerja terintegrasi yang
                           menghubungkan filosofi, strategi, program,
                           pembelajaran, pengetahuan, dan sumber daya dalam satu
                           sistem perubahan yang utuh.
                         </p>
-                        <span>LGOS — Sistem Operasi Organisasi YNKI</span>
+                        <span>STL — Sistem Tata Kelola Lanskap YNKI</span>
                       </div>
                       <div class="hero-btns">
                         <a href="#lgos-arsitektur" class="btn-cta-main">
@@ -3588,7 +3588,7 @@
                             <polyline points="12 16 16 12 12 8" />
                             <line x1="8" y1="12" x2="16" y2="12" />
                           </svg>
-                          8 Komponen LGOS
+                          8 Komponen STL
                         </a>
                         <a href="#lgos-utama" class="btn-cta-second">
                           <svg
@@ -3616,7 +3616,7 @@
                       <div style="text-align: center">
                         <div class="divider-line">
                           <span class="line"></span
-                          ><span class="section-badge">ARSITEKTUR LGOS</span
+                          ><span class="section-badge">ARSITEKTUR STL</span
                           ><span class="line"></span>
                         </div>
                         <h2
@@ -3627,7 +3627,7 @@
                             margin: 0 0 12px;
                           "
                         >
-                          8 Komponen LGOS yang Saling Terhubung
+                          8 Komponen STL yang Saling Terhubung
                         </h2>
                         <p
                           style="
@@ -3637,7 +3637,7 @@
                             margin: 0 auto;
                           "
                         >
-                          Setiap komponen LGOS memiliki peran spesifik — dari
+                          Setiap komponen STL memiliki peran spesifik — dari
                           fondasi filosofis hingga mobilisasi sumber daya — yang
                           bekerja bersama membentuk sistem perubahan yang utuh
                           dan berkelanjutan.
@@ -3914,7 +3914,7 @@
                             line-height: 1.7;
                           "
                         >
-                          LGOS memastikan bahwa seluruh aktivitas organisasi
+                          STL memastikan bahwa seluruh aktivitas organisasi
                           tetap terhubung dengan misi dan Theory of Change.<br />
                           <span style="color: #117710; font-weight: 800"
                             >Setiap keputusan dapat ditelusuri kembali ke tujuan
@@ -3943,7 +3943,7 @@
                             margin: 12px 0 12px;
                           "
                         >
-                          Fondasi, Mesin Perubahan, dan Sistem Navigasi LGOS
+                          Fondasi, Mesin Perubahan, dan Sistem Navigasi STL
                         </h2>
                         <p
                           style="
@@ -4010,7 +4010,7 @@
                   </section>
 
                   <!-- =========================================
-             6. JELAJAHI KOMPONEN LGOS LAINNYA
+             6. JELAJAHI KOMPONEN STL LAINNYA
              ========================================= -->
                   <section id="lgos-jelajahi" class="ynki-section">
                     <div class="ynki-container">
@@ -4028,7 +4028,7 @@
                             margin: 0 0 12px;
                           "
                         >
-                          Jelajahi Komponen LGOS Lainnya
+                          Jelajahi Komponen STL Lainnya
                         </h2>
                         <p
                           style="
@@ -4039,7 +4039,7 @@
                           "
                         >
                           Setiap halaman di bawah ini mencerminkan salah satu
-                          komponen LGOS secara mendalam. Telusuri program,
+                          komponen STL secara mendalam. Telusuri program,
                           dampak, pengetahuan, dan cara berkolaborasi bersama
                           YNKI dalam mendukung tata kelola lanskap yang inklusif
                           dan berkelanjutan.
@@ -4067,7 +4067,7 @@
                           <h4>Program Kami</h4>
                           <p>
                             Portofolio 5 program strategis sebagai implementasi
-                            Program Framework LGOS di lapangan.
+                            Program Framework STL di lapangan.
                           </p>
                           <span class="link-label"
                             >Lihat Program
@@ -4103,7 +4103,7 @@
                           <h4>Dampak &amp; Pembelajaran</h4>
                           <p>
                             Sistem monitoring, evaluasi, dan pembelajaran yang
-                            mencerminkan MEL System LGOS.
+                            mencerminkan MEL System STL.
                           </p>
                           <span class="link-label"
                             >Lihat Dampak
@@ -4140,7 +4140,7 @@
                           <h4>Literasi &amp; Pengetahuan</h4>
                           <p>
                             Repositori pengetahuan organisasi yang mencerminkan
-                            Knowledge Management System LGOS.
+                            Knowledge Management System STL.
                           </p>
                           <span class="link-label"
                             >Buka Pustaka
