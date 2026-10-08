@@ -246,7 +246,19 @@
                 <p class="login-subtitle">Yayasan Natural Kapital Indonesia</p>
             </div>
 
-            @if ($errors->any())
+            @php
+                $effectiveLockout = (int) ($lockout_seconds ?? session('lockout_seconds', 0));
+                $isBlocked = $effectiveLockout > 0;
+            @endphp
+
+            @if ($isBlocked)
+                <div class="alert-danger" id="lockoutBanner" style="text-align: center; font-weight: 600;">
+                    <p>Perangkat ini diblokir sementara karena 3x gagal login.</p>
+                    <p style="margin-top: 6px; font-size: 15px;">
+                        Coba lagi dalam: <span id="countdownTimer" style="color: #b91c1c; font-weight: 800; font-family: monospace; font-size: 17px;">--:--</span>
+                    </p>
+                </div>
+            @elseif ($errors->any())
                 <div class="alert-danger">
                     @foreach ($errors->all() as $error)
                         <p>{{ $error }}</p>
@@ -258,14 +270,14 @@
                 @csrf
                 <div class="form-group">
                     <label class="form-label" for="email">Alamat Email Administrator</label>
-                    <input class="form-input" type="email" id="email" name="email" value="{{ old('email') }}" required autofocus>
+                    <input class="form-input" type="email" id="email" name="email" value="{{ old('email') }}" required {{ $isBlocked ? 'disabled readonly' : 'autofocus' }} style="{{ $isBlocked ? 'background:#f0f0f0;cursor:not-allowed;' : '' }}">
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="password">Kata Sandi</label>
                     <div style="position: relative;">
-                        <input class="form-input" style="padding-right: 44px;" type="password" id="password" name="password" required>
-                        <button type="button" id="togglePassword" aria-label="Tampilkan atau sembunyikan kata sandi" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 4px; display: flex; align-items: center; justify-content: center; color: var(--ynki-text-muted);">
+                        <input class="form-input" style="padding-right: 44px; {{ $isBlocked ? 'background:#f0f0f0;cursor:not-allowed;' : '' }}" type="password" id="password" name="password" required {{ $isBlocked ? 'disabled readonly' : '' }}>
+                        <button type="button" id="togglePassword" aria-label="Tampilkan atau sembunyikan kata sandi" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 4px; display: flex; align-items: center; justify-content: center; color: var(--ynki-text-muted);" {{ $isBlocked ? 'disabled' : '' }}>
                             <svg id="eyeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
@@ -279,7 +291,7 @@
                     <span>Ingat sesi saya di perangkat ini</span>
                 </label>
 
-                <button class="btn-submit" type="submit">Masuk ke Panel Kontrol</button>
+                <button class="btn-submit" id="btnSubmit" type="submit">Masuk ke Panel Kontrol</button>
             </form>
 
             <div class="login-footer">
@@ -306,6 +318,65 @@
                     : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
             });
         }
+
+        @if ($isBlocked)
+        (function() {
+            let timeLeft = {{ $effectiveLockout }};
+            const countdownEl = document.getElementById('countdownTimer');
+            const submitBtn = document.getElementById('btnSubmit');
+            const emailInput = document.getElementById('email');
+            const pwdInput = document.getElementById('password');
+            const toggleBtn = document.getElementById('togglePassword');
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.6';
+                submitBtn.style.cursor = 'not-allowed';
+            }
+
+            function updateTimer() {
+                const mins = Math.floor(timeLeft / 60);
+                const secs = timeLeft % 60;
+                if (countdownEl) {
+                    countdownEl.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                }
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                        submitBtn.style.cursor = 'pointer';
+                    }
+                    if (emailInput) {
+                        emailInput.disabled = false;
+                        emailInput.readOnly = false;
+                        emailInput.style.background = '#ffffff';
+                        emailInput.style.cursor = 'auto';
+                    }
+                    if (pwdInput) {
+                        pwdInput.disabled = false;
+                        pwdInput.readOnly = false;
+                        pwdInput.style.background = '#ffffff';
+                        pwdInput.style.cursor = 'auto';
+                    }
+                    if (toggleBtn) {
+                        toggleBtn.disabled = false;
+                    }
+                    const banner = document.getElementById('lockoutBanner');
+                    if (banner) {
+                        banner.style.background = '#eaf5ee';
+                        banner.style.borderColor = '#cce5d6';
+                        banner.style.color = '#0F5132';
+                        banner.innerHTML = '<p>Waktu pemblokiran perangkat telah selesai. Silakan coba masuk kembali.</p>';
+                    }
+                }
+                timeLeft--;
+            }
+
+            updateTimer();
+            const timerInterval = setInterval(updateTimer, 1000);
+        })();
+        @endif
     </script>
 </body>
 </html>
