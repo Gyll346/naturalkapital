@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>@yield('title', 'Admin Panel') - Yayasan Natural Kapital Indonesia</title>
     
     <!-- Favicon -->
@@ -677,6 +680,13 @@
     </div>
 
     <script>
+        // Deteksi jika user kembali ke halaman ini lewat tombol back/undo browser
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted || (window.performance && window.performance.navigation && window.performance.navigation.type === 2)) {
+                window.location.reload();
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
             var toggleBtn = document.getElementById('sidebarToggle');
             var sidebar = document.querySelector('.admin-sidebar');

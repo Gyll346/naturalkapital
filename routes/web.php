@@ -122,7 +122,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth')->
 | 3. Panel Admin CMS (Dilindungi Auth Middleware)
 |--------------------------------------------------------------------------
 */
-Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () {
+Route::prefix('admin')->middleware(['auth', 'prevent-back'])->name('admin.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
     // Pesan Masuk (Kontak Kami)
