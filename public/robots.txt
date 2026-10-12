@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Cegah crawler mengindeks panel admin internal
+Disallow: /admin/
+Disallow: /masuk
+Disallow: /logout
+
+# Petunjuk lokasi sitemap resmi untuk Googlebot & mesin pencari
+Sitemap: https://naturalkapital.or.id/sitemap.xml

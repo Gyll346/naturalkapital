@@ -7,6 +7,7 @@ use App\Http\Controllers\Public\PublicDonationController;
 use App\Http\Controllers\Public\PublicArticleController;
 use App\Http\Controllers\Public\PublicTeamController;
 use App\Http\Controllers\Public\PageContentController;
+use App\Http\Controllers\Public\SitemapController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TeamMemberController;
 use App\Http\Controllers\Admin\ArticleController;
@@ -28,6 +29,10 @@ Route::any('/wp-admin/admin-ajax.php', fn() => response()->json(['success' => tr
 Route::get('/donasi', fn() => redirect('/kontak-kami'))->name('public.donation');
 Route::get('/artikel-cms', [PublicArticleController::class, 'index'])->name('public.article.index');
 Route::get('/artikel-cms/{slug}', [PublicArticleController::class, 'show'])->name('public.article.show');
+
+// SEO Sitemap XML untuk Google Search Engine
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/sitemap_index.xml', [SitemapController::class, 'index']);
 
 // Subhalaman Dinamis Database (Tentang Kami)
 Route::get('/sejarah-visi-misi', fn() => view('public.sejarah-visi-misi'))->name('public.sejarah_visi_misi');
