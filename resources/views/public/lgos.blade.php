@@ -4047,7 +4047,7 @@
                       </div>
 
                       <div class="jelajahi-grid">
-                        <a href="/program/" class="jelajahi-card">
+                        <a href="/landscape-governance/" class="jelajahi-card">
                           <div class="icon-wrap">
                             <svg
                               width="24"
@@ -4083,7 +4083,7 @@
                           ></span>
                         </a>
 
-                        <a href="/dampak-pembelajaran/" class="jelajahi-card">
+                        <a href="/dampak/" class="jelajahi-card">
                           <div class="icon-wrap">
                             <svg
                               width="24"
@@ -4119,7 +4119,7 @@
                           ></span>
                         </a>
 
-                        <a href="/pustaka/" class="jelajahi-card">
+                        <a href="/news-features/" class="jelajahi-card">
                           <div class="icon-wrap">
                             <svg
                               width="24"
