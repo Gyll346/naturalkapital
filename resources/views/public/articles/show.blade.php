@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -2906,7 +2906,7 @@
 
                 <div style="margin-bottom: 14px; font-size: 13.5px; color: #2d4236;">
                   Penulis:
-                  <strong style="display:block; color:#0e241b; font-size:14.5px; margin-top:2px;">{{ $article->author->name ?? 'Tim YNKI' }}</strong>
+                  <strong style="display:block; color:#0e241b; font-size:14.5px; margin-top:2px;">{{ $article->author_name ?: ($article->author->name ?? 'Tim YNKI') }}</strong>
                 </div>
 
                 <div style="margin-bottom: 14px; font-size: 13.5px; color: #2d4236;">
@@ -2954,7 +2954,7 @@
               @endif
 
               <div style="margin-bottom: 40px; font-size: 16.5px; line-height: 1.85; color: #212326;">
-                {!! nl2br(e($article->content)) !!}
+                {!! $article->content !!}
               </div>
 
               @if ($relatedArticles->count() > 0)

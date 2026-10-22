@@ -3,46 +3,52 @@
 @section('title', 'Tulis Artikel & Riset Baru')
 
 @section('content')
-    <div style="max-width: 800px; margin: 0 auto;">
+    <div style="max-width: 860px; margin: 0 auto;">
         <div class="card-table">
             <h2 style="font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; color: var(--primary-dark); margin-bottom: 20px;">
                 Editor Artikel / Publikasi YNKI
             </h2>
 
-            <form action="{{ route('admin.articles.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.articles.store') }}" method="POST" enctype="multipart/form-data" id="articleForm">
                 @csrf
                 <div style="margin-bottom: 16px;">
                     <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Judul Artikel / Laporan Riset *</label>
-                    <input type="text" name="title" required placeholder="Judul artikel informatif dan relevan..." style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px;">
+                    <input type="text" name="title" required value="{{ old('title') }}" placeholder="Judul artikel informatif dan relevan..." style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px;">
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px;">
                     <div>
                         <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Kategori *</label>
                         <select name="category_id" required style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; background: #ffffff;">
                             @foreach ($categories as $cat)
-                                <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
+                                <option value="{{ $cat->id }}" {{ old('category_id') == $cat->id ? 'selected' : '' }}>{{ $cat->category_name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div>
+                        <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Penulis / Kontributor</label>
+                        <input type="text" name="author_name" value="{{ old('author_name') }}" placeholder="Contoh: Dr. Budi Santoso / Tim YNKI" style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px;">
+                    </div>
+                    <div>
                         <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Status Publikasi *</label>
                         <select name="status" required style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; background: #ffffff;">
-                            <option value="published">Langsung Terbitkan (Published)</option>
-                            <option value="draft">Simpan Sebagai Draft</option>
-                            <option value="archived">Arsipkan</option>
+                            <option value="published" {{ old('status') === 'published' ? 'selected' : '' }}>Langsung Terbitkan (Published)</option>
+                            <option value="draft" {{ old('status') === 'draft' ? 'selected' : '' }}>Simpan Sebagai Draft</option>
+                            <option value="archived" {{ old('status') === 'archived' ? 'selected' : '' }}>Arsipkan</option>
                         </select>
                     </div>
                 </div>
 
                 <div style="margin-bottom: 16px;">
                     <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Ringkasan Pendek (Excerpt)</label>
-                    <textarea name="excerpt" rows="2" placeholder="Ringkasan 1-2 kalimat untuk preview..." style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px;"></textarea>
+                    <textarea name="excerpt" rows="2" placeholder="Ringkasan 1-2 kalimat untuk preview..." style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px;">{{ old('excerpt') }}</textarea>
                 </div>
 
-                <div style="margin-bottom: 16px;">
+                <div style="margin-bottom: 20px;">
                     <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Isi Lengkap Konten Artikel *</label>
-                    <textarea name="content" rows="12" required placeholder="Tuliskan isi artikel lengkap di sini..." style="width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; font-family: inherit; line-height: 1.6;"></textarea>
+                    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+                    <div id="editor-container" style="min-height: 280px; font-size: 15px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; background: #fff;">{!! old('content') !!}</div>
+                    <textarea name="content" id="contentInput" required style="display: none;">{{ old('content') }}</textarea>
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
@@ -67,3 +73,40 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var quill = new Quill('#editor-container', {
+            theme: 'snow',
+            placeholder: 'Tuliskan isi artikel lengkap di sini...',
+            modules: {
+                toolbar: [
+                    [{ 'header': [1, 2, 3, false] }],
+                    [{ 'font': [] }, { 'size': ['small', false, 'large', 'huge'] }],
+                    ['bold', 'italic', 'underline', 'strike'],
+                    [{ 'color': [] }, { 'background': [] }],
+                    [{ 'align': [] }],
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    ['blockquote', 'code-block'],
+                    ['link', 'clean']
+                ]
+            }
+        });
+
+        var form = document.getElementById('articleForm');
+        var contentInput = document.getElementById('contentInput');
+
+        form.addEventListener('submit', function (e) {
+            var html = quill.getSemanticHTML ? quill.getSemanticHTML() : quill.root.innerHTML;
+            if (quill.getText().trim().length === 0 && !quill.root.querySelector('img')) {
+                e.preventDefault();
+                alert('Isi konten artikel tidak boleh kosong!');
+                return;
+            }
+            contentInput.value = html;
+        });
+    });
+</script>
+@endpush

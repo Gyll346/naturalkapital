@@ -49,6 +49,7 @@ class ArticleController extends Controller
         $validated = $request->validate([
             'category_id' => 'required|exists:article_categories,id',
             'title' => 'required|string|max:255',
+            'author_name' => 'nullable|string|max:100',
             'excerpt' => 'nullable|string|max:500',
             'content' => 'required|string',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:8192',
@@ -71,6 +72,7 @@ class ArticleController extends Controller
         $article = Article::create([
             'category_id' => $validated['category_id'],
             'author_id' => Auth::id(),
+            'author_name' => $validated['author_name'] ?? null,
             'title' => $validated['title'],
             'slug' => $slug,
             'excerpt' => $validated['excerpt'] ?? null,
@@ -108,6 +110,7 @@ class ArticleController extends Controller
         $validated = $request->validate([
             'category_id' => 'required|exists:article_categories,id',
             'title' => 'required|string|max:255',
+            'author_name' => 'nullable|string|max:100',
             'excerpt' => 'nullable|string|max:500',
             'content' => 'required|string',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:8192',

@@ -109,7 +109,7 @@
                                     {{ $article->category->category_name ?? '-' }}
                                 </span>
                             </td>
-                            <td>{{ $article->author->name ?? 'Admin' }}</td>
+                            <td>{{ $article->author_name ?: ($article->author->name ?? 'Admin') }}</td>
                             <td>
                                 @if ($article->attachment_pdf_path)
                                     <a href="/storage/{{ $article->attachment_pdf_path }}" target="_blank" style="background: #eff6ff; color: #1d4ed8; padding: 4px 10px; border-radius: 6px; font-size: 11.5px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
