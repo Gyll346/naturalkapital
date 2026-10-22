@@ -3348,9 +3348,8 @@
                         </div>
                         <h4>Kesenjangan Data yang Kritis</h4>
                         <p>
-                          Banyak kawasan lanskap prioritas belum memiliki data
-                          komprehensif, sehingga kebijakan sering reaktif dan
-                          tidak berbasis bukti.
+                          Banyak lanskap prioritas belum memiliki data komprehensif, sehingga kebijakan sering reaktif
+                          dan tidak berbasis bukti.
                         </p>
                       </div>
                       <div class="masalah-card">
