@@ -3285,14 +3285,15 @@
                     </div>
                     <div class="tujuan-grid">
                       <div class="tujuan-main">
-                        <h3>Apa itu Landscape Intelligence?</h3>
+                        <h3>Apa itu Pengetahuan Lanskap &amp; Inovasi?</h3>
                         <p>
-                          Landscape Intelligence adalah sebuah sistem
-                          pengetahuan terpadu yang mengintegrasikan data
-                          spasial, riset lapangan, dan pembelajaran lintas
-                          pemangku kepentingan untuk menghasilkan wawasan
-                          strategis bagi pengelolaan lanskap yang efektif,
-                          adil, dan berkelanjutan. YNKI memanfaatkan teknologi
+                          Pengetahuan Lanskap &amp; Inovasi (Landscape
+                          Intelligence) adalah sebuah sistem pengetahuan terpadu
+                          yang mengintegrasikan data spasial, riset lapangan, dan
+                          pembelajaran lintas pemangku kepentingan untuk
+                          menghasilkan wawasan strategis bagi pengelolaan
+                          lanskap yang efektif, adil, dan berkelanjutan. YNKI
+                          memanfaatkan teknologi
                           GIS, penginderaan jauh, dan sistem informasi untuk
                           perubahan ini.
                         </p>
