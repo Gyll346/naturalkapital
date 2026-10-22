@@ -8,6 +8,7 @@ use App\Models\Article;
 use App\Models\ArticleCategory;
 use App\Models\ActivityLog;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -69,10 +70,9 @@ class ArticleController extends Controller
 
         $slug = Str::slug($validated['title']) . '-' . strtolower(Str::random(4));
 
-        $article = Article::create([
+        $dataToSave = [
             'category_id' => $validated['category_id'],
             'author_id' => Auth::id(),
-            'author_name' => $validated['author_name'] ?? null,
             'title' => $validated['title'],
             'slug' => $slug,
             'excerpt' => $validated['excerpt'] ?? null,
@@ -81,7 +81,13 @@ class ArticleController extends Controller
             'attachment_pdf_path' => $pdfPath,
             'status' => $validated['status'],
             'published_at' => $validated['status'] === 'published' ? now() : null,
-        ]);
+        ];
+
+        if (Schema::hasColumn('articles', 'author_name')) {
+            $dataToSave['author_name'] = $validated['author_name'] ?? null;
+        }
+
+        $article = Article::create($dataToSave);
 
         ActivityLog::create([
             'user_id' => Auth::id(),
@@ -134,6 +140,10 @@ class ArticleController extends Controller
 
         if ($article->status !== 'published' && $validated['status'] === 'published') {
             $validated['published_at'] = now();
+        }
+
+        if (!Schema::hasColumn('articles', 'author_name')) {
+            unset($validated['author_name']);
         }
 
         $article->update($validated);

@@ -2929,9 +2929,42 @@
             </aside>
 
             <!-- Article Content Body -->
-            <article style="font-size: 16.5px; line-height: 1.85; color: #212326;">
+            <article style="font-size: 16.5px; line-height: 1.85; color: #212326; min-width: 0;">
+              <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+              <style>
+                .article-rendered-content.ql-editor {
+                  padding: 0;
+                  font-family: inherit;
+                  font-size: 16.5px;
+                  line-height: 1.85;
+                  color: #212326;
+                }
+                .article-rendered-content.ql-editor p {
+                  margin-bottom: 1rem;
+                }
+                .article-rendered-content.ql-editor .ql-align-center {
+                  text-align: center;
+                }
+                .article-rendered-content.ql-editor .ql-align-right {
+                  text-align: right;
+                }
+                .article-rendered-content.ql-editor .ql-align-justify {
+                  text-align: justify;
+                }
+                .article-cover-img {
+                  width: 100%;
+                  max-height: 520px;
+                  object-fit: contain;
+                  background: #f8faf9;
+                  border: 1px solid #e1ebe5;
+                  border-radius: 16px;
+                  margin-bottom: 32px;
+                  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+                }
+              </style>
+
               @if ($article->featured_image_path)
-                <img src="/storage/{{ $article->featured_image_path }}" alt="{{ $article->title }}" style="width: 100%; max-height: 520px; object-fit: cover; border-radius: 16px; margin-bottom: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                <img src="/storage/{{ $article->featured_image_path }}" alt="{{ $article->title }}" class="article-cover-img">
               @endif
 
               @if ($article->summary)
@@ -2953,7 +2986,7 @@
                 </div>
               @endif
 
-              <div style="margin-bottom: 40px; font-size: 16.5px; line-height: 1.85; color: #212326;">
+              <div class="article-rendered-content ql-editor" style="margin-bottom: 40px;">
                 {!! $article->content !!}
               </div>
 

@@ -9,6 +9,17 @@
                 Ubah Artikel / Publikasi YNKI
             </h2>
 
+            @if ($errors->any())
+                <div style="background: #ffebe9; color: #cf222e; padding: 12px 16px; border-radius: 8px; font-size: 13.5px; margin-bottom: 20px; border: 1px solid #ff818266;">
+                    <strong style="display: block; margin-bottom: 4px;">Gagal memperbarui artikel:</strong>
+                    <ul style="margin: 0; padding-left: 20px;">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <form action="{{ route('admin.articles.update', $article->id) }}" method="POST" enctype="multipart/form-data" id="articleEditForm">
                 @csrf
                 @method('PUT')
@@ -45,11 +56,11 @@
                     <textarea name="excerpt" rows="2" style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px;">{{ old('excerpt', $article->excerpt) }}</textarea>
                 </div>
 
-                <div style="margin-bottom: 20px;">
+                <div style="margin-bottom: 20px; position: relative;">
                     <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Isi Lengkap Konten Artikel *</label>
                     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
                     <div id="editor-container" style="min-height: 280px; font-size: 15px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; background: #fff;">{!! old('content', $article->content) !!}</div>
-                    <textarea name="content" id="contentInput" required style="display: none;">{{ old('content', $article->content) }}</textarea>
+                    <textarea name="content" id="contentInput" style="position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px;">{{ old('content', $article->content) }}</textarea>
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
@@ -109,14 +120,24 @@
         var form = document.getElementById('articleEditForm');
         var contentInput = document.getElementById('contentInput');
 
-        form.addEventListener('submit', function (e) {
+        function syncContent() {
             var html = quill.getSemanticHTML ? quill.getSemanticHTML() : quill.root.innerHTML;
             if (quill.getText().trim().length === 0 && !quill.root.querySelector('img')) {
+                contentInput.value = '';
+            } else {
+                contentInput.value = html;
+            }
+        }
+
+        quill.on('text-change', syncContent);
+
+        form.addEventListener('submit', function (e) {
+            syncContent();
+            if (!contentInput.value || contentInput.value.trim().length === 0) {
                 e.preventDefault();
                 alert('Isi konten artikel tidak boleh kosong!');
-                return;
+                quill.focus();
             }
-            contentInput.value = html;
         });
     });
 </script>
