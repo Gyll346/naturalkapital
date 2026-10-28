@@ -3704,7 +3704,7 @@
                             margin: 0 0 12px;
                           "
                         >
-                          Esai, Opini &amp; Perspektif Budaya
+                          Esai, Opini, Resensi, &amp; Perspektif Budaya
                         </h2>
                         <p
                           style="
