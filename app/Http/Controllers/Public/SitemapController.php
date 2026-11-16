@@ -35,7 +35,7 @@ class SitemapController extends Controller
             ['/dampak', '0.8', 'weekly'],
             ['/kisah-perubahan', '0.8', 'weekly'],
             ['/liputan-media', '0.8', 'weekly'],
-            ['/portofolio', '0.8', 'weekly'],
+            ['/portofolio', '0.9', 'weekly'],
             ['/transparansi', '0.8', 'monthly'],
             ['/news-features', '0.9', 'daily'],
             ['/penelitian-laporan', '0.8', 'monthly'],
@@ -43,7 +43,7 @@ class SitemapController extends Controller
             ['/perspektif-budaya', '0.8', 'monthly'],
             ['/data-spasial-dan-gis', '0.7', 'monthly'],
             ['/story-foto-video', '0.7', 'weekly'],
-            ['/kontak-kami', '0.8', 'monthly'],
+            ['/kontak-kami', '0.9', 'monthly'],
             ['/ikut-terlibat', '0.8', 'monthly'],
         ];
 

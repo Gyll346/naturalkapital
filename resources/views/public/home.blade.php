@@ -84,10 +84,15 @@
             "@type": "WebSite",
             "@id": "\/#website",
             "url": "\/",
-            "name": "Natural Kapital Foundation",
+            "name": "Yayasan Natural Kapital Indonesia",
             "description": "For Sustainable and Resilience Landscape",
             "publisher": { "@id": "\/#organization" },
-            "alternateName": "YNKI",
+            "alternateName": [
+              "yayasan natural kapital",
+              "natural kapital",
+              "YNKI",
+              "Natural Kapital Foundation"
+            ],
             "potentialAction": [
               {
                 "@type": "SearchAction",
@@ -107,8 +112,13 @@
           {
             "@type": "Organization",
             "@id": "\/#organization",
-            "name": "Natural Kapital Foundation",
-            "alternateName": "Yayasan Natural Kapital Indonesia (YNKI)",
+            "name": "Yayasan Natural Kapital Indonesia",
+            "alternateName": [
+              "yayasan natural kapital",
+              "natural kapital",
+              "YNKI",
+              "Natural Kapital Foundation"
+            ],
             "url": "\/",
             "logo": {
               "@type": "ImageObject",
@@ -126,6 +136,42 @@
               "https:\/\/www.instagram.com\/yayasannaturalkapital\/",
               "https:\/\/www.linkedin.com\/company\/natural-kapital-foundation\/mycompany\/",
               "https:\/\/www.youtube.com\/channel\/UCEpioIu1zY91ExzVTUfKTJA"
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "name": "Navigasi Utama Yayasan Natural Kapital Indonesia",
+            "itemListElement": [
+              {
+                "@type": "SiteNavigationElement",
+                "position": 1,
+                "name": "Sejarah, Visi, & Misi",
+                "url": "https://naturalkapital.or.id/sejarah-visi-misi"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 2,
+                "name": "Tim",
+                "url": "https://naturalkapital.or.id/tim"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 3,
+                "name": "STL",
+                "url": "https://naturalkapital.or.id/lgos"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 4,
+                "name": "Rekam Jejak",
+                "url": "https://naturalkapital.or.id/portofolio"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 5,
+                "name": "Kontak",
+                "url": "https://naturalkapital.or.id/kontak-kami"
+              }
             ]
           }
         ]
