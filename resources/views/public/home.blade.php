@@ -13,6 +13,7 @@
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
+    <meta name="google-site-verification" content="WWpBoYA6kUgnmgw310HSTWrHSpZKz3cqb5tcAtdrhro" />
     <title>
       Beranda — Yayasan Natural Kapital Indonesia (YNKI) | Tata Kelola Lanskap
       Kalimantan

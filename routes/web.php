@@ -30,6 +30,11 @@ Route::get('/donasi', fn() => redirect('/kontak-kami'))->name('public.donation')
 Route::get('/artikel-cms', [PublicArticleController::class, 'index'])->name('public.article.index');
 Route::get('/artikel-cms/{slug}', [PublicArticleController::class, 'show'])->name('public.article.show');
 
+// URL lama yang telah dihapus permanen (Memberi sinyal HTTP 410 Gone ke Google)
+Route::any('/profil', fn() => abort(410, 'Halaman ini telah dihapus permanen.'));
+Route::any('/program', fn() => abort(410, 'Halaman ini telah dihapus permanen.'));
+Route::any('/kebijakan-privasi', fn() => abort(410, 'Halaman ini telah dihapus permanen.'));
+
 // SEO Sitemap XML untuk Google Search Engine
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('/sitemap_index.xml', [SitemapController::class, 'index']);
