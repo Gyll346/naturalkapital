@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -13,7 +13,7 @@
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <meta name="google-site-verification" content="WWpBoYA6kUgnmgw310HSTWrHSpZKz3cqb5tcAtdrhro" />
+    <meta name="google-site-verification" content="Os-crhno-W08Ue655KZzmHry9ejjyvWyQukfCvOBqLQ" />
     <title>
       Beranda — Yayasan Natural Kapital Indonesia (YNKI) | Tata Kelola Lanskap
       Kalimantan
