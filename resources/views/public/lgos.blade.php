@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -2859,6 +2859,7 @@
                               ><span>Perspektif Budaya</span></a
                             >
                           </li>
+                          <li class="menu-item menu-item-type-taxonomy menu-item-object-category awb-menu__li awb-menu__sub-li"><a href="/perspektif-perempuan" class="awb-menu__sub-a"><span>Perspektif Perempuan</span></a></li>
                           <li
                             id="menu-item-6778"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6778 awb-menu__li awb-menu__sub-li"
