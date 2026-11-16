@@ -530,6 +530,20 @@ class PageContentController extends Controller
     return view('public.perspektif-budaya', compact('articles', 'legacyArticles'));
   }
 
+  // 8b. Perspektif Perempuan (/perspektif-perempuan/) - Artikel Perspektif Perempuan
+  public function womenPerspective()
+  {
+    $category = ArticleCategory::where('slug', 'perspektif-perempuan')->first();
+    $articles = Article::where('status', 'published')
+      ->when($category, fn($q) => $q->where('category_id', $category->id))
+      ->orderBy('published_at', 'desc')
+      ->get();
+
+    $legacyArticles = $this->getLegacyArticles('perspektif-perempuan');
+
+    return view('public.perspektif-perempuan', compact('articles', 'legacyArticles'));
+  }
+
   // 9. Data Spasial & GIS (/data-spasial-dan-gis/) - Peta & Analisis GIS
   public function spatialGis()
   {

@@ -41,6 +41,7 @@ class SitemapController extends Controller
             ['/penelitian-laporan', '0.8', 'monthly'],
             ['/analisis-kebijakan', '0.8', 'monthly'],
             ['/perspektif-budaya', '0.8', 'monthly'],
+            ['/perspektif-perempuan', '0.8', 'monthly'],
             ['/data-spasial-dan-gis', '0.7', 'monthly'],
             ['/story-foto-video', '0.7', 'weekly'],
             ['/kontak-kami', '0.9', 'monthly'],

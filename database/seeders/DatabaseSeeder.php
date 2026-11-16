@@ -394,6 +394,7 @@ class DatabaseSeeder extends Seeder
             ['category_name' => 'Penelitian & Laporan Riset', 'slug' => 'penelitian-laporan', 'description' => 'Kumpulan publikasi penelitian ilmiah, studi lanskap, dan dokumen laporan riset.'],
             ['category_name' => 'Analisis & Kebijakan', 'slug' => 'analisis-kebijakan', 'description' => 'Policy brief, naskah kebijakan, dan analisis tata kelola lanskap.'],
             ['category_name' => 'Perspektif Budaya', 'slug' => 'perspektif-budaya', 'description' => 'Esai reflektif, kearifan lokal, dan telaah budaya lingkungan nusantara.'],
+            ['category_name' => 'Perspektif Perempuan', 'slug' => 'perspektif-perempuan', 'description' => 'Gagasan, riset, dan peran perempuan dalam pengelolaan sumber daya alam dan keadilan lanskap.'],
             ['category_name' => 'Data Spasial dan GIS', 'slug' => 'data-spasial-dan-gis', 'description' => 'Peta tematik, analisis tutupan lahan, dan dataset spasial lanskap.'],
             ['category_name' => 'Kisah Perubahan', 'slug' => 'kisah-perubahan', 'description' => 'Cerita inspiratif dampak nyata di tingkat tapak dan komunitas.'],
             ['category_name' => 'Liputan Media', 'slug' => 'liputan-media', 'description' => 'Liputan pers nasional dan internasional mengenai YNKI.'],

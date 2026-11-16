@@ -2627,7 +2627,7 @@
                             <a
                               href="/sejarah-visi-misi/"
                               class="awb-menu__sub-a"
-                              ><span>Perjalanan, Visi &amp; Misi</span></a
+                              ><span>Sejarah, Visi &amp; Misi</span></a
                             >
                           </li>
                           <li

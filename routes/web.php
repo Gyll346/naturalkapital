@@ -102,6 +102,8 @@ Route::get('/kategori/perspektif-budaya/{slug}', function ($slug) {
 Route::get('/perspektif-budaya/{slug}', function ($slug) {
     return redirect('/kategori/perspektif-budaya/' . $slug);
 })->where('slug', '[a-zA-Z0-9_\-]+');
+Route::get('/perspektif-perempuan', [PageContentController::class, 'womenPerspective'])->name('public.women_perspective');
+Route::get('/kategori/perspektif-perempuan', [PageContentController::class, 'womenPerspective']);
 Route::get('/data-spasial-dan-gis', [PageContentController::class, 'spatialGis'])->name('public.spatial_gis');
 Route::get('/data-spasial-gis', [PageContentController::class, 'spatialGis']);
 Route::get('/story-foto-video', [PageContentController::class, 'mediaStories'])->name('public.media_stories');
