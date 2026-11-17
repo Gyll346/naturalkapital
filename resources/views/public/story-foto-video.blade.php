@@ -3475,9 +3475,7 @@
                     <div class="hero-inner">
                       <div class="hero-crumb">
                         <a href="/">Beranda</a> &nbsp;/&nbsp;
-                        <a href="/penelitian-laporan/"
-                          >Literasi &amp; Pengetahuan</a
-                        >
+                        <a href="/stori-foto-video/#">Literasi &amp; Pengetahuan</a>
                         &nbsp;/&nbsp; <span>Foto Story &amp; Video</span>
                       </div>
                       <h1 class="hero-h1">

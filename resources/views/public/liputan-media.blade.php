@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3483,7 +3483,7 @@
                     <div class="hero-inner">
                       <div class="hero-crumb">
                         <a href="/">Beranda</a> &nbsp;/&nbsp;
-                        <a href="/dampak/">Dampak &amp; Pembelajaran</a>
+                        <a href="/liputan-media/#">Dampak &amp; Pembelajaran</a>
                         &nbsp;/&nbsp; <span>Liputan Media</span>
                       </div>
                       <h1 class="hero-h1">

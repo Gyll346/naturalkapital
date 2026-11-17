@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template" lang="id"
   prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
@@ -3123,7 +3123,7 @@
                   <div class="hero-inner">
                     <div class="hero-crumb">
                       <a href="/">Beranda</a> &nbsp;/&nbsp;
-                      <a href="/dampak/">Dampak &amp; Pembelajaran</a>
+                      <a href="/kisah-perubahan/#">Dampak &amp; Pembelajaran</a>
                       &nbsp;/&nbsp; <span>Kisah Perubahan</span>
                     </div>
                     <h1 class="hero-h1">

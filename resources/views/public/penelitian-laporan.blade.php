@@ -3322,7 +3322,7 @@
                     <div class="hero-inner">
                       <div class="hero-crumb">
                         <a href="/">Beranda</a> &nbsp;/&nbsp;
-                        <a href="/pustaka/">Literasi &amp; Pengetahuan</a>
+                        <a href="/penelitian-laporan/#">Literasi &amp; Pengetahuan</a>
                         &nbsp;/&nbsp; <span>Penelitian &amp; Laporan</span>
                       </div>
                       <h1 class="hero-h1">

@@ -3461,7 +3461,7 @@
                     <div class="hero-inner">
                       <div class="hero-crumb">
                         <a href="/">Beranda</a> &nbsp;/&nbsp;
-                        <a href="/dampak/">Dampak &amp; Pembelajaran</a>
+                        <a href="/dampak/#">Dampak &amp; Pembelajaran</a>
                         &nbsp;/&nbsp; <span>Dampak</span>
                       </div>
                       <h1 class="hero-h1">
