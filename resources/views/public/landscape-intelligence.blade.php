@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template" lang="id"
   prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
@@ -3237,7 +3237,7 @@
                   <div class="hero-inner">
                     <div class="hero-crumb">
                       <a href="/">Beranda</a> &nbsp;/&nbsp;
-                      <a href="/program/">Program Kami</a> &nbsp;/&nbsp;
+                      <a href="/landscape-intelligence/#">Program Kami</a> &nbsp;/&nbsp;
                       <span>Pengetahuan Lanskap &amp; Inovasi</span>
                     </div>
                     <h1
