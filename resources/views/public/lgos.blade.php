@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3528,7 +3528,7 @@
                     <div class="hero-inner">
                       <div class="hero-crumb">
                         <a href="/">Beranda</a> &nbsp;/&nbsp;
-                        <a href="/tentang-kami/">Tentang Kami</a> &nbsp;/&nbsp;
+                        <a href="/lgos/#">Tentang Kami</a> &nbsp;/&nbsp;
                         <span>STL</span>
                       </div>
                       <h1

@@ -3460,7 +3460,7 @@
                   <section id="hero-tim" class="ynki-section">
                     <div class="hero-content-tim">
                       <div class="hero-breadcrumb">
-                        <a href="/">Beranda</a> / <a href="/tentang-kami/">Tentang Kami</a> / <span>Tim &amp; Pengurus</span>
+                        <a href="/">Beranda</a> / <a href="/tim/#">Tentang Kami</a> / <span>Tim &amp; Pengurus</span>
                       </div>
                       <h1>
                         Tim di Balik Perubahan<br />

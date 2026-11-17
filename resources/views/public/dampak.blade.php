@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3666,7 +3666,7 @@
                               />
                             </svg>
                           </div>
-                          <h4>Natural Capital</h4>
+                          <h4>Natural Capital &amp; Restoration</h4>
                           <p>
                             Biodiversitas terjaga, ekosistem gambut pulih, dan
                             solusi berbasis alam berkembang sebagai fondasi
@@ -3687,7 +3687,7 @@
                               <path d="M3 9h18" />
                             </svg>
                           </div>
-                          <h4>Sustainable Commodities</h4>
+                          <h4>Sustainable Commodity System</h4>
                           <p>
                             Keterlacakan meningkat, petani mendapat akses pasar
                             adil, dan praktik pertanian berkelanjutan meluas di
@@ -3732,7 +3732,7 @@
                               <polyline points="9 22 9 12 15 12 15 22" />
                             </svg>
                           </div>
-                          <h4>Institutional Sustainability</h4>
+                          <h4>Institutional Sustainability &amp; Partnership</h4>
                           <p>
                             Kapasitas organisasi menguat, kemitraan strategis
                             berkembang, dan sumber pendanaan makin beragam untuk
