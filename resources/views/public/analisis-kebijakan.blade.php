@@ -3089,44 +3089,72 @@
               box-shadow: 0 10px 30px rgba(17, 119, 16, 0.08);
             }
 
-            .stats-grid {
+            .stats-strip,
+            #policy-stats {
+              background: #117710;
+              padding: 64px 24px;
+              margin-top: 48px;
+              position: relative;
+              overflow: hidden;
+            }
+            .stats-strip::before,
+            #policy-stats::before {
+              content: "";
+              position: absolute;
+              top: -50%;
+              right: -10%;
+              width: 500px;
+              height: 500px;
+              background: rgba(255, 255, 255, 0.04);
+              border-radius: 50%;
+              pointer-events: none;
+              z-index: 0;
+            }
+            .stats-strip > *,
+            #policy-stats > * {
+              position: relative;
+              z-index: 1;
+            }
+            .stats-row {
               display: grid;
               grid-template-columns: repeat(4, 1fr);
-              gap: 20px;
+              gap: 0;
               max-width: 1100px;
               margin: 0 auto;
-              margin-top: 60px;
             }
             .stat-box {
-              background: #fff;
-              border: 1.5px solid #d2e8d1;
-              border-radius: 16px;
-              padding: 28px 24px;
               text-align: center;
-              transition: transform 0.3s;
+              padding: 10px 24px;
+              position: relative;
             }
-            .stat-box:hover {
-              transform: translateY(-4px);
-              border-color: #117710;
-              box-shadow: 0 14px 30px rgba(17, 119, 16, 0.08);
+            .stat-box:not(:last-child)::after {
+              content: "";
+              position: absolute;
+              right: 0;
+              top: 10%;
+              bottom: 10%;
+              width: 1px;
+              background: rgba(255, 255, 255, 0.15);
             }
             .stat-num {
-              font-size: 42px;
+              font-size: clamp(32px, 4vw, 50px);
               font-weight: 900;
-              color: #117710;
+              color: #fff;
               line-height: 1;
-              margin-bottom: 12px;
+              margin-bottom: 8px;
             }
-            .stat-box h4 {
-              font-size: 15px;
-              font-weight: 800;
-              color: #0e241b;
-              margin: 0 0 8px;
-              line-height: 1.3;
+            .stat-num .plus {
+              color: #ff8000;
             }
-            .stat-box p {
-              font-size: 13px;
-              color: #536b5f;
+            .stat-label {
+              font-size: 14px;
+              font-weight: 700;
+              color: #a3e0a2;
+              margin-bottom: 6px;
+            }
+            .stat-desc {
+              font-size: 12px;
+              color: #d2f0d1;
               margin: 0;
               line-height: 1.5;
             }
@@ -3343,8 +3371,12 @@
                 grid-template-columns: 1fr;
                 gap: 32px;
               }
-              .stats-grid {
+              .stats-row {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+              }
+              .stat-box::after {
+                display: none;
               }
               .roles-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -3354,7 +3386,7 @@
               .docs-grid {
                 grid-template-columns: 1fr;
               }
-              .stats-grid {
+              .stats-row {
                 grid-template-columns: 1fr;
               }
               .roles-grid {
@@ -3395,6 +3427,46 @@
                         <a href="#peran-ynki" class="btn-cta-second"
                           >Peran Advokasi YNKI</a
                         >
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- STATS STRIP WITH BUBBLE -->
+                  <section id="policy-stats" class="stats-strip ynki-section">
+                    <div class="ynki-container">
+                      <div class="stats-row">
+                        <div class="stat-box">
+                          <div class="stat-num">
+                            {{ count($articles) }}
+                          </div>
+                          <div class="stat-label">Policy Brief &amp; Analisis</div>
+                          <p class="stat-desc">
+                            Total dokumen analisis kebijakan yang diterbitkan YNKI
+                          </p>
+                        </div>
+                        <div class="stat-box">
+                          <div class="stat-num">12</div>
+                          <div class="stat-label">Kajian Kelembagaan</div>
+                          <p class="stat-desc">
+                            Struktur tata kelola &amp; penguatan kelembagaan
+                          </p>
+                        </div>
+                        <div class="stat-box">
+                          <div class="stat-num">
+                            38<span class="plus">+</span>
+                          </div>
+                          <div class="stat-label">Rekomendasi Kebijakan</div>
+                          <p class="stat-desc">
+                            Rekomendasi spesifik kepada pemangku kebijakan
+                          </p>
+                        </div>
+                        <div class="stat-box">
+                          <div class="stat-num">8</div>
+                          <div class="stat-label">Analisis Regulasi</div>
+                          <p class="stat-desc">
+                            Analisis regulasi nasional &amp; internasional (EUDR, ESG)
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </section>
@@ -3445,46 +3517,6 @@
                             "
                             >— Prinsip Kerja YNKI</span
                           >
-                        </div>
-                      </div>
-
-                      <!-- STATS -->
-                      <div class="stats-grid">
-                        <div class="stat-box">
-                          <div class="stat-num">
-                            24<span style="color: #ff8000">+</span>
-                          </div>
-                          <h4>Policy Brief &amp; Analisis</h4>
-                          <p>
-                            Total dokumen analisis kebijakan yang telah
-                            diterbitkan YNKI
-                          </p>
-                        </div>
-                        <div class="stat-box">
-                          <div class="stat-num">12</div>
-                          <h4>Kajian Kelembagaan</h4>
-                          <p>
-                            Kajian mendalam tentang struktur tata kelola &amp;
-                            penguatan kelembagaan
-                          </p>
-                        </div>
-                        <div class="stat-box">
-                          <div class="stat-num">
-                            38<span style="color: #ff8000">+</span>
-                          </div>
-                          <h4>Rekomendasi Kebijakan</h4>
-                          <p>
-                            Rekomendasi spesifik yang disampaikan kepada
-                            pemangku kebijakan
-                          </p>
-                        </div>
-                        <div class="stat-box">
-                          <div class="stat-num">8</div>
-                          <h4>Analisis Regulasi</h4>
-                          <p>
-                            Analisis regulasi nasional &amp; internasional
-                            (EUDR, ESG, dll.)
-                          </p>
                         </div>
                       </div>
                     </div>
