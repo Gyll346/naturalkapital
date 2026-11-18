@@ -3506,7 +3506,7 @@
                       <div class="stats-row">
                         <div class="stat-box">
                           <div class="stat-num">
-                            500<span class="plus">+</span>
+                            {{ count($photos) }}
                           </div>
                           <div class="stat-label">Foto Dokumentasi</div>
                           <p class="stat-desc">
@@ -3515,7 +3515,7 @@
                         </div>
                         <div class="stat-box">
                           <div class="stat-num">
-                            30<span class="plus">+</span>
+                            {{ count($videos) }}
                           </div>
                           <div class="stat-label">Video Dokumenter</div>
                           <p class="stat-desc">
