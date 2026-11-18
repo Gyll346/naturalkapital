@@ -3519,7 +3519,7 @@
                       <div class="stats-row">
                         <div class="stat-box">
                           <div class="stat-num">
-                            20<span class="plus">+</span>
+                            {{ count($articles) }}
                           </div>
                           <div class="stat-label">
                             Peta &amp; Analisis Spasial
