@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template" lang="id"
   prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
@@ -3574,7 +3574,7 @@
       <span id="awb-to-top-label" class="screen-reader-text">Go to Top</span></a>
   </section>
   <script src="/assets/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
-  <script src="/assets/js/ynki-footer.js"></script>
+  <script src="/assets/js/ynki-footer.js?v=2"></script>
 
   <script>
     // Kisah Perubahan Pagination Clearfix (6 cards per page)

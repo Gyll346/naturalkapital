@@ -1218,6 +1218,7 @@
             <li><a href="/penelitian-laporan/">Penelitian &amp; Laporan</a></li>
             <li><a href="/analisis-kebijakan/">Analisis &amp; Kebijakan</a></li>
             <li><a href="/perspektif-budaya/">Perspektif Budaya</a></li>
+            <li><a href="/perspektif-perempuan">Perspektif Perempuan</a></li>
             <li><a href="/data-spasial-dan-gis/">Data Spasial dan GIS</a></li>
             <li><a href="/story-foto-video/">Story Foto &amp; Video</a></li>
           </ul>

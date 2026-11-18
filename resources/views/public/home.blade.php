@@ -5088,7 +5088,7 @@
     </section>
     <script src="/assets/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script src="/assets/js/ynki-circular-gallery.js"></script>
-    <script src="/assets/js/ynki-footer.js"></script>
+    <script src="/assets/js/ynki-footer.js?v=2"></script>
     <script>
       (function () {
         if ('IntersectionObserver' in window) {

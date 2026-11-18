@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -4125,7 +4125,7 @@
       >
     </section>
     <script src="/assets/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
-    <script src="/assets/js/ynki-footer.js"></script>
+    <script src="/assets/js/ynki-footer.js?v=2"></script>
 
     <script>
       // Liputan Media Pagination Clearfix (4 cards per page)

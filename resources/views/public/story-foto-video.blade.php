@@ -4193,7 +4193,7 @@
         });
       });
     </script>
-    <script src="/assets/js/ynki-footer.js"></script>
+    <script src="/assets/js/ynki-footer.js?v=2"></script>
   </body>
 </html>
 <!-- Page optimized by LiteSpeed Cache @2026-08-17 17:42:00 --><!-- Page cached by LiteSpeed Cache 7.8.1 on 2026-08-17 17:42:00 --><!-- Guest Mode --><!-- QUIC.cloud CCSS loaded ✅ /ccss/e6cdef7e17caebb6a8d79682a8c88011.css --><!-- QUIC.cloud UCSS loaded ✅ /ucss/d5027302c12ab86b6082acd2ecdd5c8e.css -->
