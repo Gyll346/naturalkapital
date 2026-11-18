@@ -3543,7 +3543,7 @@
                       <div class="stats-row">
                         <div class="stat-box">
                           <div class="stat-num">
-                            15<span class="plus">+</span>
+                            {{ count($articles) + count($legacyArticles ?? []) }}
                           </div>
                           <div class="stat-label">Esai &amp; Opini Kritis</div>
                           <p class="stat-desc">
