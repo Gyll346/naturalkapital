@@ -501,7 +501,15 @@ class PageContentController extends Controller
       ->orderBy('published_at', 'desc')
       ->get();
 
-    return view('public.penelitian-laporan', compact('articles'));
+    $counts = ArticleCategory::withCount(['articles' => fn($q) => $q->where('status', 'published')])
+      ->whereIn('slug', ['data-spasial-dan-gis', 'analisis-kebijakan', 'laporan-program'])
+      ->pluck('articles_count', 'slug');
+
+    $gisCount = $counts['data-spasial-dan-gis'] ?? 0;
+    $policyCount = $counts['analisis-kebijakan'] ?? 0;
+    $programCount = $counts['laporan-program'] ?? 0;
+
+    return view('public.penelitian-laporan', compact('articles', 'gisCount', 'policyCount', 'programCount'));
   }
 
   // 7. Analisis & Kebijakan (/analisis-kebijakan/) - Kumpulan Analisis & Policy Brief

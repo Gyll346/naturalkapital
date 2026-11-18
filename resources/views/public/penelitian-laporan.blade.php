@@ -3051,40 +3051,72 @@
             }
           </style>
           <style>
-            .pen-stats {
-              background: #f5f8f5;
-              padding: 60px 24px;
+            .stats-strip,
+            #pen-stats {
+              background: #117710;
+              padding: 64px 24px;
+              margin-top: 48px;
+              position: relative;
+              overflow: hidden;
             }
-            .pstat-grid {
+            .stats-strip::before,
+            #pen-stats::before {
+              content: "";
+              position: absolute;
+              top: -50%;
+              right: -10%;
+              width: 500px;
+              height: 500px;
+              background: rgba(255, 255, 255, 0.04);
+              border-radius: 50%;
+              pointer-events: none;
+              z-index: 0;
+            }
+            .stats-strip > *,
+            #pen-stats > * {
+              position: relative;
+              z-index: 1;
+            }
+            .stats-row {
               display: grid;
               grid-template-columns: repeat(4, 1fr);
-              gap: 20px;
+              gap: 0;
               max-width: 1100px;
               margin: 0 auto;
             }
-            .pstat-card {
-              background: #fff;
-              border: 1.5px solid #d2e8d1;
-              border-radius: 16px;
-              padding: 24px;
+            .stat-box {
               text-align: center;
+              padding: 10px 24px;
+              position: relative;
             }
-            .pstat-num {
-              font-size: 36px;
+            .stat-box:not(:last-child)::after {
+              content: "";
+              position: absolute;
+              right: 0;
+              top: 10%;
+              bottom: 10%;
+              width: 1px;
+              background: rgba(255, 255, 255, 0.15);
+            }
+            .stat-num {
+              font-size: clamp(32px, 4vw, 50px);
               font-weight: 900;
-              color: #117710;
+              color: #fff;
               line-height: 1;
               margin-bottom: 8px;
             }
-            .pstat-card h4 {
-              font-size: 14px;
-              font-weight: 800;
-              color: #0e241b;
-              margin: 0 0 6px;
+            .stat-num .plus {
+              color: #ff8000;
             }
-            .pstat-card p {
+            .stat-label {
+              font-size: 14px;
+              font-weight: 700;
+              color: #a3e0a2;
+              margin-bottom: 6px;
+            }
+            .stat-desc {
               font-size: 12px;
-              color: #536b5f;
+              color: #d2f0d1;
               margin: 0;
               line-height: 1.5;
             }
@@ -3291,11 +3323,18 @@
             }
 
             @media (max-width: 1024px) {
-              .pstat-grid {
+              .stats-row {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+              }
+              .stat-box::after {
+                display: none;
               }
             }
             @media (max-width: 768px) {
+              .stats-row {
+                grid-template-columns: 1fr;
+              }
               .pen-item {
                 flex-direction: column;
                 align-items: center;
@@ -3361,52 +3400,37 @@
                     </div>
                   </section>
 
-                  <!-- STATS -->
-                  <section class="pen-stats ynki-section">
+                  <!-- STATS STRIP WITH BUBBLE -->
+                  <section id="pen-stats" class="stats-strip ynki-section">
                     <div class="ynki-container">
-                      <div style="text-align: center; margin-bottom: 36px">
-                        <span class="section-badge">KOLEKSI PENGETAHUAN</span>
-                        <h2
-                          style="
-                            font-size: clamp(20px, 2.5vw, 28px);
-                            font-weight: 800;
-                            color: #0e241b;
-                            margin: 12px 0;
-                          "
-                        >
-                          Koleksi Penelitian &amp; Laporan YNKI
-                        </h2>
-                      </div>
-                      <div class="pstat-grid">
-                        <div class="pstat-card">
-                          <div class="pstat-num">
-                            25<span style="color: #ff8000">+</span>
+                      <div class="stats-row">
+                        <div class="stat-box">
+                          <div class="stat-num">
+                            {{ count($articles) }}
                           </div>
-                          <h4>Total Laporan &amp; Penelitian</h4>
-                          <p>
+                          <div class="stat-label">Total Laporan &amp; Penelitian</div>
+                          <p class="stat-desc">
                             Dokumen riset, laporan program, dan kajian akademis.
                           </p>
                         </div>
-                        <div class="pstat-card">
-                          <div class="pstat-num">8</div>
-                          <h4>Analisis Spasial &amp; GIS</h4>
-                          <p>
-                            Peta tematik dan analisis geospasial lanskap
-                            prioritas.
+                        <div class="stat-box">
+                          <div class="stat-num">{{ $gisCount }}</div>
+                          <div class="stat-label">Analisis Spasial &amp; GIS</div>
+                          <p class="stat-desc">
+                            Peta tematik dan analisis geospasial lanskap prioritas.
                           </p>
                         </div>
-                        <div class="pstat-card">
-                          <div class="pstat-num">6</div>
-                          <h4>Policy Brief &amp; Kajian</h4>
-                          <p>
-                            Rekomendasi kebijakan berbasis bukti untuk tata
-                            kelola lanskap.
+                        <div class="stat-box">
+                          <div class="stat-num">{{ $policyCount }}</div>
+                          <div class="stat-label">Policy Brief &amp; Kajian</div>
+                          <p class="stat-desc">
+                            Rekomendasi kebijakan berbasis bukti untuk tata kelola lanskap.
                           </p>
                         </div>
-                        <div class="pstat-card">
-                          <div class="pstat-num">11</div>
-                          <h4>Laporan Program</h4>
-                          <p>
+                        <div class="stat-box">
+                          <div class="stat-num">{{ count($articles) }}</div>
+                          <div class="stat-label">Laporan Program</div>
+                          <p class="stat-desc">
                             Dokumentasi pelaksanaan program restorasi dan desa.
                           </p>
                         </div>
