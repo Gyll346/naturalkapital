@@ -3124,7 +3124,7 @@
               gap: 48px;
               max-width: 1100px;
               margin: 0 auto;
-              align-items: center;
+              align-items: start;
             }
             .intro-text h3 {
               font-size: 26px;
@@ -3167,6 +3167,7 @@
               border-radius: 18px;
               padding: 32px 28px;
               box-shadow: 0 10px 30px rgba(17, 119, 16, 0.06);
+              margin-top: 46px;
             }
             .intro-card h4 {
               font-size: 18px;
@@ -3483,6 +3484,9 @@
               .intro-grid {
                 grid-template-columns: 1fr;
               }
+              .intro-card {
+                margin-top: 0;
+              }
               .docs-grid {
                 grid-template-columns: repeat(2, 1fr);
               }
@@ -3588,19 +3592,17 @@
                             "
                           >
                             <span class="section-badge"
-                              >FILSAFAT &amp; PERADABAN</span
+                              >MERAWAT KEHIDUPAN &amp; PERADABAN</span
                             ><span class="line" style="flex: 0.5"></span>
                           </div>
                           <h3>
-                            Kebudayaan Sebagai Fondasi Kelestarian Modal Alam
+                            Perempuan: Rahim Kehidupan dan Penjaga Keberlanjutan Bumi
                           </h3>
                           <p>
-                            Kelestarian alam tidak dapat dipisahkan dari cara
-                            pandang kebudayaan manusia yang mendiaminya. YNKI
-                            membuka ruang refleksi pemikiran untuk mengkaji
-                            bagaimana nilai budaya, seni, tradisi, dan etika
-                            moral berinteraksi dengan bentang alam Kalimantan
-                            Barat.
+                            Perempuan memegang peran paling mendasar dalam menjaga kelangsungan hidup manusia dan bentang alam. Dari rahimnya lahir generasi penerus bangsa, dan melalui ketulusan tangannyalah anak-anak dibesarkan dengan cinta, ketangguhan, serta nilai-nilai luhur kehidupan.
+                          </p>
+                          <p>
+                            Ikatan eksistensial inilah yang menempatkan wanita sebagai bagian tak terpisahkan dari ikhtiar merawat bumi: bagi seorang perempuan, merawat tanah pekarangan, menjaga keanekaragaman benih pangan, dan melindungi kejernihan mata air bukan sekadar rutinitas, melainkan perpanjangan dari naluri pengasuhan (<em>ethics of care</em>) demi memastikan anak-anak yang ia besarkan memiliki masa depan yang aman, bermartabat, dan berdaya.
                           </p>
                           <ul class="intro-list">
                             <li>
@@ -3613,10 +3615,8 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                               </svg>
                               <div>
-                                <strong>Nilai Intrinsik Ekosistem:</strong>
-                                Menggeser paradigma eksploitatif menuju
-                                penghormatan atas hak alam dan generasi masa
-                                depan.
+                                <strong>Melahirkan &amp; Membesarkan Generasi:</strong>
+                                Peran agung melahirkan dan mendidik generasi masa depan menjadikan perempuan aktor sentral dalam menjaga kelestarian ruang hidup tempat anak cucu bertumbuh.
                               </div>
                             </li>
                             <li>
@@ -3629,9 +3629,8 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                               </svg>
                               <div>
-                                <strong>Kearifan Lokal Komunitas:</strong>
-                                Mendokumentasikan tradisi adat dalam menjaga
-                                keseimbangan hutan dan perairan.
+                                <strong>Etika Pengasuhan (Ethics of Care):</strong>
+                                Pendekatan perempuan terhadap ekosistem berakar pada pemulihan dan regenerasi kehidupan—mengutamakan keberlanjutan hidup di atas eksploitasi sesaat.
                               </div>
                             </li>
                             <li>
@@ -3644,9 +3643,8 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                               </svg>
                               <div>
-                                <strong>Kritik Sosial &amp; Geopolitik:</strong>
-                                Refleksi tajam terhadap tata kelola sumber daya
-                                alam, ruang publik, dan keadilan sosial.
+                                <strong>Benteng Ketahanan Pangan &amp; Air Bersih:</strong>
+                                Menjaga kedaulatan dapur keluarga melalui kebun bergizi, perlindungan mata air, dan sanitasi sehat di lingkungan gambut dan pedesaan.
                               </div>
                             </li>
                             <li>
@@ -3659,9 +3657,8 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                               </svg>
                               <div>
-                                <strong>Ruang Dialog Terbuka:</strong> Menampung
-                                pemikiran para akademisi, budayawan, dan aktivis
-                                tapak.
+                                <strong>Pewaris Kearifan Antargenerasi:</strong>
+                                Mentransmisikan pengetahuan lokal, pemanfaatan tanaman herbal, dan etika menghormati hutan kepada anak cucu sejak usia dini.
                               </div>
                             </li>
                           </ul>
@@ -3669,17 +3666,12 @@
 
                         <div class="intro-card">
                           <span class="section-badge green">REFLEKSI YNKI</span>
-                          <h4>Harmoni Manusia dan Alam</h4>
+                          <h4>Ibu Bumi dan Ibu Generasi</h4>
                           <p>
-                            Memahami lanskap secara utuh berarti merangkul
-                            denyut kebudayaan yang hidup di dalamnya—karena di
-                            balik setiap pohon dan aliran sungai, terdapat
-                            peradaban yang berupaya menjaga keseimbangan.
+                            Merawat alam sesungguhnya adalah wujud cinta paling nyata kepada anak-anak kita. Di balik bentang alam yang sehat dan pulih, senantiasa berdenyut ketulusan tangan perempuan yang merawat bumi seraya membesarkan harapan masa depan.
                           </p>
                           <div class="card-highlight">
-                            "Kebudayaan sejati adalah peradaban yang mampu
-                            memelihara tanah tempat ia bertumbuh dan mewariskan
-                            mata air bagi generasi masa depan."
+                            "Wanita adalah denyut pertama yang merawat kehidupan. Ketika ia melahirkan dan membesarkan anak-anaknya, ia sekaligus memeluk amanah suci untuk menjaga bumi tetap lestari sebagai rumah bagi generasi penerus."
                           </div>
                         </div>
                       </div>
@@ -3796,7 +3788,7 @@
                   >
                     <div class="ynki-container">
                       <div style="text-align: center">
-                        <span class="section-badge">FILSAFAT LANSKAP</span>
+                        <span class="section-badge">FILSAFAT LANSKAP &amp; ETIKA PENGASUHAN</span>
                         <h2
                           style="
                             font-size: clamp(22px, 3vw, 34px);
@@ -3805,7 +3797,7 @@
                             margin: 12px 0;
                           "
                         >
-                          Etika Lingkungan &amp; Transformasi Nilai
+                          Etika Kepedulian &amp; Tanggung Jawab Antargenerasi
                         </h2>
                         <p
                           style="
@@ -3815,33 +3807,25 @@
                             margin: 0 auto;
                           "
                         >
-                          Memulihkan hubungan harmonis antara peradaban manusia
-                          dan modal alam melalui kearifan tradisi dan etika
-                          ekologi.
+                          Menautkan peran perempuan sebagai pemelihara kehidupan dengan keadilan ekologis bentang alam masa depan.
                         </p>
                       </div>
 
                       <div class="unggulan-grid">
                         <div class="ung-card">
-                          <div class="ung-meta">TRANSFORMASI PARADIGMA</div>
-                          <h3>Dari Antroposentrisme Menuju Ekosentrisme</h3>
+                          <div class="ung-meta">DARI EKSPLOITASI KE PENGASUHAN</div>
+                          <h3>Etika Kepedulian (Ethics of Care)</h3>
                           <p>
-                            Mengajak masyarakat dan pengambil kebijakan untuk
-                            menempatkan keseimbangan biosfer sebagai landasan
-                            utama dalam setiap perencanaan pembangunan dan
-                            investasi ekonomi lanskap.
+                            Memandang alam bukan sebagai komoditas eksploitasi, melainkan sistem kehidupan yang harus diasuh, dirawat, dan dipulihkan dengan penuh kehati-hatian sebagaimana seorang ibu membesarkan anak-anaknya.
                           </p>
                         </div>
                         <div class="ung-card">
-                          <div class="ung-meta">ETIKA GENERASI MENDATANG</div>
+                          <div class="ung-meta">KEADILAN INTERGENERASI</div>
                           <h3>
-                            Keadilan Intergenerasi dalam Pengelolaan Lanskap
+                            Mewariskan Bumi yang Sehat bagi Anak Cucu
                           </h3>
                           <p>
-                            Menegaskan tanggung jawab moral generasi hari ini
-                            untuk mewariskan modal alam yang sehat,
-                            keanekaragaman hayati yang lestari, dan ketahanan
-                            iklim bagi anak cucu di masa depan.
+                            Melahirkan dan membesarkan anak adalah ikrar antargenerasi: memastikan setiap anak yang lahir kelak tetap menikmati air jernih, pangan bergizi, dan hidup aman di bentang alam yang lestari.
                           </p>
                         </div>
                       </div>
