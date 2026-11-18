@@ -3531,7 +3531,7 @@
                       <div class="stats-row">
                         <div class="stat-box">
                           <div class="stat-num">
-                            60<span class="plus">+</span>
+                            {{ count($articles) + count($legacyArticles ?? []) }}
                           </div>
                           <div class="stat-label">Artikel &amp; Liputan</div>
                           <p class="stat-desc">
