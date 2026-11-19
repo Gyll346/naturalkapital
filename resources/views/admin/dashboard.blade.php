@@ -294,7 +294,7 @@
 
 
     <!-- Tabel Log Aktivitas Admin -->
-    <div class="card-table">
+    <div class="card-table" id="activity-logs">
         <div class="card-header">
             <h3>Riwayat Aktivitas Admin (Audit Trail)</h3>
         </div>
@@ -330,5 +330,11 @@
                 </tbody>
             </table>
         </div>
+
+        @if ($recentLogs->hasPages())
+            <div style="padding: 16px 20px; border-top: 1px solid var(--border);">
+                {{ $recentLogs->fragment('activity-logs')->links() }}
+            </div>
+        @endif
     </div>
 @endsection

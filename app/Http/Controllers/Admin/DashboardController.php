@@ -61,8 +61,7 @@ class DashboardController extends Controller
 
         $recentLogs = ActivityLog::with('user')
             ->latest()
-            ->take(6)
-            ->get();
+            ->paginate(10);
 
         return view('admin.dashboard', compact(
             'totalTeamMembersCount',

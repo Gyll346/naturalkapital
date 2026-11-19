@@ -412,6 +412,68 @@
             margin-bottom: 18px;
         }
 
+        /* ======================== PAGINATION CLEARFIX ======================== */
+        .pagination.clearfix {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px auto 10px;
+            clear: both;
+        }
+
+        .pagination.clearfix a,
+        .pagination.clearfix span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            padding: 0 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 1.5px solid #d4e8d3;
+            background: #ffffff;
+            color: #1a422b;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .pagination.clearfix a:hover {
+            background: #e8f5ec;
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .pagination.clearfix .current,
+        .pagination.clearfix span.current {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(17, 119, 16, 0.25);
+            cursor: default;
+        }
+
+        .pagination.clearfix .pagination-prev,
+        .pagination.clearfix .pagination-next {
+            padding: 0 14px;
+            font-size: 12.5px;
+        }
+
+        .pagination.clearfix .disabled {
+            opacity: 0.4;
+            pointer-events: none;
+            cursor: not-allowed;
+            background: #f9fafb;
+            border-color: #e5e7eb;
+            color: #9ca3af;
+        }
+
         /* Mobile Hamburger & Overlay */
         .btn-hamburger {
             display: none;
