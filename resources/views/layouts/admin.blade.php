@@ -497,6 +497,95 @@
             }
         }
 
+        /* Custom System Delete Confirmation Modal */
+        .ynki-modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(14, 36, 27, 0.65);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            animation: ynkiModalFadeIn 0.2s ease-out;
+        }
+
+        .ynki-modal-card {
+            background: #ffffff;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 420px;
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+            animation: ynkiModalScaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .ynki-modal-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #ffebe9;
+            color: #cf222e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .ynki-modal-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            color: #1f2328;
+            margin-bottom: 8px;
+        }
+
+        .ynki-modal-desc {
+            font-size: 13.5px;
+            color: #59636e;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .ynki-modal-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .btn-danger-delete {
+            background: #cf222e;
+            color: #ffffff;
+            border: 1px solid #cf222e;
+            padding: 10px 20px;
+            font-size: 13.5px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-danger-delete:hover {
+            background: #a40e26;
+            border-color: #a40e26;
+        }
+
+        @keyframes ynkiModalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes ynkiModalScaleUp {
+            from { transform: scale(0.92); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
     </style>
     @stack('styles')
 </head>
@@ -723,8 +812,109 @@
                     });
                 });
             }
+
+            // Global Custom System Delete Confirmation Modal Handler
+            (function() {
+                var modal = document.getElementById('deleteConfirmModal');
+                var msgEl = document.getElementById('deleteModalMessage');
+                var btnConfirm = document.getElementById('deleteModalConfirm');
+                var btnCancel = document.getElementById('deleteModalCancel');
+                var targetForm = null;
+
+                if (!modal || !btnConfirm || !btnCancel) return;
+
+                function sanitizeDeleteForms() {
+                    document.querySelectorAll('form').forEach(function(form) {
+                        var methodInput = form.querySelector('input[name="_method"]');
+                        if (methodInput && methodInput.value.toUpperCase() === 'DELETE') {
+                            if (form.onsubmit) {
+                                var str = form.onsubmit.toString();
+                                var match = str.match(/confirm\(\s*['"](.*?)['"]\s*\)/);
+                                if (match && match[1]) {
+                                    form.setAttribute('data-confirm', match[1]);
+                                }
+                                form.onsubmit = null;
+                                form.removeAttribute('onsubmit');
+                            }
+                        }
+                    });
+                }
+
+                sanitizeDeleteForms();
+                setTimeout(sanitizeDeleteForms, 300);
+
+                document.addEventListener('submit', function(e) {
+                    var form = e.target;
+                    var methodInput = form.querySelector('input[name="_method"]');
+                    var isDelete = methodInput && methodInput.value.toUpperCase() === 'DELETE';
+
+                    if (isDelete && !form.dataset.confirmed) {
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
+                        form.onsubmit = null;
+                        targetForm = form;
+
+                        var customMsg = form.getAttribute('data-confirm');
+                        if (!customMsg && form.getAttribute('onsubmit')) {
+                            var match = form.getAttribute('onsubmit').match(/confirm\(\s*['"](.*?)['"]\s*\)/);
+                            if (match && match[1]) customMsg = match[1];
+                        }
+
+                        msgEl.textContent = customMsg || 'Apakah Anda yakin ingin menghapus data ini? Data yang telah dihapus tidak dapat dipulihkan.';
+                        modal.style.display = 'flex';
+                        return false;
+                    }
+                }, true);
+
+                btnCancel.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                    targetForm = null;
+                });
+
+                btnConfirm.addEventListener('click', function() {
+                    if (targetForm) {
+                        targetForm.dataset.confirmed = 'true';
+                        targetForm.submit();
+                    }
+                    modal.style.display = 'none';
+                });
+
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                        targetForm = null;
+                    }
+                });
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && modal.style.display === 'flex') {
+                        modal.style.display = 'none';
+                        targetForm = null;
+                    }
+                });
+            })();
         });
     </script>
+
+    <!-- Custom System Delete Confirmation Modal -->
+    <div id="deleteConfirmModal" class="ynki-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
+        <div class="ynki-modal-card">
+            <div class="ynki-modal-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                </svg>
+            </div>
+            <h3 class="ynki-modal-title" id="deleteModalTitle">Konfirmasi Hapus</h3>
+            <p class="ynki-modal-desc" id="deleteModalMessage">Apakah Anda yakin ingin menghapus data ini? Tindakan ini tidak dapat dibatalkan.</p>
+            <div class="ynki-modal-actions">
+                <button type="button" class="btn-action btn-outline" id="deleteModalCancel" style="padding: 10px 20px; font-size: 13.5px;">Batal</button>
+                <button type="button" class="btn-action btn-danger-delete" id="deleteModalConfirm">Ya, Hapus</button>
+            </div>
+        </div>
+    </div>
 
     @stack('scripts')
 </body>
