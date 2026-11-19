@@ -43,7 +43,8 @@ class MediaStoryController extends Controller
             'location' => 'nullable|string|max:150',
             'caption' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:10240',
-            'youtube_url' => 'nullable|string|max:255',
+            'video_file' => 'nullable|mimes:mp4,mov,ogg,webm,m4v|max:102400',
+            'youtube_url' => 'nullable|string|max:500',
             'photographer_credits' => 'nullable|string|max:150',
             'sort_order' => 'nullable|integer',
             'is_active' => 'nullable|boolean',
@@ -54,6 +55,12 @@ class MediaStoryController extends Controller
             $imagePath = $this->compressAndSavePhoto($request->file('image'));
         }
 
+        $videoUrl = $validated['youtube_url'] ?? null;
+        if ($request->hasFile('video_file')) {
+            $videoPath = $request->file('video_file')->store('stories/videos', 'public');
+            $videoUrl = '/storage/' . $videoPath;
+        }
+
         $story = MediaStory::create([
             'title' => $validated['title'],
             'media_type' => $validated['media_type'],
@@ -61,7 +68,7 @@ class MediaStoryController extends Controller
             'location' => $validated['location'] ?? null,
             'caption' => $validated['caption'] ?? null,
             'image_path' => $imagePath,
-            'youtube_url' => $validated['youtube_url'] ?? null,
+            'youtube_url' => $videoUrl,
             'photographer_credits' => $validated['photographer_credits'] ?? null,
             'sort_order' => $validated['sort_order'] ?? 0,
             'is_active' => $request->has('is_active'),
@@ -95,7 +102,8 @@ class MediaStoryController extends Controller
             'location' => 'nullable|string|max:150',
             'caption' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:10240',
-            'youtube_url' => 'nullable|string|max:255',
+            'video_file' => 'nullable|mimes:mp4,mov,ogg,webm,m4v|max:102400',
+            'youtube_url' => 'nullable|string|max:500',
             'photographer_credits' => 'nullable|string|max:150',
             'sort_order' => 'nullable|integer',
             'is_active' => 'nullable|boolean',
@@ -108,13 +116,27 @@ class MediaStoryController extends Controller
             $story->image_path = $this->compressAndSavePhoto($request->file('image'));
         }
 
+        $videoUrl = $story->youtube_url;
+        if ($request->hasFile('video_file')) {
+            if ($story->youtube_url && str_starts_with($story->youtube_url, '/storage/')) {
+                $oldPath = ltrim(str_replace('/storage/', '', $story->youtube_url), '/');
+                if (Storage::disk('public')->exists($oldPath)) {
+                    Storage::disk('public')->delete($oldPath);
+                }
+            }
+            $videoPath = $request->file('video_file')->store('stories/videos', 'public');
+            $videoUrl = '/storage/' . $videoPath;
+        } elseif ($request->filled('youtube_url')) {
+            $videoUrl = $validated['youtube_url'];
+        }
+
         $story->update([
             'title' => $validated['title'],
             'media_type' => $validated['media_type'],
             'category' => $validated['category'] ?? 'Dokumentasi Lapangan',
             'location' => $validated['location'] ?? null,
             'caption' => $validated['caption'] ?? null,
-            'youtube_url' => $validated['youtube_url'] ?? null,
+            'youtube_url' => $videoUrl,
             'photographer_credits' => $validated['photographer_credits'] ?? null,
             'sort_order' => $validated['sort_order'] ?? 0,
             'is_active' => $request->has('is_active'),
@@ -139,6 +161,13 @@ class MediaStoryController extends Controller
             Storage::disk('public')->delete($story->image_path);
         }
 
+        if ($story->youtube_url && str_starts_with($story->youtube_url, '/storage/')) {
+            $oldPath = ltrim(str_replace('/storage/', '', $story->youtube_url), '/');
+            if (Storage::disk('public')->exists($oldPath)) {
+                Storage::disk('public')->delete($oldPath);
+            }
+        }
+
         $title = $story->title;
         $story->delete();
 
@@ -150,7 +179,7 @@ class MediaStoryController extends Controller
             'ip_address' => $request->ip(),
         ]);
 
-        return redirect()->route('admin.media-stories.index')->with('success', 'Story media foto/video berhasil dihapus!');
+        return redirect()->back(fallback: route('admin.media-stories.index'))->with('success', 'Story media foto/video berhasil dihapus!');
     }
 
     /**

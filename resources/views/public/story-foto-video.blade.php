@@ -3722,6 +3722,10 @@
                           <a href="{{ $v->youtube_url }}" target="_blank" rel="noopener noreferrer" class="v-thumb" style="position:relative;overflow:hidden;height:200px;background:#133324;display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer;">
                             @if($v->thumbnail_url)
                             <img src="{{ $v->thumbnail_url }}" alt="{{ $v->title }}" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" loading="lazy">
+                            @else
+                            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0e241b,#1c4a35);color:#a3e0a2;">
+                              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            </div>
                             @endif
                             <div class="v-play" style="position:relative;z-index:2;">
                               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -3733,6 +3737,10 @@
                           <div class="v-thumb" style="position:relative;overflow:hidden;height:200px;background:#133324;display:flex;align-items:center;justify-content:center;">
                             @if($v->thumbnail_url)
                             <img src="{{ $v->thumbnail_url }}" alt="{{ $v->title }}" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" loading="lazy">
+                            @else
+                            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0e241b,#1c4a35);color:#a3e0a2;">
+                              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            </div>
                             @endif
                             <div class="v-play" style="position:relative;z-index:2;">
                               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -3746,7 +3754,7 @@
                             <h3>{{ $v->title }}</h3>
                             <p>{{ $v->caption }}</p>
                             @if($v->youtube_url)
-                            <a href="{{ $v->youtube_url }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;color:#d2f0d1;font-size:13px;font-weight:700;text-decoration:none;">Tonton di YouTube &rarr;</a>
+                            <a href="{{ $v->youtube_url }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;color:#d2f0d1;font-size:13px;font-weight:700;text-decoration:none;">{{ $v->video_label }} &rarr;</a>
                             @endif
                           </div>
                         </div>

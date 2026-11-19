@@ -43,4 +43,37 @@ class MediaStory extends Model
 
         return null;
     }
+
+    public function getVideoPlatformAttribute(): string
+    {
+        $url = $this->youtube_url ?? '';
+        if (preg_match('/(youtube\.com|youtu\.be)/i', $url)) {
+            return 'youtube';
+        }
+        if (preg_match('/instagram\.com/i', $url)) {
+            return 'instagram';
+        }
+        if (preg_match('/(facebook\.com|fb\.watch)/i', $url)) {
+            return 'facebook';
+        }
+        if (preg_match('/tiktok\.com/i', $url)) {
+            return 'tiktok';
+        }
+        if (preg_match('/\.(mp4|webm|ogg|mov)$/i', $url) || str_starts_with($url, '/storage/')) {
+            return 'upload';
+        }
+        return 'link';
+    }
+
+    public function getVideoLabelAttribute(): string
+    {
+        return match ($this->video_platform) {
+            'youtube' => 'Tonton di YouTube',
+            'instagram' => 'Tonton di Instagram',
+            'facebook' => 'Tonton di Facebook',
+            'tiktok' => 'Tonton di TikTok',
+            'upload' => 'Putar Video',
+            default => 'Tonton Video',
+        };
+    }
 }

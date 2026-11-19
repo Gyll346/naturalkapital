@@ -35,8 +35,8 @@
                     <div class="form-group">
                         <label class="form-label" for="media_type">Tipe Media</label>
                         <select class="form-control" id="media_type" name="media_type" required onchange="toggleMediaInputs(this.value)">
-                            <option value="photo">Foto Dokumentasi Lapangan</option>
-                            <option value="video">Video Dokumenter (YouTube URL)</option>
+                            <option value="photo" {{ old('media_type') === 'photo' ? 'selected' : '' }}>Foto Dokumentasi Lapangan</option>
+                            <option value="video" {{ old('media_type') === 'video' ? 'selected' : '' }}>Video Dokumenter (YouTube, IG, FB, TikTok, Upload)</option>
                         </select>
                     </div>
 
@@ -63,18 +63,26 @@
                 </div>
 
                 <div class="form-group" id="photo_input_group">
-                    <label class="form-label" for="image">
+                    <label class="form-label" for="image" id="image_label">
                         Unggah File Foto (JPG/PNG/WebP)
                         <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Maks 10MB, otomatis dikompresi & dioptimasi WebP)</span>
                     </label>
                     <input type="file" class="form-control" id="image" name="image" accept="image/*">
-                    <small style="color: var(--text-muted); font-size: 12px;">Sistem otomatis mengoptimasi ukuran gambar dokumentasi lapangan agar cepat dibuka pengunjung.</small>
+                    <small style="color: var(--text-muted); font-size: 12px;" id="image_help">Sistem otomatis mengoptimasi ukuran gambar dokumentasi lapangan agar cepat dibuka pengunjung.</small>
                 </div>
 
-                <div class="form-group" id="video_input_group" style="display: none;">
-                    <label class="form-label" for="youtube_url">Tautan Video YouTube</label>
-                    <input type="url" class="form-control" id="youtube_url" name="youtube_url" value="{{ old('youtube_url') }}" placeholder="https://www.youtube.com/watch?v=...">
-                    <small style="color: var(--text-muted); font-size: 12px;">Masukkan URL video YouTube yang dapat diputar.</small>
+                <div id="video_input_group" style="display: none;">
+                    <div class="form-group">
+                        <label class="form-label" for="youtube_url">Tautan Video (YouTube, Instagram, Facebook, TikTok, dll.)</label>
+                        <input type="text" class="form-control" id="youtube_url" name="youtube_url" value="{{ old('youtube_url') }}" placeholder="https://www.youtube.com/... atau https://www.instagram.com/... atau https://www.facebook.com/...">
+                        <small style="color: var(--text-muted); font-size: 12px;">Masukkan tautan video dari YouTube, Instagram Reels/Post, Facebook Video, TikTok, atau link video lainnya.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="video_file">ATAU Unggah File Video Sendiri (MP4 / WebM / MOV)</label>
+                        <input type="file" class="form-control" id="video_file" name="video_file" accept="video/mp4,video/webm,video/ogg,video/quicktime">
+                        <small style="color: var(--text-muted); font-size: 12px;">Opsional jika Anda memiliki file video sendiri di komputer (maksimal 100MB).</small>
+                    </div>
                 </div>
 
                 <div class="form-group" style="display: flex; align-items: center; gap: 8px;">
@@ -92,13 +100,21 @@
 
     <script>
         function toggleMediaInputs(val) {
+            var videoGroup = document.getElementById('video_input_group');
+            var imageLabel = document.getElementById('image_label');
+            var imageHelp = document.getElementById('image_help');
             if (val === 'video') {
-                document.getElementById('video_input_group').style.display = 'block';
-                document.getElementById('photo_input_group').style.display = 'none';
+                videoGroup.style.display = 'block';
+                imageLabel.innerHTML = 'Unggah Sampul / Thumbnail Video (JPG/PNG/WebP) <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Disarankan untuk video IG/FB/Upload)</span>';
+                imageHelp.textContent = 'Gambar sampul depan video yang akan ditampilkan di galeri.';
             } else {
-                document.getElementById('video_input_group').style.display = 'none';
-                document.getElementById('photo_input_group').style.display = 'block';
+                videoGroup.style.display = 'none';
+                imageLabel.innerHTML = 'Unggah File Foto (JPG/PNG/WebP) <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Maks 10MB, otomatis dikompresi & dioptimasi WebP)</span>';
+                imageHelp.textContent = 'Sistem otomatis mengoptimasi ukuran gambar dokumentasi lapangan agar cepat dibuka pengunjung.';
             }
         }
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleMediaInputs(document.getElementById('media_type').value);
+        });
     </script>
 @endsection

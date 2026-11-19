@@ -78,7 +78,7 @@
                             </td>
                             <td>
                                 @if ($s->media_type === 'video')
-                                    <span class="badge badge-warning">Video</span>
+                                    <span class="badge badge-warning">Video ({{ ucfirst($s->video_platform) }})</span>
                                 @else
                                     <span class="badge badge-success">Foto</span>
                                 @endif
