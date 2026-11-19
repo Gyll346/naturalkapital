@@ -318,7 +318,7 @@
                             <td><span class="badge badge-success">{{ $log->action }}</span></td>
                             <td>{{ $log->module }}</td>
                             <td>{{ $log->details }}</td>
-                            <td><code>{{ $log->ip_address }}</code></td>
+                            <td><code>{{ $log->formatted_ip }}</code></td>
                         </tr>
                     @empty
                         <tr>
