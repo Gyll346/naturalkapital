@@ -185,7 +185,7 @@ class ArticleController extends Controller
             'user_agent' => $request->userAgent(),
         ]);
 
-        return redirect()->route('admin.articles.index')->with('success', 'Artikel berhasil dihapus.');
+        return redirect()->back(fallback: route('admin.articles.index'))->with('success', 'Artikel berhasil dihapus.');
     }
 
     /**
