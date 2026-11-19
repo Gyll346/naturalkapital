@@ -790,6 +790,23 @@
             var sidebar = document.querySelector('.admin-sidebar');
             var backdrop = document.getElementById('sidebarBackdrop');
 
+            // Pertahankan posisi scroll sidebar saat navigasi menu
+            if (sidebar) {
+                var savedScroll = sessionStorage.getItem('admin_sidebar_scroll');
+                if (savedScroll !== null) {
+                    sidebar.scrollTop = parseInt(savedScroll, 10);
+                } else {
+                    var activeLink = sidebar.querySelector('.menu-link.active');
+                    if (activeLink) {
+                        activeLink.scrollIntoView({ block: 'nearest' });
+                    }
+                }
+
+                sidebar.addEventListener('scroll', function() {
+                    sessionStorage.setItem('admin_sidebar_scroll', sidebar.scrollTop);
+                }, { passive: true });
+            }
+
             if (toggleBtn && sidebar && backdrop) {
                 toggleBtn.addEventListener('click', function() {
                     sidebar.classList.toggle('show');
@@ -801,10 +818,11 @@
                     backdrop.classList.remove('show');
                 });
 
-                // Tutup sidebar saat link di mobile diklik
+                // Tutup sidebar saat link di mobile diklik & simpan posisi scroll
                 var menuLinks = sidebar.querySelectorAll('.menu-link');
                 menuLinks.forEach(function(link) {
                     link.addEventListener('click', function() {
+                        sessionStorage.setItem('admin_sidebar_scroll', sidebar.scrollTop);
                         if (window.innerWidth <= 992) {
                             sidebar.classList.remove('show');
                             backdrop.classList.remove('show');
