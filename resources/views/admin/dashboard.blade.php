@@ -60,6 +60,7 @@
         <!-- Grid 10 Modul Kelola File & Konten -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 10px;">
             
+            @if (auth()->user()->isEditor())
             <!-- 1. Tim & Pengurus -->
             <div style="background: #fbfdfc; border: 1.5px solid #d2e8d1; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
@@ -107,7 +108,9 @@
                     <a href="{{ route('admin.portfolios.index') }}" class="btn-action btn-outline" style="font-size: 12px; padding: 6px 12px;">Kelola File</a>
                 </div>
             </div>
+            @endif
 
+            @if (auth()->user()->isFinance())
             <!-- 4. Transparansi & Laporan -->
             <div style="background: #fbfdfc; border: 1.5px solid #d2e8d1; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
@@ -123,7 +126,9 @@
                     <a href="{{ route('admin.transparency.index') }}" class="btn-action btn-outline" style="font-size: 12px; padding: 6px 12px;">Kelola File</a>
                 </div>
             </div>
+            @endif
 
+            @if (auth()->user()->isEditor())
             <!-- 5. News & Features -->
             <div style="background: #fbfdfc; border: 1.5px solid #d2e8d1; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
@@ -251,6 +256,7 @@
                     <a href="{{ route('admin.media-stories.index') }}" class="btn-action btn-outline" style="font-size: 12px; padding: 6px 12px;">Kelola Galeri</a>
                 </div>
             </div>
+            @endif
 
             <!-- 11. Pesan Kontak Masuk -->
             <div style="background: #fffbf7; border: 1.5px solid #fed7aa; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between;">

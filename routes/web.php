@@ -151,26 +151,20 @@ Route::prefix('admin')->middleware(['auth', 'prevent-back'])->name('admin.')->gr
     Route::patch('participations/{id}/unread', [ParticipationController::class, 'markAsUnread'])->name('participations.unread');
     Route::delete('participations/{id}', [ParticipationController::class, 'destroy'])->name('participations.destroy');
     
-    // CRUD Tim & Pengurus YNKI
-    Route::resource('teams', TeamMemberController::class);
+    // CRUD Dokumen Transparansi & Kebijakan (Superadmin & Finance)
+    Route::middleware('role:finance')->group(function () {
+        Route::resource('transparency', TransparencyController::class);
+    });
     
-    // CRUD Komponen Pendukung LGOS
-    Route::resource('lgos', LgosController::class);
-    
-    // CRUD Portfolio Program & Proyek
-    Route::resource('portfolios', PortfolioController::class);
-    
-    // CRUD Dokumen Transparansi & Kebijakan
-    Route::resource('transparency', TransparencyController::class);
-    
-    // CRUD Story Foto & Video Lapangan
-    Route::resource('media-stories', MediaStoryController::class);
-    
-    // CRUD Liputan Media Eksternal
-    Route::resource('media-coverages', MediaCoverageController::class);
-    
-    // CRUD Artikel Berita & Dokumen Riset
-    Route::resource('articles', ArticleController::class);
+    // CRUD Konten, Media & Tim (Superadmin & Editor)
+    Route::middleware('role:editor')->group(function () {
+        Route::resource('teams', TeamMemberController::class);
+        Route::resource('lgos', LgosController::class);
+        Route::resource('portfolios', PortfolioController::class);
+        Route::resource('media-stories', MediaStoryController::class);
+        Route::resource('media-coverages', MediaCoverageController::class);
+        Route::resource('articles', ArticleController::class);
+    });
 });
 
 /*

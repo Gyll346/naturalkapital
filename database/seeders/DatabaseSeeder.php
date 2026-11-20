@@ -31,6 +31,28 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
+        // 2. Akun Staf Keuangan (Finance)
+        User::firstOrCreate(
+            ['email' => 'finance@naturalkapital.or.id'],
+            [
+                'name' => 'Staf Keuangan YNKI',
+                'password' => Hash::make('FinanceYNKI2026!'),
+                'role' => 'finance',
+                'status' => 'active',
+            ]
+        );
+
+        // 3. Akun Tim Redaksi (Editor)
+        User::firstOrCreate(
+            ['email' => 'editor@naturalkapital.or.id'],
+            [
+                'name' => 'Tim Redaksi YNKI',
+                'password' => Hash::make('EditorYNKI2026!'),
+                'role' => 'editor',
+                'status' => 'active',
+            ]
+        );
+
         // 2. Rekening Bank & QRIS Default
         DonationAccount::firstOrCreate(
             ['account_number' => '146-00-1234567-8'],

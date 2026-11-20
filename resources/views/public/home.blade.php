@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html
   class="avada-html-layout-wide avada-html-header-position-top avada-is-100-percent-template"
   lang="id"
@@ -3743,7 +3743,7 @@
                             "
                           />
                           <div class="mengapa-visual-badge">
-                            <strong>10+</strong>
+                            <strong>12+</strong>
                             Kabupaten Mitra di Kalbar
                           </div>
                         </div>
