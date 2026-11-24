@@ -3089,19 +3089,26 @@
             }
             .lead-photo-wrap {
               width: 100%;
-              height: 220px;
-              background: #eaf3eb;
+              height: 280px;
+              background: #f4f8f5;
               overflow: hidden;
               position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 10px;
             }
             .lead-photo-wrap img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              transition: transform 0.4s ease;
+              max-width: 100%;
+              max-height: 100%;
+              width: auto;
+              height: auto;
+              object-fit: contain !important;
+              object-position: center;
+              display: block;
             }
             .lead-card:hover .lead-photo-wrap img {
-              transform: scale(1.06);
+              transform: none !important;
             }
             .lead-body {
               padding: 22px;
@@ -3506,11 +3513,17 @@
                           @php
                             $photoSrc = $member->photo_path
                               ? (str_starts_with($member->photo_path, 'http') || str_starts_with($member->photo_path, '/') ? $member->photo_path : '/storage/' . $member->photo_path)
-                              : '/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp';
+                              : null;
                           @endphp
                           <div class="lead-card">
                             <div class="lead-photo-wrap">
-                              <img src="{{ $photoSrc }}" alt="{{ $member->full_name }}" loading="lazy" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
+                              @if($photoSrc)
+                                <img src="{{ $photoSrc }}" alt="{{ $member->full_name }}" loading="lazy" />
+                              @else
+                                <div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:#a3c9a8;">
+                                  <svg width="68" height="68" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                </div>
+                              @endif
                             </div>
                             <div class="lead-body">
                               <h3 class="lead-name">{{ $member->full_name }}</h3>
@@ -3573,11 +3586,17 @@
                             @php
                               $photoSrc = $member->photo_path
                                 ? (str_starts_with($member->photo_path, 'http') || str_starts_with($member->photo_path, '/') ? $member->photo_path : '/storage/' . $member->photo_path)
-                                : '/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp';
+                                : null;
                             @endphp
                             <div class="lead-card">
                               <div class="lead-photo-wrap">
-                                <img src="{{ $photoSrc }}" alt="{{ $member->full_name }}" loading="lazy" onerror="this.src='/wp-content/uploads/2026/05/Michael-Eko-for-YNKI__MG_7449-600x600.webp'" />
+                                @if($photoSrc)
+                                  <img src="{{ $photoSrc }}" alt="{{ $member->full_name }}" loading="lazy" />
+                                @else
+                                  <div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:#a3c9a8;">
+                                    <svg width="68" height="68" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                  </div>
+                                @endif
                               </div>
                               <div class="lead-body">
                                 <h3 class="lead-name">{{ $member->full_name }}</h3>
