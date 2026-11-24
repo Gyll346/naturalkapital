@@ -3111,17 +3111,19 @@
               transform: none !important;
             }
             .lead-body {
-              padding: 22px;
+              padding: 20px 16px;
               display: flex;
               flex-direction: column;
               flex: 1;
             }
             .lead-name {
-              font-size: 18px;
+              font-size: clamp(15px, 1.15vw, 17px);
               font-weight: 800;
               color: #0e241b;
               margin: 0 0 6px;
               line-height: 1.3;
+              overflow-wrap: break-word;
+              word-break: break-word;
             }
             .lead-role {
               font-size: 13px;
@@ -3415,10 +3417,12 @@
             }
 
             /* Responsive */
-            @media (max-width: 1024px) {
+            @media (max-width: 1120px) {
               .leadership-grid-4 {
                 grid-template-columns: repeat(2, 1fr);
               }
+            }
+            @media (max-width: 1024px) {
               .expertise-grid-9 {
                 grid-template-columns: repeat(2, 1fr);
               }
