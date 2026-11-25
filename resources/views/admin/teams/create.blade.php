@@ -51,7 +51,7 @@
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
                     <div>
                         <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Urutan Tampilan</label>
-                        <input type="number" name="sort_order" value="0" style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px;">
+                        <input type="number" name="sort_order" value="{{ old('sort_order', $nextOrder) }}" style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px;">
                     </div>
                     <div>
                         <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Status *</label>

@@ -55,7 +55,13 @@ class TeamMemberController extends Controller
     public function create()
     {
         $categories = TeamCategory::orderBy('sort_order')->get();
-        return view('admin.teams.create', compact('categories'));
+        $nextOrder = $this->nextSortOrder();
+        return view('admin.teams.create', compact('categories', 'nextOrder'));
+    }
+
+    private function nextSortOrder(): int
+    {
+        return ((int) TeamMember::max('sort_order')) + 1;
     }
 
     public function store(Request $request)
@@ -85,7 +91,7 @@ class TeamMemberController extends Controller
             'photo_path' => $photoPath,
             'linkedin_url' => $validated['linkedin_url'] ?? null,
             'email' => $validated['email'] ?? null,
-            'sort_order' => $validated['sort_order'] ?? 0,
+            'sort_order' => $validated['sort_order'] ?? $this->nextSortOrder(),
             'status' => $validated['status'],
         ]);
 
