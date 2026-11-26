@@ -42,6 +42,12 @@ class Article extends Model
         return $this->belongsTo(User::class, 'author_id');
     }
 
+    public function getDisplayAuthorAttribute(): string
+    {
+        $base = $this->author->name ?? 'Tim YNKI';
+        return ($this->author_name && $this->author_name !== $base) ? "{$base} ({$this->author_name})" : $base;
+    }
+
     public function scopePublished($query)
     {
         return $query->where('status', 'published')->whereNotNull('published_at');

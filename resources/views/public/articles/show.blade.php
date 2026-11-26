@@ -2907,7 +2907,7 @@
 
                 <div style="margin-bottom: 14px; font-size: 13.5px; color: #2d4236;">
                   Penulis:
-                  <strong style="display:block; color:#0e241b; font-size:14.5px; margin-top:2px;">{{ $article->author_name ?: ($article->author->name ?? 'Tim YNKI') }}</strong>
+                  <strong style="display:block; color:#0e241b; font-size:14.5px; margin-top:2px;">{{ $article->display_author }}</strong>
                 </div>
 
                 <div style="margin-bottom: 14px; font-size: 13.5px; color: #2d4236;">
