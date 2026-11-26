@@ -3642,14 +3642,24 @@
 
                       <div class="gallery-grid">
                         @forelse($photos->sortByDesc('created_at') as $s)
+                        @php $photoList = $s->photo_paths; @endphp
                         <div class="g-card">
                           <div class="g-img" style="position:relative;overflow:hidden;height:220px;background:#1a382b;">
-                            @if($s->image_path)
-                            <img src="/storage/{{ ltrim($s->image_path, '/') }}" alt="{{ $s->title }}" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\' ry=\'2\'></rect><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'></circle><polyline points=\'21 15 16 10 5 21\'></polyline></svg>';">
+                            @if(count($photoList) > 0)
+                            <img src="/storage/{{ ltrim($photoList[0], '/') }}" alt="{{ $s->title }}" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.onerror=null;this.parentElement.innerHTML='<svg width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\' ry=\'2\'></rect><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'></circle><polyline points=\'21 15 16 10 5 21\'></polyline></svg>';">
                             @else
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
                             @endif
                           </div>
+                          @if(count($photoList) > 1)
+                          <div class="g-thumbs" style="display:flex;gap:6px;padding:8px 12px 0;background:#fff;">
+                            @foreach($photoList as $idx => $pPath)
+                            <button type="button" onclick="switchGalleryPhoto(this, '/storage/{{ ltrim($pPath, '/') }}')" style="flex:1;height:48px;padding:0;border:2px solid {{ $idx === 0 ? '#117710' : '#dce8e1' }};border-radius:8px;overflow:hidden;cursor:pointer;background:#f4f8f5;">
+                              <img src="/storage/{{ ltrim($pPath, '/') }}" alt="{{ $s->title }} {{ $idx + 1 }}" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+                            </button>
+                            @endforeach
+                          </div>
+                          @endif
                           <div class="g-body">
                             <div class="g-loc">
                               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -3663,8 +3673,8 @@
                             @if($s->photographer_credits)
                             <div style="font-size:12px;color:#777;margin-bottom:10px;">Foto: {{ $s->photographer_credits }}</div>
                             @endif
-                            @if($s->image_path)
-                            <a href="/storage/{{ ltrim($s->image_path, '/') }}" target="_blank" class="btn-gallery">
+                            @if(count($photoList) > 0)
+                            <a href="/storage/{{ ltrim($photoList[0], '/') }}" target="_blank" class="btn-gallery">
                               Lihat Foto Penuh
                               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <path d="M5 12h14" />
@@ -4125,6 +4135,17 @@
     </section>
     <script src="/assets/js/517a37975876805c081a8869541778d7.js?ver=c94d4"></script>
     <script>
+      function switchGalleryPhoto(btn, src) {
+        var card = btn.closest('.g-card');
+        var mainImg = card.querySelector('.g-img img');
+        var fullLink = card.querySelector('.btn-gallery');
+        if (mainImg) mainImg.src = src;
+        if (fullLink) fullLink.href = src;
+        btn.parentElement.querySelectorAll('button').forEach(function (b) {
+          b.style.borderColor = (b === btn) ? '#117710' : '#dce8e1';
+        });
+      }
+
       document.addEventListener('DOMContentLoaded', function () {
         function setupPagination(opts) {
           var container = document.getElementById(opts.containerId);

@@ -65,14 +65,16 @@
 
                 <div class="form-group" id="photo_input_group">
                     <label class="form-label" for="image" id="image_label">
-                        {{ $story->media_type === 'video' ? 'Ganti Sampul / Thumbnail Video (JPG/PNG/WebP)' : 'Ganti File Foto' }}
-                        <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Maks 10MB, otomatis dikompresi & dioptimasi WebP)</span>
+                        {{ $story->media_type === 'video' ? 'Ganti Sampul / Thumbnail Video (JPG/PNG/WebP)' : 'Ganti File Foto (Maks. 3 Foto)' }}
+                        <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Maks 10MB/foto, otomatis dikompresi &amp; dioptimasi WebP)</span>
                     </label>
-                    <input type="file" class="form-control" id="image" name="image" accept="image/*">
-                    @if ($story->image_path)
-                        <div style="margin-top: 8px; display: flex; align-items: center; gap: 8px;">
-                            <img src="/storage/{{ $story->image_path }}" alt="Sampul/Foto" style="height: 60px; border-radius: 4px; object-fit: cover;">
-                            <small style="color: var(--text-muted);">Sampul / foto saat ini</small>
+                    <input type="file" class="form-control" id="image" name="{{ $story->media_type === 'video' ? 'image' : 'images[]' }}" accept="image/*" {{ $story->media_type === 'video' ? '' : 'multiple' }}>
+                    @if (count($story->photo_paths) > 0)
+                        <div style="margin-top: 8px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                            @foreach ($story->photo_paths as $pPath)
+                                <img src="/storage/{{ $pPath }}" alt="Sampul/Foto" style="height: 60px; border-radius: 4px; object-fit: cover;">
+                            @endforeach
+                            <small style="color: var(--text-muted);">Foto tersimpan saat ini ({{ count($story->photo_paths) }})</small>
                         </div>
                     @endif
                 </div>
@@ -114,14 +116,25 @@
     <script>
         function toggleMediaInputs(val) {
             var videoGroup = document.getElementById('video_input_group');
+            var imageInput = document.getElementById('image');
             var imageLabel = document.getElementById('image_label');
             if (val === 'video') {
                 videoGroup.style.display = 'block';
+                imageInput.name = 'image';
+                imageInput.multiple = false;
                 imageLabel.innerHTML = 'Ganti Sampul / Thumbnail Video (JPG/PNG/WebP) <span style="font-weight:400;color:var(--text-muted);font-size:11.5px;">(Disarankan untuk video IG/FB/Upload)</span>';
             } else {
                 videoGroup.style.display = 'none';
-                imageLabel.innerHTML = 'Ganti File Foto <span style="font-weight:400;color:var(--text-muted);font-size:11.5px;">(Maks 10MB, otomatis dikompresi & dioptimasi WebP)</span>';
+                imageInput.name = 'images[]';
+                imageInput.multiple = true;
+                imageLabel.innerHTML = 'Ganti File Foto (Maks. 3 Foto) <span style="font-weight:400;color:var(--text-muted);font-size:11.5px;">(Maks 10MB/foto, otomatis dikompresi & dioptimasi WebP)</span>';
             }
         }
+        document.getElementById('image').addEventListener('change', function() {
+            if (this.multiple && this.files.length > 3) {
+                alert('Maksimal 3 foto dokumentasi sekaligus.');
+                this.value = '';
+            }
+        });
     </script>
 @endsection

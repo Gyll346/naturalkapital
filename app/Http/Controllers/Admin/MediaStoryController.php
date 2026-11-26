@@ -43,6 +43,8 @@ class MediaStoryController extends Controller
             'location' => 'nullable|string|max:150',
             'caption' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:10240',
+            'images' => 'nullable|array|max:3',
+            'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:10240',
             'video_file' => 'nullable|mimes:mp4,mov,ogg,webm,m4v|max:102400',
             'youtube_url' => 'nullable|string|max:500',
             'photographer_credits' => 'nullable|string|max:150',
@@ -50,16 +52,13 @@ class MediaStoryController extends Controller
             'is_active' => 'nullable|boolean',
         ]);
 
-        $imagePath = null;
-        if ($request->hasFile('image')) {
-            $imagePath = $this->compressAndSavePhoto($request->file('image'));
-        }
-
         $videoUrl = $validated['youtube_url'] ?? null;
         if ($request->hasFile('video_file')) {
             $videoPath = $request->file('video_file')->store('stories/videos', 'public');
             $videoUrl = '/storage/' . $videoPath;
         }
+
+        $paths = $this->processPhotoUploads($request, $validated['media_type']);
 
         $story = MediaStory::create([
             'title' => $validated['title'],
@@ -67,7 +66,8 @@ class MediaStoryController extends Controller
             'category' => $validated['category'] ?? 'Dokumentasi Lapangan',
             'location' => $validated['location'] ?? null,
             'caption' => $validated['caption'] ?? null,
-            'image_path' => $imagePath,
+            'image_path' => $paths[0] ?? null,
+            'gallery_images' => count($paths) > 1 ? array_slice($paths, 1) : null,
             'youtube_url' => $videoUrl,
             'photographer_credits' => $validated['photographer_credits'] ?? null,
             'sort_order' => $validated['sort_order'] ?? 0,
@@ -102,6 +102,8 @@ class MediaStoryController extends Controller
             'location' => 'nullable|string|max:150',
             'caption' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:10240',
+            'images' => 'nullable|array|max:3',
+            'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:10240',
             'video_file' => 'nullable|mimes:mp4,mov,ogg,webm,m4v|max:102400',
             'youtube_url' => 'nullable|string|max:500',
             'photographer_credits' => 'nullable|string|max:150',
@@ -109,11 +111,11 @@ class MediaStoryController extends Controller
             'is_active' => 'nullable|boolean',
         ]);
 
-        if ($request->hasFile('image')) {
-            if ($story->image_path && Storage::disk('public')->exists($story->image_path)) {
-                Storage::disk('public')->delete($story->image_path);
-            }
-            $story->image_path = $this->compressAndSavePhoto($request->file('image'));
+        if ($request->hasFile('images') || $request->hasFile('image')) {
+            $this->deleteStoredPhotos($story->photo_paths);
+            $paths = $this->processPhotoUploads($request, $validated['media_type']);
+            $story->image_path = $paths[0] ?? null;
+            $story->gallery_images = count($paths) > 1 ? array_slice($paths, 1) : null;
         }
 
         $videoUrl = $story->youtube_url;
@@ -157,9 +159,7 @@ class MediaStoryController extends Controller
     {
         $story = MediaStory::findOrFail($id);
 
-        if ($story->image_path && Storage::disk('public')->exists($story->image_path)) {
-            Storage::disk('public')->delete($story->image_path);
-        }
+        $this->deleteStoredPhotos($story->photo_paths);
 
         if ($story->youtube_url && str_starts_with($story->youtube_url, '/storage/')) {
             $oldPath = ltrim(str_replace('/storage/', '', $story->youtube_url), '/');
@@ -180,6 +180,25 @@ class MediaStoryController extends Controller
         ]);
 
         return redirect()->back(fallback: route('admin.media-stories.index'))->with('success', 'Story media foto/video berhasil dihapus!');
+    }
+
+    protected function processPhotoUploads(Request $request, string $mediaType): array
+    {
+        $files = $request->file('images') ?? ($request->hasFile('image') ? [$request->file('image')] : []);
+        if ($mediaType === 'video') {
+            $files = array_slice($files, 0, 1);
+        }
+
+        return array_map(fn ($file) => $this->compressAndSavePhoto($file), $files);
+    }
+
+    protected function deleteStoredPhotos(array $paths): void
+    {
+        foreach ($paths as $path) {
+            if ($path && Storage::disk('public')->exists($path)) {
+                Storage::disk('public')->delete($path);
+            }
+        }
     }
 
     /**

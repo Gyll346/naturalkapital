@@ -64,11 +64,11 @@
 
                 <div class="form-group" id="photo_input_group">
                     <label class="form-label" for="image" id="image_label">
-                        Unggah File Foto (JPG/PNG/WebP)
-                        <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Maks 10MB, otomatis dikompresi & dioptimasi WebP)</span>
+                        Unggah File Foto (JPG/PNG/WebP, Maks. 3 Foto)
+                        <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Maks 10MB/foto, otomatis dikompresi &amp; dioptimasi WebP)</span>
                     </label>
-                    <input type="file" class="form-control" id="image" name="image" accept="image/*">
-                    <small style="color: var(--text-muted); font-size: 12px;" id="image_help">Sistem otomatis mengoptimasi ukuran gambar dokumentasi lapangan agar cepat dibuka pengunjung.</small>
+                    <input type="file" class="form-control" id="image" name="images[]" accept="image/*" multiple>
+                    <small style="color: var(--text-muted); font-size: 12px;" id="image_help">Bisa memilih hingga 3 foto sekaligus (Ctrl/Shift + klik) untuk tampil dalam satu card.</small>
                 </div>
 
                 <div id="video_input_group" style="display: none;">
@@ -101,19 +101,31 @@
     <script>
         function toggleMediaInputs(val) {
             var videoGroup = document.getElementById('video_input_group');
+            var imageInput = document.getElementById('image');
             var imageLabel = document.getElementById('image_label');
             var imageHelp = document.getElementById('image_help');
             if (val === 'video') {
                 videoGroup.style.display = 'block';
+                imageInput.name = 'image';
+                imageInput.multiple = false;
                 imageLabel.innerHTML = 'Unggah Sampul / Thumbnail Video (JPG/PNG/WebP) <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Disarankan untuk video IG/FB/Upload)</span>';
                 imageHelp.textContent = 'Gambar sampul depan video yang akan ditampilkan di galeri.';
             } else {
                 videoGroup.style.display = 'none';
-                imageLabel.innerHTML = 'Unggah File Foto (JPG/PNG/WebP) <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Maks 10MB, otomatis dikompresi & dioptimasi WebP)</span>';
-                imageHelp.textContent = 'Sistem otomatis mengoptimasi ukuran gambar dokumentasi lapangan agar cepat dibuka pengunjung.';
+                imageInput.name = 'images[]';
+                imageInput.multiple = true;
+                imageLabel.innerHTML = 'Unggah File Foto (JPG/PNG/WebP, Maks. 3 Foto) <span style="font-weight: 400; color: var(--text-muted); font-size: 11.5px;">(Maks 10MB/foto, otomatis dikompresi & dioptimasi WebP)</span>';
+                imageHelp.textContent = 'Bisa memilih hingga 3 foto sekaligus (Ctrl/Shift + klik) untuk tampil dalam satu card.';
             }
         }
         document.addEventListener('DOMContentLoaded', function() {
+            var imageInput = document.getElementById('image');
+            imageInput.addEventListener('change', function() {
+                if (this.multiple && this.files.length > 3) {
+                    alert('Maksimal 3 foto dokumentasi sekaligus.');
+                    this.value = '';
+                }
+            });
             toggleMediaInputs(document.getElementById('media_type').value);
         });
     </script>

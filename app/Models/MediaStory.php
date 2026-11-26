@@ -18,6 +18,7 @@ class MediaStory extends Model
         'location',
         'caption',
         'image_path',
+        'gallery_images',
         'youtube_url',
         'photographer_credits',
         'sort_order',
@@ -25,9 +26,20 @@ class MediaStory extends Model
     ];
 
     protected $casts = [
+        'gallery_images' => 'array',
         'is_active' => 'boolean',
         'sort_order' => 'integer',
     ];
+
+    public function getPhotoPathsAttribute(): array
+    {
+        $paths = array_merge(
+            $this->image_path ? [$this->image_path] : [],
+            $this->gallery_images ?? []
+        );
+
+        return array_values(array_unique(array_filter($paths)));
+    }
 
     public function getThumbnailUrlAttribute(): ?string
     {

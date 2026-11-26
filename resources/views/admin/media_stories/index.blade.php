@@ -80,7 +80,7 @@
                                 @if ($s->media_type === 'video')
                                     <span class="badge badge-warning">Video ({{ ucfirst($s->video_platform) }})</span>
                                 @else
-                                    <span class="badge badge-success">Foto</span>
+                                    <span class="badge badge-success">Foto{{ count($s->photo_paths) > 1 ? ' (' . count($s->photo_paths) . ')' : '' }}</span>
                                 @endif
                             </td>
                             <td>{{ $s->category }}</td>
