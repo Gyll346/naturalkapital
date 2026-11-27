@@ -657,7 +657,7 @@
         <div class="sidebar-brand">
             <img src="/wp-content/uploads/2026/05/favicon-edge.webp?v=4" alt="YNKI" class="sidebar-brand-img" onerror="this.style.display='none'">
             <div class="sidebar-brand-text">
-                <h2>YNKI Admin</h2>
+                <h2>YNKI {{ ucfirst(auth()->user()?->role ?? 'Admin') }}</h2>
                 <p>Internal CMS Panel</p>
             </div>
         </div>
