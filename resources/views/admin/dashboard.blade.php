@@ -2,6 +2,124 @@
 
 @section('title', 'Dashboard Ringkasan & Pusat Pengelolaan File')
 
+@push('styles')
+    <style>
+        .admin-main { min-width: 0; }
+        .bar-chart-scroll {
+            width: 100%;
+            overflow-x: auto;
+            padding-top: 24px;
+        }
+        .bar-chart-frame {
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            gap: 10px;
+            min-width: 640px;
+        }
+        .bar-y-axis {
+            height: 210px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-right: 6px;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+        }
+        .bar-plot-area {
+            position: relative;
+            height: 210px;
+            border-bottom: 1.5px solid #b6cabf;
+            background: repeating-linear-gradient(
+                to bottom,
+                #e6efe9 0,
+                #e6efe9 1px,
+                transparent 1px,
+                transparent 25%
+            );
+            display: grid;
+            grid-template-columns: repeat(var(--bar-count, 8), minmax(0, 1fr));
+            gap: 10px;
+            padding: 0 8px;
+            align-items: end;
+        }
+        .bar-labels-row {
+            grid-column: 2;
+            display: grid;
+            grid-template-columns: repeat(var(--bar-count, 8), minmax(0, 1fr));
+            gap: 10px;
+            padding: 8px 8px 0;
+        }
+        .bar-slot {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 6px 6px 0 0;
+        }
+        .bar-slot:focus-visible,
+        .bar-label-link:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        .bar-val {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-variant-numeric: tabular-nums;
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+        .bar-col {
+            width: clamp(26px, 46%, 44px);
+            flex-shrink: 0;
+            background: var(--primary);
+            border-radius: 6px 6px 0 0;
+            transition: height 0.25s ease, background-color 0.2s ease;
+        }
+        .bar-col.is-zero {
+            background: #cbdcd2;
+        }
+        .bar-slot:hover .bar-col:not(.is-zero) {
+            background: var(--primary-light);
+        }
+        .bar-label-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.3;
+            min-height: 44px;
+            padding: 4px 2px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .bar-label-link:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        .bar-label-link small {
+            margin-top: 2px;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .bar-col { transition: none; }
+        }
+    </style>
+@endpush
+
 @section('content')
     <!-- Metrik Statistik Utama -->
     <div class="grid-stats">
@@ -45,6 +163,69 @@
             </div>
         </div>
     </div>
+
+    @if (auth()->user()->isEditor())
+    @php
+        $totalArticleViews = $articleViewsByPage->sum('views');
+        $rawMaxViews = (int) $articleViewsByPage->max('views');
+        $axisMax = $rawMaxViews > 0 ? (int) (ceil($rawMaxViews / 4) * 4) : 4;
+        $yTicks = [$axisMax, (int) ($axisMax * 0.75), (int) ($axisMax * 0.5), (int) ($axisMax * 0.25), 0];
+    @endphp
+    <div class="card-table" style="margin-bottom: 30px;">
+        <div class="card-header">
+            <div>
+                <h3>Jumlah Views Artikel per Halaman Publik</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 4px 0 0;">
+                    Total kunjungan pembaca artikel yang dikelompokkan per kategori halaman website.
+                </p>
+            </div>
+            <div style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: var(--primary-dark);">
+                Total: {{ number_format($totalArticleViews, 0, ',', '.') }} Views
+            </div>
+        </div>
+
+        @if ($articleViewsByPage->isEmpty())
+            <p style="font-size: 13.5px; color: var(--text-muted); padding: 12px 0;">
+                Belum ada kategori halaman artikel. Tambahkan artikel untuk mulai mencatat jumlah pembaca.
+            </p>
+        @else
+            <div class="bar-chart-scroll" role="region" aria-label="Bar chart views artikel per halaman">
+                <div class="bar-chart-frame" style="--bar-count: {{ $articleViewsByPage->count() }};">
+                    <div class="bar-y-axis" aria-hidden="true">
+                        @foreach ($yTicks as $tick)
+                            <span>{{ number_format($tick, 0, ',', '.') }}</span>
+                        @endforeach
+                    </div>
+                    <div class="bar-plot-area">
+                        @foreach ($articleViewsByPage as $pageStat)
+                            @php
+                                $hasViews = $pageStat['views'] > 0;
+                                $heightCss = $hasViews ? max(3, round(($pageStat['views'] / $axisMax) * 100, 1)) . '%' : '4px';
+                            @endphp
+                            <a href="{{ route('admin.articles.index', ['category' => $pageStat['slug']]) }}" class="bar-slot" aria-label="{{ $pageStat['name'] }}: {{ $pageStat['views'] }} views, {{ $pageStat['articles'] }} artikel">
+                                <span class="bar-val">{{ number_format($pageStat['views'], 0, ',', '.') }}</span>
+                                <span class="bar-col {{ $hasViews ? '' : 'is-zero' }}" style="height: {{ $heightCss }};"></span>
+                            </a>
+                        @endforeach
+                    </div>
+                    <div class="bar-labels-row">
+                        @foreach ($articleViewsByPage as $pageStat)
+                            <a href="{{ route('admin.articles.index', ['category' => $pageStat['slug']]) }}" class="bar-label-link">
+                                <span>{{ $pageStat['name'] }}</span>
+                                <small>{{ $pageStat['articles'] }} artikel</small>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            @if ($totalArticleViews === 0)
+                <p style="font-size: 12.5px; color: var(--text-muted); margin-top: 14px; border-top: 1px solid var(--border); padding-top: 12px;">
+                    Belum ada views tercatat pada artikel publik. Batang grafik terisi otomatis setiap kali pengunjung membuka halaman detail artikel.
+                </p>
+            @endif
+        @endif
+    </div>
+    @endif
 
     <!-- PUSAT PENGELOLAAN FILE & KONTEN SUBHALAMAN (CMS MANAGER) -->
     <div class="card-table" style="margin-bottom: 30px;">

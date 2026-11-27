@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\TeamMember;
 use App\Models\Article;
+use App\Models\ArticleCategory;
 use App\Models\LgosComponent;
 use App\Models\PortfolioProject;
 use App\Models\TransparencyReport;
@@ -33,6 +34,18 @@ class DashboardController extends Controller
         $liputanCount = Article::whereHas('category', fn($q) => $q->where('slug', 'liputan-media'))->count();
         $mediaStoriesCount = MediaStory::count();
         $totalArticlesCount = Article::count();
+
+        $articleViewsByPage = ArticleCategory::withCount('articles')
+            ->withSum('articles', 'views_count')
+            ->get()
+            ->map(fn ($cat) => [
+                'name' => $cat->category_name,
+                'slug' => $cat->slug,
+                'views' => (int) ($cat->articles_sum_views_count ?? 0),
+                'articles' => (int) $cat->articles_count,
+            ])
+            ->sortByDesc('views')
+            ->values();
 
         // 3. Interaksi & Partisipasi
         $totalContactMessagesCount = 0;
@@ -77,6 +90,7 @@ class DashboardController extends Controller
             'liputanCount',
             'mediaStoriesCount',
             'totalArticlesCount',
+            'articleViewsByPage',
             'totalContactMessagesCount',
             'unreadContactMessagesCount',
             'totalParticipationsCount',
